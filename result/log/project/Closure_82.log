@@ -1,0 +1,380 @@
+2024-02-25 01:15:47,377 - Closure_82 - INFO - rm -rf /home/chongchong/d4j-project/Closure_82
+2024-02-25 01:15:47,378 - Closure_82 - INFO - 删除 Closure 82b 成功
+2024-02-25 01:15:47,378 - Closure_82 - INFO - defects4j checkout -p Closure -v 82b -w /home/chongchong/d4j-project/Closure_82
+2024-02-25 01:15:49,138 - Closure_82 - INFO - checkout Closure 82b 成功
+2024-02-25 01:15:57,908 - Closure_82 - INFO - 编译成功
+2024-02-25 01:16:33,067 - Closure_82 - INFO - 测试失败
+2024-02-25 01:16:33,067 - Closure_82 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+  - com.google.javascript.rhino.jstype.FunctionTypeTest::testEmptyFunctionTypes
+
+2024-02-25 01:16:34,089 - Closure_82 - INFO - 它的bug类型为:
+2024-02-25 01:16:34,089 - Closure_82 - INFO - 2
+2024-02-25 01:17:26,286 - Closure_82 - INFO - 开始验证补丁1 1:
+2024-02-25 01:17:26,286 - Closure_82 - INFO - 
+return isNoType() || isNoObjectType() || isNoResolvedType();
+
+2024-02-25 01:17:28,788 - Closure_82 - INFO - 编译成功
+2024-02-25 01:18:03,942 - Closure_82 - INFO - 测试失败
+2024-02-25 01:18:03,942 - Closure_82 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+  - com.google.javascript.rhino.jstype.FunctionTypeTest::testEmptyFunctionTypes
+
+2024-02-25 01:18:04,452 - Closure_82 - INFO - 选择失败的测试用例为:
+2024-02-25 01:18:04,452 - Closure_82 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+2024-02-25 01:18:04,452 - Closure_82 - INFO - 失败的测试代码为:
+2024-02-25 01:18:04,452 - Closure_82 - INFO -     testTypes(
+
+2024-02-25 01:18:04,452 - Closure_82 - INFO - 失败信息为:
+2024-02-25 01:18:04,452 - Closure_82 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-25 01:18:04,452 - Closure_82 - INFO - 补丁1 1测试失败
+2024-02-25 01:18:04,453 - Closure_82 - INFO - 开始验证补丁1 2:
+2024-02-25 01:18:04,453 - Closure_82 - INFO - 
+return isNoObjectType() || isNoResolvedType();
+
+2024-02-25 01:18:06,898 - Closure_82 - INFO - 编译成功
+2024-02-25 01:18:42,114 - Closure_82 - INFO - 测试失败
+2024-02-25 01:18:42,114 - Closure_82 - INFO - Failing tests: 24
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa9
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison9
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testIssue124b
+  - com.google.javascript.jscomp.TypeCheckTest::testDfa9
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison5
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison6
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison7
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison9
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue124b
+  - com.google.javascript.jscomp.TypeCheckTest::testForIn5
+  - com.google.javascript.jscomp.TypeCheckTest::testControlFlowRestrictsType11
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+  - com.google.javascript.jscomp.TypeCheckTest::testMissingProperty32
+  - com.google.javascript.rhino.jstype.FunctionTypeTest::testEmptyFunctionTypes
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNullType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNoObjectType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testSubtypingMostGeneralFunction
+  - com.google.javascript.rhino.jstype.JSTypeTest::testTestForEquality
+  - com.google.javascript.rhino.jstype.JSTypeTest::testUniversalConstructorType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNoType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testSymmetryOfTestForEquality
+
+2024-02-25 01:18:42,619 - Closure_82 - INFO - 选择失败的测试用例为:
+2024-02-25 01:18:42,619 - Closure_82 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa9
+2024-02-25 01:18:42,619 - Closure_82 - INFO - 失败的测试代码为:
+2024-02-25 01:18:42,619 - Closure_82 - INFO -     testTypes("function f() {\n/** @type {string?} */var x;\nx = null;\n" +
+
+2024-02-25 01:18:42,619 - Closure_82 - INFO - 失败信息为:
+2024-02-25 01:18:42,619 - Closure_82 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-25 01:18:42,619 - Closure_82 - INFO - 补丁1 2测试失败
+2024-02-25 01:18:42,620 - Closure_82 - INFO - 开始验证补丁1 3:
+2024-02-25 01:18:42,620 - Closure_82 - INFO - 
+// Assuming that 'true' indicates an empty type for these methods as well
+return isNoType() && isNoObjectType() && isNoResolvedType();
+
+2024-02-25 01:18:45,129 - Closure_82 - INFO - 编译成功
+2024-02-25 01:19:20,618 - Closure_82 - INFO - 测试失败
+2024-02-25 01:19:20,618 - Closure_82 - INFO - Failing tests: 34
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa9
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testComparison9
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMissingProperty5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testIssue124b
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testCast15
+  - com.google.javascript.jscomp.TypeCheckTest::testDfa9
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison5
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison6
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison7
+  - com.google.javascript.jscomp.TypeCheckTest::testComparison9
+  - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration5
+  - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration6
+  - com.google.javascript.jscomp.TypeCheckTest::testMissingProperty5
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue124b
+  - com.google.javascript.jscomp.TypeCheckTest::testCast15
+  - com.google.javascript.jscomp.TypeCheckTest::testForIn5
+  - com.google.javascript.jscomp.TypeCheckTest::testControlFlowRestrictsType11
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+  - com.google.javascript.jscomp.TypeCheckTest::testLends3
+  - com.google.javascript.jscomp.TypeCheckTest::testLends5
+  - com.google.javascript.jscomp.TypeCheckTest::testMissingProperty32
+  - com.google.javascript.rhino.jstype.FunctionTypeTest::testEmptyFunctionTypes
+  - com.google.javascript.rhino.jstype.JSTypeTest::testForwardDeclaredNamedTypeEquals
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNullType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNoObjectType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testSubtypingMostGeneralFunction
+  - com.google.javascript.rhino.jstype.JSTypeTest::testTestForEquality
+  - com.google.javascript.rhino.jstype.JSTypeTest::testUniversalConstructorType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNoResolvedType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNoType
+  - com.google.javascript.rhino.jstype.JSTypeTest::testSymmetryOfTestForEquality
+
+2024-02-25 01:19:21,128 - Closure_82 - INFO - 选择失败的测试用例为:
+2024-02-25 01:19:21,128 - Closure_82 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa9
+2024-02-25 01:19:21,128 - Closure_82 - INFO - 失败的测试代码为:
+2024-02-25 01:19:21,128 - Closure_82 - INFO -     testTypes("function f() {\n/** @type {string?} */var x;\nx = null;\n" +
+
+2024-02-25 01:19:21,128 - Closure_82 - INFO - 失败信息为:
+2024-02-25 01:19:21,128 - Closure_82 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-25 01:19:21,128 - Closure_82 - INFO - 补丁1 3测试失败
+2024-02-25 01:19:21,129 - Closure_82 - INFO - 开始验证补丁1 4:
+2024-02-25 01:19:21,129 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoObjectType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:22,168 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:22,168 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:22,168 - Closure_82 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:19:22,169 - Closure_82 - INFO - 开始验证补丁1 5:
+2024-02-25 01:19:22,169 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:23,212 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:23,212 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:23,212 - Closure_82 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:19:23,213 - Closure_82 - INFO - 开始验证补丁1 6:
+2024-02-25 01:19:23,213 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return !isNoType() && !isNoObjectType() && !isNoResolvedType();
+  }
+
+2024-02-25 01:19:24,255 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:24,255 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:24,255 - Closure_82 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:19:24,256 - Closure_82 - INFO - 开始验证补丁1 7:
+2024-02-25 01:19:24,256 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoObjectType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:24,256 - Closure_82 - INFO - 补丁1 7为重复的补丁
+2024-02-25 01:19:24,261 - Closure_82 - INFO - 开始验证补丁1 8:
+2024-02-25 01:19:24,262 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    // Assuming there was an error in the original logic and we actually need 
+    // to check another condition to determine if it's an empty type.
+    return isNoType() || isNoObjectType() || isNoResolvedType() || isAnotherConditionForEmpty();
+  }
+
+2024-02-25 01:19:25,294 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:25,294 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:25,294 - Closure_82 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:19:25,296 - Closure_82 - INFO - 开始验证补丁1 9:
+2024-02-25 01:19:25,296 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    // Assuming the original logic had a misunderstanding and 
+    // we need to rely solely on a different method.
+    return isNoType();
+  }
+
+2024-02-25 01:19:26,343 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:26,343 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:26,343 - Closure_82 - INFO - 补丁1 9 未成功编译
+2024-02-25 01:19:26,344 - Closure_82 - INFO - 开始验证补丁2 1:
+2024-02-25 01:19:26,344 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoObjectType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:26,345 - Closure_82 - INFO - 补丁2 1为重复的补丁
+2024-02-25 01:19:26,345 - Closure_82 - INFO - 开始验证补丁2 2:
+2024-02-25 01:19:26,345 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoTypePresent() || isNoObjectTypePresent() || isNoResolvedTypePresent();
+  }
+
+2024-02-25 01:19:27,390 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:27,390 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:27,390 - Closure_82 - INFO - 补丁2 2 未成功编译
+2024-02-25 01:19:27,391 - Closure_82 - INFO - 开始验证补丁2 3:
+2024-02-25 01:19:27,391 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoObjectType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:27,391 - Closure_82 - INFO - 补丁2 3为重复的补丁
+2024-02-25 01:19:27,392 - Closure_82 - INFO - 开始验证补丁2 4:
+2024-02-25 01:19:27,392 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoObjectType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:27,392 - Closure_82 - INFO - 补丁2 4为重复的补丁
+2024-02-25 01:19:27,393 - Closure_82 - INFO - 开始验证补丁2 5:
+2024-02-25 01:19:27,393 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return !isNoType() && !isNoObjectType() && !isNoResolvedType();
+  }
+
+2024-02-25 01:19:27,393 - Closure_82 - INFO - 补丁2 5为重复的补丁
+2024-02-25 01:19:27,394 - Closure_82 - INFO - 开始验证补丁2 6:
+2024-02-25 01:19:27,394 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    // TODO: Implement this method based on actual logic required.
+    return false;
+  }
+
+2024-02-25 01:19:28,438 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:28,438 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:28,438 - Closure_82 - INFO - 补丁2 6 未成功编译
+2024-02-25 01:19:28,439 - Closure_82 - INFO - 开始验证补丁2 7:
+2024-02-25 01:19:28,439 - Closure_82 - INFO - 
+public final boolean isEmptyType() {
+  return isNoType() || isNoObjectType() || isNoResolvedType();
+}
+
+2024-02-25 01:19:29,506 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:29,506 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:29,506 - Closure_82 - INFO - 补丁2 7 未成功编译
+2024-02-25 01:19:29,508 - Closure_82 - INFO - 开始验证补丁2 8:
+2024-02-25 01:19:29,508 - Closure_82 - INFO - 
+public final boolean isEmptyType() {
+  return noTypeCheck() || noObjectTypeCheck() || noResolvedTypeCheck(); // Replace with actual existing method names
+}
+
+2024-02-25 01:19:30,549 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:30,549 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:30,549 - Closure_82 - INFO - 补丁2 8 未成功编译
+2024-02-25 01:19:30,550 - Closure_82 - INFO - 开始验证补丁2 9:
+2024-02-25 01:19:30,550 - Closure_82 - INFO - 
+// Placeholder methods, replace with actual logic
+public boolean isNoType() {
+  // Implement logic
+}
+
+public boolean isNoResolvedType() {
+  // Implement logic
+}
+
+public final boolean isEmptyType() {
+  return isNoType() || isNoObjectType() || isNoResolvedType();
+}
+
+2024-02-25 01:19:31,594 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:31,594 - Closure_82 - INFO - 错误: 非法的表达式开始
+public boolean isNoType() {
+2024-02-25 01:19:31,594 - Closure_82 - INFO - 补丁2 9 未成功编译
+2024-02-25 01:19:31,595 - Closure_82 - INFO - 开始验证补丁3 1:
+2024-02-25 01:19:31,595 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    return isNoType() || isNoObjectType() || isNoResolvedType();
+  }
+
+2024-02-25 01:19:31,595 - Closure_82 - INFO - 补丁3 1为重复的补丁
+2024-02-25 01:19:31,596 - Closure_82 - INFO - 开始验证补丁3 2:
+2024-02-25 01:19:31,596 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    // Assuming the problem lies with the logic, one of these methods may not be capturing 
+    // "empty type" correctly. It requires checking their respective implementations or 
+    // modifying the logic to correctly reflect an "empty type".
+    return isNoType() || isNoObjectType(); // If isNoResolvedType() is not relevant/correct
+  }
+
+2024-02-25 01:19:32,635 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:32,636 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:32,636 - Closure_82 - INFO - 补丁3 2 未成功编译
+2024-02-25 01:19:32,637 - Closure_82 - INFO - 开始验证补丁3 3:
+2024-02-25 01:19:32,637 - Closure_82 - INFO - 
+  public final boolean isEmptyType() {
+    // If additional conditions are needed to capture the concept of "empty type":
+    return isNoType() || isNoObjectType() || isNoResolvedType() || someOtherIsEmptyCondition();
+    // where someOtherIsEmptyCondition() is another method that needs to be defined
+    // to check for more conditions that define an empty type.
+  }
+
+2024-02-25 01:19:33,691 - Closure_82 - INFO - 编译失败
+2024-02-25 01:19:33,691 - Closure_82 - INFO - 错误: 非法的表达式开始
+public final boolean isEmptyType() {
+2024-02-25 01:19:33,691 - Closure_82 - INFO - 补丁3 3 未成功编译
+2024-02-25 01:19:33,692 - Closure_82 - INFO - 开始验证补丁3 4:
+2024-02-25 01:19:33,692 - Closure_82 - INFO - 
+return isNoType() || isNoObjectType() || isNoResolvedType();
+
+2024-02-25 01:19:33,692 - Closure_82 - INFO - 补丁3 4为重复的补丁
+2024-02-25 01:19:33,693 - Closure_82 - INFO - 开始验证补丁3 5:
+2024-02-25 01:19:33,693 - Closure_82 - INFO - 
+return this.isNoType() || this.isNoObjectType() || this.isNoResolvedType();
+
+2024-02-25 01:19:36,159 - Closure_82 - INFO - 编译成功
+2024-02-25 01:20:11,148 - Closure_82 - INFO - 测试失败
+2024-02-25 01:20:11,148 - Closure_82 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+  - com.google.javascript.rhino.jstype.FunctionTypeTest::testEmptyFunctionTypes
+
+2024-02-25 01:20:11,648 - Closure_82 - INFO - 选择失败的测试用例为:
+2024-02-25 01:20:11,648 - Closure_82 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+2024-02-25 01:20:11,648 - Closure_82 - INFO - 失败的测试代码为:
+2024-02-25 01:20:11,648 - Closure_82 - INFO -     testTypes(
+
+2024-02-25 01:20:11,648 - Closure_82 - INFO - 失败信息为:
+2024-02-25 01:20:11,648 - Closure_82 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-25 01:20:11,648 - Closure_82 - INFO - 补丁3 5测试失败
+2024-02-25 01:20:11,649 - Closure_82 - INFO - 开始验证补丁3 6:
+2024-02-25 01:20:11,649 - Closure_82 - INFO - 
+// Assuming the existence of a method that accurately determines if the type is empty
+return this.determineIfEmptyType();
+
+2024-02-25 01:20:12,822 - Closure_82 - INFO - 编译失败
+2024-02-25 01:20:12,822 - Closure_82 - INFO - 错误: 找不到符号
+return this.determineIfEmptyType();
+2024-02-25 01:20:12,822 - Closure_82 - INFO - 补丁3 6 未成功编译
+2024-02-25 01:20:12,823 - Closure_82 - INFO - 开始验证补丁3 7:
+2024-02-25 01:20:12,823 - Closure_82 - INFO - 
+return isNoType() || isNoObjectType();
+
+2024-02-25 01:20:15,321 - Closure_82 - INFO - 编译成功
+2024-02-25 01:20:50,157 - Closure_82 - INFO - 测试失败
+2024-02-25 01:20:50,157 - Closure_82 - INFO - Failing tests: 6
+  - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration5
+  - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration6
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue301
+  - com.google.javascript.rhino.jstype.FunctionTypeTest::testEmptyFunctionTypes
+  - com.google.javascript.rhino.jstype.JSTypeTest::testForwardDeclaredNamedTypeEquals
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNoResolvedType
+
+2024-02-25 01:20:50,658 - Closure_82 - INFO - 选择失败的测试用例为:
+2024-02-25 01:20:50,659 - Closure_82 - INFO - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration5
+2024-02-25 01:20:50,659 - Closure_82 - INFO - 失败的测试代码为:
+2024-02-25 01:20:50,659 - Closure_82 - INFO -     testClosureTypes(
+
+2024-02-25 01:20:50,659 - Closure_82 - INFO - 失败信息为:
+2024-02-25 01:20:50,659 - Closure_82 - INFO - junit.framework.ComparisonFailure: expected:<[Could not resolve type in @extends tag] of YourType> but was:<[property method not defined on any superclass] of YourType>
+
+2024-02-25 01:20:50,659 - Closure_82 - INFO - 补丁3 7测试失败
+2024-02-25 01:20:50,660 - Closure_82 - INFO - 开始验证补丁3 8:
+2024-02-25 01:20:50,660 - Closure_82 - INFO - 
+return isNoType() || isNoObjectType() || isNoResolvedType() || additionalCondition();
+
+2024-02-25 01:20:51,812 - Closure_82 - INFO - 编译失败
+2024-02-25 01:20:51,812 - Closure_82 - INFO - 错误: 找不到符号
+return isNoType() || isNoObjectType() || isNoResolvedType() || additionalCondition();
+2024-02-25 01:20:51,812 - Closure_82 - INFO - 补丁3 8 未成功编译
+2024-02-25 01:20:51,813 - Closure_82 - INFO - 开始验证补丁3 9:
+2024-02-25 01:20:51,813 - Closure_82 - INFO - 
+// Assuming the method isNoResolvedType should have been isResolvedType and was incorrect
+return isNoType() || isNoObjectType() || !isResolvedType();
+
+2024-02-25 01:20:53,024 - Closure_82 - INFO - 编译失败
+2024-02-25 01:20:53,024 - Closure_82 - INFO - 错误: 找不到符号
+return isNoType() || isNoObjectType() || !isResolvedType();
+2024-02-25 01:20:53,024 - Closure_82 - INFO - 补丁3 9 未成功编译
+2024-02-25 01:20:53,025 - Closure_82 - INFO - Closure_82 未成功修复

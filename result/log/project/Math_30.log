@@ -1,0 +1,30 @@
+2024-02-24 00:59:36,143 - Math_30 - INFO - rm -rf /home/chongchong/d4j-project/Math_30
+2024-02-24 00:59:36,144 - Math_30 - INFO - 删除 Math 30b 成功
+2024-02-24 00:59:36,144 - Math_30 - INFO - defects4j checkout -p Math -v 30b -w /home/chongchong/d4j-project/Math_30
+2024-02-24 00:59:39,621 - Math_30 - INFO - checkout Math 30b 成功
+2024-02-24 00:59:46,274 - Math_30 - INFO - 编译成功
+2024-02-24 01:00:16,273 - Math_30 - INFO - 测试失败
+2024-02-24 01:00:16,273 - Math_30 - INFO - Failing tests: 1
+  - org.apache.commons.math3.stat.inference.MannWhitneyUTestTest::testBigDataSet
+
+2024-02-24 01:00:17,187 - Math_30 - INFO - 它的bug类型为:
+2024-02-24 01:00:17,187 - Math_30 - INFO - 1
+2024-02-24 01:01:04,097 - Math_30 - INFO - Math_30 未成功修复
+2024-02-24 09:19:55,190 - Math_30 - INFO - rm -rf /home/chongchong/d4j-project/Math_30
+2024-02-24 09:19:55,226 - Math_30 - INFO - 删除 Math 30b 成功
+2024-02-24 09:19:55,226 - Math_30 - INFO - defects4j checkout -p Math -v 30b -w /home/chongchong/d4j-project/Math_30
+2024-02-24 09:19:58,682 - Math_30 - INFO - checkout Math 30b 成功
+2024-02-24 09:20:05,341 - Math_30 - INFO - 编译成功
+2024-02-24 09:20:35,474 - Math_30 - INFO - 测试失败
+2024-02-24 09:20:35,474 - Math_30 - INFO - Failing tests: 1
+  - org.apache.commons.math3.stat.inference.MannWhitneyUTestTest::testBigDataSet
+
+2024-02-24 09:20:36,389 - Math_30 - INFO - 它的bug类型为:
+2024-02-24 09:20:36,389 - Math_30 - INFO - 1
+2024-02-24 09:21:09,009 - Math_30 - INFO - 开始验证补丁1 1:
+2024-02-24 09:21:09,009 - Math_30 - INFO - 
+final long n1n2prod = (long) n1 * n2;
+
+2024-02-24 09:21:10,233 - Math_30 - INFO - 编译成功
+2024-02-24 09:21:40,127 - Math_30 - INFO - 测试成功
+2024-02-24 09:21:40,128 - Math_30 - INFO - 补丁1 1 通过了所有的测试用例

@@ -1,0 +1,66 @@
+2024-02-24 01:15:25,712 - Math_80 - INFO - rm -rf /home/chongchong/d4j-project/Math_80
+2024-02-24 01:15:25,713 - Math_80 - INFO - 删除 Math 80b 成功
+2024-02-24 01:15:25,713 - Math_80 - INFO - defects4j checkout -p Math -v 80b -w /home/chongchong/d4j-project/Math_80
+2024-02-24 01:15:29,148 - Math_80 - INFO - checkout Math 80b 成功
+2024-02-24 01:15:34,669 - Math_80 - INFO - 编译成功
+2024-02-24 01:15:41,311 - Math_80 - INFO - 测试失败
+2024-02-24 01:15:41,311 - Math_80 - INFO - Failing tests: 1
+  - org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02
+
+2024-02-24 01:15:42,220 - Math_80 - INFO - 它的bug类型为:
+2024-02-24 01:15:42,220 - Math_80 - INFO - 1
+2024-02-24 01:16:26,228 - Math_80 - INFO - Math_80 未成功修复
+2024-02-24 11:28:39,456 - Math_80 - INFO - rm -rf /home/chongchong/d4j-project/Math_80
+2024-02-24 11:28:39,483 - Math_80 - INFO - 删除 Math 80b 成功
+2024-02-24 11:28:39,483 - Math_80 - INFO - defects4j checkout -p Math -v 80b -w /home/chongchong/d4j-project/Math_80
+2024-02-24 11:28:42,917 - Math_80 - INFO - checkout Math 80b 成功
+2024-02-24 11:28:48,439 - Math_80 - INFO - 编译成功
+2024-02-24 11:28:55,034 - Math_80 - INFO - 测试失败
+2024-02-24 11:28:55,034 - Math_80 - INFO - Failing tests: 1
+  - org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02
+
+2024-02-24 11:28:55,957 - Math_80 - INFO - 它的bug类型为:
+2024-02-24 11:28:55,957 - Math_80 - INFO - 1
+2024-02-24 11:29:45,389 - Math_80 - INFO - 开始验证补丁1 1:
+2024-02-24 11:29:45,389 - Math_80 - INFO - 
+int j = 4 * n - 1;
+
+2024-02-24 11:29:46,767 - Math_80 - INFO - 编译成功
+2024-02-24 11:29:53,434 - Math_80 - INFO - 测试失败
+2024-02-24 11:29:53,434 - Math_80 - INFO - Failing tests: 1
+  - org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02
+
+2024-02-24 11:29:53,890 - Math_80 - INFO - 选择失败的测试用例为:
+2024-02-24 11:29:53,890 - Math_80 - INFO - org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02
+2024-02-24 11:29:53,890 - Math_80 - INFO - 失败的测试代码为:
+2024-02-24 11:29:53,890 - Math_80 - INFO -             assertEquals(refEigenValues[i], eigenValues[i], 1.0e-3);
+
+2024-02-24 11:29:53,890 - Math_80 - INFO - 失败信息为:
+2024-02-24 11:29:53,890 - Math_80 - INFO - junit.framework.AssertionFailedError: expected:<16828.208208485466> but was:<20654.74511575945>
+
+2024-02-24 11:29:53,890 - Math_80 - INFO - 补丁1 1测试失败
+2024-02-24 11:29:53,891 - Math_80 - INFO - 开始验证补丁1 2:
+2024-02-24 11:29:53,891 - Math_80 - INFO - 
+int j = (4 * n) - 1;
+
+2024-02-24 11:29:55,256 - Math_80 - INFO - 编译成功
+2024-02-24 11:30:01,811 - Math_80 - INFO - 测试失败
+2024-02-24 11:30:01,811 - Math_80 - INFO - Failing tests: 1
+  - org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02
+
+2024-02-24 11:30:02,275 - Math_80 - INFO - 选择失败的测试用例为:
+2024-02-24 11:30:02,275 - Math_80 - INFO - org.apache.commons.math.linear.EigenDecompositionImplTest::testMathpbx02
+2024-02-24 11:30:02,275 - Math_80 - INFO - 失败的测试代码为:
+2024-02-24 11:30:02,275 - Math_80 - INFO -             assertEquals(refEigenValues[i], eigenValues[i], 1.0e-3);
+
+2024-02-24 11:30:02,275 - Math_80 - INFO - 失败信息为:
+2024-02-24 11:30:02,275 - Math_80 - INFO - junit.framework.AssertionFailedError: expected:<16828.208208485466> but was:<20654.74511575945>
+
+2024-02-24 11:30:02,275 - Math_80 - INFO - 补丁1 2测试失败
+2024-02-24 11:30:02,276 - Math_80 - INFO - 开始验证补丁1 3:
+2024-02-24 11:30:02,276 - Math_80 - INFO - 
+int j = 4 * (n - 1);
+
+2024-02-24 11:30:03,636 - Math_80 - INFO - 编译成功
+2024-02-24 11:30:10,381 - Math_80 - INFO - 测试成功
+2024-02-24 11:30:10,382 - Math_80 - INFO - 补丁1 3 通过了所有的测试用例

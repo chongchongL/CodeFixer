@@ -1,0 +1,28 @@
+2024-02-23 23:43:45,647 - Lang_57 - INFO - rm -rf /home/chongchong/d4j-project/Lang_57
+2024-02-23 23:43:45,648 - Lang_57 - INFO - 删除 Lang 57b 成功
+2024-02-23 23:43:45,648 - Lang_57 - INFO - defects4j checkout -p Lang -v 57b -w /home/chongchong/d4j-project/Lang_57
+2024-02-23 23:43:48,973 - Lang_57 - INFO - checkout Lang 57b 成功
+2024-02-23 23:43:52,940 - Lang_57 - INFO - 编译成功
+2024-02-23 23:44:01,791 - Lang_57 - INFO - 测试失败
+2024-02-23 23:44:01,791 - Lang_57 - INFO - Failing tests: 11
+  - org.apache.commons.lang.LocaleUtilsTest::testAvailableLocaleSet
+  - org.apache.commons.lang.LocaleUtilsTest::testIsAvailableLocale
+  - org.apache.commons.lang.LocaleUtilsTest::testAvailableLocaleList
+  - org.apache.commons.lang.LocaleUtilsTest::testCountriesByLanguage
+  - org.apache.commons.lang.LocaleUtilsTest::testLocaleLookupList_LocaleLocale
+  - org.apache.commons.lang.LocaleUtilsTest::testLanguagesByCountry
+  - org.apache.commons.lang.LocaleUtilsTest::testToLocale_1Part
+  - org.apache.commons.lang.LocaleUtilsTest::testToLocale_2Part
+  - org.apache.commons.lang.LocaleUtilsTest::testToLocale_3Part
+  - org.apache.commons.lang.LocaleUtilsTest::testLocaleLookupList_Locale
+  - org.apache.commons.lang.LocaleUtilsTest::testConstructor
+
+2024-02-23 23:44:02,667 - Lang_57 - INFO - 它的bug类型为:
+2024-02-23 23:44:02,667 - Lang_57 - INFO - 1
+2024-02-23 23:45:16,292 - Lang_57 - INFO - 开始验证补丁1 1:
+2024-02-23 23:45:16,292 - Lang_57 - INFO - 
+    return cAvailableLocaleSet != null && cAvailableLocaleSet.contains(locale);
+
+2024-02-23 23:45:17,387 - Lang_57 - INFO - 编译成功
+2024-02-23 23:45:26,209 - Lang_57 - INFO - 测试成功
+2024-02-23 23:45:26,209 - Lang_57 - INFO - 补丁1 1 通过了所有的测试用例

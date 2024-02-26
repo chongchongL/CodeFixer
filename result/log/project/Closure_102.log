@@ -1,0 +1,418 @@
+2024-02-26 01:09:26,374 - Closure_102 - INFO - rm -rf /home/chongchong/d4j-project/Closure_102
+2024-02-26 01:09:26,375 - Closure_102 - INFO - 删除 Closure 102b 成功
+2024-02-26 01:09:26,375 - Closure_102 - INFO - defects4j checkout -p Closure -v 102b -w /home/chongchong/d4j-project/Closure_102
+2024-02-26 01:09:29,278 - Closure_102 - INFO - checkout Closure 102b 成功
+2024-02-26 01:09:34,818 - Closure_102 - INFO - 编译成功
+2024-02-26 01:09:56,637 - Closure_102 - INFO - 测试失败
+2024-02-26 01:09:56,637 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:09:57,534 - Closure_102 - INFO - 它的bug类型为:
+2024-02-26 01:09:57,534 - Closure_102 - INFO - 4
+2024-02-26 01:10:59,880 - Closure_102 - INFO - 开始验证补丁1 1:
+2024-02-26 01:10:59,881 - Closure_102 - INFO - 
+  }
+
+  @Override
+  public void process(Node externs, Node root) {
+    NodeTraversal.traverse(compiler, root, this);
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverseRoots(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+    new PropagateConstantAnnotations(compiler, assertOnChange)
+        .process(externs, root);
+  }
+
+  @Override
+
+2024-02-26 01:11:00,462 - Closure_102 - INFO - 编译失败
+2024-02-26 01:11:00,462 - Closure_102 - INFO - 错误: 非法的类型开始
+new PropogateConstantAnnotations(compiler, assertOnChange)
+2024-02-26 01:11:00,462 - Closure_102 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:11:00,463 - Closure_102 - INFO - 开始验证补丁1 2:
+2024-02-26 01:11:00,463 - Closure_102 - INFO - 
+  }
+
+  @Override
+  public void process(Node externs, Node root) {
+    NodeTraversal.traverse(compiler, root, this);
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverseRoots(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+    new PropagateConstantAnnotations(compiler, assertOnChange) // Correct the typo 'Propogate' to 'Propagate'
+        .process(externs, root);
+  }
+
+  @Override
+
+2024-02-26 01:11:01,047 - Closure_102 - INFO - 编译失败
+2024-02-26 01:11:01,047 - Closure_102 - INFO - 错误: 非法的类型开始
+new PropogateConstantAnnotations(compiler, assertOnChange)
+2024-02-26 01:11:01,047 - Closure_102 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:11:01,048 - Closure_102 - INFO - 开始验证补丁1 3:
+2024-02-26 01:11:01,048 - Closure_102 - INFO - 
+  }
+
+  @Override
+  public void process(Node externs, Node root) {
+    NodeTraversal.traverse(compiler, root, this);
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverse(root); // Removed 'externs' from the traversal if it's not to be processed
+    }
+    removeDuplicateDeclarations(root);
+    new PropagateConstantAnnotations(compiler, assertOnChange)
+        .process(externs, root);
+  }
+
+  @Override
+
+2024-02-26 01:11:01,634 - Closure_102 - INFO - 编译失败
+2024-02-26 01:11:01,635 - Closure_102 - INFO - 错误: 非法的类型开始
+new PropogateConstantAnnotations(compiler, assertOnChange)
+2024-02-26 01:11:01,635 - Closure_102 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:11:01,636 - Closure_102 - INFO - 开始验证补丁1 4:
+2024-02-26 01:11:01,636 - Closure_102 - INFO - 
+   if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+       t.traverseRoots(externs, root);
+   }
+   removeDuplicateDeclarations(root);
+   
+2024-02-26 01:11:02,840 - Closure_102 - INFO - 编译成功
+2024-02-26 01:11:24,897 - Closure_102 - INFO - 测试失败
+2024-02-26 01:11:24,897 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:11:25,344 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:11:25,344 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:11:25,344 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:11:25,344 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:11:25,344 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:11:25,344 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:11:25,344 - Closure_102 - INFO - 补丁1 4测试失败
+2024-02-26 01:11:25,345 - Closure_102 - INFO - 开始验证补丁1 5:
+2024-02-26 01:11:25,345 - Closure_102 - INFO - 
+   if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+       t.traverse(root);
+   }
+   removeDuplicateDeclarations(root);
+   
+2024-02-26 01:11:26,566 - Closure_102 - INFO - 编译成功
+2024-02-26 01:11:48,609 - Closure_102 - INFO - 测试失败
+2024-02-26 01:11:48,609 - Closure_102 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.GatherRawExportsTest::testExportsFound13
+  - com.google.javascript.jscomp.NormalizeTest::testMakeLocalNamesUnique
+
+2024-02-26 01:11:49,062 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:11:49,062 - Closure_102 - INFO - com.google.javascript.jscomp.GatherRawExportsTest::testExportsFound13
+2024-02-26 01:11:49,062 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:11:49,062 - Closure_102 - INFO -     assertExported("function foo() {var window; window['a'] = 1; }");
+
+2024-02-26 01:11:49,062 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:11:49,062 - Closure_102 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:11:49,062 - Closure_102 - INFO - 补丁1 5测试失败
+2024-02-26 01:11:49,063 - Closure_102 - INFO - 开始验证补丁1 6:
+2024-02-26 01:11:49,063 - Closure_102 - INFO - 
+   if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+       t.traverseRoots(externs, root);
+   } else {
+       removeDuplicateDeclarations(root);
+   }
+   
+2024-02-26 01:11:50,273 - Closure_102 - INFO - 编译成功
+2024-02-26 01:12:12,005 - Closure_102 - INFO - 测试失败
+2024-02-26 01:12:12,005 - Closure_102 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.CompilerRunnerTest::testCheckSymbolsOffForDefault
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+  - com.google.javascript.jscomp.InlineFunctionsTest::testComplexNoVarSub
+  - com.google.javascript.jscomp.InlineVariablesTest::testInlineUndefined3
+  - com.google.javascript.jscomp.NormalizeTest::testRemoveDuplicateVarDeclarations
+
+2024-02-26 01:12:12,453 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:12:12,453 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testCheckSymbolsOffForDefault
+2024-02-26 01:12:12,453 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:12:12,453 - Closure_102 - INFO -     test("x = 3; var y; var y;", "x=3; var y;");
+
+2024-02-26 01:12:12,453 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:12:12,453 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:12:12,453 - Closure_102 - INFO - 补丁1 6测试失败
+2024-02-26 01:12:12,455 - Closure_102 - INFO - 开始验证补丁1 7:
+2024-02-26 01:12:12,455 - Closure_102 - INFO - 
+  if (MAKE_LOCAL_NAMES_UNIQUE) {
+    MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+    NodeTraversal t = new NodeTraversal(compiler, renamer);
+    t.traverseRoots(externs, root);
+  }
+  removeDuplicateDeclarations(root);
+
+2024-02-26 01:12:13,667 - Closure_102 - INFO - 编译成功
+2024-02-26 01:12:35,645 - Closure_102 - INFO - 测试失败
+2024-02-26 01:12:35,645 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:12:36,101 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:12:36,101 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:12:36,102 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:12:36,102 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:12:36,102 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:12:36,102 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:12:36,102 - Closure_102 - INFO - 补丁1 7测试失败
+2024-02-26 01:12:36,103 - Closure_102 - INFO - 开始验证补丁1 8:
+2024-02-26 01:12:36,103 - Closure_102 - INFO - 
+  if (MAKE_LOCAL_NAMES_UNIQUE) {
+    MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+    NodeTraversal t = new NodeTraversal(compiler, renamer);
+    t.traverseAtScope(root);
+  }
+  removeDuplicateDeclarations(root);
+
+2024-02-26 01:12:36,893 - Closure_102 - INFO - 编译失败
+2024-02-26 01:12:36,893 - Closure_102 - INFO - 错误: 无法将类 NodeTraversal中的方法 traverseAtScope应用到给定类型;
+t.traverseAtScope(root);
+2024-02-26 01:12:36,893 - Closure_102 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:12:36,894 - Closure_102 - INFO - 开始验证补丁1 9:
+2024-02-26 01:12:36,894 - Closure_102 - INFO - 
+  if (MAKE_LOCAL_NAMES_UNIQUE) {
+    MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+    NodeTraversal t = new NodeTraversal(compiler, renamer);
+    // Assuming 'traverseGlobalScope' is a method that only applies to the global scope
+    t.traverseGlobalScope(root);
+  }
+  removeDuplicateDeclarations(root);
+
+2024-02-26 01:12:37,678 - Closure_102 - INFO - 编译失败
+2024-02-26 01:12:37,678 - Closure_102 - INFO - 错误: 找不到符号
+t.traverseGlobalScope(root);
+2024-02-26 01:12:37,678 - Closure_102 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:12:37,679 - Closure_102 - INFO - 开始验证补丁2 1:
+2024-02-26 01:12:37,679 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverseRoots(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:12:38,879 - Closure_102 - INFO - 编译成功
+2024-02-26 01:13:00,617 - Closure_102 - INFO - 测试失败
+2024-02-26 01:13:00,617 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:13:01,062 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:13:01,062 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:13:01,062 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:13:01,062 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:13:01,062 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:13:01,062 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:13:01,062 - Closure_102 - INFO - 补丁2 1测试失败
+2024-02-26 01:13:01,063 - Closure_102 - INFO - 开始验证补丁2 2:
+2024-02-26 01:13:01,063 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique(compiler);
+      renamer.process(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:13:01,881 - Closure_102 - INFO - 编译失败
+2024-02-26 01:13:01,881 - Closure_102 - INFO - 错误: 对于MakeDeclaredNamesUnique(AbstractCompiler), 找不到合适的构造器
+MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique(compiler);
+2024-02-26 01:13:01,881 - Closure_102 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:13:01,882 - Closure_102 - INFO - 开始验证补丁2 3:
+2024-02-26 01:13:01,882 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique(compiler);
+      renamer.traverseAndRename(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:13:02,668 - Closure_102 - INFO - 编译失败
+2024-02-26 01:13:02,668 - Closure_102 - INFO - 错误: 对于MakeDeclaredNamesUnique(AbstractCompiler), 找不到合适的构造器
+MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique(compiler);
+2024-02-26 01:13:02,668 - Closure_102 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:13:02,669 - Closure_102 - INFO - 开始验证补丁2 4:
+2024-02-26 01:13:02,669 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+        MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+        NodeTraversal t = new NodeTraversal(compiler, renamer);
+        t.traverseRoots(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:13:03,877 - Closure_102 - INFO - 编译成功
+2024-02-26 01:13:25,832 - Closure_102 - INFO - 测试失败
+2024-02-26 01:13:25,832 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:13:26,280 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:13:26,280 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:13:26,280 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:13:26,280 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:13:26,280 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:13:26,280 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:13:26,280 - Closure_102 - INFO - 补丁2 4测试失败
+2024-02-26 01:13:26,281 - Closure_102 - INFO - 开始验证补丁2 5:
+2024-02-26 01:13:26,281 - Closure_102 - INFO - 
+    if (this.MAKE_LOCAL_NAMES_UNIQUE) {
+        MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+        NodeTraversal t = new NodeTraversal(compiler, renamer);
+        t.traverseRoots(externs, root);
+    }
+    this.removeDuplicateDeclarations(root);
+
+2024-02-26 01:13:27,499 - Closure_102 - INFO - 编译成功
+2024-02-26 01:13:49,318 - Closure_102 - INFO - 测试失败
+2024-02-26 01:13:49,318 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:13:49,767 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:13:49,768 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:13:49,768 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:13:49,768 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:13:49,768 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:13:49,768 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:13:49,768 - Closure_102 - INFO - 补丁2 5测试失败
+2024-02-26 01:13:49,769 - Closure_102 - INFO - 开始验证补丁2 6:
+2024-02-26 01:13:49,769 - Closure_102 - INFO - 
+    if (compiler.getOptions().makeLocalNamesUnique) {
+        MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+        NodeTraversal t = new NodeTraversal(compiler, renamer);
+        t.traverseRoots(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:13:50,561 - Closure_102 - INFO - 编译失败
+2024-02-26 01:13:50,561 - Closure_102 - INFO - 错误: 找不到符号
+if (compiler.getOptions().makeLocalNamesUnique) {
+2024-02-26 01:13:50,561 - Closure_102 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:13:50,562 - Closure_102 - INFO - 开始验证补丁2 7:
+2024-02-26 01:13:50,562 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverseRoots(externs, root);
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:13:50,562 - Closure_102 - INFO - 补丁2 7为重复的补丁
+2024-02-26 01:13:50,563 - Closure_102 - INFO - 开始验证补丁2 8:
+2024-02-26 01:13:50,563 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverseRoots(externs, root);
+      removeDuplicateDeclarations(root);
+    }
+
+2024-02-26 01:13:51,767 - Closure_102 - INFO - 编译成功
+2024-02-26 01:14:13,857 - Closure_102 - INFO - 测试失败
+2024-02-26 01:14:13,858 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:14:14,306 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:14:14,306 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:14:14,306 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:14:14,307 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:14:14,307 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:14:14,307 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:14:14,307 - Closure_102 - INFO - 补丁2 8测试失败
+2024-02-26 01:14:14,308 - Closure_102 - INFO - 开始验证补丁2 9:
+2024-02-26 01:14:14,308 - Closure_102 - INFO - 
+    if (MAKE_LOCAL_NAMES_UNIQUE) {
+      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+      NodeTraversal t = new NodeTraversal(compiler, renamer);
+      t.traverseRoots(externs, root);
+      if (assertOnChange) {
+        compiler.reportChangeToEnclosingScope(root);
+      }
+    }
+    removeDuplicateDeclarations(root);
+
+2024-02-26 01:14:15,093 - Closure_102 - INFO - 编译失败
+2024-02-26 01:14:15,093 - Closure_102 - INFO - 错误: 找不到符号
+compiler.reportChangeToEnclosingScope(root);
+2024-02-26 01:14:15,093 - Closure_102 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:14:15,094 - Closure_102 - INFO - 开始验证补丁3 1:
+2024-02-26 01:14:15,094 - Closure_102 - INFO - 
+if (MAKE_LOCAL_NAMES_UNIQUE) {
+  MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+  NodeTraversal t = new NodeTraversal(compiler, renamer);
+  t.traverseRoots(externs, root);
+}
+removeDuplicateDeclarations(root);
+
+2024-02-26 01:14:16,292 - Closure_102 - INFO - 编译成功
+2024-02-26 01:14:37,968 - Closure_102 - INFO - 测试失败
+2024-02-26 01:14:37,968 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:14:38,415 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:14:38,415 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:14:38,415 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:14:38,415 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:14:38,415 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:14:38,415 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:14:38,416 - Closure_102 - INFO - 补丁3 1测试失败
+2024-02-26 01:14:38,417 - Closure_102 - INFO - 开始验证补丁3 2:
+2024-02-26 01:14:38,417 - Closure_102 - INFO - 
+if (MAKE_LOCAL_NAMES_UNIQUE) {
+  MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+  NodeTraversal t = new NodeTraversal(compiler, renamer);
+  t.traverseRoots(externs, root);
+  removeDuplicateDeclarations(root); // This line is now inside the conditional block
+}
+
+2024-02-26 01:14:39,640 - Closure_102 - INFO - 编译成功
+2024-02-26 01:15:01,763 - Closure_102 - INFO - 测试失败
+2024-02-26 01:15:01,764 - Closure_102 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+
+2024-02-26 01:15:02,220 - Closure_102 - INFO - 选择失败的测试用例为:
+2024-02-26 01:15:02,220 - Closure_102 - INFO - com.google.javascript.jscomp.CompilerRunnerTest::testIssue115
+2024-02-26 01:15:02,220 - Closure_102 - INFO - 失败的测试代码为:
+2024-02-26 01:15:02,220 - Closure_102 - INFO -     test("function f() { " +
+
+2024-02-26 01:15:02,220 - Closure_102 - INFO - 失败信息为:
+2024-02-26 01:15:02,220 - Closure_102 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:15:02,220 - Closure_102 - INFO - 补丁3 2测试失败
+2024-02-26 01:15:02,221 - Closure_102 - INFO - 开始验证补丁3 3:
+2024-02-26 01:15:02,221 - Closure_102 - INFO - 
+removeDuplicateDeclarations(root);
+if (MAKE_LOCAL_NAMES_UNIQUE) {
+  MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+  NodeTraversal t = new NodeTraversal(compiler, renamer);
+  t.traverseRoots(externs, root);
+}
+
+2024-02-26 01:15:03,458 - Closure_102 - INFO - 编译成功
+2024-02-26 01:15:25,233 - Closure_102 - INFO - 测试成功
+2024-02-26 01:15:25,233 - Closure_102 - INFO - 补丁3 3 通过了所有的测试用例

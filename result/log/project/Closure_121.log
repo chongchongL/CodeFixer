@@ -1,0 +1,235 @@
+2024-02-26 01:15:25,237 - Closure_121 - INFO - rm -rf /home/chongchong/d4j-project/Closure_121
+2024-02-26 01:15:25,237 - Closure_121 - INFO - 删除 Closure 121b 成功
+2024-02-26 01:15:25,238 - Closure_121 - INFO - defects4j checkout -p Closure -v 121b -w /home/chongchong/d4j-project/Closure_121
+2024-02-26 01:15:28,052 - Closure_121 - INFO - checkout Closure 121b 成功
+2024-02-26 01:15:40,083 - Closure_121 - INFO - 编译成功
+2024-02-26 01:16:39,347 - Closure_121 - INFO - 测试失败
+2024-02-26 01:16:39,347 - Closure_121 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-26 01:16:40,382 - Closure_121 - INFO - 它的bug类型为:
+2024-02-26 01:16:40,382 - Closure_121 - INFO - 4
+2024-02-26 01:17:45,375 - Closure_121 - INFO - 开始验证补丁1 1:
+2024-02-26 01:17:45,375 - Closure_121 - INFO - 
+          referenceInfo.isAssignedOnceInLifetime()) {
+
+2024-02-26 01:17:49,617 - Closure_121 - INFO - 编译成功
+2024-02-26 01:18:48,264 - Closure_121 - INFO - 测试失败
+2024-02-26 01:18:48,264 - Closure_121 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-26 01:18:48,788 - Closure_121 - INFO - 选择失败的测试用例为:
+2024-02-26 01:18:48,788 - Closure_121 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-26 01:18:48,788 - Closure_121 - INFO - 失败的测试代码为:
+2024-02-26 01:18:48,788 - Closure_121 - INFO -     testSame(
+
+2024-02-26 01:18:48,788 - Closure_121 - INFO - 失败信息为:
+2024-02-26 01:18:48,788 - Closure_121 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:18:48,788 - Closure_121 - INFO - 补丁1 1测试失败
+2024-02-26 01:18:48,789 - Closure_121 - INFO - 开始验证补丁1 2:
+2024-02-26 01:18:48,789 - Closure_121 - INFO - 
+          referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isConstant()) {
+
+2024-02-26 01:18:50,812 - Closure_121 - INFO - 编译失败
+2024-02-26 01:18:50,813 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isConstant()) {
+2024-02-26 01:18:50,813 - Closure_121 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:18:50,814 - Closure_121 - INFO - 开始验证补丁1 3:
+2024-02-26 01:18:50,814 - Closure_121 - INFO - 
+          referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isSafeToInline()) {
+
+2024-02-26 01:18:52,869 - Closure_121 - INFO - 编译失败
+2024-02-26 01:18:52,869 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isSafeToInline()) {
+2024-02-26 01:18:52,869 - Closure_121 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:18:52,870 - Closure_121 - INFO - 开始验证补丁1 4:
+2024-02-26 01:18:52,870 - Closure_121 - INFO - 
+      referenceInfo.isAssignedOnceInLifetime()) {
+
+2024-02-26 01:18:57,079 - Closure_121 - INFO - 编译成功
+2024-02-26 01:19:55,802 - Closure_121 - INFO - 测试失败
+2024-02-26 01:19:55,802 - Closure_121 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-26 01:19:56,343 - Closure_121 - INFO - 选择失败的测试用例为:
+2024-02-26 01:19:56,343 - Closure_121 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-26 01:19:56,343 - Closure_121 - INFO - 失败的测试代码为:
+2024-02-26 01:19:56,343 - Closure_121 - INFO -     testSame(
+
+2024-02-26 01:19:56,343 - Closure_121 - INFO - 失败信息为:
+2024-02-26 01:19:56,343 - Closure_121 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 01:19:56,343 - Closure_121 - INFO - 补丁1 4测试失败
+2024-02-26 01:19:56,344 - Closure_121 - INFO - 开始验证补丁1 5:
+2024-02-26 01:19:56,344 - Closure_121 - INFO - 
+      referenceInfo.isSafelyInlineable()) {
+
+2024-02-26 01:19:58,371 - Closure_121 - INFO - 编译失败
+2024-02-26 01:19:58,371 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isSafelyInlineable()) {
+2024-02-26 01:19:58,371 - Closure_121 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:19:58,372 - Closure_121 - INFO - 开始验证补丁1 6:
+2024-02-26 01:19:58,372 - Closure_121 - INFO - 
+      (referenceInfo.isAssignedOnceInLifetime() || variable.isDeclaredConstant())) {
+
+2024-02-26 01:20:00,427 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:00,427 - Closure_121 - INFO - 错误: 找不到符号
+(referenceInfo.isAssignedOnceInLifetime() || variable.isDeclaredConstant())) {
+2024-02-26 01:20:00,427 - Closure_121 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:20:00,428 - Closure_121 - INFO - 开始验证补丁1 7:
+2024-02-26 01:20:00,428 - Closure_121 - INFO - 
+referenceInfo.isAssignedOnceInLifetime() && extraCondition()) {
+
+2024-02-26 01:20:02,519 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:02,519 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && extraCondition()) {
+2024-02-26 01:20:02,519 - Closure_121 - INFO - 补丁1 7 未成功编译
+2024-02-26 01:20:02,520 - Closure_121 - INFO - 开始验证补丁1 8:
+2024-02-26 01:20:02,520 - Closure_121 - INFO - 
+referenceInfo.isAssignedOnceCorrectly()) {
+
+2024-02-26 01:20:04,575 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:04,575 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceCorrectly()) {
+2024-02-26 01:20:04,575 - Closure_121 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:20:04,576 - Closure_121 - INFO - 开始验证补丁1 9:
+2024-02-26 01:20:04,576 - Closure_121 - INFO - 
+referenceInfo.isAssignedOnceInLifetime() && isSafeToInline(v)) {
+
+2024-02-26 01:20:06,604 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:06,604 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && isSafeToInline(v)) {
+2024-02-26 01:20:06,604 - Closure_121 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:20:06,605 - Closure_121 - INFO - 开始验证补丁2 1:
+2024-02-26 01:20:06,605 - Closure_121 - INFO - 
+referenceInfo.isConstant()) {
+
+2024-02-26 01:20:08,635 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:08,635 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isConstant()) {
+2024-02-26 01:20:08,635 - Closure_121 - INFO - 补丁2 1 未成功编译
+2024-02-26 01:20:08,636 - Closure_121 - INFO - 开始验证补丁2 2:
+2024-02-26 01:20:08,636 - Closure_121 - INFO - 
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isConstant()) {
+
+2024-02-26 01:20:10,671 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:10,671 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isConstant()) {
+2024-02-26 01:20:10,671 - Closure_121 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:20:10,672 - Closure_121 - INFO - 开始验证补丁2 3:
+2024-02-26 01:20:10,672 - Closure_121 - INFO - 
+!referenceInfo.hasSideEffects() && referenceInfo.isAssignedOnceInLifetime()) {
+
+2024-02-26 01:20:12,733 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:12,733 - Closure_121 - INFO - 错误: 找不到符号
+!referenceInfo.hasSideEffects() && referenceInfo.isAssignedOnceInLifetime()) {
+2024-02-26 01:20:12,733 - Closure_121 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:20:12,734 - Closure_121 - INFO - 开始验证补丁2 4:
+2024-02-26 01:20:12,734 - Closure_121 - INFO - 
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant()) {
+
+2024-02-26 01:20:14,776 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:14,776 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant()) {
+2024-02-26 01:20:14,776 - Closure_121 - INFO - 补丁2 4 未成功编译
+2024-02-26 01:20:14,778 - Closure_121 - INFO - 开始验证补丁2 5:
+2024-02-26 01:20:14,778 - Closure_121 - INFO - 
+referenceInfo.isAssignedOnceInLifetime() && canSafelyInlineVariable(v)) {
+
+2024-02-26 01:20:16,813 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:16,813 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && canSafelyInlineVariable(v)) {
+2024-02-26 01:20:16,813 - Closure_121 - INFO - 补丁2 5 未成功编译
+2024-02-26 01:20:16,814 - Closure_121 - INFO - 开始验证补丁2 6:
+2024-02-26 01:20:16,814 - Closure_121 - INFO - 
+canInlineVariable(referenceInfo)) {
+
+2024-02-26 01:20:18,864 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:18,864 - Closure_121 - INFO - 错误: 找不到符号
+canInlineVariable(referenceInfo)) {
+2024-02-26 01:20:18,864 - Closure_121 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:20:18,865 - Closure_121 - INFO - 开始验证补丁2 7:
+2024-02-26 01:20:18,865 - Closure_121 - INFO - 
+    if (!maybeModifiedArguments &&
+        !staleVars.contains(v) &&
+        referenceInfo.isWellDefined() &&
+        referenceInfo.hasNoSideEffects() && // adding condition to check for absence of side effects
+        referenceInfo.isAssignedOnceInLifetime()) {
+
+2024-02-26 01:20:20,710 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:20,711 - Closure_121 - INFO - 错误: 非法的表达式开始
+if (!maybeModifiedArguments &&
+2024-02-26 01:20:20,711 - Closure_121 - INFO - 补丁2 7 未成功编译
+2024-02-26 01:20:20,712 - Closure_121 - INFO - 开始验证补丁2 8:
+2024-02-26 01:20:20,712 - Closure_121 - INFO - 
+    if (!maybeModifiedArguments &&
+        !staleVars.contains(v) &&
+        referenceInfo.isWellDefined() &&
+        (referenceInfo.isDeclaredConstant() || referenceInfo.isAssignedOnceInLifetime())) {
+
+2024-02-26 01:20:22,542 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:22,543 - Closure_121 - INFO - 错误: 非法的表达式开始
+if (!maybeModifiedArguments &&
+2024-02-26 01:20:22,543 - Closure_121 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:20:22,544 - Closure_121 - INFO - 开始验证补丁2 9:
+2024-02-26 01:20:22,544 - Closure_121 - INFO - 
+    if (!maybeModifiedArguments &&
+        !staleVars.contains(v) &&
+        referenceInfo.isWellDefined() &&
+        referenceInfo.isAssignedOnceInLifetime() &&
+        referenceInfo.isSafeToInline()) { // Check that it is safe to inline the variable
+
+2024-02-26 01:20:24,402 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:24,402 - Closure_121 - INFO - 错误: 非法的表达式开始
+if (!maybeModifiedArguments &&
+2024-02-26 01:20:24,402 - Closure_121 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:20:24,403 - Closure_121 - INFO - 开始验证补丁3 1:
+2024-02-26 01:20:24,403 - Closure_121 - INFO - 
+      referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isConstant()) {
+
+2024-02-26 01:20:26,459 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:26,459 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isConstant()) {
+2024-02-26 01:20:26,459 - Closure_121 - INFO - 补丁3 1 未成功编译
+2024-02-26 01:20:26,461 - Closure_121 - INFO - 开始验证补丁3 2:
+2024-02-26 01:20:26,461 - Closure_121 - INFO - 
+      referenceInfo.isAssignedOnceInLifetime() && !referenceInfo.hasEscapeAnalysisIssues()) {
+
+2024-02-26 01:20:28,525 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:28,525 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && !referenceInfo.hasEscapeAnalysisIssues()) {
+2024-02-26 01:20:28,526 - Closure_121 - INFO - 补丁3 2 未成功编译
+2024-02-26 01:20:28,527 - Closure_121 - INFO - 开始验证补丁3 3:
+2024-02-26 01:20:28,527 - Closure_121 - INFO - 
+      referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isImmutable()) {
+
+2024-02-26 01:20:30,569 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:30,569 - Closure_121 - INFO - 错误: 找不到符号
+referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isImmutable()) {
+2024-02-26 01:20:30,569 - Closure_121 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:20:30,570 - Closure_121 - INFO - 开始验证补丁3 4:
+2024-02-26 01:20:30,570 - Closure_121 - INFO - 
+(referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant())) {
+
+2024-02-26 01:20:32,628 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:32,628 - Closure_121 - INFO - 错误: 找不到符号
+(referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant())) {
+2024-02-26 01:20:32,628 - Closure_121 - INFO - 补丁3 4 未成功编译
+2024-02-26 01:20:32,629 - Closure_121 - INFO - 开始验证补丁3 5:
+2024-02-26 01:20:32,629 - Closure_121 - INFO - 
+(referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant() && !referenceInfo.mayHaveSideEffects())) {
+
+2024-02-26 01:20:34,708 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:34,708 - Closure_121 - INFO - 错误: 找不到符号
+(referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant() && !referenceInfo.mayHaveSideEffects())) {
+2024-02-26 01:20:34,708 - Closure_121 - INFO - 补丁3 5 未成功编译
+2024-02-26 01:20:34,709 - Closure_121 - INFO - 开始验证补丁3 6:
+2024-02-26 01:20:34,709 - Closure_121 - INFO - 
+(referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant() && referenceInfo.isSafeToInline())) {
+
+2024-02-26 01:20:36,778 - Closure_121 - INFO - 编译失败
+2024-02-26 01:20:36,778 - Closure_121 - INFO - 错误: 找不到符号
+(referenceInfo.isAssignedOnceInLifetime() && referenceInfo.isDeclaredConstant() && referenceInfo.isSafeToInline())) {
+2024-02-26 01:20:36,778 - Closure_121 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:20:36,778 - Closure_121 - INFO - Closure_121 未成功修复

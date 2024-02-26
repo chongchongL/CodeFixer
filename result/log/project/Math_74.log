@@ -1,0 +1,594 @@
+2024-02-26 01:50:54,851 - Math_74 - INFO - rm -rf /home/chongchong/d4j-project/Math_74
+2024-02-26 01:50:54,852 - Math_74 - INFO - 删除 Math 74b 成功
+2024-02-26 01:50:54,852 - Math_74 - INFO - defects4j checkout -p Math -v 74b -w /home/chongchong/d4j-project/Math_74
+2024-02-26 01:50:57,292 - Math_74 - INFO - checkout Math 74b 成功
+2024-02-26 01:51:02,863 - Math_74 - INFO - 编译成功
+2024-02-26 01:51:09,697 - Math_74 - INFO - 测试失败
+2024-02-26 01:51:09,697 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:51:10,617 - Math_74 - INFO - 它的bug类型为:
+2024-02-26 01:51:10,617 - Math_74 - INFO - 4
+2024-02-26 01:52:02,835 - Math_74 - INFO - 开始验证补丁1 1:
+2024-02-26 01:52:02,835 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length]; // Ensure using correct reference 'y.length' instead of 'y0.length'
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:52:04,098 - Math_74 - INFO - 编译成功
+2024-02-26 01:52:10,995 - Math_74 - INFO - 测试失败
+2024-02-26 01:52:10,995 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:52:11,465 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:52:11,465 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:52:11,465 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:52:11,465 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:52:11,465 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:52:11,465 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:52:11,465 - Math_74 - INFO - 补丁1 1测试失败
+2024-02-26 01:52:11,466 - Math_74 - INFO - 开始验证补丁1 2:
+2024-02-26 01:52:11,466 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    if (vecAbsoluteTolerance.length != y.length) {
+        throw new IllegalArgumentException("vecAbsoluteTolerance length must match y length.");
+    }
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:52:12,725 - Math_74 - INFO - 编译成功
+2024-02-26 01:52:19,323 - Math_74 - INFO - 测试失败
+2024-02-26 01:52:19,324 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:52:19,786 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:52:19,786 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:52:19,786 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:52:19,787 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:52:19,787 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:52:19,787 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:52:19,787 - Math_74 - INFO - 补丁1 2测试失败
+2024-02-26 01:52:19,788 - Math_74 - INFO - 开始验证补丁1 3:
+2024-02-26 01:52:19,788 - Math_74 - INFO - 
+final double[] scale = new double[y.length];
+if (vecAbsoluteTolerance == null) {
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    System.arraycopy(vecAbsoluteTolerance, 0, scale, 0, y.length);
+}
+
+2024-02-26 01:52:21,023 - Math_74 - INFO - 编译成功
+2024-02-26 01:52:27,449 - Math_74 - INFO - 测试失败
+2024-02-26 01:52:27,449 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:52:27,914 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:52:27,914 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:52:27,914 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:52:27,914 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:52:27,914 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:52:27,914 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:52:27,914 - Math_74 - INFO - 补丁1 3测试失败
+2024-02-26 01:52:27,915 - Math_74 - INFO - 开始验证补丁1 4:
+2024-02-26 01:52:27,915 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:52:29,219 - Math_74 - INFO - 编译成功
+2024-02-26 01:52:35,991 - Math_74 - INFO - 测试失败
+2024-02-26 01:52:35,991 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:52:36,458 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:52:36,458 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:52:36,458 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:52:36,458 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:52:36,458 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:52:36,458 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:52:36,458 - Math_74 - INFO - 补丁1 4测试失败
+2024-02-26 01:52:36,459 - Math_74 - INFO - 开始验证补丁1 5:
+2024-02-26 01:52:36,459 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else if (vecAbsoluteTolerance.length == y.length) {
+    scale = vecAbsoluteTolerance;
+} else {
+    throw new IllegalArgumentException("vecAbsoluteTolerance has incorrect length");
+}
+
+2024-02-26 01:52:37,709 - Math_74 - INFO - 编译成功
+2024-02-26 01:52:44,205 - Math_74 - INFO - 测试失败
+2024-02-26 01:52:44,205 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:52:44,671 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:52:44,671 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:52:44,671 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:52:44,672 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:52:44,672 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:52:44,672 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:52:44,672 - Math_74 - INFO - 补丁1 5测试失败
+2024-02-26 01:52:44,673 - Math_74 - INFO - 开始验证补丁1 6:
+2024-02-26 01:52:44,673 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length];
+    for (int i = 0; i < scale.length; i++) {
+        scale[i] = someFunctionToDetermineTolerance(y[i]); // This function needs to be defined.
+    }
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:52:45,406 - Math_74 - INFO - 编译失败
+2024-02-26 01:52:45,407 - Math_74 - INFO - 错误: 找不到符号
+scale[i] = someFunctionToDetermineTolerance(y[i]); // This function needs to be defined.
+2024-02-26 01:52:45,407 - Math_74 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:52:45,408 - Math_74 - INFO - 开始验证补丁1 7:
+2024-02-26 01:52:45,408 - Math_74 - INFO - 
+          final double[] scale;
+          if (vecAbsoluteTolerance == null) {
+              scale = new double[y.length]; // Assuming `y` is the current state vector
+              java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+          } else {
+              scale = vecAbsoluteTolerance;
+          }
+
+2024-02-26 01:52:46,658 - Math_74 - INFO - 编译成功
+2024-02-26 01:52:53,365 - Math_74 - INFO - 测试失败
+2024-02-26 01:52:53,365 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:52:53,835 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:52:53,835 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:52:53,835 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:52:53,835 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:52:53,835 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:52:53,835 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:52:53,835 - Math_74 - INFO - 补丁1 7测试失败
+2024-02-26 01:52:53,836 - Math_74 - INFO - 开始验证补丁1 8:
+2024-02-26 01:52:53,836 - Math_74 - INFO - 
+          final double[] scale = vecAbsoluteTolerance != null ? vecAbsoluteTolerance : new double[y.length];
+          if (vecAbsoluteTolerance == null) {
+              java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+          }
+
+2024-02-26 01:52:55,075 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:01,895 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:01,895 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:02,354 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:02,354 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:02,354 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:02,354 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:02,354 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:02,354 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:02,355 - Math_74 - INFO - 补丁1 8测试失败
+2024-02-26 01:53:02,355 - Math_74 - INFO - 开始验证补丁1 9:
+2024-02-26 01:53:02,355 - Math_74 - INFO - 
+          final double[] scale;
+          if (vecAbsoluteTolerance == null) {
+              scale = new double[y.length]; // Correct array initialization based on `y`
+              for (int i = 0; i < scale.length; i++) {
+                  scale[i] = scalAbsoluteTolerance; // Explicitly set each index for clarity
+              }
+          } else {
+              scale = vecAbsoluteTolerance;
+          }
+
+2024-02-26 01:53:03,595 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:10,213 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:10,213 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:10,677 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:10,677 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:10,677 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:10,677 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:10,677 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:10,677 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:10,677 - Math_74 - INFO - 补丁1 9测试失败
+2024-02-26 01:53:10,678 - Math_74 - INFO - 开始验证补丁2 1:
+2024-02-26 01:53:10,678 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length];  // Assuming 'y' is the current state array and it is properly initialized
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:53:11,909 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:18,732 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:18,732 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:19,203 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:19,203 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:19,203 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:19,203 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:19,203 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:19,203 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:19,203 - Math_74 - INFO - 补丁2 1测试失败
+2024-02-26 01:53:19,204 - Math_74 - INFO - 开始验证补丁2 2:
+2024-02-26 01:53:19,204 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y0.length];  // Here 'y0' is the initial state vector and its length is used
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:53:20,437 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:27,203 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:27,203 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:27,678 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:27,678 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:27,678 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:27,678 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:27,678 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:27,678 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:27,678 - Math_74 - INFO - 补丁2 2测试失败
+2024-02-26 01:53:27,679 - Math_74 - INFO - 开始验证补丁2 3:
+2024-02-26 01:53:27,680 - Math_74 - INFO - 
+final double[] scale = vecAbsoluteTolerance; // Assuming 'vecAbsoluteTolerance' must be provided and is not null
+
+2024-02-26 01:53:28,276 - Math_74 - INFO - 编译失败
+2024-02-26 01:53:28,276 - Math_74 - INFO - 错误: 方法声明无效; 需要返回类型
+resetInternalState();
+2024-02-26 01:53:28,276 - Math_74 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:53:28,277 - Math_74 - INFO - 开始验证补丁2 4:
+2024-02-26 01:53:28,277 - Math_74 - INFO - 
+final double[] scale = new double[y.length];
+if (vecAbsoluteTolerance == null) {
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    System.arraycopy(vecAbsoluteTolerance, 0, scale, 0, vecAbsoluteTolerance.length);
+}
+
+2024-02-26 01:53:29,505 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:36,049 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:36,049 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:36,514 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:36,514 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:36,514 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:36,514 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:36,514 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:36,514 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:36,514 - Math_74 - INFO - 补丁2 4测试失败
+2024-02-26 01:53:36,515 - Math_74 - INFO - 开始验证补丁2 5:
+2024-02-26 01:53:36,515 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y0.length];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:53:37,754 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:44,624 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:44,624 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:45,090 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:45,090 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:45,090 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:45,090 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:45,090 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:45,090 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:45,090 - Math_74 - INFO - 补丁2 5测试失败
+2024-02-26 01:53:45,091 - Math_74 - INFO - 开始验证补丁2 6:
+2024-02-26 01:53:45,091 - Math_74 - INFO - 
+final double[] scale;
+try {
+    if (vecAbsoluteTolerance == null) {
+        scale = new double[y.length];
+        java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+    } else {
+        scale = vecAbsoluteTolerance;
+    }
+} catch (Exception e) {
+    // Handle exception, possibly related to y, y0 or vecAbsoluteTolerance
+}
+
+2024-02-26 01:53:45,825 - Math_74 - INFO - 编译失败
+2024-02-26 01:53:45,825 - Math_74 - INFO - 错误: 可能尚未初始化变量scale
+hNew = initializeStep(equations, forward, getOrder(), scale,
+2024-02-26 01:53:45,825 - Math_74 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:53:45,826 - Math_74 - INFO - 开始验证补丁2 7:
+2024-02-26 01:53:45,826 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length]; // Assuming y.length is the correct dimension if y0 is not provided in context
+    Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:53:46,552 - Math_74 - INFO - 编译失败
+2024-02-26 01:53:46,552 - Math_74 - INFO - 错误: 找不到符号
+Arrays.fill(scale, scalAbsoluteTolerance);
+2024-02-26 01:53:46,552 - Math_74 - INFO - 补丁2 7 未成功编译
+2024-02-26 01:53:46,553 - Math_74 - INFO - 开始验证补丁2 8:
+2024-02-26 01:53:46,553 - Math_74 - INFO - 
+final double[] scale = new double[y.length]; // Same assumption as above
+if (vecAbsoluteTolerance == null) {
+    Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    System.arraycopy(vecAbsoluteTolerance, 0, scale, 0, vecAbsoluteTolerance.length);
+}
+
+2024-02-26 01:53:47,293 - Math_74 - INFO - 编译失败
+2024-02-26 01:53:47,293 - Math_74 - INFO - 错误: 找不到符号
+Arrays.fill(scale, scalAbsoluteTolerance);
+2024-02-26 01:53:47,294 - Math_74 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:53:47,295 - Math_74 - INFO - 开始验证补丁2 9:
+2024-02-26 01:53:47,295 - Math_74 - INFO - 
+final double[] scale = (vecAbsoluteTolerance != null) ? vecAbsoluteTolerance
+                           : java.util.Arrays.copyOf(y, y.length); // Assuming same dimension as y
+if (vecAbsoluteTolerance == null) {
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+}
+
+2024-02-26 01:53:48,536 - Math_74 - INFO - 编译成功
+2024-02-26 01:53:55,033 - Math_74 - INFO - 测试失败
+2024-02-26 01:53:55,033 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:53:55,502 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:53:55,502 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:53:55,502 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:53:55,502 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:53:55,502 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:53:55,502 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:53:55,502 - Math_74 - INFO - 补丁2 9测试失败
+2024-02-26 01:53:55,503 - Math_74 - INFO - 开始验证补丁3 1:
+2024-02-26 01:53:55,503 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:53:55,503 - Math_74 - INFO - 补丁3 1为重复的补丁
+2024-02-26 01:53:55,504 - Math_74 - INFO - 开始验证补丁3 2:
+2024-02-26 01:53:55,504 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    if (y0 != null && y0.length == y.length) {
+        scale = new double[y0.length];
+    } else {
+        throw new IllegalArgumentException("y0 must not be null and must have the same length as y.");
+    }
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:53:56,751 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:03,596 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:03,596 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:54:04,061 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:04,061 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:04,061 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:04,061 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:04,061 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:04,061 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:04,061 - Math_74 - INFO - 补丁3 2测试失败
+2024-02-26 01:54:04,062 - Math_74 - INFO - 开始验证补丁3 3:
+2024-02-26 01:54:04,062 - Math_74 - INFO - 
+final double[] scale = new double[y.length];
+if (vecAbsoluteTolerance != null) {
+    System.arraycopy(vecAbsoluteTolerance, 0, scale, 0, y.length);
+} else if (scalAbsoluteTolerance != Double.NaN) {
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    // Set all elements to a default value, assuming DEFAULT_TOLERANCE is defined elsewhere
+    java.util.Arrays.fill(scale, DEFAULT_TOLERANCE);
+}
+
+2024-02-26 01:54:04,796 - Math_74 - INFO - 编译失败
+2024-02-26 01:54:04,796 - Math_74 - INFO - 错误: 找不到符号
+java.util.Arrays.fill(scale, DEFAULT_TOLERANCE);
+2024-02-26 01:54:04,796 - Math_74 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:54:04,797 - Math_74 - INFO - 开始验证补丁3 4:
+2024-02-26 01:54:04,797 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length]; // Replaced y0 with y to match the length of the state vector
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:54:06,042 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:12,849 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:12,849 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:54:13,305 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:13,306 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:13,306 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:13,306 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:13,306 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:13,306 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:13,306 - Math_74 - INFO - 补丁3 4测试失败
+2024-02-26 01:54:13,307 - Math_74 - INFO - 开始验证补丁3 5:
+2024-02-26 01:54:13,307 - Math_74 - INFO - 
+final double[] scale = vecAbsoluteTolerance != null ? vecAbsoluteTolerance : new double[y.length];
+if (vecAbsoluteTolerance == null) {
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+}
+
+2024-02-26 01:54:14,534 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:21,371 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:21,371 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:54:21,843 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:21,843 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:21,843 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:21,843 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:21,843 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:21,843 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:21,843 - Math_74 - INFO - 补丁3 5测试失败
+2024-02-26 01:54:21,844 - Math_74 - INFO - 开始验证补丁3 6:
+2024-02-26 01:54:21,844 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length]; // Assuming y contains the current state and its length is correct
+    for (int i = 0; i < scale.length; i++) {
+        scale[i] = scalAbsoluteTolerance;
+    }
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:54:23,074 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:29,855 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:29,855 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:54:30,325 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:30,325 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:30,325 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:30,325 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:30,325 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:30,325 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:30,325 - Math_74 - INFO - 补丁3 6测试失败
+2024-02-26 01:54:30,326 - Math_74 - INFO - 开始验证补丁3 7:
+2024-02-26 01:54:30,326 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    scale = new double[y.length]; // Assuming `y` refers to the current state array
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:54:31,581 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:38,477 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:38,477 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:54:38,933 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:38,933 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:38,933 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:38,933 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:38,933 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:38,933 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:38,933 - Math_74 - INFO - 补丁3 7测试失败
+2024-02-26 01:54:38,934 - Math_74 - INFO - 开始验证补丁3 8:
+2024-02-26 01:54:38,934 - Math_74 - INFO - 
+final double[] scale;
+int yLength = yDotK[0].length; // Assuming yDotK[0] has the same length as `y`
+if (vecAbsoluteTolerance == null) {
+    scale = new double[yLength];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:54:40,209 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:47,044 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:47,044 - Math_74 - INFO - Failing tests: 2
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+  - org.apache.commons.math.stat.descriptive.moment.MeanTest::testWeightedConsistency
+
+2024-02-26 01:54:47,507 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:47,507 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:47,507 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:47,507 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:47,507 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:47,507 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:47,507 - Math_74 - INFO - 补丁3 8测试失败
+2024-02-26 01:54:47,508 - Math_74 - INFO - 开始验证补丁3 9:
+2024-02-26 01:54:47,508 - Math_74 - INFO - 
+final double[] scale;
+if (vecAbsoluteTolerance == null) {
+    int maxLength = Math.max(y.length, yDotK[0].length); // Using the max length as a safeguard
+    scale = new double[maxLength];
+    java.util.Arrays.fill(scale, scalAbsoluteTolerance);
+} else {
+    scale = vecAbsoluteTolerance;
+}
+
+2024-02-26 01:54:48,750 - Math_74 - INFO - 编译成功
+2024-02-26 01:54:55,706 - Math_74 - INFO - 测试失败
+2024-02-26 01:54:55,706 - Math_74 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+
+2024-02-26 01:54:56,176 - Math_74 - INFO - 选择失败的测试用例为:
+2024-02-26 01:54:56,176 - Math_74 - INFO - org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegratorTest::polynomial
+2024-02-26 01:54:56,177 - Math_74 - INFO - 失败的测试代码为:
+2024-02-26 01:54:56,177 - Math_74 - INFO -                 assertTrue(integ.getEvaluations() < 90);
+
+2024-02-26 01:54:56,177 - Math_74 - INFO - 失败信息为:
+2024-02-26 01:54:56,177 - Math_74 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:54:56,177 - Math_74 - INFO - 补丁3 9测试失败
+2024-02-26 01:54:56,177 - Math_74 - INFO - Math_74 未成功修复

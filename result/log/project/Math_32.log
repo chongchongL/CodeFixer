@@ -1,0 +1,100 @@
+2024-02-24 01:02:18,720 - Math_32 - INFO - rm -rf /home/chongchong/d4j-project/Math_32
+2024-02-24 01:02:18,721 - Math_32 - INFO - 删除 Math 32b 成功
+2024-02-24 01:02:18,721 - Math_32 - INFO - defects4j checkout -p Math -v 32b -w /home/chongchong/d4j-project/Math_32
+2024-02-24 01:02:22,148 - Math_32 - INFO - checkout Math 32b 成功
+2024-02-24 01:02:28,971 - Math_32 - INFO - 编译成功
+2024-02-24 01:02:58,412 - Math_32 - INFO - 测试失败
+2024-02-24 01:02:58,412 - Math_32 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSetTest::testIssue780
+
+2024-02-24 01:02:59,328 - Math_32 - INFO - 它的bug类型为:
+2024-02-24 01:02:59,328 - Math_32 - INFO - 1
+2024-02-24 01:03:26,717 - Math_32 - INFO - Math_32 未成功修复
+2024-02-24 09:23:46,073 - Math_32 - INFO - rm -rf /home/chongchong/d4j-project/Math_32
+2024-02-24 09:23:46,107 - Math_32 - INFO - 删除 Math 32b 成功
+2024-02-24 09:23:46,107 - Math_32 - INFO - defects4j checkout -p Math -v 32b -w /home/chongchong/d4j-project/Math_32
+2024-02-24 09:23:49,554 - Math_32 - INFO - checkout Math 32b 成功
+2024-02-24 09:23:56,413 - Math_32 - INFO - 编译成功
+2024-02-24 09:24:26,312 - Math_32 - INFO - 测试失败
+2024-02-24 09:24:26,312 - Math_32 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSetTest::testIssue780
+
+2024-02-24 09:24:27,223 - Math_32 - INFO - 它的bug类型为:
+2024-02-24 09:24:27,223 - Math_32 - INFO - 1
+2024-02-24 09:25:12,372 - Math_32 - INFO - 开始验证补丁1 1:
+2024-02-24 09:25:12,372 - Math_32 - INFO - 
+if (((BoundaryAttribute<Euclidean2D>) tree.getAttribute()).getPlusOutside() == null) {
+    // the instance covers the whole space
+    setSize(Double.POSITIVE_INFINITY);
+    setBarycenter(Vector2D.NaN);
+} else {
+
+2024-02-24 09:25:12,983 - Math_32 - INFO - 编译失败
+2024-02-24 09:25:12,983 - Math_32 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-24 09:25:12,983 - Math_32 - INFO - 补丁1 1 未成功编译
+2024-02-24 09:25:12,984 - Math_32 - INFO - 开始验证补丁1 2:
+2024-02-24 09:25:12,984 - Math_32 - INFO - 
+if ((Boolean) ((BoundaryAttribute<Euclidean2D>) tree.getAttribute()).getProperty("wholeSpace")) {
+    // the instance covers the whole space
+    setSize(Double.POSITIVE_INFINITY);
+    setBarycenter(Vector2D.NaN);
+} else {
+
+2024-02-24 09:25:13,583 - Math_32 - INFO - 编译失败
+2024-02-24 09:25:13,583 - Math_32 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-24 09:25:13,583 - Math_32 - INFO - 补丁1 2 未成功编译
+2024-02-24 09:25:13,585 - Math_32 - INFO - 开始验证补丁1 3:
+2024-02-24 09:25:13,585 - Math_32 - INFO - 
+if (tree.getAttribute() != null) {
+    // assuming non-null attribute implies the instance covers the whole space
+    setSize(Double.POSITIVE_INFINITY);
+    setBarycenter(Vector2D.NaN);
+} else {
+
+2024-02-24 09:25:14,197 - Math_32 - INFO - 编译失败
+2024-02-24 09:25:14,197 - Math_32 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-24 09:25:14,197 - Math_32 - INFO - 补丁1 3 未成功编译
+2024-02-24 09:25:14,198 - Math_32 - INFO - 开始验证补丁1 4:
+2024-02-24 09:25:14,198 - Math_32 - INFO - 
+if (tree.getAttribute() != null && ((BoundaryAttribute) tree.getAttribute()).isFull()) {
+
+2024-02-24 09:25:14,936 - Math_32 - INFO - 编译失败
+2024-02-24 09:25:14,936 - Math_32 - INFO - 错误: 找不到符号
+if (tree.getAttribute() != null && ((BoundaryAttribute) tree.getAttribute()).isFull()) {
+2024-02-24 09:25:14,936 - Math_32 - INFO - 补丁1 4 未成功编译
+2024-02-24 09:25:14,937 - Math_32 - INFO - 开始验证补丁1 5:
+2024-02-24 09:25:14,937 - Math_32 - INFO - 
+if (tree.getAttribute() != null && (Boolean) ((BoundaryAttribute) tree.getAttribute()).getAttribute("isFull")) {
+
+2024-02-24 09:25:15,684 - Math_32 - INFO - 编译失败
+2024-02-24 09:25:15,684 - Math_32 - INFO - 错误: 找不到符号
+if (tree.getAttribute() != null && (Boolean) ((BoundaryAttribute) tree.getAttribute()).getAttribute("isFull")) {
+2024-02-24 09:25:15,684 - Math_32 - INFO - 补丁1 5 未成功编译
+2024-02-24 09:25:15,685 - Math_32 - INFO - 开始验证补丁1 6:
+2024-02-24 09:25:15,685 - Math_32 - INFO - 
+if (!tree.getCut().isEmpty()) {
+
+2024-02-24 09:25:16,977 - Math_32 - INFO - 编译成功
+2024-02-24 09:25:46,650 - Math_32 - INFO - 测试失败
+2024-02-24 09:25:46,650 - Math_32 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSetTest::testIssue780
+
+2024-02-24 09:25:47,109 - Math_32 - INFO - 选择失败的测试用例为:
+2024-02-24 09:25:47,109 - Math_32 - INFO - org.apache.commons.math3.geometry.euclidean.threed.PolyhedronsSetTest::testIssue780
+2024-02-24 09:25:47,109 - Math_32 - INFO - 失败的测试代码为:
+2024-02-24 09:25:47,109 - Math_32 - INFO -         Assert.assertEquals( 8.0, polyhedronsSet.getSize(), 3.0e-6);
+
+2024-02-24 09:25:47,109 - Math_32 - INFO - 失败信息为:
+2024-02-24 09:25:47,109 - Math_32 - INFO - junit.framework.AssertionFailedError: expected:<8.0> but was:<Infinity>
+
+2024-02-24 09:25:47,109 - Math_32 - INFO - 补丁1 6测试失败
+2024-02-24 09:25:47,110 - Math_32 - INFO - 开始验证补丁1 7:
+2024-02-24 09:25:47,110 - Math_32 - INFO - 
+    if (tree.getCut() == null) {
+
+2024-02-24 09:25:48,395 - Math_32 - INFO - 编译成功
+2024-02-24 09:26:18,095 - Math_32 - INFO - 测试成功
+2024-02-24 09:26:18,095 - Math_32 - INFO - 补丁1 7 通过了所有的测试用例

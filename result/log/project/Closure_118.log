@@ -1,0 +1,492 @@
+2024-02-25 11:35:14,080 - Closure_118 - INFO - rm -rf /home/chongchong/d4j-project/Closure_118
+2024-02-25 11:35:14,081 - Closure_118 - INFO - 删除 Closure 118b 成功
+2024-02-25 11:35:14,081 - Closure_118 - INFO - defects4j checkout -p Closure -v 118b -w /home/chongchong/d4j-project/Closure_118
+2024-02-25 11:35:16,889 - Closure_118 - INFO - checkout Closure 118b 成功
+2024-02-25 11:35:29,018 - Closure_118 - INFO - 编译成功
+2024-02-25 11:36:27,614 - Closure_118 - INFO - 测试失败
+2024-02-25 11:36:27,614 - Closure_118 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes4
+
+2024-02-25 11:36:28,633 - Closure_118 - INFO - 它的bug类型为:
+2024-02-25 11:36:28,634 - Closure_118 - INFO - 3
+2024-02-25 11:37:24,492 - Closure_118 - INFO - 开始验证补丁1 1:
+2024-02-25 11:37:24,492 - Closure_118 - INFO - 
+        // Check the node type and handle STRING, GET, SET accordingly
+        if (child.isString()) {
+          // String literal case
+          String name = child.getString();
+          // Handle the string literal child
+        } else if (child.isGetProp() || child.isSetProp()) {
+          // Getter or setter case
+          String name = child.getFirstChild().getString();
+          // Handle the getter or setter child
+        }
+
+2024-02-25 11:37:26,583 - Closure_118 - INFO - 编译失败
+2024-02-25 11:37:26,583 - Closure_118 - INFO - 错误: 找不到符号
+} else if (child.isGetProp() || child.isSetProp()) {
+2024-02-25 11:37:26,583 - Closure_118 - INFO - 补丁1 1 未成功编译
+2024-02-25 11:37:26,585 - Closure_118 - INFO - 开始验证补丁1 2:
+2024-02-25 11:37:26,585 - Closure_118 - INFO - 
+        // Perform different actions based on the child node type
+        switch (child.getToken()) {
+          case STRING:
+            // Handle string names
+            String name = child.getString();
+            // Handle the string child
+            break;
+          case GETPROP:
+          case SETPROP:
+            // Handle getter/setter properties
+            String name = child.getFirstChild().getString();
+            // Handle the getter or setter child
+            break;
+          default:
+            throw new IllegalStateException("Unexpected child node type: " + child.getToken());
+        }
+
+2024-02-25 11:37:28,657 - Closure_118 - INFO - 编译失败
+2024-02-25 11:37:28,657 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:37:28,657 - Closure_118 - INFO - 补丁1 2 未成功编译
+2024-02-25 11:37:28,659 - Closure_118 - INFO - 开始验证补丁1 3:
+2024-02-25 11:37:28,659 - Closure_118 - INFO - 
+        // Process the child node based on its type
+        String name;
+        if (child.isString() || child.isGetProp() || child.isSetProp()) {
+          name = child.isString() ? child.getString() : child.getFirstChild().getString();
+          // Proceed with processing using 'name'
+        } else {
+          // Handle other types of children or throw an exception if necessary
+          continue; // Skip processing this child node
+        }
+
+2024-02-25 11:37:30,759 - Closure_118 - INFO - 编译失败
+2024-02-25 11:37:30,759 - Closure_118 - INFO - 错误: 找不到符号
+if (child.isString() || child.isGetProp() || child.isSetProp()) {
+2024-02-25 11:37:30,759 - Closure_118 - INFO - 补丁1 3 未成功编译
+2024-02-25 11:37:30,760 - Closure_118 - INFO - 开始验证补丁1 4:
+2024-02-25 11:37:30,760 - Closure_118 - INFO - 
+        // Check the type of the child node and handle accordingly
+        if (child.isString()) {
+          // Existing code to handle STRING node
+        } else if (child.isGetProp() || child.isSetProp()) {
+          // Handle GET and SET nodes
+          continue; // Skip processing for GET and SET properties if not to be included
+        } else {
+          // Handle other types or throw an error
+          throw new IllegalStateException("Unexpected node type.");
+        }
+
+2024-02-25 11:37:32,821 - Closure_118 - INFO - 编译失败
+2024-02-25 11:37:32,821 - Closure_118 - INFO - 错误: 找不到符号
+} else if (child.isGetProp() || child.isSetProp()) {
+2024-02-25 11:37:32,821 - Closure_118 - INFO - 补丁1 4 未成功编译
+2024-02-25 11:37:32,823 - Closure_118 - INFO - 开始验证补丁1 5:
+2024-02-25 11:37:32,823 - Closure_118 - INFO - 
+        // Differentiate between STRING, GET, and SET node types and handle them
+        switch (child.getToken()) {
+          case STRING:
+            // Existing code to handle STRING node
+            break;
+          case GETPROP:
+          case SETPROP:
+            // Specific code to handle GET and SET nodes
+            continue; // Assume that no further processing is needed for these nodes
+          default:
+            throw new IllegalArgumentException("Unsupported node type: " + child.getToken());
+        }
+
+2024-02-25 11:37:34,903 - Closure_118 - INFO - 编译失败
+2024-02-25 11:37:34,903 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:37:34,903 - Closure_118 - INFO - 补丁1 5 未成功编译
+2024-02-25 11:37:34,904 - Closure_118 - INFO - 开始验证补丁1 6:
+2024-02-25 11:37:34,904 - Closure_118 - INFO - 
+        // Process only STRING node type children
+        if (!child.isString()) {
+          continue; // Skip any children that are not of type STRING
+        }
+        // Existing STRING node processing code follows after this conditional
+
+2024-02-25 11:37:39,207 - Closure_118 - INFO - 编译成功
+2024-02-25 11:38:37,783 - Closure_118 - INFO - 测试失败
+2024-02-25 11:38:37,784 - Closure_118 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteralLends
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteral
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes3
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteralReflected
+
+2024-02-25 11:38:38,294 - Closure_118 - INFO - 选择失败的测试用例为:
+2024-02-25 11:38:38,294 - Closure_118 - INFO - com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteralLends
+2024-02-25 11:38:38,294 - Closure_118 - INFO - 失败的测试代码为:
+2024-02-25 11:38:38,294 - Closure_118 - INFO -     testSets(false, js, result, "{foo=[[F.prototype], [G.prototype]]}");
+
+2024-02-25 11:38:38,294 - Closure_118 - INFO - 失败信息为:
+2024-02-25 11:38:38,294 - Closure_118 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:38:38,294 - Closure_118 - INFO - 补丁1 6测试失败
+2024-02-25 11:38:38,295 - Closure_118 - INFO - 开始验证补丁1 7:
+2024-02-25 11:38:38,296 - Closure_118 - INFO - 
+        // Check the type of the child node and handle accordingly
+        switch (child.getToken()) {
+          case STRING:
+          case GET:
+          case SET:
+            // Handle the child node appropriately for STRING, GET, and SET types
+            break;
+          default:
+            // Handle other types of child nodes, or throw an error if unexpected
+            throw new IllegalStateException("Unexpected child node type: " + child.getToken());
+        }
+
+2024-02-25 11:38:40,470 - Closure_118 - INFO - 编译失败
+2024-02-25 11:38:40,470 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:38:40,470 - Closure_118 - INFO - 补丁1 7 未成功编译
+2024-02-25 11:38:40,471 - Closure_118 - INFO - 开始验证补丁1 8:
+2024-02-25 11:38:40,471 - Closure_118 - INFO - 
+        // Ensure we're dealing with STRING, GET, or SET nodes only
+        if (!child.isString() && !child.isGet() && !child.isSet()) {
+          throw new IllegalStateException("Unexpected node type: " + child.getToken());
+        }
+        // Proceed with the assumption that child is of type STRING, GET, or SET
+
+2024-02-25 11:38:42,541 - Closure_118 - INFO - 编译失败
+2024-02-25 11:38:42,541 - Closure_118 - INFO - 错误: 找不到符号
+if (!child.isString() && !child.isGet() && !child.isSet()) {
+2024-02-25 11:38:42,541 - Closure_118 - INFO - 补丁1 8 未成功编译
+2024-02-25 11:38:42,543 - Closure_118 - INFO - 开始验证补丁1 9:
+2024-02-25 11:38:42,543 - Closure_118 - INFO - 
+        // Check if the child node type is STRING, GET, or SET explicitly
+        if (child.getToken() == Token.STRING || 
+            child.getToken() == Token.GET ||
+            child.getToken() == Token.SET) {
+            // The child node is of an expected type, continue processing
+        } else {
+            // The child node type is unexpected, handle the error or continue carefully
+            continue; // Skip to the next child node
+        }
+
+2024-02-25 11:38:44,623 - Closure_118 - INFO - 编译失败
+2024-02-25 11:38:44,623 - Closure_118 - INFO - 错误: 找不到符号
+if (child.getToken() == Token.STRING ||
+2024-02-25 11:38:44,623 - Closure_118 - INFO - 补丁1 9 未成功编译
+2024-02-25 11:38:44,624 - Closure_118 - INFO - 开始验证补丁2 1:
+2024-02-25 11:38:44,624 - Closure_118 - INFO - 
+// Check the type of child node and proceed accordingly
+switch (child.getToken()) {
+    case STRING:
+        // handle string case
+        break;
+    case GET:
+        // handle get case
+        break;
+    case SET:
+        // handle set case
+        break;
+    default:
+        // handle other cases or throw an exception if unexpected
+        throw new IllegalStateException("Unexpected node type: " + child.getToken());
+}
+
+2024-02-25 11:38:46,698 - Closure_118 - INFO - 编译失败
+2024-02-25 11:38:46,698 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:38:46,698 - Closure_118 - INFO - 补丁2 1 未成功编译
+2024-02-25 11:38:46,700 - Closure_118 - INFO - 开始验证补丁2 2:
+2024-02-25 11:38:46,700 - Closure_118 - INFO - 
+// Ignore non-STRING child nodes
+if (child.isString()) {
+    // Existing code to process STRING nodes
+    String name = child.getString();
+    T type = typeSystem.getType(getScope(), n, name);
+    Property prop = getProperty(name);
+    if (prop != null) {
+        // logic to handle the property
+    }
+}
+
+2024-02-25 11:38:50,990 - Closure_118 - INFO - 编译成功
+2024-02-25 11:39:49,277 - Closure_118 - INFO - 测试失败
+2024-02-25 11:39:49,277 - Closure_118 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes4
+
+2024-02-25 11:39:49,798 - Closure_118 - INFO - 选择失败的测试用例为:
+2024-02-25 11:39:49,799 - Closure_118 - INFO - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+2024-02-25 11:39:49,799 - Closure_118 - INFO - 失败的测试代码为:
+2024-02-25 11:39:49,799 - Closure_118 - INFO -     testSets(false, js, js, expected);
+
+2024-02-25 11:39:49,799 - Closure_118 - INFO - 失败信息为:
+2024-02-25 11:39:49,799 - Closure_118 - INFO - junit.framework.ComparisonFailure: expected:<{[]}> but was:<{[a=[[Foo.prototype]]]}>
+
+2024-02-25 11:39:49,799 - Closure_118 - INFO - 补丁2 2测试失败
+2024-02-25 11:39:49,800 - Closure_118 - INFO - 开始验证补丁2 3:
+2024-02-25 11:39:49,800 - Closure_118 - INFO - 
+// Check if the child node is either STRING, GET, or SET
+if (child.isString() || child.isGetProp() || child.isSetProp()) {
+    String name;
+    // Different handling based on the node type
+    if (child.isString()) {
+        name = child.getString();
+    } else if (child.isGetProp()) {
+        // Logic for GET properties
+        name = // Get the name for GET property
+    } else {
+        // Logic for SET properties
+        name = // Get the name for SET property
+    }
+    T type = typeSystem.getType(getScope(), n, name);
+    Property prop = getProperty(name);
+    if (prop != null) {
+        // logic to handle the property
+    }
+} else {
+    // Handle or ignore other types of nodes
+}
+
+2024-02-25 11:39:51,644 - Closure_118 - INFO - 编译失败
+2024-02-25 11:39:51,644 - Closure_118 - INFO - 错误: 非法的表达式开始
+} else {
+2024-02-25 11:39:51,644 - Closure_118 - INFO - 补丁2 3 未成功编译
+2024-02-25 11:39:51,645 - Closure_118 - INFO - 开始验证补丁2 4:
+2024-02-25 11:39:51,645 - Closure_118 - INFO - 
+// Check the child node type and process accordingly.
+switch (child.getToken()) {
+    case STRING:
+    case GET:
+    case SET:
+        // Handle child node accordingly.
+        break;
+    default:
+        // Possibly throw an error or continue with appropriate handling
+        break;
+}
+
+2024-02-25 11:39:53,741 - Closure_118 - INFO - 编译失败
+2024-02-25 11:39:53,741 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:39:53,741 - Closure_118 - INFO - 补丁2 4 未成功编译
+2024-02-25 11:39:53,742 - Closure_118 - INFO - 开始验证补丁2 5:
+2024-02-25 11:39:53,742 - Closure_118 - INFO - 
+if (child.isString() || child.isGetProp() || child.isSetProp()) {
+    // Handle STRING, GET, and SET child nodes here.
+} else {
+    // Handle other types of child nodes or continue.
+}
+
+2024-02-25 11:39:55,818 - Closure_118 - INFO - 编译失败
+2024-02-25 11:39:55,818 - Closure_118 - INFO - 错误: 找不到符号
+if (child.isString() || child.isGetProp() || child.isSetProp()) {
+2024-02-25 11:39:55,818 - Closure_118 - INFO - 补丁2 5 未成功编译
+2024-02-25 11:39:55,819 - Closure_118 - INFO - 开始验证补丁2 6:
+2024-02-25 11:39:55,819 - Closure_118 - INFO - 
+// Add guards for child types we expect to process.
+if ("STRING".equals(child.getTypeString()) || 
+    "GET".equals(child.getTypeString()) || 
+    "SET".equals(child.getTypeString())) {
+    // Handle STRING, GET, and SET child nodes accordingly.
+} else {
+    // Handle other node types or continue.
+}
+
+2024-02-25 11:39:57,872 - Closure_118 - INFO - 编译失败
+2024-02-25 11:39:57,872 - Closure_118 - INFO - 错误: 找不到符号
+if ("STRING".equals(child.getTypeString()) ||
+2024-02-25 11:39:57,872 - Closure_118 - INFO - 补丁2 6 未成功编译
+2024-02-25 11:39:57,873 - Closure_118 - INFO - 开始验证补丁2 7:
+2024-02-25 11:39:57,874 - Closure_118 - INFO - 
+        if (child.isString() || child.isGetProp() || child.isSetProp()) {
+            // Existing code that presumably handles properties correctly
+            // We should never see a mix of numbers and strings.
+            String name = child.getString();
+            T type = typeSystem.getType(getScope(), n, name);
+
+            Property prop = getProperty(name);
+            if (!prop.scheduleRenaming(child,
+
+2024-02-25 11:39:59,680 - Closure_118 - INFO - 编译失败
+2024-02-25 11:39:59,681 - Closure_118 - INFO - 错误: 需要')'
+String name = child.getString();
+2024-02-25 11:39:59,681 - Closure_118 - INFO - 补丁2 7 未成功编译
+2024-02-25 11:39:59,682 - Closure_118 - INFO - 开始验证补丁2 8:
+2024-02-25 11:39:59,682 - Closure_118 - INFO - 
+        if (child.isString()) {
+            // Handle STRING nodes
+            // We should never see a mix of numbers and strings.
+            String name = child.getString();
+            T type = typeSystem.getType(getScope(), n, name);
+
+            Property prop = getProperty(name);
+            if (!prop.scheduleRenaming(child,
+
+2024-02-25 11:40:01,486 - Closure_118 - INFO - 编译失败
+2024-02-25 11:40:01,486 - Closure_118 - INFO - 错误: 需要')'
+String name = child.getString();
+2024-02-25 11:40:01,486 - Closure_118 - INFO - 补丁2 8 未成功编译
+2024-02-25 11:40:01,487 - Closure_118 - INFO - 开始验证补丁2 9:
+2024-02-25 11:40:01,487 - Closure_118 - INFO - 
+        switch (child.getToken()) {
+            case STRING:
+            case GETTER:
+            case SETTER:
+                // Handle STRING, GET, and SET nodes
+                // We should never see a mix of numbers and strings.
+                String name = child.getString();
+                T type = typeSystem.getType(getScope(), n, name);
+
+                Property prop = getProperty(name);
+                if (!prop.scheduleRenaming(child,
+                break;
+            default:
+                // Handle other types of nodes or ignore them
+        }
+
+2024-02-25 11:40:03,293 - Closure_118 - INFO - 编译失败
+2024-02-25 11:40:03,293 - Closure_118 - INFO - 错误: 非法的表达式开始
+break;
+2024-02-25 11:40:03,293 - Closure_118 - INFO - 补丁2 9 未成功编译
+2024-02-25 11:40:03,294 - Closure_118 - INFO - 开始验证补丁3 1:
+2024-02-25 11:40:03,295 - Closure_118 - INFO - 
+if (child.isStringKey() || child.isGetterDef() || child.isSetterDef()) {
+    // Maybe STRING, GET, SET
+    // existing code continues from here
+} else {
+    continue; // Skip any child that is not a STRING key, GET, or SET
+}
+
+2024-02-25 11:40:07,599 - Closure_118 - INFO - 编译成功
+2024-02-25 11:41:06,568 - Closure_118 - INFO - 测试失败
+2024-02-25 11:41:06,569 - Closure_118 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes4
+
+2024-02-25 11:41:07,078 - Closure_118 - INFO - 选择失败的测试用例为:
+2024-02-25 11:41:07,078 - Closure_118 - INFO - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+2024-02-25 11:41:07,078 - Closure_118 - INFO - 失败的测试代码为:
+2024-02-25 11:41:07,078 - Closure_118 - INFO -     testSets(false, js, js, expected);
+
+2024-02-25 11:41:07,078 - Closure_118 - INFO - 失败信息为:
+2024-02-25 11:41:07,078 - Closure_118 - INFO - junit.framework.ComparisonFailure: expected:<{[]}> but was:<{[a=[[Foo.prototype]]]}>
+
+2024-02-25 11:41:07,078 - Closure_118 - INFO - 补丁3 1测试失败
+2024-02-25 11:41:07,079 - Closure_118 - INFO - 开始验证补丁3 2:
+2024-02-25 11:41:07,079 - Closure_118 - INFO - 
+switch (child.getToken()) {
+    case STRING_KEY:
+    case GETTER_DEF:
+    case SETTER_DEF:
+        // Maybe STRING, GET, SET
+        // existing code continues from here
+        break;
+    default:
+        continue; // Skip any child nodes that are not STRING key, GET, or SET
+}
+
+2024-02-25 11:41:09,148 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:09,148 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:41:09,148 - Closure_118 - INFO - 补丁3 2 未成功编译
+2024-02-25 11:41:09,149 - Closure_118 - INFO - 开始验证补丁3 3:
+2024-02-25 11:41:09,149 - Closure_118 - INFO - 
+// Maybe STRING, GET, SET
+if ("number" != typeof child.getString()) {
+    // Handle the case where child is not a number and process accordingly
+    // existing code continues from here
+} else {
+    continue; // Skip any child nodes that are numbers
+}
+
+2024-02-25 11:41:10,962 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:10,962 - Closure_118 - INFO - 错误: 需要')'
+if ("number" != typeof child.getString()) {
+2024-02-25 11:41:10,962 - Closure_118 - INFO - 补丁3 3 未成功编译
+2024-02-25 11:41:10,963 - Closure_118 - INFO - 开始验证补丁3 4:
+2024-02-25 11:41:10,963 - Closure_118 - INFO - 
+if (!child.isString() && !child.isGetProp() && !child.isSetProp()) {
+  continue;
+}
+
+2024-02-25 11:41:13,053 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:13,053 - Closure_118 - INFO - 错误: 找不到符号
+if (!child.isString() && !child.isGetProp() && !child.isSetProp()) {
+2024-02-25 11:41:13,053 - Closure_118 - INFO - 补丁3 4 未成功编译
+2024-02-25 11:41:13,054 - Closure_118 - INFO - 开始验证补丁3 5:
+2024-02-25 11:41:13,054 - Closure_118 - INFO - 
+if (child.isString()) {
+  // Process string property
+} else if (child.isFunction()) {
+  // Process GET and SET if they are functions
+  if (child.getFirstChild().isGetProp()) {
+    // Process GET function
+  } else if (child.getFirstChild().isSetProp()) {
+    // Process SET function
+  }
+  continue;
+} else {
+  continue;
+}
+
+2024-02-25 11:41:15,126 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:15,126 - Closure_118 - INFO - 错误: 找不到符号
+} else if (child.getFirstChild().isSetProp()) {
+2024-02-25 11:41:15,126 - Closure_118 - INFO - 补丁3 5 未成功编译
+2024-02-25 11:41:15,127 - Closure_118 - INFO - 开始验证补丁3 6:
+2024-02-25 11:41:15,127 - Closure_118 - INFO - 
+switch (child.getToken()) {
+  case STRING:
+    // Process STRING node
+    break;
+  case GETPROP:
+    // Process GETPROP node (e.g., getters)
+    break;
+  case SETPROP:
+    // Process SETPROP node (e.g., setters)
+    break;
+  default:
+    continue; // Skip unexpected node types
+}
+
+2024-02-25 11:41:17,263 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:17,263 - Closure_118 - INFO - 错误: 找不到符号
+switch (child.getToken()) {
+2024-02-25 11:41:17,263 - Closure_118 - INFO - 补丁3 6 未成功编译
+2024-02-25 11:41:17,264 - Closure_118 - INFO - 开始验证补丁3 7:
+2024-02-25 11:41:17,264 - Closure_118 - INFO - 
+        if (child.isString() || child.isGetterDef() || child.isSetterDef()) {
+
+2024-02-25 11:41:19,117 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:19,117 - Closure_118 - INFO - 错误: 非法的表达式开始
+private void printErrorLocations(List<String> errors, JSType t) {
+2024-02-25 11:41:19,117 - Closure_118 - INFO - 补丁3 7 未成功编译
+2024-02-25 11:41:19,118 - Closure_118 - INFO - 开始验证补丁3 8:
+2024-02-25 11:41:19,118 - Closure_118 - INFO - 
+        if (!child.isNumber()) {
+
+2024-02-25 11:41:20,936 - Closure_118 - INFO - 编译失败
+2024-02-25 11:41:20,936 - Closure_118 - INFO - 错误: 非法的表达式开始
+private void printErrorLocations(List<String> errors, JSType t) {
+2024-02-25 11:41:20,936 - Closure_118 - INFO - 补丁3 8 未成功编译
+2024-02-25 11:41:20,938 - Closure_118 - INFO - 开始验证补丁3 9:
+2024-02-25 11:41:20,938 - Closure_118 - INFO - 
+        // No operation to perform if the child is not a property name
+
+2024-02-25 11:41:25,226 - Closure_118 - INFO - 编译成功
+2024-02-25 11:42:24,478 - Closure_118 - INFO - 测试失败
+2024-02-25 11:42:24,478 - Closure_118 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes4
+
+2024-02-25 11:42:24,991 - Closure_118 - INFO - 选择失败的测试用例为:
+2024-02-25 11:42:24,991 - Closure_118 - INFO - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType4
+2024-02-25 11:42:24,991 - Closure_118 - INFO - 失败的测试代码为:
+2024-02-25 11:42:24,991 - Closure_118 - INFO -     testSets(false, js, js, expected);
+
+2024-02-25 11:42:24,991 - Closure_118 - INFO - 失败信息为:
+2024-02-25 11:42:24,991 - Closure_118 - INFO - junit.framework.ComparisonFailure: expected:<{[]}> but was:<{[a=[[Foo.prototype]]]}>
+
+2024-02-25 11:42:24,991 - Closure_118 - INFO - 补丁3 9测试失败
+2024-02-25 11:42:24,991 - Closure_118 - INFO - Closure_118 未成功修复

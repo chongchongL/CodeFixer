@@ -1,0 +1,19 @@
+2024-02-23 22:58:16,293 - Chart_20 - INFO - rm -rf /home/chongchong/d4j-project/Chart_20
+2024-02-23 22:58:16,294 - Chart_20 - INFO - 删除 Chart 20b 成功
+2024-02-23 22:58:16,294 - Chart_20 - INFO - defects4j checkout -p Chart -v 20b -w /home/chongchong/d4j-project/Chart_20
+2024-02-23 22:58:19,272 - Chart_20 - INFO - checkout Chart 20b 成功
+2024-02-23 22:58:22,735 - Chart_20 - INFO - 编译成功
+2024-02-23 22:58:29,233 - Chart_20 - INFO - 测试失败
+2024-02-23 22:58:29,233 - Chart_20 - INFO - Failing tests: 2
+  - org.jfree.chart.plot.junit.ValueMarkerTests::test1808376
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 22:58:29,963 - Chart_20 - INFO - 它的bug类型为:
+2024-02-23 22:58:29,963 - Chart_20 - INFO - 1
+2024-02-23 22:59:33,477 - Chart_20 - INFO - 开始验证补丁1 1:
+2024-02-23 22:59:33,477 - Chart_20 - INFO - 
+super(paint, stroke, outlinePaint, outlineStroke, alpha);
+
+2024-02-23 22:59:34,380 - Chart_20 - INFO - 编译成功
+2024-02-23 22:59:40,874 - Chart_20 - INFO - 测试成功
+2024-02-23 22:59:40,874 - Chart_20 - INFO - 补丁1 1 通过了所有的测试用例

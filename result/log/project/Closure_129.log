@@ -1,0 +1,40 @@
+2024-02-25 12:04:10,207 - Closure_129 - INFO - rm -rf /home/chongchong/d4j-project/Closure_129
+2024-02-25 12:04:10,207 - Closure_129 - INFO - 删除 Closure 129b 成功
+2024-02-25 12:04:10,207 - Closure_129 - INFO - defects4j checkout -p Closure -v 129b -w /home/chongchong/d4j-project/Closure_129
+2024-02-25 12:04:13,010 - Closure_129 - INFO - checkout Closure 129b 成功
+2024-02-25 12:04:24,911 - Closure_129 - INFO - 编译成功
+2024-02-25 12:05:18,210 - Closure_129 - INFO - 测试失败
+2024-02-25 12:05:18,210 - Closure_129 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testIssue937
+
+2024-02-25 12:05:19,246 - Closure_129 - INFO - 它的bug类型为:
+2024-02-25 12:05:19,246 - Closure_129 - INFO - 3
+2024-02-25 12:06:02,274 - Closure_129 - INFO - 开始验证补丁1 1:
+2024-02-25 12:06:02,274 - Closure_129 - INFO - 
+if (n.hasChildren() && first.isCast()) {
+  first = first.getFirstFirstChild();
+}
+
+2024-02-25 12:06:04,224 - Closure_129 - INFO - 编译失败
+2024-02-25 12:06:04,224 - Closure_129 - INFO - 错误: 找不到符号
+first = first.getFirstFirstChild();
+2024-02-25 12:06:04,224 - Closure_129 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:06:04,225 - Closure_129 - INFO - 开始验证补丁1 2:
+2024-02-25 12:06:04,225 - Closure_129 - INFO - 
+if (first.isCast()) {
+  first = first.getFirstFirstChild();
+}
+
+2024-02-25 12:06:06,208 - Closure_129 - INFO - 编译失败
+2024-02-25 12:06:06,208 - Closure_129 - INFO - 错误: 找不到符号
+first = first.getFirstFirstChild();
+2024-02-25 12:06:06,208 - Closure_129 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:06:06,210 - Closure_129 - INFO - 开始验证补丁1 3:
+2024-02-25 12:06:06,210 - Closure_129 - INFO - 
+while (first.isCast()) {
+  first = first.getFirstChild();
+}
+
+2024-02-25 12:06:10,248 - Closure_129 - INFO - 编译成功
+2024-02-25 12:07:03,755 - Closure_129 - INFO - 测试成功
+2024-02-25 12:07:03,755 - Closure_129 - INFO - 补丁1 3 通过了所有的测试用例

@@ -1,0 +1,371 @@
+2024-02-25 10:34:46,975 - Closure_12 - INFO - rm -rf /home/chongchong/d4j-project/Closure_12
+2024-02-25 10:34:46,975 - Closure_12 - INFO - 删除 Closure 12b 成功
+2024-02-25 10:34:46,975 - Closure_12 - INFO - defects4j checkout -p Closure -v 12b -w /home/chongchong/d4j-project/Closure_12
+2024-02-25 10:34:50,021 - Closure_12 - INFO - checkout Closure 12b 成功
+2024-02-25 10:35:01,559 - Closure_12 - INFO - 编译成功
+2024-02-25 10:35:51,812 - Closure_12 - INFO - 测试失败
+2024-02-25 10:35:51,812 - Closure_12 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testIssue794b
+
+2024-02-25 10:35:52,829 - Closure_12 - INFO - 它的bug类型为:
+2024-02-25 10:35:52,829 - Closure_12 - INFO - 3
+2024-02-25 10:36:33,650 - Closure_12 - INFO - 开始验证补丁1 1:
+2024-02-25 10:36:33,650 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming the Node class has a method to check for an exception handler
+  return cfgNode.hasExceptionHandler();
+}
+
+2024-02-25 10:36:35,433 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:35,433 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:35,433 - Closure_12 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:36:35,434 - Closure_12 - INFO - 开始验证补丁1 2:
+2024-02-25 10:36:35,434 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming the Node class has an associated list of handlers or a specific handler reference
+  return cfgNode.getExceptionHandler() != null;
+}
+
+2024-02-25 10:36:37,229 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:37,229 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:37,229 - Closure_12 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:36:37,230 - Closure_12 - INFO - 开始验证补丁1 3:
+2024-02-25 10:36:37,230 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming there's a way to check within a graph structure for exception handlers
+  return cfgNode.isInsideTryBlock() || cfgNode.hasDirectExceptionHandler();
+}
+
+2024-02-25 10:36:39,057 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:39,057 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:39,057 - Closure_12 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:36:39,058 - Closure_12 - INFO - 开始验证补丁1 4:
+2024-02-25 10:36:39,058 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming Node has a method 'hasExceptionHandler()' to check this property
+  return cfgNode.hasExceptionHandler();
+}
+
+2024-02-25 10:36:40,854 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:40,854 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:40,854 - Closure_12 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:36:40,855 - Closure_12 - INFO - 开始验证补丁1 5:
+2024-02-25 10:36:40,856 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming there's a global map of nodes to their exception handlers
+  return exceptionHandlerMap.containsKey(cfgNode) && !exceptionHandlerMap.get(cfgNode).isEmpty();
+}
+
+2024-02-25 10:36:42,638 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:42,638 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:42,638 - Closure_12 - INFO - 补丁1 5 未成功编译
+2024-02-25 10:36:42,639 - Closure_12 - INFO - 开始验证补丁1 6:
+2024-02-25 10:36:42,639 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming Node has a property 'type' that can signify an exception handler
+  return cfgNode.getType() == NodeType.EXCEPTION_HANDLER;
+}
+
+2024-02-25 10:36:44,438 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:44,438 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:44,438 - Closure_12 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:36:44,439 - Closure_12 - INFO - 开始验证补丁1 7:
+2024-02-25 10:36:44,439 - Closure_12 - INFO - 
+  private boolean hasExceptionHandler(Node cfgNode) {
+    // Assuming exception handlers are stored in a field or can be determined from node attributes
+    return cfgNode.hasExceptionHandler();
+  }
+
+2024-02-25 10:36:46,248 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:46,248 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:46,248 - Closure_12 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:36:46,249 - Closure_12 - INFO - 开始验证补丁1 8:
+2024-02-25 10:36:46,249 - Closure_12 - INFO - 
+  private boolean hasExceptionHandler(Node cfgNode) {
+    // Assuming a more complex structure where exception handlers are determined by traversing the graph
+    for (Node successor : cfgNode.getSuccessors()) {
+      if (successor.isExceptionHandler()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+2024-02-25 10:36:48,042 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:48,042 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:48,042 - Closure_12 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:36:48,043 - Closure_12 - INFO - 开始验证补丁1 9:
+2024-02-25 10:36:48,043 - Closure_12 - INFO - 
+  private boolean hasExceptionHandler(Node cfgNode) {
+    // Assuming exception handlers are indicated by a specific node type or attribute in the CFG
+    return cfgNode.getType() == NodeType.EXCEPTION_HANDLER;// Or any other indicator of an exception handler
+  }
+
+2024-02-25 10:36:49,825 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:49,825 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:49,825 - Closure_12 - INFO - 补丁1 9 未成功编译
+2024-02-25 10:36:49,826 - Closure_12 - INFO - 开始验证补丁2 1:
+2024-02-25 10:36:49,826 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+    // Assuming that 'cfgNode' has a method to determine if it's a handler
+    return cfgNode.isExceptionHandler();
+}
+
+2024-02-25 10:36:51,610 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:51,610 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:51,610 - Closure_12 - INFO - 补丁2 1 未成功编译
+2024-02-25 10:36:51,611 - Closure_12 - INFO - 开始验证补丁2 2:
+2024-02-25 10:36:51,611 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+    // Inspecting the attributes of cfgNode to determine if it has an exception handler
+    return cfgNode.hasAttribute("exceptionHandler");
+}
+
+2024-02-25 10:36:53,409 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:53,409 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:53,410 - Closure_12 - INFO - 补丁2 2 未成功编译
+2024-02-25 10:36:53,411 - Closure_12 - INFO - 开始验证补丁2 3:
+2024-02-25 10:36:53,411 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+    // Using a traversal or search to find an exception handler in the control flow graph
+    for (Node child : cfgNode.getChildren()) {
+        if (child.getType() == Node.EXCEPTION_HANDLER) {
+            return true;
+        }
+    }
+    return false;
+}
+
+2024-02-25 10:36:55,200 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:55,201 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:55,201 - Closure_12 - INFO - 补丁2 3 未成功编译
+2024-02-25 10:36:55,202 - Closure_12 - INFO - 开始验证补丁2 4:
+2024-02-25 10:36:55,202 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  return cfgNode.hasCatch() || cfgNode.hasFinally();
+}
+
+2024-02-25 10:36:56,969 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:56,969 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:56,969 - Closure_12 - INFO - 补丁2 4 未成功编译
+2024-02-25 10:36:56,970 - Closure_12 - INFO - 开始验证补丁2 5:
+2024-02-25 10:36:56,970 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming the Node class has a method to get its associated handlers
+  ExceptionHandler handler = cfgNode.getExceptionHandler();
+  return handler != null;
+}
+
+2024-02-25 10:36:58,760 - Closure_12 - INFO - 编译失败
+2024-02-25 10:36:58,760 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:36:58,760 - Closure_12 - INFO - 补丁2 5 未成功编译
+2024-02-25 10:36:58,761 - Closure_12 - INFO - 开始验证补丁2 6:
+2024-02-25 10:36:58,761 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming `cfgNode`'s type can determine if it's an exception handler
+  return cfgNode.getType() == NodeType.EXCEPTION_HANDLER;
+}
+
+2024-02-25 10:37:00,566 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:00,566 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:00,566 - Closure_12 - INFO - 补丁2 6 未成功编译
+2024-02-25 10:37:00,567 - Closure_12 - INFO - 开始验证补丁2 7:
+2024-02-25 10:37:00,567 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Assuming there's a method or field that can be used to determine this
+  return cfgNode.hasExceptionHandler();
+}
+
+2024-02-25 10:37:02,347 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:02,348 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:02,348 - Closure_12 - INFO - 补丁2 7 未成功编译
+2024-02-25 10:37:02,349 - Closure_12 - INFO - 开始验证补丁2 8:
+2024-02-25 10:37:02,349 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // This example assumes Nodes have a list of children and TYPE_EXCEPTION is a static constant
+  // representing an exception handler node type
+  for (Node child : cfgNode.getChildren()) {
+    if (child.getType() == Node.TYPE_EXCEPTION) {
+      return true;
+    }
+  }
+  return false;
+}
+
+2024-02-25 10:37:04,138 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:04,138 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:04,138 - Closure_12 - INFO - 补丁2 8 未成功编译
+2024-02-25 10:37:04,139 - Closure_12 - INFO - 开始验证补丁2 9:
+2024-02-25 10:37:04,139 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Placeholder for complex analysis, which needs to be implemented
+  // TODO: Implement the logic to check for exception handlers based on cfgNode's properties
+  throw new UnsupportedOperationException("hasExceptionHandler not implemented yet");
+}
+
+2024-02-25 10:37:05,922 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:05,922 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:05,922 - Closure_12 - INFO - 补丁2 9 未成功编译
+2024-02-25 10:37:05,923 - Closure_12 - INFO - 开始验证补丁3 1:
+2024-02-25 10:37:05,923 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+    // This needs to be implemented according to the specific logic required to determine
+    // if the cfgNode has an exception handler. The exact implementation will depend on
+    // the structure and properties of the Node class and how exception handlers are represented.
+    // Below is a hypothetical implementation.
+    
+    return cfgNode.hasExceptionHandler(); // assuming the Node class has such a method
+}
+
+2024-02-25 10:37:07,720 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:07,720 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:07,720 - Closure_12 - INFO - 补丁3 1 未成功编译
+2024-02-25 10:37:07,721 - Closure_12 - INFO - 开始验证补丁3 2:
+2024-02-25 10:37:07,721 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+    // Example of traversing the graph to check for an exception handler
+    // assuming a method getConnectedNodes or similar available in Node class
+    for (Node adjacentNode : cfgNode.getConnectedNodes()) {
+        if (adjacentNode.isExceptionHandler()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+2024-02-25 10:37:09,509 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:09,509 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:09,509 - Closure_12 - INFO - 补丁3 2 未成功编译
+2024-02-25 10:37:09,510 - Closure_12 - INFO - 开始验证补丁3 3:
+2024-02-25 10:37:09,510 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+    // Check if the cfgNode or any of its attributes indicate the presence of an exception handler
+    // This would typically involve checking some property or flag that indicates an exception handler
+    return cfgNode.getProperty("hasExceptionHandler").equals(Boolean.TRUE);
+}
+
+2024-02-25 10:37:11,326 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:11,326 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:11,326 - Closure_12 - INFO - 补丁3 3 未成功编译
+2024-02-25 10:37:11,327 - Closure_12 - INFO - 开始验证补丁3 4:
+2024-02-25 10:37:11,327 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  return cfgNode.hasExceptionHandler(); // Assuming Node class has a method to check for exception handlers
+}
+
+2024-02-25 10:37:13,125 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:13,125 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:13,125 - Closure_12 - INFO - 补丁3 4 未成功编译
+2024-02-25 10:37:13,127 - Closure_12 - INFO - 开始验证补丁3 5:
+2024-02-25 10:37:13,127 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Traverses the control flow graph to check for an exception handler
+  // The specific implementation depends on the structure of the Node class
+  for (Node successor : cfgNode.getSuccessors()) {
+    if (successor.isExceptionHandler()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+2024-02-25 10:37:14,920 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:14,920 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:14,920 - Closure_12 - INFO - 补丁3 5 未成功编译
+2024-02-25 10:37:14,921 - Closure_12 - INFO - 开始验证补丁3 6:
+2024-02-25 10:37:14,921 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Checks for an exception handler based on specific criteria, e.g., node type
+  if (cfgNode.getType() == NodeType.EXCEPTION_HANDLER) {
+    return true;
+  }
+  for (Node child : cfgNode.getChildren()) {
+    if (hasExceptionHandler(child)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+2024-02-25 10:37:16,713 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:16,714 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:16,714 - Closure_12 - INFO - 补丁3 6 未成功编译
+2024-02-25 10:37:16,715 - Closure_12 - INFO - 开始验证补丁3 7:
+2024-02-25 10:37:16,715 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // This is a simple approach to check if the cfgNode has an exception handler. 
+  // A real implementation would likely involve a more complex CFG analysis.
+  for (Node child : cfgNode.children()) {
+    if (child.isTry()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+2024-02-25 10:37:18,513 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:18,513 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:18,513 - Closure_12 - INFO - 补丁3 7 未成功编译
+2024-02-25 10:37:18,514 - Closure_12 - INFO - 开始验证补丁3 8:
+2024-02-25 10:37:18,514 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Traverse the parents until you either find an exception handler or reach the root.
+  Node current = cfgNode;
+  while (current != null) {
+    if (current.isExceptionHandler()) {
+      return true;
+    }
+    current = current.getParent();
+  }
+  return false;
+}
+
+2024-02-25 10:37:20,323 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:20,323 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:20,323 - Closure_12 - INFO - 补丁3 8 未成功编译
+2024-02-25 10:37:20,324 - Closure_12 - INFO - 开始验证补丁3 9:
+2024-02-25 10:37:20,324 - Closure_12 - INFO - 
+private boolean hasExceptionHandler(Node cfgNode) {
+  // Check if the cfgNode itself or any of its descendants have an exception handler attached.
+  if (cfgNode.isExceptionHandler()) {
+    return true;
+  }
+  for (Node descendant : cfgNode.getDescendants()) {
+    if (descendant.isExceptionHandler()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+2024-02-25 10:37:22,128 - Closure_12 - INFO - 编译失败
+2024-02-25 10:37:22,128 - Closure_12 - INFO - 错误: 非法的表达式开始
+private boolean hasExceptionHandler(Node cfgNode) {
+2024-02-25 10:37:22,128 - Closure_12 - INFO - 补丁3 9 未成功编译
+2024-02-25 10:37:22,128 - Closure_12 - INFO - Closure_12 未成功修复

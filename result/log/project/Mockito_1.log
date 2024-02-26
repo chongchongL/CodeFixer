@@ -1,0 +1,321 @@
+2024-02-25 00:48:22,410 - Mockito_1 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_1
+2024-02-25 00:48:22,411 - Mockito_1 - INFO - 删除 Mockito 1b 成功
+2024-02-25 00:48:22,411 - Mockito_1 - INFO - defects4j checkout -p Mockito -v 1b -w /home/chongchong/d4j-project/Mockito_1
+2024-02-25 00:48:26,155 - Mockito_1 - INFO - checkout Mockito 1b 成功
+2024-02-25 00:48:31,728 - Mockito_1 - INFO - 编译失败
+2024-02-25 00:48:31,728 - Mockito_1 - INFO - 
+2024-02-25 00:48:32,165 - Mockito_1 - INFO - 它的bug类型为:
+2024-02-25 00:48:32,165 - Mockito_1 - INFO - 2
+2024-02-26 11:38:24,393 - Mockito_1 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_1
+2024-02-26 11:38:24,555 - Mockito_1 - INFO - 删除 Mockito 1b 成功
+2024-02-26 11:38:24,555 - Mockito_1 - INFO - defects4j checkout -p Mockito -v 1b -w /home/chongchong/d4j-project/Mockito_1
+2024-02-26 11:38:28,177 - Mockito_1 - INFO - checkout Mockito 1b 成功
+2024-02-26 11:39:08,257 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:40:20,210 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:40:20,210 - Mockito_1 - INFO - Failing tests: 26
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockito.internal.util.reflection.FieldInitializerTest::can_instantiate_class_with_parameterized_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_report_failure_if_constructor_throws_exception
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_fail_if_an_argument_instance_type_do_not_match_wanted_type
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_with_vararg_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_if_resolver_provide_matching_types
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveAllStubbing
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyWithNullVarArgArray
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyWithAnyObject
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubCorrectlyWhenMixedVarargsUsed
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubCorrectlyWhenDoubleStringAndMixedVarargsUsed
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyWithAnyVarargs
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyNumberOfInvocationsUsingAnyVarargAndEqualArgument
+  - org.mockitousage.bugs.varargs.VarargsNotPlayingWithAnyObjectTest::shouldStubUsingAnyVarargs
+  - org.mockitousage.matchers.VerificationAndStubbingUsingMatchersTest::shouldVerifyUsingMatchers
+  - org.mockitousage.stubbing.BasicStubbingTest::test_stub_only_not_verifiable
+  - org.mockitousage.stubbing.BasicStubbingTest::should_evaluate_latest_stubbing_first
+  - org.mockitousage.stubbing.DeprecatedStubbingTest::shouldEvaluateLatestStubbingFirst
+  - org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest::shouldUseEqualsToVerifyMethodVarargs
+
+2024-02-26 11:40:21,114 - Mockito_1 - INFO - 它的bug类型为:
+2024-02-26 11:40:21,114 - Mockito_1 - INFO - 2
+2024-02-26 11:41:30,639 - Mockito_1 - INFO - 开始验证补丁1 1:
+2024-02-26 11:41:30,639 - Mockito_1 - INFO - 
+            Object varArgArray = invocation.getArgumentAt(indexOfVararg, Object.class);
+            if (varArgArray instanceof Object[]) {
+                for (Object argument : (Object[]) varArgArray) {
+                    Matcher m = matchers.get(indexOfVararg);
+                    if (m instanceof CapturesArguments) {
+                        ((CapturesArguments) m).captureFrom(argument);
+                    }
+                }
+            }
+
+2024-02-26 11:41:58,223 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:43:09,938 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:43:09,938 - Mockito_1 - INFO - Failing tests: 8
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+
+2024-02-26 11:43:10,396 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:43:10,396 - Mockito_1 - INFO - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+2024-02-26 11:43:10,396 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:43:10,396 - Mockito_1 - INFO -         invocationMatcher.captureArgumentsFrom(invocation);
+
+2024-02-26 11:43:10,396 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:43:10,396 - Mockito_1 - INFO - java.lang.ArrayIndexOutOfBoundsException: 0
+
+2024-02-26 11:43:10,396 - Mockito_1 - INFO - 补丁1 1测试失败
+2024-02-26 11:43:10,397 - Mockito_1 - INFO - 开始验证补丁1 2:
+2024-02-26 11:43:10,397 - Mockito_1 - INFO - 
+            Object[] varArgArguments = (Object[]) invocation.getArgumentAt(indexOfVararg, Object[].class);
+            for (Object argument : varArgArguments) {
+                Matcher m = matchers.get(indexOfVararg);
+                if (m instanceof CapturesArguments) {
+                    ((CapturesArguments) m).captureFrom(argument);
+                }
+            }
+
+2024-02-26 11:43:38,133 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:44:49,998 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:44:49,998 - Mockito_1 - INFO - Failing tests: 26
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockito.internal.util.reflection.FieldInitializerTest::can_instantiate_class_with_parameterized_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_report_failure_if_constructor_throws_exception
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_fail_if_an_argument_instance_type_do_not_match_wanted_type
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_with_vararg_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_if_resolver_provide_matching_types
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveAllStubbing
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyWithNullVarArgArray
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyWithAnyObject
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubCorrectlyWhenMixedVarargsUsed
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubCorrectlyWhenDoubleStringAndMixedVarargsUsed
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyWithAnyVarargs
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyNumberOfInvocationsUsingAnyVarargAndEqualArgument
+  - org.mockitousage.bugs.varargs.VarargsNotPlayingWithAnyObjectTest::shouldStubUsingAnyVarargs
+  - org.mockitousage.matchers.VerificationAndStubbingUsingMatchersTest::shouldVerifyUsingMatchers
+  - org.mockitousage.stubbing.BasicStubbingTest::test_stub_only_not_verifiable
+  - org.mockitousage.stubbing.BasicStubbingTest::should_evaluate_latest_stubbing_first
+  - org.mockitousage.stubbing.DeprecatedStubbingTest::shouldEvaluateLatestStubbingFirst
+  - org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest::shouldUseEqualsToVerifyMethodVarargs
+
+2024-02-26 11:44:50,454 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:44:50,454 - Mockito_1 - INFO - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+2024-02-26 11:44:50,454 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:44:50,454 - Mockito_1 - INFO -         invocationMatcher.captureArgumentsFrom(invocation);
+
+2024-02-26 11:44:50,454 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:44:50,454 - Mockito_1 - INFO - java.lang.ArrayIndexOutOfBoundsException: 0
+
+2024-02-26 11:44:50,454 - Mockito_1 - INFO - 补丁1 2测试失败
+2024-02-26 11:44:50,455 - Mockito_1 - INFO - 开始验证补丁1 3:
+2024-02-26 11:44:50,455 - Mockito_1 - INFO - 
+            Object varArgs = invocation.getArgumentAt(indexOfVararg, Object.class);
+            if (varArgs != null) {
+                int length = Array.getLength(varArgs);
+                for (int i = 0; i < length; i++) {
+                    Object argument = Array.get(varArgs, i);
+                    Matcher m = matchers.get(indexOfVararg);
+                    if (m instanceof CapturesArguments) {
+                        ((CapturesArguments) m).captureFrom(argument);
+                    }
+                }
+            }
+
+2024-02-26 11:45:17,986 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:46:30,010 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:46:30,010 - Mockito_1 - INFO - Failing tests: 22
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockito.internal.util.reflection.FieldInitializerTest::can_instantiate_class_with_parameterized_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_report_failure_if_constructor_throws_exception
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_with_vararg_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_if_resolver_provide_matching_types
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveAllStubbing
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyWithAnyObject
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyWithAnyVarargs
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyNumberOfInvocationsUsingAnyVarargAndEqualArgument
+  - org.mockitousage.bugs.varargs.VarargsNotPlayingWithAnyObjectTest::shouldStubUsingAnyVarargs
+  - org.mockitousage.matchers.VerificationAndStubbingUsingMatchersTest::shouldVerifyUsingMatchers
+  - org.mockitousage.stubbing.BasicStubbingTest::test_stub_only_not_verifiable
+  - org.mockitousage.stubbing.BasicStubbingTest::should_evaluate_latest_stubbing_first
+  - org.mockitousage.stubbing.DeprecatedStubbingTest::shouldEvaluateLatestStubbingFirst
+  - org.mockitousage.verification.VerificationInOrderMixedWithOrdiraryVerificationTest::shouldUseEqualsToVerifyMethodVarargs
+
+2024-02-26 11:46:30,467 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:46:30,467 - Mockito_1 - INFO - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+2024-02-26 11:46:30,467 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:46:30,467 - Mockito_1 - INFO -         invocationMatcher.captureArgumentsFrom(invocation);
+
+2024-02-26 11:46:30,467 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:46:30,467 - Mockito_1 - INFO - java.lang.ArrayIndexOutOfBoundsException: 0
+
+2024-02-26 11:46:30,467 - Mockito_1 - INFO - 补丁1 3测试失败
+2024-02-26 11:46:30,468 - Mockito_1 - INFO - 开始验证补丁1 4:
+2024-02-26 11:46:30,468 - Mockito_1 - INFO - 
+Object varargArray = invocation.getArgumentAt(indexOfVararg, Object.class);
+if (varargArray instanceof Object[]) {
+    Object[] arguments = (Object[]) varargArray;
+    for (Object argument : arguments) {
+        if (matchers.get(indexOfVararg) instanceof CapturesArguments) {
+            ((CapturesArguments) matchers.get(indexOfVararg)).captureFrom(argument);
+        }
+    }
+}
+
+2024-02-26 11:46:58,181 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:48:09,922 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:48:09,923 - Mockito_1 - INFO - Failing tests: 8
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+
+2024-02-26 11:48:10,378 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:48:10,378 - Mockito_1 - INFO - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+2024-02-26 11:48:10,379 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:48:10,379 - Mockito_1 - INFO -         invocationMatcher.captureArgumentsFrom(invocation);
+
+2024-02-26 11:48:10,379 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:48:10,379 - Mockito_1 - INFO - java.lang.ArrayIndexOutOfBoundsException: 0
+
+2024-02-26 11:48:10,379 - Mockito_1 - INFO - 补丁1 4测试失败
+2024-02-26 11:48:10,379 - Mockito_1 - INFO - 开始验证补丁1 5:
+2024-02-26 11:48:10,380 - Mockito_1 - INFO - 
+Object varArgs = invocation.getArgumentAt(indexOfVararg, Object.class);
+if (varArgs instanceof Object[]) {
+    for (Object arg : (Object[]) varArgs) {
+        Matcher matcher = matchers.get(matchers.size() - 1);
+        if (matcher instanceof CapturesArguments) {
+            ((CapturesArguments) matcher).captureFrom(arg);
+        }
+    }
+}
+
+2024-02-26 11:48:38,143 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:49:49,765 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:49:49,765 - Mockito_1 - INFO - Failing tests: 8
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+
+2024-02-26 11:49:50,215 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:49:50,216 - Mockito_1 - INFO - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+2024-02-26 11:49:50,216 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:49:50,216 - Mockito_1 - INFO -         invocationMatcher.captureArgumentsFrom(invocation);
+
+2024-02-26 11:49:50,216 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:49:50,216 - Mockito_1 - INFO - java.lang.ArrayIndexOutOfBoundsException: 0
+
+2024-02-26 11:49:50,216 - Mockito_1 - INFO - 补丁1 5测试失败
+2024-02-26 11:49:50,217 - Mockito_1 - INFO - 开始验证补丁1 6:
+2024-02-26 11:49:50,217 - Mockito_1 - INFO - 
+for (int i = 0; i <= indexOfVararg; i++) {
+    Matcher m = matchers.get(i);
+    if (m instanceof CapturesArguments) {
+        ((CapturesArguments) m).captureFrom(invocation.getArgumentAt(i, Object.class));
+    }
+}
+
+2024-02-26 11:50:17,639 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:51:29,196 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:51:29,196 - Mockito_1 - INFO - Failing tests: 8
+  - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyBooleanVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldStubStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyStringVarargs
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldVerifyObjectVarargs
+  - org.mockitousage.bugs.VarargsErrorWhenCallingRealMethodTest::shouldNotThrowAnyException
+
+2024-02-26 11:51:29,654 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:51:29,654 - Mockito_1 - INFO - org.mockito.internal.invocation.InvocationMatcherTest::should_capture_arguments_when_args_count_does_NOT_match
+2024-02-26 11:51:29,654 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:51:29,654 - Mockito_1 - INFO -         invocationMatcher.captureArgumentsFrom(invocation);
+
+2024-02-26 11:51:29,654 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:51:29,654 - Mockito_1 - INFO - java.lang.ArrayIndexOutOfBoundsException: 0
+
+2024-02-26 11:51:29,654 - Mockito_1 - INFO - 补丁1 6测试失败
+2024-02-26 11:51:29,655 - Mockito_1 - INFO - 开始验证补丁1 7:
+2024-02-26 11:51:29,655 - Mockito_1 - INFO - 
+Object varargsArray = invocation.getRawArguments()[indexOfVararg];
+if (varargsArray instanceof Object[]) {
+    Object[] arguments = (Object[]) varargsArray;
+    for (int i = 0; i < arguments.length; i++) {
+        Matcher m = matchers.get(i + indexOfVararg);
+        if (m instanceof CapturesArguments) {
+            ((CapturesArguments) m).captureFrom(arguments[i]);
+        }
+    }
+}
+
+2024-02-26 11:51:57,079 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:53:08,843 - Mockito_1 - INFO - 测试失败
+2024-02-26 11:53:08,843 - Mockito_1 - INFO - Failing tests: 6
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_fail_if_an_argument_instance_type_do_not_match_wanted_type
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_with_vararg_constructor
+  - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_instantiate_type_if_resolver_provide_matching_types
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyWithAnyVarargs
+  - org.mockitousage.bugs.varargs.VarargsAndAnyObjectPicksUpExtraInvocationsTest::shouldVerifyCorrectlyNumberOfInvocationsUsingAnyVarargAndEqualArgument
+  - org.mockitousage.bugs.varargs.VarargsNotPlayingWithAnyObjectTest::shouldStubUsingAnyVarargs
+
+2024-02-26 11:53:09,297 - Mockito_1 - INFO - 选择失败的测试用例为:
+2024-02-26 11:53:09,297 - Mockito_1 - INFO - org.mockito.internal.util.reflection.ParameterizedConstructorInstantiatorTest::should_fail_if_an_argument_instance_type_do_not_match_wanted_type
+2024-02-26 11:53:09,297 - Mockito_1 - INFO - 失败的测试代码为:
+2024-02-26 11:53:09,297 - Mockito_1 - INFO -             new ParameterizedConstructorInstantiator(this, field("withMultipleConstructor"), resolver).instantiate();
+
+2024-02-26 11:53:09,297 - Mockito_1 - INFO - 失败信息为:
+2024-02-26 11:53:09,297 - Mockito_1 - INFO - java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+
+2024-02-26 11:53:09,297 - Mockito_1 - INFO - 补丁1 7测试失败
+2024-02-26 11:53:09,298 - Mockito_1 - INFO - 开始验证补丁1 8:
+2024-02-26 11:53:09,298 - Mockito_1 - INFO - 
+Object varargsArray = invocation.getRawArguments()[indexOfVararg];
+if (varargsArray instanceof Object[]) {
+    Object[] arguments = (Object[]) varargsArray;
+    for (Object argument : arguments) {
+        if (argument != null) {
+            Matcher m = matchers.get(matchers.size() - 1);
+            if (m instanceof CapturesArguments) {
+                ((CapturesArguments) m).captureFrom(argument);
+            }
+        }
+    }
+}
+
+2024-02-26 11:53:36,797 - Mockito_1 - INFO - 编译成功
+2024-02-26 11:54:48,104 - Mockito_1 - INFO - 测试成功
+2024-02-26 11:54:48,104 - Mockito_1 - INFO - 补丁1 8 通过了所有的测试用例

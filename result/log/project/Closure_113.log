@@ -1,0 +1,313 @@
+2024-02-24 00:47:33,981 - Closure_113 - INFO - rm -rf /home/chongchong/d4j-project/Closure_113
+2024-02-24 00:47:33,982 - Closure_113 - INFO - 删除 Closure 113b 成功
+2024-02-24 00:47:33,982 - Closure_113 - INFO - defects4j checkout -p Closure -v 113b -w /home/chongchong/d4j-project/Closure_113
+2024-02-24 00:47:36,777 - Closure_113 - INFO - checkout Closure 113b 成功
+2024-02-24 00:47:48,974 - Closure_113 - INFO - 编译成功
+2024-02-24 00:48:48,206 - Closure_113 - INFO - 测试失败
+2024-02-24 00:48:48,206 - Closure_113 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.VarCheckTest::testNoUndeclaredVarWhenUsingClosurePass
+
+2024-02-24 00:48:49,229 - Closure_113 - INFO - 它的bug类型为:
+2024-02-24 00:48:49,229 - Closure_113 - INFO - 1
+2024-02-24 00:50:05,949 - Closure_113 - INFO - Closure_113 未成功修复
+2024-02-24 14:22:22,615 - Closure_113 - INFO - rm -rf /home/chongchong/d4j-project/Closure_113
+2024-02-24 14:22:22,680 - Closure_113 - INFO - 删除 Closure 113b 成功
+2024-02-24 14:22:22,680 - Closure_113 - INFO - defects4j checkout -p Closure -v 113b -w /home/chongchong/d4j-project/Closure_113
+2024-02-24 14:22:25,137 - Closure_113 - INFO - checkout Closure 113b 成功
+2024-02-24 14:22:37,260 - Closure_113 - INFO - 编译成功
+2024-02-24 14:23:35,448 - Closure_113 - INFO - 测试失败
+2024-02-24 14:23:35,448 - Closure_113 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.VarCheckTest::testNoUndeclaredVarWhenUsingClosurePass
+
+2024-02-24 14:23:36,457 - Closure_113 - INFO - 它的bug类型为:
+2024-02-24 14:23:36,457 - Closure_113 - INFO - 1
+2024-02-24 14:24:29,312 - Closure_113 - INFO - 开始验证补丁1 1:
+2024-02-24 14:24:29,312 - Closure_113 - INFO - 
+      if (provided == null) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+   
+2024-02-24 14:24:31,142 - Closure_113 - INFO - 编译失败
+2024-02-24 14:24:31,142 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:24:31,142 - Closure_113 - INFO - 补丁1 1 未成功编译
+2024-02-24 14:24:31,143 - Closure_113 - INFO - 开始验证补丁1 2:
+2024-02-24 14:24:31,143 - Closure_113 - INFO - 
+      if (provided == null && parent != null) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+   
+2024-02-24 14:24:32,996 - Closure_113 - INFO - 编译失败
+2024-02-24 14:24:32,996 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:24:32,997 - Closure_113 - INFO - 补丁1 2 未成功编译
+2024-02-24 14:24:32,998 - Closure_113 - INFO - 开始验证补丁1 3:
+2024-02-24 14:24:32,998 - Closure_113 - INFO - 
+      if (!isProvided(arg)) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+   
+2024-02-24 14:24:34,812 - Closure_113 - INFO - 编译失败
+2024-02-24 14:24:34,812 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:24:34,812 - Closure_113 - INFO - 补丁1 3 未成功编译
+2024-02-24 14:24:34,814 - Closure_113 - INFO - 开始验证补丁1 4:
+2024-02-24 14:24:34,814 - Closure_113 - INFO - 
+      if (provided == null) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+   
+2024-02-24 14:24:34,814 - Closure_113 - INFO - 补丁1 4为重复的补丁
+2024-02-24 14:24:34,815 - Closure_113 - INFO - 开始验证补丁1 5:
+2024-02-24 14:24:34,815 - Closure_113 - INFO - 
+      if (provided == null) {
+        reportMissingProvide(arg);
+      }
+   
+2024-02-24 14:24:36,660 - Closure_113 - INFO - 编译失败
+2024-02-24 14:24:36,660 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:24:36,660 - Closure_113 - INFO - 补丁1 5 未成功编译
+2024-02-24 14:24:36,661 - Closure_113 - INFO - 开始验证补丁1 6:
+2024-02-24 14:24:36,661 - Closure_113 - INFO - 
+      if (provided != null) {
+        processProvidedNamespace(arg);
+      } else {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+   
+2024-02-24 14:24:38,489 - Closure_113 - INFO - 编译失败
+2024-02-24 14:24:38,489 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:24:38,489 - Closure_113 - INFO - 补丁1 6 未成功编译
+2024-02-24 14:24:38,490 - Closure_113 - INFO - 开始验证补丁2 1:
+2024-02-24 14:24:38,491 - Closure_113 - INFO - 
+if (provided == null) {
+
+2024-02-24 14:24:42,788 - Closure_113 - INFO - 编译成功
+2024-02-24 14:25:41,812 - Closure_113 - INFO - 测试失败
+2024-02-24 14:25:41,812 - Closure_113 - INFO - Failing tests: 17
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn6
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testOnlyClosureDependenciesOneEntryPoint
+  - com.google.javascript.jscomp.IntegrationTest::testProvideRequireSameFile
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testRemovalOfRequires
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testBadCrossModuleRequire
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testLateRequire
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testGoodCrossModuleRequire1
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testGoodCrossModuleRequire2
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules3b
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules3
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideRequireSameFile
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testMissingRequireWithAdditionalProvide
+
+2024-02-24 14:25:42,313 - Closure_113 - INFO - 选择失败的测试用例为:
+2024-02-24 14:25:42,313 - Closure_113 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+2024-02-24 14:25:42,313 - Closure_113 - INFO - 失败的测试代码为:
+2024-02-24 14:25:42,314 - Closure_113 - INFO -     test(new String[] {
+
+2024-02-24 14:25:42,314 - Closure_113 - INFO - 失败信息为:
+2024-02-24 14:25:42,314 - Closure_113 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 14:25:42,314 - Closure_113 - INFO - 补丁2 1测试失败
+2024-02-24 14:25:42,315 - Closure_113 - INFO - 开始验证补丁2 2:
+2024-02-24 14:25:42,315 - Closure_113 - INFO - 
+if (provided == null || !provided.isNamespaceProvided("namespace.Class1")) {
+
+2024-02-24 14:25:44,411 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:44,412 - Closure_113 - INFO - 错误: 找不到符号
+if (provided == null || !provided.isNamespaceProvided("namespace.Class1")) {
+2024-02-24 14:25:44,412 - Closure_113 - INFO - 补丁2 2 未成功编译
+2024-02-24 14:25:44,413 - Closure_113 - INFO - 开始验证补丁2 3:
+2024-02-24 14:25:44,413 - Closure_113 - INFO - 
+if (!compiler.hasNamespaceBeenProvided("namespace.Class1")) {
+
+2024-02-24 14:25:46,468 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:46,468 - Closure_113 - INFO - 错误: 找不到符号
+if (!compiler.hasNamespaceBeenProvided("namespace.Class1")) {
+2024-02-24 14:25:46,468 - Closure_113 - INFO - 补丁2 3 未成功编译
+2024-02-24 14:25:46,469 - Closure_113 - INFO - 开始验证补丁2 4:
+2024-02-24 14:25:46,469 - Closure_113 - INFO - 
+if (provided == null) {
+
+2024-02-24 14:25:46,469 - Closure_113 - INFO - 补丁2 4为重复的补丁
+2024-02-24 14:25:46,470 - Closure_113 - INFO - 开始验证补丁2 5:
+2024-02-24 14:25:46,470 - Closure_113 - INFO - 
+if (!provided.isPresent()) {
+
+2024-02-24 14:25:48,535 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:48,535 - Closure_113 - INFO - 错误: 找不到符号
+if (!provided.isPresent()) {
+2024-02-24 14:25:48,535 - Closure_113 - INFO - 补丁2 5 未成功编译
+2024-02-24 14:25:48,537 - Closure_113 - INFO - 开始验证补丁2 6:
+2024-02-24 14:25:48,537 - Closure_113 - INFO - 
+if (provided.isEmpty()) {
+
+2024-02-24 14:25:50,605 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:50,605 - Closure_113 - INFO - 错误: 找不到符号
+if (provided.isEmpty()) {
+2024-02-24 14:25:50,605 - Closure_113 - INFO - 补丁2 6 未成功编译
+2024-02-24 14:25:50,606 - Closure_113 - INFO - 开始验证补丁2 7:
+2024-02-24 14:25:50,606 - Closure_113 - INFO - 
+      // Check whether the namespace.Class1 has not been provided
+      if (provided == null) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+
+2024-02-24 14:25:52,426 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:52,426 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:25:52,426 - Closure_113 - INFO - 补丁2 7 未成功编译
+2024-02-24 14:25:52,427 - Closure_113 - INFO - 开始验证补丁2 8:
+2024-02-24 14:25:52,427 - Closure_113 - INFO - 
+      // Remove provided node if it's incorrect or not needed
+      if (provided == null || !provided.equals("namespace.Class1")) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+
+2024-02-24 14:25:54,270 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:54,271 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:25:54,271 - Closure_113 - INFO - 补丁2 8 未成功编译
+2024-02-24 14:25:54,272 - Closure_113 - INFO - 开始验证补丁2 9:
+2024-02-24 14:25:54,272 - Closure_113 - INFO - 
+      // Safely detach only when the provided object isn't null, indicating the namespace was provided
+      if (provided != null && provided.equals("namespace.Class1")) {
+        parent.detachFromParent();
+        compiler.reportCodeChange();
+      }
+
+2024-02-24 14:25:56,104 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:56,104 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:25:56,104 - Closure_113 - INFO - 补丁2 9 未成功编译
+2024-02-24 14:25:56,105 - Closure_113 - INFO - 开始验证补丁3 1:
+2024-02-24 14:25:56,105 - Closure_113 - INFO - 
+if (provided == null) {
+
+2024-02-24 14:25:56,105 - Closure_113 - INFO - 补丁3 1为重复的补丁
+2024-02-24 14:25:56,106 - Closure_113 - INFO - 开始验证补丁3 2:
+2024-02-24 14:25:56,106 - Closure_113 - INFO - 
+if (provided == null || !provided) {
+
+2024-02-24 14:25:58,201 - Closure_113 - INFO - 编译失败
+2024-02-24 14:25:58,201 - Closure_113 - INFO - 错误: 一元运算符 '!' 的操作数类型ProcessClosurePrimitives.ProvidedName
+if (provided == null || !provided) {
+2024-02-24 14:25:58,201 - Closure_113 - INFO - 补丁3 2 未成功编译
+2024-02-24 14:25:58,202 - Closure_113 - INFO - 开始验证补丁3 3:
+2024-02-24 14:25:58,202 - Closure_113 - INFO - 
+// If no further conditions are given, the direct negation based on the error analysis should be applied.
+
+2024-02-24 14:26:00,026 - Closure_113 - INFO - 编译失败
+2024-02-24 14:26:00,026 - Closure_113 - INFO - 错误: 需要class, interface或enum
+private void processProvideCall(NodeTraversal t, Node n, Node parent) {
+2024-02-24 14:26:00,026 - Closure_113 - INFO - 补丁3 3 未成功编译
+2024-02-24 14:26:00,027 - Closure_113 - INFO - 开始验证补丁3 4:
+2024-02-24 14:26:00,027 - Closure_113 - INFO - 
+      if (provided == null) {
+
+2024-02-24 14:26:04,331 - Closure_113 - INFO - 编译成功
+2024-02-24 14:27:02,822 - Closure_113 - INFO - 测试失败
+2024-02-24 14:27:02,822 - Closure_113 - INFO - Failing tests: 17
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn6
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testOnlyClosureDependenciesOneEntryPoint
+  - com.google.javascript.jscomp.IntegrationTest::testProvideRequireSameFile
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testRemovalOfRequires
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testBadCrossModuleRequire
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testLateRequire
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testGoodCrossModuleRequire1
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testGoodCrossModuleRequire2
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules3b
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules3
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideRequireSameFile
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testMissingRequireWithAdditionalProvide
+
+2024-02-24 14:27:03,343 - Closure_113 - INFO - 选择失败的测试用例为:
+2024-02-24 14:27:03,343 - Closure_113 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+2024-02-24 14:27:03,343 - Closure_113 - INFO - 失败的测试代码为:
+2024-02-24 14:27:03,343 - Closure_113 - INFO -     test(new String[] {
+
+2024-02-24 14:27:03,343 - Closure_113 - INFO - 失败信息为:
+2024-02-24 14:27:03,343 - Closure_113 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 14:27:03,343 - Closure_113 - INFO - 补丁3 4测试失败
+2024-02-24 14:27:03,344 - Closure_113 - INFO - 开始验证补丁3 5:
+2024-02-24 14:27:03,344 - Closure_113 - INFO - 
+      if (provided == null && shouldReportMissingNamespace()) {
+
+2024-02-24 14:27:05,396 - Closure_113 - INFO - 编译失败
+2024-02-24 14:27:05,397 - Closure_113 - INFO - 错误: 找不到符号
+if (provided == null && shouldReportMissingNamespace()) {
+2024-02-24 14:27:05,397 - Closure_113 - INFO - 补丁3 5 未成功编译
+2024-02-24 14:27:05,398 - Closure_113 - INFO - 开始验证补丁3 6:
+2024-02-24 14:27:05,398 - Closure_113 - INFO - 
+      if (provided == null && parent != null) {
+
+2024-02-24 14:27:09,668 - Closure_113 - INFO - 编译成功
+2024-02-24 14:28:08,270 - Closure_113 - INFO - 测试失败
+2024-02-24 14:28:08,270 - Closure_113 - INFO - Failing tests: 17
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn6
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testOnlyClosureDependenciesOneEntryPoint
+  - com.google.javascript.jscomp.IntegrationTest::testProvideRequireSameFile
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testRemovalOfRequires
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testBadCrossModuleRequire
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testLateRequire
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testGoodCrossModuleRequire1
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testGoodCrossModuleRequire2
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules3b
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules3
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideRequireSameFile
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testMissingRequireWithAdditionalProvide
+
+2024-02-24 14:28:08,789 - Closure_113 - INFO - 选择失败的测试用例为:
+2024-02-24 14:28:08,789 - Closure_113 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+2024-02-24 14:28:08,789 - Closure_113 - INFO - 失败的测试代码为:
+2024-02-24 14:28:08,789 - Closure_113 - INFO -     test(new String[] {
+
+2024-02-24 14:28:08,789 - Closure_113 - INFO - 失败信息为:
+2024-02-24 14:28:08,789 - Closure_113 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 14:28:08,789 - Closure_113 - INFO - 补丁3 6测试失败
+2024-02-24 14:28:08,790 - Closure_113 - INFO - 开始验证补丁3 7:
+2024-02-24 14:28:08,790 - Closure_113 - INFO - 
+      if (provided == null) {
+
+2024-02-24 14:28:08,790 - Closure_113 - INFO - 补丁3 7为重复的补丁
+2024-02-24 14:28:08,791 - Closure_113 - INFO - 开始验证补丁3 8:
+2024-02-24 14:28:08,791 - Closure_113 - INFO - 
+      if (provided == null && isNamespaceClass1RequiredAndNotProvided()) {
+
+2024-02-24 14:28:10,886 - Closure_113 - INFO - 编译失败
+2024-02-24 14:28:10,886 - Closure_113 - INFO - 错误: 找不到符号
+if (provided == null && isNamespaceClass1RequiredAndNotProvided()) {
+2024-02-24 14:28:10,886 - Closure_113 - INFO - 补丁3 8 未成功编译
+2024-02-24 14:28:10,887 - Closure_113 - INFO - 开始验证补丁3 9:
+2024-02-24 14:28:10,887 - Closure_113 - INFO - 
+      if (isNamespaceNotProvided(arg)) {
+
+2024-02-24 14:28:13,069 - Closure_113 - INFO - 编译失败
+2024-02-24 14:28:13,069 - Closure_113 - INFO - 错误: 找不到符号
+if (isNamespaceNotProvided(arg)) {
+2024-02-24 14:28:13,069 - Closure_113 - INFO - 补丁3 9 未成功编译
+2024-02-24 14:28:13,069 - Closure_113 - INFO - Closure_113 未成功修复

@@ -1,0 +1,112 @@
+2024-02-24 00:50:05,949 - Closure_123 - INFO - rm -rf /home/chongchong/d4j-project/Closure_123
+2024-02-24 00:50:05,950 - Closure_123 - INFO - 删除 Closure 123b 成功
+2024-02-24 00:50:05,950 - Closure_123 - INFO - defects4j checkout -p Closure -v 123b -w /home/chongchong/d4j-project/Closure_123
+2024-02-24 00:50:08,700 - Closure_123 - INFO - checkout Closure 123b 成功
+2024-02-24 00:50:20,759 - Closure_123 - INFO - 编译成功
+2024-02-24 00:51:20,472 - Closure_123 - INFO - 测试失败
+2024-02-24 00:51:20,472 - Closure_123 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testPrintInOperatorInForLoop
+
+2024-02-24 00:51:21,508 - Closure_123 - INFO - 它的bug类型为:
+2024-02-24 00:51:21,508 - Closure_123 - INFO - 1
+2024-02-24 00:52:05,750 - Closure_123 - INFO - Closure_123 未成功修复
+2024-02-24 14:38:41,225 - Closure_123 - INFO - rm -rf /home/chongchong/d4j-project/Closure_123
+2024-02-24 14:38:41,304 - Closure_123 - INFO - 删除 Closure 123b 成功
+2024-02-24 14:38:41,304 - Closure_123 - INFO - defects4j checkout -p Closure -v 123b -w /home/chongchong/d4j-project/Closure_123
+2024-02-24 14:38:44,119 - Closure_123 - INFO - checkout Closure 123b 成功
+2024-02-24 14:38:56,131 - Closure_123 - INFO - 编译成功
+2024-02-24 14:39:55,031 - Closure_123 - INFO - 测试失败
+2024-02-24 14:39:55,031 - Closure_123 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testPrintInOperatorInForLoop
+
+2024-02-24 14:39:56,051 - Closure_123 - INFO - 它的bug类型为:
+2024-02-24 14:39:56,051 - Closure_123 - INFO - 1
+2024-02-24 14:40:37,142 - Closure_123 - INFO - 开始验证补丁1 1:
+2024-02-24 14:40:37,142 - Closure_123 - INFO - 
+Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_FOR_INIT_CLAUSE : Context.OTHER;
+
+2024-02-24 14:40:41,431 - Closure_123 - INFO - 编译成功
+2024-02-24 14:41:40,587 - Closure_123 - INFO - 测试失败
+2024-02-24 14:41:40,587 - Closure_123 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testPrintInOperatorInForLoop
+
+2024-02-24 14:41:41,088 - Closure_123 - INFO - 选择失败的测试用例为:
+2024-02-24 14:41:41,088 - Closure_123 - INFO - com.google.javascript.jscomp.CodePrinterTest::testPrintInOperatorInForLoop
+2024-02-24 14:41:41,088 - Closure_123 - INFO - 失败的测试代码为:
+2024-02-24 14:41:41,088 - Closure_123 - INFO -     assertPrintSame("for(a=c?0:(0 in d);;)foo()");
+
+2024-02-24 14:41:41,088 - Closure_123 - INFO - 失败信息为:
+2024-02-24 14:41:41,088 - Closure_123 - INFO - junit.framework.ComparisonFailure: expected:<for(a=c?0:[(0 in d)];;)foo()> but was:<for(a=c?0:[0 in d];;)foo()>
+
+2024-02-24 14:41:41,088 - Closure_123 - INFO - 补丁1 1测试失败
+2024-02-24 14:41:41,089 - Closure_123 - INFO - 开始验证补丁1 2:
+2024-02-24 14:41:41,089 - Closure_123 - INFO - 
+Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_PRECEDENCE : Context.OTHER;
+
+2024-02-24 14:41:43,144 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:43,144 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_PRECEDENCE : Context.OTHER;
+2024-02-24 14:41:43,145 - Closure_123 - INFO - 补丁1 2 未成功编译
+2024-02-24 14:41:43,146 - Closure_123 - INFO - 开始验证补丁1 3:
+2024-02-24 14:41:43,146 - Closure_123 - INFO - 
+Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_FOR_INIT : Context.OTHER;
+
+2024-02-24 14:41:45,209 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:45,209 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_FOR_INIT : Context.OTHER;
+2024-02-24 14:41:45,209 - Closure_123 - INFO - 补丁1 3 未成功编译
+2024-02-24 14:41:45,211 - Closure_123 - INFO - 开始验证补丁1 4:
+2024-02-24 14:41:45,211 - Closure_123 - INFO - 
+        Context rhsContext = Context.IN_FOR_INIT;
+
+2024-02-24 14:41:47,252 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:47,252 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = Context.IN_FOR_INIT;
+2024-02-24 14:41:47,252 - Closure_123 - INFO - 补丁1 4 未成功编译
+2024-02-24 14:41:47,253 - Closure_123 - INFO - 开始验证补丁1 5:
+2024-02-24 14:41:47,254 - Closure_123 - INFO - 
+        Context rhsContext = NodeUtil.getContextForNoInOperator(type);
+
+2024-02-24 14:41:49,342 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:49,342 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = NodeUtil.getContextForNoInOperator(type);
+2024-02-24 14:41:49,342 - Closure_123 - INFO - 补丁1 5 未成功编译
+2024-02-24 14:41:49,343 - Closure_123 - INFO - 开始验证补丁1 6:
+2024-02-24 14:41:49,343 - Closure_123 - INFO - 
+        Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_FOR_INIT : Context.OTHER;
+
+2024-02-24 14:41:51,413 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:51,413 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = p == NodeUtil.precedence(Token.IN) ? Context.IN_FOR_INIT : Context.OTHER;
+2024-02-24 14:41:51,414 - Closure_123 - INFO - 补丁1 6 未成功编译
+2024-02-24 14:41:51,415 - Closure_123 - INFO - 开始验证补丁1 7:
+2024-02-24 14:41:51,415 - Closure_123 - INFO - 
+Context rhsContext = Context.PRECEDENCE;
+
+2024-02-24 14:41:53,476 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:53,476 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = Context.PRECEDENCE;
+2024-02-24 14:41:53,476 - Closure_123 - INFO - 补丁1 7 未成功编译
+2024-02-24 14:41:53,477 - Closure_123 - INFO - 开始验证补丁1 8:
+2024-02-24 14:41:53,478 - Closure_123 - INFO - 
+Context rhsContext = context == Context.IN_FOR_INIT ? Context.OTHER : Context.PRECEDENCE;
+
+2024-02-24 14:41:55,536 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:55,536 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = context == Context.IN_FOR_INIT ? Context.OTHER : Context.PRECEDENCE;
+2024-02-24 14:41:55,536 - Closure_123 - INFO - 补丁1 8 未成功编译
+2024-02-24 14:41:55,537 - Closure_123 - INFO - 开始验证补丁1 9:
+2024-02-24 14:41:55,537 - Closure_123 - INFO - 
+Context rhsContext = Context.IN_FOR_INIT;
+
+2024-02-24 14:41:57,605 - Closure_123 - INFO - 编译失败
+2024-02-24 14:41:57,605 - Closure_123 - INFO - 错误: 找不到符号
+Context rhsContext = Context.IN_FOR_INIT;
+2024-02-24 14:41:57,606 - Closure_123 - INFO - 补丁1 9 未成功编译
+2024-02-24 14:41:57,607 - Closure_123 - INFO - 开始验证补丁3 4:
+2024-02-24 14:41:57,607 - Closure_123 - INFO - 
+Context rhsContext = Context.IN_FOR_INIT_CLAUSE;
+
+2024-02-24 14:42:01,881 - Closure_123 - INFO - 编译成功
+2024-02-24 14:43:00,467 - Closure_123 - INFO - 测试成功
+2024-02-24 14:43:00,467 - Closure_123 - INFO - 补丁3 4 通过了所有的测试用例

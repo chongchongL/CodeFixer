@@ -1,0 +1,338 @@
+2024-02-26 00:32:14,976 - Closure_23 - INFO - rm -rf /home/chongchong/d4j-project/Closure_23
+2024-02-26 00:32:14,977 - Closure_23 - INFO - 删除 Closure 23b 成功
+2024-02-26 00:32:14,977 - Closure_23 - INFO - defects4j checkout -p Closure -v 23b -w /home/chongchong/d4j-project/Closure_23
+2024-02-26 00:32:18,042 - Closure_23 - INFO - checkout Closure 23b 成功
+2024-02-26 00:32:29,659 - Closure_23 - INFO - 编译成功
+2024-02-26 00:33:16,735 - Closure_23 - INFO - 测试失败
+2024-02-26 00:33:16,735 - Closure_23 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldGetElem
+
+2024-02-26 00:33:17,772 - Closure_23 - INFO - 它的bug类型为:
+2024-02-26 00:33:17,772 - Closure_23 - INFO - 4
+2024-02-26 00:34:24,358 - Closure_23 - INFO - 开始验证补丁1 1:
+2024-02-26 00:34:24,358 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:26,194 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:26,194 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:26,194 - Closure_23 - INFO - 补丁1 1 未成功编译
+2024-02-26 00:34:26,195 - Closure_23 - INFO - 开始验证补丁1 2:
+2024-02-26 00:34:26,195 - Closure_23 - INFO - 
+for (int i = 0; current != null; i++) {
+    if (i >= intIndex) {
+        break;
+    }
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:28,073 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:28,073 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:28,073 - Closure_23 - INFO - 补丁1 2 未成功编译
+2024-02-26 00:34:28,074 - Closure_23 - INFO - 开始验证补丁1 3:
+2024-02-26 00:34:28,074 - Closure_23 - INFO - 
+int i = 0;
+while (current != null && i < intIndex) {
+    elem = current;
+    current = current.getNext();
+    i++;
+}
+
+2024-02-26 00:34:29,942 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:29,942 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:29,942 - Closure_23 - INFO - 补丁1 3 未成功编译
+2024-02-26 00:34:29,943 - Closure_23 - INFO - 开始验证补丁1 4:
+2024-02-26 00:34:29,943 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:29,944 - Closure_23 - INFO - 补丁1 4为重复的补丁
+2024-02-26 00:34:29,944 - Closure_23 - INFO - 开始验证补丁1 5:
+2024-02-26 00:34:29,944 - Closure_23 - INFO - 
+for (int i = 0; i < intIndex; i++) {
+    if (current == null) break;
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:31,798 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:31,798 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:31,798 - Closure_23 - INFO - 补丁1 5 未成功编译
+2024-02-26 00:34:31,799 - Closure_23 - INFO - 开始验证补丁1 6:
+2024-02-26 00:34:31,799 - Closure_23 - INFO - 
+for (int i = 0; i <= intIndex && current != null; i++) {
+    elem = current;
+    if (i < intIndex) {
+        current = current.getNext();
+    }
+}
+
+2024-02-26 00:34:33,654 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:33,654 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:33,654 - Closure_23 - INFO - 补丁1 6 未成功编译
+2024-02-26 00:34:33,655 - Closure_23 - INFO - 开始验证补丁1 7:
+2024-02-26 00:34:33,655 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:33,655 - Closure_23 - INFO - 补丁1 7为重复的补丁
+2024-02-26 00:34:33,656 - Closure_23 - INFO - 开始验证补丁1 8:
+2024-02-26 00:34:33,656 - Closure_23 - INFO - 
+for (int i = 0; current != null; ) {
+    if (i < intIndex) {
+        elem = current;
+        current = current.getNext();
+        i++;
+    } else {
+        break;
+    }
+}
+
+2024-02-26 00:34:35,500 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:35,500 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:35,500 - Closure_23 - INFO - 补丁1 8 未成功编译
+2024-02-26 00:34:35,501 - Closure_23 - INFO - 开始验证补丁1 9:
+2024-02-26 00:34:35,501 - Closure_23 - INFO - 
+while (current != null && intIndex-- > 0) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:37,337 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:37,337 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:37,337 - Closure_23 - INFO - 补丁1 9 未成功编译
+2024-02-26 00:34:37,338 - Closure_23 - INFO - 开始验证补丁2 1:
+2024-02-26 00:34:37,339 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:37,339 - Closure_23 - INFO - 补丁2 1为重复的补丁
+2024-02-26 00:34:37,339 - Closure_23 - INFO - 开始验证补丁2 2:
+2024-02-26 00:34:37,340 - Closure_23 - INFO - 
+for (int i = 0; i < intIndex; i++) {
+    if (current == null) break;
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:37,340 - Closure_23 - INFO - 补丁2 2为重复的补丁
+2024-02-26 00:34:37,340 - Closure_23 - INFO - 开始验证补丁2 3:
+2024-02-26 00:34:37,341 - Closure_23 - INFO - 
+if (intIndex < 0) {
+    error(INDEX_OUT_OF_BOUNDS_ERROR, right);
+} else {
+    for (int i = 0; current != null && i < intIndex; i++) {
+        elem = current;
+        current = current.getNext();
+    }
+}
+
+2024-02-26 00:34:39,211 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:39,211 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:39,211 - Closure_23 - INFO - 补丁2 3 未成功编译
+2024-02-26 00:34:39,212 - Closure_23 - INFO - 开始验证补丁2 4:
+2024-02-26 00:34:39,212 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:39,212 - Closure_23 - INFO - 补丁2 4为重复的补丁
+2024-02-26 00:34:39,213 - Closure_23 - INFO - 开始验证补丁2 5:
+2024-02-26 00:34:39,213 - Closure_23 - INFO - 
+for (int i = 0; current != null; i++) {
+    if (i == intIndex) {
+        elem = current;
+        break;
+    }
+    current = current.getNext();
+}
+
+2024-02-26 00:34:41,047 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:41,047 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:41,047 - Closure_23 - INFO - 补丁2 5 未成功编译
+2024-02-26 00:34:41,048 - Closure_23 - INFO - 开始验证补丁2 6:
+2024-02-26 00:34:41,048 - Closure_23 - INFO - 
+int i = 0;
+while (current != null && i < intIndex) {
+    elem = current;
+    current = current.getNext();
+    i++;
+}
+
+2024-02-26 00:34:41,048 - Closure_23 - INFO - 补丁2 6为重复的补丁
+2024-02-26 00:34:41,049 - Closure_23 - INFO - 开始验证补丁2 7:
+2024-02-26 00:34:41,049 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:41,049 - Closure_23 - INFO - 补丁2 7为重复的补丁
+2024-02-26 00:34:41,050 - Closure_23 - INFO - 开始验证补丁2 8:
+2024-02-26 00:34:41,050 - Closure_23 - INFO - 
+if (intIndex >= 0) {
+    for (int i = 0; current != null && i < intIndex; i++) {
+        elem = current;
+        current = current.getNext();
+    }
+}
+
+2024-02-26 00:34:42,914 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:42,915 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:42,915 - Closure_23 - INFO - 补丁2 8 未成功编译
+2024-02-26 00:34:42,916 - Closure_23 - INFO - 开始验证补丁2 9:
+2024-02-26 00:34:42,916 - Closure_23 - INFO - 
+elem = current;
+for (int i = 0; current != null && i < intIndex; i++) {
+    current = current.getNext();
+    if (current != null) {
+        elem = current;
+    }
+}
+
+2024-02-26 00:34:44,789 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:44,789 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:44,789 - Closure_23 - INFO - 补丁2 9 未成功编译
+2024-02-26 00:34:44,790 - Closure_23 - INFO - 开始验证补丁3 1:
+2024-02-26 00:34:44,790 - Closure_23 - INFO - 
+for (int i = 0; current != null && i <= intIndex; i++) {
+    if (i == intIndex) elem = current;
+    current = current.getNext();
+}
+
+2024-02-26 00:34:46,628 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:46,628 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:46,628 - Closure_23 - INFO - 补丁3 1 未成功编译
+2024-02-26 00:34:46,629 - Closure_23 - INFO - 开始验证补丁3 2:
+2024-02-26 00:34:46,629 - Closure_23 - INFO - 
+for (int i = 0; current != null; i++) {
+    if (i == intIndex) {
+        elem = current;
+        break;
+    }
+    current = current.getNext();
+}
+
+2024-02-26 00:34:46,629 - Closure_23 - INFO - 补丁3 2为重复的补丁
+2024-02-26 00:34:46,630 - Closure_23 - INFO - 开始验证补丁3 3:
+2024-02-26 00:34:46,630 - Closure_23 - INFO - 
+if (intIndex < 0) {
+    error(INDEX_OUT_OF_BOUNDS_ERROR, right);
+} else {
+    for (int i = 0; current != null; i++) {
+        if (i == intIndex) {
+            elem = current;
+            break;
+        }
+        current = current.getNext();
+    }
+}
+
+2024-02-26 00:34:48,458 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:48,458 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:48,458 - Closure_23 - INFO - 补丁3 3 未成功编译
+2024-02-26 00:34:48,459 - Closure_23 - INFO - 开始验证补丁3 4:
+2024-02-26 00:34:48,459 - Closure_23 - INFO - 
+for (int i = 0; current != null && i <= intIndex; i++) {
+    if (i == intIndex) {
+        elem = current;
+    }
+    current = current.getNext();
+}
+
+2024-02-26 00:34:50,284 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:50,284 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:50,284 - Closure_23 - INFO - 补丁3 4 未成功编译
+2024-02-26 00:34:50,285 - Closure_23 - INFO - 开始验证补丁3 5:
+2024-02-26 00:34:50,285 - Closure_23 - INFO - 
+for (int i = 0; current != null; i++) {
+    if (i == intIndex) {
+        elem = current;
+        break;
+    }
+    current = current.getNext();
+}
+
+2024-02-26 00:34:50,285 - Closure_23 - INFO - 补丁3 5为重复的补丁
+2024-02-26 00:34:50,286 - Closure_23 - INFO - 开始验证补丁3 6:
+2024-02-26 00:34:50,286 - Closure_23 - INFO - 
+if (intIndex == 0 && current != null) {
+    elem = current;
+} else {
+    for (int i = 0; current != null && i < intIndex; i++) {
+        current = current.getNext();
+    }
+    if (current != null) {
+        elem = current;
+    }
+}
+
+2024-02-26 00:34:52,145 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:52,145 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:52,145 - Closure_23 - INFO - 补丁3 6 未成功编译
+2024-02-26 00:34:52,146 - Closure_23 - INFO - 开始验证补丁3 7:
+2024-02-26 00:34:52,146 - Closure_23 - INFO - 
+for (int i = 0; i <= intIndex; i++) {
+    if (i == intIndex) {
+        elem = current;
+    }
+    current = current != null ? current.getNext() : null;
+}
+
+2024-02-26 00:34:54,000 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:54,000 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:54,000 - Closure_23 - INFO - 补丁3 7 未成功编译
+2024-02-26 00:34:54,001 - Closure_23 - INFO - 开始验证补丁3 8:
+2024-02-26 00:34:54,001 - Closure_23 - INFO - 
+for (int i = 0; current != null && i < intIndex; i++) {
+    current = current.getNext();
+}
+elem = current;
+
+2024-02-26 00:34:55,876 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:55,876 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:55,876 - Closure_23 - INFO - 补丁3 8 未成功编译
+2024-02-26 00:34:55,877 - Closure_23 - INFO - 开始验证补丁3 9:
+2024-02-26 00:34:55,877 - Closure_23 - INFO - 
+if (intIndex >= 0) {
+    for (int i = 0; current != null && i <= intIndex; i++) {
+        if (i == intIndex) {
+            elem = current;
+            break;
+        }
+        current = current.getNext();
+    }
+}
+
+2024-02-26 00:34:57,754 - Closure_23 - INFO - 编译失败
+2024-02-26 00:34:57,754 - Closure_23 - INFO - 错误: 非法的类型开始
+if (elem == null) {
+2024-02-26 00:34:57,754 - Closure_23 - INFO - 补丁3 9 未成功编译
+2024-02-26 00:34:57,754 - Closure_23 - INFO - Closure_23 未成功修复

@@ -1,0 +1,62 @@
+2024-02-25 12:21:07,177 - Lang_43 - INFO - rm -rf /home/chongchong/d4j-project/Lang_43
+2024-02-25 12:21:07,178 - Lang_43 - INFO - 删除 Lang 43b 成功
+2024-02-25 12:21:07,178 - Lang_43 - INFO - defects4j checkout -p Lang -v 43b -w /home/chongchong/d4j-project/Lang_43
+2024-02-25 12:21:10,505 - Lang_43 - INFO - checkout Lang 43b 成功
+2024-02-25 12:21:14,677 - Lang_43 - INFO - 编译成功
+2024-02-25 12:21:36,906 - Lang_43 - INFO - 测试失败
+2024-02-25 12:21:36,907 - Lang_43 - INFO - Failing tests: 1
+  - org.apache.commons.lang.text.ExtendedMessageFormatTest::testEscapedQuote_LANG_477
+
+2024-02-25 12:21:37,933 - Lang_43 - INFO - 它的bug类型为:
+2024-02-25 12:21:37,933 - Lang_43 - INFO - 3
+2024-02-25 12:22:45,676 - Lang_43 - INFO - 开始验证补丁1 1:
+2024-02-25 12:22:45,676 - Lang_43 - INFO - 
+appendTo.append(QUOTE);
+pos.setIndex(start + 1);
+continue;
+
+2024-02-25 12:22:46,380 - Lang_43 - INFO - 编译失败
+2024-02-25 12:22:46,381 - Lang_43 - INFO - 错误: continue 在 loop 外部
+continue;
+2024-02-25 12:22:46,381 - Lang_43 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:22:46,382 - Lang_43 - INFO - 开始验证补丁1 2:
+2024-02-25 12:22:46,382 - Lang_43 - INFO - 
+if (start == pattern.length() - 1) {
+    appendTo.append(QUOTE);
+    pos.setIndex(start + 1);
+    return appendTo;
+} else {
+    appendTo.append(QUOTE);
+    pos.setIndex(start + 1);
+    continue;
+}
+
+2024-02-25 12:22:47,074 - Lang_43 - INFO - 编译失败
+2024-02-25 12:22:47,074 - Lang_43 - INFO - 错误: continue 在 loop 外部
+continue;
+2024-02-25 12:22:47,074 - Lang_43 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:22:47,075 - Lang_43 - INFO - 开始验证补丁1 3:
+2024-02-25 12:22:47,075 - Lang_43 - INFO - 
+appendTo.append(QUOTE);
+pos.setIndex(start + 1);
+if (start + 1 >= pattern.length()) {
+    return appendTo;
+} else {
+    continue;
+}
+
+2024-02-25 12:22:47,743 - Lang_43 - INFO - 编译失败
+2024-02-25 12:22:47,743 - Lang_43 - INFO - 错误: continue 在 loop 外部
+continue;
+2024-02-25 12:22:47,743 - Lang_43 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:22:47,744 - Lang_43 - INFO - 开始验证补丁1 4:
+2024-02-25 12:22:47,744 - Lang_43 - INFO - 
+if (escapingOn && c[start] == QUOTE) {
+    appendTo.append(QUOTE);
+    pos.setIndex(start + 1);
+    return appendTo;
+}
+
+2024-02-25 12:22:48,892 - Lang_43 - INFO - 编译成功
+2024-02-25 12:22:58,847 - Lang_43 - INFO - 测试成功
+2024-02-25 12:22:58,847 - Lang_43 - INFO - 补丁1 4 通过了所有的测试用例

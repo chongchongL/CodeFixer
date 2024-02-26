@@ -1,0 +1,341 @@
+2024-02-25 01:05:29,834 - Closure_59 - INFO - rm -rf /home/chongchong/d4j-project/Closure_59
+2024-02-25 01:05:29,835 - Closure_59 - INFO - 删除 Closure 59b 成功
+2024-02-25 01:05:29,835 - Closure_59 - INFO - defects4j checkout -p Closure -v 59b -w /home/chongchong/d4j-project/Closure_59
+2024-02-25 01:05:31,730 - Closure_59 - INFO - checkout Closure 59b 成功
+2024-02-25 01:05:42,789 - Closure_59 - INFO - 编译成功
+2024-02-25 01:06:26,580 - Closure_59 - INFO - 测试失败
+2024-02-25 01:06:26,580 - Closure_59 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testCheckGlobalThisOff
+
+2024-02-25 01:06:27,597 - Closure_59 - INFO - 它的bug类型为:
+2024-02-25 01:06:27,598 - Closure_59 - INFO - 2
+2024-02-25 01:07:24,821 - Closure_59 - INFO - 开始验证补丁1 1:
+2024-02-25 01:07:24,821 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel.isOn()) {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      options.checkGlobalThisLevel);
+}
+
+2024-02-25 01:07:26,620 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:26,620 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:26,620 - Closure_59 - INFO - 补丁1 1 未成功编译
+2024-02-25 01:07:26,621 - Closure_59 - INFO - 开始验证补丁1 2:
+2024-02-25 01:07:26,621 - Closure_59 - INFO - 
+if (!options.checkGlobalThisLevel.equals(CheckLevel.OFF)) {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      options.checkGlobalThisLevel);
+}
+
+2024-02-25 01:07:28,412 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:28,412 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:28,412 - Closure_59 - INFO - 补丁1 2 未成功编译
+2024-02-25 01:07:28,413 - Closure_59 - INFO - 开始验证补丁1 3:
+2024-02-25 01:07:28,413 - Closure_59 - INFO - 
+options.setWarningLevel(
+    DiagnosticGroups.GLOBAL_THIS,
+    options.checkGlobalThisLevel.isOn() ? options.checkGlobalThisLevel : CheckLevel.OFF);
+
+2024-02-25 01:07:30,266 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:30,266 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:30,266 - Closure_59 - INFO - 补丁1 3 未成功编译
+2024-02-25 01:07:30,267 - Closure_59 - INFO - 开始验证补丁1 4:
+2024-02-25 01:07:30,267 - Closure_59 - INFO - 
+    if (options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          options.checkGlobalThisLevel);
+    }
+
+2024-02-25 01:07:32,084 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:32,084 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:32,084 - Closure_59 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:07:32,085 - Closure_59 - INFO - 开始验证补丁1 5:
+2024-02-25 01:07:32,085 - Closure_59 - INFO - 
+    if (!options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.OFF);
+    }
+
+2024-02-25 01:07:33,906 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:33,906 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:33,906 - Closure_59 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:07:33,908 - Closure_59 - INFO - 开始验证补丁1 6:
+2024-02-25 01:07:33,908 - Closure_59 - INFO - 
+    if (options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          options.checkGlobalThisLevel);
+    } else {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.OFF);
+    }
+
+2024-02-25 01:07:35,702 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:35,702 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:35,702 - Closure_59 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:07:35,703 - Closure_59 - INFO - 开始验证补丁1 7:
+2024-02-25 01:07:35,703 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel.isOn()) {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      CheckLevel.ERROR);
+} else {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      CheckLevel.OFF);
+}
+
+2024-02-25 01:07:37,505 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:37,505 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:37,505 - Closure_59 - INFO - 补丁1 7 未成功编译
+2024-02-25 01:07:37,506 - Closure_59 - INFO - 开始验证补丁1 8:
+2024-02-25 01:07:37,506 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel != CheckLevel.OFF) {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      options.checkGlobalThisLevel);
+} else {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      CheckLevel.OFF);
+}
+
+2024-02-25 01:07:39,313 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:39,313 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:39,313 - Closure_59 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:07:39,314 - Closure_59 - INFO - 开始验证补丁1 9:
+2024-02-25 01:07:39,314 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel != null && options.checkGlobalThisLevel.isOn()) {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      options.checkGlobalThisLevel);
+}
+
+2024-02-25 01:07:41,133 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:41,133 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:41,133 - Closure_59 - INFO - 补丁1 9 未成功编译
+2024-02-25 01:07:41,134 - Closure_59 - INFO - 开始验证补丁2 1:
+2024-02-25 01:07:41,134 - Closure_59 - INFO - 
+    if (options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.WARNING);
+    } else {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.OFF);
+    }
+
+2024-02-25 01:07:42,919 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:42,919 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:42,919 - Closure_59 - INFO - 补丁2 1 未成功编译
+2024-02-25 01:07:42,921 - Closure_59 - INFO - 开始验证补丁2 2:
+2024-02-25 01:07:42,921 - Closure_59 - INFO - 
+    options.setWarningLevel(
+        DiagnosticGroups.GLOBAL_THIS,
+        options.checkGlobalThisLevel ? CheckLevel.WARNING : CheckLevel.OFF);
+
+2024-02-25 01:07:44,714 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:44,714 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:44,714 - Closure_59 - INFO - 补丁2 2 未成功编译
+2024-02-25 01:07:44,715 - Closure_59 - INFO - 开始验证补丁2 3:
+2024-02-25 01:07:44,715 - Closure_59 - INFO - 
+    if (options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.WARNING);
+    }
+
+2024-02-25 01:07:46,519 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:46,519 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:46,519 - Closure_59 - INFO - 补丁2 3 未成功编译
+2024-02-25 01:07:46,520 - Closure_59 - INFO - 开始验证补丁2 4:
+2024-02-25 01:07:46,520 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel.isOn()) {
+    options.setWarningLevel(
+        DiagnosticGroups.GLOBAL_THIS,
+        options.checkGlobalThisLevel);
+}
+
+2024-02-25 01:07:48,332 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:48,332 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:48,332 - Closure_59 - INFO - 补丁2 4 未成功编译
+2024-02-25 01:07:48,333 - Closure_59 - INFO - 开始验证补丁2 5:
+2024-02-25 01:07:48,333 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel == CheckLevel.ERROR) {
+    options.setWarningLevel(
+        DiagnosticGroups.GLOBAL_THIS,
+        CheckLevel.ERROR);
+}
+
+2024-02-25 01:07:50,147 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:50,147 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:50,147 - Closure_59 - INFO - 补丁2 5 未成功编译
+2024-02-25 01:07:50,148 - Closure_59 - INFO - 开始验证补丁2 6:
+2024-02-25 01:07:50,148 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel == CheckLevel.WARNING) {
+    options.setWarningLevel(
+        DiagnosticGroups.GLOBAL_THIS,
+        CheckLevel.WARNING);
+}
+
+2024-02-25 01:07:51,968 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:51,968 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:51,968 - Closure_59 - INFO - 补丁2 6 未成功编译
+2024-02-25 01:07:51,970 - Closure_59 - INFO - 开始验证补丁2 7:
+2024-02-25 01:07:51,970 - Closure_59 - INFO - 
+if (options.checkGlobalThisLevel.isOn()) {
+  options.setWarningLevel(
+      DiagnosticGroups.GLOBAL_THIS,
+      options.checkGlobalThisLevel);
+}
+
+2024-02-25 01:07:51,970 - Closure_59 - INFO - 补丁2 7为重复的补丁
+2024-02-25 01:07:51,971 - Closure_59 - INFO - 开始验证补丁2 8:
+2024-02-25 01:07:51,971 - Closure_59 - INFO - 
+options.setWarningLevel(
+    DiagnosticGroups.GLOBAL_THIS,
+    CheckLevel.OFF);
+
+2024-02-25 01:07:53,784 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:53,784 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:53,784 - Closure_59 - INFO - 补丁2 8 未成功编译
+2024-02-25 01:07:53,785 - Closure_59 - INFO - 开始验证补丁2 9:
+2024-02-25 01:07:53,785 - Closure_59 - INFO - 
+options.turnOffGlobalThisWarnings();
+
+2024-02-25 01:07:55,571 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:55,571 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:55,571 - Closure_59 - INFO - 补丁2 9 未成功编译
+2024-02-25 01:07:55,572 - Closure_59 - INFO - 开始验证补丁3 1:
+2024-02-25 01:07:55,572 - Closure_59 - INFO - 
+    if (!options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.OFF);
+    }
+
+2024-02-25 01:07:55,572 - Closure_59 - INFO - 补丁3 1为重复的补丁
+2024-02-25 01:07:55,573 - Closure_59 - INFO - 开始验证补丁3 2:
+2024-02-25 01:07:55,573 - Closure_59 - INFO - 
+    // Assuming the checkLevel should always be OFF regardless of the options.checkGlobalThisLevel state
+    options.setWarningLevel(
+        DiagnosticGroups.GLOBAL_THIS,
+        CheckLevel.OFF);
+
+2024-02-25 01:07:57,357 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:57,357 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:57,357 - Closure_59 - INFO - 补丁3 2 未成功编译
+2024-02-25 01:07:57,358 - Closure_59 - INFO - 开始验证补丁3 3:
+2024-02-25 01:07:57,358 - Closure_59 - INFO - 
+    if (options.checkGlobalThisLevel.isOn() &&
+        options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          options.checkGlobalThisLevel);
+    }
+
+2024-02-25 01:07:59,157 - Closure_59 - INFO - 编译失败
+2024-02-25 01:07:59,157 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:07:59,157 - Closure_59 - INFO - 补丁3 3 未成功编译
+2024-02-25 01:07:59,158 - Closure_59 - INFO - 开始验证补丁3 4:
+2024-02-25 01:07:59,158 - Closure_59 - INFO - 
+    // Check if the global this level should not be emitting warnings
+    if (!options.checkGlobalThisLevel.isOn()) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.OFF);
+    }
+
+2024-02-25 01:08:00,944 - Closure_59 - INFO - 编译失败
+2024-02-25 01:08:00,944 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:08:00,944 - Closure_59 - INFO - 补丁3 4 未成功编译
+2024-02-25 01:08:00,945 - Closure_59 - INFO - 开始验证补丁3 5:
+2024-02-25 01:08:00,945 - Closure_59 - INFO - 
+    // Check if options are not set to strict mode before setting warning level
+    if (options.checkGlobalThisLevel.isOn() && 
+        options.getLanguageIn() != LanguageMode.ECMASCRIPT5_STRICT) {
+      options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          options.checkGlobalThisLevel);
+    }
+
+2024-02-25 01:08:02,733 - Closure_59 - INFO - 编译失败
+2024-02-25 01:08:02,733 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:08:02,733 - Closure_59 - INFO - 补丁3 5 未成功编译
+2024-02-25 01:08:02,734 - Closure_59 - INFO - 开始验证补丁3 6:
+2024-02-25 01:08:02,734 - Closure_59 - INFO - 
+    // Correctly configure checkGlobalThisLevel based on test expectations
+    options.setWarningLevel(
+          DiagnosticGroups.GLOBAL_THIS,
+          CheckLevel.OFF);
+
+2024-02-25 01:08:04,541 - Closure_59 - INFO - 编译失败
+2024-02-25 01:08:04,541 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:08:04,541 - Closure_59 - INFO - 补丁3 6 未成功编译
+2024-02-25 01:08:04,542 - Closure_59 - INFO - 开始验证补丁3 7:
+2024-02-25 01:08:04,542 - Closure_59 - INFO - 
+    // Ensure that the warning level for GLOBAL_THIS is turned off if the related setting is not on.
+    if (options.checkGlobalThisLevel == CheckLevel.OFF) {
+        options.setWarningLevel(
+            DiagnosticGroups.GLOBAL_THIS,
+            CheckLevel.OFF);
+    }
+
+2024-02-25 01:08:06,362 - Closure_59 - INFO - 编译失败
+2024-02-25 01:08:06,362 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:08:06,362 - Closure_59 - INFO - 补丁3 7 未成功编译
+2024-02-25 01:08:06,363 - Closure_59 - INFO - 开始验证补丁3 8:
+2024-02-25 01:08:06,363 - Closure_59 - INFO - 
+    // Check if checkGlobalThisLevel is not set to report warnings, then disable warnings for GLOBAL_THIS.
+    if (!options.checkGlobalThisLevel.isOn()) {
+        options.setWarningLevel(
+            DiagnosticGroups.GLOBAL_THIS,
+            CheckLevel.OFF);
+    }
+
+2024-02-25 01:08:08,148 - Closure_59 - INFO - 编译失败
+2024-02-25 01:08:08,148 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:08:08,148 - Closure_59 - INFO - 补丁3 8 未成功编译
+2024-02-25 01:08:08,149 - Closure_59 - INFO - 开始验证补丁3 9:
+2024-02-25 01:08:08,149 - Closure_59 - INFO - 
+    // Conditional to disable warnings for GLOBAL_THIS if checkGlobalThisLevel is configured as such.
+    if (options.checkGlobalThisLevel.equals(CheckLevel.OFF)) {
+        options.setWarningLevel(
+            DiagnosticGroups.GLOBAL_THIS,
+            CheckLevel.OFF);
+    }
+
+2024-02-25 01:08:09,957 - Closure_59 - INFO - 编译失败
+2024-02-25 01:08:09,958 - Closure_59 - INFO - 错误: 非法的类型开始
+if (options.getLanguageIn() == LanguageMode.ECMASCRIPT5_STRICT) {
+2024-02-25 01:08:09,958 - Closure_59 - INFO - 补丁3 9 未成功编译
+2024-02-25 01:08:09,958 - Closure_59 - INFO - Closure_59 未成功修复

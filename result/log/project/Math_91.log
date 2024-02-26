@@ -1,0 +1,201 @@
+2024-02-25 00:45:22,548 - Math_91 - INFO - rm -rf /home/chongchong/d4j-project/Math_91
+2024-02-25 00:45:22,548 - Math_91 - INFO - 删除 Math 91b 成功
+2024-02-25 00:45:22,548 - Math_91 - INFO - defects4j checkout -p Math -v 91b -w /home/chongchong/d4j-project/Math_91
+2024-02-25 00:45:25,970 - Math_91 - INFO - checkout Math 91b 成功
+2024-02-25 00:45:30,914 - Math_91 - INFO - 编译成功
+2024-02-25 00:45:36,769 - Math_91 - INFO - 测试失败
+2024-02-25 00:45:36,769 - Math_91 - INFO - Failing tests: 1
+  - org.apache.commons.math.fraction.FractionTest::testCompareTo
+
+2024-02-25 00:45:37,697 - Math_91 - INFO - 它的bug类型为:
+2024-02-25 00:45:37,697 - Math_91 - INFO - 2
+2024-02-25 00:46:34,658 - Math_91 - INFO - 开始验证补丁1 1:
+2024-02-25 00:46:34,658 - Math_91 - INFO - 
+        int num1 = this.numerator * object.denominator;
+        int num2 = this.denominator * object.numerator;
+        return (num1 < num2) ? -1 : ((num1 > num2) ? +1 : 0);
+
+2024-02-25 00:46:35,386 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:35,387 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:35,387 - Math_91 - INFO - 补丁1 1 未成功编译
+2024-02-25 00:46:35,388 - Math_91 - INFO - 开始验证补丁1 2:
+2024-02-25 00:46:35,388 - Math_91 - INFO - 
+        long num1 = (long) this.numerator * object.denominator;
+        long num2 = (long) this.denominator * object.numerator;
+        return (num1 < num2) ? -1 : ((num1 > num2) ? +1 : 0);
+
+2024-02-25 00:46:36,102 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:36,102 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:36,102 - Math_91 - INFO - 补丁1 2 未成功编译
+2024-02-25 00:46:36,103 - Math_91 - INFO - 开始验证补丁1 3:
+2024-02-25 00:46:36,103 - Math_91 - INFO - 
+        BigDecimal frac1 = new BigDecimal(this.numerator).divide(new BigDecimal(this.denominator), MathContext.DECIMAL128);
+        BigDecimal frac2 = new BigDecimal(object.numerator).divide(new BigDecimal(object.denominator), MathContext.DECIMAL128);
+        return frac1.compareTo(frac2);
+
+2024-02-25 00:46:36,814 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:36,814 - Math_91 - INFO - 错误: 找不到符号
+BigDecimal frac1 = new BigDecimal(this.numerator).divide(new BigDecimal(this.denominator), MathContext.DECIMAL128);
+2024-02-25 00:46:36,814 - Math_91 - INFO - 补丁1 3 未成功编译
+2024-02-25 00:46:36,815 - Math_91 - INFO - 开始验证补丁1 4:
+2024-02-25 00:46:36,815 - Math_91 - INFO - 
+double dOn = object.doubleValue();
+
+2024-02-25 00:46:37,521 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:37,522 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:37,522 - Math_91 - INFO - 补丁1 4 未成功编译
+2024-02-25 00:46:37,523 - Math_91 - INFO - 开始验证补丁1 5:
+2024-02-25 00:46:37,523 - Math_91 - INFO - 
+int numThis = this.numerator * object.denominator;
+int numObject = object.numerator * this.denominator;
+
+2024-02-25 00:46:38,237 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:38,237 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:38,237 - Math_91 - INFO - 补丁1 5 未成功编译
+2024-02-25 00:46:38,238 - Math_91 - INFO - 开始验证补丁1 6:
+2024-02-25 00:46:38,238 - Math_91 - INFO - 
+boolean isEqual = this.equals(object);
+
+2024-02-25 00:46:38,947 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:38,947 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:38,947 - Math_91 - INFO - 补丁1 6 未成功编译
+2024-02-25 00:46:38,948 - Math_91 - INFO - 开始验证补丁1 7:
+2024-02-25 00:46:38,948 - Math_91 - INFO - 
+double dOn = object.doubleValue();
+
+2024-02-25 00:46:38,948 - Math_91 - INFO - 补丁1 7为重复的补丁
+2024-02-25 00:46:38,953 - Math_91 - INFO - 开始验证补丁1 8:
+2024-02-25 00:46:38,953 - Math_91 - INFO - 
+int numerator1 = this.numerator * object.denominator;
+int numerator2 = object.numerator * this.denominator;
+int dOn = Integer.compare(numerator1, numerator2);
+
+2024-02-25 00:46:39,658 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:39,658 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:39,658 - Math_91 - INFO - 补丁1 8 未成功编译
+2024-02-25 00:46:39,659 - Math_91 - INFO - 开始验证补丁1 9:
+2024-02-25 00:46:39,659 - Math_91 - INFO - 
+int dOn = (this.numerator * object.denominator) - (object.numerator * this.denominator);
+dOn = (dOn < 0) ? -1 : (dOn > 0) ? 1 : 0;
+
+2024-02-25 00:46:40,374 - Math_91 - INFO - 编译失败
+2024-02-25 00:46:40,374 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:46:40,374 - Math_91 - INFO - 补丁1 9 未成功编译
+2024-02-25 00:46:40,375 - Math_91 - INFO - 开始验证补丁2 1:
+2024-02-25 00:46:40,375 - Math_91 - INFO - 
+double nOd = doubleValue();
+double dOn = object.doubleValue();
+
+2024-02-25 00:46:41,598 - Math_91 - INFO - 编译成功
+2024-02-25 00:46:47,632 - Math_91 - INFO - 测试失败
+2024-02-25 00:46:47,632 - Math_91 - INFO - Failing tests: 1
+  - org.apache.commons.math.fraction.FractionTest::testCompareTo
+
+2024-02-25 00:46:48,090 - Math_91 - INFO - 选择失败的测试用例为:
+2024-02-25 00:46:48,090 - Math_91 - INFO - org.apache.commons.math.fraction.FractionTest::testCompareTo
+2024-02-25 00:46:48,090 - Math_91 - INFO - 失败的测试代码为:
+2024-02-25 00:46:48,090 - Math_91 - INFO -         assertEquals(-1, pi1.compareTo(pi2));
+
+2024-02-25 00:46:48,090 - Math_91 - INFO - 失败信息为:
+2024-02-25 00:46:48,091 - Math_91 - INFO - junit.framework.AssertionFailedError: expected:<-1> but was:<0>
+
+2024-02-25 00:46:48,091 - Math_91 - INFO - 补丁2 1测试失败
+2024-02-25 00:46:48,091 - Math_91 - INFO - 开始验证补丁2 2:
+2024-02-25 00:46:48,091 - Math_91 - INFO - 
+double nOd = this.doubleValue();
+double dOn = object.doubleValue();
+
+2024-02-25 00:46:49,305 - Math_91 - INFO - 编译成功
+2024-02-25 00:46:55,305 - Math_91 - INFO - 测试失败
+2024-02-25 00:46:55,305 - Math_91 - INFO - Failing tests: 1
+  - org.apache.commons.math.fraction.FractionTest::testCompareTo
+
+2024-02-25 00:46:55,764 - Math_91 - INFO - 选择失败的测试用例为:
+2024-02-25 00:46:55,764 - Math_91 - INFO - org.apache.commons.math.fraction.FractionTest::testCompareTo
+2024-02-25 00:46:55,764 - Math_91 - INFO - 失败的测试代码为:
+2024-02-25 00:46:55,764 - Math_91 - INFO -         assertEquals(-1, pi1.compareTo(pi2));
+
+2024-02-25 00:46:55,764 - Math_91 - INFO - 失败信息为:
+2024-02-25 00:46:55,764 - Math_91 - INFO - junit.framework.AssertionFailedError: expected:<-1> but was:<0>
+
+2024-02-25 00:46:55,764 - Math_91 - INFO - 补丁2 2测试失败
+2024-02-25 00:46:55,765 - Math_91 - INFO - 开始验证补丁2 3:
+2024-02-25 00:46:55,765 - Math_91 - INFO - 
+double nOd = this.numerator / this.denominator;
+double dOn = object.numerator / object.denominator;
+
+2024-02-25 00:46:56,982 - Math_91 - INFO - 编译成功
+2024-02-25 00:47:02,900 - Math_91 - INFO - 测试失败
+2024-02-25 00:47:02,900 - Math_91 - INFO - Failing tests: 1
+  - org.apache.commons.math.fraction.FractionTest::testCompareTo
+
+2024-02-25 00:47:03,359 - Math_91 - INFO - 选择失败的测试用例为:
+2024-02-25 00:47:03,359 - Math_91 - INFO - org.apache.commons.math.fraction.FractionTest::testCompareTo
+2024-02-25 00:47:03,359 - Math_91 - INFO - 失败的测试代码为:
+2024-02-25 00:47:03,359 - Math_91 - INFO -         assertEquals(1, first.compareTo(second));
+
+2024-02-25 00:47:03,359 - Math_91 - INFO - 失败信息为:
+2024-02-25 00:47:03,359 - Math_91 - INFO - junit.framework.AssertionFailedError: expected:<1> but was:<0>
+
+2024-02-25 00:47:03,359 - Math_91 - INFO - 补丁2 3测试失败
+2024-02-25 00:47:03,360 - Math_91 - INFO - 开始验证补丁2 4:
+2024-02-25 00:47:03,360 - Math_91 - INFO - 
+        // Code to replace <fill> placeholder
+        double dOn = object.doubleValue();
+
+2024-02-25 00:47:04,079 - Math_91 - INFO - 编译失败
+2024-02-25 00:47:04,079 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:47:04,079 - Math_91 - INFO - 补丁2 4 未成功编译
+2024-02-25 00:47:04,080 - Math_91 - INFO - 开始验证补丁2 5:
+2024-02-25 00:47:04,080 - Math_91 - INFO - 
+        // Code to replace <fill> placeholder (avoids floating-point precision errors)
+        int numThis = this.getNumerator() * object.getDenominator();
+        int numObject = object.getNumerator() * this.getDenominator();
+
+2024-02-25 00:47:04,795 - Math_91 - INFO - 编译失败
+2024-02-25 00:47:04,795 - Math_91 - INFO - 错误: 找不到符号
+return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);
+2024-02-25 00:47:04,795 - Math_91 - INFO - 补丁2 5 未成功编译
+2024-02-25 00:47:04,796 - Math_91 - INFO - 开始验证补丁2 6:
+2024-02-25 00:47:04,796 - Math_91 - INFO - 
+        // Code to replace <fill> placeholder (with checks for floating-point equality issues)
+        double dOn = object.doubleValue();
+        // Adding a small epsilon value to account for floating-point precision issues
+        final double EPSILON = 1E-10;
+        double diff = nOd - dOn;
+
+2024-02-25 00:47:05,518 - Math_91 - INFO - 编译失败
+2024-02-25 00:47:05,518 - Math_91 - INFO - 错误: 找不到符号
+double diff = nOd - dOn;
+2024-02-25 00:47:05,518 - Math_91 - INFO - 补丁2 6 未成功编译
+2024-02-25 00:47:05,519 - Math_91 - INFO - 开始验证补丁2 7:
+2024-02-25 00:47:05,519 - Math_91 - INFO - 
+        return (Math.abs(diff) < EPSILON) ? 0 : ((diff < 0) ? -1 : +1);
+
+2024-02-25 00:47:06,230 - Math_91 - INFO - 编译失败
+2024-02-25 00:47:06,231 - Math_91 - INFO - 错误: 找不到符号
+return (Math.abs(diff) < EPSILON) ? 0 : ((diff < 0) ? -1 : +1);
+2024-02-25 00:47:06,231 - Math_91 - INFO - 补丁2 7 未成功编译
+2024-02-25 00:47:06,232 - Math_91 - INFO - 开始验证补丁2 7:
+2024-02-25 00:47:06,232 - Math_91 - INFO - 
+double dOn = object.doubleValue();
+
+2024-02-25 00:47:06,232 - Math_91 - INFO - 补丁2 7为重复的补丁
+2024-02-25 00:47:06,233 - Math_91 - INFO - 开始验证补丁2 8:
+2024-02-25 00:47:06,233 - Math_91 - INFO - 
+int numThis = this.getNumerator() * object.getDenominator();
+int numObject = object.getNumerator() * this.getDenominator();
+double nOd = numThis;
+double dOn = numObject;
+
+2024-02-25 00:47:07,449 - Math_91 - INFO - 编译成功
+2024-02-25 00:47:13,261 - Math_91 - INFO - 测试成功
+2024-02-25 00:47:13,261 - Math_91 - INFO - 补丁2 8 通过了所有的测试用例

@@ -1,0 +1,240 @@
+2024-02-24 01:18:05,041 - Math_96 - INFO - rm -rf /home/chongchong/d4j-project/Math_96
+2024-02-24 01:18:05,042 - Math_96 - INFO - 删除 Math 96b 成功
+2024-02-24 01:18:05,042 - Math_96 - INFO - defects4j checkout -p Math -v 96b -w /home/chongchong/d4j-project/Math_96
+2024-02-24 01:18:08,449 - Math_96 - INFO - checkout Math 96b 成功
+2024-02-24 01:18:12,498 - Math_96 - INFO - 编译成功
+2024-02-24 01:18:18,633 - Math_96 - INFO - 测试失败
+2024-02-24 01:18:18,633 - Math_96 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testMath221
+
+2024-02-24 01:18:19,553 - Math_96 - INFO - 它的bug类型为:
+2024-02-24 01:18:19,553 - Math_96 - INFO - 1
+2024-02-24 01:18:55,817 - Math_96 - INFO - Math_96 未成功修复
+2024-02-24 11:41:37,318 - Math_96 - INFO - rm -rf /home/chongchong/d4j-project/Math_96
+2024-02-24 11:41:37,341 - Math_96 - INFO - 删除 Math 96b 成功
+2024-02-24 11:41:37,341 - Math_96 - INFO - defects4j checkout -p Math -v 96b -w /home/chongchong/d4j-project/Math_96
+2024-02-24 11:41:40,739 - Math_96 - INFO - checkout Math 96b 成功
+2024-02-24 11:41:44,839 - Math_96 - INFO - 编译成功
+2024-02-24 11:41:50,872 - Math_96 - INFO - 测试失败
+2024-02-24 11:41:50,872 - Math_96 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testMath221
+
+2024-02-24 11:41:51,777 - Math_96 - INFO - 它的bug类型为:
+2024-02-24 11:41:51,777 - Math_96 - INFO - 1
+2024-02-24 11:42:42,429 - Math_96 - INFO - 开始验证补丁1 1:
+2024-02-24 11:42:42,429 - Math_96 - INFO - 
+ret = (Math.abs(real - rhs.getReal()) < EPSILON) && (Math.abs(imaginary - rhs.getImaginary()) < EPSILON);
+
+2024-02-24 11:42:43,121 - Math_96 - INFO - 编译失败
+2024-02-24 11:42:43,122 - Math_96 - INFO - 错误: 找不到符号
+ret = (Math.abs(real - rhs.getReal()) < EPSILON) && (Math.abs(imaginary - rhs.getImaginary()) < EPSILON);
+2024-02-24 11:42:43,122 - Math_96 - INFO - 补丁1 1 未成功编译
+2024-02-24 11:42:43,123 - Math_96 - INFO - 开始验证补丁1 2:
+2024-02-24 11:42:43,123 - Math_96 - INFO - 
+ret = Double.compare(real, rhs.getReal()) == 0 && Double.compare(imaginary, rhs.getImaginary()) == 0;
+
+2024-02-24 11:42:44,252 - Math_96 - INFO - 编译成功
+2024-02-24 11:42:50,320 - Math_96 - INFO - 测试失败
+2024-02-24 11:42:50,320 - Math_96 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testMath221
+
+2024-02-24 11:42:50,774 - Math_96 - INFO - 选择失败的测试用例为:
+2024-02-24 11:42:50,774 - Math_96 - INFO - org.apache.commons.math.complex.ComplexTest::testMath221
+2024-02-24 11:42:50,774 - Math_96 - INFO - 失败的测试代码为:
+2024-02-24 11:42:50,774 - Math_96 - INFO -         assertEquals(new Complex(0,-1), new Complex(0,1).multiply(new Complex(-1,0)));
+
+2024-02-24 11:42:50,774 - Math_96 - INFO - 失败信息为:
+2024-02-24 11:42:50,774 - Math_96 - INFO - junit.framework.AssertionFailedError: expected:<org.apache.commons.math.complex.Complex@98b00000> but was:<org.apache.commons.math.complex.Complex@18b00000>
+
+2024-02-24 11:42:50,774 - Math_96 - INFO - 补丁1 2测试失败
+2024-02-24 11:42:50,775 - Math_96 - INFO - 开始验证补丁1 3:
+2024-02-24 11:42:50,775 - Math_96 - INFO - 
+ret = equalsWithTolerance(real, rhs.getReal()) && equalsWithTolerance(imaginary, rhs.getImaginary());
+
+2024-02-24 11:42:51,472 - Math_96 - INFO - 编译失败
+2024-02-24 11:42:51,472 - Math_96 - INFO - 错误: 找不到符号
+ret = equalsWithTolerance(real, rhs.getReal()) && equalsWithTolerance(imaginary, rhs.getImaginary());
+2024-02-24 11:42:51,472 - Math_96 - INFO - 补丁1 3 未成功编译
+2024-02-24 11:42:51,473 - Math_96 - INFO - 开始验证补丁2 1:
+2024-02-24 11:42:51,473 - Math_96 - INFO - 
+ret = Math.abs(real - rhs.getReal()) < epsilon && Math.abs(imaginary - rhs.getImaginary()) < epsilon;
+
+2024-02-24 11:42:52,166 - Math_96 - INFO - 编译失败
+2024-02-24 11:42:52,166 - Math_96 - INFO - 错误: 找不到符号
+ret = Math.abs(real - rhs.getReal()) < epsilon && Math.abs(imaginary - rhs.getImaginary()) < epsilon;
+2024-02-24 11:42:52,167 - Math_96 - INFO - 补丁2 1 未成功编译
+2024-02-24 11:42:52,168 - Math_96 - INFO - 开始验证补丁2 2:
+2024-02-24 11:42:52,168 - Math_96 - INFO - 
+ret = Double.compare(real, rhs.getReal()) == 0 && Double.compare(imaginary, rhs.getImaginary()) == 0;
+
+2024-02-24 11:42:52,168 - Math_96 - INFO - 补丁2 2为重复的补丁
+2024-02-24 11:42:52,168 - Math_96 - INFO - 开始验证补丁2 3:
+2024-02-24 11:42:52,169 - Math_96 - INFO - 
+ret = (Math.abs(real - rhs.getReal()) < Double.MIN_VALUE) && (Math.abs(imaginary - rhs.getImaginary()) < Double.MIN_VALUE);
+
+2024-02-24 11:42:53,300 - Math_96 - INFO - 编译成功
+2024-02-24 11:42:59,348 - Math_96 - INFO - 测试失败
+2024-02-24 11:42:59,348 - Math_96 - INFO - Failing tests: 4
+  - org.apache.commons.math.complex.ComplexFormatTest::testPaseNegativeInfinity
+  - org.apache.commons.math.complex.ComplexFormatTest::testParsePositiveInfinity
+  - org.apache.commons.math.complex.FrenchComplexFormatTest::testPaseNegativeInfinity
+  - org.apache.commons.math.complex.FrenchComplexFormatTest::testParsePositiveInfinity
+
+2024-02-24 11:42:59,802 - Math_96 - INFO - 选择失败的测试用例为:
+2024-02-24 11:42:59,802 - Math_96 - INFO - org.apache.commons.math.complex.ComplexFormatTest::testPaseNegativeInfinity
+2024-02-24 11:42:59,802 - Math_96 - INFO - 失败的测试代码为:
+2024-02-24 11:42:59,803 - Math_96 - INFO -             assertEquals(expected, actual);
+
+2024-02-24 11:42:59,803 - Math_96 - INFO - 失败信息为:
+2024-02-24 11:42:59,803 - Math_96 - INFO - junit.framework.AssertionFailedError: expected:<org.apache.commons.math.complex.Complex@d6600000> but was:<org.apache.commons.math.complex.Complex@d6600000>
+
+2024-02-24 11:42:59,803 - Math_96 - INFO - 补丁2 3测试失败
+2024-02-24 11:42:59,804 - Math_96 - INFO - 开始验证补丁2 4:
+2024-02-24 11:42:59,804 - Math_96 - INFO - 
+ret = (Math.abs(real - rhs.getReal()) < epsilon) && (Math.abs(imaginary - rhs.getImaginary()) < epsilon);
+
+2024-02-24 11:43:00,498 - Math_96 - INFO - 编译失败
+2024-02-24 11:43:00,498 - Math_96 - INFO - 错误: 找不到符号
+ret = (Math.abs(real - rhs.getReal()) < epsilon) && (Math.abs(imaginary - rhs.getImaginary()) < epsilon);
+2024-02-24 11:43:00,498 - Math_96 - INFO - 补丁2 4 未成功编译
+2024-02-24 11:43:00,499 - Math_96 - INFO - 开始验证补丁2 5:
+2024-02-24 11:43:00,499 - Math_96 - INFO - 
+ret = Double.compare(real, rhs.getReal()) == 0 && Double.compare(imaginary, rhs.getImaginary()) == 0;
+
+2024-02-24 11:43:00,499 - Math_96 - INFO - 补丁2 5为重复的补丁
+2024-02-24 11:43:00,500 - Math_96 - INFO - 开始验证补丁2 6:
+2024-02-24 11:43:00,500 - Math_96 - INFO - 
+ret = Objects.equals(real, rhs.getReal()) && Objects.equals(imaginary, rhs.getImaginary());
+
+2024-02-24 11:43:01,200 - Math_96 - INFO - 编译失败
+2024-02-24 11:43:01,200 - Math_96 - INFO - 错误: 找不到符号
+ret = Objects.equals(real, rhs.getReal()) && Objects.equals(imaginary, rhs.getImaginary());
+2024-02-24 11:43:01,201 - Math_96 - INFO - 补丁2 6 未成功编译
+2024-02-24 11:43:01,202 - Math_96 - INFO - 开始验证补丁2 7:
+2024-02-24 11:43:01,202 - Math_96 - INFO - 
+ret = (Math.abs(real - rhs.getReal()) < epsilon) && (Math.abs(imaginary - rhs.getImaginary()) < epsilon);
+
+2024-02-24 11:43:01,202 - Math_96 - INFO - 补丁2 7为重复的补丁
+2024-02-24 11:43:01,202 - Math_96 - INFO - 开始验证补丁2 8:
+2024-02-24 11:43:01,202 - Math_96 - INFO - 
+ret = Double.compare(real, rhs.getReal()) == 0 && Double.compare(imaginary, rhs.getImaginary()) == 0;
+
+2024-02-24 11:43:01,202 - Math_96 - INFO - 补丁2 8为重复的补丁
+2024-02-24 11:43:01,203 - Math_96 - INFO - 开始验证补丁2 9:
+2024-02-24 11:43:01,203 - Math_96 - INFO - 
+ret = Double.valueOf(real).equals(Double.valueOf(rhs.getReal())) && Double.valueOf(imaginary).equals(Double.valueOf(rhs.getImaginary()));
+
+2024-02-24 11:43:02,332 - Math_96 - INFO - 编译成功
+2024-02-24 11:43:08,443 - Math_96 - INFO - 测试失败
+2024-02-24 11:43:08,443 - Math_96 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testMath221
+
+2024-02-24 11:43:08,898 - Math_96 - INFO - 选择失败的测试用例为:
+2024-02-24 11:43:08,898 - Math_96 - INFO - org.apache.commons.math.complex.ComplexTest::testMath221
+2024-02-24 11:43:08,898 - Math_96 - INFO - 失败的测试代码为:
+2024-02-24 11:43:08,898 - Math_96 - INFO -         assertEquals(new Complex(0,-1), new Complex(0,1).multiply(new Complex(-1,0)));
+
+2024-02-24 11:43:08,898 - Math_96 - INFO - 失败信息为:
+2024-02-24 11:43:08,898 - Math_96 - INFO - junit.framework.AssertionFailedError: expected:<org.apache.commons.math.complex.Complex@98b00000> but was:<org.apache.commons.math.complex.Complex@18b00000>
+
+2024-02-24 11:43:08,898 - Math_96 - INFO - 补丁2 9测试失败
+2024-02-24 11:43:08,899 - Math_96 - INFO - 开始验证补丁3 1:
+2024-02-24 11:43:08,899 - Math_96 - INFO - 
+ret = (Double.compare(real, rhs.getReal()) == 0) && (Double.compare(imaginary, rhs.getImaginary()) == 0);
+
+2024-02-24 11:43:10,026 - Math_96 - INFO - 编译成功
+2024-02-24 11:43:15,975 - Math_96 - INFO - 测试失败
+2024-02-24 11:43:15,975 - Math_96 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testMath221
+
+2024-02-24 11:43:16,428 - Math_96 - INFO - 选择失败的测试用例为:
+2024-02-24 11:43:16,428 - Math_96 - INFO - org.apache.commons.math.complex.ComplexTest::testMath221
+2024-02-24 11:43:16,428 - Math_96 - INFO - 失败的测试代码为:
+2024-02-24 11:43:16,428 - Math_96 - INFO -         assertEquals(new Complex(0,-1), new Complex(0,1).multiply(new Complex(-1,0)));
+
+2024-02-24 11:43:16,428 - Math_96 - INFO - 失败信息为:
+2024-02-24 11:43:16,428 - Math_96 - INFO - junit.framework.AssertionFailedError: expected:<org.apache.commons.math.complex.Complex@98b00000> but was:<org.apache.commons.math.complex.Complex@18b00000>
+
+2024-02-24 11:43:16,428 - Math_96 - INFO - 补丁3 1测试失败
+2024-02-24 11:43:16,429 - Math_96 - INFO - 开始验证补丁3 2:
+2024-02-24 11:43:16,429 - Math_96 - INFO - 
+ret = (real.equals(rhs.getReal())) && (imaginary.equals(rhs.getImaginary()));
+
+2024-02-24 11:43:17,130 - Math_96 - INFO - 编译失败
+2024-02-24 11:43:17,130 - Math_96 - INFO - 错误: 无法取消引用double
+ret = (real.equals(rhs.getReal())) && (imaginary.equals(rhs.getImaginary()));
+2024-02-24 11:43:17,130 - Math_96 - INFO - 补丁3 2 未成功编译
+2024-02-24 11:43:17,131 - Math_96 - INFO - 开始验证补丁3 3:
+2024-02-24 11:43:17,131 - Math_96 - INFO - 
+final double tolerance = 1e-9; // Example tolerance value
+ret = (Math.abs(real - rhs.getReal()) < tolerance) && (Math.abs(imaginary - rhs.getImaginary()) < tolerance);
+
+2024-02-24 11:43:18,241 - Math_96 - INFO - 编译成功
+2024-02-24 11:43:24,292 - Math_96 - INFO - 测试失败
+2024-02-24 11:43:24,292 - Math_96 - INFO - Failing tests: 6
+  - org.apache.commons.math.complex.ComplexFormatTest::testPaseNegativeInfinity
+  - org.apache.commons.math.complex.ComplexFormatTest::testParsePositiveInfinity
+  - org.apache.commons.math.complex.ComplexTest::testEqualsRealDifference
+  - org.apache.commons.math.complex.ComplexTest::testEqualsImaginaryDifference
+  - org.apache.commons.math.complex.FrenchComplexFormatTest::testPaseNegativeInfinity
+  - org.apache.commons.math.complex.FrenchComplexFormatTest::testParsePositiveInfinity
+
+2024-02-24 11:43:24,746 - Math_96 - INFO - 选择失败的测试用例为:
+2024-02-24 11:43:24,746 - Math_96 - INFO - org.apache.commons.math.complex.ComplexFormatTest::testPaseNegativeInfinity
+2024-02-24 11:43:24,746 - Math_96 - INFO - 失败的测试代码为:
+2024-02-24 11:43:24,746 - Math_96 - INFO -             assertEquals(expected, actual);
+
+2024-02-24 11:43:24,746 - Math_96 - INFO - 失败信息为:
+2024-02-24 11:43:24,746 - Math_96 - INFO - junit.framework.AssertionFailedError: expected:<org.apache.commons.math.complex.Complex@d6600000> but was:<org.apache.commons.math.complex.Complex@d6600000>
+
+2024-02-24 11:43:24,746 - Math_96 - INFO - 补丁3 3测试失败
+2024-02-24 11:43:24,747 - Math_96 - INFO - 开始验证补丁3 4:
+2024-02-24 11:43:24,747 - Math_96 - INFO - 
+ret = (Double.compare(real, rhs.getReal()) == 0) && (Double.compare(imaginary, rhs.getImaginary()) == 0);
+
+2024-02-24 11:43:24,747 - Math_96 - INFO - 补丁3 4为重复的补丁
+2024-02-24 11:43:24,748 - Math_96 - INFO - 开始验证补丁3 5:
+2024-02-24 11:43:24,748 - Math_96 - INFO - 
+ret = Math.abs(real - rhs.getReal()) < threshold && Math.abs(imaginary - rhs.getImaginary()) < threshold;
+
+2024-02-24 11:43:25,449 - Math_96 - INFO - 编译失败
+2024-02-24 11:43:25,449 - Math_96 - INFO - 错误: 找不到符号
+ret = Math.abs(real - rhs.getReal()) < threshold && Math.abs(imaginary - rhs.getImaginary()) < threshold;
+2024-02-24 11:43:25,449 - Math_96 - INFO - 补丁3 5 未成功编译
+2024-02-24 11:43:25,450 - Math_96 - INFO - 开始验证补丁3 6:
+2024-02-24 11:43:25,450 - Math_96 - INFO - 
+ret = ((Double)real).equals(rhs.getReal()) && ((Double)imaginary).equals(rhs.getImaginary());
+
+2024-02-24 11:43:26,589 - Math_96 - INFO - 编译成功
+2024-02-24 11:43:32,710 - Math_96 - INFO - 测试失败
+2024-02-24 11:43:32,710 - Math_96 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testMath221
+
+2024-02-24 11:43:33,162 - Math_96 - INFO - 选择失败的测试用例为:
+2024-02-24 11:43:33,162 - Math_96 - INFO - org.apache.commons.math.complex.ComplexTest::testMath221
+2024-02-24 11:43:33,162 - Math_96 - INFO - 失败的测试代码为:
+2024-02-24 11:43:33,162 - Math_96 - INFO -         assertEquals(new Complex(0,-1), new Complex(0,1).multiply(new Complex(-1,0)));
+
+2024-02-24 11:43:33,162 - Math_96 - INFO - 失败信息为:
+2024-02-24 11:43:33,162 - Math_96 - INFO - junit.framework.AssertionFailedError: expected:<org.apache.commons.math.complex.Complex@98b00000> but was:<org.apache.commons.math.complex.Complex@18b00000>
+
+2024-02-24 11:43:33,162 - Math_96 - INFO - 补丁3 6测试失败
+2024-02-24 11:43:33,163 - Math_96 - INFO - 开始验证补丁3 7:
+2024-02-24 11:43:33,163 - Math_96 - INFO - 
+ret = (Double.compare(real, rhs.getReal()) == 0) && (Double.compare(imaginary, rhs.getImaginary()) == 0);
+
+2024-02-24 11:43:33,163 - Math_96 - INFO - 补丁3 7为重复的补丁
+2024-02-24 11:43:33,164 - Math_96 - INFO - 开始验证补丁3 8:
+2024-02-24 11:43:33,164 - Math_96 - INFO - 
+ret = (real.equals(rhs.getReal())) && (imaginary.equals(rhs.getImaginary()));
+
+2024-02-24 11:43:33,164 - Math_96 - INFO - 补丁3 8为重复的补丁
+2024-02-24 11:43:33,165 - Math_96 - INFO - 开始验证补丁3 9:
+2024-02-24 11:43:33,165 - Math_96 - INFO - 
+ret = (real.compareTo(rhs.getReal()) == 0) && (imaginary.compareTo(rhs.getImaginary()) == 0);
+
+2024-02-24 11:43:33,852 - Math_96 - INFO - 编译失败
+2024-02-24 11:43:33,852 - Math_96 - INFO - 错误: 无法取消引用double
+ret = (real.compareTo(rhs.getReal()) == 0) && (imaginary.compareTo(rhs.getImaginary()) == 0);
+2024-02-24 11:43:33,852 - Math_96 - INFO - 补丁3 9 未成功编译
+2024-02-24 11:43:33,853 - Math_96 - INFO - Math_96 未成功修复

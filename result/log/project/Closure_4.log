@@ -1,0 +1,798 @@
+2024-02-26 10:48:12,258 - Closure_4 - INFO - rm -rf /home/chongchong/d4j-project/Closure_4
+2024-02-26 10:48:12,258 - Closure_4 - INFO - 删除 Closure 4b 成功
+2024-02-26 10:48:12,258 - Closure_4 - INFO - defects4j checkout -p Closure -v 4b -w /home/chongchong/d4j-project/Closure_4
+2024-02-26 10:48:15,218 - Closure_4 - INFO - checkout Closure 4b 成功
+2024-02-26 10:48:27,136 - Closure_4 - INFO - 编译成功
+2024-02-26 10:49:25,044 - Closure_4 - INFO - 测试失败
+2024-02-26 10:49:25,044 - Closure_4 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testConversionFromInterfaceToRecursiveConstructor
+
+2024-02-26 10:49:26,090 - Closure_4 - INFO - 它的bug类型为:
+2024-02-26 10:49:26,090 - Closure_4 - INFO - 4
+2024-02-26 10:50:29,465 - Closure_4 - INFO - 开始验证补丁1 1:
+2024-02-26 10:50:29,465 - Closure_4 - INFO - 
+    if (!resolved) {
+      resolved = resolveViaProperties(t, enclosing);
+    }
+    if (resolved) {
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    }
+
+2024-02-26 10:50:31,319 - Closure_4 - INFO - 编译失败
+2024-02-26 10:50:31,319 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:50:31,319 - Closure_4 - INFO - 补丁1 1 未成功编译
+2024-02-26 10:50:31,320 - Closure_4 - INFO - 开始验证补丁1 2:
+2024-02-26 10:50:31,320 - Closure_4 - INFO - 
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+    if (!resolved) {
+      resolveViaProperties(t, enclosing);
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+    }
+    super.resolveInternal(t, enclosing);
+    finishPropertyContinuations();
+    return registry.isLastGeneration() ?
+        getReferencedType() : this;
+
+2024-02-26 10:50:33,191 - Closure_4 - INFO - 编译失败
+2024-02-26 10:50:33,191 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:50:33,191 - Closure_4 - INFO - 补丁1 2 未成功编译
+2024-02-26 10:50:33,192 - Closure_4 - INFO - 开始验证补丁1 3:
+2024-02-26 10:50:33,192 - Closure_4 - INFO - 
+    if (resolved) {
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    } else {
+      resolveViaProperties(t, enclosing);
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+    }
+
+2024-02-26 10:50:35,057 - Closure_4 - INFO - 编译失败
+2024-02-26 10:50:35,057 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:50:35,057 - Closure_4 - INFO - 补丁1 3 未成功编译
+2024-02-26 10:50:35,058 - Closure_4 - INFO - 开始验证补丁1 4:
+2024-02-26 10:50:35,058 - Closure_4 - INFO - 
+    if (resolved) {
+      if (detectImplicitPrototypeCycle()) {
+          handleTypeCycle(t);
+      }
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    } else {
+      resolveViaProperties(t, enclosing);
+      if (detectImplicitPrototypeCycle()) {
+          handleTypeCycle(t);
+      }
+    }
+
+2024-02-26 10:50:36,919 - Closure_4 - INFO - 编译失败
+2024-02-26 10:50:36,919 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:50:36,919 - Closure_4 - INFO - 补丁1 4 未成功编译
+2024-02-26 10:50:36,920 - Closure_4 - INFO - 开始验证补丁1 5:
+2024-02-26 10:50:36,920 - Closure_4 - INFO - 
+    if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+    }
+
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    } else {
+      resolveViaProperties(t, enclosing);
+    }
+
+2024-02-26 10:50:38,796 - Closure_4 - INFO - 编译失败
+2024-02-26 10:50:38,796 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:50:38,796 - Closure_4 - INFO - 补丁1 5 未成功编译
+2024-02-26 10:50:38,797 - Closure_4 - INFO - 开始验证补丁1 6:
+2024-02-26 10:50:38,797 - Closure_4 - INFO - 
+    resolveViaProperties(t, enclosing);
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    }
+
+2024-02-26 10:50:40,644 - Closure_4 - INFO - 编译失败
+2024-02-26 10:50:40,644 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:50:40,644 - Closure_4 - INFO - 补丁1 6 未成功编译
+2024-02-26 10:50:40,645 - Closure_4 - INFO - 开始验证补丁1 7:
+2024-02-26 10:50:40,645 - Closure_4 - INFO - 
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+resolveViaProperties(t, enclosing);
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+2024-02-26 10:50:44,765 - Closure_4 - INFO - 编译成功
+2024-02-26 10:51:41,383 - Closure_4 - INFO - 测试失败
+2024-02-26 10:51:41,383 - Closure_4 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testConversionFromInterfaceToRecursiveConstructor
+
+2024-02-26 10:51:41,907 - Closure_4 - INFO - 选择失败的测试用例为:
+2024-02-26 10:51:41,907 - Closure_4 - INFO - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+2024-02-26 10:51:41,907 - Closure_4 - INFO - 失败的测试代码为:
+2024-02-26 10:51:41,907 - Closure_4 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-26 10:51:41,907 - Closure_4 - INFO - 失败信息为:
+2024-02-26 10:51:41,907 - Closure_4 - INFO - junit.framework.AssertionFailedError: unexpected warning(s) : JSC_IMPLEMENTS_NON_INTERFACE. can only implement interfaces at [testcode] line 2 : 29, JSC_IMPLEMENTS_NON_INTERFACE. can only implement interfaces at [testcode] line 3 : 26 expected:<1> but was:<2>
+
+2024-02-26 10:51:41,907 - Closure_4 - INFO - 补丁1 7测试失败
+2024-02-26 10:51:41,908 - Closure_4 - INFO - 开始验证补丁1 8:
+2024-02-26 10:51:41,908 - Closure_4 - INFO - 
+if (resolved) {
+  handleTypeCycle(t);
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+resolveViaProperties(t, enclosing);
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+2024-02-26 10:51:45,979 - Closure_4 - INFO - 编译成功
+2024-02-26 10:52:43,621 - Closure_4 - INFO - 测试失败
+2024-02-26 10:52:43,621 - Closure_4 - INFO - Failing tests: 120
+  - com.google.javascript.jscomp.CodePrinterTest::testTypeAnnotationsTypeDef
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testInvalidatingInterface
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testNamedType
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAliasedEnum1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAliasedEnum2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAliasedEnum3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAliasedEnum4
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testNamespacedConstructor
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testOptionalUnknownNamedType
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testConstructorAlias5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testConstructorAlias6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testInterfaceAssignment9
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testSuperClassDefinedAfterSubClass1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testSuperClassDefinedAfterSubClass2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDefinePropertyOnNullableObject2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testForwardTypeDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeDef1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeDef2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeDef3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionInference13
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionInference14
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testInheritanceCheck14
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeCheck22
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testResolvingNamedTypes
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeOfReduction5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testCircularTypeDef
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum21
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum22
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum23
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum24
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum25
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum26
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum31
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum32
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum35
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum36
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum38
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum39
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testGoodExtends2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testGoodExtends8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testInterfaceAssignment10
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testInterfaceAssignment11
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testInterfaceAssignment12
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testNestedCasts
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeOfReduction12
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeOfReduction13
+  - com.google.javascript.jscomp.RuntimeTypeCheckTest::testQualifiedClass
+  - com.google.javascript.jscomp.TightenTypesTest::testRestrictToInterfaceCast
+  - com.google.javascript.jscomp.TypeCheckFunctionCheckTest::testMethodCalls
+  - com.google.javascript.jscomp.TypeCheckTest::testAliasedEnum1
+  - com.google.javascript.jscomp.TypeCheckTest::testAliasedEnum2
+  - com.google.javascript.jscomp.TypeCheckTest::testAliasedEnum3
+  - com.google.javascript.jscomp.TypeCheckTest::testAliasedEnum4
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse2
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse4
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse6
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse7
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse8
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse9
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorType8
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorType9
+  - com.google.javascript.jscomp.TypeCheckTest::testDfa7
+  - com.google.javascript.jscomp.TypeCheckTest::testDfa8
+  - com.google.javascript.jscomp.TypeCheckTest::testNamespacedConstructor
+  - com.google.javascript.jscomp.TypeCheckTest::testOptionalUnknownNamedType
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorAlias5
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorAlias6
+  - com.google.javascript.jscomp.TypeCheckTest::testInterfaceAssignment9
+  - com.google.javascript.jscomp.TypeCheckTest::testSuperClassDefinedAfterSubClass1
+  - com.google.javascript.jscomp.TypeCheckTest::testSuperClassDefinedAfterSubClass2
+  - com.google.javascript.jscomp.TypeCheckTest::testDefinePropertyOnNullableObject2
+  - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testForwardTypeDeclaration4
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef1
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef2
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef3
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef4
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef5
+  - com.google.javascript.jscomp.TypeCheckTest::testGoodExtends12
+  - com.google.javascript.jscomp.TypeCheckTest::testGoodExtends13
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse10
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionInference13
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionInference14
+  - com.google.javascript.jscomp.TypeCheckTest::testInterfaceExtendsResolution
+  - com.google.javascript.jscomp.TypeCheckTest::testInheritanceCheck14
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeCheck22
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference10
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference9
+  - com.google.javascript.jscomp.TypeCheckTest::testResolvingNamedTypes
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeOfReduction5
+  - com.google.javascript.jscomp.TypeCheckTest::testInterfaceExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testCircularTypeDef
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum21
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum22
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum23
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum24
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum25
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum26
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum31
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum32
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum35
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum36
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum38
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum39
+  - com.google.javascript.jscomp.TypeCheckTest::testGoodExtends2
+  - com.google.javascript.jscomp.TypeCheckTest::testGoodExtends8
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue725
+  - com.google.javascript.jscomp.TypeCheckTest::testBadImplements3
+  - com.google.javascript.jscomp.TypeCheckTest::testInterfaceAssignment10
+  - com.google.javascript.jscomp.TypeCheckTest::testInterfaceAssignment11
+  - com.google.javascript.jscomp.TypeCheckTest::testInterfaceAssignment12
+  - com.google.javascript.jscomp.TypeCheckTest::testNestedCasts
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeOfReduction12
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeOfReduction13
+  - com.google.javascript.rhino.jstype.JSTypeRegistryTest::testGenerationIncrementing1
+  - com.google.javascript.rhino.jstype.JSTypeRegistryTest::testGenerationIncrementing2
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNamedTypeEquals2
+
+2024-02-26 10:52:44,144 - Closure_4 - INFO - 选择失败的测试用例为:
+2024-02-26 10:52:44,144 - Closure_4 - INFO - com.google.javascript.jscomp.CodePrinterTest::testTypeAnnotationsTypeDef
+2024-02-26 10:52:44,144 - Closure_4 - INFO - 失败的测试代码为:
+2024-02-26 10:52:44,144 - Closure_4 - INFO -     assertTypeAnnotations(
+
+2024-02-26 10:52:44,144 - Closure_4 - INFO - 失败信息为:
+2024-02-26 10:52:44,144 - Closure_4 - INFO - junit.framework.AssertionFailedError: Unexpected warnings or errors.
+
+2024-02-26 10:52:44,144 - Closure_4 - INFO - 补丁1 8测试失败
+2024-02-26 10:52:44,145 - Closure_4 - INFO - 开始验证补丁1 9:
+2024-02-26 10:52:44,145 - Closure_4 - INFO - 
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  if (detectImplicitPrototypeCycle()) {
+    handleTypeCycle(t);
+  }
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+} else {
+  resolveViaProperties(t, enclosing);
+}
+
+2024-02-26 10:52:45,989 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:45,989 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:45,989 - Closure_4 - INFO - 补丁1 9 未成功编译
+2024-02-26 10:52:45,990 - Closure_4 - INFO - 开始验证补丁2 1:
+2024-02-26 10:52:45,990 - Closure_4 - INFO - 
+if (!resolved) {
+  resolveViaProperties(t, enclosing);
+}
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+2024-02-26 10:52:47,843 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:47,843 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:47,843 - Closure_4 - INFO - 补丁2 1 未成功编译
+2024-02-26 10:52:47,845 - Closure_4 - INFO - 开始验证补丁2 2:
+2024-02-26 10:52:47,845 - Closure_4 - INFO - 
+if (!resolved) {
+  resolveViaProperties(t, enclosing);
+}
+if (resolved || detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+2024-02-26 10:52:49,699 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:49,699 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:49,699 - Closure_4 - INFO - 补丁2 2 未成功编译
+2024-02-26 10:52:49,700 - Closure_4 - INFO - 开始验证补丁2 3:
+2024-02-26 10:52:49,700 - Closure_4 - INFO - 
+resolveViaProperties(t, enclosing);
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+if (resolved) {
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+} else {
+  super.resolveInternal(t, enclosing);
+}
+
+2024-02-26 10:52:51,562 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:51,562 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:51,562 - Closure_4 - INFO - 补丁2 3 未成功编译
+2024-02-26 10:52:51,563 - Closure_4 - INFO - 开始验证补丁2 4:
+2024-02-26 10:52:51,563 - Closure_4 - INFO - 
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    } else {
+      resolveViaProperties(t, enclosing);
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+    }
+
+2024-02-26 10:52:53,429 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:53,429 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:53,429 - Closure_4 - INFO - 补丁2 4 未成功编译
+2024-02-26 10:52:53,430 - Closure_4 - INFO - 开始验证补丁2 5:
+2024-02-26 10:52:53,430 - Closure_4 - INFO - 
+    if (!resolved) {
+      resolveViaProperties(t, enclosing);
+    }
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    }
+
+2024-02-26 10:52:55,292 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:55,292 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:55,292 - Closure_4 - INFO - 补丁2 5 未成功编译
+2024-02-26 10:52:55,293 - Closure_4 - INFO - 开始验证补丁2 6:
+2024-02-26 10:52:55,293 - Closure_4 - INFO - 
+    if (resolved) {
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+    } else {
+      resolveViaProperties(t, enclosing);
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+    }
+    return registry.isLastGeneration() ?
+        getReferencedType() : this;
+
+2024-02-26 10:52:57,156 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:57,156 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:57,156 - Closure_4 - INFO - 补丁2 6 未成功编译
+2024-02-26 10:52:57,157 - Closure_4 - INFO - 开始验证补丁2 7:
+2024-02-26 10:52:57,157 - Closure_4 - INFO - 
+    if (!resolved) {
+      resolveViaProperties(t, enclosing);
+    }
+
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    }
+
+    super.resolveInternal(t, enclosing);
+
+2024-02-26 10:52:59,019 - Closure_4 - INFO - 编译失败
+2024-02-26 10:52:59,019 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:52:59,019 - Closure_4 - INFO - 补丁2 7 未成功编译
+2024-02-26 10:52:59,020 - Closure_4 - INFO - 开始验证补丁2 8:
+2024-02-26 10:52:59,020 - Closure_4 - INFO - 
+    if (resolved) {
+      handleTypeCycle(t);
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    } else {
+      resolveViaProperties(t, enclosing);
+    }
+
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    super.resolveInternal(t, enclosing);
+
+2024-02-26 10:53:00,881 - Closure_4 - INFO - 编译失败
+2024-02-26 10:53:00,881 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:53:00,881 - Closure_4 - INFO - 补丁2 8 未成功编译
+2024-02-26 10:53:00,882 - Closure_4 - INFO - 开始验证补丁2 9:
+2024-02-26 10:53:00,882 - Closure_4 - INFO - 
+    if (resolved) {
+      handleTypeCycle(t);
+    } else {
+      resolveViaProperties(t, enclosing);
+      if (detectImplicitPrototypeCycle()) {
+        handleTypeCycle(t);
+      }
+    }
+
+    super.resolveInternal(t, enclosing);
+    finishPropertyContinuations();
+    return resolved && registry.isLastGeneration() ?
+        getReferencedType() : this;
+
+2024-02-26 10:53:02,744 - Closure_4 - INFO - 编译失败
+2024-02-26 10:53:02,744 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:53:02,744 - Closure_4 - INFO - 补丁2 9 未成功编译
+2024-02-26 10:53:02,745 - Closure_4 - INFO - 开始验证补丁3 1:
+2024-02-26 10:53:02,745 - Closure_4 - INFO - 
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+resolveViaProperties(t, enclosing);
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+2024-02-26 10:53:06,829 - Closure_4 - INFO - 编译成功
+2024-02-26 10:54:04,873 - Closure_4 - INFO - 测试失败
+2024-02-26 10:54:04,873 - Closure_4 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testPrototypeLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testPrototypeLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testConversionFromInterfaceToRecursiveConstructor
+
+2024-02-26 10:54:04,873 - Closure_4 - INFO - 选择失败的测试用例为:
+2024-02-26 10:54:04,873 - Closure_4 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testPrototypeLoop
+2024-02-26 10:54:04,873 - Closure_4 - INFO - 失败的测试代码为:
+2024-02-26 10:54:04,874 - Closure_4 - INFO - 
+2024-02-26 10:54:04,874 - Closure_4 - INFO - 失败信息为:
+2024-02-26 10:54:04,874 - Closure_4 - INFO - java.lang.StackOverflowError
+
+2024-02-26 10:54:04,874 - Closure_4 - INFO - 补丁3 1测试失败
+2024-02-26 10:54:04,875 - Closure_4 - INFO - 开始验证补丁3 2:
+2024-02-26 10:54:04,875 - Closure_4 - INFO - 
+if (!resolved) {
+  resolveViaProperties(t, enclosing);
+}
+
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+2024-02-26 10:54:06,712 - Closure_4 - INFO - 编译失败
+2024-02-26 10:54:06,712 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:54:06,712 - Closure_4 - INFO - 补丁3 2 未成功编译
+2024-02-26 10:54:06,713 - Closure_4 - INFO - 开始验证补丁3 3:
+2024-02-26 10:54:06,713 - Closure_4 - INFO - 
+if (detectImplicitPrototypeCycle()) {
+  handleTypeCycle(t);
+}
+
+if (!resolved) {
+  resolveViaProperties(t, enclosing);
+  if (detectImplicitPrototypeCycle()) {
+    handleTypeCycle(t);
+  }
+}
+
+if (resolved) {
+  super.resolveInternal(t, enclosing);
+  finishPropertyContinuations();
+  return registry.isLastGeneration() ?
+      getReferencedType() : this;
+}
+
+2024-02-26 10:54:08,557 - Closure_4 - INFO - 编译失败
+2024-02-26 10:54:08,557 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:54:08,557 - Closure_4 - INFO - 补丁3 3 未成功编译
+2024-02-26 10:54:08,558 - Closure_4 - INFO - 开始验证补丁3 4:
+2024-02-26 10:54:08,559 - Closure_4 - INFO - 
+    if (!resolved) {
+      resolveViaProperties(t, enclosing);
+    }
+
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    }
+
+    resolveViaProperties(t, enclosing);
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+2024-02-26 10:54:12,689 - Closure_4 - INFO - 编译成功
+2024-02-26 10:55:10,076 - Closure_4 - INFO - 测试失败
+2024-02-26 10:55:10,076 - Closure_4 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testConversionFromInterfaceToRecursiveConstructor
+  - com.google.javascript.rhino.jstype.JSTypeRegistryTest::testForceResolve
+  - com.google.javascript.rhino.jstype.JSTypeRegistryTest::testTypeResolutionModes
+
+2024-02-26 10:55:10,602 - Closure_4 - INFO - 选择失败的测试用例为:
+2024-02-26 10:55:10,602 - Closure_4 - INFO - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+2024-02-26 10:55:10,602 - Closure_4 - INFO - 失败的测试代码为:
+2024-02-26 10:55:10,602 - Closure_4 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-26 10:55:10,602 - Closure_4 - INFO - 失败信息为:
+2024-02-26 10:55:10,602 - Closure_4 - INFO - junit.framework.AssertionFailedError: unexpected warning(s) : JSC_IMPLEMENTS_NON_INTERFACE. can only implement interfaces at [testcode] line 2 : 29, JSC_IMPLEMENTS_NON_INTERFACE. can only implement interfaces at [testcode] line 3 : 26 expected:<1> but was:<2>
+
+2024-02-26 10:55:10,602 - Closure_4 - INFO - 补丁3 4测试失败
+2024-02-26 10:55:10,603 - Closure_4 - INFO - 开始验证补丁3 5:
+2024-02-26 10:55:10,603 - Closure_4 - INFO - 
+    resolveViaProperties(t, enclosing);
+
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    if (!resolved) {
+      super.resolveInternal(t, enclosing);
+    } else {
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    }
+    
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+2024-02-26 10:55:14,705 - Closure_4 - INFO - 编译成功
+2024-02-26 10:56:12,224 - Closure_4 - INFO - 测试失败
+2024-02-26 10:56:12,224 - Closure_4 - INFO - Failing tests: 43
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testNamedType
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testPrototypeLoop
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeDef1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeDef2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testTypeDef3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionInference13
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionInference14
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testInheritanceCheck14
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testCircularTypeDef
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum26
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum35
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testEnum36
+  - com.google.javascript.jscomp.RuntimeTypeCheckTest::testQualifiedClass
+  - com.google.javascript.jscomp.TypeCheckTest::testPrototypeLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse2
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse4
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse6
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse7
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse8
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse9
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorType8
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorType9
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef1
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef2
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef3
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef4
+  - com.google.javascript.jscomp.TypeCheckTest::testTypeDef5
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse10
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionInference13
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionInference14
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testInheritanceCheck14
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference10
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference9
+  - com.google.javascript.jscomp.TypeCheckTest::testCircularTypeDef
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum26
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum35
+  - com.google.javascript.jscomp.TypeCheckTest::testEnum36
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue725
+  - com.google.javascript.jscomp.TypeCheckTest::testConversionFromInterfaceToRecursiveConstructor
+  - com.google.javascript.rhino.jstype.JSTypeTest::testNamedTypeEquals2
+
+2024-02-26 10:56:12,762 - Closure_4 - INFO - 选择失败的测试用例为:
+2024-02-26 10:56:12,763 - Closure_4 - INFO - com.google.javascript.jscomp.DisambiguatePropertiesTest::testNamedType
+2024-02-26 10:56:12,763 - Closure_4 - INFO - 失败的测试代码为:
+2024-02-26 10:56:12,763 - Closure_4 - INFO -     testSets(false, js, output, "{a=[[Bar.prototype], [Foo.prototype]]}");
+
+2024-02-26 10:56:12,763 - Closure_4 - INFO - 失败信息为:
+2024-02-26 10:56:12,763 - Closure_4 - INFO - junit.framework.AssertionFailedError: Unexpected warning(s): JSC_TYPE_PARSE_ERROR. Bad type annotation. Unknown type g.Late at testcode line 2 : 10 expected:<0> but was:<1>
+
+2024-02-26 10:56:12,763 - Closure_4 - INFO - 补丁3 5测试失败
+2024-02-26 10:56:12,764 - Closure_4 - INFO - 开始验证补丁3 6:
+2024-02-26 10:56:12,764 - Closure_4 - INFO - 
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    if (resolved) {
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ?
+          getReferencedType() : this;
+    } else {
+      super.resolveInternal(t, enclosing);
+      resolveViaProperties(t, enclosing);
+    }
+    
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+2024-02-26 10:56:16,839 - Closure_4 - INFO - 编译成功
+2024-02-26 10:57:14,322 - Closure_4 - INFO - 测试失败
+2024-02-26 10:57:14,322 - Closure_4 - INFO - Failing tests: 4
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testBackwardsTypedefUse10
+  - com.google.javascript.jscomp.TypeCheckTest::testImplementsLoop
+  - com.google.javascript.jscomp.TypeCheckTest::testConversionFromInterfaceToRecursiveConstructor
+
+2024-02-26 10:57:14,845 - Closure_4 - INFO - 选择失败的测试用例为:
+2024-02-26 10:57:14,846 - Closure_4 - INFO - com.google.javascript.jscomp.TypeCheckTest::testImplementsExtendsLoop
+2024-02-26 10:57:14,846 - Closure_4 - INFO - 失败的测试代码为:
+2024-02-26 10:57:14,846 - Closure_4 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-26 10:57:14,846 - Closure_4 - INFO - 失败信息为:
+2024-02-26 10:57:14,846 - Closure_4 - INFO - junit.framework.AssertionFailedError: unexpected warning(s) : JSC_IMPLEMENTS_NON_INTERFACE. can only implement interfaces at [testcode] line 2 : 29, JSC_IMPLEMENTS_NON_INTERFACE. can only implement interfaces at [testcode] line 3 : 26 expected:<1> but was:<2>
+
+2024-02-26 10:57:14,846 - Closure_4 - INFO - 补丁3 6测试失败
+2024-02-26 10:57:14,847 - Closure_4 - INFO - 开始验证补丁3 7:
+2024-02-26 10:57:14,847 - Closure_4 - INFO - 
+    if (!resolved) {
+      resolveViaProperties(t, enclosing);
+    }
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ? getReferencedType() : this;
+    }
+
+2024-02-26 10:57:16,718 - Closure_4 - INFO - 编译失败
+2024-02-26 10:57:16,718 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:57:16,718 - Closure_4 - INFO - 补丁3 7 未成功编译
+2024-02-26 10:57:16,719 - Closure_4 - INFO - 开始验证补丁3 8:
+2024-02-26 10:57:16,719 - Closure_4 - INFO - 
+    if (!resolved) {
+      resolveViaProperties(t, enclosing);
+    }
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    super.resolveInternal(t, enclosing);
+    if (resolved) {
+      finishPropertyContinuations();
+      return registry.isLastGeneration() ? getReferencedType() : this;
+    }
+
+2024-02-26 10:57:18,602 - Closure_4 - INFO - 编译失败
+2024-02-26 10:57:18,602 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:57:18,602 - Closure_4 - INFO - 补丁3 8 未成功编译
+2024-02-26 10:57:18,603 - Closure_4 - INFO - 开始验证补丁3 9:
+2024-02-26 10:57:18,603 - Closure_4 - INFO - 
+    if (resolved) {
+      super.resolveInternal(t, enclosing);
+    } else {
+      resolveViaProperties(t, enclosing);
+    }
+    if (detectImplicitPrototypeCycle()) {
+      handleTypeCycle(t);
+    }
+
+    finishPropertyContinuations();
+    return isResolved() ? getReferencedType() : this;
+
+2024-02-26 10:57:20,455 - Closure_4 - INFO - 编译失败
+2024-02-26 10:57:20,455 - Closure_4 - INFO - 错误: 非法的类型开始
+super.resolveInternal(t, enclosing);
+2024-02-26 10:57:20,455 - Closure_4 - INFO - 补丁3 9 未成功编译
+2024-02-26 10:57:20,455 - Closure_4 - INFO - Closure_4 未成功修复

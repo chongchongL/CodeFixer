@@ -1,0 +1,145 @@
+2024-02-25 13:01:22,299 - Time_15 - INFO - rm -rf /home/chongchong/d4j-project/Time_15
+2024-02-25 13:01:22,300 - Time_15 - INFO - 删除 Time 15b 成功
+2024-02-25 13:01:22,300 - Time_15 - INFO - defects4j checkout -p Time -v 15b -w /home/chongchong/d4j-project/Time_15
+2024-02-25 13:01:23,564 - Time_15 - INFO - checkout Time 15b 成功
+2024-02-25 13:01:29,743 - Time_15 - INFO - 编译成功
+2024-02-25 13:01:37,396 - Time_15 - INFO - 测试失败
+2024-02-25 13:01:37,396 - Time_15 - INFO - Failing tests: 1
+  - org.joda.time.field.TestFieldUtils::testSafeMultiplyLongInt
+
+2024-02-25 13:01:38,299 - Time_15 - INFO - 它的bug类型为:
+2024-02-25 13:01:38,299 - Time_15 - INFO - 3
+2024-02-25 13:02:27,305 - Time_15 - INFO - 开始验证补丁1 1:
+2024-02-25 13:02:27,305 - Time_15 - INFO - 
+if (val1 == Long.MIN_VALUE) {
+    throw new ArithmeticException("Overflow in multiplication");
+}
+return -val1;
+
+2024-02-25 13:02:27,951 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:27,951 - Time_15 - INFO - 错误: 无法访问的语句
+return -val1;
+2024-02-25 13:02:27,951 - Time_15 - INFO - 补丁1 1 未成功编译
+2024-02-25 13:02:27,953 - Time_15 - INFO - 开始验证补丁1 2:
+2024-02-25 13:02:27,953 - Time_15 - INFO - 
+if (val1 == Long.MIN_VALUE) {
+    throw new ArithmeticException("Overflow in multiplication");
+} else {
+    return -val1;
+}
+
+2024-02-25 13:02:28,612 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:28,613 - Time_15 - INFO - 错误: 无法访问的语句
+return -val1;
+2024-02-25 13:02:28,613 - Time_15 - INFO - 补丁1 2 未成功编译
+2024-02-25 13:02:28,614 - Time_15 - INFO - 开始验证补丁1 3:
+2024-02-25 13:02:28,614 - Time_15 - INFO - 
+return Math.negateExact(val1);
+
+2024-02-25 13:02:29,257 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:29,258 - Time_15 - INFO - 错误: 找不到符号
+return Math.negateExact(val1);
+2024-02-25 13:02:29,258 - Time_15 - INFO - 补丁1 3 未成功编译
+2024-02-25 13:02:29,259 - Time_15 - INFO - 开始验证补丁1 4:
+2024-02-25 13:02:29,259 - Time_15 - INFO - 
+if (val1 == Long.MIN_VALUE) {
+    throw new ArithmeticException("Overflow in multiplication");
+}
+return -val1;
+
+2024-02-25 13:02:29,259 - Time_15 - INFO - 补丁1 4为重复的补丁
+2024-02-25 13:02:29,264 - Time_15 - INFO - 开始验证补丁1 5:
+2024-02-25 13:02:29,264 - Time_15 - INFO - 
+if (val1 == Long.MIN_VALUE) {
+    throw new ArithmeticException("Value is too big or too small");
+}
+return -val1;
+
+2024-02-25 13:02:29,913 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:29,913 - Time_15 - INFO - 错误: 无法访问的语句
+return -val1;
+2024-02-25 13:02:29,914 - Time_15 - INFO - 补丁1 5 未成功编译
+2024-02-25 13:02:29,915 - Time_15 - INFO - 开始验证补丁1 6:
+2024-02-25 13:02:29,915 - Time_15 - INFO - 
+if (val1 == Long.MIN_VALUE) {
+    throw new ArithmeticException("Cannot negate Long.MIN_VALUE");
+}
+return -val1;
+
+2024-02-25 13:02:30,569 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:30,569 - Time_15 - INFO - 错误: 无法访问的语句
+return -val1;
+2024-02-25 13:02:30,569 - Time_15 - INFO - 补丁1 6 未成功编译
+2024-02-25 13:02:30,571 - Time_15 - INFO - 开始验证补丁1 7:
+2024-02-25 13:02:30,571 - Time_15 - INFO - 
+case -1:
+    if (val1 == Long.MIN_VALUE) {
+        throw new ArithmeticException("Overflow in multiplication");
+    }
+    return -val1;
+
+2024-02-25 13:02:31,218 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:31,218 - Time_15 - INFO - 错误: case 标签重复
+case -1:
+2024-02-25 13:02:31,218 - Time_15 - INFO - 补丁1 7 未成功编译
+2024-02-25 13:02:31,219 - Time_15 - INFO - 开始验证补丁1 8:
+2024-02-25 13:02:31,219 - Time_15 - INFO - 
+case -1:
+    return -val1;
+
+2024-02-25 13:02:31,864 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:31,864 - Time_15 - INFO - 错误: case 标签重复
+case -1:
+2024-02-25 13:02:31,865 - Time_15 - INFO - 补丁1 8 未成功编译
+2024-02-25 13:02:31,866 - Time_15 - INFO - 开始验证补丁1 9:
+2024-02-25 13:02:31,866 - Time_15 - INFO - 
+case -1:
+    try {
+        return Math.multiplyExact(val1, val2);
+    } catch (ArithmeticException e) {
+        throw e;
+    }
+
+2024-02-25 13:02:32,519 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:32,519 - Time_15 - INFO - 错误: case 标签重复
+case -1:
+2024-02-25 13:02:32,519 - Time_15 - INFO - 补丁1 9 未成功编译
+2024-02-25 13:02:32,520 - Time_15 - INFO - 开始验证补丁2 1:
+2024-02-25 13:02:32,520 - Time_15 - INFO - 
+case -1:
+    if (val1 == Long.MIN_VALUE) {
+        throw new ArithmeticException("Multiplication of Long.MIN_VALUE by -1 overflows");
+    }
+    return -val1;
+
+2024-02-25 13:02:33,169 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:33,169 - Time_15 - INFO - 错误: case 标签重复
+case -1:
+2024-02-25 13:02:33,169 - Time_15 - INFO - 补丁2 1 未成功编译
+2024-02-25 13:02:33,170 - Time_15 - INFO - 开始验证补丁2 2:
+2024-02-25 13:02:33,171 - Time_15 - INFO - 
+case -1:
+    throw new ArithmeticException("Multiplication by -1 could cause overflow");
+
+2024-02-25 13:02:33,820 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:33,820 - Time_15 - INFO - 错误: case 标签重复
+case -1:
+2024-02-25 13:02:33,820 - Time_15 - INFO - 补丁2 2 未成功编译
+2024-02-25 13:02:33,822 - Time_15 - INFO - 开始验证补丁2 3:
+2024-02-25 13:02:33,822 - Time_15 - INFO - 
+case -1:
+    // TODO: Handle overflow scenario when val1 is Long.MIN_VALUE
+
+2024-02-25 13:02:34,489 - Time_15 - INFO - 编译失败
+2024-02-25 13:02:34,490 - Time_15 - INFO - 错误: case 标签重复
+case -1:
+2024-02-25 13:02:34,490 - Time_15 - INFO - 补丁2 3 未成功编译
+2024-02-25 13:02:34,491 - Time_15 - INFO - 开始验证补丁2 4:
+2024-02-25 13:02:34,491 - Time_15 - INFO - 
+if (val1 == Long.MIN_VALUE) {
+    throw new ArithmeticException("Multiplication of Long.MIN_VALUE by -1 overflows");
+}
+
+2024-02-25 13:02:37,018 - Time_15 - INFO - 编译成功
+2024-02-25 13:02:44,693 - Time_15 - INFO - 测试成功
+2024-02-25 13:02:44,693 - Time_15 - INFO - 补丁2 4 通过了所有的测试用例

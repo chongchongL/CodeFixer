@@ -1,0 +1,367 @@
+2024-02-25 12:17:28,281 - Lang_38 - INFO - rm -rf /home/chongchong/d4j-project/Lang_38
+2024-02-25 12:17:28,282 - Lang_38 - INFO - 删除 Lang 38b 成功
+2024-02-25 12:17:28,282 - Lang_38 - INFO - defects4j checkout -p Lang -v 38b -w /home/chongchong/d4j-project/Lang_38
+2024-02-25 12:17:31,619 - Lang_38 - INFO - checkout Lang 38b 成功
+2024-02-25 12:17:35,804 - Lang_38 - INFO - 编译成功
+2024-02-25 12:17:43,321 - Lang_38 - INFO - 测试失败
+2024-02-25 12:17:43,321 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:17:44,205 - Lang_38 - INFO - 它的bug类型为:
+2024-02-25 12:17:44,205 - Lang_38 - INFO - 3
+2024-02-25 12:18:42,280 - Lang_38 - INFO - 开始验证补丁1 1:
+2024-02-25 12:18:42,280 - Lang_38 - INFO - 
+   calendar = (Calendar) calendar.clone();
+   calendar.setTimeZone(mTimeZone);
+   calendar.get(Calendar.HOUR_OF_DAY); // Triggers recalculation of time fields
+   
+2024-02-25 12:18:43,416 - Lang_38 - INFO - 编译成功
+2024-02-25 12:18:50,840 - Lang_38 - INFO - 测试失败
+2024-02-25 12:18:50,840 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:18:51,280 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:18:51,280 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:18:51,280 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:18:51,280 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:18:51,280 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:18:51,280 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:18:51,280 - Lang_38 - INFO - 补丁1 1测试失败
+2024-02-25 12:18:51,281 - Lang_38 - INFO - 开始验证补丁1 2:
+2024-02-25 12:18:51,281 - Lang_38 - INFO - 
+   calendar = (Calendar) calendar.clone();
+   calendar.setTimeZone(mTimeZone);
+   calendar.getTime(); // Triggers recalculation of time fields by accessing the Date
+   
+2024-02-25 12:18:52,404 - Lang_38 - INFO - 编译成功
+2024-02-25 12:18:59,868 - Lang_38 - INFO - 测试失败
+2024-02-25 12:18:59,868 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:00,303 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:00,303 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:00,303 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:00,303 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:00,303 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:00,303 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:00,303 - Lang_38 - INFO - 补丁1 2测试失败
+2024-02-25 12:19:00,305 - Lang_38 - INFO - 开始验证补丁1 3:
+2024-02-25 12:19:00,305 - Lang_38 - INFO - 
+   calendar = (Calendar) calendar.clone();
+   calendar.setTimeZone(mTimeZone);
+   long currentTimeMillis = calendar.getTimeInMillis(); // Accesses the time to trigger recalculation
+   calendar.setTimeInMillis(currentTimeMillis);
+   
+2024-02-25 12:19:01,424 - Lang_38 - INFO - 编译成功
+2024-02-25 12:19:08,888 - Lang_38 - INFO - 测试失败
+2024-02-25 12:19:08,889 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:09,332 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:09,332 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:09,332 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:09,332 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:09,332 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:09,332 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:09,332 - Lang_38 - INFO - 补丁1 3测试失败
+2024-02-25 12:19:09,333 - Lang_38 - INFO - 开始验证补丁1 4:
+2024-02-25 12:19:09,333 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:19:10,458 - Lang_38 - INFO - 编译成功
+2024-02-25 12:19:17,939 - Lang_38 - INFO - 测试失败
+2024-02-25 12:19:17,939 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:18,380 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:18,380 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:18,380 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:18,380 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:18,380 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:18,380 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:18,380 - Lang_38 - INFO - 补丁1 4测试失败
+2024-02-25 12:19:18,381 - Lang_38 - INFO - 开始验证补丁1 5:
+2024-02-25 12:19:18,381 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+calendar.get(Calendar.HOUR_OF_DAY); // force recalculation of time fields
+
+2024-02-25 12:19:19,519 - Lang_38 - INFO - 编译成功
+2024-02-25 12:19:26,964 - Lang_38 - INFO - 测试失败
+2024-02-25 12:19:26,964 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:27,406 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:27,406 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:27,406 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:27,406 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:27,406 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:27,406 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:27,407 - Lang_38 - INFO - 补丁1 5测试失败
+2024-02-25 12:19:27,408 - Lang_38 - INFO - 开始验证补丁1 6:
+2024-02-25 12:19:27,408 - Lang_38 - INFO - 
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:19:28,541 - Lang_38 - INFO - 编译成功
+2024-02-25 12:19:36,067 - Lang_38 - INFO - 测试失败
+2024-02-25 12:19:36,067 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:36,504 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:36,504 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:36,504 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:36,504 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:36,504 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:36,504 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:36,504 - Lang_38 - INFO - 补丁1 6测试失败
+2024-02-25 12:19:36,505 - Lang_38 - INFO - 开始验证补丁1 7:
+2024-02-25 12:19:36,505 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+calendar.get(Calendar.HOUR_OF_DAY); // Trigger recalculation of time fields
+
+2024-02-25 12:19:37,654 - Lang_38 - INFO - 编译成功
+2024-02-25 12:19:45,141 - Lang_38 - INFO - 测试失败
+2024-02-25 12:19:45,141 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:45,576 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:45,577 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:45,577 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:45,577 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:45,577 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:45,577 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:45,577 - Lang_38 - INFO - 补丁1 7测试失败
+2024-02-25 12:19:45,578 - Lang_38 - INFO - 开始验证补丁1 8:
+2024-02-25 12:19:45,578 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+calendar.getTime(); // Force all fields to recalculate immediately
+
+2024-02-25 12:19:46,694 - Lang_38 - INFO - 编译成功
+2024-02-25 12:19:54,136 - Lang_38 - INFO - 测试失败
+2024-02-25 12:19:54,136 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:19:54,582 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:19:54,582 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:19:54,582 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:19:54,582 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:19:54,582 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:19:54,582 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:19:54,582 - Lang_38 - INFO - 补丁1 8测试失败
+2024-02-25 12:19:54,583 - Lang_38 - INFO - 开始验证补丁1 9:
+2024-02-25 12:19:54,583 - Lang_38 - INFO - 
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:19:54,583 - Lang_38 - INFO - 补丁1 9为重复的补丁
+2024-02-25 12:19:54,584 - Lang_38 - INFO - 开始验证补丁2 1:
+2024-02-25 12:19:54,584 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:19:54,584 - Lang_38 - INFO - 补丁2 1为重复的补丁
+2024-02-25 12:19:54,585 - Lang_38 - INFO - 开始验证补丁2 2:
+2024-02-25 12:19:54,585 - Lang_38 - INFO - 
+Calendar clonedCalendar = (Calendar) calendar.clone();
+clonedCalendar.setTimeZone(mTimeZone);
+return applyRules(clonedCalendar, buf);
+
+2024-02-25 12:19:55,324 - Lang_38 - INFO - 编译失败
+2024-02-25 12:19:55,324 - Lang_38 - INFO - 错误: 无法访问的语句
+calendar = (Calendar) calendar.clone();
+2024-02-25 12:19:55,324 - Lang_38 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:19:55,325 - Lang_38 - INFO - 开始验证补丁2 3:
+2024-02-25 12:19:55,325 - Lang_38 - INFO - 
+if (!calendar.getTimeZone().equals(mTimeZone)) {
+    calendar = (Calendar) calendar.clone();
+    calendar.setTimeZone(mTimeZone);
+}
+
+2024-02-25 12:19:56,456 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:03,900 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:03,900 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:04,338 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:04,338 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:04,338 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:04,338 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:04,338 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:04,338 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:04,338 - Lang_38 - INFO - 补丁2 3测试失败
+2024-02-25 12:20:04,339 - Lang_38 - INFO - 开始验证补丁2 4:
+2024-02-25 12:20:04,339 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:20:04,339 - Lang_38 - INFO - 补丁2 4为重复的补丁
+2024-02-25 12:20:04,340 - Lang_38 - INFO - 开始验证补丁2 5:
+2024-02-25 12:20:04,340 - Lang_38 - INFO - 
+TimeZone originalTimeZone = calendar.getTimeZone();
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:20:05,515 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:12,988 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:12,988 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:13,425 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:13,425 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:13,425 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:13,425 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:13,425 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:13,425 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:13,425 - Lang_38 - INFO - 补丁2 5测试失败
+2024-02-25 12:20:13,426 - Lang_38 - INFO - 开始验证补丁2 6:
+2024-02-25 12:20:13,426 - Lang_38 - INFO - 
+if (!calendar.getTimeZone().equals(mTimeZone)) {
+    calendar = (Calendar) calendar.clone();
+    calendar.setTimeZone(mTimeZone);
+}
+
+2024-02-25 12:20:13,426 - Lang_38 - INFO - 补丁2 6为重复的补丁
+2024-02-25 12:20:13,427 - Lang_38 - INFO - 开始验证补丁2 7:
+2024-02-25 12:20:13,427 - Lang_38 - INFO - 
+    // No cloning needed; setting time zone directly as desired output matches the same instant in a different timezone
+    calendar.setTimeZone(mTimeZone);
+    
+2024-02-25 12:20:14,566 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:22,017 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:22,017 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:22,451 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:22,451 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:22,451 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:22,451 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:22,451 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:22,451 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:22,451 - Lang_38 - INFO - 补丁2 7测试失败
+2024-02-25 12:20:22,452 - Lang_38 - INFO - 开始验证补丁2 8:
+2024-02-25 12:20:22,452 - Lang_38 - INFO - 
+    // Clone the calendar, then set the timezone
+    Calendar clonedCalendar = (Calendar) calendar.clone();
+    clonedCalendar.setTimeZone(mTimeZone);
+    
+2024-02-25 12:20:23,591 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:31,046 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:31,046 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:31,486 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:31,486 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:31,486 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:31,486 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:31,486 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:31,486 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:31,486 - Lang_38 - INFO - 补丁2 8测试失败
+2024-02-25 12:20:31,487 - Lang_38 - INFO - 开始验证补丁2 9:
+2024-02-25 12:20:31,487 - Lang_38 - INFO - 
+    // Set the timezone before cloning to preserve the instant in time
+    calendar.setTimeZone(mTimeZone);
+    Calendar clonedCalendar = (Calendar) calendar.clone();
+    
+2024-02-25 12:20:32,598 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:40,082 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:40,082 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:40,530 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:40,530 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:40,530 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:40,530 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:40,530 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:40,530 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:40,530 - Lang_38 - INFO - 补丁2 9测试失败
+2024-02-25 12:20:40,531 - Lang_38 - INFO - 开始验证补丁3 1:
+2024-02-25 12:20:40,531 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:20:40,531 - Lang_38 - INFO - 补丁3 1为重复的补丁
+2024-02-25 12:20:40,532 - Lang_38 - INFO - 开始验证补丁3 2:
+2024-02-25 12:20:40,532 - Lang_38 - INFO - 
+calendar.setTimeZone(mTimeZone);
+calendar = (Calendar) calendar.clone();
+
+2024-02-25 12:20:41,649 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:49,120 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:49,120 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:49,558 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:49,558 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:49,558 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:49,558 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:49,558 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:49,558 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:49,558 - Lang_38 - INFO - 补丁3 2测试失败
+2024-02-25 12:20:49,559 - Lang_38 - INFO - 开始验证补丁3 3:
+2024-02-25 12:20:49,559 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+// No further action taken on `calendar`
+
+2024-02-25 12:20:50,692 - Lang_38 - INFO - 编译成功
+2024-02-25 12:20:58,171 - Lang_38 - INFO - 测试失败
+2024-02-25 12:20:58,171 - Lang_38 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+
+2024-02-25 12:20:58,610 - Lang_38 - INFO - 选择失败的测试用例为:
+2024-02-25 12:20:58,610 - Lang_38 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testLang538
+2024-02-25 12:20:58,610 - Lang_38 - INFO - 失败的测试代码为:
+2024-02-25 12:20:58,610 - Lang_38 - INFO -         assertEquals("dateTime", dateTime, format.format(cal));
+
+2024-02-25 12:20:58,610 - Lang_38 - INFO - 失败信息为:
+2024-02-25 12:20:58,610 - Lang_38 - INFO - junit.framework.ComparisonFailure: dateTime expected:<2009-10-16T[16]:42:16.000Z> but was:<2009-10-16T[08]:42:16.000Z>
+
+2024-02-25 12:20:58,610 - Lang_38 - INFO - 补丁3 3测试失败
+2024-02-25 12:20:58,611 - Lang_38 - INFO - 开始验证补丁3 4:
+2024-02-25 12:20:58,611 - Lang_38 - INFO - 
+calendar = (Calendar) calendar.clone();
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:20:58,611 - Lang_38 - INFO - 补丁3 4为重复的补丁
+2024-02-25 12:20:58,612 - Lang_38 - INFO - 开始验证补丁3 5:
+2024-02-25 12:20:58,612 - Lang_38 - INFO - 
+calendar.setTimeZone(mTimeZone);
+
+2024-02-25 12:20:58,612 - Lang_38 - INFO - 补丁3 5为重复的补丁
+2024-02-25 12:20:58,613 - Lang_38 - INFO - 开始验证补丁3 6:
+2024-02-25 12:20:58,613 - Lang_38 - INFO - 
+long timeInMillis = calendar.getTimeInMillis();
+calendar.setTimeZone(mTimeZone);
+calendar.setTimeInMillis(timeInMillis);
+
+2024-02-25 12:20:59,739 - Lang_38 - INFO - 编译成功
+2024-02-25 12:21:07,168 - Lang_38 - INFO - 测试成功
+2024-02-25 12:21:07,168 - Lang_38 - INFO - 补丁3 6 通过了所有的测试用例

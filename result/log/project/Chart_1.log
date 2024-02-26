@@ -1,0 +1,237 @@
+2024-02-23 21:33:09,622 - Chart_1 - INFO - rm -rf /home/chongchong/d4j-project/Chart_1
+2024-02-23 21:33:09,679 - Chart_1 - INFO - 删除 Chart 1b 成功
+2024-02-23 21:33:09,679 - Chart_1 - INFO - defects4j checkout -p Chart -v 1b -w /home/chongchong/d4j-project/Chart_1
+2024-02-23 21:33:12,824 - Chart_1 - INFO - checkout Chart 1b 成功
+2024-02-23 21:33:16,234 - Chart_1 - INFO - 编译成功
+2024-02-23 21:33:24,049 - Chart_1 - INFO - 测试失败
+2024-02-23 21:33:24,050 - Chart_1 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::test2947660
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 21:33:24,803 - Chart_1 - INFO - 它的bug类型为:
+2024-02-23 21:33:24,804 - Chart_1 - INFO - 1
+2024-02-23 21:34:05,697 - Chart_1 - INFO - 开始验证补丁1 1:
+2024-02-23 21:34:05,697 - Chart_1 - INFO - 
+   if (dataset == null) {
+       return result;
+   }
+   
+2024-02-23 21:34:06,189 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:06,189 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:06,189 - Chart_1 - INFO - 补丁1 1 未成功编译
+2024-02-23 21:34:06,190 - Chart_1 - INFO - 开始验证补丁1 2:
+2024-02-23 21:34:06,190 - Chart_1 - INFO - 
+   // If there's no dataset, return the empty collection
+   if (dataset == null) {
+       return result;
+   }
+   // Continue processing if dataset is not null
+   
+2024-02-23 21:34:06,657 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:06,657 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:06,657 - Chart_1 - INFO - 补丁1 2 未成功编译
+2024-02-23 21:34:06,658 - Chart_1 - INFO - 开始验证补丁1 3:
+2024-02-23 21:34:06,658 - Chart_1 - INFO - 
+   if (dataset == null) {
+       // Dataset is null, no legend items to add
+       return result;
+   }
+   // Proceed to add legend items from the dataset
+   
+2024-02-23 21:34:07,184 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:07,184 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:07,184 - Chart_1 - INFO - 补丁1 3 未成功编译
+2024-02-23 21:34:07,185 - Chart_1 - INFO - 开始验证补丁1 4:
+2024-02-23 21:34:07,185 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:07,667 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:07,667 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:07,667 - Chart_1 - INFO - 补丁1 4 未成功编译
+2024-02-23 21:34:07,668 - Chart_1 - INFO - 开始验证补丁1 5:
+2024-02-23 21:34:07,668 - Chart_1 - INFO - 
+// This would skip adding legend items if there are no series, but does not appear to be the root cause
+if (seriesCount == 0) {
+    return result;
+}
+
+2024-02-23 21:34:08,166 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:08,166 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:08,166 - Chart_1 - INFO - 补丁1 5 未成功编译
+2024-02-23 21:34:08,167 - Chart_1 - INFO - 开始验证补丁1 6:
+2024-02-23 21:34:08,167 - Chart_1 - INFO - 
+// This would create a placeholder LegendItem if the dataset is null, 
+// However, this seems outside of the expected behavior based on the initial explanation.
+if (dataset == null) {
+    LegendItem item = new LegendItem("No data available");
+    result.add(item);
+    return result;
+}
+
+2024-02-23 21:34:08,663 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:08,663 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:08,663 - Chart_1 - INFO - 补丁1 6 未成功编译
+2024-02-23 21:34:08,664 - Chart_1 - INFO - 开始验证补丁2 1:
+2024-02-23 21:34:08,664 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:08,664 - Chart_1 - INFO - 补丁2 1为重复的补丁
+2024-02-23 21:34:08,665 - Chart_1 - INFO - 开始验证补丁2 2:
+2024-02-23 21:34:08,665 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+} else {
+    // Logic for populating the LegendItemCollection would go here
+}
+
+2024-02-23 21:34:09,155 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:09,155 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:09,155 - Chart_1 - INFO - 补丁2 2 未成功编译
+2024-02-23 21:34:09,157 - Chart_1 - INFO - 开始验证补丁2 3:
+2024-02-23 21:34:09,157 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+// Continue with the existing code, which would be placed outside the if-block
+
+2024-02-23 21:34:09,649 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:09,649 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:09,650 - Chart_1 - INFO - 补丁2 3 未成功编译
+2024-02-23 21:34:09,651 - Chart_1 - INFO - 开始验证补丁2 4:
+2024-02-23 21:34:09,651 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:09,651 - Chart_1 - INFO - 补丁2 4为重复的补丁
+2024-02-23 21:34:09,652 - Chart_1 - INFO - 开始验证补丁2 5:
+2024-02-23 21:34:09,652 - Chart_1 - INFO - 
+if (dataset == null) {
+    // Possible processing for null dataset, e.g., adding a default legend item
+    // result.add(new LegendItem("default", ...));
+    return result;
+}
+
+2024-02-23 21:34:10,138 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:10,138 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:10,138 - Chart_1 - INFO - 补丁2 5 未成功编译
+2024-02-23 21:34:10,139 - Chart_1 - INFO - 开始验证补丁2 6:
+2024-02-23 21:34:10,139 - Chart_1 - INFO - 
+if (dataset == null || dataset.getRowCount() == 0) {
+    return result;
+}
+
+2024-02-23 21:34:10,615 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:10,615 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:10,615 - Chart_1 - INFO - 补丁2 6 未成功编译
+2024-02-23 21:34:10,617 - Chart_1 - INFO - 开始验证补丁2 7:
+2024-02-23 21:34:10,617 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:10,617 - Chart_1 - INFO - 补丁2 7为重复的补丁
+2024-02-23 21:34:10,617 - Chart_1 - INFO - 开始验证补丁2 8:
+2024-02-23 21:34:10,618 - Chart_1 - INFO - 
+// Check if the dataset is null before proceeding
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:11,127 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:11,127 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:11,127 - Chart_1 - INFO - 补丁2 8 未成功编译
+2024-02-23 21:34:11,128 - Chart_1 - INFO - 开始验证补丁2 9:
+2024-02-23 21:34:11,128 - Chart_1 - INFO - 
+// Ensure dataset is not null
+if (dataset != null) {
+    // processing the dataset will occur here
+} else {
+    return result;
+}
+
+2024-02-23 21:34:11,623 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:11,623 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:11,623 - Chart_1 - INFO - 补丁2 9 未成功编译
+2024-02-23 21:34:11,624 - Chart_1 - INFO - 开始验证补丁3 1:
+2024-02-23 21:34:11,624 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:11,624 - Chart_1 - INFO - 补丁3 1为重复的补丁
+2024-02-23 21:34:11,625 - Chart_1 - INFO - 开始验证补丁3 2:
+2024-02-23 21:34:11,625 - Chart_1 - INFO - 
+if (this.plot == null || dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:12,103 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:12,103 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:12,103 - Chart_1 - INFO - 补丁3 2 未成功编译
+2024-02-23 21:34:12,104 - Chart_1 - INFO - 开始验证补丁3 3:
+2024-02-23 21:34:12,104 - Chart_1 - INFO - 
+if (this.plot == null) {
+    return result;
+} else if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:12,602 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:12,602 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:12,602 - Chart_1 - INFO - 补丁3 3 未成功编译
+2024-02-23 21:34:12,603 - Chart_1 - INFO - 开始验证补丁3 4:
+2024-02-23 21:34:12,603 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+}
+
+2024-02-23 21:34:12,603 - Chart_1 - INFO - 补丁3 4为重复的补丁
+2024-02-23 21:34:12,604 - Chart_1 - INFO - 开始验证补丁3 5:
+2024-02-23 21:34:12,604 - Chart_1 - INFO - 
+if (dataset == null) {
+    return result;
+} else {
+    // existing code to handle the non-null dataset and create legend items
+}
+
+2024-02-23 21:34:13,085 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:13,086 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:13,086 - Chart_1 - INFO - 补丁3 5 未成功编译
+2024-02-23 21:34:13,087 - Chart_1 - INFO - 开始验证补丁3 6:
+2024-02-23 21:34:13,087 - Chart_1 - INFO - 
+// This line might be used if the check for nullity was meant to be placed elsewhere or if the condition was to be reversed (less likely in this context).
+if (dataset != null) {
+    // existing code to handle the non-null dataset and create legend items
+}
+
+2024-02-23 21:34:13,588 - Chart_1 - INFO - 编译失败
+2024-02-23 21:34:13,588 - Chart_1 - INFO - 错误: 非法的类型开始
+if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+2024-02-23 21:34:13,589 - Chart_1 - INFO - 补丁3 6 未成功编译
+2024-02-23 21:34:13,590 - Chart_1 - INFO - 开始验证补丁3 7:
+2024-02-23 21:34:13,590 - Chart_1 - INFO - 
+if (dataset == null) {
+
+2024-02-23 21:34:14,601 - Chart_1 - INFO - 编译成功
+2024-02-23 21:34:22,407 - Chart_1 - INFO - 测试成功
+2024-02-23 21:34:22,407 - Chart_1 - INFO - 补丁3 7 与人工补丁一致

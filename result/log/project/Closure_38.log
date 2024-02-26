@@ -1,0 +1,189 @@
+2024-02-24 00:22:38,862 - Closure_38 - INFO - rm -rf /home/chongchong/d4j-project/Closure_38
+2024-02-24 00:22:38,863 - Closure_38 - INFO - 删除 Closure 38b 成功
+2024-02-24 00:22:38,863 - Closure_38 - INFO - defects4j checkout -p Closure -v 38b -w /home/chongchong/d4j-project/Closure_38
+2024-02-24 00:22:40,669 - Closure_38 - INFO - checkout Closure 38b 成功
+2024-02-24 00:22:51,978 - Closure_38 - INFO - 编译成功
+2024-02-24 00:23:38,568 - Closure_38 - INFO - 测试失败
+2024-02-24 00:23:38,569 - Closure_38 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testMinusNegativeZero
+
+2024-02-24 00:23:39,584 - Closure_38 - INFO - 它的bug类型为:
+2024-02-24 00:23:39,584 - Closure_38 - INFO - 1
+2024-02-24 00:24:16,041 - Closure_38 - INFO - Closure_38 未成功修复
+2024-02-24 13:12:15,154 - Closure_38 - INFO - rm -rf /home/chongchong/d4j-project/Closure_38
+2024-02-24 13:12:15,209 - Closure_38 - INFO - 删除 Closure 38b 成功
+2024-02-24 13:12:15,209 - Closure_38 - INFO - defects4j checkout -p Closure -v 38b -w /home/chongchong/d4j-project/Closure_38
+2024-02-24 13:12:17,105 - Closure_38 - INFO - checkout Closure 38b 成功
+2024-02-24 13:12:28,512 - Closure_38 - INFO - 编译成功
+2024-02-24 13:13:15,237 - Closure_38 - INFO - 测试失败
+2024-02-24 13:13:15,237 - Closure_38 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testMinusNegativeZero
+
+2024-02-24 13:13:16,239 - Closure_38 - INFO - 它的bug类型为:
+2024-02-24 13:13:16,239 - Closure_38 - INFO - 1
+2024-02-24 13:13:39,481 - Closure_38 - INFO - 开始验证补丁1 1:
+2024-02-24 13:13:39,481 - Closure_38 - INFO - 
+  if ((x < 0 || negativeZero) && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:41,276 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:41,276 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:41,276 - Closure_38 - INFO - 补丁1 1 未成功编译
+2024-02-24 13:13:41,277 - Closure_38 - INFO - 开始验证补丁1 2:
+2024-02-24 13:13:41,277 - Closure_38 - INFO - 
+  if ((x < 0 || (negativeZero && prev == '-'))) {
+    add(" ");
+  }
+
+2024-02-24 13:13:43,047 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:43,047 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:43,047 - Closure_38 - INFO - 补丁1 2 未成功编译
+2024-02-24 13:13:43,048 - Closure_38 - INFO - 开始验证补丁1 3:
+2024-02-24 13:13:43,048 - Closure_38 - INFO - 
+  if ((Double.compare(x, 0.0) == 0 && negativeZero) && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:44,823 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:44,823 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:44,823 - Closure_38 - INFO - 补丁1 3 未成功编译
+2024-02-24 13:13:44,824 - Closure_38 - INFO - 开始验证补丁1 4:
+2024-02-24 13:13:44,824 - Closure_38 - INFO - 
+if ((x < 0 || negativeZero) && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:46,613 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:46,613 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:46,613 - Closure_38 - INFO - 补丁1 4 未成功编译
+2024-02-24 13:13:46,614 - Closure_38 - INFO - 开始验证补丁1 5:
+2024-02-24 13:13:46,614 - Closure_38 - INFO - 
+if (negativeZero && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:48,385 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:48,385 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:48,386 - Closure_38 - INFO - 补丁1 5 未成功编译
+2024-02-24 13:13:48,387 - Closure_38 - INFO - 开始验证补丁1 6:
+2024-02-24 13:13:48,387 - Closure_38 - INFO - 
+if (x < 0 || (negativeZero && prev == '-')) {
+  add(" ");
+}
+
+2024-02-24 13:13:50,157 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:50,157 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:50,157 - Closure_38 - INFO - 补丁1 6 未成功编译
+2024-02-24 13:13:50,158 - Closure_38 - INFO - 开始验证补丁1 7:
+2024-02-24 13:13:50,158 - Closure_38 - INFO - 
+  if ((x < 0 || negativeZero) && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:50,159 - Closure_38 - INFO - 补丁1 7为重复的补丁
+2024-02-24 13:13:50,159 - Closure_38 - INFO - 开始验证补丁1 8:
+2024-02-24 13:13:50,159 - Closure_38 - INFO - 
+  if (negativeZero || x < 0 && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:51,968 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:51,969 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:51,969 - Closure_38 - INFO - 补丁1 8 未成功编译
+2024-02-24 13:13:51,970 - Closure_38 - INFO - 开始验证补丁1 9:
+2024-02-24 13:13:51,970 - Closure_38 - INFO - 
+  if (x < 0 && prev == '-' || negativeZero) {
+    add(" ");
+  }
+
+2024-02-24 13:13:53,732 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:53,732 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:53,733 - Closure_38 - INFO - 补丁1 9 未成功编译
+2024-02-24 13:13:53,734 - Closure_38 - INFO - 开始验证补丁2 1:
+2024-02-24 13:13:53,734 - Closure_38 - INFO - 
+if ((x < 0 || negativeZero) && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:53,734 - Closure_38 - INFO - 补丁2 1为重复的补丁
+2024-02-24 13:13:53,739 - Closure_38 - INFO - 开始验证补丁2 2:
+2024-02-24 13:13:53,739 - Closure_38 - INFO - 
+if (x < 0 && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:55,523 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:55,523 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:55,524 - Closure_38 - INFO - 补丁2 2 未成功编译
+2024-02-24 13:13:55,525 - Closure_38 - INFO - 开始验证补丁2 3:
+2024-02-24 13:13:55,525 - Closure_38 - INFO - 
+if (negativeZero && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:55,525 - Closure_38 - INFO - 补丁2 3为重复的补丁
+2024-02-24 13:13:55,526 - Closure_38 - INFO - 开始验证补丁2 4:
+2024-02-24 13:13:55,526 - Closure_38 - INFO - 
+  if ((x < 0 || negativeZero) && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:55,526 - Closure_38 - INFO - 补丁2 4为重复的补丁
+2024-02-24 13:13:55,527 - Closure_38 - INFO - 开始验证补丁2 5:
+2024-02-24 13:13:55,527 - Closure_38 - INFO - 
+  if (x < 0 && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:57,299 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:57,299 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:57,299 - Closure_38 - INFO - 补丁2 5 未成功编译
+2024-02-24 13:13:57,300 - Closure_38 - INFO - 开始验证补丁2 6:
+2024-02-24 13:13:57,300 - Closure_38 - INFO - 
+  if (negativeZero && prev == '-') {
+    add(" ");
+  }
+
+2024-02-24 13:13:59,117 - Closure_38 - INFO - 编译失败
+2024-02-24 13:13:59,117 - Closure_38 - INFO - 错误: 非法的类型开始
+if ((long) x == x && !negativeZero) {
+2024-02-24 13:13:59,117 - Closure_38 - INFO - 补丁2 6 未成功编译
+2024-02-24 13:13:59,118 - Closure_38 - INFO - 开始验证补丁2 7:
+2024-02-24 13:13:59,118 - Closure_38 - INFO - 
+if ((x < 0 || negativeZero) && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:59,118 - Closure_38 - INFO - 补丁2 7为重复的补丁
+2024-02-24 13:13:59,123 - Closure_38 - INFO - 开始验证补丁2 8:
+2024-02-24 13:13:59,123 - Closure_38 - INFO - 
+if (x < 0 && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:59,123 - Closure_38 - INFO - 补丁2 8为重复的补丁
+2024-02-24 13:13:59,124 - Closure_38 - INFO - 开始验证补丁2 9:
+2024-02-24 13:13:59,124 - Closure_38 - INFO - 
+if (negativeZero && prev == '-') {
+  add(" ");
+}
+
+2024-02-24 13:13:59,124 - Closure_38 - INFO - 补丁2 9为重复的补丁
+2024-02-24 13:13:59,125 - Closure_38 - INFO - 开始验证补丁3 1:
+2024-02-24 13:13:59,125 - Closure_38 - INFO - 
+if ((x < 0 || negativeZero) && prev == '-') {
+
+2024-02-24 13:14:03,074 - Closure_38 - INFO - 编译成功
+2024-02-24 13:14:48,215 - Closure_38 - INFO - 测试成功
+2024-02-24 13:14:48,215 - Closure_38 - INFO - 补丁3 1 通过了所有的测试用例

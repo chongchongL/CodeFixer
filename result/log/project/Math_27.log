@@ -1,0 +1,30 @@
+2024-02-24 01:01:04,098 - Math_27 - INFO - rm -rf /home/chongchong/d4j-project/Math_27
+2024-02-24 01:01:04,099 - Math_27 - INFO - 删除 Math 27b 成功
+2024-02-24 01:01:04,099 - Math_27 - INFO - defects4j checkout -p Math -v 27b -w /home/chongchong/d4j-project/Math_27
+2024-02-24 01:01:07,560 - Math_27 - INFO - checkout Math 27b 成功
+2024-02-24 01:01:14,535 - Math_27 - INFO - 编译成功
+2024-02-24 01:01:49,873 - Math_27 - INFO - 测试失败
+2024-02-24 01:01:49,873 - Math_27 - INFO - Failing tests: 1
+  - org.apache.commons.math3.fraction.FractionTest::testMath835
+
+2024-02-24 01:01:50,792 - Math_27 - INFO - 它的bug类型为:
+2024-02-24 01:01:50,792 - Math_27 - INFO - 1
+2024-02-24 01:02:18,719 - Math_27 - INFO - Math_27 未成功修复
+2024-02-24 09:12:39,677 - Math_27 - INFO - rm -rf /home/chongchong/d4j-project/Math_27
+2024-02-24 09:12:39,727 - Math_27 - INFO - 删除 Math 27b 成功
+2024-02-24 09:12:39,727 - Math_27 - INFO - defects4j checkout -p Math -v 27b -w /home/chongchong/d4j-project/Math_27
+2024-02-24 09:12:43,159 - Math_27 - INFO - checkout Math 27b 成功
+2024-02-24 09:12:50,189 - Math_27 - INFO - 编译成功
+2024-02-24 09:13:25,486 - Math_27 - INFO - 测试失败
+2024-02-24 09:13:25,487 - Math_27 - INFO - Failing tests: 1
+  - org.apache.commons.math3.fraction.FractionTest::testMath835
+
+2024-02-24 09:13:26,420 - Math_27 - INFO - 它的bug类型为:
+2024-02-24 09:13:26,420 - Math_27 - INFO - 1
+2024-02-24 09:14:23,636 - Math_27 - INFO - 开始验证补丁1 1:
+2024-02-24 09:14:23,636 - Math_27 - INFO - 
+return (double) numerator / denominator * 100;
+
+2024-02-24 09:14:24,908 - Math_27 - INFO - 编译成功
+2024-02-24 09:15:00,286 - Math_27 - INFO - 测试成功
+2024-02-24 09:15:00,286 - Math_27 - INFO - 补丁1 1 通过了所有的测试用例

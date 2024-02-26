@@ -1,0 +1,199 @@
+2024-02-24 22:18:46,172 - Closure_11 - INFO - rm -rf /home/chongchong/d4j-project/Closure_11
+2024-02-24 22:18:46,225 - Closure_11 - INFO - 删除 Closure 11b 成功
+2024-02-24 22:18:46,225 - Closure_11 - INFO - defects4j checkout -p Closure -v 11b -w /home/chongchong/d4j-project/Closure_11
+2024-02-24 22:18:49,220 - Closure_11 - INFO - checkout Closure 11b 成功
+2024-02-24 22:19:00,961 - Closure_11 - INFO - 编译成功
+2024-02-24 22:19:55,897 - Closure_11 - INFO - 测试失败
+2024-02-24 22:19:55,897 - Closure_11 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testGetprop4
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue810
+
+2024-02-24 22:19:56,909 - Closure_11 - INFO - 它的bug类型为:
+2024-02-24 22:19:56,909 - Closure_11 - INFO - 2
+2024-02-24 22:19:56,919 - Closure_11 - INFO - 开始验证补丁1 1:
+2024-02-24 22:19:56,919 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+    }
+
+2024-02-24 22:19:58,766 - Closure_11 - INFO - 编译失败
+2024-02-24 22:19:58,766 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:19:58,766 - Closure_11 - INFO - 补丁1 1 未成功编译
+2024-02-24 22:19:58,767 - Closure_11 - INFO - 开始验证补丁1 2:
+2024-02-24 22:19:58,767 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign() && !n.isFromExterns()) {
+      checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+    }
+
+2024-02-24 22:20:00,593 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:00,594 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:00,594 - Closure_11 - INFO - 补丁1 2 未成功编译
+2024-02-24 22:20:00,595 - Closure_11 - INFO - 开始验证补丁1 3:
+2024-02-24 22:20:00,595 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      if (n.isGetProp()) {
+          checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+      }
+    }
+
+2024-02-24 22:20:02,453 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:02,453 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:02,453 - Closure_11 - INFO - 补丁1 3 未成功编译
+2024-02-24 22:20:02,454 - Closure_11 - INFO - 开始验证补丁1 4:
+2024-02-24 22:20:02,454 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+    }
+
+2024-02-24 22:20:02,454 - Closure_11 - INFO - 补丁1 4为重复的补丁
+2024-02-24 22:20:02,459 - Closure_11 - INFO - 开始验证补丁1 5:
+2024-02-24 22:20:02,459 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      // Propagate the assignment type check to the method `checkPropertyAccess`
+      checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+      ensureTyped(t, n);
+    }
+
+2024-02-24 22:20:04,284 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:04,284 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:04,284 - Closure_11 - INFO - 补丁1 5 未成功编译
+2024-02-24 22:20:04,285 - Closure_11 - INFO - 开始验证补丁1 6:
+2024-02-24 22:20:04,285 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      JSType type = n.getJSType();
+      if (!type.isUnknownType()) {
+        checkPropertyAccess(type, property.getString(), t, n);
+      }
+    }
+
+2024-02-24 22:20:06,119 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:06,119 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:06,119 - Closure_11 - INFO - 补丁1 6 未成功编译
+2024-02-24 22:20:06,120 - Closure_11 - INFO - 开始验证补丁1 7:
+2024-02-24 22:20:06,120 - Closure_11 - INFO - 
+} else if (n.getJSType() != null && n.getParent().isAssign()) {
+  // Report the error or handle the assignment case without returning early.
+  reportErrorOrHandleAssignment(t, n, property, childType);
+}
+
+2024-02-24 22:20:07,968 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:07,968 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:07,968 - Closure_11 - INFO - 补丁1 7 未成功编译
+2024-02-24 22:20:07,969 - Closure_11 - INFO - 开始验证补丁1 8:
+2024-02-24 22:20:07,969 - Closure_11 - INFO - 
+} else if (n.getJSType() != null && n.getParent().isAssign() && !morePropertiesOrMethodsToAnalyze(n)) {
+  return;
+}
+
+2024-02-24 22:20:09,810 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:09,810 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:09,810 - Closure_11 - INFO - 补丁1 8 未成功编译
+2024-02-24 22:20:09,811 - Closure_11 - INFO - 开始验证补丁1 9:
+2024-02-24 22:20:09,811 - Closure_11 - INFO - 
+} else if (n.getJSType() != null && n.getParent().isAssign() && shouldReturnEarly(n)) {
+  return;
+}
+
+2024-02-24 22:20:11,638 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:11,638 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:11,638 - Closure_11 - INFO - 补丁1 9 未成功编译
+2024-02-24 22:20:11,639 - Closure_11 - INFO - 开始验证补丁2 1:
+2024-02-24 22:20:11,639 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign() && additionalCondition) {
+      return;
+    }
+
+2024-02-24 22:20:13,484 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:13,484 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:13,484 - Closure_11 - INFO - 补丁2 1 未成功编译
+2024-02-24 22:20:13,485 - Closure_11 - INFO - 开始验证补丁2 2:
+2024-02-24 22:20:13,486 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      doSomethingWith(n);
+      ensureTyped(t, n);
+    }
+
+2024-02-24 22:20:15,305 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:15,305 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:15,305 - Closure_11 - INFO - 补丁2 2 未成功编译
+2024-02-24 22:20:15,306 - Closure_11 - INFO - 开始验证补丁2 3:
+2024-02-24 22:20:15,306 - Closure_11 - INFO - 
+    } else if (n.getJSType() != null && parent.isAssign()) {
+      performSideEffects();
+      return;
+    }
+
+2024-02-24 22:20:17,135 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:17,135 - Closure_11 - INFO - 错误: 非法的类型开始
+} else if (validator.expectNotNullOrUndefined(t, n, childType,
+2024-02-24 22:20:17,135 - Closure_11 - INFO - 补丁2 3 未成功编译
+2024-02-24 22:20:17,136 - Closure_11 - INFO - 开始验证补丁2 4:
+2024-02-24 22:20:17,136 - Closure_11 - INFO - 
+     } else if (n.getJSType() != null && parent.isAssign()) {
+      checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+    } else if (validator.expectNotNullOrUndefined(t, n, childType,
+
+2024-02-24 22:20:18,967 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:18,967 - Closure_11 - INFO - 错误: 非法的表达式开始
+return;
+2024-02-24 22:20:18,968 - Closure_11 - INFO - 补丁2 4 未成功编译
+2024-02-24 22:20:18,969 - Closure_11 - INFO - 开始验证补丁2 5:
+2024-02-24 22:20:18,969 - Closure_11 - INFO - 
+     } else if (n.getJSType() != null && parent.isAssign()) {
+      // Proceed with additional checks or pass the node to another method for further handling
+      // Assuming there's a method that handles assigned types:
+      handleAssignedType(n);
+    } else if (validator.expectNotNullOrUndefined(t, n, childType,
+
+2024-02-24 22:20:20,786 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:20,786 - Closure_11 - INFO - 错误: 非法的表达式开始
+return;
+2024-02-24 22:20:20,786 - Closure_11 - INFO - 补丁2 5 未成功编译
+2024-02-24 22:20:20,787 - Closure_11 - INFO - 开始验证补丁2 6:
+2024-02-24 22:20:20,787 - Closure_11 - INFO - 
+     } else if (n.getJSType() != null && parent.isAssign()) {
+      if (!property.getString().equals(someExpectedPropertyName)) {
+          report(t, property, SOME_ERROR_CODE, "Expected property name mismatch");
+      }
+      // Other necessary actions might also go here ...
+    } else if (validator.expectNotNullOrUndefined(t, n, childType,
+
+2024-02-24 22:20:22,610 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:22,610 - Closure_11 - INFO - 错误: 非法的表达式开始
+return;
+2024-02-24 22:20:22,610 - Closure_11 - INFO - 补丁2 6 未成功编译
+2024-02-24 22:20:22,611 - Closure_11 - INFO - 开始验证补丁2 7:
+2024-02-24 22:20:22,611 - Closure_11 - INFO - 
+      ensureTyped(t, n);
+      return;
+
+2024-02-24 22:20:24,671 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:24,671 - Closure_11 - INFO - 错误: 无法访问的语句
+return;
+2024-02-24 22:20:24,671 - Closure_11 - INFO - 补丁2 7 未成功编译
+2024-02-24 22:20:24,672 - Closure_11 - INFO - 开始验证补丁2 8:
+2024-02-24 22:20:24,672 - Closure_11 - INFO - 
+      checkPropertyAccess(n.getJSType(), property.getString(), t, n);
+      return;
+
+2024-02-24 22:20:26,748 - Closure_11 - INFO - 编译失败
+2024-02-24 22:20:26,748 - Closure_11 - INFO - 错误: 无法访问的语句
+return;
+2024-02-24 22:20:26,748 - Closure_11 - INFO - 补丁2 8 未成功编译
+2024-02-24 22:20:26,749 - Closure_11 - INFO - 开始验证补丁2 9:
+2024-02-24 22:20:26,749 - Closure_11 - INFO - 
+      // It's possible that additional logic is required here that is context-specific and not provided.
+
+2024-02-24 22:20:31,040 - Closure_11 - INFO - 编译成功
+2024-02-24 22:21:26,693 - Closure_11 - INFO - 测试成功
+2024-02-24 22:21:26,693 - Closure_11 - INFO - 补丁2 9 通过了所有的测试用例

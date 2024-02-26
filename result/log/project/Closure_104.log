@@ -1,0 +1,78 @@
+2024-02-24 00:44:49,213 - Closure_104 - INFO - rm -rf /home/chongchong/d4j-project/Closure_104
+2024-02-24 00:44:49,214 - Closure_104 - INFO - 删除 Closure 104b 成功
+2024-02-24 00:44:49,214 - Closure_104 - INFO - defects4j checkout -p Closure -v 104b -w /home/chongchong/d4j-project/Closure_104
+2024-02-24 00:44:51,998 - Closure_104 - INFO - checkout Closure 104b 成功
+2024-02-24 00:44:57,393 - Closure_104 - INFO - 编译成功
+2024-02-24 00:45:19,084 - Closure_104 - INFO - 测试失败
+2024-02-24 00:45:19,084 - Closure_104 - INFO - Failing tests: 1
+  - com.google.javascript.rhino.jstype.UnionTypeTest::testGreatestSubtypeUnionTypes5
+
+2024-02-24 00:45:19,941 - Closure_104 - INFO - 它的bug类型为:
+2024-02-24 00:45:19,941 - Closure_104 - INFO - 1
+2024-02-24 00:45:54,490 - Closure_104 - INFO - Closure_104 未成功修复
+2024-02-24 14:19:07,365 - Closure_104 - INFO - rm -rf /home/chongchong/d4j-project/Closure_104
+2024-02-24 14:19:07,398 - Closure_104 - INFO - 删除 Closure 104b 成功
+2024-02-24 14:19:07,398 - Closure_104 - INFO - defects4j checkout -p Closure -v 104b -w /home/chongchong/d4j-project/Closure_104
+2024-02-24 14:19:10,101 - Closure_104 - INFO - checkout Closure 104b 成功
+2024-02-24 14:19:15,564 - Closure_104 - INFO - 编译成功
+2024-02-24 14:19:37,278 - Closure_104 - INFO - 测试失败
+2024-02-24 14:19:37,278 - Closure_104 - INFO - Failing tests: 1
+  - com.google.javascript.rhino.jstype.UnionTypeTest::testGreatestSubtypeUnionTypes5
+
+2024-02-24 14:19:38,146 - Closure_104 - INFO - 它的bug类型为:
+2024-02-24 14:19:38,146 - Closure_104 - INFO - 1
+2024-02-24 14:20:24,910 - Closure_104 - INFO - 开始验证补丁1 1:
+2024-02-24 14:20:24,910 - Closure_104 - INFO - 
+    if (result != null) {
+      return result;
+    } 
+
+2024-02-24 14:20:25,484 - Closure_104 - INFO - 编译失败
+2024-02-24 14:20:25,484 - Closure_104 - INFO - 错误: 非法的类型开始
+} else if (this.isObject() && that.isObject()) {
+2024-02-24 14:20:25,484 - Closure_104 - INFO - 补丁1 1 未成功编译
+2024-02-24 14:20:25,485 - Closure_104 - INFO - 开始验证补丁1 2:
+2024-02-24 14:20:25,485 - Closure_104 - INFO - 
+    return result;
+
+2024-02-24 14:20:26,046 - Closure_104 - INFO - 编译失败
+2024-02-24 14:20:26,046 - Closure_104 - INFO - 错误: 非法的类型开始
+} else if (this.isObject() && that.isObject()) {
+2024-02-24 14:20:26,046 - Closure_104 - INFO - 补丁1 2 未成功编译
+2024-02-24 14:20:26,047 - Closure_104 - INFO - 开始验证补丁1 3:
+2024-02-24 14:20:26,047 - Closure_104 - INFO - 
+    if (result.isNoObjectType()) {
+      return getNativeType(JSTypeNative.NO_OBJECT_TYPE);
+    } else {
+      return result;
+    }
+
+2024-02-24 14:20:26,599 - Closure_104 - INFO - 编译失败
+2024-02-24 14:20:26,599 - Closure_104 - INFO - 错误: 非法的类型开始
+} else if (this.isObject() && that.isObject()) {
+2024-02-24 14:20:26,599 - Closure_104 - INFO - 补丁1 3 未成功编译
+2024-02-24 14:20:26,600 - Closure_104 - INFO - 开始验证补丁1 4:
+2024-02-24 14:20:26,600 - Closure_104 - INFO - 
+    if (result != null) {
+
+2024-02-24 14:20:27,745 - Closure_104 - INFO - 编译成功
+2024-02-24 14:20:49,309 - Closure_104 - INFO - 测试失败
+2024-02-24 14:20:49,309 - Closure_104 - INFO - Failing tests: 1
+  - com.google.javascript.rhino.jstype.UnionTypeTest::testGreatestSubtypeUnionTypes5
+
+2024-02-24 14:20:49,743 - Closure_104 - INFO - 选择失败的测试用例为:
+2024-02-24 14:20:49,743 - Closure_104 - INFO - com.google.javascript.rhino.jstype.UnionTypeTest::testGreatestSubtypeUnionTypes5
+2024-02-24 14:20:49,743 - Closure_104 - INFO - 失败的测试代码为:
+2024-02-24 14:20:49,743 - Closure_104 - INFO -     assertEquals(NO_OBJECT_TYPE,
+
+2024-02-24 14:20:49,743 - Closure_104 - INFO - 失败信息为:
+2024-02-24 14:20:49,743 - Closure_104 - INFO - junit.framework.AssertionFailedError: expected:<NoObject> but was:<None>
+
+2024-02-24 14:20:49,743 - Closure_104 - INFO - 补丁1 4测试失败
+2024-02-24 14:20:49,744 - Closure_104 - INFO - 开始验证补丁1 5:
+2024-02-24 14:20:49,744 - Closure_104 - INFO - 
+    if (!(result instanceof NoType)) {
+
+2024-02-24 14:20:50,879 - Closure_104 - INFO - 编译成功
+2024-02-24 14:21:13,468 - Closure_104 - INFO - 测试成功
+2024-02-24 14:21:13,468 - Closure_104 - INFO - 补丁1 5 通过了所有的测试用例

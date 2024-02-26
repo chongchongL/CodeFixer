@@ -1,0 +1,427 @@
+2024-02-26 00:59:49,529 - Closure_96 - INFO - rm -rf /home/chongchong/d4j-project/Closure_96
+2024-02-26 00:59:49,530 - Closure_96 - INFO - 删除 Closure 96b 成功
+2024-02-26 00:59:49,530 - Closure_96 - INFO - defects4j checkout -p Closure -v 96b -w /home/chongchong/d4j-project/Closure_96
+2024-02-26 00:59:52,162 - Closure_96 - INFO - checkout Closure 96b 成功
+2024-02-26 00:59:58,155 - Closure_96 - INFO - 编译成功
+2024-02-26 01:00:26,790 - Closure_96 - INFO - 测试失败
+2024-02-26 01:00:26,790 - Closure_96 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments16
+
+2024-02-26 01:00:27,696 - Closure_96 - INFO - 它的bug类型为:
+2024-02-26 01:00:27,696 - Closure_96 - INFO - 4
+2024-02-26 01:01:52,158 - Closure_96 - INFO - 开始验证补丁1 1:
+2024-02-26 01:01:52,158 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+        if (parameters.hasNext()) {
+            parameter = parameters.next();
+        } else {
+            // Handle var_args scenario or issue a warning here as needed
+        }
+        argument = arguments.next();
+        // existing code for validation
+        ordinal++;
+        validator.expectArgumentMatchesParameter(t, argument,
+            getJSType(argument), getJSType(parameter), call, ordinal);
+    }
+
+2024-02-26 01:01:52,756 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:52,756 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:01:52,756 - Closure_96 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:01:52,758 - Closure_96 - INFO - 开始验证补丁1 2:
+2024-02-26 01:01:52,758 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+        if (parameters.hasNext()) {
+            parameter = parameters.next();
+        } else {
+            // It might be a var_args function; potentially issue a warning here
+            if (!functionType.isVarArgs()) {
+                // Issue a warning if not a var_args function
+                issueWarningAboutExcessArguments();
+            }
+            // Or in case of var_args, set parameter to the var_args type
+            parameter = functionType.getVarArgsParameter();
+        }
+        argument = arguments.next();
+        ordinal++;
+        validator.expectArgumentMatchesParameter(t, argument,
+            getJSType(argument), getJSType(parameter), call, ordinal);
+    }
+
+2024-02-26 01:01:53,342 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:53,342 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:01:53,342 - Closure_96 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:01:53,343 - Closure_96 - INFO - 开始验证补丁1 3:
+2024-02-26 01:01:53,343 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+        if (parameters.hasNext()) {
+            parameter = parameters.next();
+        } else {
+            if (functionType.hasOptionalParameters()) {
+                parameter = functionType.getDefaultParameter();
+            } else {
+                // More arguments than parameters, handle according to function spec
+                handleExcessArguments();
+                break; // Or continue to process with a default action.
+            }
+        }
+        argument = arguments.next();
+        ordinal++;
+        validator.expectArgumentMatchesParameter(t, argument,
+            getJSType(argument), getJSType(parameter), call, ordinal);
+    }
+
+2024-02-26 01:01:53,931 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:53,931 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:01:53,931 - Closure_96 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:01:53,932 - Closure_96 - INFO - 开始验证补丁1 4:
+2024-02-26 01:01:53,932 - Closure_96 - INFO - 
+parameters.hasNext()) {
+    parameter = parameters.next();
+    argument = arguments.next();
+} else if (functionType.isVarArgs()) {
+    parameter = functionType.getLastParameter();
+    argument = arguments.next();
+}
+
+2024-02-26 01:01:54,520 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:54,520 - Closure_96 - INFO - 错误: 有 'if', 但是没有 'else'
+} else if (functionType.isVarArgs()) {
+2024-02-26 01:01:54,520 - Closure_96 - INFO - 补丁1 4 未成功编译
+2024-02-26 01:01:54,521 - Closure_96 - INFO - 开始验证补丁1 5:
+2024-02-26 01:01:54,521 - Closure_96 - INFO - 
+parameters.hasNext()) {
+    parameter = parameters.next();
+    argument = arguments.next();
+} else {
+    // Assume it's a var_args function if there are more arguments than parameters.
+    parameter = functionType.getLastVarArgsParameter(); // method to get the var_args parameter type
+    argument = arguments.next();
+}
+
+2024-02-26 01:01:55,136 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:55,136 - Closure_96 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 01:01:55,136 - Closure_96 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:01:55,137 - Closure_96 - INFO - 开始验证补丁1 6:
+2024-02-26 01:01:55,137 - Closure_96 - INFO - 
+parameters.hasNext() || functionType.isVarArgs()) {
+    if (parameters.hasNext()) {
+        parameter = parameters.next();
+    } else {
+        // For var_args functions, re-use the last parameter for all remaining arguments.
+        parameter = functionType.getLastParameter();
+    }
+    argument = arguments.next();
+}
+
+2024-02-26 01:01:55,717 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:55,717 - Closure_96 - INFO - 错误: 非法的类型开始
+if (minArgs > numArgs || maxArgs < numArgs) {
+2024-02-26 01:01:55,718 - Closure_96 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:01:55,719 - Closure_96 - INFO - 开始验证补丁1 7:
+2024-02-26 01:01:55,719 - Closure_96 - INFO - 
+while (arguments.hasNext() &&
+       (parameters.hasNext() || functionType.isVarArgs())) {
+  if (parameters.hasNext()) {
+    parameter = parameters.next();
+  }
+  argument = arguments.next();
+  // ...
+
+2024-02-26 01:01:56,286 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:56,286 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext() &&
+2024-02-26 01:01:56,286 - Closure_96 - INFO - 补丁1 7 未成功编译
+2024-02-26 01:01:56,288 - Closure_96 - INFO - 开始验证补丁1 8:
+2024-02-26 01:01:56,288 - Closure_96 - INFO - 
+while (arguments.hasNext()) {
+  if (parameters.hasNext()) {
+    parameter = parameters.next();
+  } else if (!functionType.isVarArgs()) {
+    break; // If not a var_args function and no parameters are left, break out of the loop
+  }
+  argument = arguments.next();
+  // ...
+
+2024-02-26 01:01:56,857 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:56,857 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:01:56,857 - Closure_96 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:01:56,858 - Closure_96 - INFO - 开始验证补丁1 9:
+2024-02-26 01:01:56,859 - Closure_96 - INFO - 
+while (arguments.hasNext()) {
+  if (parameters.hasNext()) {
+    parameter = parameters.next();
+  } else {
+    if (!functionType.isVarArgs()) {
+      issueWarningForExtraArguments(); // This line is a placeholder for the actual warning logic
+      break;
+    }
+    parameter = varArgsPlaceholderParameter(); // A placeholder parameter for var_args functions
+  }
+  argument = arguments.next();
+  // ...
+
+2024-02-26 01:01:57,439 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:57,439 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:01:57,439 - Closure_96 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:01:57,440 - Closure_96 - INFO - 开始验证补丁2 1:
+2024-02-26 01:01:57,441 - Closure_96 - INFO - 
+if (parameters.hasNext()) {
+    parameter = parameters.next();
+} else {
+    // This implies a var_args function, and parameter should be set to the last known parameter.
+    // Assuming the last parameter represents the type for all var_args.
+    // If the function does not support var_args, handling for it should be added as appropriate.
+}
+argument = arguments.next();
+
+2024-02-26 01:01:58,027 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:58,027 - Closure_96 - INFO - 错误: 非法的表达式开始
+if (parameters.hasNext()) {
+2024-02-26 01:01:58,027 - Closure_96 - INFO - 补丁2 1 未成功编译
+2024-02-26 01:01:58,028 - Closure_96 - INFO - 开始验证补丁2 2:
+2024-02-26 01:01:58,028 - Closure_96 - INFO - 
+if (parameters.hasNext()) {
+    parameter = parameters.next();
+    argument = arguments.next();
+} else {
+    // Stop iterating if no more parameters are available, potentially handle the error or excess arguments
+    break;
+}
+
+2024-02-26 01:01:58,614 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:58,614 - Closure_96 - INFO - 错误: 非法的表达式开始
+if (parameters.hasNext()) {
+2024-02-26 01:01:58,614 - Closure_96 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:01:58,615 - Closure_96 - INFO - 开始验证补丁2 3:
+2024-02-26 01:01:58,616 - Closure_96 - INFO - 
+if (parameters.hasNext() || functionType.isVarArgs()) {
+    if (parameters.hasNext()) {
+        parameter = parameters.next();
+    } // if no next parameter and is var_args, keep the last parameter
+    argument = arguments.next();
+} else {
+    // Stop iterating if it's not a var_args function and all parameters are exhausted
+    break;
+}
+
+2024-02-26 01:01:59,204 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:59,204 - Closure_96 - INFO - 错误: 非法的表达式开始
+if (parameters.hasNext() || functionType.isVarArgs()) {
+2024-02-26 01:01:59,204 - Closure_96 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:01:59,205 - Closure_96 - INFO - 开始验证补丁2 4:
+2024-02-26 01:01:59,205 - Closure_96 - INFO - 
+parameters.hasNext()) {
+  parameter = parameters.next();
+  argument = arguments.next();
+} else if (functionType.isVarArgs()) {
+  parameter = functionType.getLastParameter();
+  argument = arguments.next();
+}
+
+2024-02-26 01:01:59,798 - Closure_96 - INFO - 编译失败
+2024-02-26 01:01:59,798 - Closure_96 - INFO - 错误: 有 'if', 但是没有 'else'
+} else if (functionType.isVarArgs()) {
+2024-02-26 01:01:59,798 - Closure_96 - INFO - 补丁2 4 未成功编译
+2024-02-26 01:01:59,799 - Closure_96 - INFO - 开始验证补丁2 5:
+2024-02-26 01:01:59,799 - Closure_96 - INFO - 
+parameters.hasNext() || functionType.isVarArgs()) {
+  if (parameters.hasNext()) {
+    parameter = parameters.next();
+  } else {
+    parameter = functionType.getLastParameter();
+  }
+  argument = arguments.next();
+}
+
+2024-02-26 01:02:00,396 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:00,396 - Closure_96 - INFO - 错误: 非法的类型开始
+if (minArgs > numArgs || maxArgs < numArgs) {
+2024-02-26 01:02:00,396 - Closure_96 - INFO - 补丁2 5 未成功编译
+2024-02-26 01:02:00,397 - Closure_96 - INFO - 开始验证补丁2 6:
+2024-02-26 01:02:00,397 - Closure_96 - INFO - 
+parameters.hasNext() || (functionType.isVarArgs() && arguments.hasNext())) {
+  if (parameters.hasNext()) {
+    parameter = parameters.next();
+  } else {
+    // Handle var_args function where the last parameter is expected to match all remaining arguments
+    parameter = functionType.getLastParameter();
+  }
+  argument = arguments.next();
+}
+
+2024-02-26 01:02:00,986 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:00,986 - Closure_96 - INFO - 错误: 非法的类型开始
+if (minArgs > numArgs || maxArgs < numArgs) {
+2024-02-26 01:02:00,986 - Closure_96 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:02:00,987 - Closure_96 - INFO - 开始验证补丁2 7:
+2024-02-26 01:02:00,987 - Closure_96 - INFO - 
+    while (arguments.hasNext() &&
+           (parameters.hasNext() || functionType.isVarArgs())) {
+      if (parameters.hasNext()) {
+        parameter = parameters.next();
+      }
+      argument = arguments.next();
+
+2024-02-26 01:02:01,558 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:01,558 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext() &&
+2024-02-26 01:02:01,558 - Closure_96 - INFO - 补丁2 7 未成功编译
+2024-02-26 01:02:01,560 - Closure_96 - INFO - 开始验证补丁2 8:
+2024-02-26 01:02:01,560 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+      if (parameters.hasNext()) {
+        parameter = parameters.next();
+      } else if (!functionType.isVarArgs()) {
+        // Throw an error or handle the extra argument for non-var_args function
+        break;
+      }
+      argument = arguments.next();
+
+2024-02-26 01:02:02,131 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:02,131 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:02:02,131 - Closure_96 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:02:02,132 - Closure_96 - INFO - 开始验证补丁2 9:
+2024-02-26 01:02:02,132 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+      parameter = parameters.hasNext() ? parameters.next() : null;
+      argument = arguments.next();
+      if (parameter == null && !functionType.isVarArgs()) {
+        // Handle the case when there are no parameters left, and it is not a var_args function
+        break;
+      }
+
+2024-02-26 01:02:02,724 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:02,724 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:02:02,724 - Closure_96 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:02:02,726 - Closure_96 - INFO - 开始验证补丁3 1:
+2024-02-26 01:02:02,726 - Closure_96 - INFO - 
+    while (arguments.hasNext() &&
+           (parameters.hasNext() || functionType.isVarArgs())) {
+      if (parameters.hasNext()) {
+        parameter = parameters.next();
+      }
+      argument = arguments.next();
+
+2024-02-26 01:02:02,726 - Closure_96 - INFO - 补丁3 1为重复的补丁
+2024-02-26 01:02:02,727 - Closure_96 - INFO - 开始验证补丁3 2:
+2024-02-26 01:02:02,727 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+      if (parameters.hasNext()) {
+        parameter = parameters.next();
+      } else if (!functionType.isVarArgs()) {
+        break; // Exit the loop if excess arguments and not a var_args function
+      }
+      argument = arguments.next();
+
+2024-02-26 01:02:03,314 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:03,314 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:02:03,314 - Closure_96 - INFO - 补丁3 2 未成功编译
+2024-02-26 01:02:03,315 - Closure_96 - INFO - 开始验证补丁3 3:
+2024-02-26 01:02:03,316 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+      argument = arguments.next();
+      if (parameters.hasNext()) {
+        parameter = parameters.next();
+      } else if (functionType.isVarArgs()) {
+        parameter = functionType.getLastParameter(); // Assuming a method to get the last var_arg type parameter
+      } else {
+        validator.errorExcessArguments(t, call, ordinal);
+        break;
+      }
+
+2024-02-26 01:02:03,885 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:03,885 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:02:03,885 - Closure_96 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:02:03,887 - Closure_96 - INFO - 开始验证补丁3 4:
+2024-02-26 01:02:03,887 - Closure_96 - INFO - 
+    parameters.hasNext()) {
+      parameter = parameters.next();
+      argument = arguments.next();
+
+2024-02-26 01:02:05,154 - Closure_96 - INFO - 编译成功
+2024-02-26 01:02:33,530 - Closure_96 - INFO - 测试失败
+2024-02-26 01:02:33,530 - Closure_96 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments16
+
+2024-02-26 01:02:33,976 - Closure_96 - INFO - 选择失败的测试用例为:
+2024-02-26 01:02:33,977 - Closure_96 - INFO - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments16
+2024-02-26 01:02:33,977 - Closure_96 - INFO - 失败的测试代码为:
+2024-02-26 01:02:33,977 - Closure_96 - INFO -     testTypes(
+
+2024-02-26 01:02:33,977 - Closure_96 - INFO - 失败信息为:
+2024-02-26 01:02:33,977 - Closure_96 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 01:02:33,977 - Closure_96 - INFO - 补丁3 4测试失败
+2024-02-26 01:02:33,978 - Closure_96 - INFO - 开始验证补丁3 5:
+2024-02-26 01:02:33,978 - Closure_96 - INFO - 
+    parameters.hasNext() || functionType.isVarArgs()) {
+      parameter = parameters.hasNext() ? parameters.next() : parameters.getLast();
+      argument = arguments.next();
+
+2024-02-26 01:02:34,797 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:34,797 - Closure_96 - INFO - 错误: 找不到符号
+parameters.hasNext() || functionType.isVarArgs()) {
+2024-02-26 01:02:34,797 - Closure_96 - INFO - 补丁3 5 未成功编译
+2024-02-26 01:02:34,798 - Closure_96 - INFO - 开始验证补丁3 6:
+2024-02-26 01:02:34,798 - Closure_96 - INFO - 
+    (parameters.hasNext() || functionType.isVarArgs() && parameter != null)) {
+      if (parameters.hasNext()) {
+        parameter = parameters.next();
+      }
+      argument = arguments.next();
+
+2024-02-26 01:02:35,620 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:35,620 - Closure_96 - INFO - 错误: 找不到符号
+(parameters.hasNext() || functionType.isVarArgs() && parameter != null)) {
+2024-02-26 01:02:35,620 - Closure_96 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:02:35,621 - Closure_96 - INFO - 开始验证补丁3 7:
+2024-02-26 01:02:35,621 - Closure_96 - INFO - 
+    while (arguments.hasNext() &&
+           (functionType.isVarArgs() || parameters.hasNext())) {
+        if (parameters.hasNext()) {
+           parameter = parameters.next();
+        } else {
+           parameter = varArgParameter; // Presuming 'varArgParameter' is the last parameter that can take variable arguments
+        }
+        argument = arguments.next();
+
+2024-02-26 01:02:36,192 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:36,192 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext() &&
+2024-02-26 01:02:36,193 - Closure_96 - INFO - 补丁3 7 未成功编译
+2024-02-26 01:02:36,194 - Closure_96 - INFO - 开始验证补丁3 8:
+2024-02-26 01:02:36,194 - Closure_96 - INFO - 
+    while (arguments.hasNext() && parameters.hasNext()) {
+        parameter = parameters.next();
+        argument = arguments.next();
+
+2024-02-26 01:02:36,761 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:36,761 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext() && parameters.hasNext()) {
+2024-02-26 01:02:36,762 - Closure_96 - INFO - 补丁3 8 未成功编译
+2024-02-26 01:02:36,763 - Closure_96 - INFO - 开始验证补丁3 9:
+2024-02-26 01:02:36,763 - Closure_96 - INFO - 
+    while (arguments.hasNext()) {
+        if (parameters.hasNext()) {
+            parameter = parameters.next();
+        } else if (!functionType.isVarArgs()) {
+            issueWarningForExtraArguments();
+            break;
+        }
+        argument = arguments.next();
+
+2024-02-26 01:02:37,337 - Closure_96 - INFO - 编译失败
+2024-02-26 01:02:37,337 - Closure_96 - INFO - 错误: 非法的表达式开始
+while (arguments.hasNext()) {
+2024-02-26 01:02:37,337 - Closure_96 - INFO - 补丁3 9 未成功编译
+2024-02-26 01:02:37,337 - Closure_96 - INFO - Closure_96 未成功修复

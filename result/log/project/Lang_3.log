@@ -1,0 +1,22 @@
+2024-02-25 21:05:46,305 - Lang_3 - INFO - rm -rf /home/chongchong/d4j-project/Lang_3
+2024-02-25 21:05:46,305 - Lang_3 - INFO - 删除 Lang 3b 成功
+2024-02-25 21:05:46,305 - Lang_3 - INFO - defects4j checkout -p Lang -v 3b -w /home/chongchong/d4j-project/Lang_3
+2024-02-25 21:05:49,777 - Lang_3 - INFO - checkout Lang 3b 成功
+2024-02-25 21:05:52,510 - Lang_3 - INFO - 编译成功
+2024-02-25 21:06:04,408 - Lang_3 - INFO - 测试失败
+2024-02-25 21:06:04,408 - Lang_3 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testStringCreateNumberEnsureNoPrecisionLoss
+
+2024-02-25 21:06:05,254 - Lang_3 - INFO - 它的bug类型为:
+2024-02-25 21:06:05,254 - Lang_3 - INFO - 4
+2024-02-25 21:06:11,657 - Lang_3 - INFO - rm -rf /home/chongchong/d4j-project/Lang_3
+2024-02-25 21:06:11,686 - Lang_3 - INFO - 删除 Lang 3b 成功
+2024-02-25 21:06:11,686 - Lang_3 - INFO - defects4j checkout -p Lang -v 3b -w /home/chongchong/d4j-project/Lang_3
+2024-02-25 21:06:15,021 - Lang_3 - INFO - checkout Lang 3b 成功
+2024-02-25 21:06:17,764 - Lang_3 - INFO - 编译成功
+2024-02-25 21:06:29,592 - Lang_3 - INFO - 测试失败
+2024-02-25 21:06:29,592 - Lang_3 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testStringCreateNumberEnsureNoPrecisionLoss
+
+2024-02-25 21:06:30,418 - Lang_3 - INFO - 它的bug类型为:
+2024-02-25 21:06:30,418 - Lang_3 - INFO - 4

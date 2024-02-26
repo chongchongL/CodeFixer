@@ -1,0 +1,340 @@
+2024-02-25 10:31:26,954 - Closure_1 - INFO - rm -rf /home/chongchong/d4j-project/Closure_1
+2024-02-25 10:31:26,955 - Closure_1 - INFO - 删除 Closure 1b 成功
+2024-02-25 10:31:26,955 - Closure_1 - INFO - defects4j checkout -p Closure -v 1b -w /home/chongchong/d4j-project/Closure_1
+2024-02-25 10:31:29,931 - Closure_1 - INFO - checkout Closure 1b 成功
+2024-02-25 10:31:41,892 - Closure_1 - INFO - 编译成功
+2024-02-25 10:32:39,614 - Closure_1 - INFO - 测试失败
+2024-02-25 10:32:39,614 - Closure_1 - INFO - Failing tests: 8
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSimpleModeLeavesUnusedParams
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag1
+  - com.google.javascript.jscomp.IntegrationTest::testIssue787
+  - com.google.javascript.jscomp.RemoveUnusedVarsTest::testRemoveGlobal1
+  - com.google.javascript.jscomp.RemoveUnusedVarsTest::testRemoveGlobal2
+  - com.google.javascript.jscomp.RemoveUnusedVarsTest::testRemoveGlobal3
+  - com.google.javascript.jscomp.RemoveUnusedVarsTest::testIssue168b
+
+2024-02-25 10:32:40,643 - Closure_1 - INFO - 它的bug类型为:
+2024-02-25 10:32:40,643 - Closure_1 - INFO - 3
+2024-02-25 10:33:52,127 - Closure_1 - INFO - 开始验证补丁1 1:
+2024-02-25 10:33:52,127 - Closure_1 - INFO - 
+    // Perform checks to decide if function parameters can be optimized out
+    // Get the function's scope to check for unused parameters
+    Scope fnScope = SyntacticScopeCreator.makeFnScope(root, null);
+
+2024-02-25 10:33:54,171 - Closure_1 - INFO - 编译失败
+2024-02-25 10:33:54,171 - Closure_1 - INFO - 错误: 已在方法 removeUnreferencedFunctionArgs(Scope)中定义了变量 fnScope
+Scope fnScope = SyntacticScopeCreator.makeFnScope(root, null);
+2024-02-25 10:33:54,171 - Closure_1 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:33:54,172 - Closure_1 - INFO - 开始验证补丁1 2:
+2024-02-25 10:33:54,172 - Closure_1 - INFO - 
+    // Determine if the compiler is in simple mode
+    boolean isSimpleMode = compiler.getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE_OPTIMIZATIONS;
+
+2024-02-25 10:33:56,210 - Closure_1 - INFO - 编译失败
+2024-02-25 10:33:56,211 - Closure_1 - INFO - 错误: 找不到符号
+boolean isSimpleMode = compiler.getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE_OPTIMIZATIONS;
+2024-02-25 10:33:56,211 - Closure_1 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:33:56,212 - Closure_1 - INFO - 开始验证补丁1 3:
+2024-02-25 10:33:56,212 - Closure_1 - INFO - 
+    // We only want to remove parameters for functions that are not 
+    // externally visible, which means they have to be local to the 
+    // current module.
+    boolean isLocalFunction = !fnScope.isDeclaredNonLocally();
+
+2024-02-25 10:33:58,283 - Closure_1 - INFO - 编译失败
+2024-02-25 10:33:58,283 - Closure_1 - INFO - 错误: 找不到符号
+boolean isLocalFunction = !fnScope.isDeclaredNonLocally();
+2024-02-25 10:33:58,283 - Closure_1 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:33:58,284 - Closure_1 - INFO - 开始验证补丁1 4:
+2024-02-25 10:33:58,284 - Closure_1 - INFO - 
+    boolean removeGlobals = compiler.getOptions().removeUnusedVariables;
+    if (!removeGlobals) {
+      return;
+    }
+
+2024-02-25 10:34:00,315 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:00,315 - Closure_1 - INFO - 错误: 找不到符号
+boolean removeGlobals = compiler.getOptions().removeUnusedVariables;
+2024-02-25 10:34:00,315 - Closure_1 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:34:00,316 - Closure_1 - INFO - 开始验证补丁1 5:
+2024-02-25 10:34:00,316 - Closure_1 - INFO - 
+    if (!compiler.getOptions().shouldPreserveFunctionParameter()) {
+      return;
+    }
+
+2024-02-25 10:34:02,349 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:02,349 - Closure_1 - INFO - 错误: 找不到符号
+if (!compiler.getOptions().shouldPreserveFunctionParameter()) {
+2024-02-25 10:34:02,349 - Closure_1 - INFO - 补丁1 5 未成功编译
+2024-02-25 10:34:02,350 - Closure_1 - INFO - 开始验证补丁1 6:
+2024-02-25 10:34:02,350 - Closure_1 - INFO - 
+    // Check if the variable 'a' is used.
+    if (!fnScope.isParameterUnused("a")) {
+      return;
+    }
+
+2024-02-25 10:34:04,388 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:04,388 - Closure_1 - INFO - 错误: 找不到符号
+if (!fnScope.isParameterUnused("a")) {
+2024-02-25 10:34:04,388 - Closure_1 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:34:04,389 - Closure_1 - INFO - 开始验证补丁1 7:
+2024-02-25 10:34:04,389 - Closure_1 - INFO - 
+    boolean removeGlobals = compiler.getOptions().removeUnusedVars;
+
+2024-02-25 10:34:06,422 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:06,422 - Closure_1 - INFO - 错误: 找不到符号
+boolean removeGlobals = compiler.getOptions().removeUnusedVars;
+2024-02-25 10:34:06,422 - Closure_1 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:34:06,423 - Closure_1 - INFO - 开始验证补丁1 8:
+2024-02-25 10:34:06,423 - Closure_1 - INFO - 
+    boolean removeParams = compiler.getOptions().removeUnusedParameters;
+
+2024-02-25 10:34:08,432 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:08,432 - Closure_1 - INFO - 错误: 找不到符号
+boolean removeParams = compiler.getOptions().removeUnusedParameters;
+2024-02-25 10:34:08,432 - Closure_1 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:34:08,433 - Closure_1 - INFO - 开始验证补丁1 9:
+2024-02-25 10:34:08,433 - Closure_1 - INFO - 
+    boolean simpleMode = compiler.getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE_OPTIMIZATIONS;
+
+2024-02-25 10:34:10,527 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:10,527 - Closure_1 - INFO - 错误: 找不到符号
+boolean simpleMode = compiler.getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE_OPTIMIZATIONS;
+2024-02-25 10:34:10,527 - Closure_1 - INFO - 补丁1 9 未成功编译
+2024-02-25 10:34:10,528 - Closure_1 - INFO - 开始验证补丁2 1:
+2024-02-25 10:34:10,528 - Closure_1 - INFO - 
+    CompilerOptions options = fnScope.getCompiler().getOptions();
+    if (options.getRemoveUnusedVariables() != Reach.NONE) {
+      // Proceed with removal of function arguments if allowed by the current mode
+    } else {
+      // Do not remove arguments; exit the function or skip to the necessary part
+      return;
+    }
+
+2024-02-25 10:34:12,541 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:12,541 - Closure_1 - INFO - 错误: 找不到符号
+CompilerOptions options = fnScope.getCompiler().getOptions();
+2024-02-25 10:34:12,541 - Closure_1 - INFO - 补丁2 1 未成功编译
+2024-02-25 10:34:12,542 - Closure_1 - INFO - 开始验证补丁2 2:
+2024-02-25 10:34:12,543 - Closure_1 - INFO - 
+    if (fnScope.getCompiler().getOptions().shouldPreserveFunctionArguments()) {
+      // If it's configured to preserve function arguments, do not remove them
+      return;
+    }
+
+2024-02-25 10:34:14,563 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:14,563 - Closure_1 - INFO - 错误: 找不到符号
+if (fnScope.getCompiler().getOptions().shouldPreserveFunctionArguments()) {
+2024-02-25 10:34:14,563 - Closure_1 - INFO - 补丁2 2 未成功编译
+2024-02-25 10:34:14,564 - Closure_1 - INFO - 开始验证补丁2 3:
+2024-02-25 10:34:14,564 - Closure_1 - INFO - 
+    if (!fnScope.getCompiler().getOptions().isAdvancedOptimizationsEnabled()) {
+      // If not in advanced mode, do not remove unused function parameters
+      return;
+    }
+
+2024-02-25 10:34:16,616 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:16,616 - Closure_1 - INFO - 错误: 找不到符号
+if (!fnScope.getCompiler().getOptions().isAdvancedOptimizationsEnabled()) {
+2024-02-25 10:34:16,616 - Closure_1 - INFO - 补丁2 3 未成功编译
+2024-02-25 10:34:16,617 - Closure_1 - INFO - 开始验证补丁2 4:
+2024-02-25 10:34:16,618 - Closure_1 - INFO - 
+    CompilerOptions options = fnScope.getCompiler().getOptions();
+    if (!options.shouldPreserveUnusedFunctionParameters()) {
+        return;
+    }
+
+2024-02-25 10:34:18,667 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:18,667 - Closure_1 - INFO - 错误: 找不到符号
+CompilerOptions options = fnScope.getCompiler().getOptions();
+2024-02-25 10:34:18,667 - Closure_1 - INFO - 补丁2 4 未成功编译
+2024-02-25 10:34:18,669 - Closure_1 - INFO - 开始验证补丁2 5:
+2024-02-25 10:34:18,669 - Closure_1 - INFO - 
+    if (fnScope.getCompiler().getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE) {
+        return;
+    }
+
+2024-02-25 10:34:20,707 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:20,707 - Closure_1 - INFO - 错误: 找不到符号
+if (fnScope.getCompiler().getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE) {
+2024-02-25 10:34:20,708 - Closure_1 - INFO - 补丁2 5 未成功编译
+2024-02-25 10:34:20,709 - Closure_1 - INFO - 开始验证补丁2 6:
+2024-02-25 10:34:20,709 - Closure_1 - INFO - 
+    if (!fnScope.getCompiler().getOptions().removeUnusedFunctionParams) {
+        return;
+    }
+
+2024-02-25 10:34:22,720 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:22,720 - Closure_1 - INFO - 错误: 找不到符号
+if (!fnScope.getCompiler().getOptions().removeUnusedFunctionParams) {
+2024-02-25 10:34:22,720 - Closure_1 - INFO - 补丁2 6 未成功编译
+2024-02-25 10:34:22,721 - Closure_1 - INFO - 开始验证补丁2 7:
+2024-02-25 10:34:22,721 - Closure_1 - INFO - 
+boolean removeGlobals = compiler.getOptions().removeUnusedVariables;
+
+2024-02-25 10:34:24,775 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:24,776 - Closure_1 - INFO - 错误: 找不到符号
+boolean removeGlobals = compiler.getOptions().removeUnusedVariables;
+2024-02-25 10:34:24,776 - Closure_1 - INFO - 补丁2 7 未成功编译
+2024-02-25 10:34:24,777 - Closure_1 - INFO - 开始验证补丁2 8:
+2024-02-25 10:34:24,777 - Closure_1 - INFO - 
+CompilerOptions options = compiler.getOptions();
+boolean removeGlobals = options.removeUnusedVariables;
+
+2024-02-25 10:34:26,812 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:26,813 - Closure_1 - INFO - 错误: 找不到符号
+CompilerOptions options = compiler.getOptions();
+2024-02-25 10:34:26,813 - Closure_1 - INFO - 补丁2 8 未成功编译
+2024-02-25 10:34:26,814 - Closure_1 - INFO - 开始验证补丁2 9:
+2024-02-25 10:34:26,814 - Closure_1 - INFO - 
+boolean simpleMode = compiler.getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE;
+
+2024-02-25 10:34:28,836 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:28,837 - Closure_1 - INFO - 错误: 找不到符号
+boolean simpleMode = compiler.getOptions().getOptimizationLevel() == CompilerOptions.OptimizationLevel.SIMPLE;
+2024-02-25 10:34:28,837 - Closure_1 - INFO - 补丁2 9 未成功编译
+2024-02-25 10:34:28,838 - Closure_1 - INFO - 开始验证补丁3 1:
+2024-02-25 10:34:28,838 - Closure_1 - INFO - 
+// Missing code is assumed to be a check for optimization level
+// The test case mentioned seems to fail because the optimization isn't turned on
+CompilerOptions options = compiler.getOptions();
+if (!options.shouldRemoveUnusedParameters()) {
+  return;
+}
+
+2024-02-25 10:34:30,881 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:30,881 - Closure_1 - INFO - 错误: 找不到符号
+CompilerOptions options = compiler.getOptions();
+2024-02-25 10:34:30,882 - Closure_1 - INFO - 补丁3 1 未成功编译
+2024-02-25 10:34:30,883 - Closure_1 - INFO - 开始验证补丁3 2:
+2024-02-25 10:34:30,883 - Closure_1 - INFO - 
+// The missing code might also be setting up or retrieving the function scope
+// that is needed to check if parameters can be removed.
+NodeTraversal.traverse(compiler, function, new NodeTraversal.Callback() {
+  public boolean shouldTraverse(NodeTraversal nodeTraversal, Node n, Node parent) {
+    // Logic to determine if function arguments should be removed,
+    // may involve checking the optimization level or other conditions
+    return true; // Placeholder logic
+  }
+});
+
+2024-02-25 10:34:32,905 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:32,905 - Closure_1 - INFO - 错误: 找不到符号
+NodeTraversal.traverse(compiler, function, new NodeTraversal.Callback() {
+2024-02-25 10:34:32,905 - Closure_1 - INFO - 补丁3 2 未成功编译
+2024-02-25 10:34:32,906 - Closure_1 - INFO - 开始验证补丁3 3:
+2024-02-25 10:34:32,906 - Closure_1 - INFO - 
+// The missing code could be establishing the context or validating certain conditions
+// for the function before proceeding with the unused parameter check
+if (function.isFromExterns()) {
+  // We should not modify extern definitions
+  return;
+}
+
+2024-02-25 10:34:34,937 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:34,937 - Closure_1 - INFO - 错误: 找不到符号
+if (function.isFromExterns()) {
+2024-02-25 10:34:34,937 - Closure_1 - INFO - 补丁3 3 未成功编译
+2024-02-25 10:34:34,938 - Closure_1 - INFO - 开始验证补丁3 4:
+2024-02-25 10:34:34,938 - Closure_1 - INFO - 
+    // If removing unused function arguments is allowed.
+    boolean removeUnusedFunctionParams = ... ; // Previously established option within the codebase
+    
+    Node function = fnScope.getRootNode();
+
+    Preconditions.checkState(function.isFunction());
+
+    // Ensure that the function is not a global setter/getter before removing arguments.
+    if (removeUnusedFunctionParams && 
+        !NodeUtil.isGetOrSetKey(function.getParent()) && 
+        !function.getParent().isScript()) {
+        // Proceed to remove unused function parameters logic here.
+    }
+
+2024-02-25 10:34:36,744 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:36,744 - Closure_1 - INFO - 错误: 非法的表达式开始
+boolean removeUnusedFunctionParams = ... ; // Previously established option within the codebase
+2024-02-25 10:34:36,744 - Closure_1 - INFO - 补丁3 4 未成功编译
+2024-02-25 10:34:36,745 - Closure_1 - INFO - 开始验证补丁3 5:
+2024-02-25 10:34:36,745 - Closure_1 - INFO - 
+    Node function = fnScope.getRootNode();
+
+    Preconditions.checkState(function.isFunction());
+    Node parent = function.getParent();
+
+    // Skip removal of parameters if the function is a setter/getter or 
+    // if the parent is an assignment to a global property without a value.
+    if (NodeUtil.isGetOrSetKey(parent) || 
+        (parent.isAssign() && parent.getFirstChild().isName() && parent.getSecondChild().isName())) {
+      return;
+    }
+
+2024-02-25 10:34:38,791 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:38,792 - Closure_1 - INFO - 错误: 找不到符号
+(parent.isAssign() && parent.getFirstChild().isName() && parent.getSecondChild().isName())) {
+2024-02-25 10:34:38,792 - Closure_1 - INFO - 补丁3 5 未成功编译
+2024-02-25 10:34:38,793 - Closure_1 - INFO - 开始验证补丁3 6:
+2024-02-25 10:34:38,793 - Closure_1 - INFO - 
+    // Make sure that the function is not assigned to a global property.
+    Node function = fnScope.getRootNode();
+
+    Preconditions.checkState(function.isFunction());
+    Node parent = function.getParent();
+    Node grandparent = parent.getParent();
+
+    // Skip removal if the function is global or if it's a setter/getter.
+    if (NodeUtil.isGetOrSetKey(parent) || 
+        (parent.isAssign() && grandparent.isScript())) {
+      return;
+    }
+
+2024-02-25 10:34:40,851 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:40,852 - Closure_1 - INFO - 错误: 已在方法 removeUnreferencedFunctionArgs(Scope)中定义了变量 function
+Node function = fnScope.getRootNode();
+2024-02-25 10:34:40,852 - Closure_1 - INFO - 补丁3 6 未成功编译
+2024-02-25 10:34:40,853 - Closure_1 - INFO - 开始验证补丁3 7:
+2024-02-25 10:34:40,853 - Closure_1 - INFO - 
+    Node function = fnScope.getRootNode();
+
+    Preconditions.checkState(function.isFunction());
+    // Ensure we preserve the parameter for setters
+    if (NodeUtil.isSetter(function)) {
+      return;
+    }
+
+2024-02-25 10:34:42,905 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:42,905 - Closure_1 - INFO - 错误: 找不到符号
+if (NodeUtil.isSetter(function)) {
+2024-02-25 10:34:42,905 - Closure_1 - INFO - 补丁3 7 未成功编译
+2024-02-25 10:34:42,906 - Closure_1 - INFO - 开始验证补丁3 8:
+2024-02-25 10:34:42,906 - Closure_1 - INFO - 
+    Node function = fnScope.getRootNode();
+
+    Preconditions.checkState(function.isFunction());
+    // Avoid removing arguments for functions used as getters or setters
+    if (NodeUtil.isGetter(function) || NodeUtil.isSetter(function)) {
+      return;
+    }
+
+2024-02-25 10:34:44,945 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:44,945 - Closure_1 - INFO - 错误: 找不到符号
+if (NodeUtil.isGetter(function) || NodeUtil.isSetter(function)) {
+2024-02-25 10:34:44,945 - Closure_1 - INFO - 补丁3 8 未成功编译
+2024-02-25 10:34:44,946 - Closure_1 - INFO - 开始验证补丁3 9:
+2024-02-25 10:34:44,946 - Closure_1 - INFO - 
+    Node function = fnScope.getRootNode();
+
+    Preconditions.checkState(function.isFunction());
+    // Parameters are not removed for global functions or when they are part
+    // of an object literal as a getter or setter
+    if (function.getParent().isAssign() && function.getGrandparent().isScript() || 
+        NodeUtil.isGetOrSetKey(function.getParent())) {
+      return;
+    }
+
+2024-02-25 10:34:46,971 - Closure_1 - INFO - 编译失败
+2024-02-25 10:34:46,971 - Closure_1 - INFO - 错误: 找不到符号
+if (function.getParent().isAssign() && function.getGrandparent().isScript() ||
+2024-02-25 10:34:46,971 - Closure_1 - INFO - 补丁3 9 未成功编译
+2024-02-25 10:34:46,971 - Closure_1 - INFO - Closure_1 未成功修复

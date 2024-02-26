@@ -1,0 +1,987 @@
+2024-02-26 01:31:13,446 - Lang_42 - INFO - rm -rf /home/chongchong/d4j-project/Lang_42
+2024-02-26 01:31:13,447 - Lang_42 - INFO - 删除 Lang 42b 成功
+2024-02-26 01:31:13,447 - Lang_42 - INFO - defects4j checkout -p Lang -v 42b -w /home/chongchong/d4j-project/Lang_42
+2024-02-26 01:31:16,798 - Lang_42 - INFO - checkout Lang 42b 成功
+2024-02-26 01:31:20,995 - Lang_42 - INFO - 编译成功
+2024-02-26 01:31:30,889 - Lang_42 - INFO - 测试失败
+2024-02-26 01:31:30,889 - Lang_42 - INFO - Failing tests: 1
+  - org.apache.commons.lang.StringEscapeUtilsTest::testEscapeHtmlHighUnicode
+
+2024-02-26 01:31:31,772 - Lang_42 - INFO - 它的bug类型为:
+2024-02-26 01:31:31,772 - Lang_42 - INFO - 4
+2024-02-26 01:33:20,993 - Lang_42 - INFO - 开始验证补丁1 1:
+2024-02-26 01:33:20,993 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    if (i < len) {
+        char low = str.charAt(i);
+        if (Character.isLowSurrogate(low)) {
+            int codePoint = Character.toCodePoint(c, low);
+            writer.write("&#");
+            writer.write(Integer.toString(codePoint, 10));
+            writer.write(';');
+        } else {
+            // Handle the error case of a high surrogate without a following low surrogate
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        }
+    } else {
+        // Handle the error case of a string ending with a high surrogate
+        writer.write("&#");
+        writer.write(Integer.toString(c, 10));
+        writer.write(';');
+    }
+} else if (c > 0x7F || Character.isLowSurrogate(c)) {
+    // Handle low surrogate as an error case if not preceded by a high surrogate
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:20,993 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:20,994 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:20,994 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:20,995 - Lang_42 - INFO - 开始验证补丁1 2:
+2024-02-26 01:33:20,995 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c) && i + 1 < len && Character.isLowSurrogate(str.charAt(i + 1))) {
+    int codePoint = Character.toCodePoint(c, str.charAt(i + 1));
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+    i++; // Skip the low surrogate since it's already processed
+} else if (c > 0x7F) {
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:20,995 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:20,995 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:20,995 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:20,996 - Lang_42 - INFO - 开始验证补丁1 3:
+2024-02-26 01:33:20,996 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint = Character.codePointAt(str, i);
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+    i += Character.charCount(codePoint) - 1; // Advance by 1 or 2, depending on whether it's high or low surrogate
+} else if (c > 0x7F) {
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:20,996 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:20,996 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:20,996 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:20,997 - Lang_42 - INFO - 开始验证补丁1 4:
+2024-02-26 01:33:20,997 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName == null) {
+    if (c > 0x7F) {
+        if (Character.isHighSurrogate(c) && i + 1 < str.length()) {
+            char low = str.charAt(i + 1);
+            if (Character.isLowSurrogate(low)) {
+                i++;
+                int codepoint = Character.toCodePoint(c, low);
+                writer.write("&#");
+                writer.write(Integer.toString(codepoint, 10));
+                writer.write(';');
+            } else {
+                writer.write("&#");
+                writer.write(Integer.toString(c, 10));
+                writer.write(';');
+            }
+        } else {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        }
+    } else {
+        writer.write(c);
+    }
+}
+
+2024-02-26 01:33:20,997 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:20,997 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:20,997 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:20,998 - Lang_42 - INFO - 开始验证补丁1 5:
+2024-02-26 01:33:20,998 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName == null) {
+    if (c > 0x7F) {
+        if (Character.isSurrogate(c)) {
+            int codepoint = str.codePointAt(i);
+            writer.write("&#");
+            writer.write(Integer.toString(codepoint, 10));
+            writer.write(';');
+            i += Character.charCount(codepoint) - 1;
+        } else {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        }
+    } else {
+        writer.write(c);
+    }
+}
+
+2024-02-26 01:33:20,998 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:20,998 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:20,998 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:20,999 - Lang_42 - INFO - 开始验证补丁1 6:
+2024-02-26 01:33:20,999 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName == null) {
+    if (c > 0x7F) {
+        int codepoint;
+        if (Character.isHighSurrogate(c) && i + 1 < str.length()) {
+            codepoint = Character.toCodePoint(c, str.charAt(i + 1));
+            i++;
+        } else {
+            codepoint = c;
+        }
+        writer.write("&#");
+        writer.write(Integer.toString(codepoint, 10));
+        writer.write(';');
+    } else {
+        writer.write(c);
+    }
+}
+
+2024-02-26 01:33:20,999 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,000 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,000 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,001 - Lang_42 - INFO - 开始验证补丁1 7:
+2024-02-26 01:33:21,001 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    if (i < len) {
+        char low = str.charAt(i);
+        if (Character.isLowSurrogate(low)) {
+            int codePoint = Character.toCodePoint(c, low);
+            writer.write("&#");
+            writer.write(Integer.toString(codePoint, 10));
+            writer.write(';');
+        } else {
+            throw new IllegalArgumentException("Invalid surrogate pair");
+        }
+    } else {
+        throw new IllegalArgumentException("String ends with a high surrogate without a low surrogate");
+    }
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+
+2024-02-26 01:33:21,001 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,001 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,001 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,002 - Lang_42 - INFO - 开始验证补丁1 8:
+2024-02-26 01:33:21,002 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint = Character.codePointAt(str, i);
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+    if (Character.isHighSurrogate(c)) {
+        i++;
+    }
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+
+2024-02-26 01:33:21,002 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,002 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,002 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,003 - Lang_42 - INFO - 开始验证补丁1 9:
+2024-02-26 01:33:21,003 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName == null) {
+    if (c > 0x7F) {
+
+2024-02-26 01:33:21,003 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,003 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,003 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,004 - Lang_42 - INFO - 开始验证补丁2 1:
+2024-02-26 01:33:21,004 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    if (i < len) {
+        char low = str.charAt(i);
+        if (Character.isLowSurrogate(low)) {
+            int codePoint = Character.toCodePoint(c, low);
+            writer.write("&#");
+            writer.write(Integer.toString(codePoint, 10));
+            writer.write(';');
+        } else {
+            throw new IllegalArgumentException("Unmatched high surrogate at index " + (i - 1));
+        }
+    } else {
+        throw new IllegalArgumentException("High surrogate without low surrogate at end of string");
+    }
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,004 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,004 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,004 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,005 - Lang_42 - INFO - 开始验证补丁2 2:
+2024-02-26 01:33:21,005 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    if (Character.isHighSurrogate(c)) {
+        i++;
+        if (i < len && Character.isLowSurrogate(str.charAt(i))) {
+            char high = c;
+            char low = str.charAt(i);
+            int codePoint = Character.toCodePoint(high, low);
+            writer.write("&#");
+            writer.write(Integer.toString(codePoint));
+            writer.write(';');
+        } else {
+            throw new IllegalArgumentException("High surrogate not followed by low surrogate at index " + i);
+        }
+    } else {
+        throw new IllegalArgumentException("Low surrogate without preceding high surrogate at index " + i);
+    }
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,005 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,005 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,005 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,006 - Lang_42 - INFO - 开始验证补丁2 3:
+2024-02-26 01:33:21,006 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint;
+    if (Character.isHighSurrogate(c)) {
+        i++;
+        if (i < len) {
+            codePoint = Character.toCodePoint(c, str.charAt(i));
+        } else {
+            throw new IllegalArgumentException("String ends with a high surrogate with no low surrogate following it at index " + (i - 1));
+        }
+    } else {
+        // A low surrogate without preceding high surrogate, which is invalid
+        throw new IllegalArgumentException("Low surrogate without preceding high surrogate at index " + i);
+    }
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,006 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,006 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,006 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,007 - Lang_42 - INFO - 开始验证补丁2 4:
+2024-02-26 01:33:21,007 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    char low = str.charAt(i);
+    int codePoint = Character.toCodePoint(c, low);
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+} else if (c > 0x7F) {
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:21,007 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,007 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,007 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,008 - Lang_42 - INFO - 开始验证补丁2 5:
+2024-02-26 01:33:21,008 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint = str.codePointAt(i);
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+    if (Character.isHighSurrogate(c)) {
+        i++; // Skip the low surrogate
+    }
+} else if (c > 0x7F) {
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:21,008 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,008 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,008 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,009 - Lang_42 - INFO - 开始验证补丁2 6:
+2024-02-26 01:33:21,009 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    if (i < len) {
+        char low = str.charAt(i);
+        if (Character.isLowSurrogate(low)) {
+            int codePoint = Character.toCodePoint(c, low);
+            writer.write("&#");
+            writer.write(Integer.toString(codePoint, 10));
+            writer.write(';');
+            continue;
+        } else {
+            // Handle the case where there is a high surrogate without a low surrogate
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        }
+    } else {
+        // Handle the case where the high surrogate is the last character
+        writer.write("&#");
+        writer.write(Integer.toString(c, 10));
+        writer.write(';');
+    }
+} else if (c > 0x7F) {
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:21,009 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,009 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,009 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,010 - Lang_42 - INFO - 开始验证补丁2 7:
+2024-02-26 01:33:21,010 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    char low = str.charAt(i);
+    writer.write("&#");
+    writer.write(Integer.toString(Character.toCodePoint(c, low), 10));
+    writer.write(';');
+} else if (c > 0x7F) {
+    writer.write("&#");
+    writer.write(Integer.toString(c, 10));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName != null) {
+        writer.write('&');
+        writer.write(entityName);
+        writer.write(';');
+    } else {
+        writer.write(c);
+    }
+}
+
+2024-02-26 01:33:21,010 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,010 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,010 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,011 - Lang_42 - INFO - 开始验证补丁2 8:
+2024-02-26 01:33:21,011 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName != null) {
+    writer.write('&');
+    writer.write(entityName);
+    writer.write(';');
+} else if (c > 0x7F) {
+    if (Character.isSurrogate(c)) {
+        if (i + 1 < len && Character.isLowSurrogate(str.charAt(i + 1))) {
+            i++;
+            writer.write("&#");
+            writer.write(Integer.toString(Character.toCodePoint(c, str.charAt(i)), 10));
+            writer.write(';');
+        } else {
+            // Handle the error case for unmatched surrogates
+            throw new IOException("Unmatched surrogate detected");
+        }
+    } else {
+        writer.write("&#");
+        writer.write(Integer.toString(c, 10));
+        writer.write(';');
+    }
+} else {
+    writer.write(c);
+}
+
+2024-02-26 01:33:21,011 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,011 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,011 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,012 - Lang_42 - INFO - 开始验证补丁2 9:
+2024-02-26 01:33:21,012 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName != null) {
+    writer.write('&');
+    writer.write(entityName);
+    writer.write(';');
+} else {
+    if (Character.isHighSurrogate(c)) {
+        i++;
+        if (i < len && Character.isLowSurrogate(str.charAt(i))) {
+            writer.write("&#");
+            writer.write(Integer.toString(Character.toCodePoint(c, str.charAt(i)), 10));
+            writer.write(';');
+        } else {
+            // This else could be for handling a scenario where the high surrogate
+            // is not followed by a low surrogate, which would be an error case.
+            throw new IOException("Unmatched high surrogate detected");
+        }
+    } else if (c > 0x7F) {
+        writer.write("&#");
+        writer.write(Integer.toString(c, 10));
+        writer.write(';');
+    } else {
+        writer.write(c);
+    }
+}
+
+2024-02-26 01:33:21,012 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,013 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,013 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,013 - Lang_42 - INFO - 开始验证补丁3 1:
+2024-02-26 01:33:21,013 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c) && i + 1 < len) {
+    char high = c;
+    char low = str.charAt(++i);
+    if (Character.isLowSurrogate(low)) {
+        int codePoint = Character.toCodePoint(high, low);
+        writer.write("&#");
+        writer.write(Integer.toString(codePoint, 10));
+        writer.write(';');
+    } else {
+        // Handle the error of encountering a high surrogate without a following low surrogate
+        // This error handling will depend on the desired behavior of the method
+        // For example, you might want to throw an IOException or escape the high surrogate as is
+        throw new IOException("Unmatched high surrogate detected");
+    }
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,013 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,014 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,014 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,014 - Lang_42 - INFO - 开始验证补丁3 2:
+2024-02-26 01:33:21,014 - Lang_42 - INFO - 
+char c = str.charAt(i);
+String entityName = this.entityName(c);
+if (entityName == null) {
+    if (Character.isHighSurrogate(c) && i + 1 < len) {
+        char low = str.charAt(i + 1);
+        if (Character.isLowSurrogate(low)) {
+            i++;
+            int codePoint = Character.toCodePoint(c, low);
+            writer.write("&#");
+            writer.write(Integer.toString(codePoint));
+            writer.write(';');
+            continue;
+        }
+    }
+    if (c > 0x7F) {
+        writer.write("&#");
+        writer.write(Integer.toString(c));
+        writer.write(';');
+    } else {
+        writer.write(c);
+    }
+} else {
+    writer.write("&");
+    writer.write(entityName);
+    writer.write(';');
+}
+
+2024-02-26 01:33:21,015 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,015 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,015 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,016 - Lang_42 - INFO - 开始验证补丁3 3:
+2024-02-26 01:33:21,016 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint;
+    if (Character.isHighSurrogate(c) && i + 1 < len) {
+        char nextChar = str.charAt(i + 1);
+        if (Character.isLowSurrogate(nextChar)) {
+            codePoint = Character.toCodePoint(c, nextChar);
+            i++; // Move past the low surrogate as it's now been handled
+        } else {
+            codePoint = c; // Alternatively, replace with error handling if unmatched surrogate is an error
+        }
+    } else {
+        codePoint = c; // Alternatively, replace with error handling if unmatched surrogate is an error
+    }
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,016 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,016 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,016 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,017 - Lang_42 - INFO - 开始验证补丁3 4:
+2024-02-26 01:33:21,017 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    char high = c;
+    i++;
+    char low = str.charAt(i);
+    if (Character.isLowSurrogate(low)) {
+        int codePoint = Character.toCodePoint(high, low);
+        writer.write("&#");
+        writer.write(Integer.toString(codePoint, 10));
+        writer.write(';');
+    } else {
+        // Handle error for isolated high surrogate
+        throw new IllegalArgumentException("Isolated high surrogate without corresponding low surrogate at index " + (i-1));
+    }
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,017 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,017 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,017 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,018 - Lang_42 - INFO - 开始验证补丁3 5:
+2024-02-26 01:33:21,018 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint = str.codePointAt(i);
+    i += Character.charCount(codePoint) - 1; // Advance by 1 or 2 depending on whether it's a surrogate pair
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint, 10));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,018 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,018 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,018 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,019 - Lang_42 - INFO - 开始验证补丁3 6:
+2024-02-26 01:33:21,019 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    writer.write("&#");
+    writer.write(Integer.toString(str.codePointAt(i), 10));
+    writer.write(';');
+    i += Character.charCount(str.codePointAt(i)) - 1;
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+            writer.write("&#");
+            writer.write(Integer.toString(c, 10));
+            writer.write(';');
+        } else {
+            writer.write(c);
+        }
+    } else {
+        writer.write("&");
+        writer.write(entityName);
+        writer.write(';');
+    }
+}
+
+2024-02-26 01:33:21,019 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,019 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,019 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,020 - Lang_42 - INFO - 开始验证补丁3 7:
+2024-02-26 01:33:21,020 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c)) {
+    i++;
+    char cLow = str.charAt(i);
+    if (!Character.isLowSurrogate(cLow)) {
+        throw new IllegalArgumentException("Invalid surrogate pair");
+    }
+    int codePoint = Character.toCodePoint(c, cLow);
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+
+2024-02-26 01:33:21,020 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,020 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,020 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,021 - Lang_42 - INFO - 开始验证补丁3 8:
+2024-02-26 01:33:21,021 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isSurrogate(c)) {
+    int codePoint;
+    if (Character.isHighSurrogate(c)) {
+        i++;
+        codePoint = Character.toCodePoint(c, str.charAt(i));
+    } else {
+        throw new IllegalArgumentException("Unexpected low surrogate without preceding high surrogate");
+    }
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+
+2024-02-26 01:33:21,021 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,021 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,021 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,022 - Lang_42 - INFO - 开始验证补丁3 9:
+2024-02-26 01:33:21,022 - Lang_42 - INFO - 
+char c = str.charAt(i);
+if (Character.isHighSurrogate(c) && (i + 1 < str.length()) && Character.isLowSurrogate(str.charAt(i + 1))) {
+    i++;
+    char nextChar = str.charAt(i);
+    int codePoint = Character.toCodePoint(c, nextChar);
+    writer.write("&#");
+    writer.write(Integer.toString(codePoint));
+    writer.write(';');
+} else {
+    String entityName = this.entityName(c);
+    if (entityName == null) {
+        if (c > 0x7F) {
+
+2024-02-26 01:33:21,022 - Lang_42 - INFO - 补丁Lang 42 出错，信息如下：
+2024-02-26 01:33:21,022 - Lang_42 - ERROR - 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+2024-02-26 01:33:21,022 - Lang_42 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 203, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 110, in do_patch
+    code_list = f.readlines()
+  File "/usr/lib/python3.10/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 2622: invalid start byte
+
+2024-02-26 01:33:21,022 - Lang_42 - INFO - Lang_42 未成功修复

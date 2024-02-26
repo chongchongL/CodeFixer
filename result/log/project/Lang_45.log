@@ -1,0 +1,20 @@
+2024-02-25 12:29:12,730 - Lang_45 - INFO - rm -rf /home/chongchong/d4j-project/Lang_45
+2024-02-25 12:29:12,731 - Lang_45 - INFO - 删除 Lang 45b 成功
+2024-02-25 12:29:12,731 - Lang_45 - INFO - defects4j checkout -p Lang -v 45b -w /home/chongchong/d4j-project/Lang_45
+2024-02-25 12:29:16,061 - Lang_45 - INFO - checkout Lang 45b 成功
+2024-02-25 12:29:20,231 - Lang_45 - INFO - 编译成功
+2024-02-25 12:29:30,103 - Lang_45 - INFO - 测试失败
+2024-02-25 12:29:30,103 - Lang_45 - INFO - Failing tests: 1
+  - org.apache.commons.lang.WordUtilsTest::testAbbreviate
+
+2024-02-25 12:29:30,982 - Lang_45 - INFO - 它的bug类型为:
+2024-02-25 12:29:30,982 - Lang_45 - INFO - 3
+2024-02-25 12:30:30,044 - Lang_45 - INFO - 开始验证补丁1 1:
+2024-02-25 12:30:30,044 - Lang_45 - INFO - 
+if (lower >= str.length()) {
+    lower = str.length();
+}
+
+2024-02-25 12:30:31,125 - Lang_45 - INFO - 编译成功
+2024-02-25 12:30:40,944 - Lang_45 - INFO - 测试成功
+2024-02-25 12:30:40,944 - Lang_45 - INFO - 补丁1 1 通过了所有的测试用例

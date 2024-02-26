@@ -1,0 +1,519 @@
+2024-02-24 23:31:03,958 - Chart_6 - INFO - rm -rf /home/chongchong/d4j-project/Chart_6
+2024-02-24 23:31:03,959 - Chart_6 - INFO - 删除 Chart 6b 成功
+2024-02-24 23:31:03,959 - Chart_6 - INFO - defects4j checkout -p Chart -v 6b -w /home/chongchong/d4j-project/Chart_6
+2024-02-24 23:31:07,163 - Chart_6 - INFO - checkout Chart 6b 成功
+2024-02-24 23:31:12,784 - Chart_6 - INFO - 编译成功
+2024-02-24 23:31:20,599 - Chart_6 - INFO - 测试失败
+2024-02-24 23:31:20,600 - Chart_6 - INFO - Failing tests: 3
+  - org.jfree.chart.util.junit.ShapeListTests::testSerialization
+  - org.jfree.chart.util.junit.ShapeListTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-24 23:31:21,462 - Chart_6 - INFO - 它的bug类型为:
+2024-02-24 23:31:21,462 - Chart_6 - INFO - 2
+2024-02-24 23:33:36,011 - Chart_6 - INFO - rm -rf /home/chongchong/d4j-project/Chart_6
+2024-02-24 23:33:36,064 - Chart_6 - INFO - 删除 Chart 6b 成功
+2024-02-24 23:33:36,064 - Chart_6 - INFO - defects4j checkout -p Chart -v 6b -w /home/chongchong/d4j-project/Chart_6
+2024-02-24 23:33:39,089 - Chart_6 - INFO - checkout Chart 6b 成功
+2024-02-24 23:33:44,652 - Chart_6 - INFO - 编译成功
+2024-02-24 23:33:52,500 - Chart_6 - INFO - 测试失败
+2024-02-24 23:33:52,500 - Chart_6 - INFO - Failing tests: 3
+  - org.jfree.chart.util.junit.ShapeListTests::testSerialization
+  - org.jfree.chart.util.junit.ShapeListTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-24 23:33:53,374 - Chart_6 - INFO - 它的bug类型为:
+2024-02-24 23:33:53,374 - Chart_6 - INFO - 2
+2024-02-24 23:35:09,806 - Chart_6 - INFO - 开始验证补丁1 1:
+2024-02-24 23:35:09,806 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.list.equals(other.list);
+
+2024-02-24 23:35:10,513 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:10,513 - Chart_6 - INFO - 错误: 找不到符号
+return this.list.equals(other.list);
+2024-02-24 23:35:10,513 - Chart_6 - INFO - 补丁1 1 未成功编译
+2024-02-24 23:35:10,514 - Chart_6 - INFO - 开始验证补丁1 2:
+2024-02-24 23:35:10,514 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.list.containsAll(other.list) && other.list.containsAll(this.list);
+
+2024-02-24 23:35:11,224 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:11,224 - Chart_6 - INFO - 错误: 找不到符号
+return this.list.containsAll(other.list) && other.list.containsAll(this.list);
+2024-02-24 23:35:11,224 - Chart_6 - INFO - 补丁1 2 未成功编译
+2024-02-24 23:35:11,225 - Chart_6 - INFO - 开始验证补丁1 3:
+2024-02-24 23:35:11,225 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return Objects.equals(this.list, other.list);
+
+2024-02-24 23:35:11,935 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:11,935 - Chart_6 - INFO - 错误: 找不到符号
+return Objects.equals(this.list, other.list);
+2024-02-24 23:35:11,935 - Chart_6 - INFO - 补丁1 3 未成功编译
+2024-02-24 23:35:11,936 - Chart_6 - INFO - 开始验证补丁1 4:
+2024-02-24 23:35:11,936 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapes.equals(other.shapes); // Assuming 'shapes' is a List<Shape> field in ShapeList
+
+2024-02-24 23:35:12,640 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:12,640 - Chart_6 - INFO - 错误: 找不到符号
+return this.shapes.equals(other.shapes); // Assuming 'shapes' is a List<Shape> field in ShapeList
+2024-02-24 23:35:12,640 - Chart_6 - INFO - 补丁1 4 未成功编译
+2024-02-24 23:35:12,641 - Chart_6 - INFO - 开始验证补丁1 5:
+2024-02-24 23:35:12,641 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapes.containsAll(other.shapes) && other.shapes.containsAll(this.shapes);
+
+2024-02-24 23:35:13,358 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:13,358 - Chart_6 - INFO - 错误: 找不到符号
+return this.shapes.containsAll(other.shapes) && other.shapes.containsAll(this.shapes);
+2024-02-24 23:35:13,358 - Chart_6 - INFO - 补丁1 5 未成功编译
+2024-02-24 23:35:13,359 - Chart_6 - INFO - 开始验证补丁1 6:
+2024-02-24 23:35:13,359 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.attribute.equals(other.attribute); // Replace 'attribute' with the actual field name
+
+2024-02-24 23:35:14,069 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:14,069 - Chart_6 - INFO - 错误: 找不到符号
+return this.attribute.equals(other.attribute); // Replace 'attribute' with the actual field name
+2024-02-24 23:35:14,069 - Chart_6 - INFO - 补丁1 6 未成功编译
+2024-02-24 23:35:14,070 - Chart_6 - INFO - 开始验证补丁1 7:
+2024-02-24 23:35:14,070 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.list.equals(other.list);
+
+2024-02-24 23:35:14,070 - Chart_6 - INFO - 补丁1 7为重复的补丁
+2024-02-24 23:35:14,071 - Chart_6 - INFO - 开始验证补丁1 8:
+2024-02-24 23:35:14,071 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.list.size() == other.list.size() &&
+       this.list.containsAll(other.list);
+
+2024-02-24 23:35:14,772 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:14,772 - Chart_6 - INFO - 错误: 找不到符号
+return this.list.size() == other.list.size() &&
+2024-02-24 23:35:14,772 - Chart_6 - INFO - 补丁1 8 未成功编译
+2024-02-24 23:35:14,773 - Chart_6 - INFO - 开始验证补丁1 9:
+2024-02-24 23:35:14,773 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.list.size() == other.list.size() &&
+       IntStream.range(0, this.list.size()).allMatch(i -> this.list.get(i).equals(other.list.get(i)));
+
+2024-02-24 23:35:15,339 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:15,339 - Chart_6 - INFO - 错误: 非法的表达式开始
+IntStream.range(0, this.list.size()).allMatch(i -> this.list.get(i).equals(other.list.get(i)));
+2024-02-24 23:35:15,339 - Chart_6 - INFO - 补丁1 9 未成功编译
+2024-02-24 23:35:15,340 - Chart_6 - INFO - 开始验证补丁2 1:
+2024-02-24 23:35:15,340 - Chart_6 - INFO - 
+        ShapeList other = (ShapeList) obj;
+        if (this.shapeList.size() != other.shapeList.size()) {
+            return false;
+        }
+        for (int i = 0; i < this.shapeList.size(); i++) {
+            if (!this.shapeList.get(i).equals(other.shapeList.get(i))) {
+                return false;
+            }
+        }
+        return true;
+
+2024-02-24 23:35:16,051 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:16,051 - Chart_6 - INFO - 错误: 找不到符号
+if (this.shapeList.size() != other.shapeList.size()) {
+2024-02-24 23:35:16,051 - Chart_6 - INFO - 补丁2 1 未成功编译
+2024-02-24 23:35:16,052 - Chart_6 - INFO - 开始验证补丁2 2:
+2024-02-24 23:35:16,052 - Chart_6 - INFO - 
+        ShapeList other = (ShapeList) obj;
+        return Arrays.equals(this.shapes, other.shapes);
+
+2024-02-24 23:35:16,777 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:16,778 - Chart_6 - INFO - 错误: 找不到符号
+return Arrays.equals(this.shapes, other.shapes);
+2024-02-24 23:35:16,778 - Chart_6 - INFO - 补丁2 2 未成功编译
+2024-02-24 23:35:16,779 - Chart_6 - INFO - 开始验证补丁2 3:
+2024-02-24 23:35:16,779 - Chart_6 - INFO - 
+        return obj.equals(this);
+
+2024-02-24 23:35:17,996 - Chart_6 - INFO - 编译成功
+2024-02-24 23:35:26,637 - Chart_6 - INFO - 测试失败
+2024-02-24 23:35:26,637 - Chart_6 - INFO - Failing tests: 224
+  - org.jfree.chart.junit.JFreeChartTests::testSerialization3
+  - org.jfree.chart.junit.JFreeChartTests::testSerialization4
+  - org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization
+  - org.jfree.chart.plot.junit.CategoryPlotTests::testEquals
+  - org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization2
+  - org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization4
+  - org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization5
+  - org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests::testSerialization
+  - org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests::testEquals
+  - org.jfree.chart.plot.junit.CombinedDomainXYPlotTests::testSerialization
+  - org.jfree.chart.plot.junit.CombinedDomainXYPlotTests::testCloning
+  - org.jfree.chart.plot.junit.CombinedDomainXYPlotTests::testEquals
+  - org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests::testSerialization
+  - org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests::testEquals
+  - org.jfree.chart.plot.junit.CombinedRangeXYPlotTests::testSerialization
+  - org.jfree.chart.plot.junit.CombinedRangeXYPlotTests::testCloning
+  - org.jfree.chart.plot.junit.CombinedRangeXYPlotTests::testEquals
+  - org.jfree.chart.plot.junit.PolarPlotTests::testCloning
+  - org.jfree.chart.plot.junit.XYPlotTests::testCloneIndependence
+  - org.jfree.chart.plot.junit.XYPlotTests::testEquals
+  - org.jfree.chart.plot.junit.XYPlotTests::testSerialization1
+  - org.jfree.chart.plot.junit.XYPlotTests::testSerialization2
+  - org.jfree.chart.plot.junit.XYPlotTests::testSerialization3
+  - org.jfree.chart.plot.junit.XYPlotTests::testSerialization4
+  - org.jfree.chart.plot.junit.XYPlotTests::testSerialization5
+  - org.jfree.chart.plot.junit.XYPlotTests::testCloning2
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::testCloning_LegendItemToolTipGenerator
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::testCloning_LegendItemLabelGenerator
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::testCloning_LegendItemURLGenerator
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::testCloning1
+  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::testCloning2
+  - org.jfree.chart.renderer.category.junit.AreaRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.AreaRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.AreaRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.AreaRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.BarRenderer3DTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.BarRenderer3DTests::testCloning
+  - org.jfree.chart.renderer.category.junit.BarRenderer3DTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.BarRenderer3DTests::testEquals
+  - org.jfree.chart.renderer.category.junit.BarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.BarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.BarRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.BarRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.CategoryStepRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.CategoryStepRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.CategoryStepRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.DefaultCategoryItemRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.GanttRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.GanttRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.GanttRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.GanttRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.IntervalBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.IntervalBarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.IntervalBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.IntervalBarRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.LayeredBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.LayeredBarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.LayeredBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.LayeredBarRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.LevelRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.LevelRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.LevelRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.LevelRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.LineAndShapeRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.LineRenderer3DTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.LineRenderer3DTests::testCloning
+  - org.jfree.chart.renderer.category.junit.LineRenderer3DTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.LineRenderer3DTests::testEquals
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.ScatterRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.ScatterRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.ScatterRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.ScatterRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.StackedAreaRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.StackedAreaRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.StackedAreaRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.StackedAreaRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests::testCloning
+  - org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.StackedBarRenderer3DTests::testEquals
+  - org.jfree.chart.renderer.category.junit.StackedBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.StackedBarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.StackedBarRendererTests::testHashCode
+  - org.jfree.chart.renderer.category.junit.StackedBarRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests::testEquals
+  - org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.WaterfallBarRendererTests::testEquals
+  - org.jfree.chart.renderer.junit.AbstractRendererTests::testSerialization
+  - org.jfree.chart.renderer.junit.AbstractRendererTests::testCloning
+  - org.jfree.chart.renderer.junit.AbstractRendererTests::testEquals
+  - org.jfree.chart.renderer.junit.AbstractRendererTests::testCloning2
+  - org.jfree.chart.renderer.junit.DefaultPolarItemRendererTests::testSerialization
+  - org.jfree.chart.renderer.junit.DefaultPolarItemRendererTests::testCloning
+  - org.jfree.chart.renderer.junit.DefaultPolarItemRendererTests::testHashcode
+  - org.jfree.chart.renderer.junit.DefaultPolarItemRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.AbstractXYItemRendererTests::testCloning_LegendItemToolTipGenerator
+  - org.jfree.chart.renderer.xy.junit.AbstractXYItemRendererTests::testCloning_LegendItemLabelGenerator
+  - org.jfree.chart.renderer.xy.junit.AbstractXYItemRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.AbstractXYItemRendererTests::testCloning_LegendItemURLGenerator
+  - org.jfree.chart.renderer.xy.junit.CandlestickRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.CandlestickRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.CandlestickRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.CandlestickRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.DeviationRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.DeviationRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.DeviationRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.DeviationRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testCloning
+  - org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testEquals
+  - org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.StandardXYItemRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.VectorRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.VectorRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.VectorRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.VectorRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.WindItemRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.WindItemRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.WindItemRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.WindItemRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testSerialization2
+  - org.jfree.chart.renderer.xy.junit.XYBlockRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYBlockRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYBlockRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYBlockRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYBoxAndWhiskerRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYBoxAndWhiskerRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYBoxAndWhiskerRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYBoxAndWhiskerRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYBubbleRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYBubbleRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYBubbleRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYBubbleRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYDifferenceRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYDifferenceRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYDifferenceRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYDifferenceRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYDotRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYDotRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYDotRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYDotRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYErrorRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYErrorRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYErrorRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYErrorRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYLine3DRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYLine3DRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYLine3DRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYLine3DRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests::testEquals2
+  - org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYLineAndShapeRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYSplineRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYSplineRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYSplineRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYSplineRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYStepAreaRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYStepAreaRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYStepAreaRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYStepAreaRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.XYStepRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.XYStepRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.XYStepRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.XYStepRendererTests::testEquals
+  - org.jfree.chart.renderer.xy.junit.YIntervalRendererTests::testSerialization
+  - org.jfree.chart.renderer.xy.junit.YIntervalRendererTests::testCloning
+  - org.jfree.chart.renderer.xy.junit.YIntervalRendererTests::testHashcode
+  - org.jfree.chart.renderer.xy.junit.YIntervalRendererTests::testEquals
+  - org.jfree.chart.util.junit.ShapeListTests::testSerialization
+  - org.jfree.chart.util.junit.ShapeListTests::testCloning
+  - org.jfree.chart.util.junit.ShapeListTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-24 23:35:26,679 - Chart_6 - INFO - 选择失败的测试用例为:
+2024-02-24 23:35:26,679 - Chart_6 - INFO - org.jfree.chart.junit.JFreeChartTests::testSerialization3
+2024-02-24 23:35:26,679 - Chart_6 - INFO - 失败的测试代码为:
+2024-02-24 23:35:26,679 - Chart_6 - INFO - 
+2024-02-24 23:35:26,679 - Chart_6 - INFO - 失败信息为:
+2024-02-24 23:35:26,679 - Chart_6 - INFO - java.lang.StackOverflowError
+
+2024-02-24 23:35:26,679 - Chart_6 - INFO - 补丁2 3测试失败
+2024-02-24 23:35:26,681 - Chart_6 - INFO - 开始验证补丁2 4:
+2024-02-24 23:35:26,681 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapeList.equals(other.shapeList);
+
+2024-02-24 23:35:27,406 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:27,406 - Chart_6 - INFO - 错误: 找不到符号
+return this.shapeList.equals(other.shapeList);
+2024-02-24 23:35:27,406 - Chart_6 - INFO - 补丁2 4 未成功编译
+2024-02-24 23:35:27,407 - Chart_6 - INFO - 开始验证补丁2 5:
+2024-02-24 23:35:27,407 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapes.equals(other.shapes);
+
+2024-02-24 23:35:28,124 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:28,125 - Chart_6 - INFO - 错误: 找不到符号
+return this.shapes.equals(other.shapes);
+2024-02-24 23:35:28,125 - Chart_6 - INFO - 补丁2 5 未成功编译
+2024-02-24 23:35:28,126 - Chart_6 - INFO - 开始验证补丁2 6:
+2024-02-24 23:35:28,126 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return Arrays.equals(this.shapesArray, other.shapesArray);
+
+2024-02-24 23:35:28,837 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:28,837 - Chart_6 - INFO - 错误: 找不到符号
+return Arrays.equals(this.shapesArray, other.shapesArray);
+2024-02-24 23:35:28,837 - Chart_6 - INFO - 补丁2 6 未成功编译
+2024-02-24 23:35:28,838 - Chart_6 - INFO - 开始验证补丁2 7:
+2024-02-24 23:35:28,838 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapeList.equals(other.shapeList);
+
+2024-02-24 23:35:28,838 - Chart_6 - INFO - 补丁2 7为重复的补丁
+2024-02-24 23:35:28,839 - Chart_6 - INFO - 开始验证补丁2 8:
+2024-02-24 23:35:28,839 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return Arrays.equals(this.shapesArray, other.shapesArray);
+
+2024-02-24 23:35:28,839 - Chart_6 - INFO - 补丁2 8为重复的补丁
+2024-02-24 23:35:28,840 - Chart_6 - INFO - 开始验证补丁2 9:
+2024-02-24 23:35:28,840 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return compareShapeLists(this, other);
+
+2024-02-24 23:35:29,555 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:29,555 - Chart_6 - INFO - 错误: 找不到符号
+return compareShapeLists(this, other);
+2024-02-24 23:35:29,555 - Chart_6 - INFO - 补丁2 9 未成功编译
+2024-02-24 23:35:29,556 - Chart_6 - INFO - 开始验证补丁3 1:
+2024-02-24 23:35:29,556 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapeList.equals(other.shapeList);
+
+2024-02-24 23:35:29,556 - Chart_6 - INFO - 补丁3 1为重复的补丁
+2024-02-24 23:35:29,557 - Chart_6 - INFO - 开始验证补丁3 2:
+2024-02-24 23:35:29,557 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapes.equals(other.shapes);
+
+2024-02-24 23:35:29,557 - Chart_6 - INFO - 补丁3 2为重复的补丁
+2024-02-24 23:35:29,558 - Chart_6 - INFO - 开始验证补丁3 3:
+2024-02-24 23:35:29,558 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return Arrays.equals(this.shapesArray, other.shapesArray);
+
+2024-02-24 23:35:29,558 - Chart_6 - INFO - 补丁3 3为重复的补丁
+2024-02-24 23:35:29,559 - Chart_6 - INFO - 开始验证补丁3 4:
+2024-02-24 23:35:29,559 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+if (this.size() != other.size()) {
+    return false;
+}
+for (int i = 0; i < this.size(); i++) {
+    if (!this.getShape(i).equals(other.getShape(i))) {
+        return false;
+    }
+}
+return true;
+
+2024-02-24 23:35:30,739 - Chart_6 - INFO - 编译成功
+2024-02-24 23:35:38,521 - Chart_6 - INFO - 测试失败
+2024-02-24 23:35:38,521 - Chart_6 - INFO - Failing tests: 5
+  - org.jfree.chart.renderer.junit.AbstractRendererTests::testEquals
+  - org.jfree.chart.util.junit.ShapeListTests::testSerialization
+  - org.jfree.chart.util.junit.ShapeListTests::testCloning
+  - org.jfree.chart.util.junit.ShapeListTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-24 23:35:38,952 - Chart_6 - INFO - 选择失败的测试用例为:
+2024-02-24 23:35:38,953 - Chart_6 - INFO - org.jfree.chart.renderer.junit.AbstractRendererTests::testEquals
+2024-02-24 23:35:38,953 - Chart_6 - INFO - 失败的测试代码为:
+2024-02-24 23:35:38,953 - Chart_6 - INFO -         assertTrue(l1.equals(l2));
+
+2024-02-24 23:35:38,953 - Chart_6 - INFO - 失败信息为:
+2024-02-24 23:35:38,953 - Chart_6 - INFO - java.lang.NullPointerException
+
+2024-02-24 23:35:38,953 - Chart_6 - INFO - 补丁3 4测试失败
+2024-02-24 23:35:38,954 - Chart_6 - INFO - 开始验证补丁3 5:
+2024-02-24 23:35:38,954 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return this.shapesList.equals(other.shapesList);
+
+2024-02-24 23:35:39,653 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:39,653 - Chart_6 - INFO - 错误: 找不到符号
+return this.shapesList.equals(other.shapesList);
+2024-02-24 23:35:39,653 - Chart_6 - INFO - 补丁3 5 未成功编译
+2024-02-24 23:35:39,654 - Chart_6 - INFO - 开始验证补丁3 6:
+2024-02-24 23:35:39,654 - Chart_6 - INFO - 
+ShapeList other = (ShapeList) obj;
+return Arrays.equals(this.shapesArray, other.shapesArray);
+
+2024-02-24 23:35:39,654 - Chart_6 - INFO - 补丁3 6为重复的补丁
+2024-02-24 23:35:39,659 - Chart_6 - INFO - 开始验证补丁3 7:
+2024-02-24 23:35:39,659 - Chart_6 - INFO - 
+   ShapeList other = (ShapeList) obj;
+   return this.shapeList.equals(other.shapeList);
+   
+2024-02-24 23:35:40,370 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:40,370 - Chart_6 - INFO - 错误: 找不到符号
+return this.shapeList.equals(other.shapeList);
+2024-02-24 23:35:40,370 - Chart_6 - INFO - 补丁3 7 未成功编译
+2024-02-24 23:35:40,371 - Chart_6 - INFO - 开始验证补丁3 8:
+2024-02-24 23:35:40,371 - Chart_6 - INFO - 
+   ShapeList other = (ShapeList) obj;
+   if (this.shapeList.size() != other.shapeList.size()) {
+       return false;
+   }
+   for (int i = 0; i < this.shapeList.size(); i++) {
+       if (!this.shapeList.get(i).equals(other.shapeList.get(i))) {
+           return false;
+       }
+   }
+   return true;
+   
+2024-02-24 23:35:41,091 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:41,091 - Chart_6 - INFO - 错误: 找不到符号
+if (this.shapeList.size() != other.shapeList.size()) {
+2024-02-24 23:35:41,092 - Chart_6 - INFO - 补丁3 8 未成功编译
+2024-02-24 23:35:41,093 - Chart_6 - INFO - 开始验证补丁3 9:
+2024-02-24 23:35:41,093 - Chart_6 - INFO - 
+   return obj != null && obj.getClass() == this.getClass() && this.shapeList.equals(((ShapeList) obj).shapeList);
+   
+2024-02-24 23:35:41,798 - Chart_6 - INFO - 编译失败
+2024-02-24 23:35:41,798 - Chart_6 - INFO - 错误: 找不到符号
+return obj != null && obj.getClass() == this.getClass() && this.shapeList.equals(((ShapeList) obj).shapeList);
+2024-02-24 23:35:41,798 - Chart_6 - INFO - 补丁3 9 未成功编译
+2024-02-24 23:35:41,798 - Chart_6 - INFO - Chart_6 未成功修复

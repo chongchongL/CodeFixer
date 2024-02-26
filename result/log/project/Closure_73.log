@@ -1,0 +1,30 @@
+2024-02-24 00:34:24,389 - Closure_73 - INFO - rm -rf /home/chongchong/d4j-project/Closure_73
+2024-02-24 00:34:24,390 - Closure_73 - INFO - 删除 Closure 73b 成功
+2024-02-24 00:34:24,390 - Closure_73 - INFO - defects4j checkout -p Closure -v 73b -w /home/chongchong/d4j-project/Closure_73
+2024-02-24 00:34:26,093 - Closure_73 - INFO - checkout Closure 73b 成功
+2024-02-24 00:34:34,878 - Closure_73 - INFO - 编译成功
+2024-02-24 00:35:12,970 - Closure_73 - INFO - 测试失败
+2024-02-24 00:35:12,970 - Closure_73 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testUnicode
+
+2024-02-24 00:35:13,979 - Closure_73 - INFO - 它的bug类型为:
+2024-02-24 00:35:13,979 - Closure_73 - INFO - 1
+2024-02-24 00:35:56,937 - Closure_73 - INFO - Closure_73 未成功修复
+2024-02-24 14:06:41,030 - Closure_73 - INFO - rm -rf /home/chongchong/d4j-project/Closure_73
+2024-02-24 14:06:41,072 - Closure_73 - INFO - 删除 Closure 73b 成功
+2024-02-24 14:06:41,072 - Closure_73 - INFO - defects4j checkout -p Closure -v 73b -w /home/chongchong/d4j-project/Closure_73
+2024-02-24 14:06:42,899 - Closure_73 - INFO - checkout Closure 73b 成功
+2024-02-24 14:06:51,804 - Closure_73 - INFO - 编译成功
+2024-02-24 14:07:30,079 - Closure_73 - INFO - 测试失败
+2024-02-24 14:07:30,079 - Closure_73 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testUnicode
+
+2024-02-24 14:07:31,085 - Closure_73 - INFO - 它的bug类型为:
+2024-02-24 14:07:31,086 - Closure_73 - INFO - 1
+2024-02-24 14:08:06,914 - Closure_73 - INFO - 开始验证补丁1 1:
+2024-02-24 14:08:06,914 - Closure_73 - INFO - 
+if (c > 0x1f && c < 0x7f) {
+
+2024-02-24 14:08:09,618 - Closure_73 - INFO - 编译成功
+2024-02-24 14:08:47,933 - Closure_73 - INFO - 测试成功
+2024-02-24 14:08:47,933 - Closure_73 - INFO - 补丁1 1 通过了所有的测试用例

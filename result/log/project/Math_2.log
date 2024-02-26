@@ -1,0 +1,18 @@
+2024-02-23 23:55:00,050 - Math_2 - INFO - rm -rf /home/chongchong/d4j-project/Math_2
+2024-02-23 23:55:00,051 - Math_2 - INFO - 删除 Math 2b 成功
+2024-02-23 23:55:00,051 - Math_2 - INFO - defects4j checkout -p Math -v 2b -w /home/chongchong/d4j-project/Math_2
+2024-02-23 23:55:03,560 - Math_2 - INFO - checkout Math 2b 成功
+2024-02-23 23:55:10,946 - Math_2 - INFO - 编译成功
+2024-02-23 23:55:53,921 - Math_2 - INFO - 测试失败
+2024-02-23 23:55:53,921 - Math_2 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.HypergeometricDistributionTest::testMath1021
+
+2024-02-23 23:55:54,827 - Math_2 - INFO - 它的bug类型为:
+2024-02-23 23:55:54,827 - Math_2 - INFO - 1
+2024-02-23 23:57:05,907 - Math_2 - INFO - 开始验证补丁1 1:
+2024-02-23 23:57:05,907 - Math_2 - INFO - 
+return (double) getSampleSize() * getNumberOfSuccesses() / getPopulationSize();
+
+2024-02-23 23:57:07,202 - Math_2 - INFO - 编译成功
+2024-02-23 23:57:49,908 - Math_2 - INFO - 测试成功
+2024-02-23 23:57:49,908 - Math_2 - INFO - 补丁1 1 通过了所有的测试用例

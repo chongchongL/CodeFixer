@@ -1,0 +1,551 @@
+2024-02-26 14:54:12,379 - Mockito_8 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_8
+2024-02-26 14:54:12,542 - Mockito_8 - INFO - 删除 Mockito 8b 成功
+2024-02-26 14:54:12,542 - Mockito_8 - INFO - defects4j checkout -p Mockito -v 8b -w /home/chongchong/d4j-project/Mockito_8
+2024-02-26 14:54:16,083 - Mockito_8 - INFO - checkout Mockito 8b 成功
+2024-02-26 14:55:08,215 - Mockito_8 - INFO - 编译成功
+2024-02-26 14:56:07,282 - Mockito_8 - INFO - 测试失败
+2024-02-26 14:56:07,282 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 14:56:07,722 - Mockito_8 - INFO - 它的bug类型为:
+2024-02-26 14:56:07,722 - Mockito_8 - INFO - 1
+2024-02-26 14:56:07,746 - Mockito_8 - INFO - 开始验证补丁1 4:
+2024-02-26 14:56:07,746 - Mockito_8 - INFO - 
+} else {
+
+2024-02-26 14:56:56,564 - Mockito_8 - INFO - 编译成功
+2024-02-26 14:57:54,211 - Mockito_8 - INFO - 测试失败
+2024-02-26 14:57:54,211 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - 
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 14:57:54,212 - Mockito_8 - INFO - 补丁1 4测试失败
+2024-02-26 14:57:54,213 - Mockito_8 - INFO - 开始验证补丁1 5:
+2024-02-26 14:57:54,213 - Mockito_8 - INFO - 
+} else { // Handle the non-wildcard types
+
+2024-02-26 14:58:41,823 - Mockito_8 - INFO - 编译成功
+2024-02-26 14:59:39,857 - Mockito_8 - INFO - 测试失败
+2024-02-26 14:59:39,857 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - 
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 14:59:39,858 - Mockito_8 - INFO - 补丁1 5测试失败
+2024-02-26 14:59:39,859 - Mockito_8 - INFO - 开始验证补丁1 6:
+2024-02-26 14:59:39,859 - Mockito_8 - INFO - 
+} else { // TODO: Add handling for other types of actual type arguments
+
+2024-02-26 15:00:21,702 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:01:25,715 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:01:25,715 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - 
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:01:25,716 - Mockito_8 - INFO - 补丁1 6测试失败
+2024-02-26 15:01:25,717 - Mockito_8 - INFO - 开始验证补丁1 7:
+2024-02-26 15:01:25,717 - Mockito_8 - INFO - 
+            } else {
+
+2024-02-26 15:03:46,809 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:04:46,324 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:04:46,324 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - 
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:04:46,325 - Mockito_8 - INFO - 补丁1 7测试失败
+2024-02-26 15:04:46,326 - Mockito_8 - INFO - 开始验证补丁1 8:
+2024-02-26 15:04:46,326 - Mockito_8 - INFO - 
+            } else if (/* some condition */) {
+
+2024-02-26 15:06:13,118 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:06:13,118 - Mockito_8 - INFO - 错误: 非法的表达式开始
+[exec] } else if (/* some condition */) {
+2024-02-26 15:06:13,118 - Mockito_8 - INFO - 补丁1 8 未成功编译
+2024-02-26 15:06:13,120 - Mockito_8 - INFO - 开始验证补丁1 9:
+2024-02-26 15:06:13,120 - Mockito_8 - INFO - 
+            } else {
+                // Some additional logic here
+
+2024-02-26 15:06:54,261 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:07:54,007 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:07:54,007 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - 
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:07:54,008 - Mockito_8 - INFO - 补丁1 9测试失败
+2024-02-26 15:07:54,009 - Mockito_8 - INFO - 开始验证补丁2 1:
+2024-02-26 15:07:54,009 - Mockito_8 - INFO - 
+            } else {
+
+2024-02-26 15:07:54,009 - Mockito_8 - INFO - 补丁2 1为重复的补丁
+2024-02-26 15:07:54,014 - Mockito_8 - INFO - 开始验证补丁2 2:
+2024-02-26 15:07:54,014 - Mockito_8 - INFO - 
+            ; // No action needed, or perhaps a comment indicating intentional no-op
+
+2024-02-26 15:09:23,495 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:10:28,530 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:10:28,530 - Mockito_8 - INFO - Failing tests: 13
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::can_create_mock_from_return_types_declared_with_a_bounded_wildcard
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::can_create_mock_from_multiple_type_variable_bounds_when_return_type_of_parameterized_method_is_a_parameterizedtype_that_is_referencing_a_typevar_on_class
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::generic_deep_mock_frenzy__look_at_these_chained_calls
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_wildcard_return_type_of____returning_wildcard_with_class_lower_bound____resolved_to_List_and_type_argument_to_Integer
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_wildcard_return_type_of____returning_wildcard_with_typeVar_upper_bound____resolved_to_List_and_type_argument_to_Integer
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____get____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::fixed_ParamType_return_type_of____remove____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____iterator____resolved_to_Iterator_and_type_argument_to_String
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_return_type_of____values____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_wildcard_return_type_of____returning_wildcard_with_typeVar_lower_bound____resolved_to_List_and_type_argument_to_Integer
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_type_parameters_return_type_of____paramType_with_type_params____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockitousage.serialization.DeepStubsSerializableTest::should_serialize_and_deserialize_parameterized_class_mocked_with_deep_stubs
+
+2024-02-26 15:10:28,969 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:10:28,969 - Mockito_8 - INFO - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+2024-02-26 15:10:28,969 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:10:28,969 - Mockito_8 - INFO -         assertThat(genericsNest.returningNonMockableNestedGeneric().keySet().iterator().next()).isNull();
+
+2024-02-26 15:10:28,969 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:10:28,969 - Mockito_8 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 15:10:28,969 - Mockito_8 - INFO - 补丁2 2测试失败
+2024-02-26 15:10:28,970 - Mockito_8 - INFO - 开始验证补丁2 3:
+2024-02-26 15:10:28,970 - Mockito_8 - INFO - 
+            } else {
+                // Additional logic could be added here if necessary before closing the else block
+
+2024-02-26 15:11:13,993 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - 
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:12:24,263 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:12:24,264 - Mockito_8 - INFO - 补丁2 3测试失败
+2024-02-26 15:12:24,265 - Mockito_8 - INFO - 开始验证补丁2 4:
+2024-02-26 15:12:24,265 - Mockito_8 - INFO - 
+            } else {
+
+2024-02-26 15:12:24,265 - Mockito_8 - INFO - 补丁2 4为重复的补丁
+2024-02-26 15:12:24,270 - Mockito_8 - INFO - 开始验证补丁2 5:
+2024-02-26 15:12:24,270 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:16:16,744 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:16:16,744 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:16:16,745 - Mockito_8 - INFO - 补丁2 5 未成功编译
+2024-02-26 15:16:16,746 - Mockito_8 - INFO - 开始验证补丁2 6:
+2024-02-26 15:16:16,746 - Mockito_8 - INFO - 
+            } else if (actualTypeArgument instanceof ParameterizedType) {
+                // Handle the case for ParameterizedType, assuming this is desired behavior.
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:16:44,661 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:16:44,661 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:16:44,661 - Mockito_8 - INFO - 补丁2 6 未成功编译
+2024-02-26 15:16:44,663 - Mockito_8 - INFO - 开始验证补丁2 7:
+2024-02-26 15:16:44,663 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:16:44,663 - Mockito_8 - INFO - 补丁2 7为重复的补丁
+2024-02-26 15:16:44,668 - Mockito_8 - INFO - 开始验证补丁2 8:
+2024-02-26 15:16:44,668 - Mockito_8 - INFO - 
+            } else if (!isRecursiveType(actualTypeArgument)) {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:17:51,776 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:17:51,776 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:17:51,776 - Mockito_8 - INFO - 补丁2 8 未成功编译
+2024-02-26 15:17:51,778 - Mockito_8 - INFO - 开始验证补丁2 9:
+2024-02-26 15:17:51,778 - Mockito_8 - INFO - 
+            } else {
+                Type processedTypeArgument = processTypeArgument(actualTypeArgument);
+                contextualActualTypeParameters.put(typeParameter, processedTypeArgument);
+            }
+
+2024-02-26 15:18:31,887 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:18:31,887 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:18:31,887 - Mockito_8 - INFO - 补丁2 9 未成功编译
+2024-02-26 15:18:31,888 - Mockito_8 - INFO - 开始验证补丁3 1:
+2024-02-26 15:18:31,888 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:18:31,888 - Mockito_8 - INFO - 补丁3 1为重复的补丁
+2024-02-26 15:18:31,893 - Mockito_8 - INFO - 开始验证补丁3 2:
+2024-02-26 15:18:31,893 - Mockito_8 - INFO - 
+            } else if (actualTypeArgument instanceof TypeVariable) {
+                contextualActualTypeParameters.put(typeParameter, resolveTypeVariable((TypeVariable<?>) actualTypeArgument));
+            }
+
+2024-02-26 15:18:57,131 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:18:57,131 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:18:57,131 - Mockito_8 - INFO - 补丁3 2 未成功编译
+2024-02-26 15:18:57,133 - Mockito_8 - INFO - 开始验证补丁3 3:
+2024-02-26 15:18:57,133 - Mockito_8 - INFO - 
+            } else if (actualTypeArgument instanceof Class) {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:19:06,932 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:19:06,932 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec] :compileJava FAILED
+2024-02-26 15:19:06,932 - Mockito_8 - INFO - 补丁3 3 未成功编译
+2024-02-26 15:19:06,934 - Mockito_8 - INFO - 开始验证补丁3 4:
+2024-02-26 15:19:06,934 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:19:06,934 - Mockito_8 - INFO - 补丁3 4为重复的补丁
+2024-02-26 15:19:06,939 - Mockito_8 - INFO - 开始验证补丁3 5:
+2024-02-26 15:19:06,939 - Mockito_8 - INFO - 
+            } else if (!typeParameter.equals(actualTypeArgument)) {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:21:16,258 - Mockito_8 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_8
+2024-02-26 15:21:16,422 - Mockito_8 - INFO - 删除 Mockito 8b 成功
+2024-02-26 15:21:16,422 - Mockito_8 - INFO - defects4j checkout -p Mockito -v 8b -w /home/chongchong/d4j-project/Mockito_8
+2024-02-26 15:21:19,967 - Mockito_8 - INFO - checkout Mockito 8b 成功
+2024-02-26 15:22:21,094 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:23:30,297 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:23:30,297 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:23:30,736 - Mockito_8 - INFO - 它的bug类型为:
+2024-02-26 15:23:30,736 - Mockito_8 - INFO - 1
+2024-02-26 15:23:30,747 - Mockito_8 - INFO - 开始验证补丁1 4:
+2024-02-26 15:23:30,747 - Mockito_8 - INFO - 
+} else {
+
+2024-02-26 15:24:12,757 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:25:14,904 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - 
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:25:14,905 - Mockito_8 - INFO - 补丁1 4测试失败
+2024-02-26 15:25:14,906 - Mockito_8 - INFO - 开始验证补丁1 5:
+2024-02-26 15:25:14,906 - Mockito_8 - INFO - 
+} else { // Handle the non-wildcard types
+
+2024-02-26 15:25:55,566 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - 
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:26:58,943 - Mockito_8 - INFO - 补丁1 5测试失败
+2024-02-26 15:26:58,944 - Mockito_8 - INFO - 开始验证补丁1 6:
+2024-02-26 15:26:58,944 - Mockito_8 - INFO - 
+} else { // TODO: Add handling for other types of actual type arguments
+
+2024-02-26 15:27:40,919 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - 
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:28:38,490 - Mockito_8 - INFO - 补丁1 6测试失败
+2024-02-26 15:28:38,491 - Mockito_8 - INFO - 开始验证补丁1 7:
+2024-02-26 15:28:38,491 - Mockito_8 - INFO - 
+            } else {
+
+2024-02-26 15:29:19,735 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:30:17,875 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:30:17,875 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - 
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:30:17,876 - Mockito_8 - INFO - 补丁1 7测试失败
+2024-02-26 15:30:17,877 - Mockito_8 - INFO - 开始验证补丁1 8:
+2024-02-26 15:30:17,877 - Mockito_8 - INFO - 
+            } else if (/* some condition */) {
+
+2024-02-26 15:30:28,573 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:30:28,573 - Mockito_8 - INFO - 错误: 非法的表达式开始
+[exec] } else if (/* some condition */) {
+2024-02-26 15:30:28,573 - Mockito_8 - INFO - 补丁1 8 未成功编译
+2024-02-26 15:30:28,574 - Mockito_8 - INFO - 开始验证补丁1 9:
+2024-02-26 15:30:28,574 - Mockito_8 - INFO - 
+            } else {
+                // Some additional logic here
+
+2024-02-26 15:31:01,348 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:32:02,212 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - 
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:32:02,213 - Mockito_8 - INFO - 补丁1 9测试失败
+2024-02-26 15:32:02,214 - Mockito_8 - INFO - 开始验证补丁2 1:
+2024-02-26 15:32:02,214 - Mockito_8 - INFO - 
+            } else {
+
+2024-02-26 15:32:02,214 - Mockito_8 - INFO - 补丁2 1为重复的补丁
+2024-02-26 15:32:02,219 - Mockito_8 - INFO - 开始验证补丁2 2:
+2024-02-26 15:32:02,219 - Mockito_8 - INFO - 
+            ; // No action needed, or perhaps a comment indicating intentional no-op
+
+2024-02-26 15:32:45,046 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:33:43,512 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:33:43,512 - Mockito_8 - INFO - Failing tests: 13
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::can_create_mock_from_return_types_declared_with_a_bounded_wildcard
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::can_create_mock_from_multiple_type_variable_bounds_when_return_type_of_parameterized_method_is_a_parameterizedtype_that_is_referencing_a_typevar_on_class
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::generic_deep_mock_frenzy__look_at_these_chained_calls
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_wildcard_return_type_of____returning_wildcard_with_class_lower_bound____resolved_to_List_and_type_argument_to_Integer
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_wildcard_return_type_of____returning_wildcard_with_typeVar_upper_bound____resolved_to_List_and_type_argument_to_Integer
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____get____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::fixed_ParamType_return_type_of____remove____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____iterator____resolved_to_Iterator_and_type_argument_to_String
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_return_type_of____values____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_wildcard_return_type_of____returning_wildcard_with_typeVar_lower_bound____resolved_to_List_and_type_argument_to_Integer
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_type_parameters_return_type_of____paramType_with_type_params____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockitousage.serialization.DeepStubsSerializableTest::should_serialize_and_deserialize_parameterized_class_mocked_with_deep_stubs
+
+2024-02-26 15:33:43,948 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:33:43,948 - Mockito_8 - INFO - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+2024-02-26 15:33:43,948 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:33:43,948 - Mockito_8 - INFO -         assertThat(genericsNest.returningNonMockableNestedGeneric().keySet().iterator().next()).isNull();
+
+2024-02-26 15:33:43,948 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:33:43,948 - Mockito_8 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 15:33:43,948 - Mockito_8 - INFO - 补丁2 2测试失败
+2024-02-26 15:33:43,949 - Mockito_8 - INFO - 开始验证补丁2 3:
+2024-02-26 15:33:43,949 - Mockito_8 - INFO - 
+            } else {
+                // Additional logic could be added here if necessary before closing the else block
+
+2024-02-26 15:34:22,599 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - 
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:35:19,953 - Mockito_8 - INFO - 补丁2 3测试失败
+2024-02-26 15:35:19,954 - Mockito_8 - INFO - 开始验证补丁2 4:
+2024-02-26 15:35:19,954 - Mockito_8 - INFO - 
+            } else {
+
+2024-02-26 15:35:19,954 - Mockito_8 - INFO - 补丁2 4为重复的补丁
+2024-02-26 15:35:19,959 - Mockito_8 - INFO - 开始验证补丁2 5:
+2024-02-26 15:35:19,959 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:36:02,839 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:37:06,442 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - Failing tests: 1
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_of_self_type
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - 
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - java.lang.StackOverflowError
+
+2024-02-26 15:37:06,443 - Mockito_8 - INFO - 补丁2 5测试失败
+2024-02-26 15:37:06,444 - Mockito_8 - INFO - 开始验证补丁2 6:
+2024-02-26 15:37:06,444 - Mockito_8 - INFO - 
+            } else if (actualTypeArgument instanceof ParameterizedType) {
+                // Handle the case for ParameterizedType, assuming this is desired behavior.
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:37:51,077 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:38:55,841 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:38:55,841 - Mockito_8 - INFO - Failing tests: 9
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::can_create_mock_from_multiple_type_variable_bounds_when_return_type_of_parameterized_method_is_a_parameterizedtype_that_is_referencing_a_typevar_on_class
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::generic_deep_mock_frenzy__look_at_these_chained_calls
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____get____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::fixed_ParamType_return_type_of____remove____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____iterator____resolved_to_Iterator_and_type_argument_to_String
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_return_type_of____values____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_type_parameters_return_type_of____paramType_with_type_params____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockitousage.serialization.DeepStubsSerializableTest::should_serialize_and_deserialize_parameterized_class_mocked_with_deep_stubs
+
+2024-02-26 15:38:56,279 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:38:56,279 - Mockito_8 - INFO - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+2024-02-26 15:38:56,279 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:38:56,279 - Mockito_8 - INFO -         assertThat(genericsNest.returningNonMockableNestedGeneric().keySet().iterator().next()).isNull();
+
+2024-02-26 15:38:56,279 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:38:56,279 - Mockito_8 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 15:38:56,279 - Mockito_8 - INFO - 补丁2 6测试失败
+2024-02-26 15:38:56,280 - Mockito_8 - INFO - 开始验证补丁2 7:
+2024-02-26 15:38:56,280 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:38:56,280 - Mockito_8 - INFO - 补丁2 7为重复的补丁
+2024-02-26 15:38:56,281 - Mockito_8 - INFO - 开始验证补丁2 8:
+2024-02-26 15:38:56,281 - Mockito_8 - INFO - 
+            } else if (!isRecursiveType(actualTypeArgument)) {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:39:07,722 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:39:07,722 - Mockito_8 - INFO - 错误: 找不到符号
+[exec] } else if (!isRecursiveType(actualTypeArgument)) {
+2024-02-26 15:39:07,722 - Mockito_8 - INFO - 补丁2 8 未成功编译
+2024-02-26 15:39:07,723 - Mockito_8 - INFO - 开始验证补丁2 9:
+2024-02-26 15:39:07,723 - Mockito_8 - INFO - 
+            } else {
+                Type processedTypeArgument = processTypeArgument(actualTypeArgument);
+                contextualActualTypeParameters.put(typeParameter, processedTypeArgument);
+            }
+
+2024-02-26 15:39:13,008 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:39:13,008 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:39:13,008 - Mockito_8 - INFO - 补丁2 9 未成功编译
+2024-02-26 15:39:13,009 - Mockito_8 - INFO - 开始验证补丁3 1:
+2024-02-26 15:39:13,009 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:39:13,009 - Mockito_8 - INFO - 补丁3 1为重复的补丁
+2024-02-26 15:39:13,014 - Mockito_8 - INFO - 开始验证补丁3 2:
+2024-02-26 15:39:13,014 - Mockito_8 - INFO - 
+            } else if (actualTypeArgument instanceof TypeVariable) {
+                contextualActualTypeParameters.put(typeParameter, resolveTypeVariable((TypeVariable<?>) actualTypeArgument));
+            }
+
+2024-02-26 15:39:18,561 - Mockito_8 - INFO - 编译失败
+2024-02-26 15:39:18,561 - Mockito_8 - INFO - 错误: 需要class, interface或enum
+[exec]     protected void registerTypeParametersOn(TypeVariable[] typeParameters) {
+2024-02-26 15:39:18,561 - Mockito_8 - INFO - 补丁3 2 未成功编译
+2024-02-26 15:39:18,562 - Mockito_8 - INFO - 开始验证补丁3 3:
+2024-02-26 15:39:18,562 - Mockito_8 - INFO - 
+            } else if (actualTypeArgument instanceof Class) {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:39:51,988 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:40:50,508 - Mockito_8 - INFO - 测试失败
+2024-02-26 15:40:50,509 - Mockito_8 - INFO - Failing tests: 8
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::can_create_mock_from_multiple_type_variable_bounds_when_return_type_of_parameterized_method_is_a_parameterizedtype_that_is_referencing_a_typevar_on_class
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::generic_deep_mock_frenzy__look_at_these_chained_calls
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____get____resolved_to_Set_and_type_argument_to_Number
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::typeVariable_return_type_of____iterator____resolved_to_Iterator_and_type_argument_to_String
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_return_type_of____values____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockito.internal.util.reflection.GenericMetadataSupportTest::paramType_with_type_parameters_return_type_of____paramType_with_type_params____resolved_to_Collection_and_type_argument_to_Parameterized_Set
+  - org.mockitousage.serialization.DeepStubsSerializableTest::should_serialize_and_deserialize_parameterized_class_mocked_with_deep_stubs
+
+2024-02-26 15:40:50,951 - Mockito_8 - INFO - 选择失败的测试用例为:
+2024-02-26 15:40:50,951 - Mockito_8 - INFO - org.mockito.internal.stubbing.defaultanswers.ReturnsGenericDeepStubsTest::will_return_default_value_on_non_mockable_nested_generic
+2024-02-26 15:40:50,951 - Mockito_8 - INFO - 失败的测试代码为:
+2024-02-26 15:40:50,951 - Mockito_8 - INFO -         assertThat(genericsNest.returningNonMockableNestedGeneric().keySet().iterator().next()).isNull();
+
+2024-02-26 15:40:50,951 - Mockito_8 - INFO - 失败信息为:
+2024-02-26 15:40:50,951 - Mockito_8 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 15:40:50,951 - Mockito_8 - INFO - 补丁3 3测试失败
+2024-02-26 15:40:50,952 - Mockito_8 - INFO - 开始验证补丁3 4:
+2024-02-26 15:40:50,952 - Mockito_8 - INFO - 
+            } else {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:40:50,952 - Mockito_8 - INFO - 补丁3 4为重复的补丁
+2024-02-26 15:40:50,953 - Mockito_8 - INFO - 开始验证补丁3 5:
+2024-02-26 15:40:50,953 - Mockito_8 - INFO - 
+            } else if (!typeParameter.equals(actualTypeArgument)) {
+                contextualActualTypeParameters.put(typeParameter, actualTypeArgument);
+            }
+
+2024-02-26 15:41:29,890 - Mockito_8 - INFO - 编译成功
+2024-02-26 15:42:27,966 - Mockito_8 - INFO - 测试成功
+2024-02-26 15:42:27,966 - Mockito_8 - INFO - 补丁3 5 通过了所有的测试用例

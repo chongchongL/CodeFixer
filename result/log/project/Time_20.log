@@ -1,0 +1,299 @@
+2024-02-26 10:43:26,865 - Time_20 - INFO - rm -rf /home/chongchong/d4j-project/Time_20
+2024-02-26 10:43:26,866 - Time_20 - INFO - 删除 Time 20b 成功
+2024-02-26 10:43:26,866 - Time_20 - INFO - defects4j checkout -p Time -v 20b -w /home/chongchong/d4j-project/Time_20
+2024-02-26 10:43:30,158 - Time_20 - INFO - checkout Time 20b 成功
+2024-02-26 10:43:36,377 - Time_20 - INFO - 编译成功
+2024-02-26 10:43:43,979 - Time_20 - INFO - 测试失败
+2024-02-26 10:43:43,979 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:43:44,888 - Time_20 - INFO - 它的bug类型为:
+2024-02-26 10:43:44,888 - Time_20 - INFO - 4
+2024-02-26 10:44:50,798 - Time_20 - INFO - 开始验证补丁1 1:
+2024-02-26 10:44:50,798 - Time_20 - INFO - 
+int remainingLength = text.length() - position;
+for (String id : ALL_IDS) {
+    if (remainingLength >= id.length() && text.regionMatches(position, id, 0, id.length())) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:44:53,391 - Time_20 - INFO - 编译成功
+2024-02-26 10:45:01,052 - Time_20 - INFO - 测试失败
+2024-02-26 10:45:01,052 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:45:01,502 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:45:01,502 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:45:01,502 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:45:01,502 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:45:01,502 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:45:01,502 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:45:01,502 - Time_20 - INFO - 补丁1 1测试失败
+2024-02-26 10:45:01,503 - Time_20 - INFO - 开始验证补丁1 2:
+2024-02-26 10:45:01,503 - Time_20 - INFO - 
+for (String id : ALL_IDS) {
+    if (text.startsWith(id, position)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:04,092 - Time_20 - INFO - 编译成功
+2024-02-26 10:45:11,768 - Time_20 - INFO - 测试失败
+2024-02-26 10:45:11,768 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:45:12,213 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:45:12,213 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:45:12,213 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:45:12,213 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:45:12,213 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:45:12,213 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:45:12,213 - Time_20 - INFO - 补丁1 2测试失败
+2024-02-26 10:45:12,215 - Time_20 - INFO - 开始验证补丁1 3:
+2024-02-26 10:45:12,215 - Time_20 - INFO - 
+String str = text.substring(position);
+for (String id : ALL_IDS) {
+    if (str.startsWith(id)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:14,796 - Time_20 - INFO - 编译成功
+2024-02-26 10:45:22,468 - Time_20 - INFO - 测试失败
+2024-02-26 10:45:22,468 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:45:22,917 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:45:22,917 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:45:22,917 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:45:22,917 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:45:22,917 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:45:22,917 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:45:22,917 - Time_20 - INFO - 补丁1 3测试失败
+2024-02-26 10:45:22,918 - Time_20 - INFO - 开始验证补丁1 4:
+2024-02-26 10:45:22,918 - Time_20 - INFO - 
+for (String id : ALL_IDS) {
+    if (text.startsWith(id, position)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:22,918 - Time_20 - INFO - 补丁1 4为重复的补丁
+2024-02-26 10:45:22,919 - Time_20 - INFO - 开始验证补丁1 5:
+2024-02-26 10:45:22,919 - Time_20 - INFO - 
+int textLength = text.length();
+for (String id : ALL_IDS) {
+    int idLength = id.length();
+    if (text.regionMatches(position, id, 0, idLength) && position + idLength <= textLength) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:25,498 - Time_20 - INFO - 编译成功
+2024-02-26 10:45:33,135 - Time_20 - INFO - 测试失败
+2024-02-26 10:45:33,135 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:45:33,599 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:45:33,600 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:45:33,600 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:45:33,600 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:45:33,600 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:45:33,600 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:45:33,600 - Time_20 - INFO - 补丁1 5测试失败
+2024-02-26 10:45:33,601 - Time_20 - INFO - 开始验证补丁1 6:
+2024-02-26 10:45:33,601 - Time_20 - INFO - 
+int remainingLength = text.length() - position;
+for (String id : ALL_IDS) {
+    if (remainingLength >= id.length() && text.startsWith(id, position)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:36,303 - Time_20 - INFO - 编译成功
+2024-02-26 10:45:43,896 - Time_20 - INFO - 测试失败
+2024-02-26 10:45:43,896 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:45:44,344 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:45:44,344 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:45:44,344 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:45:44,344 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:45:44,344 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:45:44,344 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:45:44,344 - Time_20 - INFO - 补丁1 6测试失败
+2024-02-26 10:45:44,345 - Time_20 - INFO - 开始验证补丁1 7:
+2024-02-26 10:45:44,345 - Time_20 - INFO - 
+int remainingLength = text.length() - position;
+for (String id : ALL_IDS) {
+    if (remainingLength >= id.length() && text.regionMatches(position, id, 0, id.length())) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:44,345 - Time_20 - INFO - 补丁1 7为重复的补丁
+2024-02-26 10:45:44,346 - Time_20 - INFO - 开始验证补丁1 8:
+2024-02-26 10:45:44,346 - Time_20 - INFO - 
+for (String id : ALL_IDS) {
+    if (text.startsWith(id, position)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:44,346 - Time_20 - INFO - 补丁1 8为重复的补丁
+2024-02-26 10:45:44,347 - Time_20 - INFO - 开始验证补丁1 9:
+2024-02-26 10:45:44,347 - Time_20 - INFO - 
+String str = text.substring(position);
+for (String id : ALL_IDS) {
+    if (str.indexOf(id) == 0) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:46,945 - Time_20 - INFO - 编译成功
+2024-02-26 10:45:54,605 - Time_20 - INFO - 测试失败
+2024-02-26 10:45:54,605 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:45:55,048 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:45:55,049 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:45:55,049 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:45:55,049 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:45:55,049 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:45:55,049 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:45:55,049 - Time_20 - INFO - 补丁1 9测试失败
+2024-02-26 10:45:55,050 - Time_20 - INFO - 开始验证补丁2 1:
+2024-02-26 10:45:55,050 - Time_20 - INFO - 
+String str = text.substring(position);
+// Sort the IDs by length in descending order
+java.util.List<String> sortedIds = new java.util.ArrayList<>(java.util.Arrays.asList(ALL_IDS));
+sortedIds.sort((s1, s2) -> s2.length() - s1.length());
+
+for (String id : sortedIds) {
+    if (str.startsWith(id)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:55,607 - Time_20 - INFO - 编译失败
+2024-02-26 10:45:55,607 - Time_20 - INFO - 错误: -source 1.5 中不支持 diamond 运算符
+java.util.List<String> sortedIds = new java.util.ArrayList<>(java.util.Arrays.asList(ALL_IDS));
+2024-02-26 10:45:55,607 - Time_20 - INFO - 补丁2 1 未成功编译
+2024-02-26 10:45:55,608 - Time_20 - INFO - 开始验证补丁2 2:
+2024-02-26 10:45:55,608 - Time_20 - INFO - 
+String str = text.substring(position);
+// Using a stream to sort the IDs by length in descending order
+String[] sortedIds = java.util.Arrays.stream(ALL_IDS).sorted((s1, s2) -> s2.length() - s1.length()).toArray(String[]::new);
+
+for (String id : sortedIds) {
+    if (str.startsWith(id)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:56,166 - Time_20 - INFO - 编译失败
+2024-02-26 10:45:56,166 - Time_20 - INFO - 错误: 需要')'
+String[] sortedIds = java.util.Arrays.stream(ALL_IDS).sorted((s1, s2) -> s2.length() - s1.length()).toArray(String[]::new);
+2024-02-26 10:45:56,166 - Time_20 - INFO - 补丁2 2 未成功编译
+2024-02-26 10:45:56,167 - Time_20 - INFO - 开始验证补丁2 3:
+2024-02-26 10:45:56,167 - Time_20 - INFO - 
+String str = text.substring(position);
+// Assuming ALL_IDS is already sorted by length in descending order
+for (String id : ALL_IDS) {
+    if (str.startsWith(id)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:45:58,859 - Time_20 - INFO - 编译成功
+2024-02-26 10:46:06,544 - Time_20 - INFO - 测试失败
+2024-02-26 10:46:06,545 - Time_20 - INFO - Failing tests: 1
+  - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+
+2024-02-26 10:46:06,992 - Time_20 - INFO - 选择失败的测试用例为:
+2024-02-26 10:46:06,992 - Time_20 - INFO - org.joda.time.format.TestDateTimeFormatterBuilder::test_printParseZoneDawsonCreek
+2024-02-26 10:46:06,992 - Time_20 - INFO - 失败的测试代码为:
+2024-02-26 10:46:06,992 - Time_20 - INFO -         assertEquals(dt, f.parseDateTime("2007-03-04 12:30 America/Dawson_Creek"));
+
+2024-02-26 10:46:06,992 - Time_20 - INFO - 失败信息为:
+2024-02-26 10:46:06,992 - Time_20 - INFO - java.lang.IllegalArgumentException: Invalid format: "2007-03-04 12:30 America/Dawson_Creek" is malformed at "_Creek"
+
+2024-02-26 10:46:06,992 - Time_20 - INFO - 补丁2 3测试失败
+2024-02-26 10:46:06,993 - Time_20 - INFO - 开始验证补丁2 4:
+2024-02-26 10:46:06,993 - Time_20 - INFO - 
+String str = text.substring(position);
+// Ensure ALL_IDS are sorted by length in descending order to match longest IDs first.
+java.util.List<String> sortedIds = new java.util.ArrayList<>(java.util.Arrays.asList(ALL_IDS));
+sortedIds.sort((s1, s2) -> s2.length() - s1.length());
+
+for (String id : sortedIds) {
+    if (str.startsWith(id)) {
+        bucket.setZone(DateTimeZone.forID(id));
+        return position + id.length();
+    }
+}
+return ~position;
+
+2024-02-26 10:46:07,556 - Time_20 - INFO - 编译失败
+2024-02-26 10:46:07,556 - Time_20 - INFO - 错误: -source 1.5 中不支持 diamond 运算符
+java.util.List<String> sortedIds = new java.util.ArrayList<>(java.util.Arrays.asList(ALL_IDS));
+2024-02-26 10:46:07,556 - Time_20 - INFO - 补丁2 4 未成功编译
+2024-02-26 10:46:07,557 - Time_20 - INFO - 开始验证补丁2 5:
+2024-02-26 10:46:07,557 - Time_20 - INFO - 
+String str = text.substring(position);
+String matchedId = null;
+int maxLength = 0;
+
+for (String id : ALL_IDS) {
+    if (str.startsWith(id) && id.length() > maxLength) {
+        matchedId = id;
+        maxLength = id.length();
+    }
+}
+
+if (matchedId != null) {
+    bucket.setZone(DateTimeZone.forID(matchedId));
+    return position + matchedId.length();
+}
+return ~position;
+
+2024-02-26 10:46:10,154 - Time_20 - INFO - 编译成功
+2024-02-26 10:46:17,886 - Time_20 - INFO - 测试成功
+2024-02-26 10:46:17,886 - Time_20 - INFO - 补丁2 5 通过了所有的测试用例

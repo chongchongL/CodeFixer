@@ -1,0 +1,293 @@
+2024-02-25 11:04:31,695 - Closure_69 - INFO - rm -rf /home/chongchong/d4j-project/Closure_69
+2024-02-25 11:04:31,696 - Closure_69 - INFO - 删除 Closure 69b 成功
+2024-02-25 11:04:31,696 - Closure_69 - INFO - defects4j checkout -p Closure -v 69b -w /home/chongchong/d4j-project/Closure_69
+2024-02-25 11:04:33,235 - Closure_69 - INFO - checkout Closure 69b 成功
+2024-02-25 11:04:42,239 - Closure_69 - INFO - 编译成功
+2024-02-25 11:05:22,674 - Closure_69 - INFO - 测试失败
+2024-02-25 11:05:22,674 - Closure_69 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testThisTypeOfFunction2
+  - com.google.javascript.jscomp.TypeCheckTest::testThisTypeOfFunction3
+  - com.google.javascript.jscomp.TypeCheckTest::testThisTypeOfFunction4
+
+2024-02-25 11:05:23,690 - Closure_69 - INFO - 它的bug类型为:
+2024-02-25 11:05:23,690 - Closure_69 - INFO - 3
+2024-02-25 11:07:17,413 - Closure_69 - INFO - 开始验证补丁1 1:
+2024-02-25 11:07:17,413 - Closure_69 - INFO - 
+if (functionType.hasExplicitThis() && !isInGetPropertyOrGetElemContext(n)) {
+    report(t, n, INVALID_THIS_TYPE_CALL, childType.toString());
+}
+
+2024-02-25 11:07:18,701 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:18,701 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThis() && !isInGetPropertyOrGetElemContext(n)) {
+2024-02-25 11:07:18,701 - Closure_69 - INFO - 补丁1 1 未成功编译
+2024-02-25 11:07:18,703 - Closure_69 - INFO - 开始验证补丁1 2:
+2024-02-25 11:07:18,703 - Closure_69 - INFO - 
+if (functionType.hasExplicitThis() && !isValidThisContext(n)) {
+    reportWarning(t, n, INVALID_CALL_WITH_EXPLICIT_THIS);
+}
+
+2024-02-25 11:07:20,015 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:20,015 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThis() && !isValidThisContext(n)) {
+2024-02-25 11:07:20,015 - Closure_69 - INFO - 补丁1 2 未成功编译
+2024-02-25 11:07:20,017 - Closure_69 - INFO - 开始验证补丁1 3:
+2024-02-25 11:07:20,017 - Closure_69 - INFO - 
+if (functionType.isThisTypeExplicit() && !n.isFromGetPropOrGetElem()) {
+    report(t, n, EXPLICIT_THIS_TYPE_NOT_IN_GETPROP_GETELEM);
+}
+
+2024-02-25 11:07:21,314 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:21,314 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.isThisTypeExplicit() && !n.isFromGetPropOrGetElem()) {
+2024-02-25 11:07:21,314 - Closure_69 - INFO - 补丁1 3 未成功编译
+2024-02-25 11:07:21,320 - Closure_69 - INFO - 开始验证补丁1 4:
+2024-02-25 11:07:21,320 - Closure_69 - INFO - 
+      if (functionType.isOrdinaryFunction() &&
+          functionType.hasExplicitThis() &&
+          !isGetPropOrGetElemCall(n)) {
+        report(t, n, ILLEGAL_THIS_TYPE_WARNING);
+      }
+
+2024-02-25 11:07:22,623 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:22,623 - Closure_69 - INFO - 错误: 找不到符号
+functionType.hasExplicitThis() &&
+2024-02-25 11:07:22,623 - Closure_69 - INFO - 补丁1 4 未成功编译
+2024-02-25 11:07:22,624 - Closure_69 - INFO - 开始验证补丁1 5:
+2024-02-25 11:07:22,624 - Closure_69 - INFO - 
+      if (functionType.hasExplicitThis() && !isInProperThisContext(n)) {
+        report(t, n, DISALLOWED_PROPERTY_CALL, "Illegal call of function with 'this' type.");
+      }
+
+2024-02-25 11:07:23,918 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:23,918 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThis() && !isInProperThisContext(n)) {
+2024-02-25 11:07:23,918 - Closure_69 - INFO - 补丁1 5 未成功编译
+2024-02-25 11:07:23,919 - Closure_69 - INFO - 开始验证补丁1 6:
+2024-02-25 11:07:23,919 - Closure_69 - INFO - 
+      if (functionType.hasExplicitThis()) {
+        checkThisTypeCallContext(t, n);
+      }
+
+2024-02-25 11:07:25,217 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:25,217 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThis()) {
+2024-02-25 11:07:25,217 - Closure_69 - INFO - 补丁1 6 未成功编译
+2024-02-25 11:07:25,218 - Closure_69 - INFO - 开始验证补丁1 7:
+2024-02-25 11:07:25,218 - Closure_69 - INFO - 
+if (functionType.hasExplicitThis() && !isInProperCallContext(n)) {
+  report(t, n, INVALID_THIS_TYPE_CALL, childType.toString());
+}
+
+2024-02-25 11:07:26,501 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:26,501 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThis() && !isInProperCallContext(n)) {
+2024-02-25 11:07:26,501 - Closure_69 - INFO - 补丁1 7 未成功编译
+2024-02-25 11:07:26,502 - Closure_69 - INFO - 开始验证补丁1 8:
+2024-02-25 11:07:26,502 - Closure_69 - INFO - 
+if (functionType.containsExplicitThis() && !n.isGetProp() && !n.isGetElem()) {
+  report(t, n, INVALID_EXPLICIT_THIS_TYPE_CALL, childType.toString());
+}
+
+2024-02-25 11:07:27,800 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:27,801 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.containsExplicitThis() && !n.isGetProp() && !n.isGetElem()) {
+2024-02-25 11:07:27,801 - Closure_69 - INFO - 补丁1 8 未成功编译
+2024-02-25 11:07:27,802 - Closure_69 - INFO - 开始验证补丁1 9:
+2024-02-25 11:07:27,802 - Closure_69 - INFO - 
+if (functionType.isExplicitThis() && (n.getParent().isGetProp() || n.getParent().isGetElem())) {
+  report(t, n, EXPLICIT_THIS_TYPE_NOT_IN_GETPROP_GETELEM, childType.toString());
+}
+
+2024-02-25 11:07:29,096 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:29,096 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.isExplicitThis() && (n.getParent().isGetProp() || n.getParent().isGetElem())) {
+2024-02-25 11:07:29,096 - Closure_69 - INFO - 补丁1 9 未成功编译
+2024-02-25 11:07:29,097 - Closure_69 - INFO - 开始验证补丁2 1:
+2024-02-25 11:07:29,097 - Closure_69 - INFO - 
+      if (functionType.containsExplicitThisType() && 
+          !(parent.isGetProp() || parent.isGetElem())) {
+        report(t, n, ILLEGAL_THIS_TYPE, childType.toString());
+      }
+
+2024-02-25 11:07:30,383 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:30,383 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.containsExplicitThisType() &&
+2024-02-25 11:07:30,383 - Closure_69 - INFO - 补丁2 1 未成功编译
+2024-02-25 11:07:30,384 - Closure_69 - INFO - 开始验证补丁2 2:
+2024-02-25 11:07:30,384 - Closure_69 - INFO - 
+      if (functionType.isThisTypeExplicit() && 
+          !n.isGetProp() && !n.isGetElem()) {
+        report(t, n, EXPECTED_THIS_TYPE_CALL, functionType.toString());
+      }
+
+2024-02-25 11:07:31,672 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:31,672 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.isThisTypeExplicit() &&
+2024-02-25 11:07:31,672 - Closure_69 - INFO - 补丁2 2 未成功编译
+2024-02-25 11:07:31,673 - Closure_69 - INFO - 开始验证补丁2 3:
+2024-02-25 11:07:31,673 - Closure_69 - INFO - 
+      if (functionType.hasExplicitThis() && 
+          (parent.getFirstChild().isName() || parent.getFirstChild().isThis())) {
+        report(t, n, DISALLOWED_CALL_ON_FUNCTION_WITH_THIS, childType.toString());
+      }
+
+2024-02-25 11:07:32,968 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:32,968 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThis() &&
+2024-02-25 11:07:32,968 - Closure_69 - INFO - 补丁2 3 未成功编译
+2024-02-25 11:07:32,970 - Closure_69 - INFO - 开始验证补丁2 4:
+2024-02-25 11:07:32,970 - Closure_69 - INFO - 
+if (functionType.getThisType() != null) {
+  JSType thisType = functionType.getThisType();
+  // Ensure that 'thisType' is properly checked or enforced in the context
+  // of the property or element access expressions in which the function
+  // is expected to be called.
+}
+
+2024-02-25 11:07:34,259 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:34,259 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.getThisType() != null) {
+2024-02-25 11:07:34,259 - Closure_69 - INFO - 补丁2 4 未成功编译
+2024-02-25 11:07:34,260 - Closure_69 - INFO - 开始验证补丁2 5:
+2024-02-25 11:07:34,260 - Closure_69 - INFO - 
+if (functionType.isOrdinaryFunction() && 
+    functionType.getThisType() != null && 
+    !n.isGetProp() && !n.isGetElem()) {
+  report(t, n, INVALID_THIS_TYPE_IN_CALL, functionType.toString());
+}
+
+2024-02-25 11:07:35,554 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:35,554 - Closure_69 - INFO - 错误: 找不到符号
+functionType.getThisType() != null &&
+2024-02-25 11:07:35,554 - Closure_69 - INFO - 补丁2 5 未成功编译
+2024-02-25 11:07:35,555 - Closure_69 - INFO - 开始验证补丁2 6:
+2024-02-25 11:07:35,555 - Closure_69 - INFO - 
+// Assuming 'n' is the node representing the function call.
+if (functionType.hasExplicitThisType() && !calledInProperContext(n)) {
+  report(t, n, EXPLICIT_THIS_TYPE_NOT_CALLED_PROPERLY, functionType.toString());
+}
+
+2024-02-25 11:07:36,833 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:36,834 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThisType() && !calledInProperContext(n)) {
+2024-02-25 11:07:36,834 - Closure_69 - INFO - 补丁2 6 未成功编译
+2024-02-25 11:07:36,835 - Closure_69 - INFO - 开始验证补丁2 7:
+2024-02-25 11:07:36,835 - Closure_69 - INFO - 
+if (!functionType.isOrdinaryFunction() || functionType.hasThisType()) {
+  report(t, n, ILLEGAL_THIS_TYPE_ANNOTATION);
+}
+
+2024-02-25 11:07:38,121 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:38,121 - Closure_69 - INFO - 错误: 找不到符号
+if (!functionType.isOrdinaryFunction() || functionType.hasThisType()) {
+2024-02-25 11:07:38,121 - Closure_69 - INFO - 补丁2 7 未成功编译
+2024-02-25 11:07:38,122 - Closure_69 - INFO - 开始验证补丁2 8:
+2024-02-25 11:07:38,122 - Closure_69 - INFO - 
+if (functionType.hasThisType() && !isGetPropOrGetElemCall(n)) {
+  report(t, n, DISALLOWED_THIS_TYPE);
+}
+
+2024-02-25 11:07:39,408 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:39,408 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasThisType() && !isGetPropOrGetElemCall(n)) {
+2024-02-25 11:07:39,408 - Closure_69 - INFO - 补丁2 8 未成功编译
+2024-02-25 11:07:39,409 - Closure_69 - INFO - 开始验证补丁2 9:
+2024-02-25 11:07:39,410 - Closure_69 - INFO - 
+if (functionType.hasThisType() && !n.isGetProp() && !n.isGetElem()) {
+  report(t, n, EXPECTED_PROP_OR_ELEM);
+}
+
+2024-02-25 11:07:40,699 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:40,699 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasThisType() && !n.isGetProp() && !n.isGetElem()) {
+2024-02-25 11:07:40,699 - Closure_69 - INFO - 补丁2 9 未成功编译
+2024-02-25 11:07:40,701 - Closure_69 - INFO - 开始验证补丁3 1:
+2024-02-25 11:07:40,701 - Closure_69 - INFO - 
+if (functionType.isThisTypeExplicit() && !calledInProperContext(n)) {
+  report(t, n, INVALID_THIS_TYPE_CALL, childType.toString());
+}
+
+2024-02-25 11:07:41,996 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:41,996 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.isThisTypeExplicit() && !calledInProperContext(n)) {
+2024-02-25 11:07:41,996 - Closure_69 - INFO - 补丁3 1 未成功编译
+2024-02-25 11:07:41,997 - Closure_69 - INFO - 开始验证补丁3 2:
+2024-02-25 11:07:41,997 - Closure_69 - INFO - 
+if (functionType.hasExplicitThisType() && !isGetPropOrGetElemCall(n)) {
+  report(t, n, DISALLOWED_THIS_TYPE_CALL, childType.toString());
+}
+
+2024-02-25 11:07:43,307 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:43,307 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThisType() && !isGetPropOrGetElemCall(n)) {
+2024-02-25 11:07:43,307 - Closure_69 - INFO - 补丁3 2 未成功编译
+2024-02-25 11:07:43,308 - Closure_69 - INFO - 开始验证补丁3 3:
+2024-02-25 11:07:43,308 - Closure_69 - INFO - 
+if (functionType.explicitlyDefinesThis() && !isCorrectCallContext(n)) {
+  report(t, n, ILLEGAL_THIS_TYPE_USAGE, childType.toString());
+}
+
+2024-02-25 11:07:44,621 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:44,621 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.explicitlyDefinesThis() && !isCorrectCallContext(n)) {
+2024-02-25 11:07:44,621 - Closure_69 - INFO - 补丁3 3 未成功编译
+2024-02-25 11:07:44,623 - Closure_69 - INFO - 开始验证补丁3 4:
+2024-02-25 11:07:44,623 - Closure_69 - INFO - 
+if (functionType.hasExplicitThisType() && !isProperCall(t, n)) {
+  report(t, n, INVALID_THIS_TYPE_USAGE, childType.toString());
+}
+
+2024-02-25 11:07:45,939 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:45,939 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThisType() && !isProperCall(t, n)) {
+2024-02-25 11:07:45,939 - Closure_69 - INFO - 补丁3 4 未成功编译
+2024-02-25 11:07:45,940 - Closure_69 - INFO - 开始验证补丁3 5:
+2024-02-25 11:07:45,941 - Closure_69 - INFO - 
+if (functionType.isThisExplicitlyTyped() && !n.isGetProp() && !n.isGetElem()) {
+  report(t, n, THIS_TYPE_CALL_ERROR, childType.toString());
+}
+
+2024-02-25 11:07:47,230 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:47,230 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.isThisExplicitlyTyped() && !n.isGetProp() && !n.isGetElem()) {
+2024-02-25 11:07:47,230 - Closure_69 - INFO - 补丁3 5 未成功编译
+2024-02-25 11:07:47,232 - Closure_69 - INFO - 开始验证补丁3 6:
+2024-02-25 11:07:47,232 - Closure_69 - INFO - 
+if (functionType.hasExplicitThisType() && n.getType() != Token.GETPROP && n.getType() != Token.GETELEM) {
+  report(t, n, EXPLICIT_THIS_TYPE_VIOLATION, childType.toString());
+}
+
+2024-02-25 11:07:48,535 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:48,535 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThisType() && n.getType() != Token.GETPROP && n.getType() != Token.GETELEM) {
+2024-02-25 11:07:48,535 - Closure_69 - INFO - 补丁3 6 未成功编译
+2024-02-25 11:07:48,537 - Closure_69 - INFO - 开始验证补丁3 7:
+2024-02-25 11:07:48,537 - Closure_69 - INFO - 
+if (functionType.hasExplicitThisType() && !calledInProperContext(n)) {
+  report(t, n, EXPLICIT_THIS_TYPE_NOT_CALLED_PROPERLY, childType.toString());
+}
+
+2024-02-25 11:07:49,835 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:49,835 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThisType() && !calledInProperContext(n)) {
+2024-02-25 11:07:49,836 - Closure_69 - INFO - 补丁3 7 未成功编译
+2024-02-25 11:07:49,837 - Closure_69 - INFO - 开始验证补丁3 8:
+2024-02-25 11:07:49,837 - Closure_69 - INFO - 
+if (functionType.hasExplicitThisType() && !isGetPropOrGetElemCall(n)) {
+  report(t, n, INVALID_THIS_TYPE_CALL, functionType.toString());
+}
+
+2024-02-25 11:07:51,131 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:51,131 - Closure_69 - INFO - 错误: 找不到符号
+if (functionType.hasExplicitThisType() && !isGetPropOrGetElemCall(n)) {
+2024-02-25 11:07:51,131 - Closure_69 - INFO - 补丁3 8 未成功编译
+2024-02-25 11:07:51,132 - Closure_69 - INFO - 开始验证补丁3 9:
+2024-02-25 11:07:51,132 - Closure_69 - INFO - 
+checkThisTypeCall(t, n, functionType);
+
+2024-02-25 11:07:52,409 - Closure_69 - INFO - 编译失败
+2024-02-25 11:07:52,409 - Closure_69 - INFO - 错误: 找不到符号
+checkThisTypeCall(t, n, functionType);
+2024-02-25 11:07:52,409 - Closure_69 - INFO - 补丁3 9 未成功编译
+2024-02-25 11:07:52,409 - Closure_69 - INFO - Closure_69 未成功修复

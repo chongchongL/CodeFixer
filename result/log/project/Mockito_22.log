@@ -1,0 +1,301 @@
+2024-02-25 00:48:32,166 - Mockito_22 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_22
+2024-02-25 00:48:32,166 - Mockito_22 - INFO - 删除 Mockito 22b 成功
+2024-02-25 00:48:32,166 - Mockito_22 - INFO - defects4j checkout -p Mockito -v 22b -w /home/chongchong/d4j-project/Mockito_22
+2024-02-25 00:48:35,663 - Mockito_22 - INFO - checkout Mockito 22b 成功
+2024-02-25 00:48:49,856 - Mockito_22 - INFO - 编译成功
+2024-02-25 00:49:18,451 - Mockito_22 - INFO - 测试失败
+2024-02-25 00:49:18,451 - Mockito_22 - INFO - Failing tests: 1
+  - org.mockito.internal.matchers.EqualityTest::shouldKnowIfObjectsAreEqual
+
+2024-02-25 00:49:19,353 - Mockito_22 - INFO - 它的bug类型为:
+2024-02-25 00:49:19,353 - Mockito_22 - INFO - 2
+2024-02-25 00:50:06,539 - Mockito_22 - INFO - 开始验证补丁1 1:
+2024-02-25 00:50:06,539 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == o2;
+}
+
+2024-02-25 00:50:07,460 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:07,460 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:07,460 - Mockito_22 - INFO - 补丁1 1 未成功编译
+2024-02-25 00:50:07,461 - Mockito_22 - INFO - 开始验证补丁1 2:
+2024-02-25 00:50:07,461 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == null && o2 == null;
+}
+
+2024-02-25 00:50:08,328 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:08,328 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:08,328 - Mockito_22 - INFO - 补丁1 2 未成功编译
+2024-02-25 00:50:08,329 - Mockito_22 - INFO - 开始验证补丁1 3:
+2024-02-25 00:50:08,329 - Mockito_22 - INFO - 
+if (o1 == null) {
+    return o2 == null;
+} else if (o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:09,195 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:09,195 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:09,195 - Mockito_22 - INFO - 补丁1 3 未成功编译
+2024-02-25 00:50:09,196 - Mockito_22 - INFO - 开始验证补丁1 4:
+2024-02-25 00:50:09,196 - Mockito_22 - INFO - 
+   if (o1 == null || o2 == null) {
+       return o1 == null && o2 == null;
+   } else if (isArray(o1)) {
+       return isArray(o2) && areArraysEqual(o1, o2);
+   } else {
+       return o1.equals(o2);
+   }
+   
+2024-02-25 00:50:10,055 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:10,055 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:10,055 - Mockito_22 - INFO - 补丁1 4 未成功编译
+2024-02-25 00:50:10,056 - Mockito_22 - INFO - 开始验证补丁1 5:
+2024-02-25 00:50:10,056 - Mockito_22 - INFO - 
+   if (o1 == null && o2 == null) {
+       return true;
+   } else if (o1 == null || o2 == null) {
+       return false;
+   } else if (isArray(o1)) {
+       return isArray(o2) && areArraysEqual(o1, o2);
+   } else {
+       return o1.equals(o2);
+   }
+   
+2024-02-25 00:50:10,947 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:10,947 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:10,947 - Mockito_22 - INFO - 补丁1 5 未成功编译
+2024-02-25 00:50:10,949 - Mockito_22 - INFO - 开始验证补丁1 6:
+2024-02-25 00:50:10,949 - Mockito_22 - INFO - 
+   if (o1 == null || o2 == null) {
+       return o1 == o2;
+   } else if (isArray(o1) && isArray(o2)) {
+       return areArraysEqual(o1, o2);
+   } else {
+       return o1.equals(o2);
+   }
+   
+2024-02-25 00:50:11,805 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:11,805 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:11,805 - Mockito_22 - INFO - 补丁1 6 未成功编译
+2024-02-25 00:50:11,806 - Mockito_22 - INFO - 开始验证补丁1 7:
+2024-02-25 00:50:11,807 - Mockito_22 - INFO - 
+        if (o1 == null || o2 == null) {
+            return o1 == o2;
+        }
+
+2024-02-25 00:50:12,664 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:12,664 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:12,665 - Mockito_22 - INFO - 补丁1 7 未成功编译
+2024-02-25 00:50:12,666 - Mockito_22 - INFO - 开始验证补丁1 8:
+2024-02-25 00:50:12,666 - Mockito_22 - INFO - 
+        if (o1 == o2) {   // This would handle both being null as well
+            return true;
+        }
+
+2024-02-25 00:50:13,553 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:13,553 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:13,553 - Mockito_22 - INFO - 补丁1 8 未成功编译
+2024-02-25 00:50:13,554 - Mockito_22 - INFO - 开始验证补丁1 9:
+2024-02-25 00:50:13,554 - Mockito_22 - INFO - 
+        if (o1 == null || o2 == null) {
+            return o1 == o2;
+        } else {
+            try {
+                return o1.equals(o2);
+            } catch (RuntimeException e) {
+                // Log exception, handle error, or rethrow as appropriate
+                throw e;
+            }
+        }
+
+2024-02-25 00:50:14,405 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:14,406 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:14,406 - Mockito_22 - INFO - 补丁1 9 未成功编译
+2024-02-25 00:50:14,407 - Mockito_22 - INFO - 开始验证补丁2 1:
+2024-02-25 00:50:14,407 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == null && o2 == null;
+}
+
+2024-02-25 00:50:14,407 - Mockito_22 - INFO - 补丁2 1为重复的补丁
+2024-02-25 00:50:14,407 - Mockito_22 - INFO - 开始验证补丁2 2:
+2024-02-25 00:50:14,408 - Mockito_22 - INFO - 
+if (o1 == o2) {
+    return true;
+} else if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:15,254 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:15,254 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:15,254 - Mockito_22 - INFO - 补丁2 2 未成功编译
+2024-02-25 00:50:15,255 - Mockito_22 - INFO - 开始验证补丁2 3:
+2024-02-25 00:50:15,255 - Mockito_22 - INFO - 
+if (o1 == o2) {
+    return true;
+} else if (o1 == null || o2 == null) {
+    return o1 == null && o2 == null;
+}
+
+2024-02-25 00:50:16,128 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:16,128 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:16,128 - Mockito_22 - INFO - 补丁2 3 未成功编译
+2024-02-25 00:50:16,129 - Mockito_22 - INFO - 开始验证补丁2 4:
+2024-02-25 00:50:16,129 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == o2;
+}
+
+2024-02-25 00:50:16,129 - Mockito_22 - INFO - 补丁2 4为重复的补丁
+2024-02-25 00:50:16,130 - Mockito_22 - INFO - 开始验证补丁2 5:
+2024-02-25 00:50:16,130 - Mockito_22 - INFO - 
+if (o1 == null && o2 == null) {
+    return true;
+} else if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:16,995 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:16,995 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:16,995 - Mockito_22 - INFO - 补丁2 5 未成功编译
+2024-02-25 00:50:16,996 - Mockito_22 - INFO - 开始验证补丁2 6:
+2024-02-25 00:50:16,996 - Mockito_22 - INFO - 
+if (o1 == null) {
+    return o2 == null;
+} else if (o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:16,996 - Mockito_22 - INFO - 补丁2 6为重复的补丁
+2024-02-25 00:50:16,997 - Mockito_22 - INFO - 开始验证补丁2 7:
+2024-02-25 00:50:16,997 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == o2;
+}
+
+2024-02-25 00:50:16,997 - Mockito_22 - INFO - 补丁2 7为重复的补丁
+2024-02-25 00:50:16,998 - Mockito_22 - INFO - 开始验证补丁2 8:
+2024-02-25 00:50:16,998 - Mockito_22 - INFO - 
+if (o1 == null && o2 == null) {
+    return true;
+} else if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:16,998 - Mockito_22 - INFO - 补丁2 8为重复的补丁
+2024-02-25 00:50:16,999 - Mockito_22 - INFO - 开始验证补丁2 9:
+2024-02-25 00:50:16,999 - Mockito_22 - INFO - 
+if (o1 == null && o2 == null) {
+    return true;
+} else if (o1 == null) {
+    return false;
+} else if (o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:17,871 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:17,871 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:17,871 - Mockito_22 - INFO - 补丁2 9 未成功编译
+2024-02-25 00:50:17,872 - Mockito_22 - INFO - 开始验证补丁3 1:
+2024-02-25 00:50:17,872 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == o2;
+}
+
+2024-02-25 00:50:17,872 - Mockito_22 - INFO - 补丁3 1为重复的补丁
+2024-02-25 00:50:17,873 - Mockito_22 - INFO - 开始验证补丁3 2:
+2024-02-25 00:50:17,873 - Mockito_22 - INFO - 
+if (o1 == null) {
+    return o2 == null;
+}
+if (o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:18,767 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:18,767 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:18,767 - Mockito_22 - INFO - 补丁3 2 未成功编译
+2024-02-25 00:50:18,768 - Mockito_22 - INFO - 开始验证补丁3 3:
+2024-02-25 00:50:18,768 - Mockito_22 - INFO - 
+if (o1 == null && o2 == null) {
+    return true;
+}
+if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:19,639 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:19,639 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:19,639 - Mockito_22 - INFO - 补丁3 3 未成功编译
+2024-02-25 00:50:19,640 - Mockito_22 - INFO - 开始验证补丁3 4:
+2024-02-25 00:50:19,640 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == null && o2 == null;
+}
+
+2024-02-25 00:50:19,640 - Mockito_22 - INFO - 补丁3 4为重复的补丁
+2024-02-25 00:50:19,646 - Mockito_22 - INFO - 开始验证补丁3 5:
+2024-02-25 00:50:19,646 - Mockito_22 - INFO - 
+if (o1 == null && o2 == null) {
+    return true;
+} else if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:19,646 - Mockito_22 - INFO - 补丁3 5为重复的补丁
+2024-02-25 00:50:19,647 - Mockito_22 - INFO - 开始验证补丁3 6:
+2024-02-25 00:50:19,647 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    // Some custom logic for handling nulls beyond simple equality
+    // Placeholder for additional code as per context outside the given snippet
+    return o1 == null && o2 == null; // Fallback to existing logic if no custom handling was provided
+}
+
+2024-02-25 00:50:20,502 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:20,502 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:20,502 - Mockito_22 - INFO - 补丁3 6 未成功编译
+2024-02-25 00:50:20,504 - Mockito_22 - INFO - 开始验证补丁3 7:
+2024-02-25 00:50:20,504 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return o1 == null && o2 == null;
+}
+
+2024-02-25 00:50:20,504 - Mockito_22 - INFO - 补丁3 7为重复的补丁
+2024-02-25 00:50:20,505 - Mockito_22 - INFO - 开始验证补丁3 8:
+2024-02-25 00:50:20,505 - Mockito_22 - INFO - 
+if (o1 == o2) {
+    return true;
+} else if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:20,505 - Mockito_22 - INFO - 补丁3 8为重复的补丁
+2024-02-25 00:50:20,505 - Mockito_22 - INFO - 开始验证补丁3 9:
+2024-02-25 00:50:20,506 - Mockito_22 - INFO - 
+if (o1 == null || o2 == null) {
+    return false;
+}
+
+2024-02-25 00:50:21,358 - Mockito_22 - INFO - 编译失败
+2024-02-25 00:50:21,358 - Mockito_22 - INFO - 错误: 非法的类型开始
+} else if (isArray(o1)) {
+2024-02-25 00:50:21,358 - Mockito_22 - INFO - 补丁3 9 未成功编译
+2024-02-25 00:50:21,358 - Mockito_22 - INFO - Mockito_22 未成功修复

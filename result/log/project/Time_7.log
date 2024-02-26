@@ -1,0 +1,189 @@
+2024-02-26 10:03:54,296 - Time_7 - INFO - rm -rf /home/chongchong/d4j-project/Time_7
+2024-02-26 10:03:54,297 - Time_7 - INFO - 删除 Time 7b 成功
+2024-02-26 10:03:54,297 - Time_7 - INFO - defects4j checkout -p Time -v 7b -w /home/chongchong/d4j-project/Time_7
+2024-02-26 10:03:57,688 - Time_7 - INFO - checkout Time 7b 成功
+2024-02-26 10:04:05,279 - Time_7 - INFO - 编译成功
+2024-02-26 10:04:13,295 - Time_7 - INFO - 测试失败
+2024-02-26 10:04:13,295 - Time_7 - INFO - Failing tests: 2
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_endOfYear
+
+2024-02-26 10:04:14,200 - Time_7 - INFO - 它的bug类型为:
+2024-02-26 10:04:14,200 - Time_7 - INFO - 4
+2024-02-26 10:05:16,280 - Time_7 - INFO - 开始验证补丁1 1:
+2024-02-26 10:05:16,280 - Time_7 - INFO - 
+        long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+        chrono = selectChronology(chrono);
+        int defaultYear = chrono.year().get(instantLocal);
+
+2024-02-26 10:05:19,292 - Time_7 - INFO - 编译成功
+2024-02-26 10:05:27,272 - Time_7 - INFO - 测试失败
+2024-02-26 10:05:27,273 - Time_7 - INFO - Failing tests: 2
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_endOfYear
+
+2024-02-26 10:05:27,726 - Time_7 - INFO - 选择失败的测试用例为:
+2024-02-26 10:05:27,726 - Time_7 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+2024-02-26 10:05:27,726 - Time_7 - INFO - 失败的测试代码为:
+2024-02-26 10:05:27,726 - Time_7 - INFO -         assertEquals(4, f.parseInto(result, "2 29", 0));
+
+2024-02-26 10:05:27,726 - Time_7 - INFO - 失败信息为:
+2024-02-26 10:05:27,726 - Time_7 - INFO - org.joda.time.IllegalFieldValueException: Cannot parse "2 29": Value 29 for dayOfMonth must be in the range [1,28]
+
+2024-02-26 10:05:27,726 - Time_7 - INFO - 补丁1 1测试失败
+2024-02-26 10:05:27,727 - Time_7 - INFO - 开始验证补丁1 2:
+2024-02-26 10:05:27,727 - Time_7 - INFO - 
+        // Ensuring the obtained chronology after selecting is consistent with the original instant's time zone
+        chrono = selectChronology(chrono);
+        long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+        int defaultYear = chrono.year().get(instantLocal);
+
+2024-02-26 10:05:30,726 - Time_7 - INFO - 编译成功
+2024-02-26 10:05:38,592 - Time_7 - INFO - 测试失败
+2024-02-26 10:05:38,592 - Time_7 - INFO - Failing tests: 2
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_endOfYear
+
+2024-02-26 10:05:39,039 - Time_7 - INFO - 选择失败的测试用例为:
+2024-02-26 10:05:39,039 - Time_7 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+2024-02-26 10:05:39,039 - Time_7 - INFO - 失败的测试代码为:
+2024-02-26 10:05:39,039 - Time_7 - INFO -         assertEquals(4, f.parseInto(result, "2 29", 0));
+
+2024-02-26 10:05:39,039 - Time_7 - INFO - 失败信息为:
+2024-02-26 10:05:39,039 - Time_7 - INFO - org.joda.time.IllegalFieldValueException: Cannot parse "2 29": Value 29 for dayOfMonth must be in the range [1,28]
+
+2024-02-26 10:05:39,039 - Time_7 - INFO - 补丁1 2测试失败
+2024-02-26 10:05:39,040 - Time_7 - INFO - 开始验证补丁1 3:
+2024-02-26 10:05:39,040 - Time_7 - INFO - 
+        long instantLocal = instantMillis; // Assuming that instantMillis is already local time
+        chrono = selectChronology(chrono);
+        int defaultYear = chrono.year().get(instantMillis); // Using the same instant to avoid timezone conflicts
+
+2024-02-26 10:05:42,028 - Time_7 - INFO - 编译成功
+2024-02-26 10:05:50,113 - Time_7 - INFO - 测试失败
+2024-02-26 10:05:50,113 - Time_7 - INFO - Failing tests: 12
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29_newYork_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29_newYork
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-26 10:05:50,552 - Time_7 - INFO - 选择失败的测试用例为:
+2024-02-26 10:05:50,553 - Time_7 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+2024-02-26 10:05:50,553 - Time_7 - INFO - 失败的测试代码为:
+2024-02-26 10:05:50,553 - Time_7 - INFO -         assertEquals(new MutableDateTime(2004, 5, 1, 12, 20, 30, 0, TOKYO), result);
+
+2024-02-26 10:05:50,553 - Time_7 - INFO - 失败信息为:
+2024-02-26 10:05:50,553 - Time_7 - INFO - junit.framework.AssertionFailedError: expected:<2004-05-01T12:20:30.000+09:00> but was:<2004-05-01T03:20:30.000+09:00>
+
+2024-02-26 10:05:50,553 - Time_7 - INFO - 补丁1 3测试失败
+2024-02-26 10:05:50,554 - Time_7 - INFO - 开始验证补丁1 4:
+2024-02-26 10:05:50,554 - Time_7 - INFO - 
+long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+chrono = chrono.withUTC();
+int defaultYear = chrono.year().get(instantMillis);
+
+2024-02-26 10:05:53,567 - Time_7 - INFO - 编译成功
+2024-02-26 10:06:01,458 - Time_7 - INFO - 测试失败
+2024-02-26 10:06:01,458 - Time_7 - INFO - Failing tests: 23
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29_newYork_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_simple_precedence
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29_newYork
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_chrono
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_zone
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_zone2
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_zone3
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_simple
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_OfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-26 10:06:01,908 - Time_7 - INFO - 选择失败的测试用例为:
+2024-02-26 10:06:01,908 - Time_7 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+2024-02-26 10:06:01,908 - Time_7 - INFO - 失败的测试代码为:
+2024-02-26 10:06:01,908 - Time_7 - INFO -         assertEquals(new MutableDateTime(2004, 5, 1, 12, 20, 30, 0, TOKYO), result);
+
+2024-02-26 10:06:01,908 - Time_7 - INFO - 失败信息为:
+2024-02-26 10:06:01,908 - Time_7 - INFO - junit.framework.AssertionFailedError: expected:<2004-05-01T12:20:30.000+09:00> but was:<2004-05-01T12:20:30.000Z>
+
+2024-02-26 10:06:01,908 - Time_7 - INFO - 补丁1 4测试失败
+2024-02-26 10:06:01,910 - Time_7 - INFO - 开始验证补丁1 5:
+2024-02-26 10:06:01,910 - Time_7 - INFO - 
+long instantLocal = instantMillis;
+chrono = selectChronology(chrono);
+int defaultYear = chrono.year().get(instantLocal + chrono.getZone().getOffset(instantLocal));
+
+2024-02-26 10:06:04,909 - Time_7 - INFO - 编译成功
+2024-02-26 10:06:12,810 - Time_7 - INFO - 测试失败
+2024-02-26 10:06:12,810 - Time_7 - INFO - Failing tests: 12
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29_newYork_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29_newYork
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_endOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-26 10:06:13,255 - Time_7 - INFO - 选择失败的测试用例为:
+2024-02-26 10:06:13,256 - Time_7 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+2024-02-26 10:06:13,256 - Time_7 - INFO - 失败的测试代码为:
+2024-02-26 10:06:13,256 - Time_7 - INFO -         assertEquals(new MutableDateTime(2004, 5, 1, 12, 20, 30, 0, TOKYO), result);
+
+2024-02-26 10:06:13,256 - Time_7 - INFO - 失败信息为:
+2024-02-26 10:06:13,256 - Time_7 - INFO - junit.framework.AssertionFailedError: expected:<2004-05-01T12:20:30.000+09:00> but was:<2004-05-01T03:20:30.000+09:00>
+
+2024-02-26 10:06:13,256 - Time_7 - INFO - 补丁1 5测试失败
+2024-02-26 10:06:13,257 - Time_7 - INFO - 开始验证补丁1 6:
+2024-02-26 10:06:13,257 - Time_7 - INFO - 
+long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+chrono = selectChronology(chrono);
+int defaultYear = chrono.withUTC().year().get(instantMillis);
+
+2024-02-26 10:06:16,246 - Time_7 - INFO - 编译成功
+2024-02-26 10:06:24,266 - Time_7 - INFO - 测试失败
+2024-02-26 10:06:24,266 - Time_7 - INFO - Failing tests: 2
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_startOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_newYork_endOfYear
+
+2024-02-26 10:06:24,709 - Time_7 - INFO - 选择失败的测试用例为:
+2024-02-26 10:06:24,709 - Time_7 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29_tokyo_startOfYear
+2024-02-26 10:06:24,709 - Time_7 - INFO - 失败的测试代码为:
+2024-02-26 10:06:24,709 - Time_7 - INFO -         assertEquals(4, f.parseInto(result, "2 29", 0));
+
+2024-02-26 10:06:24,709 - Time_7 - INFO - 失败信息为:
+2024-02-26 10:06:24,709 - Time_7 - INFO - org.joda.time.IllegalFieldValueException: Cannot parse "2 29": Value 29 for dayOfMonth must be in the range [1,28]
+
+2024-02-26 10:06:24,709 - Time_7 - INFO - 补丁1 6测试失败
+2024-02-26 10:06:24,710 - Time_7 - INFO - 开始验证补丁1 7:
+2024-02-26 10:06:24,710 - Time_7 - INFO - 
+long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+chrono = selectChronology(chrono); // Ensure this method maintains time zone consistency
+int defaultYear = chrono.year().isLeap(instantLocal) ? chrono.year().get(instantLocal) : chrono.year().get(instantLocal - chrono.getZone().getOffset(instantLocal));
+
+2024-02-26 10:06:27,712 - Time_7 - INFO - 编译成功
+2024-02-26 10:06:35,745 - Time_7 - INFO - 测试成功
+2024-02-26 10:06:35,746 - Time_7 - INFO - 补丁1 7 通过了所有的测试用例

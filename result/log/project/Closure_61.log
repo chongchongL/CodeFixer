@@ -1,0 +1,313 @@
+2024-02-25 11:02:01,821 - Closure_61 - INFO - rm -rf /home/chongchong/d4j-project/Closure_61
+2024-02-25 11:02:01,822 - Closure_61 - INFO - 删除 Closure 61b 成功
+2024-02-25 11:02:01,822 - Closure_61 - INFO - defects4j checkout -p Closure -v 61b -w /home/chongchong/d4j-project/Closure_61
+2024-02-25 11:02:03,727 - Closure_61 - INFO - checkout Closure 61b 成功
+2024-02-25 11:02:14,755 - Closure_61 - INFO - 编译成功
+2024-02-25 11:02:57,054 - Closure_61 - INFO - 测试失败
+2024-02-25 11:02:57,054 - Closure_61 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testCall1
+  - com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testCall2
+  - com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testRemoveUselessOps
+
+2024-02-25 11:02:58,066 - Closure_61 - INFO - 它的bug类型为:
+2024-02-25 11:02:58,066 - Closure_61 - INFO - 3
+2024-02-25 11:03:46,922 - Closure_61 - INFO - 开始验证补丁1 1:
+2024-02-25 11:03:46,922 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().matchesQualifiedName("Math") &&
+    MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:03:48,955 - Closure_61 - INFO - 编译失败
+2024-02-25 11:03:48,955 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.getFirstChild().matchesQualifiedName("Math") &&
+2024-02-25 11:03:48,955 - Closure_61 - INFO - 补丁1 1 未成功编译
+2024-02-25 11:03:48,957 - Closure_61 - INFO - 开始验证补丁1 2:
+2024-02-25 11:03:48,957 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().getString().equals("Math") &&
+    MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:03:51,010 - Closure_61 - INFO - 编译失败
+2024-02-25 11:03:51,010 - Closure_61 - INFO - 错误: 找不到符号
+MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:03:51,010 - Closure_61 - INFO - 补丁1 2 未成功编译
+2024-02-25 11:03:51,011 - Closure_61 - INFO - 开始验证补丁1 3:
+2024-02-25 11:03:51,011 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().getQualifiedName().equals("Math") &&
+    MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:03:53,015 - Closure_61 - INFO - 编译失败
+2024-02-25 11:03:53,015 - Closure_61 - INFO - 错误: 找不到符号
+MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:03:53,015 - Closure_61 - INFO - 补丁1 3 未成功编译
+2024-02-25 11:03:53,016 - Closure_61 - INFO - 开始验证补丁1 4:
+2024-02-25 11:03:53,016 - Closure_61 - INFO - 
+if ("Math".equals(nameNode.getFirstChild().getQualifiedName())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:03:55,045 - Closure_61 - INFO - 编译失败
+2024-02-25 11:03:55,045 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:03:55,045 - Closure_61 - INFO - 补丁1 4 未成功编译
+2024-02-25 11:03:55,046 - Closure_61 - INFO - 开始验证补丁1 5:
+2024-02-25 11:03:55,046 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().isQualifiedName() && 
+    "Math".equals(nameNode.getFirstChild().getQualifiedName())) {
+  String methodName = nameNode.getLastChild().getString();
+  if (MATH_METHODS.contains(methodName)) {
+    return false;
+  }
+}
+
+2024-02-25 11:03:57,125 - Closure_61 - INFO - 编译失败
+2024-02-25 11:03:57,125 - Closure_61 - INFO - 错误: 找不到符号
+if (MATH_METHODS.contains(methodName)) {
+2024-02-25 11:03:57,125 - Closure_61 - INFO - 补丁1 5 未成功编译
+2024-02-25 11:03:57,126 - Closure_61 - INFO - 开始验证补丁1 6:
+2024-02-25 11:03:57,126 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().isName()
+    && "Math".equals(nameNode.getFirstChild().getString())) {
+  String methodName = nameNode.getLastChild().getString();
+  if (Arrays.asList("sin", "cos", "tan", "sqrt", "abs", /* other methods */).contains(methodName)) {
+    return false;
+  }
+}
+
+2024-02-25 11:03:58,889 - Closure_61 - INFO - 编译失败
+2024-02-25 11:03:58,889 - Closure_61 - INFO - 错误: 非法的表达式开始
+if (Arrays.asList("sin", "cos", "tan", "sqrt", "abs", /* other methods */).contains(methodName)) {
+2024-02-25 11:03:58,889 - Closure_61 - INFO - 补丁1 6 未成功编译
+2024-02-25 11:03:58,890 - Closure_61 - INFO - 开始验证补丁1 7:
+2024-02-25 11:03:58,890 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().isQualifiedName() && "Math".equals(nameNode.getFirstChild().getQualifiedName())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:00,921 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:00,921 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:00,921 - Closure_61 - INFO - 补丁1 7 未成功编译
+2024-02-25 11:04:00,922 - Closure_61 - INFO - 开始验证补丁1 8:
+2024-02-25 11:04:00,922 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().matchesQualifiedName("Math")
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:02,935 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:02,935 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.getFirstChild().matchesQualifiedName("Math")
+2024-02-25 11:04:02,936 - Closure_61 - INFO - 补丁1 8 未成功编译
+2024-02-25 11:04:02,937 - Closure_61 - INFO - 开始验证补丁1 9:
+2024-02-25 11:04:02,937 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().getString().equals("Math")
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:04,962 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:04,962 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:04,962 - Closure_61 - INFO - 补丁1 9 未成功编译
+2024-02-25 11:04:04,963 - Closure_61 - INFO - 开始验证补丁2 1:
+2024-02-25 11:04:04,963 - Closure_61 - INFO - 
+if ("Math".equals(nameNode.getFirstChild().getString())
+   && MATH_FUNCTIONS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:07,006 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:07,006 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_FUNCTIONS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:07,006 - Closure_61 - INFO - 补丁2 1 未成功编译
+2024-02-25 11:04:07,007 - Closure_61 - INFO - 开始验证补丁2 2:
+2024-02-25 11:04:07,007 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().getString().equals("Math")) {
+  String methodName = nameNode.getLastChild().getString();
+  if (MATH_METHODS_NO_SIDE_EFFECT.contains(methodName)) {
+    return false;
+  }
+}
+
+2024-02-25 11:04:09,072 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:09,072 - Closure_61 - INFO - 错误: 找不到符号
+if (MATH_METHODS_NO_SIDE_EFFECT.contains(methodName)) {
+2024-02-25 11:04:09,072 - Closure_61 - INFO - 补丁2 2 未成功编译
+2024-02-25 11:04:09,073 - Closure_61 - INFO - 开始验证补丁2 3:
+2024-02-25 11:04:09,073 - Closure_61 - INFO - 
+if (nameNode.matchesQualifiedName("Math") &&
+    NO_SIDE_EFFECT_MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:11,102 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:11,102 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.matchesQualifiedName("Math") &&
+2024-02-25 11:04:11,102 - Closure_61 - INFO - 补丁2 3 未成功编译
+2024-02-25 11:04:11,103 - Closure_61 - INFO - 开始验证补丁2 4:
+2024-02-25 11:04:11,103 - Closure_61 - INFO - 
+// Functions in the "Math" namespace have no side effects.
+if ("Math".equals(nameNode.getFirstChild().getString())) {
+  if (MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+    return false;
+  }
+}
+
+2024-02-25 11:04:13,142 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:13,142 - Closure_61 - INFO - 错误: 找不到符号
+if (MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:13,142 - Closure_61 - INFO - 补丁2 4 未成功编译
+2024-02-25 11:04:13,144 - Closure_61 - INFO - 开始验证补丁2 5:
+2024-02-25 11:04:13,144 - Closure_61 - INFO - 
+// Functions in the "Math" namespace have no side effects.
+if (nameNode.getFirstChild().getType() == Token.NAME
+    && "Math".equals(nameNode.getFirstChild().getString())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:15,164 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:15,164 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:15,164 - Closure_61 - INFO - 补丁2 5 未成功编译
+2024-02-25 11:04:15,166 - Closure_61 - INFO - 开始验证补丁2 6:
+2024-02-25 11:04:15,166 - Closure_61 - INFO - 
+// Functions in the "Math" namespace have no side effects.
+if (nameNode.hasChildren()
+    && "Math".equals(nameNode.getFirstChild().getString())) {
+  Node lastChild = nameNode.getLastChild();
+  if (lastChild != null && isSideEffectFreeMathMethod(lastChild.getString())) {
+    return false;
+  }
+}
+
+2024-02-25 11:04:17,244 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:17,244 - Closure_61 - INFO - 错误: 找不到符号
+if (lastChild != null && isSideEffectFreeMathMethod(lastChild.getString())) {
+2024-02-25 11:04:17,244 - Closure_61 - INFO - 补丁2 6 未成功编译
+2024-02-25 11:04:17,245 - Closure_61 - INFO - 开始验证补丁2 7:
+2024-02-25 11:04:17,245 - Closure_61 - INFO - 
+if ("Math".equals(nameNode.getFirstChild().getString()) 
+    && Math_function_with_no_side_effects(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:19,302 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:19,302 - Closure_61 - INFO - 错误: 找不到符号
+&& Math_function_with_no_side_effects(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:19,302 - Closure_61 - INFO - 补丁2 7 未成功编译
+2024-02-25 11:04:19,303 - Closure_61 - INFO - 开始验证补丁2 8:
+2024-02-25 11:04:19,304 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().matchesQualifiedName("Math") 
+    && noSideEffectMathMethods.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:21,360 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:21,360 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.getFirstChild().matchesQualifiedName("Math")
+2024-02-25 11:04:21,360 - Closure_61 - INFO - 补丁2 8 未成功编译
+2024-02-25 11:04:21,361 - Closure_61 - INFO - 开始验证补丁2 9:
+2024-02-25 11:04:21,361 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().isName("Math")
+    && isPureMathFunction(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:23,388 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:23,388 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.getFirstChild().isName("Math")
+2024-02-25 11:04:23,389 - Closure_61 - INFO - 补丁2 9 未成功编译
+2024-02-25 11:04:23,390 - Closure_61 - INFO - 开始验证补丁3 1:
+2024-02-25 11:04:23,390 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().getString().equals("Math")
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:23,390 - Closure_61 - INFO - 补丁3 1为重复的补丁
+2024-02-25 11:04:23,395 - Closure_61 - INFO - 开始验证补丁3 2:
+2024-02-25 11:04:23,395 - Closure_61 - INFO - 
+if ("Math".equals(nameNode.getFirstChild().getString())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:25,442 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:25,442 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:25,442 - Closure_61 - INFO - 补丁3 2 未成功编译
+2024-02-25 11:04:25,443 - Closure_61 - INFO - 开始验证补丁3 3:
+2024-02-25 11:04:25,443 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().isName() && "Math".equals(nameNode.getFirstChild().getString())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:27,585 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:27,586 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.getFirstChild().isName() && "Math".equals(nameNode.getFirstChild().getString())
+2024-02-25 11:04:27,586 - Closure_61 - INFO - 补丁3 3 未成功编译
+2024-02-25 11:04:27,587 - Closure_61 - INFO - 开始验证补丁3 4:
+2024-02-25 11:04:27,587 - Closure_61 - INFO - 
+if ("Math".equals(nameNode.getFirstChild().getString())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:27,587 - Closure_61 - INFO - 补丁3 4为重复的补丁
+2024-02-25 11:04:27,588 - Closure_61 - INFO - 开始验证补丁3 5:
+2024-02-25 11:04:27,588 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().matchesQualifiedName("Math")
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:27,588 - Closure_61 - INFO - 补丁3 5为重复的补丁
+2024-02-25 11:04:27,589 - Closure_61 - INFO - 开始验证补丁3 6:
+2024-02-25 11:04:27,589 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().isName("Math")
+    && MATH_NO_SIDE_EFFECT_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:29,619 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:29,619 - Closure_61 - INFO - 错误: 找不到符号
+if (nameNode.getFirstChild().isName("Math")
+2024-02-25 11:04:29,619 - Closure_61 - INFO - 补丁3 6 未成功编译
+2024-02-25 11:04:29,620 - Closure_61 - INFO - 开始验证补丁3 7:
+2024-02-25 11:04:29,620 - Closure_61 - INFO - 
+if (nameNode.getFirstChild().getString().equals("Math")
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:29,620 - Closure_61 - INFO - 补丁3 7为重复的补丁
+2024-02-25 11:04:29,625 - Closure_61 - INFO - 开始验证补丁3 8:
+2024-02-25 11:04:29,625 - Closure_61 - INFO - 
+if ("Math".equals(nameNode.getFirstChild().getString())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:29,625 - Closure_61 - INFO - 补丁3 8为重复的补丁
+2024-02-25 11:04:29,626 - Closure_61 - INFO - 开始验证补丁3 9:
+2024-02-25 11:04:29,626 - Closure_61 - INFO - 
+if (nameNode.getFirstChild() != null
+    && "Math".equals(nameNode.getFirstChild().getString())
+    && MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+  return false;
+}
+
+2024-02-25 11:04:31,690 - Closure_61 - INFO - 编译失败
+2024-02-25 11:04:31,690 - Closure_61 - INFO - 错误: 找不到符号
+&& MATH_METHODS.contains(nameNode.getLastChild().getString())) {
+2024-02-25 11:04:31,690 - Closure_61 - INFO - 补丁3 9 未成功编译
+2024-02-25 11:04:31,691 - Closure_61 - INFO - Closure_61 未成功修复

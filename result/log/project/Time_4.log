@@ -1,0 +1,85 @@
+2024-02-24 01:27:42,850 - Time_4 - INFO - rm -rf /home/chongchong/d4j-project/Time_4
+2024-02-24 01:27:42,851 - Time_4 - INFO - 删除 Time 4b 成功
+2024-02-24 01:27:42,851 - Time_4 - INFO - defects4j checkout -p Time -v 4b -w /home/chongchong/d4j-project/Time_4
+2024-02-24 01:27:44,097 - Time_4 - INFO - checkout Time 4b 成功
+2024-02-24 01:27:50,333 - Time_4 - INFO - 编译成功
+2024-02-24 01:27:58,353 - Time_4 - INFO - 测试失败
+2024-02-24 01:27:58,353 - Time_4 - INFO - Failing tests: 1
+  - org.joda.time.TestPartial_Basics::testWith3
+
+2024-02-24 01:27:59,246 - Time_4 - INFO - 它的bug类型为:
+2024-02-24 01:27:59,246 - Time_4 - INFO - 1
+2024-02-24 01:28:33,432 - Time_4 - INFO - Time_4 未成功修复
+2024-02-24 12:26:37,609 - Time_4 - INFO - rm -rf /home/chongchong/d4j-project/Time_4
+2024-02-24 12:26:37,631 - Time_4 - INFO - 删除 Time 4b 成功
+2024-02-24 12:26:37,631 - Time_4 - INFO - defects4j checkout -p Time -v 4b -w /home/chongchong/d4j-project/Time_4
+2024-02-24 12:26:38,913 - Time_4 - INFO - checkout Time 4b 成功
+2024-02-24 12:26:45,121 - Time_4 - INFO - 编译成功
+2024-02-24 12:26:53,372 - Time_4 - INFO - 测试失败
+2024-02-24 12:26:53,372 - Time_4 - INFO - Failing tests: 1
+  - org.joda.time.TestPartial_Basics::testWith3
+
+2024-02-24 12:26:54,250 - Time_4 - INFO - 它的bug类型为:
+2024-02-24 12:26:54,250 - Time_4 - INFO - 1
+2024-02-24 12:27:31,347 - Time_4 - INFO - 开始验证补丁1 1:
+2024-02-24 12:27:31,347 - Time_4 - INFO - 
+Partial newPartial = new Partial(iChronology, newTypes, newValues);
+
+2024-02-24 12:27:33,889 - Time_4 - INFO - 编译成功
+2024-02-24 12:27:41,904 - Time_4 - INFO - 测试失败
+2024-02-24 12:27:41,904 - Time_4 - INFO - Failing tests: 1
+  - org.joda.time.TestPartial_Basics::testWith3
+
+2024-02-24 12:27:42,348 - Time_4 - INFO - 选择失败的测试用例为:
+2024-02-24 12:27:42,348 - Time_4 - INFO - org.joda.time.TestPartial_Basics::testWith3
+2024-02-24 12:27:42,348 - Time_4 - INFO - 失败的测试代码为:
+2024-02-24 12:27:42,348 - Time_4 - INFO -             fail();
+
+2024-02-24 12:27:42,348 - Time_4 - INFO - 失败信息为:
+2024-02-24 12:27:42,348 - Time_4 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 12:27:42,348 - Time_4 - INFO - 补丁1 1测试失败
+2024-02-24 12:27:42,349 - Time_4 - INFO - 开始验证补丁1 2:
+2024-02-24 12:27:42,350 - Time_4 - INFO - 
+System.arraycopy(iTypes, i, newTypes, i + 1, iTypes.length - i);
+System.arraycopy(iValues, i, newValues, i + 1, iValues.length - i);
+Partial newPartial = new Partial(iChronology, newTypes, newValues);
+
+2024-02-24 12:27:44,844 - Time_4 - INFO - 编译成功
+2024-02-24 12:27:52,860 - Time_4 - INFO - 测试失败
+2024-02-24 12:27:52,860 - Time_4 - INFO - Failing tests: 1
+  - org.joda.time.TestPartial_Basics::testWith3
+
+2024-02-24 12:27:53,302 - Time_4 - INFO - 选择失败的测试用例为:
+2024-02-24 12:27:53,302 - Time_4 - INFO - org.joda.time.TestPartial_Basics::testWith3
+2024-02-24 12:27:53,302 - Time_4 - INFO - 失败的测试代码为:
+2024-02-24 12:27:53,302 - Time_4 - INFO -             fail();
+
+2024-02-24 12:27:53,302 - Time_4 - INFO - 失败信息为:
+2024-02-24 12:27:53,302 - Time_4 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 12:27:53,302 - Time_4 - INFO - 补丁1 2测试失败
+2024-02-24 12:27:53,303 - Time_4 - INFO - 开始验证补丁1 3:
+2024-02-24 12:27:53,303 - Time_4 - INFO - 
+if (inputValidationCondition(newValues)) {
+    Partial newPartial = new Partial(iChronology, newTypes, newValues);
+} else {
+    throw new IllegalArgumentException("Invalid value for the specified field type");
+}
+
+2024-02-24 12:27:54,029 - Time_4 - INFO - 编译失败
+2024-02-24 12:27:54,029 - Time_4 - INFO - 错误: 找不到符号
+if (inputValidationCondition(newValues)) {
+2024-02-24 12:27:54,029 - Time_4 - INFO - 补丁1 3 未成功编译
+2024-02-24 12:27:54,030 - Time_4 - INFO - 开始验证补丁1 7:
+2024-02-24 12:27:54,030 - Time_4 - INFO - 
+Partial newPartial = new Partial(iChronology, newTypes, newValues);
+
+2024-02-24 12:27:54,030 - Time_4 - INFO - 补丁1 7为重复的补丁
+2024-02-24 12:27:54,031 - Time_4 - INFO - 开始验证补丁1 8:
+2024-02-24 12:27:54,031 - Time_4 - INFO - 
+Partial newPartial = new Partial(newTypes, newValues);
+
+2024-02-24 12:27:56,529 - Time_4 - INFO - 编译成功
+2024-02-24 12:28:04,620 - Time_4 - INFO - 测试成功
+2024-02-24 12:28:04,620 - Time_4 - INFO - 补丁1 8 通过了所有的测试用例

@@ -1,0 +1,585 @@
+2024-02-26 00:02:00,938 - Chart_5 - INFO - rm -rf /home/chongchong/d4j-project/Chart_5
+2024-02-26 00:02:00,996 - Chart_5 - INFO - 删除 Chart 5b 成功
+2024-02-26 00:02:00,996 - Chart_5 - INFO - defects4j checkout -p Chart -v 5b -w /home/chongchong/d4j-project/Chart_5
+2024-02-26 00:02:04,049 - Chart_5 - INFO - checkout Chart 5b 成功
+2024-02-26 00:02:09,659 - Chart_5 - INFO - 编译成功
+2024-02-26 00:02:17,887 - Chart_5 - INFO - 测试失败
+2024-02-26 00:02:17,887 - Chart_5 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.xy.junit.XYSeriesTests::testBug1955483
+
+2024-02-26 00:02:18,755 - Chart_5 - INFO - 它的bug类型为:
+2024-02-26 00:02:18,755 - Chart_5 - INFO - 4
+2024-02-26 00:04:06,447 - Chart_5 - INFO - 开始验证补丁1 1:
+2024-02-26 00:04:06,447 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                XYDataItem existing = (XYDataItem) this.data.get(index);
+                overwritten = (XYDataItem) existing.clone();
+            }
+        } else {
+            this.data.add(new XYDataItem(x, y)); // If item not found, add it
+        }
+
+2024-02-26 00:04:07,058 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:07,058 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:07,058 - Chart_5 - INFO - 补丁1 1 未成功编译
+2024-02-26 00:04:07,059 - Chart_5 - INFO - 开始验证补丁1 2:
+2024-02-26 00:04:07,059 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) { 
+            if (!this.allowDuplicateXValues) {
+                // Update the existing item
+                XYDataItem existing = (XYDataItem) this.data.get(index);
+                overwritten = (XYDataItem) existing.clone();
+                existing.setY(y);
+            }
+        } else {
+            // Add a new item, as x is not found in the series
+            overwritten = new XYDataItem(x, y);
+            this.data.add(overwritten);
+        }
+
+2024-02-26 00:04:07,660 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:07,660 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:07,660 - Chart_5 - INFO - 补丁1 2 未成功编译
+2024-02-26 00:04:07,661 - Chart_5 - INFO - 开始验证补丁1 3:
+2024-02-26 00:04:07,662 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0 && !this.allowDuplicateXValues) {
+            XYDataItem existing = (XYDataItem) this.data.get(index);
+            overwritten = (XYDataItem) existing.clone();
+        } else if (index < 0) {
+            this.data.add(new XYDataItem(x, y)); // Add a new item if not found
+        }
+
+2024-02-26 00:04:08,271 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:08,271 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:08,271 - Chart_5 - INFO - 补丁1 3 未成功编译
+2024-02-26 00:04:08,272 - Chart_5 - INFO - 开始验证补丁1 4:
+2024-02-26 00:04:08,272 - Chart_5 - INFO - 
+XYDataItem overwritten = null;
+int index = indexOf(x);
+if (index >= 0) {
+    if (!this.allowDuplicateXValues) {
+        existing = (XYDataItem) this.data.get(index);
+        try {
+            overwritten = (XYDataItem) existing.clone();
+        } catch (CloneNotSupportedException e) {
+            System.err.println("Object clone failed");
+        }
+        existing.setY(y);
+    } else {
+        throw new SeriesException("Duplicate x-value not allowed.");
+    }
+} else {
+    this.data.add(new XYDataItem(x, y));
+}
+
+2024-02-26 00:04:08,879 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:08,879 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:08,879 - Chart_5 - INFO - 补丁1 4 未成功编译
+2024-02-26 00:04:08,880 - Chart_5 - INFO - 开始验证补丁1 5:
+2024-02-26 00:04:08,880 - Chart_5 - INFO - 
+XYDataItem overwritten = null;
+int index = indexOf(x);
+if (index >= 0) {
+    if (!this.allowDuplicateXValues) {
+        existing = this.data.get(index);
+        overwritten = (XYDataItem) existing.clone();
+        existing.setY(y);
+    } else {
+        throw new SeriesException("Duplicate x-values are not permitted");
+    }
+} else {
+    this.data.add(new XYDataItem(x, y));
+}
+
+2024-02-26 00:04:09,495 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:09,495 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:09,495 - Chart_5 - INFO - 补丁1 5 未成功编译
+2024-02-26 00:04:09,496 - Chart_5 - INFO - 开始验证补丁1 6:
+2024-02-26 00:04:09,496 - Chart_5 - INFO - 
+XYDataItem overwritten = null;
+int index = indexOf(x);
+if (index >= 0) {
+    existing = (XYDataItem) this.data.get(index);
+    if (!this.allowDuplicateXValues) {
+        overwritten = (XYDataItem) existing.clone();
+        // could throw CloneNotSupportedException, need proper handling
+    }
+    existing.setY(y);
+} else {
+    this.data.add(new XYDataItem(x, y));
+}
+
+2024-02-26 00:04:10,111 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:10,111 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:10,112 - Chart_5 - INFO - 补丁1 6 未成功编译
+2024-02-26 00:04:10,113 - Chart_5 - INFO - 开始验证补丁1 7:
+2024-02-26 00:04:10,113 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                existing = (XYDataItem) this.data.get(index);
+                overwritten = (XYDataItem) existing.clone();
+            } else {
+                // Handle logic for duplicate X values when allowed
+            }
+        } else {
+            // Handle logic for when x is not found in the data structure
+        }
+
+2024-02-26 00:04:10,723 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:10,723 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:10,723 - Chart_5 - INFO - 补丁1 7 未成功编译
+2024-02-26 00:04:10,724 - Chart_5 - INFO - 开始验证补丁1 8:
+2024-02-26 00:04:10,724 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            existing = (XYDataItem) this.data.get(index);
+            overwritten = (XYDataItem) existing.clone();
+            // Additional code to update y value for existing x
+        } else {
+            // Logic to add a new XYDataItem since x is not found
+        }
+
+2024-02-26 00:04:11,331 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:11,331 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:11,331 - Chart_5 - INFO - 补丁1 8 未成功编译
+2024-02-26 00:04:11,332 - Chart_5 - INFO - 开始验证补丁1 9:
+2024-02-26 00:04:11,332 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index < 0) {
+            // Logic to add a new XYDataItem since x is not found
+        } else if (!this.allowDuplicateXValues) {
+            existing = (XYDataItem) this.data.get(index);
+            overwritten = (XYDataItem) existing.clone();
+            // Additional code to update y value for existing x
+        } else {
+            // Logic to handle when duplicate x values are allowed
+        }
+
+2024-02-26 00:04:11,939 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:11,939 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:11,940 - Chart_5 - INFO - 补丁1 9 未成功编译
+2024-02-26 00:04:11,941 - Chart_5 - INFO - 开始验证补丁2 1:
+2024-02-26 00:04:11,941 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                // Duplicate x-value not allowed, get the existing item to overwrite
+                XYDataItem existing = (XYDataItem) this.data.get(index);
+                // Proceed with the attempt to clone the existing item
+                overwritten = (XYDataItem) existing.clone();
+            }
+        } else {
+
+2024-02-26 00:04:12,540 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:12,540 - Chart_5 - INFO - 错误: 有 'if', 但是没有 'else'
+else {
+2024-02-26 00:04:12,540 - Chart_5 - INFO - 补丁2 1 未成功编译
+2024-02-26 00:04:12,541 - Chart_5 - INFO - 开始验证补丁2 2:
+2024-02-26 00:04:12,541 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            XYDataItem existing = (XYDataItem) this.data.get(index);
+            if (!this.allowDuplicateXValues) {
+                // Attempt to clone the existing item since duplicate x-value not allowed
+                overwritten = (XYDataItem) existing.clone();
+            }
+        } else {
+
+2024-02-26 00:04:13,135 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:13,135 - Chart_5 - INFO - 错误: 有 'if', 但是没有 'else'
+else {
+2024-02-26 00:04:13,135 - Chart_5 - INFO - 补丁2 2 未成功编译
+2024-02-26 00:04:13,136 - Chart_5 - INFO - 开始验证补丁2 3:
+2024-02-26 00:04:13,136 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            // Get the existing item, which may or may not be overwritten based on allowDuplicateXValues
+            XYDataItem existing = (XYDataItem) this.data.get(index);
+            overwritten = (XYDataItem) existing.clone();
+            if (!this.allowDuplicateXValues) {
+                // If duplicates are not allowed, prepare to overwrite
+                // Error handling might be done outside of this snippet
+            }
+        } else {
+
+2024-02-26 00:04:13,725 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:13,725 - Chart_5 - INFO - 错误: 有 'if', 但是没有 'else'
+else {
+2024-02-26 00:04:13,725 - Chart_5 - INFO - 补丁2 3 未成功编译
+2024-02-26 00:04:13,726 - Chart_5 - INFO - 开始验证补丁2 4:
+2024-02-26 00:04:13,726 - Chart_5 - INFO - 
+        // Check if the x-value already exists in the series
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                XYDataItem existing = (XYDataItem) this.data.get(index);
+                try {
+                    overwritten = (XYDataItem) existing.clone();
+                }
+                catch (CloneNotSupportedException e) {
+                    // Handle clone not supported
+                }
+                this.data.set(index, new XYDataItem(x, y));
+            } else {
+                // Handle the case when duplicate x-values are allowed
+            }
+        } else {
+            // Add a new XYDataItem, as it doesn't exist in the series
+            this.data.add(new XYDataItem(x, y));
+        }
+
+2024-02-26 00:04:14,330 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:14,330 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:14,330 - Chart_5 - INFO - 补丁2 4 未成功编译
+2024-02-26 00:04:14,331 - Chart_5 - INFO - 开始验证补丁2 5:
+2024-02-26 00:04:14,331 - Chart_5 - INFO - 
+        // Separate the existence check from the duplicate check
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index == -1) {
+            // x-value doesn't exist, add new item
+            this.data.add(new XYDataItem(x, y));
+        } else if (!this.allowDuplicateXValues) {
+            // x-value exists and duplicate x-values are not allowed
+            XYDataItem existing = (XYDataItem) this.data.get(index);
+            try {
+                overwritten = (XYDataItem) existing.clone();
+            }
+            catch (CloneNotSupportedException e) {
+                // Handle clone not supported
+            }
+            this.data.set(index, new XYDataItem(x, y));
+        } else {
+            // Handle the case when duplicate x-values are allowed
+        }
+
+2024-02-26 00:04:14,944 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:14,944 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:14,944 - Chart_5 - INFO - 补丁2 5 未成功编译
+2024-02-26 00:04:14,945 - Chart_5 - INFO - 开始验证补丁2 6:
+2024-02-26 00:04:14,945 - Chart_5 - INFO - 
+        // Streamline the check for existing x-value and handle duplicates
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                // Existing item found and duplicates not allowed
+                XYDataItem existing = (XYDataItem) this.data.get(index);
+                try {
+                    overwritten = (XYDataItem) existing.clone();
+                }
+                catch (CloneNotSupportedException e) {
+                    // Handle clone not supported
+                }
+                // Replace existing item with the new y-value
+                this.data.set(index, new XYDataItem(x, y));
+            } else {
+                // Duplicate x-values are allowed, add a new item
+                this.data.add(new XYDataItem(x, y));
+            }
+        } else {
+            // x-value doesn't exist, add new item
+            this.data.add(new XYDataItem(x, y));
+        }
+
+2024-02-26 00:04:15,552 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:15,552 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:15,552 - Chart_5 - INFO - 补丁2 6 未成功编译
+2024-02-26 00:04:15,553 - Chart_5 - INFO - 开始验证补丁2 7:
+2024-02-26 00:04:15,553 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index == -1 || this.allowDuplicateXValues) {
+            // Add a new item or allow duplicates
+        } else {
+            // An existing item is found, and duplicates are not allowed
+            XYDataItem existing = (XYDataItem) this.data.get(index);
+            try {
+                overwritten = (XYDataItem) existing.clone();
+            } catch (CloneNotSupportedException e) {
+                // Handle the exception
+            }
+            // Replace existing item
+        }
+
+2024-02-26 00:04:16,159 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:16,159 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:16,159 - Chart_5 - INFO - 补丁2 7 未成功编译
+2024-02-26 00:04:16,161 - Chart_5 - INFO - 开始验证补丁2 8:
+2024-02-26 00:04:16,161 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index == -1) {
+            // No existing item found, add a new item
+        } else if (!this.allowDuplicateXValues) {
+            // An existing item is found, and duplicates are not allowed
+            XYDataItem existing = (XYDataItem) this.data.get(index);
+            try {
+                overwritten = (XYDataItem) existing.clone();
+            } catch (CloneNotSupportedException e) {
+                // Handle the exception
+            }
+            // Replace existing item
+        } else {
+            // Allow duplicates, add a new item
+        }
+
+2024-02-26 00:04:16,761 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:16,761 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:16,761 - Chart_5 - INFO - 补丁2 8 未成功编译
+2024-02-26 00:04:16,762 - Chart_5 - INFO - 开始验证补丁2 9:
+2024-02-26 00:04:16,762 - Chart_5 - INFO - 
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            // An existing item is found
+            if (!this.allowDuplicateXValues) {
+                // Duplicates are not allowed, replace existing item
+                XYDataItem existing = (XYDataItem) this.data.get(index);
+                try {
+                    overwritten = (XYDataItem) existing.clone();
+                } catch (CloneNotSupportedException e) {
+                    // Handle the exception
+                }
+            } else {
+                // Allow duplicates, add a new item
+            }
+        } else {
+            // No existing item found, add a new item
+        }
+
+2024-02-26 00:04:17,398 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:17,398 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:17,398 - Chart_5 - INFO - 补丁2 9 未成功编译
+2024-02-26 00:04:17,400 - Chart_5 - INFO - 开始验证补丁3 1:
+2024-02-26 00:04:17,400 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                existing = (XYDataItem) this.data.get(index);
+                try {
+                    overwritten = (XYDataItem) existing.clone();
+                }
+                catch (CloneNotSupportedException e) {
+                    throw new RuntimeException("Couldn't clone XYDataItem", e);
+                }
+                // Existing item with the same x value found, update its y value
+                existing.setY(y);
+            }
+        } else {
+            // No existing item found, so add a new one
+            XYDataItem newItem = new XYDataItem(x, y);
+            this.data.add(newItem);
+            overwritten = null;
+        }
+
+2024-02-26 00:04:18,012 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:18,012 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:18,012 - Chart_5 - INFO - 补丁3 1 未成功编译
+2024-02-26 00:04:18,013 - Chart_5 - INFO - 开始验证补丁3 2:
+2024-02-26 00:04:18,013 - Chart_5 - INFO - 
+        // if we get to here, we know that the x value is unique or duplicates are allowed
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            // Existing item with the same x value found
+            existing = (XYDataItem) this.data.get(index);
+            try {
+                overwritten = (XYDataItem) existing.clone();
+            }
+            catch (CloneNotSupportedException e) {
+                throw new RuntimeException("Couldn't clone XYDataItem", e);
+            }
+            existing.setY(y); // Update the existing entry's y value
+        } else {
+            // No existing item found, so add a new one
+            XYDataItem newItem = new XYDataItem(x, y);
+            this.data.add(newItem);
+        }
+        return overwritten;
+
+2024-02-26 00:04:18,619 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:18,620 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:18,620 - Chart_5 - INFO - 补丁3 2 未成功编译
+2024-02-26 00:04:18,621 - Chart_5 - INFO - 开始验证补丁3 3:
+2024-02-26 00:04:18,621 - Chart_5 - INFO - 
+        // if we get to here, we know that the x value is unique or duplicates are allowed
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            // Existing item with the same x value found
+            existing = (XYDataItem) this.data.get(index);
+            try {
+                overwritten = (XYDataItem) existing.clone();
+            }
+            catch (CloneNotSupportedException e) {
+                throw new RuntimeException("Failed to clone XYDataItem", e);
+            }
+            // Decide whether to update the existing item or leave it based on a flag
+            if (!this.allowDuplicateXValues) {
+                existing.setY(y); // Update the existing entry's y value
+            } else {
+                // Code for handling the scenario where duplicate x values are allowed
+            }
+        } else {
+            // No existing item found, so add a new one
+            this.data.add(new XYDataItem(x, y));
+        }
+        return overwritten;
+
+2024-02-26 00:04:19,244 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:19,244 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:19,244 - Chart_5 - INFO - 补丁3 3 未成功编译
+2024-02-26 00:04:19,245 - Chart_5 - INFO - 开始验证补丁3 4:
+2024-02-26 00:04:19,245 - Chart_5 - INFO - 
+// if we get to here, we know that duplicate X values are not permitted
+XYDataItem overwritten = null;
+int index = indexOf(x);
+if (index >= 0) {
+    if (!this.allowDuplicateXValues) {
+        existing = (XYDataItem) this.data.get(index);
+        overwritten = (XYDataItem) existing.clone();
+    } else {
+        // Handle the case where duplicate X values are allowed
+    }
+} else {
+    // Add new XYDataItem as it does not exist
+}
+
+2024-02-26 00:04:19,862 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:19,862 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:19,863 - Chart_5 - INFO - 补丁3 4 未成功编译
+2024-02-26 00:04:19,864 - Chart_5 - INFO - 开始验证补丁3 5:
+2024-02-26 00:04:19,864 - Chart_5 - INFO - 
+// if we get to here, we know that duplicate X values are not permitted
+XYDataItem overwritten = null;
+int index = indexOf(x);
+if (!this.allowDuplicateXValues && index >= 0) {
+    existing = (XYDataItem) this.data.get(index);
+    overwritten = (XYDataItem) existing.clone();
+} else if (index < 0) {
+    // Add new XYDataItem as it does not exist
+}
+
+2024-02-26 00:04:20,469 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:20,469 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:20,469 - Chart_5 - INFO - 补丁3 5 未成功编译
+2024-02-26 00:04:20,470 - Chart_5 - INFO - 开始验证补丁3 6:
+2024-02-26 00:04:20,470 - Chart_5 - INFO - 
+// if we get to here, we know that duplicate X values are not permitted
+XYDataItem overwritten = null;
+int index = indexOf(x);
+if (index >= 0) {
+    existing = (XYDataItem) this.data.get(index);
+    overwritten = (XYDataItem) existing.clone();
+    if (!this.allowDuplicateXValues) {
+        // Possibly throw an exception or handle the case where duplicate X values are not allowed
+    }
+} else {
+    // Add new XYDataItem as it does not exist
+}
+
+2024-02-26 00:04:21,091 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:21,091 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:21,092 - Chart_5 - INFO - 补丁3 6 未成功编译
+2024-02-26 00:04:21,093 - Chart_5 - INFO - 开始验证补丁3 7:
+2024-02-26 00:04:21,093 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            if (!this.allowDuplicateXValues) {
+                existing = (XYDataItem) this.data.get(index);
+                overwritten = (XYDataItem) existing.clone();
+            } else {
+                // Handle the situation where duplicate X values are allowed
+            }
+        } else {
+            // Handle the situation where x is not found in the data structure
+        }
+
+2024-02-26 00:04:21,712 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:21,712 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:21,712 - Chart_5 - INFO - 补丁3 7 未成功编译
+2024-02-26 00:04:21,713 - Chart_5 - INFO - 开始验证补丁3 8:
+2024-02-26 00:04:21,713 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0) {
+            existing = (XYDataItem) this.data.get(index);
+            overwritten = (XYDataItem) existing.clone();
+            // additional code to update the existing item instead of just cloning it
+            // ...
+        } else {
+            // add a new XYDataItem since the X value doesn't exist
+            // ...
+        }
+
+2024-02-26 00:04:22,313 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:22,314 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:22,314 - Chart_5 - INFO - 补丁3 8 未成功编译
+2024-02-26 00:04:22,315 - Chart_5 - INFO - 开始验证补丁3 9:
+2024-02-26 00:04:22,315 - Chart_5 - INFO - 
+        // if we get to here, we know that duplicate X values are not permitted
+        XYDataItem overwritten = null;
+        int index = indexOf(x);
+        if (index >= 0 && !this.allowDuplicateXValues) {
+            existing = (XYDataItem) this.data.get(index);
+            overwritten = (XYDataItem) existing.clone();
+            // additional code to update or remove the existing item
+            // ...
+        } else if (index < 0) {
+            // add a new XYDataItem since the X value doesn't exist
+            // ...
+        }
+
+2024-02-26 00:04:22,937 - Chart_5 - INFO - 编译失败
+2024-02-26 00:04:22,937 - Chart_5 - INFO - 错误: 非法的类型开始
+else {
+2024-02-26 00:04:22,937 - Chart_5 - INFO - 补丁3 9 未成功编译
+2024-02-26 00:04:22,937 - Chart_5 - INFO - Chart_5 未成功修复

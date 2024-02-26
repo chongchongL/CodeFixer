@@ -1,0 +1,362 @@
+2024-02-25 12:50:27,009 - Math_39 - INFO - rm -rf /home/chongchong/d4j-project/Math_39
+2024-02-25 12:50:27,010 - Math_39 - INFO - 删除 Math 39b 成功
+2024-02-25 12:50:27,010 - Math_39 - INFO - defects4j checkout -p Math -v 39b -w /home/chongchong/d4j-project/Math_39
+2024-02-25 12:50:30,482 - Math_39 - INFO - checkout Math 39b 成功
+2024-02-25 12:50:37,138 - Math_39 - INFO - 编译成功
+2024-02-25 12:50:56,721 - Math_39 - INFO - 测试失败
+2024-02-25 12:50:56,721 - Math_39 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+
+2024-02-25 12:50:57,632 - Math_39 - INFO - 它的bug类型为:
+2024-02-25 12:50:57,632 - Math_39 - INFO - 3
+2024-02-25 12:52:01,369 - Math_39 - INFO - 开始验证补丁1 1:
+2024-02-25 12:52:01,369 - Math_39 - INFO - 
+if (firstTime || Math.abs(hNew) > Math.abs(stepSize)) {
+    stepSize = filterStep(hNew, forward, false);
+}
+
+2024-02-25 12:52:02,640 - Math_39 - INFO - 编译成功
+2024-02-25 12:52:22,311 - Math_39 - INFO - 测试失败
+2024-02-25 12:52:22,311 - Math_39 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+
+2024-02-25 12:52:22,771 - Math_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:52:22,771 - Math_39 - INFO - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+2024-02-25 12:52:22,771 - Math_39 - INFO - 失败的测试代码为:
+2024-02-25 12:52:22,771 - Math_39 - INFO -       integ.integrate(equations, start, new double[] { 1.0 }, end, new double[1]);
+
+2024-02-25 12:52:22,771 - Math_39 - INFO - 失败信息为:
+2024-02-25 12:52:22,771 - Math_39 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 12:52:22,771 - Math_39 - INFO - 补丁1 1测试失败
+2024-02-25 12:52:22,772 - Math_39 - INFO - 开始验证补丁1 2:
+2024-02-25 12:52:22,772 - Math_39 - INFO - 
+stepSize = Math.min(hNew, maxStep);
+
+2024-02-25 12:52:23,496 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:23,496 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+stepSize = Math.min(hNew, maxStep);
+2024-02-25 12:52:23,496 - Math_39 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:52:23,497 - Math_39 - INFO - 开始验证补丁1 3:
+2024-02-25 12:52:23,497 - Math_39 - INFO - 
+if (Math.abs(hNew) > maxStepSize) {
+    stepSize = forward ? maxStepSize : -maxStepSize;
+} else {
+    stepSize = hNew;
+}
+
+2024-02-25 12:52:24,211 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:24,211 - Math_39 - INFO - 错误: 找不到符号
+if (Math.abs(hNew) > maxStepSize) {
+2024-02-25 12:52:24,211 - Math_39 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:52:24,212 - Math_39 - INFO - 开始验证补丁1 4:
+2024-02-25 12:52:24,212 - Math_39 - INFO - 
+        if (stepSize > maxStep) {
+            stepSize = maxStep;
+        }
+
+2024-02-25 12:52:24,925 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:24,925 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+if (stepSize > maxStep) {
+2024-02-25 12:52:24,925 - Math_39 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:52:24,926 - Math_39 - INFO - 开始验证补丁1 5:
+2024-02-25 12:52:24,926 - Math_39 - INFO - 
+        double safetyFactor = 0.9; // Example safety factor, can be adjusted as needed
+        stepSize = hNew * safetyFactor;
+
+2024-02-25 12:52:26,184 - Math_39 - INFO - 编译成功
+2024-02-25 12:52:45,800 - Math_39 - INFO - 测试失败
+2024-02-25 12:52:45,800 - Math_39 - INFO - Failing tests: 15
+  - org.apache.commons.math.ode.JacobianMatricesTest::testLowAccuracyExternalDifferentiation
+  - org.apache.commons.math.ode.JacobianMatricesTest::testHighAccuracyExternalDifferentiation
+  - org.apache.commons.math.ode.events.OverlappingEventsTest::testOverlappingEvents1
+  - org.apache.commons.math.ode.nonstiff.DormandPrince54IntegratorTest::testVariableSteps
+  - org.apache.commons.math.ode.nonstiff.DormandPrince54IntegratorTest::testKepler
+  - org.apache.commons.math.ode.nonstiff.DormandPrince54StepInterpolatorTest::derivativesConsistency
+  - org.apache.commons.math.ode.nonstiff.DormandPrince54StepInterpolatorTest::checkClone
+  - org.apache.commons.math.ode.nonstiff.DormandPrince54StepInterpolatorTest::serialization
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testKepler
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853StepInterpolatorTest::derivativesConsistency
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853StepInterpolatorTest::serialization
+  - org.apache.commons.math.ode.nonstiff.HighamHall54StepInterpolatorTest::derivativesConsistency
+  - org.apache.commons.math.ode.nonstiff.HighamHall54StepInterpolatorTest::checkClone
+  - org.apache.commons.math.ode.nonstiff.HighamHall54StepInterpolatorTest::serialization
+
+2024-02-25 12:52:46,260 - Math_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:52:46,260 - Math_39 - INFO - org.apache.commons.math.ode.JacobianMatricesTest::testLowAccuracyExternalDifferentiation
+2024-02-25 12:52:46,260 - Math_39 - INFO - 失败的测试代码为:
+2024-02-25 12:52:46,260 - Math_39 - INFO -         Assert.assertTrue((residualsP0.getMax() - residualsP0.getMin()) > 500);
+
+2024-02-25 12:52:46,260 - Math_39 - INFO - 失败信息为:
+2024-02-25 12:52:46,260 - Math_39 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 12:52:46,260 - Math_39 - INFO - 补丁1 5测试失败
+2024-02-25 12:52:46,261 - Math_39 - INFO - 开始验证补丁1 6:
+2024-02-25 12:52:46,261 - Math_39 - INFO - 
+        double errorRatio = computeErrorRatio(scale, y, yTmp); // Hypothetical function to compute the error ratio
+        if (errorRatio > 1.0) {
+            stepSize = adjustStepSize(hNew, errorRatio); // Hypothetical function to adjust step size based on error
+        }
+
+2024-02-25 12:52:46,969 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:46,969 - Math_39 - INFO - 错误: 找不到符号
+double errorRatio = computeErrorRatio(scale, y, yTmp); // Hypothetical function to compute the error ratio
+2024-02-25 12:52:46,969 - Math_39 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:52:46,970 - Math_39 - INFO - 开始验证补丁1 7:
+2024-02-25 12:52:46,970 - Math_39 - INFO - 
+if (hNew > maxStep) {
+    hNew = maxStep;
+} else if (hNew < minStep) {
+    hNew = minStep;
+}
+stepSize = hNew;
+
+2024-02-25 12:52:47,682 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:47,682 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+if (hNew > maxStep) {
+2024-02-25 12:52:47,682 - Math_39 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:52:47,683 - Math_39 - INFO - 开始验证补丁1 8:
+2024-02-25 12:52:47,684 - Math_39 - INFO - 
+stepSize = Math.min(maxStep, Math.max(hNew, minStep));
+
+2024-02-25 12:52:48,423 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:48,423 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+stepSize = Math.min(maxStep, Math.max(hNew, minStep));
+2024-02-25 12:52:48,423 - Math_39 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:52:48,424 - Math_39 - INFO - 开始验证补丁1 9:
+2024-02-25 12:52:48,424 - Math_39 - INFO - 
+if (firstTime && hNew > maxFirstStep) {
+    hNew = maxFirstStep;
+}
+stepSize = hNew;
+
+2024-02-25 12:52:49,144 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:49,144 - Math_39 - INFO - 错误: 找不到符号
+if (firstTime && hNew > maxFirstStep) {
+2024-02-25 12:52:49,144 - Math_39 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:52:49,145 - Math_39 - INFO - 开始验证补丁2 1:
+2024-02-25 12:52:49,145 - Math_39 - INFO - 
+        if (!isAcceptableStepsize(hNew)) {
+          hNew = adjustStepsize(hNew);
+        }
+
+2024-02-25 12:52:49,873 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:49,873 - Math_39 - INFO - 错误: 找不到符号
+if (!isAcceptableStepsize(hNew)) {
+2024-02-25 12:52:49,873 - Math_39 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:52:49,874 - Math_39 - INFO - 开始验证补丁2 2:
+2024-02-25 12:52:49,874 - Math_39 - INFO - 
+        if (hNew > maxStep) {
+          hNew = maxStep;
+        }
+
+2024-02-25 12:52:50,592 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:50,592 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+if (hNew > maxStep) {
+2024-02-25 12:52:50,592 - Math_39 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:52:50,593 - Math_39 - INFO - 开始验证补丁2 3:
+2024-02-25 12:52:50,593 - Math_39 - INFO - 
+        hNew = Math.min(hNew, maxAllowedStep());
+
+2024-02-25 12:52:51,308 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:51,308 - Math_39 - INFO - 错误: 找不到符号
+hNew = Math.min(hNew, maxAllowedStep());
+2024-02-25 12:52:51,308 - Math_39 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:52:51,309 - Math_39 - INFO - 开始验证补丁2 4:
+2024-02-25 12:52:51,309 - Math_39 - INFO - 
+        if (hNew > maxStep) {
+            hNew = maxStep;
+        } else if (hNew < minStep) {
+            hNew = minStep;
+        }
+        stepSize = hNew;
+        // Check for too large initial step
+        if (firstTime && stepSize > maxFirstStep) {
+            stepSize = maxFirstStep;
+        }
+
+2024-02-25 12:52:52,031 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:52,031 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+if (hNew > maxStep) {
+2024-02-25 12:52:52,031 - Math_39 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:52:52,032 - Math_39 - INFO - 开始验证补丁2 5:
+2024-02-25 12:52:52,032 - Math_39 - INFO - 
+        double safety = 0.9; // typical safety factor in step size control
+        if (hNew > maxStep) {
+            hNew = maxStep;
+        }
+        stepSize = safety * hNew;
+        // Ensure the first step is not too large
+        if (firstTime && stepSize > maxFirstStep) {
+            stepSize = maxFirstStep;
+        }
+
+2024-02-25 12:52:52,745 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:52,745 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+if (hNew > maxStep) {
+2024-02-25 12:52:52,745 - Math_39 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:52:52,746 - Math_39 - INFO - 开始验证补丁2 6:
+2024-02-25 12:52:52,746 - Math_39 - INFO - 
+        double errorRatio = computeErrorRatio(errorEstimate, tolerance);
+        double shrink = 0.25; // typical shrink factor when step is rejected
+        double grow = 1.5;    // typical grow factor when step is accepted
+        if (errorRatio > 1.0) {
+            hNew = Math.max(shrink * stepSize, minStep); // Reduce step
+        } else {
+            // Can the step grow?
+            hNew = Math.min(grow * stepSize, maxStep);
+        }
+        stepSize = hNew;
+        // Check for too large initial step
+        if (firstTime && stepSize > maxFirstStep) {
+            stepSize = maxFirstStep;
+        }
+
+2024-02-25 12:52:53,452 - Math_39 - INFO - 编译失败
+2024-02-25 12:52:53,452 - Math_39 - INFO - 错误: 找不到符号
+double errorRatio = computeErrorRatio(errorEstimate, tolerance);
+2024-02-25 12:52:53,452 - Math_39 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:52:53,453 - Math_39 - INFO - 开始验证补丁2 7:
+2024-02-25 12:52:53,453 - Math_39 - INFO - 
+        if (!firstTime) {
+          stepSize = Math.min(stepSize, hNew);
+        } else {
+          stepSize = hNew;
+        }
+
+2024-02-25 12:52:54,722 - Math_39 - INFO - 编译成功
+2024-02-25 12:53:14,379 - Math_39 - INFO - 测试失败
+2024-02-25 12:53:14,379 - Math_39 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+
+2024-02-25 12:53:14,840 - Math_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:53:14,840 - Math_39 - INFO - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+2024-02-25 12:53:14,840 - Math_39 - INFO - 失败的测试代码为:
+2024-02-25 12:53:14,840 - Math_39 - INFO -       integ.integrate(equations, start, new double[] { 1.0 }, end, new double[1]);
+
+2024-02-25 12:53:14,840 - Math_39 - INFO - 失败信息为:
+2024-02-25 12:53:14,840 - Math_39 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 12:53:14,840 - Math_39 - INFO - 补丁2 7测试失败
+2024-02-25 12:53:14,841 - Math_39 - INFO - 开始验证补丁2 8:
+2024-02-25 12:53:14,841 - Math_39 - INFO - 
+        stepSize = Math.min(maxStep, hNew);
+
+2024-02-25 12:53:15,580 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:15,580 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+stepSize = Math.min(maxStep, hNew);
+2024-02-25 12:53:15,580 - Math_39 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:53:15,581 - Math_39 - INFO - 开始验证补丁2 9:
+2024-02-25 12:53:15,581 - Math_39 - INFO - 
+        if (hNew > maxAllowedStep) {
+          hNew = maxAllowedStep;
+        }
+        stepSize = hNew;
+
+2024-02-25 12:53:16,297 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:16,297 - Math_39 - INFO - 错误: 找不到符号
+if (hNew > maxAllowedStep) {
+2024-02-25 12:53:16,297 - Math_39 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:53:16,298 - Math_39 - INFO - 开始验证补丁3 1:
+2024-02-25 12:53:16,298 - Math_39 - INFO - 
+        if (hNew > maxStepSize) {
+            hNew = maxStepSize;
+        } else if (hNew < minStepSize) {
+            hNew = minStepSize;
+        }
+
+2024-02-25 12:53:17,017 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:17,017 - Math_39 - INFO - 错误: 找不到符号
+if (hNew > maxStepSize) {
+2024-02-25 12:53:17,017 - Math_39 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:53:17,018 - Math_39 - INFO - 开始验证补丁3 2:
+2024-02-25 12:53:17,018 - Math_39 - INFO - 
+        hNew = Math.min(hNew, maxStepSize);
+        hNew = Math.max(hNew, minStepSize);
+
+2024-02-25 12:53:17,736 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:17,736 - Math_39 - INFO - 错误: 找不到符号
+hNew = Math.min(hNew, maxStepSize);
+2024-02-25 12:53:17,736 - Math_39 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:53:17,737 - Math_39 - INFO - 开始验证补丁3 3:
+2024-02-25 12:53:17,737 - Math_39 - INFO - 
+        if (!firstTime) {
+            double factor = FastMath.min(maxGrowth, FastMath.max(minReduction, safety * FastMath.pow(error, exp)));
+            double scaledHNew = hNew * factor;
+            hNew = FastMath.min(maxStepSize, FastMath.max(minStepSize, scaledHNew));
+        }
+
+2024-02-25 12:53:18,451 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:18,451 - Math_39 - INFO - 错误: 找不到符号
+hNew = FastMath.min(maxStepSize, FastMath.max(minStepSize, scaledHNew));
+2024-02-25 12:53:18,451 - Math_39 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:53:18,453 - Math_39 - INFO - 开始验证补丁3 4:
+2024-02-25 12:53:18,453 - Math_39 - INFO - 
+if (hNew > maxStep) {
+    hNew = maxStep;
+} else if (hNew < minStep) {
+    hNew = minStep;
+}
+
+2024-02-25 12:53:19,177 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:19,177 - Math_39 - INFO - 错误: maxStep可以在AdaptiveStepsizeIntegrator中访问private
+if (hNew > maxStep) {
+2024-02-25 12:53:19,177 - Math_39 - INFO - 补丁3 4 未成功编译
+2024-02-25 12:53:19,179 - Math_39 - INFO - 开始验证补丁3 5:
+2024-02-25 12:53:19,179 - Math_39 - INFO - 
+double safety = 0.9; // a typical safety factor used in numerical methods
+hNew *= safety;
+
+2024-02-25 12:53:20,431 - Math_39 - INFO - 编译成功
+2024-02-25 12:53:39,991 - Math_39 - INFO - 测试失败
+2024-02-25 12:53:39,991 - Math_39 - INFO - Failing tests: 1
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+
+2024-02-25 12:53:40,450 - Math_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:53:40,450 - Math_39 - INFO - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testTooLargeFirstStep
+2024-02-25 12:53:40,450 - Math_39 - INFO - 失败的测试代码为:
+2024-02-25 12:53:40,450 - Math_39 - INFO -       integ.integrate(equations, start, new double[] { 1.0 }, end, new double[1]);
+
+2024-02-25 12:53:40,450 - Math_39 - INFO - 失败信息为:
+2024-02-25 12:53:40,450 - Math_39 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 12:53:40,450 - Math_39 - INFO - 补丁3 5测试失败
+2024-02-25 12:53:40,451 - Math_39 - INFO - 开始验证补丁3 6:
+2024-02-25 12:53:40,451 - Math_39 - INFO - 
+if (estimatedError > errorTolerance) {
+    hNew *= 0.5; // reduce the step size by a factor, e.g., 0.5
+}
+
+2024-02-25 12:53:41,166 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:41,166 - Math_39 - INFO - 错误: 找不到符号
+if (estimatedError > errorTolerance) {
+2024-02-25 12:53:41,166 - Math_39 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:53:41,167 - Math_39 - INFO - 开始验证补丁3 7:
+2024-02-25 12:53:41,167 - Math_39 - INFO - 
+if (hNew > maxStep) {
+    hNew = maxStep;
+} else if (hNew < minStep) {
+    hNew = minStep;
+}
+
+2024-02-25 12:53:41,167 - Math_39 - INFO - 补丁3 7为重复的补丁
+2024-02-25 12:53:41,168 - Math_39 - INFO - 开始验证补丁3 8:
+2024-02-25 12:53:41,168 - Math_39 - INFO - 
+if (Math.abs(hNew) > maxAllowedStep) {
+    hNew = Math.copySign(maxAllowedStep, hNew);
+}
+
+2024-02-25 12:53:41,877 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:41,877 - Math_39 - INFO - 错误: 找不到符号
+if (Math.abs(hNew) > maxAllowedStep) {
+2024-02-25 12:53:41,877 - Math_39 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:53:41,878 - Math_39 - INFO - 开始验证补丁3 9:
+2024-02-25 12:53:41,878 - Math_39 - INFO - 
+stepSizeFilter.filterStep(hNew, forward, acceptSmall);
+
+2024-02-25 12:53:42,590 - Math_39 - INFO - 编译失败
+2024-02-25 12:53:42,590 - Math_39 - INFO - 错误: 找不到符号
+stepSizeFilter.filterStep(hNew, forward, acceptSmall);
+2024-02-25 12:53:42,590 - Math_39 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:53:42,590 - Math_39 - INFO - Math_39 未成功修复

@@ -1,0 +1,19 @@
+2024-02-23 22:47:51,301 - Chart_11 - INFO - rm -rf /home/chongchong/d4j-project/Chart_11
+2024-02-23 22:47:51,302 - Chart_11 - INFO - 删除 Chart 11b 成功
+2024-02-23 22:47:51,302 - Chart_11 - INFO - defects4j checkout -p Chart -v 11b -w /home/chongchong/d4j-project/Chart_11
+2024-02-23 22:47:54,253 - Chart_11 - INFO - checkout Chart 11b 成功
+2024-02-23 22:47:57,650 - Chart_11 - INFO - 编译成功
+2024-02-23 22:48:04,243 - Chart_11 - INFO - 测试失败
+2024-02-23 22:48:04,244 - Chart_11 - INFO - Failing tests: 2
+  - org.jfree.chart.util.junit.ShapeUtilitiesTests::testEqualGeneralPaths
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 22:48:04,970 - Chart_11 - INFO - 它的bug类型为:
+2024-02-23 22:48:04,971 - Chart_11 - INFO - 1
+2024-02-23 22:48:53,091 - Chart_11 - INFO - 开始验证补丁1 1:
+2024-02-23 22:48:53,091 - Chart_11 - INFO - 
+PathIterator iterator2 = p2.getPathIterator(null);
+
+2024-02-23 22:48:54,025 - Chart_11 - INFO - 编译成功
+2024-02-23 22:49:00,693 - Chart_11 - INFO - 测试成功
+2024-02-23 22:49:00,693 - Chart_11 - INFO - 补丁1 1 通过了所有的测试用例

@@ -1,0 +1,348 @@
+2024-02-24 00:19:21,568 - Closure_14 - INFO - rm -rf /home/chongchong/d4j-project/Closure_14
+2024-02-24 00:19:21,569 - Closure_14 - INFO - 删除 Closure 14b 成功
+2024-02-24 00:19:21,569 - Closure_14 - INFO - defects4j checkout -p Closure -v 14b -w /home/chongchong/d4j-project/Closure_14
+2024-02-24 00:19:23,139 - Closure_14 - INFO - checkout Closure 14b 成功
+2024-02-24 00:19:34,793 - Closure_14 - INFO - 编译成功
+2024-02-24 00:20:22,591 - Closure_14 - INFO - 测试失败
+2024-02-24 00:20:22,591 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+
+2024-02-24 00:20:23,618 - Closure_14 - INFO - 它的bug类型为:
+2024-02-24 00:20:23,618 - Closure_14 - INFO - 1
+2024-02-24 00:21:00,141 - Closure_14 - INFO - Closure_14 未成功修复
+2024-02-24 08:58:52,548 - Closure_14 - INFO - rm -rf /home/chongchong/d4j-project/Closure_14
+2024-02-24 08:58:52,616 - Closure_14 - INFO - 删除 Closure 14b 成功
+2024-02-24 08:58:52,616 - Closure_14 - INFO - defects4j checkout -p Closure -v 14b -w /home/chongchong/d4j-project/Closure_14
+2024-02-24 08:58:54,199 - Closure_14 - INFO - checkout Closure 14b 成功
+2024-02-24 08:59:05,806 - Closure_14 - INFO - 编译成功
+2024-02-24 12:58:31,146 - Closure_14 - INFO - rm -rf /home/chongchong/d4j-project/Closure_14
+2024-02-24 12:58:31,197 - Closure_14 - INFO - 删除 Closure 14b 成功
+2024-02-24 12:58:31,197 - Closure_14 - INFO - defects4j checkout -p Closure -v 14b -w /home/chongchong/d4j-project/Closure_14
+2024-02-24 12:58:33,124 - Closure_14 - INFO - checkout Closure 14b 成功
+2024-02-24 12:58:44,707 - Closure_14 - INFO - 编译成功
+2024-02-24 12:59:32,340 - Closure_14 - INFO - 测试失败
+2024-02-24 12:59:32,340 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+
+2024-02-24 12:59:33,373 - Closure_14 - INFO - 它的bug类型为:
+2024-02-24 12:59:33,373 - Closure_14 - INFO - 1
+2024-02-24 13:00:37,014 - Closure_14 - INFO - 开始验证补丁1 1:
+2024-02-24 13:00:37,014 - Closure_14 - INFO - 
+              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:00:41,205 - Closure_14 - INFO - 编译成功
+2024-02-24 13:01:30,412 - Closure_14 - INFO - 测试失败
+2024-02-24 13:01:30,412 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+
+2024-02-24 13:01:30,916 - Closure_14 - INFO - 选择失败的测试用例为:
+2024-02-24 13:01:30,916 - Closure_14 - INFO - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+2024-02-24 13:01:30,916 - Closure_14 - INFO - 失败的测试代码为:
+2024-02-24 13:01:30,916 - Closure_14 - INFO -     testNotMissing(
+
+2024-02-24 13:01:30,916 - Closure_14 - INFO - 失败信息为:
+2024-02-24 13:01:30,916 - Closure_14 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_MISSING_RETURN_STATEMENT. Missing return statement. Function expected to return number. at testcode line 1 : 24 expected:<0> but was:<1>
+
+2024-02-24 13:01:30,916 - Closure_14 - INFO - 补丁1 1测试失败
+2024-02-24 13:01:30,917 - Closure_14 - INFO - 开始验证补丁1 2:
+2024-02-24 13:01:30,917 - Closure_14 - INFO - 
+              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+              break; // or return, if the logic dictates to exit after processing the first finallyNode
+
+2024-02-24 13:01:35,103 - Closure_14 - INFO - 编译成功
+2024-02-24 13:02:23,420 - Closure_14 - INFO - 测试失败
+2024-02-24 13:02:23,420 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+
+2024-02-24 13:02:23,931 - Closure_14 - INFO - 选择失败的测试用例为:
+2024-02-24 13:02:23,931 - Closure_14 - INFO - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+2024-02-24 13:02:23,931 - Closure_14 - INFO - 失败的测试代码为:
+2024-02-24 13:02:23,931 - Closure_14 - INFO -     testNotMissing(
+
+2024-02-24 13:02:23,931 - Closure_14 - INFO - 失败信息为:
+2024-02-24 13:02:23,931 - Closure_14 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_MISSING_RETURN_STATEMENT. Missing return statement. Function expected to return number. at testcode line 1 : 24 expected:<0> but was:<1>
+
+2024-02-24 13:02:23,931 - Closure_14 - INFO - 补丁1 2测试失败
+2024-02-24 13:02:23,932 - Closure_14 - INFO - 开始验证补丁1 3:
+2024-02-24 13:02:23,932 - Closure_14 - INFO - 
+              // Ensuring that a return statement or a break is included if required by logic
+              if (/* condition based on logic */) {
+                  cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+                  return <appropriateReturnValue>; // Replace <appropriateReturnValue> with the actual value to return based on the logic
+              }
+
+2024-02-24 13:02:25,745 - Closure_14 - INFO - 编译失败
+2024-02-24 13:02:25,745 - Closure_14 - INFO - 错误: 非法的表达式开始
+if (/* condition based on logic */) {
+2024-02-24 13:02:25,745 - Closure_14 - INFO - 补丁1 3 未成功编译
+2024-02-24 13:02:25,746 - Closure_14 - INFO - 开始验证补丁1 4:
+2024-02-24 13:02:25,746 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode); // No change needed if this line is correct
+return someNumber; // Assuming 'someNumber' is the expected number to return
+
+2024-02-24 13:02:27,762 - Closure_14 - INFO - 编译失败
+2024-02-24 13:02:27,762 - Closure_14 - INFO - 错误: 找不到符号
+return someNumber; // Assuming 'someNumber' is the expected number to return
+2024-02-24 13:02:27,763 - Closure_14 - INFO - 补丁1 4 未成功编译
+2024-02-24 13:02:27,764 - Closure_14 - INFO - 开始验证补丁1 5:
+2024-02-24 13:02:27,764 - Closure_14 - INFO - 
+boolean edgeCreated = false;
+for (Node finallyNode : cfa.finallyMap.get(parent)) {
+    cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+    edgeCreated = true; // Indicating that an edge was created
+}
+return edgeCreated ? 1 : 0; // Or any other number based on your method's contract
+
+2024-02-24 13:02:29,794 - Closure_14 - INFO - 编译失败
+2024-02-24 13:02:29,794 - Closure_14 - INFO - 错误: 已在方法 computeFollowNode(Node,Node,ControlFlowAnalysis)中定义了变量 finallyNode
+for (Node finallyNode : cfa.finallyMap.get(parent)) {
+2024-02-24 13:02:29,794 - Closure_14 - INFO - 补丁1 5 未成功编译
+2024-02-24 13:02:29,795 - Closure_14 - INFO - 开始验证补丁1 6:
+2024-02-24 13:02:29,795 - Closure_14 - INFO - 
+for (Node finallyNode : cfa.finallyMap.get(parent)) {
+    cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+}
+return computeFollowNode(fromNode, parent, cfa); // This may already return a number
+
+2024-02-24 13:02:31,814 - Closure_14 - INFO - 编译失败
+2024-02-24 13:02:31,814 - Closure_14 - INFO - 错误: 已在方法 computeFollowNode(Node,Node,ControlFlowAnalysis)中定义了变量 finallyNode
+for (Node finallyNode : cfa.finallyMap.get(parent)) {
+2024-02-24 13:02:31,814 - Closure_14 - INFO - 补丁1 6 未成功编译
+2024-02-24 13:02:31,815 - Closure_14 - INFO - 开始验证补丁1 7:
+2024-02-24 13:02:31,815 - Closure_14 - INFO - 
+            cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:02:36,009 - Closure_14 - INFO - 编译成功
+2024-02-24 13:03:22,889 - Closure_14 - INFO - 测试失败
+2024-02-24 13:03:22,889 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+
+2024-02-24 13:03:23,413 - Closure_14 - INFO - 选择失败的测试用例为:
+2024-02-24 13:03:23,413 - Closure_14 - INFO - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+2024-02-24 13:03:23,413 - Closure_14 - INFO - 失败的测试代码为:
+2024-02-24 13:03:23,413 - Closure_14 - INFO -     testNotMissing(
+
+2024-02-24 13:03:23,413 - Closure_14 - INFO - 失败信息为:
+2024-02-24 13:03:23,413 - Closure_14 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_MISSING_RETURN_STATEMENT. Missing return statement. Function expected to return number. at testcode line 1 : 24 expected:<0> but was:<1>
+
+2024-02-24 13:03:23,413 - Closure_14 - INFO - 补丁1 7测试失败
+2024-02-24 13:03:23,414 - Closure_14 - INFO - 开始验证补丁1 8:
+2024-02-24 13:03:23,414 - Closure_14 - INFO - 
+            return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:03:25,447 - Closure_14 - INFO - 编译失败
+2024-02-24 13:03:25,447 - Closure_14 - INFO - 错误: 不兼容的类型
+return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+2024-02-24 13:03:25,447 - Closure_14 - INFO - 补丁1 8 未成功编译
+2024-02-24 13:03:25,448 - Closure_14 - INFO - 开始验证补丁1 9:
+2024-02-24 13:03:25,448 - Closure_14 - INFO - 
+            // Assuming createEdge returns an int that should be captured
+            int edgeStatus = cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+            // Logic to handle edgeStatus, if relevant, could be added here
+            return edgeStatus;
+
+2024-02-24 13:03:27,481 - Closure_14 - INFO - 编译失败
+2024-02-24 13:03:27,481 - Closure_14 - INFO - 错误: 不兼容的类型
+int edgeStatus = cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+2024-02-24 13:03:27,481 - Closure_14 - INFO - 补丁1 9 未成功编译
+2024-02-24 13:03:27,482 - Closure_14 - INFO - 开始验证补丁2 1:
+2024-02-24 13:03:27,482 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:03:31,647 - Closure_14 - INFO - 编译成功
+2024-02-24 13:04:19,435 - Closure_14 - INFO - 测试失败
+2024-02-24 13:04:19,435 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+
+2024-02-24 13:04:19,941 - Closure_14 - INFO - 选择失败的测试用例为:
+2024-02-24 13:04:19,941 - Closure_14 - INFO - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+2024-02-24 13:04:19,941 - Closure_14 - INFO - 失败的测试代码为:
+2024-02-24 13:04:19,941 - Closure_14 - INFO -     testNotMissing(
+
+2024-02-24 13:04:19,941 - Closure_14 - INFO - 失败信息为:
+2024-02-24 13:04:19,941 - Closure_14 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_MISSING_RETURN_STATEMENT. Missing return statement. Function expected to return number. at testcode line 1 : 24 expected:<0> but was:<1>
+
+2024-02-24 13:04:19,941 - Closure_14 - INFO - 补丁2 1测试失败
+2024-02-24 13:04:19,942 - Closure_14 - INFO - 开始验证补丁2 2:
+2024-02-24 13:04:19,942 - Closure_14 - INFO - 
+return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:04:21,974 - Closure_14 - INFO - 编译失败
+2024-02-24 13:04:21,974 - Closure_14 - INFO - 错误: 不兼容的类型
+return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+2024-02-24 13:04:21,974 - Closure_14 - INFO - 补丁2 2 未成功编译
+2024-02-24 13:04:21,975 - Closure_14 - INFO - 开始验证补丁2 3:
+2024-02-24 13:04:21,975 - Closure_14 - INFO - 
+if (!cfa.createEdge(fromNode, Branch.UNCOND, finallyNode)) {
+  return -1; // or some other error indicator
+}
+
+2024-02-24 13:04:24,025 - Closure_14 - INFO - 编译失败
+2024-02-24 13:04:24,025 - Closure_14 - INFO - 错误: 此处不允许使用 '空' 类型
+if (!cfa.createEdge(fromNode, Branch.UNCOND, finallyNode)) {
+2024-02-24 13:04:24,025 - Closure_14 - INFO - 补丁2 3 未成功编译
+2024-02-24 13:04:24,026 - Closure_14 - INFO - 开始验证补丁2 4:
+2024-02-24 13:04:24,026 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:04:24,026 - Closure_14 - INFO - 补丁2 4为重复的补丁
+2024-02-24 13:04:24,031 - Closure_14 - INFO - 开始验证补丁2 5:
+2024-02-24 13:04:24,031 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+return finallyNode;
+
+2024-02-24 13:04:28,262 - Closure_14 - INFO - 编译成功
+2024-02-24 13:05:16,553 - Closure_14 - INFO - 测试失败
+2024-02-24 13:05:16,553 - Closure_14 - INFO - Failing tests: 4
+  - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testReturnInTry
+
+2024-02-24 13:05:17,060 - Closure_14 - INFO - 选择失败的测试用例为:
+2024-02-24 13:05:17,060 - Closure_14 - INFO - com.google.javascript.jscomp.CheckMissingReturnTest::testIssue779
+2024-02-24 13:05:17,060 - Closure_14 - INFO - 失败的测试代码为:
+2024-02-24 13:05:17,060 - Closure_14 - INFO -     testNotMissing(
+
+2024-02-24 13:05:17,060 - Closure_14 - INFO - 失败信息为:
+2024-02-24 13:05:17,060 - Closure_14 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_MISSING_RETURN_STATEMENT. Missing return statement. Function expected to return number. at testcode line 1 : 24 expected:<0> but was:<1>
+
+2024-02-24 13:05:17,061 - Closure_14 - INFO - 补丁2 5测试失败
+2024-02-24 13:05:17,061 - Closure_14 - INFO - 开始验证补丁2 6:
+2024-02-24 13:05:17,062 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+if (someCondition) {
+  return finallyNode;
+}
+
+2024-02-24 13:05:19,069 - Closure_14 - INFO - 编译失败
+2024-02-24 13:05:19,069 - Closure_14 - INFO - 错误: 找不到符号
+if (someCondition) {
+2024-02-24 13:05:19,069 - Closure_14 - INFO - 补丁2 6 未成功编译
+2024-02-24 13:05:19,070 - Closure_14 - INFO - 开始验证补丁2 7:
+2024-02-24 13:05:19,070 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:05:19,070 - Closure_14 - INFO - 补丁2 7为重复的补丁
+2024-02-24 13:05:19,075 - Closure_14 - INFO - 开始验证补丁2 8:
+2024-02-24 13:05:19,075 - Closure_14 - INFO - 
+return cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:05:19,075 - Closure_14 - INFO - 补丁2 8为重复的补丁
+2024-02-24 13:05:19,076 - Closure_14 - INFO - 开始验证补丁2 9:
+2024-02-24 13:05:19,076 - Closure_14 - INFO - 
+continue;
+
+2024-02-24 13:05:23,227 - Closure_14 - INFO - 编译成功
+2024-02-24 13:06:11,262 - Closure_14 - INFO - 测试失败
+2024-02-24 13:06:11,262 - Closure_14 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedBreakwithFinally
+  - com.google.javascript.jscomp.ControlFlowAnalysisTest::testReturnInTry
+
+2024-02-24 13:06:11,783 - Closure_14 - INFO - 选择失败的测试用例为:
+2024-02-24 13:06:11,783 - Closure_14 - INFO - com.google.javascript.jscomp.ControlFlowAnalysisTest::testDeepNestedFinally
+2024-02-24 13:06:11,783 - Closure_14 - INFO - 失败的测试代码为:
+2024-02-24 13:06:11,783 - Closure_14 - INFO -     assertCrossEdge(cfg, Token.IF, Token.BLOCK, Branch.ON_EX);
+
+2024-02-24 13:06:11,783 - Closure_14 - INFO - 失败信息为:
+2024-02-24 13:06:11,783 - Closure_14 - INFO - junit.framework.AssertionFailedError: No cross edges found
+
+2024-02-24 13:06:11,783 - Closure_14 - INFO - 补丁2 9测试失败
+2024-02-24 13:06:11,784 - Closure_14 - INFO - 开始验证补丁3 1:
+2024-02-24 13:06:11,784 - Closure_14 - INFO - 
+              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:06:11,784 - Closure_14 - INFO - 补丁3 1为重复的补丁
+2024-02-24 13:06:11,785 - Closure_14 - INFO - 开始验证补丁3 2:
+2024-02-24 13:06:11,785 - Closure_14 - INFO - 
+              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+            }
+            return someValue; // Replace someValue with the actual value that needs to be returned
+
+2024-02-24 13:06:13,604 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:13,605 - Closure_14 - INFO - 错误: 非法的类型开始
+while (nextSibling != null && nextSibling.isFunction()) {
+2024-02-24 13:06:13,605 - Closure_14 - INFO - 补丁3 2 未成功编译
+2024-02-24 13:06:13,606 - Closure_14 - INFO - 开始验证补丁3 3:
+2024-02-24 13:06:13,606 - Closure_14 - INFO - 
+              boolean edgeCreated = cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+              if (!edgeCreated) {
+                  // Handle the error appropriately; for example, log an error or throw an exception
+              }
+
+2024-02-24 13:06:15,628 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:15,628 - Closure_14 - INFO - 错误: 不兼容的类型
+boolean edgeCreated = cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+2024-02-24 13:06:15,628 - Closure_14 - INFO - 补丁3 3 未成功编译
+2024-02-24 13:06:15,630 - Closure_14 - INFO - 开始验证补丁3 4:
+2024-02-24 13:06:15,630 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:06:15,630 - Closure_14 - INFO - 补丁3 4为重复的补丁
+2024-02-24 13:06:15,635 - Closure_14 - INFO - 开始验证补丁3 5:
+2024-02-24 13:06:15,635 - Closure_14 - INFO - 
+if (!cfa.createEdge(fromNode, Branch.UNCOND, finallyNode)) {
+  return computeFollowNode(finallyNode, parent, cfa);
+}
+
+2024-02-24 13:06:17,652 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:17,652 - Closure_14 - INFO - 错误: 此处不允许使用 '空' 类型
+if (!cfa.createEdge(fromNode, Branch.UNCOND, finallyNode)) {
+2024-02-24 13:06:17,652 - Closure_14 - INFO - 补丁3 5 未成功编译
+2024-02-24 13:06:17,653 - Closure_14 - INFO - 开始验证补丁3 6:
+2024-02-24 13:06:17,653 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, finallyNode);
+
+2024-02-24 13:06:19,699 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:19,699 - Closure_14 - INFO - 错误: 无法将类 ControlFlowAnalysis中的方法 createEdge应用到给定类型;
+cfa.createEdge(fromNode, finallyNode);
+2024-02-24 13:06:19,699 - Closure_14 - INFO - 补丁3 6 未成功编译
+2024-02-24 13:06:19,701 - Closure_14 - INFO - 开始验证补丁3 7:
+2024-02-24 13:06:19,701 - Closure_14 - INFO - 
+cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+
+2024-02-24 13:06:19,701 - Closure_14 - INFO - 补丁3 7为重复的补丁
+2024-02-24 13:06:19,702 - Closure_14 - INFO - 开始验证补丁3 8:
+2024-02-24 13:06:19,702 - Closure_14 - INFO - 
+if (condition) {
+  cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
+}
+
+2024-02-24 13:06:21,751 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:21,751 - Closure_14 - INFO - 错误: 找不到符号
+if (condition) {
+2024-02-24 13:06:21,751 - Closure_14 - INFO - 补丁3 8 未成功编译
+2024-02-24 13:06:21,752 - Closure_14 - INFO - 开始验证补丁3 9:
+2024-02-24 13:06:21,752 - Closure_14 - INFO - 
+createUnconditionalEdge(fromNode, finallyNode, cfa); // Assuming createUnconditionalEdge is a method defined elsewhere
+
+2024-02-24 13:06:23,804 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:23,804 - Closure_14 - INFO - 错误: 找不到符号
+createUnconditionalEdge(fromNode, finallyNode, cfa); // Assuming createUnconditionalEdge is a method defined elsewhere
+2024-02-24 13:06:23,804 - Closure_14 - INFO - 补丁3 9 未成功编译
+2024-02-24 13:06:23,805 - Closure_14 - INFO - 开始验证补丁3 10:
+2024-02-24 13:06:23,805 - Closure_14 - INFO - 
+List<ResultType> results = new ArrayList<>();
+for (Node finallyNode : cfa.finallyMap.get(parent)) {
+  results.add(processFinallyNode(fromNode, finallyNode, cfa)); // Assuming processFinallyNode is a method returning a result
+}
+// further processing of results
+
+2024-02-24 13:06:25,609 - Closure_14 - INFO - 编译失败
+2024-02-24 13:06:25,609 - Closure_14 - INFO - 错误: -source 1.6 中不支持 diamond 运算符
+List<ResultType> results = new ArrayList<>();
+2024-02-24 13:06:25,609 - Closure_14 - INFO - 补丁3 10 未成功编译
+2024-02-24 13:06:25,609 - Closure_14 - INFO - Closure_14 未成功修复

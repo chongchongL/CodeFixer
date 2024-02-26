@@ -1,0 +1,32 @@
+2024-02-24 00:31:17,336 - Closure_63 - INFO - rm -rf /home/chongchong/d4j-project/Closure_63
+2024-02-24 00:31:17,337 - Closure_63 - INFO - 删除 Closure 63b 成功
+2024-02-24 00:31:17,337 - Closure_63 - INFO - defects4j checkout -p Closure -v 63b -w /home/chongchong/d4j-project/Closure_63
+2024-02-24 00:31:19,267 - Closure_63 - INFO - checkout Closure 63b 成功
+2024-02-24 00:31:29,785 - Closure_63 - INFO - 编译成功
+2024-02-24 00:32:12,377 - Closure_63 - INFO - 测试失败
+2024-02-24 00:32:12,377 - Closure_63 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.LightweightMessageFormatterTest::testFormatErrorSpaceEndOfLine1
+  - com.google.javascript.jscomp.LightweightMessageFormatterTest::testFormatErrorSpaceEndOfLine2
+
+2024-02-24 00:32:13,389 - Closure_63 - INFO - 它的bug类型为:
+2024-02-24 00:32:13,389 - Closure_63 - INFO - 1
+2024-02-24 00:32:54,216 - Closure_63 - INFO - Closure_63 未成功修复
+2024-02-24 13:35:24,403 - Closure_63 - INFO - rm -rf /home/chongchong/d4j-project/Closure_63
+2024-02-24 13:35:24,458 - Closure_63 - INFO - 删除 Closure 63b 成功
+2024-02-24 13:35:24,459 - Closure_63 - INFO - defects4j checkout -p Closure -v 63b -w /home/chongchong/d4j-project/Closure_63
+2024-02-24 13:35:26,310 - Closure_63 - INFO - checkout Closure 63b 成功
+2024-02-24 13:35:36,603 - Closure_63 - INFO - 编译成功
+2024-02-24 13:36:18,973 - Closure_63 - INFO - 测试失败
+2024-02-24 13:36:18,973 - Closure_63 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.LightweightMessageFormatterTest::testFormatErrorSpaceEndOfLine1
+  - com.google.javascript.jscomp.LightweightMessageFormatterTest::testFormatErrorSpaceEndOfLine2
+
+2024-02-24 13:36:19,985 - Closure_63 - INFO - 它的bug类型为:
+2024-02-24 13:36:19,985 - Closure_63 - INFO - 1
+2024-02-24 13:37:00,010 - Closure_63 - INFO - 开始验证补丁1 4:
+2024-02-24 13:37:00,010 - Closure_63 - INFO - 
+&& 0 <= charno && charno <= sourceExcerpt.length()) {
+
+2024-02-24 13:37:03,930 - Closure_63 - INFO - 编译成功
+2024-02-24 13:37:46,032 - Closure_63 - INFO - 测试成功
+2024-02-24 13:37:46,032 - Closure_63 - INFO - 补丁1 4 通过了所有的测试用例

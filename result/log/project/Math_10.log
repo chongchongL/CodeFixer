@@ -1,0 +1,472 @@
+2024-02-25 12:37:02,814 - Math_10 - INFO - rm -rf /home/chongchong/d4j-project/Math_10
+2024-02-25 12:37:02,814 - Math_10 - INFO - 删除 Math 10b 成功
+2024-02-25 12:37:02,815 - Math_10 - INFO - defects4j checkout -p Math -v 10b -w /home/chongchong/d4j-project/Math_10
+2024-02-25 12:37:06,274 - Math_10 - INFO - checkout Math 10b 成功
+2024-02-25 12:37:13,273 - Math_10 - INFO - 编译成功
+2024-02-25 12:38:06,343 - Math_10 - INFO - 测试失败
+2024-02-25 12:38:06,343 - Math_10 - INFO - Failing tests: 1
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+
+2024-02-25 12:38:07,269 - Math_10 - INFO - 它的bug类型为:
+2024-02-25 12:38:07,269 - Math_10 - INFO - 3
+2024-02-25 12:39:31,354 - Math_10 - INFO - 开始验证补丁1 1:
+2024-02-25 12:39:31,354 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) / 2 * tmp2[0];
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -2 * tmp2[i];
+            }
+        }
+
+2024-02-25 12:39:32,016 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:32,017 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:39:32,017 - Math_10 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:39:32,018 - Math_10 - INFO - 开始验证补丁1 2:
+2024-02-25 12:39:32,018 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r * x);
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -2 * FastMath.atan2(y, r * x);
+            }
+        }
+
+2024-02-25 12:39:32,658 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:32,658 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:39:32,658 - Math_10 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:39:32,659 - Math_10 - INFO - 开始验证补丁1 3:
+2024-02-25 12:39:32,659 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 2 * tmp2[0];
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -2 * tmp2[i];
+            }
+        }
+
+2024-02-25 12:39:33,313 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:33,313 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:39:33,313 - Math_10 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:39:33,315 - Math_10 - INFO - 开始验证补丁1 4:
+2024-02-25 12:39:33,315 - Math_10 - INFO - 
+// Assuming the intent is to use the atan2 function correctly and compute the angle
+result[resultOffset] =
+        ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r * x);
+for (int i = 1; i < tmp2.length; ++i) {
+    result[resultOffset + i] = -2 * FastMath.atan2(y, r * x);
+}
+
+2024-02-25 12:39:34,162 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:34,162 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r * x);
+2024-02-25 12:39:34,162 - Math_10 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:39:34,163 - Math_10 - INFO - 开始验证补丁1 5:
+2024-02-25 12:39:34,163 - Math_10 - INFO - 
+// If the intent is to check and adjust for the special cases as well
+if (Double.isInfinite(y) || Double.isInfinite(r * x)) {
+    result[resultOffset] = Double.isInfinite(r * x) ? 0 : ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI);
+} else {
+    result[resultOffset] =
+            ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r * x);
+}
+for (int i = 1; i < tmp2.length; ++i) {
+    result[resultOffset + i] = -2 * FastMath.atan2(y, r * x);
+}
+
+2024-02-25 12:39:35,041 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:35,041 - Math_10 - INFO - 错误: 对于isInfinite(double[]), 找不到合适的方法
+if (Double.isInfinite(y) || Double.isInfinite(r * x)) {
+2024-02-25 12:39:35,041 - Math_10 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:39:35,043 - Math_10 - INFO - 开始验证补丁1 6:
+2024-02-25 12:39:35,043 - Math_10 - INFO - 
+// If the incorrect use of comments was part of the error
+result[resultOffset] =
+        ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r * x); // +/-pi + 2 * atan(y / (r * x))
+for (int i = 1; i < tmp2.length; ++i) {
+    result[resultOffset + i] = -2 * FastMath.atan2(y, r * x); // -2 * atan(y / (r * x))
+}
+
+2024-02-25 12:39:35,886 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:35,886 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r * x); // +/-pi + 2 * atan(y / (r * x))
+2024-02-25 12:39:35,887 - Math_10 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:39:35,888 - Math_10 - INFO - 开始验证补丁1 7:
+2024-02-25 12:39:35,888 - Math_10 - INFO - 
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) <fill>2 * tmp2[0];
+
+2024-02-25 12:39:36,518 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:36,518 - Math_10 - INFO - 错误: 不是语句
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) <fill>2 * tmp2[0];
+2024-02-25 12:39:36,518 - Math_10 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:39:36,520 - Math_10 - INFO - 开始验证补丁1 8:
+2024-02-25 12:39:36,520 - Math_10 - INFO - 
+result[resultOffset] =
+    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, (r * x));
+
+2024-02-25 12:39:37,389 - Math_10 - INFO - 编译失败
+2024-02-25 12:39:37,389 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, (r * x));
+2024-02-25 12:39:37,389 - Math_10 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:39:37,390 - Math_10 - INFO - 开始验证补丁1 9:
+2024-02-25 12:39:37,390 - Math_10 - INFO - 
+result[resultOffset] =
+    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * tmp2[0];
+
+2024-02-25 12:39:38,793 - Math_10 - INFO - 编译成功
+2024-02-25 12:40:32,505 - Math_10 - INFO - 测试失败
+2024-02-25 12:40:32,505 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:40:32,961 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:40:32,961 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:40:32,961 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:40:32,961 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:40:32,961 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:40:32,961 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:40:32,961 - Math_10 - INFO - 补丁1 9测试失败
+2024-02-25 12:40:32,962 - Math_10 - INFO - 开始验证补丁1 10:
+2024-02-25 12:40:32,962 - Math_10 - INFO - 
+result[resultOffset] =
+    -2 * tmp2[0];
+
+2024-02-25 12:40:34,388 - Math_10 - INFO - 编译成功
+2024-02-25 12:41:26,986 - Math_10 - INFO - 测试失败
+2024-02-25 12:41:26,986 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:41:27,445 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:41:27,445 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:41:27,445 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:41:27,445 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:41:27,445 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:41:27,445 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:41:27,445 - Math_10 - INFO - 补丁1 10测试失败
+2024-02-25 12:41:27,446 - Math_10 - INFO - 开始验证补丁2 1:
+2024-02-25 12:41:27,446 - Math_10 - INFO - 
+result[resultOffset] = // Erroneous line
+        ((tmp2[0] <= 0) ? -FastMath.PI / 2 : FastMath.PI / 2) + 2 * FastMath.atan(y / (r + x)); // +/-pi/2 + 2 * atan(y / (r + x))
+
+2024-02-25 12:41:28,292 - Math_10 - INFO - 编译失败
+2024-02-25 12:41:28,292 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI / 2 : FastMath.PI / 2) + 2 * FastMath.atan(y / (r + x)); // +/-pi/2 + 2 * atan(y / (r + x))
+2024-02-25 12:41:28,292 - Math_10 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:41:28,293 - Math_10 - INFO - 开始验证补丁2 2:
+2024-02-25 12:41:28,293 - Math_10 - INFO - 
+result[resultOffset] = // Erroneous line
+        ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 2 * tmp2[0]; // +/-pi * 2 * value
+
+2024-02-25 12:41:29,743 - Math_10 - INFO - 编译成功
+2024-02-25 12:42:21,807 - Math_10 - INFO - 测试失败
+2024-02-25 12:42:21,808 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:42:22,261 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:42:22,261 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:42:22,261 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:42:22,262 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:42:22,262 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:42:22,262 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:42:22,262 - Math_10 - INFO - 补丁2 2测试失败
+2024-02-25 12:42:22,263 - Math_10 - INFO - 开始验证补丁2 3:
+2024-02-25 12:42:22,263 - Math_10 - INFO - 
+result[resultOffset] = // Erroneous line
+        ((tmp2[0] <= 0) ? -FastMath.PI * tmp2[0] : FastMath.PI * tmp2[0]); // +/-pi * value
+
+2024-02-25 12:42:23,677 - Math_10 - INFO - 编译成功
+2024-02-25 12:43:16,752 - Math_10 - INFO - 测试失败
+2024-02-25 12:43:16,752 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:43:17,217 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:43:17,217 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:43:17,217 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:43:17,218 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:43:17,218 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:43:17,218 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:43:17,218 - Math_10 - INFO - 补丁2 3测试失败
+2024-02-25 12:43:17,219 - Math_10 - INFO - 开始验证补丁2 4:
+2024-02-25 12:43:17,219 - Math_10 - INFO - 
+            result[resultOffset] = 
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 2 * tmp2[0]; // Corrected formula
+
+            // Additional code to handle special cases may be required here
+
+2024-02-25 12:43:18,676 - Math_10 - INFO - 编译成功
+2024-02-25 12:44:11,403 - Math_10 - INFO - 测试失败
+2024-02-25 12:44:11,403 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:44:11,858 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:44:11,858 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:44:11,858 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:44:11,858 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:44:11,858 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:44:11,858 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:44:11,859 - Math_10 - INFO - 补丁2 4测试失败
+2024-02-25 12:44:11,860 - Math_10 - INFO - 开始验证补丁2 5:
+2024-02-25 12:44:11,860 - Math_10 - INFO - 
+            result[resultOffset] = 
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) / (2 * tmp2[0]); // If division was intended
+
+            // Additional code to handle special cases may be required here
+
+2024-02-25 12:44:13,267 - Math_10 - INFO - 编译成功
+2024-02-25 12:45:06,250 - Math_10 - INFO - 测试失败
+2024-02-25 12:45:06,250 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:45:06,718 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:45:06,718 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:45:06,718 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:45:06,718 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:45:06,718 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:45:06,718 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:45:06,718 - Math_10 - INFO - 补丁2 5测试失败
+2024-02-25 12:45:06,719 - Math_10 - INFO - 开始验证补丁2 6:
+2024-02-25 12:45:06,719 - Math_10 - INFO - 
+            result[resultOffset] = 
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + (2 * tmp2[0]); // If addition was intended
+
+            // Additional code to handle special cases may be required here
+
+2024-02-25 12:45:08,125 - Math_10 - INFO - 编译成功
+2024-02-25 12:46:01,226 - Math_10 - INFO - 测试失败
+2024-02-25 12:46:01,226 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:46:01,689 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:46:01,689 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:46:01,689 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:46:01,689 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:46:01,689 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:46:01,689 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:46:01,689 - Math_10 - INFO - 补丁2 6测试失败
+2024-02-25 12:46:01,690 - Math_10 - INFO - 开始验证补丁2 7:
+2024-02-25 12:46:01,690 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 2 * tmp2[0]; // +/-pi * 2 * atan(y / (r * x))
+            // The loop for the rest of the elements in the result array is assumed to be correct
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -2 * tmp2[i];
+            }
+
+        }
+        // Additional code to handle special cases is assumed to be present but not shown
+
+2024-02-25 12:46:02,350 - Math_10 - INFO - 编译失败
+2024-02-25 12:46:02,350 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:46:02,350 - Math_10 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:46:02,352 - Math_10 - INFO - 开始验证补丁2 8:
+2024-02-25 12:46:02,352 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) / (2 * tmp2[0]); // +/-pi / (2 * atan(y / (r * x)))
+            // The loop for the rest of the elements in the result array is correct
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -2 * tmp2[i];
+            }
+
+        }
+        // Additional code to handle special cases is assumed to be present but not shown
+
+2024-02-25 12:46:02,999 - Math_10 - INFO - 编译失败
+2024-02-25 12:46:02,999 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:46:02,999 - Math_10 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:46:03,001 - Math_10 - INFO - 开始验证补丁2 9:
+2024-02-25 12:46:03,001 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + (2 * tmp2[0]); // +/-pi + (2 * atan(y / (r + x)))
+            // The loop for the rest of the elements in result array is correct
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -2 * tmp2[i];
+            }
+
+        }
+        // Additional code to handle special cases is assumed to be present but not shown
+
+2024-02-25 12:46:03,655 - Math_10 - INFO - 编译失败
+2024-02-25 12:46:03,655 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:46:03,656 - Math_10 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:46:03,657 - Math_10 - INFO - 开始验证补丁3 1:
+2024-02-25 12:46:03,657 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 0.5 * tmp2[0]; // +/-pi / 2 * atan(y / (r + x))
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = tmp2[i]; // Correct the negation, assuming it was incorrect
+            }
+
+2024-02-25 12:46:05,075 - Math_10 - INFO - 编译成功
+2024-02-25 12:46:57,402 - Math_10 - INFO - 测试失败
+2024-02-25 12:46:57,402 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:46:57,860 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:46:57,860 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:46:57,860 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:46:57,860 - Math_10 - INFO -         Assert.assertEquals(0, pp.getValue(), 1.0e-15);
+
+2024-02-25 12:46:57,860 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:46:57,860 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<NaN>
+
+2024-02-25 12:46:57,860 - Math_10 - INFO - 补丁3 1测试失败
+2024-02-25 12:46:57,862 - Math_10 - INFO - 开始验证补丁3 2:
+2024-02-25 12:46:57,862 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * atan2(y, r + x); // Correct function usage
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = tmp2[i]; // Same as above
+            }
+
+2024-02-25 12:46:58,719 - Math_10 - INFO - 编译失败
+2024-02-25 12:46:58,719 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * atan2(y, r + x); // Correct function usage
+2024-02-25 12:46:58,719 - Math_10 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:46:58,721 - Math_10 - INFO - 开始验证补丁3 3:
+2024-02-25 12:46:58,721 - Math_10 - INFO - 
+            // Assuming tmp2 stores some trigonometric calculations
+            if (Double.isNaN(tmp2[0]) || tmp2[0] == 0) {
+                result[resultOffset] = 0.0; // Handle special cases explicitly
+            } else {
+                result[resultOffset] = ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 0.5 * tmp2[0];
+            }
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = tmp2[i];
+            }
+
+2024-02-25 12:47:00,142 - Math_10 - INFO - 编译成功
+2024-02-25 12:47:53,123 - Math_10 - INFO - 测试失败
+2024-02-25 12:47:53,123 - Math_10 - INFO - Failing tests: 3
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2
+  - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testTaylorAtan2
+
+2024-02-25 12:47:53,580 - Math_10 - INFO - 选择失败的测试用例为:
+2024-02-25 12:47:53,580 - Math_10 - INFO - org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testAtan2SpecialCases
+2024-02-25 12:47:53,580 - Math_10 - INFO - 失败的测试代码为:
+2024-02-25 12:47:53,580 - Math_10 - INFO -         Assert.assertEquals(FastMath.PI, pn.getValue(), 1.0e-15);
+
+2024-02-25 12:47:53,580 - Math_10 - INFO - 失败信息为:
+2024-02-25 12:47:53,580 - Math_10 - INFO - junit.framework.AssertionFailedError: expected:<3.141592653589793> but was:<0.0>
+
+2024-02-25 12:47:53,580 - Math_10 - INFO - 补丁3 3测试失败
+2024-02-25 12:47:53,582 - Math_10 - INFO - 开始验证补丁3 4:
+2024-02-25 12:47:53,582 - Math_10 - INFO - 
+result[resultOffset] =
+        ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 0.5 + FastMath.atan2(y, x); // Replace y and x with actual variables
+for (int i = 1; i < tmp2.length; ++i) {
+    result[resultOffset + i] = -2 * tmp2[i];
+}
+
+2024-02-25 12:47:54,429 - Math_10 - INFO - 编译失败
+2024-02-25 12:47:54,429 - Math_10 - INFO - 错误: 无法将类 FastMath中的方法 atan2应用到给定类型;
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 0.5 + FastMath.atan2(y, x); // Replace y and x with actual variables
+2024-02-25 12:47:54,429 - Math_10 - INFO - 补丁3 4 未成功编译
+2024-02-25 12:47:54,430 - Math_10 - INFO - 开始验证补丁3 5:
+2024-02-25 12:47:54,431 - Math_10 - INFO - 
+result[resultOffset] =
+        ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) / 2 + 2 * FastMath.atan(y / r); // +/-pi/2 + 2 * atan(y / r)
+for (int i = 1; i < tmp2.length; ++i) {
+    result[resultOffset + i] = -2 * tmp2[i];
+}
+
+2024-02-25 12:47:55,291 - Math_10 - INFO - 编译失败
+2024-02-25 12:47:55,291 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) / 2 + 2 * FastMath.atan(y / r); // +/-pi/2 + 2 * atan(y / r)
+2024-02-25 12:47:55,291 - Math_10 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:47:55,292 - Math_10 - INFO - 开始验证补丁3 6:
+2024-02-25 12:47:55,292 - Math_10 - INFO - 
+result[resultOffset] =
+        ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r); // +/-pi + 2 * atan2(y, r)
+for (int i = 1; i < tmp2.length; ++i) {
+    result[resultOffset + i] = -2 * tmp2[i];
+}
+
+2024-02-25 12:47:56,162 - Math_10 - INFO - 编译失败
+2024-02-25 12:47:56,162 - Math_10 - INFO - 错误: 找不到符号
+((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) + 2 * FastMath.atan2(y, r); // +/-pi + 2 * atan2(y, r)
+2024-02-25 12:47:56,162 - Math_10 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:47:56,164 - Math_10 - INFO - 开始验证补丁3 7:
+2024-02-25 12:47:56,164 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * 0.5 * tmp2[0]; // +/-pi / 2 * atan(y / (r +/- x))
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -0.5 * tmp2[i]; // +/-pi / 2 * atan(y / (r +/- x))
+            }
+
+        }
+        // Additional code may be necessary here to handle special cases
+
+        // Compute hyperbolic cosine of a derivative structure...
+
+2024-02-25 12:47:56,816 - Math_10 - INFO - 编译失败
+2024-02-25 12:47:56,816 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:47:56,816 - Math_10 - INFO - 补丁3 7 未成功编译
+2024-02-25 12:47:56,818 - Math_10 - INFO - 开始验证补丁3 8:
+2024-02-25 12:47:56,818 - Math_10 - INFO - 
+            result[resultOffset] =
+                    ((tmp2[0] <= 0) ? -FastMath.PI : FastMath.PI) * tmp2[0]; // +/-pi * atan(y / (r +/- x))
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = -tmp2[i]; // +/-pi * atan(y / (r +/- x))
+            }
+
+        }
+        // Appropriate code to handle special cases should be incorporated here
+
+        // Compute hyperbolic cosine of a derivative structure...
+
+2024-02-25 12:47:57,486 - Math_10 - INFO - 编译失败
+2024-02-25 12:47:57,486 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:47:57,486 - Math_10 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:47:57,487 - Math_10 - INFO - 开始验证补丁3 9:
+2024-02-25 12:47:57,487 - Math_10 - INFO - 
+            result[resultOffset] =
+                    FastMath.atan2(tmp2[0], x); // Use of atan2 to deal with division by zero or indeterminate form.
+            for (int i = 1; i < tmp2.length; ++i) {
+                result[resultOffset + i] = FastMath.atan2(tmp2[i], x);
+            }
+
+        }
+        // Special case handling might not be needed if atan2 is used correctly
+
+        // Compute hyperbolic cosine of a derivative structure...
+
+2024-02-25 12:47:58,133 - Math_10 - INFO - 编译失败
+2024-02-25 12:47:58,134 - Math_10 - INFO - 错误: 需要class, interface或enum
+public void cosh(final double[] operand, final int operandOffset,
+2024-02-25 12:47:58,134 - Math_10 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:47:58,134 - Math_10 - INFO - Math_10 未成功修复

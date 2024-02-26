@@ -1,0 +1,177 @@
+2024-02-23 23:02:07,600 - Chart_24 - INFO - rm -rf /home/chongchong/d4j-project/Chart_24
+2024-02-23 23:02:07,600 - Chart_24 - INFO - 删除 Chart 24b 成功
+2024-02-23 23:02:07,600 - Chart_24 - INFO - defects4j checkout -p Chart -v 24b -w /home/chongchong/d4j-project/Chart_24
+2024-02-23 23:02:10,591 - Chart_24 - INFO - checkout Chart 24b 成功
+2024-02-23 23:02:13,943 - Chart_24 - INFO - 编译成功
+2024-02-23 23:02:20,306 - Chart_24 - INFO - 测试失败
+2024-02-23 23:02:20,307 - Chart_24 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.junit.GrayPaintScaleTests::testGetPaint
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 23:02:21,040 - Chart_24 - INFO - 它的bug类型为:
+2024-02-23 23:02:21,040 - Chart_24 - INFO - 1
+2024-02-23 23:03:13,199 - Chart_24 - INFO - rm -rf /home/chongchong/d4j-project/Chart_24
+2024-02-23 23:03:13,250 - Chart_24 - INFO - 删除 Chart 24b 成功
+2024-02-23 23:03:13,250 - Chart_24 - INFO - defects4j checkout -p Chart -v 24b -w /home/chongchong/d4j-project/Chart_24
+2024-02-23 23:03:16,217 - Chart_24 - INFO - checkout Chart 24b 成功
+2024-02-23 23:03:21,721 - Chart_24 - INFO - 编译成功
+2024-02-23 23:03:29,419 - Chart_24 - INFO - 测试失败
+2024-02-23 23:03:29,419 - Chart_24 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.junit.GrayPaintScaleTests::testGetPaint
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 23:03:30,292 - Chart_24 - INFO - 它的bug类型为:
+2024-02-23 23:03:30,292 - Chart_24 - INFO - 1
+2024-02-23 23:04:49,325 - Chart_24 - INFO - 开始验证补丁1 1:
+2024-02-23 23:04:49,325 - Chart_24 - INFO - 
+int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:49,903 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:49,903 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:49,903 - Chart_24 - INFO - 补丁1 1 未成功编译
+2024-02-23 23:04:49,904 - Chart_24 - INFO - 开始验证补丁1 2:
+2024-02-23 23:04:49,904 - Chart_24 - INFO - 
+int g = (int) ((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:50,482 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:50,482 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:50,482 - Chart_24 - INFO - 补丁1 2 未成功编译
+2024-02-23 23:04:50,483 - Chart_24 - INFO - 开始验证补丁1 3:
+2024-02-23 23:04:50,483 - Chart_24 - INFO - 
+int g = (int) (Math.max(0, Math.min(1, (v - this.lowerBound) / (this.upperBound - this.lowerBound))) * 255.0);
+
+2024-02-23 23:04:51,058 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:51,058 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:51,058 - Chart_24 - INFO - 补丁1 3 未成功编译
+2024-02-23 23:04:51,059 - Chart_24 - INFO - 开始验证补丁1 4:
+2024-02-23 23:04:51,059 - Chart_24 - INFO - 
+int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:51,059 - Chart_24 - INFO - 补丁1 4为重复的补丁
+2024-02-23 23:04:51,060 - Chart_24 - INFO - 开始验证补丁1 5:
+2024-02-23 23:04:51,060 - Chart_24 - INFO - 
+int g = (int) ((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:51,060 - Chart_24 - INFO - 补丁1 5为重复的补丁
+2024-02-23 23:04:51,061 - Chart_24 - INFO - 开始验证补丁1 6:
+2024-02-23 23:04:51,061 - Chart_24 - INFO - 
+int g = (int) ((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:51,061 - Chart_24 - INFO - 补丁1 6为重复的补丁
+2024-02-23 23:04:51,062 - Chart_24 - INFO - 开始验证补丁1 7:
+2024-02-23 23:04:51,062 - Chart_24 - INFO - 
+        int g = (int) ((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:51,634 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:51,634 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:51,634 - Chart_24 - INFO - 补丁1 7 未成功编译
+2024-02-23 23:04:51,635 - Chart_24 - INFO - 开始验证补丁1 8:
+2024-02-23 23:04:51,635 - Chart_24 - INFO - 
+        int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:52,201 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:52,201 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:52,202 - Chart_24 - INFO - 补丁1 8 未成功编译
+2024-02-23 23:04:52,203 - Chart_24 - INFO - 开始验证补丁1 9:
+2024-02-23 23:04:52,203 - Chart_24 - INFO - 
+        int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+        g = Math.max(0, Math.min(255, g)); // Clamps g to the range 0-255
+
+2024-02-23 23:04:52,770 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:52,770 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:52,770 - Chart_24 - INFO - 补丁1 9 未成功编译
+2024-02-23 23:04:52,771 - Chart_24 - INFO - 开始验证补丁2 1:
+2024-02-23 23:04:52,771 - Chart_24 - INFO - 
+int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:52,771 - Chart_24 - INFO - 补丁2 1为重复的补丁
+2024-02-23 23:04:52,772 - Chart_24 - INFO - 开始验证补丁2 2:
+2024-02-23 23:04:52,772 - Chart_24 - INFO - 
+int g = (int) ((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:52,772 - Chart_24 - INFO - 补丁2 2为重复的补丁
+2024-02-23 23:04:52,773 - Chart_24 - INFO - 开始验证补丁2 3:
+2024-02-23 23:04:52,773 - Chart_24 - INFO - 
+float g = (float) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 1.0);
+
+2024-02-23 23:04:53,349 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:53,349 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:53,350 - Chart_24 - INFO - 补丁2 3 未成功编译
+2024-02-23 23:04:53,351 - Chart_24 - INFO - 开始验证补丁2 4:
+2024-02-23 23:04:53,351 - Chart_24 - INFO - 
+    int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+    
+2024-02-23 23:04:53,926 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:53,927 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:53,927 - Chart_24 - INFO - 补丁2 4 未成功编译
+2024-02-23 23:04:53,928 - Chart_24 - INFO - 开始验证补丁2 5:
+2024-02-23 23:04:53,928 - Chart_24 - INFO - 
+    int g = (int) (((v - this.lowerBound) / (this.upperBound - this.lowerBound)) * 255.0);
+    
+2024-02-23 23:04:54,502 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:54,502 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:54,502 - Chart_24 - INFO - 补丁2 5 未成功编译
+2024-02-23 23:04:54,504 - Chart_24 - INFO - 开始验证补丁2 6:
+2024-02-23 23:04:54,504 - Chart_24 - INFO - 
+    int g = (int) ((v - this.lowerBound) * (255.0 / (this.upperBound - this.lowerBound)));
+    
+2024-02-23 23:04:55,086 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:55,086 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:55,086 - Chart_24 - INFO - 补丁2 6 未成功编译
+2024-02-23 23:04:55,087 - Chart_24 - INFO - 开始验证补丁2 7:
+2024-02-23 23:04:55,087 - Chart_24 - INFO - 
+int g = (int) (((v - this.lowerBound) / (this.upperBound - this.lowerBound)) * 255.0);
+
+2024-02-23 23:04:55,661 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:55,661 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:55,661 - Chart_24 - INFO - 补丁2 7 未成功编译
+2024-02-23 23:04:55,662 - Chart_24 - INFO - 开始验证补丁2 8:
+2024-02-23 23:04:55,662 - Chart_24 - INFO - 
+int g = (int) (((value - this.lowerBound) / (this.upperBound - this.lowerBound)) * 255.0);
+
+2024-02-23 23:04:56,236 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:56,236 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:56,236 - Chart_24 - INFO - 补丁2 8 未成功编译
+2024-02-23 23:04:56,237 - Chart_24 - INFO - 开始验证补丁2 9:
+2024-02-23 23:04:56,237 - Chart_24 - INFO - 
+int g = (int) ((v - (this.lowerBound / (this.upperBound - this.lowerBound))) * 255.0);
+
+2024-02-23 23:04:56,816 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:56,816 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:56,816 - Chart_24 - INFO - 补丁2 9 未成功编译
+2024-02-23 23:04:56,817 - Chart_24 - INFO - 开始验证补丁3 1:
+2024-02-23 23:04:56,817 - Chart_24 - INFO - 
+int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:56,817 - Chart_24 - INFO - 补丁3 1为重复的补丁
+2024-02-23 23:04:56,818 - Chart_24 - INFO - 开始验证补丁3 2:
+2024-02-23 23:04:56,818 - Chart_24 - INFO - 
+int g = (int) ((value - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);
+
+2024-02-23 23:04:56,818 - Chart_24 - INFO - 补丁3 2为重复的补丁
+2024-02-23 23:04:56,819 - Chart_24 - INFO - 开始验证补丁3 3:
+2024-02-23 23:04:56,819 - Chart_24 - INFO - 
+int g = (int) (Math.max(0, Math.min(255, (v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0)));
+
+2024-02-23 23:04:57,381 - Chart_24 - INFO - 编译失败
+2024-02-23 23:04:57,381 - Chart_24 - INFO - 错误: 不是语句
+- this.lowerBound) * 255.0);
+2024-02-23 23:04:57,381 - Chart_24 - INFO - 补丁3 3 未成功编译
+2024-02-23 23:04:57,382 - Chart_24 - INFO - 开始验证补丁3 4:
+2024-02-23 23:04:57,382 - Chart_24 - INFO - 
+        int g = (int) ((v - this.lowerBound) / (this.upperBound 
+
+2024-02-23 22:59:40,874 - Chart_20 - INFO - 补丁3 4 与人工补丁一致

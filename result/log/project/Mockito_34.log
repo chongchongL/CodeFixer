@@ -1,0 +1,32 @@
+2024-02-24 01:26:00,245 - Mockito_34 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_34
+2024-02-24 01:26:00,246 - Mockito_34 - INFO - 删除 Mockito 34b 成功
+2024-02-24 01:26:00,246 - Mockito_34 - INFO - defects4j checkout -p Mockito -v 34b -w /home/chongchong/d4j-project/Mockito_34
+2024-02-24 01:26:02,685 - Mockito_34 - INFO - checkout Mockito 34b 成功
+2024-02-24 01:26:07,346 - Mockito_34 - INFO - 编译成功
+2024-02-24 01:26:22,924 - Mockito_34 - INFO - 测试失败
+2024-02-24 01:26:22,924 - Mockito_34 - INFO - Failing tests: 2
+  - org.mockito.internal.invocation.InvocationMatcherTest::shouldMatchCaptureArgumentsWhenArgsCountDoesNOTMatch
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+
+2024-02-24 01:26:23,820 - Mockito_34 - INFO - 它的bug类型为:
+2024-02-24 01:26:23,820 - Mockito_34 - INFO - 1
+2024-02-24 01:27:00,280 - Mockito_34 - INFO - Mockito_34 未成功修复
+2024-02-24 12:21:47,207 - Mockito_34 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_34
+2024-02-24 12:21:47,233 - Mockito_34 - INFO - 删除 Mockito 34b 成功
+2024-02-24 12:21:47,233 - Mockito_34 - INFO - defects4j checkout -p Mockito -v 34b -w /home/chongchong/d4j-project/Mockito_34
+2024-02-24 12:21:49,669 - Mockito_34 - INFO - checkout Mockito 34b 成功
+2024-02-24 12:21:54,373 - Mockito_34 - INFO - 编译成功
+2024-02-24 12:22:10,070 - Mockito_34 - INFO - 测试失败
+2024-02-24 12:22:10,070 - Mockito_34 - INFO - Failing tests: 2
+  - org.mockito.internal.invocation.InvocationMatcherTest::shouldMatchCaptureArgumentsWhenArgsCountDoesNOTMatch
+  - org.mockitousage.basicapi.UsingVarargsTest::shouldMatchEasilyEmptyVararg
+
+2024-02-24 12:22:10,957 - Mockito_34 - INFO - 它的bug类型为:
+2024-02-24 12:22:10,957 - Mockito_34 - INFO - 1
+2024-02-24 12:22:36,059 - Mockito_34 - INFO - 开始验证补丁1 1:
+2024-02-24 12:22:36,059 - Mockito_34 - INFO - 
+if (m instanceof CapturesArguments && k < i.getArguments().length) {
+
+2024-02-24 12:22:40,769 - Mockito_34 - INFO - 编译成功
+2024-02-24 12:22:56,293 - Mockito_34 - INFO - 测试成功
+2024-02-24 12:22:56,293 - Mockito_34 - INFO - 补丁1 1 通过了所有的测试用例

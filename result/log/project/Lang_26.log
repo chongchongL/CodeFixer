@@ -1,0 +1,20 @@
+2024-02-23 23:26:33,123 - Lang_26 - INFO - rm -rf /home/chongchong/d4j-project/Lang_26
+2024-02-23 23:26:33,123 - Lang_26 - INFO - 删除 Lang 26b 成功
+2024-02-23 23:26:33,124 - Lang_26 - INFO - defects4j checkout -p Lang -v 26b -w /home/chongchong/d4j-project/Lang_26
+2024-02-23 23:26:36,462 - Lang_26 - INFO - checkout Lang 26b 成功
+2024-02-23 23:26:40,936 - Lang_26 - INFO - 编译成功
+2024-02-23 23:26:49,818 - Lang_26 - INFO - 测试失败
+2024-02-23 23:26:49,818 - Lang_26 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testLang645
+
+2024-02-23 23:26:50,704 - Lang_26 - INFO - 它的bug类型为:
+2024-02-23 23:26:50,704 - Lang_26 - INFO - 1
+2024-02-23 23:28:32,212 - Lang_26 - INFO - 开始验证补丁1 1:
+2024-02-23 23:28:32,212 - Lang_26 - INFO - 
+Calendar c = new GregorianCalendar(mTimeZone, Locale.getDefault());
+c.setMinimalDaysInFirstWeek(4);
+c.setFirstDayOfWeek(Calendar.MONDAY);
+
+2024-02-23 23:28:33,362 - Lang_26 - INFO - 编译成功
+2024-02-23 23:28:42,218 - Lang_26 - INFO - 测试成功
+2024-02-23 23:28:42,218 - Lang_26 - INFO - 补丁1 1 通过了所有的测试用例

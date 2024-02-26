@@ -1,0 +1,86 @@
+2024-02-25 01:12:57,693 - Closure_83 - INFO - rm -rf /home/chongchong/d4j-project/Closure_83
+2024-02-25 01:12:57,694 - Closure_83 - INFO - 删除 Closure 83b 成功
+2024-02-25 01:12:57,694 - Closure_83 - INFO - defects4j checkout -p Closure -v 83b -w /home/chongchong/d4j-project/Closure_83
+2024-02-25 01:12:59,220 - Closure_83 - INFO - checkout Closure 83b 成功
+2024-02-25 01:13:07,785 - Closure_83 - INFO - 编译成功
+2024-02-25 01:13:42,190 - Closure_83 - INFO - 测试失败
+2024-02-25 01:13:42,190 - Closure_83 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testVersionFlag2
+
+2024-02-25 01:13:43,213 - Closure_83 - INFO - 它的bug类型为:
+2024-02-25 01:13:43,213 - Closure_83 - INFO - 2
+2024-02-25 01:14:27,263 - Closure_83 - INFO - 开始验证补丁1 1:
+2024-02-25 01:14:27,263 - Closure_83 - INFO - 
+String param = params.size() > 0 ? params.getParameter(0) : null;
+
+2024-02-25 01:14:28,569 - Closure_83 - INFO - 编译失败
+2024-02-25 01:14:28,569 - Closure_83 - INFO - 错误: 找不到符号
+String param = params.size() > 0 ? params.getParameter(0) : null;
+2024-02-25 01:14:28,569 - Closure_83 - INFO - 补丁1 1 未成功编译
+2024-02-25 01:14:28,571 - Closure_83 - INFO - 开始验证补丁1 2:
+2024-02-25 01:14:28,571 - Closure_83 - INFO - 
+String param = null; 
+if (params.size() > 0) {
+    param = params.getParameter(0);
+}
+
+2024-02-25 01:14:29,856 - Closure_83 - INFO - 编译失败
+2024-02-25 01:14:29,856 - Closure_83 - INFO - 错误: 找不到符号
+if (params.size() > 0) {
+2024-02-25 01:14:29,857 - Closure_83 - INFO - 补丁1 2 未成功编译
+2024-02-25 01:14:29,858 - Closure_83 - INFO - 开始验证补丁1 3:
+2024-02-25 01:14:29,858 - Closure_83 - INFO - 
+String param;
+try {
+    param = params.getParameter(0);
+} catch (IndexOutOfBoundsException e) {
+    param = null;
+}
+
+2024-02-25 01:14:32,508 - Closure_83 - INFO - 编译成功
+2024-02-25 01:15:07,255 - Closure_83 - INFO - 测试失败
+2024-02-25 01:15:07,255 - Closure_83 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testVersionFlag2
+
+2024-02-25 01:15:07,771 - Closure_83 - INFO - 选择失败的测试用例为:
+2024-02-25 01:15:07,771 - Closure_83 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testVersionFlag2
+2024-02-25 01:15:07,771 - Closure_83 - INFO - 失败的测试代码为:
+2024-02-25 01:15:07,771 - Closure_83 - INFO -     testSame("");
+
+2024-02-25 01:15:07,771 - Closure_83 - INFO - 失败信息为:
+2024-02-25 01:15:07,771 - Closure_83 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:15:07,771 - Closure_83 - INFO - 补丁1 3测试失败
+2024-02-25 01:15:07,772 - Closure_83 - INFO - 开始验证补丁1 4:
+2024-02-25 01:15:07,772 - Closure_83 - INFO - 
+   String param = (params.size() > 0) ? params.getParameter(0) : null;
+   
+2024-02-25 01:15:09,053 - Closure_83 - INFO - 编译失败
+2024-02-25 01:15:09,053 - Closure_83 - INFO - 错误: 找不到符号
+String param = (params.size() > 0) ? params.getParameter(0) : null;
+2024-02-25 01:15:09,053 - Closure_83 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:15:09,054 - Closure_83 - INFO - 开始验证补丁1 5:
+2024-02-25 01:15:09,054 - Closure_83 - INFO - 
+   String param = (params.size() > 0) ? params.getParameter(0) : "";
+   if (param.isEmpty()) {
+       setter.addValue(false);
+       return 1;
+   }
+   
+2024-02-25 01:15:10,286 - Closure_83 - INFO - 编译失败
+2024-02-25 01:15:10,286 - Closure_83 - INFO - 错误: 找不到符号
+String param = (params.size() > 0) ? params.getParameter(0) : "";
+2024-02-25 01:15:10,286 - Closure_83 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:15:10,287 - Closure_83 - INFO - 开始验证补丁1 6:
+2024-02-25 01:15:10,287 - Closure_83 - INFO - 
+   String param = null;
+   try {
+       param = params.getParameter(0);
+   } catch (CmdLineException e) {
+       setter.addValue(true);
+       return 0;
+   }
+   
+2024-02-25 01:15:12,952 - Closure_83 - INFO - 编译成功
+2024-02-25 01:15:47,368 - Closure_83 - INFO - 测试成功
+2024-02-25 01:15:47,368 - Closure_83 - INFO - 补丁1 6 通过了所有的测试用例

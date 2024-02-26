@@ -1,0 +1,480 @@
+2024-02-25 00:50:21,362 - Mockito_27 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_27
+2024-02-25 00:50:21,363 - Mockito_27 - INFO - 删除 Mockito 27b 成功
+2024-02-25 00:50:21,363 - Mockito_27 - INFO - defects4j checkout -p Mockito -v 27b -w /home/chongchong/d4j-project/Mockito_27
+2024-02-25 00:50:23,747 - Mockito_27 - INFO - checkout Mockito 27b 成功
+2024-02-25 00:50:28,921 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:50:49,671 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:50:49,671 - Mockito_27 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:50:50,555 - Mockito_27 - INFO - 它的bug类型为:
+2024-02-25 00:50:50,555 - Mockito_27 - INFO - 2
+2024-02-25 00:52:12,386 - Mockito_27 - INFO - 开始验证补丁1 1:
+2024-02-25 00:52:12,386 - Mockito_27 - INFO - 
+MockSettingsImpl mockSettings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(mockSettings);
+// Possibly additional lines here like 
+// newMockHandler = new MockHandler<>(mockSettings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:52:17,579 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:52:38,711 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:52:38,711 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:52:39,157 - Mockito_27 - INFO - 补丁1 1测试失败
+2024-02-25 00:52:39,158 - Mockito_27 - INFO - 开始验证补丁1 2:
+2024-02-25 00:52:39,158 - Mockito_27 - INFO - 
+MockSettingsImpl mockSettings = oldMockHandler.getMockSettings();
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(mockSettings);
+MockHandler<T> newMockHandler = new MockHandler<>(mockSettings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:52:40,044 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:52:40,045 - Mockito_27 - INFO - 错误: -source 1.5 中不支持 diamond 运算符
+MockHandler<T> newMockHandler = new MockHandler<>(mockSettings);
+2024-02-25 00:52:40,045 - Mockito_27 - INFO - 补丁1 2 未成功编译
+2024-02-25 00:52:40,046 - Mockito_27 - INFO - 开始验证补丁1 3:
+2024-02-25 00:52:40,046 - Mockito_27 - INFO - 
+MockSettingsImpl originalSettings = oldMockHandler.getMockSettings();
+MockSettingsImpl newSettings = modifySettingsAsNeeded(originalSettings);
+// Assuming modifySettingsAsNeeded is a method to clone and modify settings
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(newSettings);
+MockHandler<T> newMockHandler = new MockHandler<>(newSettings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:52:40,861 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:52:40,861 - Mockito_27 - INFO - 错误: -source 1.5 中不支持 diamond 运算符
+MockHandler<T> newMockHandler = new MockHandler<>(newSettings);
+2024-02-25 00:52:40,861 - Mockito_27 - INFO - 补丁1 3 未成功编译
+2024-02-25 00:52:40,862 - Mockito_27 - INFO - 开始验证补丁1 4:
+2024-02-25 00:52:40,862 - Mockito_27 - INFO - 
+        MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+
+2024-02-25 00:52:46,031 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:53:07,156 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:53:07,156 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:53:07,599 - Mockito_27 - INFO - 补丁1 4测试失败
+2024-02-25 00:53:07,600 - Mockito_27 - INFO - 开始验证补丁1 5:
+2024-02-25 00:53:07,600 - Mockito_27 - INFO - 
+        MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+        MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+        MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+
+2024-02-25 00:53:12,837 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:53:33,341 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:53:33,341 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:53:33,790 - Mockito_27 - INFO - 补丁1 5测试失败
+2024-02-25 00:53:33,791 - Mockito_27 - INFO - 开始验证补丁1 6:
+2024-02-25 00:53:33,791 - Mockito_27 - INFO - 
+        MockHandler<T> newMockHandler = new MockHandler<T>((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.RETURNS_DEFAULTS));
+        MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) org.mockito.Mockito.withSettings());
+
+2024-02-25 00:53:35,402 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:53:35,402 - Mockito_27 - INFO - 错误: 找不到符号
+MockHandler<T> newMockHandler = new MockHandler<T>((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.RETURNS_DEFAULTS));
+2024-02-25 00:53:35,402 - Mockito_27 - INFO - 补丁1 6 未成功编译
+2024-02-25 00:53:35,403 - Mockito_27 - INFO - 开始验证补丁1 7:
+2024-02-25 00:53:35,403 - Mockito_27 - INFO - 
+   MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings()
+       .defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+   MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+   ((Factory) mock).setCallback(0, newFilter);
+   
+2024-02-25 00:53:40,583 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:54:01,110 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:54:01,111 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:54:01,558 - Mockito_27 - INFO - 补丁1 7测试失败
+2024-02-25 00:54:01,559 - Mockito_27 - INFO - 开始验证补丁1 8:
+2024-02-25 00:54:01,559 - Mockito_27 - INFO - 
+   MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, 
+       (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+   ((Factory) mock).setCallback(0, newFilter);
+   
+2024-02-25 00:54:03,192 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:54:03,192 - Mockito_27 - INFO - 错误: 找不到符号
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler,
+2024-02-25 00:54:03,192 - Mockito_27 - INFO - 补丁1 8 未成功编译
+2024-02-25 00:54:03,193 - Mockito_27 - INFO - 开始验证补丁1 9:
+2024-02-25 00:54:03,193 - Mockito_27 - INFO - 
+   MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings()
+       .defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+   MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+   MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, settings);
+   ((Factory) mock).setCallback(0, newFilter);
+   
+2024-02-25 00:54:08,362 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:54:28,856 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:54:28,857 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:54:29,296 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:54:29,297 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:54:29,297 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:54:29,297 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:54:29,297 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:54:29,297 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:54:29,297 - Mockito_27 - INFO - 补丁1 9测试失败
+2024-02-25 00:54:29,298 - Mockito_27 - INFO - 开始验证补丁2 1:
+2024-02-25 00:54:29,298 - Mockito_27 - INFO - 
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:54:34,570 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:54:55,300 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:54:55,300 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:54:55,743 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:54:55,743 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:54:55,743 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:54:55,743 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:54:55,743 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:54:55,744 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:54:55,744 - Mockito_27 - INFO - 补丁2 1测试失败
+2024-02-25 00:54:55,745 - Mockito_27 - INFO - 开始验证补丁2 2:
+2024-02-25 00:54:55,745 - Mockito_27 - INFO - 
+MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:55:00,957 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:55:21,346 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:55:21,346 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:55:21,785 - Mockito_27 - INFO - 补丁2 2测试失败
+2024-02-25 00:55:21,786 - Mockito_27 - INFO - 开始验证补丁2 3:
+2024-02-25 00:55:21,786 - Mockito_27 - INFO - 
+MockHandler<T> newMockHandler = new MockHandler<T>((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:55:27,021 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:55:47,443 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:55:47,443 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:55:47,891 - Mockito_27 - INFO - 补丁2 3测试失败
+2024-02-25 00:55:47,892 - Mockito_27 - INFO - 开始验证补丁2 4:
+2024-02-25 00:55:47,892 - Mockito_27 - INFO - 
+MockSettingsImpl settings = new MockSettingsImpl().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, settings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:55:49,519 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:55:49,519 - Mockito_27 - INFO - 错误: 不兼容的类型
+MockSettingsImpl settings = new MockSettingsImpl().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+2024-02-25 00:55:49,519 - Mockito_27 - INFO - 补丁2 4 未成功编译
+2024-02-25 00:55:49,520 - Mockito_27 - INFO - 开始验证补丁2 5:
+2024-02-25 00:55:49,520 - Mockito_27 - INFO - 
+MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:55:49,520 - Mockito_27 - INFO - 补丁2 5为重复的补丁
+2024-02-25 00:55:49,525 - Mockito_27 - INFO - 开始验证补丁2 6:
+2024-02-25 00:55:49,525 - Mockito_27 - INFO - 
+MockHandler<T> newMockHandler = new MockHandler<T>(org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, (MockSettingsImpl)org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:55:51,171 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:55:51,171 - Mockito_27 - INFO - 错误: 对于MockHandler(MockSettings), 找不到合适的构造器
+MockHandler<T> newMockHandler = new MockHandler<T>(org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+2024-02-25 00:55:51,171 - Mockito_27 - INFO - 补丁2 6 未成功编译
+2024-02-25 00:55:51,172 - Mockito_27 - INFO - 开始验证补丁2 7:
+2024-02-25 00:55:51,172 - Mockito_27 - INFO - 
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS));
+
+2024-02-25 00:55:52,727 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:55:52,727 - Mockito_27 - INFO - 错误: 找不到符号
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS));
+2024-02-25 00:55:52,727 - Mockito_27 - INFO - 补丁2 7 未成功编译
+2024-02-25 00:55:52,729 - Mockito_27 - INFO - 开始验证补丁2 8:
+2024-02-25 00:55:52,729 - Mockito_27 - INFO - 
+MockHandler<T> newMockHandler = new MockHandler<T>((MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS));
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, (MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS));
+
+2024-02-25 00:55:54,364 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:55:54,364 - Mockito_27 - INFO - 错误: 找不到符号
+MockHandler<T> newMockHandler = new MockHandler<T>((MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS));
+2024-02-25 00:55:54,364 - Mockito_27 - INFO - 补丁2 8 未成功编译
+2024-02-25 00:55:54,365 - Mockito_27 - INFO - 开始验证补丁2 9:
+2024-02-25 00:55:54,365 - Mockito_27 - INFO - 
+MockSettingsImpl settings = (MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS);
+MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, settings);
+
+2024-02-25 00:55:55,957 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:55:55,957 - Mockito_27 - INFO - 错误: 找不到符号
+MockSettingsImpl settings = (MockSettingsImpl) Mockito.withSettings().defaultAnswer(Mockito.RETURNS_DEFAULTS);
+2024-02-25 00:55:55,957 - Mockito_27 - INFO - 补丁2 9 未成功编译
+2024-02-25 00:55:55,958 - Mockito_27 - INFO - 开始验证补丁3 1:
+2024-02-25 00:55:55,958 - Mockito_27 - INFO - 
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:55:55,958 - Mockito_27 - INFO - 补丁3 1为重复的补丁
+2024-02-25 00:55:55,959 - Mockito_27 - INFO - 开始验证补丁3 2:
+2024-02-25 00:55:55,959 - Mockito_27 - INFO - 
+MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:56:01,157 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:56:21,602 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:56:21,602 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:56:22,044 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:56:22,044 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:56:22,044 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:56:22,044 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:56:22,045 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:56:22,045 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:56:22,045 - Mockito_27 - INFO - 补丁3 2测试失败
+2024-02-25 00:56:22,045 - Mockito_27 - INFO - 开始验证补丁3 3:
+2024-02-25 00:56:22,046 - Mockito_27 - INFO - 
+MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MockHandler<T> newMockHandler = new MockHandler<T>(settings.copyFrom(oldMockHandler));
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:56:23,686 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:56:23,686 - Mockito_27 - INFO - 错误: 找不到符号
+MockHandler<T> newMockHandler = new MockHandler<T>(settings.copyFrom(oldMockHandler));
+2024-02-25 00:56:23,686 - Mockito_27 - INFO - 补丁3 3 未成功编译
+2024-02-25 00:56:23,687 - Mockito_27 - INFO - 开始验证补丁3 4:
+2024-02-25 00:56:23,687 - Mockito_27 - INFO - 
+MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+MockHandlerInterface<T> newMockHandler = getMockHandler(mock);
+newMockHandler.reset();
+
+2024-02-25 00:56:25,337 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:56:25,337 - Mockito_27 - INFO - 错误: 找不到符号
+newMockHandler.reset();
+2024-02-25 00:56:25,337 - Mockito_27 - INFO - 补丁3 4 未成功编译
+2024-02-25 00:56:25,338 - Mockito_27 - INFO - 开始验证补丁3 5:
+2024-02-25 00:56:25,338 - Mockito_27 - INFO - 
+MockHandlerInterface<T> newMockHandler = getMockHandler(mock);
+newMockHandler.reset();
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+
+2024-02-25 00:56:26,924 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:56:26,924 - Mockito_27 - INFO - 错误: 找不到符号
+newMockHandler.reset();
+2024-02-25 00:56:26,924 - Mockito_27 - INFO - 补丁3 5 未成功编译
+2024-02-25 00:56:26,925 - Mockito_27 - INFO - 开始验证补丁3 6:
+2024-02-25 00:56:26,925 - Mockito_27 - INFO - 
+MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(getInvocationNotifierHandler(mock), settings);
+((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:56:28,534 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:56:28,534 - Mockito_27 - INFO - 错误: 找不到符号
+MethodInterceptorFilter newFilter = new MethodInterceptorFilter(getInvocationNotifierHandler(mock), settings);
+2024-02-25 00:56:28,534 - Mockito_27 - INFO - 补丁3 6 未成功编译
+2024-02-25 00:56:28,535 - Mockito_27 - INFO - 开始验证补丁3 7:
+2024-02-25 00:56:28,535 - Mockito_27 - INFO - 
+        MethodInterceptorFilter newFilter = newMethodInterceptorFilter((MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+        ((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:56:33,741 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:56:54,651 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:56:54,651 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:56:55,096 - Mockito_27 - INFO - 补丁3 7测试失败
+2024-02-25 00:56:55,097 - Mockito_27 - INFO - 开始验证补丁3 8:
+2024-02-25 00:56:55,097 - Mockito_27 - INFO - 
+        MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+        MockHandler<T> newMockHandler = new MockHandler<T>(settings);
+        MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, settings);
+        ((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:57:00,339 - Mockito_27 - INFO - 编译成功
+2024-02-25 00:57:21,089 - Mockito_27 - INFO - 测试失败
+2024-02-25 00:57:21,089 - Mockito_27 - INFO - Failing tests: 9
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldNotInjectIfNotAnnotated
+  - org.mockitousage.basicapi.ResetTest::shouldNotAffectMockName
+  - org.mockitousage.basicapi.ResetTest::shouldRemoveStubbingToString
+  - org.mockitousage.basicapi.ResetTest::shouldMaintainPreviousDefaultAnswer
+  - org.mockitousage.bugs.ListenersLostOnResetMockTest::listener
+
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - 选择失败的测试用例为:
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest::shouldInjectMocksByName
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - 失败的测试代码为:
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - 		MockitoAnnotations.initMocks(this);
+
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - 失败信息为:
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - java.lang.NullPointerException
+
+2024-02-25 00:57:21,536 - Mockito_27 - INFO - 补丁3 8测试失败
+2024-02-25 00:57:21,537 - Mockito_27 - INFO - 开始验证补丁3 9:
+2024-02-25 00:57:21,537 - Mockito_27 - INFO - 
+        MockSettingsImpl settings = (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS);
+        MockHandler<T> newMockHandler = new MockHandler<T>(oldMockHandler.getSettings());
+        MethodInterceptorFilter newFilter = newMethodInterceptorFilter(settings);
+        ((Factory) mock).setCallback(0, newFilter);
+
+2024-02-25 00:57:23,131 - Mockito_27 - INFO - 编译失败
+2024-02-25 00:57:23,131 - Mockito_27 - INFO - 错误: 找不到符号
+MockHandler<T> newMockHandler = new MockHandler<T>(oldMockHandler.getSettings());
+2024-02-25 00:57:23,131 - Mockito_27 - INFO - 补丁3 9 未成功编译
+2024-02-25 00:57:23,131 - Mockito_27 - INFO - Mockito_27 未成功修复

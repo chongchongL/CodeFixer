@@ -1,0 +1,364 @@
+2024-02-24 23:40:51,607 - Closure_20 - INFO - rm -rf /home/chongchong/d4j-project/Closure_20
+2024-02-24 23:40:51,608 - Closure_20 - INFO - 删除 Closure 20b 成功
+2024-02-24 23:40:51,608 - Closure_20 - INFO - defects4j checkout -p Closure -v 20b -w /home/chongchong/d4j-project/Closure_20
+2024-02-24 23:40:53,433 - Closure_20 - INFO - checkout Closure 20b 成功
+2024-02-24 23:41:04,993 - Closure_20 - INFO - 编译成功
+2024-02-24 23:41:52,089 - Closure_20 - INFO - 测试失败
+2024-02-24 23:41:52,089 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:41:53,138 - Closure_20 - INFO - 它的bug类型为:
+2024-02-24 23:41:53,138 - Closure_20 - INFO - 2
+2024-02-24 23:42:48,373 - Closure_20 - INFO - 开始验证补丁1 1:
+2024-02-24 23:42:48,373 - Closure_20 - INFO - 
+      if (value != null && value.getNext() == null) {
+
+2024-02-24 23:42:52,586 - Closure_20 - INFO - 编译成功
+2024-02-24 23:43:40,848 - Closure_20 - INFO - 测试失败
+2024-02-24 23:43:40,848 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:43:41,358 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:43:41,358 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:43:41,358 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:43:41,358 - Closure_20 - INFO -     testSame("var a = String({valueOf: function() { return 1; }});");
+
+2024-02-24 23:43:41,358 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:43:41,358 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:43:41,358 - Closure_20 - INFO - 补丁1 1测试失败
+2024-02-24 23:43:41,359 - Closure_20 - INFO - 开始验证补丁1 2:
+2024-02-24 23:43:41,359 - Closure_20 - INFO - 
+      if (callTarget.getNext() != null && callTarget.getNext().getNext() == null) {
+
+2024-02-24 23:43:45,599 - Closure_20 - INFO - 编译成功
+2024-02-24 23:44:34,469 - Closure_20 - INFO - 测试失败
+2024-02-24 23:44:34,469 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:44:34,983 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:44:34,984 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:44:34,984 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:44:34,984 - Closure_20 - INFO -     testSame("var a = String({valueOf: function() { return 1; }});");
+
+2024-02-24 23:44:34,984 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:44:34,984 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:44:34,984 - Closure_20 - INFO - 补丁1 2测试失败
+2024-02-24 23:44:34,985 - Closure_20 - INFO - 开始验证补丁1 3:
+2024-02-24 23:44:34,985 - Closure_20 - INFO - 
+      if (value != null) {
+        // Count the arguments
+        int argCount = 0;
+        for (Node arg = value; arg != null; arg = arg.getNext()) {
+          argCount++;
+        }
+        if (argCount == 1) {
+
+2024-02-24 23:44:36,822 - Closure_20 - INFO - 编译失败
+2024-02-24 23:44:36,822 - Closure_20 - INFO - 错误: 非法的表达式开始
+private Node tryFoldImmediateCallToBoundFunction(Node n) {
+2024-02-24 23:44:36,822 - Closure_20 - INFO - 补丁1 3 未成功编译
+2024-02-24 23:44:36,823 - Closure_20 - INFO - 开始验证补丁1 4:
+2024-02-24 23:44:36,823 - Closure_20 - INFO - 
+if (value != null && value.getNext() == null) {
+
+2024-02-24 23:44:41,104 - Closure_20 - INFO - 编译成功
+2024-02-24 23:45:28,644 - Closure_20 - INFO - 测试失败
+2024-02-24 23:45:28,644 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:45:29,169 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:45:29,169 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:45:29,169 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:45:29,169 - Closure_20 - INFO -     testSame("var a = String({valueOf: function() { return 1; }});");
+
+2024-02-24 23:45:29,169 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:45:29,169 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:45:29,169 - Closure_20 - INFO - 补丁1 4测试失败
+2024-02-24 23:45:29,170 - Closure_20 - INFO - 开始验证补丁1 5:
+2024-02-24 23:45:29,170 - Closure_20 - INFO - 
+if (callTarget.getNext() != null && callTarget.getNext().getNext() == null) {
+
+2024-02-24 23:45:33,457 - Closure_20 - INFO - 编译成功
+2024-02-24 23:46:21,116 - Closure_20 - INFO - 测试失败
+2024-02-24 23:46:21,116 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:46:21,637 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:46:21,637 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:46:21,637 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:46:21,637 - Closure_20 - INFO -     testSame("var a = String({valueOf: function() { return 1; }});");
+
+2024-02-24 23:46:21,637 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:46:21,637 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:46:21,637 - Closure_20 - INFO - 补丁1 5测试失败
+2024-02-24 23:46:21,638 - Closure_20 - INFO - 开始验证补丁1 6:
+2024-02-24 23:46:21,638 - Closure_20 - INFO - 
+if (value != null) {
+  if (value.getNext() == null) {
+
+2024-02-24 23:46:23,474 - Closure_20 - INFO - 编译失败
+2024-02-24 23:46:23,474 - Closure_20 - INFO - 错误: 非法的表达式开始
+private Node tryFoldImmediateCallToBoundFunction(Node n) {
+2024-02-24 23:46:23,474 - Closure_20 - INFO - 补丁1 6 未成功编译
+2024-02-24 23:46:23,475 - Closure_20 - INFO - 开始验证补丁1 7:
+2024-02-24 23:46:23,475 - Closure_20 - INFO - 
+      if (value != null && value.getNext() == null) {
+
+2024-02-24 23:46:23,475 - Closure_20 - INFO - 补丁1 7为重复的补丁
+2024-02-24 23:46:23,480 - Closure_20 - INFO - 开始验证补丁1 8:
+2024-02-24 23:46:23,480 - Closure_20 - INFO - 
+      if (value != null && !value.hasNextSibling()) {
+
+2024-02-24 23:46:25,520 - Closure_20 - INFO - 编译失败
+2024-02-24 23:46:25,521 - Closure_20 - INFO - 错误: 找不到符号
+if (value != null && !value.hasNextSibling()) {
+2024-02-24 23:46:25,521 - Closure_20 - INFO - 补丁1 8 未成功编译
+2024-02-24 23:46:25,522 - Closure_20 - INFO - 开始验证补丁1 9:
+2024-02-24 23:46:25,522 - Closure_20 - INFO - 
+      if (value != null && value.getNext() == null && callTarget.getParent().hasOneChild()) {
+
+2024-02-24 23:46:29,781 - Closure_20 - INFO - 编译成功
+2024-02-24 23:47:17,096 - Closure_20 - INFO - 测试失败
+2024-02-24 23:47:17,096 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:47:17,606 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:47:17,606 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:47:17,606 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:47:17,606 - Closure_20 - INFO -     test("var a = String(23)", "var a = '' + 23");
+
+2024-02-24 23:47:17,606 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:47:17,606 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:47:17,606 - Closure_20 - INFO - 补丁1 9测试失败
+2024-02-24 23:47:17,607 - Closure_20 - INFO - 开始验证补丁2 1:
+2024-02-24 23:47:17,607 - Closure_20 - INFO - 
+if (value != null && !value.getNext().hasChildren()) {
+
+2024-02-24 23:47:21,868 - Closure_20 - INFO - 编译成功
+2024-02-24 23:48:09,677 - Closure_20 - INFO - 测试失败
+2024-02-24 23:48:09,677 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:48:10,197 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:48:10,197 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:48:10,197 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:48:10,197 - Closure_20 - INFO -     test("var a = String(23)", "var a = '' + 23");
+
+2024-02-24 23:48:10,197 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:48:10,197 - Closure_20 - INFO - java.lang.NullPointerException
+
+2024-02-24 23:48:10,197 - Closure_20 - INFO - 补丁2 1测试失败
+2024-02-24 23:48:10,198 - Closure_20 - INFO - 开始验证补丁2 2:
+2024-02-24 23:48:10,198 - Closure_20 - INFO - 
+if (value != null && value.getNext() == null) {
+
+2024-02-24 23:48:10,198 - Closure_20 - INFO - 补丁2 2为重复的补丁
+2024-02-24 23:48:10,199 - Closure_20 - INFO - 开始验证补丁2 3:
+2024-02-24 23:48:10,199 - Closure_20 - INFO - 
+if (value != null && callTarget.getNext().getNext() == null) {
+
+2024-02-24 23:48:14,466 - Closure_20 - INFO - 编译成功
+2024-02-24 23:49:02,540 - Closure_20 - INFO - 测试失败
+2024-02-24 23:49:02,540 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:49:03,050 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:49:03,050 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:49:03,050 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:49:03,050 - Closure_20 - INFO -     testSame("var a = String({valueOf: function() { return 1; }});");
+
+2024-02-24 23:49:03,050 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:49:03,050 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:49:03,050 - Closure_20 - INFO - 补丁2 3测试失败
+2024-02-24 23:49:03,051 - Closure_20 - INFO - 开始验证补丁2 4:
+2024-02-24 23:49:03,051 - Closure_20 - INFO - 
+      if (value != null && !value.getNext().hasChildren()) {
+
+2024-02-24 23:49:07,288 - Closure_20 - INFO - 编译成功
+2024-02-24 23:49:54,434 - Closure_20 - INFO - 测试失败
+2024-02-24 23:49:54,434 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:49:54,941 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:49:54,941 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:49:54,941 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:49:54,941 - Closure_20 - INFO -     test("var a = String(23)", "var a = '' + 23");
+
+2024-02-24 23:49:54,941 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:49:54,941 - Closure_20 - INFO - java.lang.NullPointerException
+
+2024-02-24 23:49:54,941 - Closure_20 - INFO - 补丁2 4测试失败
+2024-02-24 23:49:54,942 - Closure_20 - INFO - 开始验证补丁2 5:
+2024-02-24 23:49:54,942 - Closure_20 - INFO - 
+      if (value != null && value.isName()) {
+
+2024-02-24 23:49:59,213 - Closure_20 - INFO - 编译成功
+2024-02-24 23:50:46,668 - Closure_20 - INFO - 测试失败
+2024-02-24 23:50:46,668 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:50:47,176 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:50:47,176 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:50:47,176 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:50:47,176 - Closure_20 - INFO -     test("var a = String(23)", "var a = '' + 23");
+
+2024-02-24 23:50:47,176 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:50:47,176 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:50:47,176 - Closure_20 - INFO - 补丁2 5测试失败
+2024-02-24 23:50:47,177 - Closure_20 - INFO - 开始验证补丁2 6:
+2024-02-24 23:50:47,177 - Closure_20 - INFO - 
+      if (value != null && value.getNext() == null) {
+
+2024-02-24 23:50:47,177 - Closure_20 - INFO - 补丁2 6为重复的补丁
+2024-02-24 23:50:47,178 - Closure_20 - INFO - 开始验证补丁2 7:
+2024-02-24 23:50:47,178 - Closure_20 - INFO - 
+if (value != null && !value.hasChildren()) {
+
+2024-02-24 23:50:51,441 - Closure_20 - INFO - 编译成功
+2024-02-24 23:51:38,570 - Closure_20 - INFO - 测试失败
+2024-02-24 23:51:38,570 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:51:39,077 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:51:39,077 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:51:39,077 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:51:39,077 - Closure_20 - INFO -     testSame("var a = String('hello', bar());");
+
+2024-02-24 23:51:39,077 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:51:39,077 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:51:39,077 - Closure_20 - INFO - 补丁2 7测试失败
+2024-02-24 23:51:39,078 - Closure_20 - INFO - 开始验证补丁2 8:
+2024-02-24 23:51:39,078 - Closure_20 - INFO - 
+if (value != null && value.getNext() == null) {
+
+2024-02-24 23:51:39,078 - Closure_20 - INFO - 补丁2 8为重复的补丁
+2024-02-24 23:51:39,079 - Closure_20 - INFO - 开始验证补丁2 9:
+2024-02-24 23:51:39,079 - Closure_20 - INFO - 
+if (value != null && value.getNext() == null && callTarget.getFirstChild() == value) {
+
+2024-02-24 23:51:43,332 - Closure_20 - INFO - 编译成功
+2024-02-24 23:52:32,106 - Closure_20 - INFO - 测试失败
+2024-02-24 23:52:32,106 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:52:32,620 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:52:32,620 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:52:32,620 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:52:32,620 - Closure_20 - INFO -     test("var a = String(23)", "var a = '' + 23");
+
+2024-02-24 23:52:32,620 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:52:32,620 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:52:32,620 - Closure_20 - INFO - 补丁2 9测试失败
+2024-02-24 23:52:32,621 - Closure_20 - INFO - 开始验证补丁3 1:
+2024-02-24 23:52:32,621 - Closure_20 - INFO - 
+if (value != null && value.getNext() == null) {
+
+2024-02-24 23:52:32,621 - Closure_20 - INFO - 补丁3 1为重复的补丁
+2024-02-24 23:52:32,622 - Closure_20 - INFO - 开始验证补丁3 2:
+2024-02-24 23:52:32,622 - Closure_20 - INFO - 
+if (value != null && !value.isCall()) {
+
+2024-02-24 23:52:36,871 - Closure_20 - INFO - 编译成功
+2024-02-24 23:53:24,879 - Closure_20 - INFO - 测试失败
+2024-02-24 23:53:24,879 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:53:25,392 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:53:25,392 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:53:25,393 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:53:25,393 - Closure_20 - INFO -     testSame("var a = String('hello', bar());");
+
+2024-02-24 23:53:25,393 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:53:25,393 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:53:25,393 - Closure_20 - INFO - 补丁3 2测试失败
+2024-02-24 23:53:25,394 - Closure_20 - INFO - 开始验证补丁3 3:
+2024-02-24 23:53:25,394 - Closure_20 - INFO - 
+if (value != null && NodeUtil.isImmutableValue(value)) {
+
+2024-02-24 23:53:29,700 - Closure_20 - INFO - 编译成功
+2024-02-24 23:54:17,287 - Closure_20 - INFO - 测试失败
+2024-02-24 23:54:17,288 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:54:17,798 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:54:17,798 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:54:17,798 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:54:17,798 - Closure_20 - INFO -     testSame("var a = String('hello', bar());");
+
+2024-02-24 23:54:17,798 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:54:17,798 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:54:17,798 - Closure_20 - INFO - 补丁3 3测试失败
+2024-02-24 23:54:17,799 - Closure_20 - INFO - 开始验证补丁3 4:
+2024-02-24 23:54:17,800 - Closure_20 - INFO - 
+      if (value != null && !value.getNext().hasChildren() && isImmutableLiteral(value)) {
+
+2024-02-24 23:54:19,852 - Closure_20 - INFO - 编译失败
+2024-02-24 23:54:19,852 - Closure_20 - INFO - 错误: 找不到符号
+if (value != null && !value.getNext().hasChildren() && isImmutableLiteral(value)) {
+2024-02-24 23:54:19,852 - Closure_20 - INFO - 补丁3 4 未成功编译
+2024-02-24 23:54:19,853 - Closure_20 - INFO - 开始验证补丁3 5:
+2024-02-24 23:54:19,853 - Closure_20 - INFO - 
+      if (value != null && value.getNext() == null) {
+
+2024-02-24 23:54:19,853 - Closure_20 - INFO - 补丁3 5为重复的补丁
+2024-02-24 23:54:19,858 - Closure_20 - INFO - 开始验证补丁3 6:
+2024-02-24 23:54:19,858 - Closure_20 - INFO - 
+      if (value != null && callTarget.getParent().hasOneChild()) {
+
+2024-02-24 23:54:24,122 - Closure_20 - INFO - 编译成功
+2024-02-24 23:55:12,242 - Closure_20 - INFO - 测试失败
+2024-02-24 23:55:12,242 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:55:12,751 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:55:12,751 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:55:12,751 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:55:12,751 - Closure_20 - INFO -     test("var a = String(23)", "var a = '' + 23");
+
+2024-02-24 23:55:12,751 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:55:12,751 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:55:12,751 - Closure_20 - INFO - 补丁3 6测试失败
+2024-02-24 23:55:12,752 - Closure_20 - INFO - 开始验证补丁3 7:
+2024-02-24 23:55:12,752 - Closure_20 - INFO - 
+if (value != null && value.getNext() == null) {
+
+2024-02-24 23:55:12,752 - Closure_20 - INFO - 补丁3 7为重复的补丁
+2024-02-24 23:55:12,753 - Closure_20 - INFO - 开始验证补丁3 8:
+2024-02-24 23:55:12,753 - Closure_20 - INFO - 
+if (value != null && !(value instanceof CallNode)) {
+
+2024-02-24 23:55:14,802 - Closure_20 - INFO - 编译失败
+2024-02-24 23:55:14,802 - Closure_20 - INFO - 错误: 找不到符号
+if (value != null && !(value instanceof CallNode)) {
+2024-02-24 23:55:14,802 - Closure_20 - INFO - 补丁3 8 未成功编译
+2024-02-24 23:55:14,804 - Closure_20 - INFO - 开始验证补丁3 9:
+2024-02-24 23:55:14,804 - Closure_20 - INFO - 
+if (value != null && callTarget.getParent().getFirstChild().getNext() == value && value.getNext() == null) {
+
+2024-02-24 23:55:19,101 - Closure_20 - INFO - 编译成功
+2024-02-24 23:56:07,650 - Closure_20 - INFO - 测试失败
+2024-02-24 23:56:07,650 - Closure_20 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+
+2024-02-24 23:56:08,167 - Closure_20 - INFO - 选择失败的测试用例为:
+2024-02-24 23:56:08,167 - Closure_20 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testSimpleFunctionCall
+2024-02-24 23:56:08,167 - Closure_20 - INFO - 失败的测试代码为:
+2024-02-24 23:56:08,167 - Closure_20 - INFO -     testSame("var a = String({valueOf: function() { return 1; }});");
+
+2024-02-24 23:56:08,167 - Closure_20 - INFO - 失败信息为:
+2024-02-24 23:56:08,167 - Closure_20 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 23:56:08,167 - Closure_20 - INFO - 补丁3 9测试失败
+2024-02-24 23:56:08,167 - Closure_20 - INFO - Closure_20 未成功修复

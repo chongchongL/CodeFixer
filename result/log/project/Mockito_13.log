@@ -1,0 +1,445 @@
+2024-02-26 10:30:06,524 - Mockito_13 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_13
+2024-02-26 10:30:06,524 - Mockito_13 - INFO - 删除 Mockito 13b 成功
+2024-02-26 10:30:06,524 - Mockito_13 - INFO - defects4j checkout -p Mockito -v 13b -w /home/chongchong/d4j-project/Mockito_13
+2024-02-26 10:30:10,005 - Mockito_13 - INFO - checkout Mockito 13b 成功
+2024-02-26 10:30:15,516 - Mockito_13 - INFO - 编译成功
+2024-02-26 10:30:34,247 - Mockito_13 - INFO - 测试失败
+2024-02-26 10:30:34,248 - Mockito_13 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.VerifyingWithAnExtraCallToADifferentMockTest::shouldAllowVerifyingWhenOtherMockCallIsInTheSameLine
+
+2024-02-26 10:30:35,144 - Mockito_13 - INFO - 它的bug类型为:
+2024-02-26 10:30:35,144 - Mockito_13 - INFO - 4
+2024-02-26 10:32:31,545 - Mockito_13 - INFO - 开始验证补丁1 1:
+2024-02-26 10:32:31,545 - Mockito_13 - INFO - 
+   if (verificationMode instanceof MockAwareVerificationMode) {
+       MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+       if (mockAwareVerificationMode.getMock().equals(invocation.getMock())) {
+           VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+           verificationMode.verify(data);
+           return null;  // Assuming null indicates successful verification
+       }
+   }
+   
+2024-02-26 10:32:32,418 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:32,418 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:32,418 - Mockito_13 - INFO - 补丁1 1 未成功编译
+2024-02-26 10:32:32,419 - Mockito_13 - INFO - 开始验证补丁1 2:
+2024-02-26 10:32:32,419 - Mockito_13 - INFO - 
+   if (verificationMode instanceof MockAwareVerificationMode) {
+       MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+       if (mockAwareVerificationMode.getMock().equals(invocation.getMock())) {
+           VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+           verificationMode.verify(data);
+       } else {
+           // Handle the case where the mocks are different
+           // Potentially throw an exception or log a warning
+       }
+       return null;  // Place return statement outside to indicate end of the verification process
+   }
+   
+2024-02-26 10:32:33,250 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:33,250 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:33,250 - Mockito_13 - INFO - 补丁1 2 未成功编译
+2024-02-26 10:32:33,251 - Mockito_13 - INFO - 开始验证补丁1 3:
+2024-02-26 10:32:33,251 - Mockito_13 - INFO - 
+   if (verificationMode instanceof MockAwareVerificationMode) {
+       MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+       if (mockAwareVerificationMode.getMock().equals(invocation.getMock())) {
+           VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+           verificationMode.verify(data);
+       } else {
+           // This means there is an invocation on a different mock.
+           // Appropriate action needs to be taken; could be an error condition or handled differently.
+           // Example: throw new MockVerificationException("Invocation on a different mock detected.");
+       }
+   }
+   return null;  // Null could indicate successful verification or be replaced with another meaningful value.
+   
+2024-02-26 10:32:34,087 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:34,087 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:34,087 - Mockito_13 - INFO - 补丁1 3 未成功编译
+2024-02-26 10:32:34,088 - Mockito_13 - INFO - 开始验证补丁1 4:
+2024-02-26 10:32:34,088 - Mockito_13 - INFO - 
+        if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {
+            VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+            verificationMode.verify(data);
+            return null; // Possible early exit or success signal; assumes equals() method is properly implemented for mocks
+        } else {
+            // Handle the scenario where verification is on a different mock
+            // This part of the logic would need further implementation based on the application's requirements
+        }
+
+2024-02-26 10:32:34,916 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:34,916 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:34,916 - Mockito_13 - INFO - 补丁1 4 未成功编译
+2024-02-26 10:32:34,917 - Mockito_13 - INFO - 开始验证补丁1 5:
+2024-02-26 10:32:34,917 - Mockito_13 - INFO - 
+        MockAwareVerificationMode mockAwareMode = (verificationMode instanceof MockAwareVerificationMode) ? (MockAwareVerificationMode) verificationMode : null;
+        if (mockAwareMode != null && (mockAwareMode.getMock() == invocation.getMock() || mockAwareMode.getMock().equals(invocation.getMock()))) {
+            VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+            verificationMode.verify(data);
+            return null; // Possible early exit or success signal; assumes equals() method is properly implemented for mocks
+        } else {
+            // Handle the scenario where verification is on a different mock
+            // This part of the logic would need further implementation based on the application's requirements
+        }
+
+2024-02-26 10:32:35,742 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:35,742 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:35,742 - Mockito_13 - INFO - 补丁1 5 未成功编译
+2024-02-26 10:32:35,743 - Mockito_13 - INFO - 开始验证补丁1 6:
+2024-02-26 10:32:35,743 - Mockito_13 - INFO - 
+        if (verificationMode instanceof MockAwareVerificationMode) {
+            MockAwareVerificationMode mode = (MockAwareVerificationMode) verificationMode;
+            if (mode.getMock().equals(invocation.getMock())) {                
+                VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+                verificationMode.verify(data);
+                // Documentation or an inline comment should clarify the meaning of returning null here, for example:
+                // Return null indicating that the verification was completed successfully.
+                return null;
+            } else {
+                // If the mocks do not match, handle the case appropriately
+                // Additional logic to handle invocation on a different mock
+            }
+        }
+        // If the verificationMode is not an instance of MockAwareVerificationMode, additional logic or error handling could be placed here
+
+2024-02-26 10:32:36,575 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:36,575 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:36,575 - Mockito_13 - INFO - 补丁1 6 未成功编译
+2024-02-26 10:32:36,576 - Mockito_13 - INFO - 开始验证补丁1 7:
+2024-02-26 10:32:36,576 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode &&
+    ((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {                
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+    verificationMode.verify(data);
+    return null; // consider handling different mocks if needed
+}
+
+2024-02-26 10:32:37,410 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:37,410 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:37,410 - Mockito_13 - INFO - 补丁1 7 未成功编译
+2024-02-26 10:32:37,411 - Mockito_13 - INFO - 开始验证补丁1 8:
+2024-02-26 10:32:37,411 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    Object actualMock = ((MockAwareVerificationMode) verificationMode).getMock();
+    Object invocationMock = invocation.getMock();
+    if (actualMock.equals(invocationMock)) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+        verificationMode.verify(data);
+        return null; // ensure proper handling of mock verification logic
+    }
+}
+
+2024-02-26 10:32:38,230 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:38,230 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:38,230 - Mockito_13 - INFO - 补丁1 8 未成功编译
+2024-02-26 10:32:38,231 - Mockito_13 - INFO - 开始验证补丁1 9:
+2024-02-26 10:32:38,231 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    MockAwareVerificationMode mockAwareMode = (MockAwareVerificationMode) verificationMode;
+    if (mockAwareMode.getMock().equals(invocation.getMock())) {            
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+        mockAwareMode.verify(data);
+        return null; // consider what to return to indicate successful verification
+    } else {
+        // handle the scenario when the mocks are different
+        // potentially throw an exception or set a flag indicating the mismatch
+    }
+}
+
+2024-02-26 10:32:39,088 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:39,088 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:39,088 - Mockito_13 - INFO - 补丁1 9 未成功编译
+2024-02-26 10:32:39,089 - Mockito_13 - INFO - 开始验证补丁2 1:
+2024-02-26 10:32:39,089 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+    if (mockAwareVerificationMode.getMock() == invocation.getMock()) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+        return null;
+    } else {
+        throw new VerificationInOrderFailure("Invocation on a different mock detected");
+    }
+}
+
+2024-02-26 10:32:39,919 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:39,919 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:39,919 - Mockito_13 - INFO - 补丁2 1 未成功编译
+2024-02-26 10:32:39,920 - Mockito_13 - INFO - 开始验证补丁2 2:
+2024-02-26 10:32:39,920 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+    if (mockAwareVerificationMode.getMock() == invocation.getMock()) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+    } else {
+        verificationMode = null; // Reset the verification mode to allow the next mock call in the same line to proceed
+    }
+}
+
+2024-02-26 10:32:40,742 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:40,742 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:40,742 - Mockito_13 - INFO - 补丁2 2 未成功编译
+2024-02-26 10:32:40,743 - Mockito_13 - INFO - 开始验证补丁2 3:
+2024-02-26 10:32:40,743 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+    if (mockAwareVerificationMode.getMock() == invocation.getMock()) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+        return null;
+    }
+    // Possibly log a warning or handle a separate case for different mocks
+}
+
+2024-02-26 10:32:41,588 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:41,588 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:41,588 - Mockito_13 - INFO - 补丁2 3 未成功编译
+2024-02-26 10:32:41,589 - Mockito_13 - INFO - 开始验证补丁2 4:
+2024-02-26 10:32:41,589 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    if(((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+    } else {
+        // Handle the case where the invocation is on a different mock
+        // This could be logging the error, throwing an exception or any other business logic
+    }
+    return null;
+}
+
+2024-02-26 10:32:42,423 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:42,423 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:42,424 - Mockito_13 - INFO - 补丁2 4 未成功编译
+2024-02-26 10:32:42,425 - Mockito_13 - INFO - 开始验证补丁2 5:
+2024-02-26 10:32:42,425 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    if(((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+    } else {
+        // If the mock is different, throw an exception indicating a mismatch
+        throw new MockVerificationException("Attempted to verify invocation on a different mock");
+    }
+    return null;
+}
+
+2024-02-26 10:32:43,241 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:43,241 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:43,241 - Mockito_13 - INFO - 补丁2 5 未成功编译
+2024-02-26 10:32:43,242 - Mockito_13 - INFO - 开始验证补丁2 6:
+2024-02-26 10:32:43,242 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    if(((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+        return null;
+    }
+    // Additional handling for cases where the mock in verificationMode does not match the mock of the invocation
+    // This could be either handling a different type of verificationMode or other business logic
+}
+// More code to handle other types of verificationMode or other business logic
+
+2024-02-26 10:32:44,070 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:44,071 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:44,071 - Mockito_13 - INFO - 补丁2 6 未成功编译
+2024-02-26 10:32:44,072 - Mockito_13 - INFO - 开始验证补丁2 7:
+2024-02-26 10:32:44,072 - Mockito_13 - INFO - 
+   if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {
+       VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+       verificationMode.verify(data);
+       return null;
+   } else {
+       // Handle the potential case of a different mock being involved or log a warning/error
+   }
+   
+2024-02-26 10:32:44,921 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:44,921 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:44,921 - Mockito_13 - INFO - 补丁2 7 未成功编译
+2024-02-26 10:32:44,922 - Mockito_13 - INFO - 开始验证补丁2 8:
+2024-02-26 10:32:44,922 - Mockito_13 - INFO - 
+   if (verificationMode instanceof MockAwareVerificationMode) {
+       if (((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {
+           VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+           verificationMode.verify(data);
+           return null;
+       } else {
+           // Notify about the unexpected mock interaction
+           throw new UnexpectedMockInvocationException();
+       }
+   }
+   
+2024-02-26 10:32:45,767 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:45,767 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:45,767 - Mockito_13 - INFO - 补丁2 8 未成功编译
+2024-02-26 10:32:45,768 - Mockito_13 - INFO - 开始验证补丁2 9:
+2024-02-26 10:32:45,768 - Mockito_13 - INFO - 
+   if (verificationMode instanceof MockAwareVerificationMode) {
+       MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+       if (mockAwareVerificationMode.getMock() != null && mockAwareVerificationMode.getMock().equals(invocation.getMock())) {
+           VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+           verificationMode.verify(data);
+           return null;
+       } else {
+           // Log a descriptive message or throw an exception to indicate verification was attempted on a different mock
+           Logger.log("Verification failed: Different mock was used for verification.");
+       }
+   }
+   
+2024-02-26 10:32:46,603 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:46,603 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:46,603 - Mockito_13 - INFO - 补丁2 9 未成功编译
+2024-02-26 10:32:46,604 - Mockito_13 - INFO - 开始验证补丁3 1:
+2024-02-26 10:32:46,604 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+    verificationMode.verify(data);
+    return null;
+}
+
+2024-02-26 10:32:47,455 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:47,455 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:47,455 - Mockito_13 - INFO - 补丁3 1 未成功编译
+2024-02-26 10:32:47,456 - Mockito_13 - INFO - 开始验证补丁3 2:
+2024-02-26 10:32:47,456 - Mockito_13 - INFO - 
+if (!(verificationMode instanceof MockAwareVerificationMode) || !((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {
+    // Handle the case where it is a wrong mock; for example, throw an exception or log a warning
+    throw new MockVerificationException("Verification on the wrong mock");
+}
+VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+verificationMode.verify(data);
+return null;
+
+2024-02-26 10:32:48,299 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:48,299 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:48,299 - Mockito_13 - INFO - 补丁3 2 未成功编译
+2024-02-26 10:32:48,300 - Mockito_13 - INFO - 开始验证补丁3 3:
+2024-02-26 10:32:48,300 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode) {
+    MockAwareVerificationMode mockAwareVerificationMode = (MockAwareVerificationMode) verificationMode;
+    if (mockAwareVerificationMode.getMock().equals(invocation.getMock())) {
+        VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);
+        verificationMode.verify(data);
+        return null;
+    } else {
+        // Handle the situation where the mocks do not match
+        // This could include logging or re-adding the verification mode if applicable
+        // Depending on the expected behavior when mocks don't match
+    }
+}
+
+2024-02-26 10:32:49,148 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:49,148 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:49,148 - Mockito_13 - INFO - 补丁3 3 未成功编译
+2024-02-26 10:32:49,149 - Mockito_13 - INFO - 开始验证补丁3 4:
+2024-02-26 10:32:49,149 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {                
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+    verificationMode.verify(data);
+    return null;
+}
+
+2024-02-26 10:32:49,969 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:49,969 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:49,969 - Mockito_13 - INFO - 补丁3 4 未成功编译
+2024-02-26 10:32:49,970 - Mockito_13 - INFO - 开始验证补丁3 5:
+2024-02-26 10:32:49,970 - Mockito_13 - INFO - 
+if (!(verificationMode instanceof MockAwareVerificationMode) || !((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {
+    return;
+}
+VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+verificationMode.verify(data);
+return null;
+
+2024-02-26 10:32:50,803 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:50,803 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:50,803 - Mockito_13 - INFO - 补丁3 5 未成功编译
+2024-02-26 10:32:50,804 - Mockito_13 - INFO - 开始验证补丁3 6:
+2024-02-26 10:32:50,804 - Mockito_13 - INFO - 
+// This assumes the logic is that we need to throw an exception or handle the situation where mocks don't match.
+if (verificationMode instanceof MockAwareVerificationMode) {
+    if (!((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {
+        throw new MockVerificationException("Verification failed due to a different mock being called.");
+    }
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+    verificationMode.verify(data);
+    return null;
+} else {
+    throw new IllegalStateException("Unsupported verification mode");
+}
+
+2024-02-26 10:32:51,653 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:51,653 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:51,653 - Mockito_13 - INFO - 补丁3 6 未成功编译
+2024-02-26 10:32:51,654 - Mockito_13 - INFO - 开始验证补丁3 7:
+2024-02-26 10:32:51,654 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock().equals(invocation.getMock())) {                
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+    verificationMode.verify(data);
+    return null;
+}
+// Re-adding the verificationMode for other potential verifications
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+
+2024-02-26 10:32:52,496 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:52,496 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:52,496 - Mockito_13 - INFO - 补丁3 7 未成功编译
+2024-02-26 10:32:52,497 - Mockito_13 - INFO - 开始验证补丁3 8:
+2024-02-26 10:32:52,497 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {                
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+    verificationMode.verify(data);
+    return null;
+} else {
+    throw new AssertionError("Invocation on different mock detected");
+}
+
+2024-02-26 10:32:53,338 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:53,338 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:53,338 - Mockito_13 - INFO - 补丁3 8 未成功编译
+2024-02-26 10:32:53,339 - Mockito_13 - INFO - 开始验证补丁3 9:
+2024-02-26 10:32:53,339 - Mockito_13 - INFO - 
+if (verificationMode instanceof MockAwareVerificationMode && ((MockAwareVerificationMode) verificationMode).getMock() == invocation.getMock()) {                
+    VerificationDataImpl data = new VerificationDataImpl(invocationContainerImpl, invocationMatcher);            
+    verificationMode.verify(data);
+    return null;
+} else {
+    // Log the error or handle it appropriately
+    logError("Invocation on different mock detected");
+    // Potentially perform some recovery action or re-add verificationMode for next verification
+    // (depending on the intended behavior which isn't clear from the original snippet)
+}
+
+2024-02-26 10:32:54,165 - Mockito_13 - INFO - 编译失败
+2024-02-26 10:32:54,165 - Mockito_13 - INFO - 错误: 需要<标识符>
+invocationContainerImpl.setInvocationForPotentialStubbing(invocationMatcher);
+2024-02-26 10:32:54,165 - Mockito_13 - INFO - 补丁3 9 未成功编译
+2024-02-26 10:32:54,166 - Mockito_13 - INFO - Mockito_13 未成功修复

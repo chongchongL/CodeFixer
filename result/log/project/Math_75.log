@@ -1,0 +1,256 @@
+2024-02-24 01:13:29,550 - Math_75 - INFO - rm -rf /home/chongchong/d4j-project/Math_75
+2024-02-24 01:13:29,551 - Math_75 - INFO - 删除 Math 75b 成功
+2024-02-24 01:13:29,551 - Math_75 - INFO - defects4j checkout -p Math -v 75b -w /home/chongchong/d4j-project/Math_75
+2024-02-24 01:13:31,966 - Math_75 - INFO - checkout Math 75b 成功
+2024-02-24 01:13:37,577 - Math_75 - INFO - 编译成功
+2024-02-24 01:13:44,330 - Math_75 - INFO - 测试失败
+2024-02-24 01:13:44,330 - Math_75 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.FrequencyTest::testPcts
+
+2024-02-24 01:13:45,243 - Math_75 - INFO - 它的bug类型为:
+2024-02-24 01:13:45,243 - Math_75 - INFO - 1
+2024-02-24 01:14:27,520 - Math_75 - INFO - Math_75 未成功修复
+2024-02-24 11:23:56,462 - Math_75 - INFO - rm -rf /home/chongchong/d4j-project/Math_75
+2024-02-24 11:23:56,490 - Math_75 - INFO - 删除 Math 75b 成功
+2024-02-24 11:23:56,490 - Math_75 - INFO - defects4j checkout -p Math -v 75b -w /home/chongchong/d4j-project/Math_75
+2024-02-24 11:23:58,905 - Math_75 - INFO - checkout Math 75b 成功
+2024-02-24 11:24:04,486 - Math_75 - INFO - 编译成功
+2024-02-24 11:24:11,129 - Math_75 - INFO - 测试失败
+2024-02-24 11:24:11,129 - Math_75 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.FrequencyTest::testPcts
+
+2024-02-24 11:24:12,045 - Math_75 - INFO - 它的bug类型为:
+2024-02-24 11:24:12,045 - Math_75 - INFO - 1
+2024-02-24 11:25:16,932 - Math_75 - INFO - 开始验证补丁1 1:
+2024-02-24 11:25:16,932 - Math_75 - INFO - 
+return calculateExactProportion(v);
+
+2024-02-24 11:25:17,681 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:17,682 - Math_75 - INFO - 错误: 找不到符号
+return calculateExactProportion(v);
+2024-02-24 11:25:17,682 - Math_75 - INFO - 补丁1 1 未成功编译
+2024-02-24 11:25:17,683 - Math_75 - INFO - 开始验证补丁1 2:
+2024-02-24 11:25:17,683 - Math_75 - INFO - 
+return getCumPct((Comparable<?>) v, false);
+
+2024-02-24 11:25:18,432 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:18,432 - Math_75 - INFO - 错误: 对于getCumPct(Comparable<CAP#1>,boolean), 找不到合适的方法
+return getCumPct((Comparable<?>) v, false);
+2024-02-24 11:25:18,432 - Math_75 - INFO - 补丁1 2 未成功编译
+2024-02-24 11:25:18,433 - Math_75 - INFO - 开始验证补丁1 3:
+2024-02-24 11:25:18,433 - Math_75 - INFO - 
+return values.stream().filter(value -> value.equals(v)).count() / (double) values.size();
+
+2024-02-24 11:25:19,024 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:19,025 - Math_75 - INFO - 错误: 非法的表达式开始
+return values.stream().filter(value -> value.equals(v)).count() / (double) values.size();
+2024-02-24 11:25:19,025 - Math_75 - INFO - 补丁1 3 未成功编译
+2024-02-24 11:25:19,026 - Math_75 - INFO - 开始验证补丁1 4:
+2024-02-24 11:25:19,026 - Math_75 - INFO - 
+   return count(v) / (double) size();
+   
+2024-02-24 11:25:19,775 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:19,775 - Math_75 - INFO - 错误: 找不到符号
+return count(v) / (double) size();
+2024-02-24 11:25:19,775 - Math_75 - INFO - 补丁1 4 未成功编译
+2024-02-24 11:25:19,776 - Math_75 - INFO - 开始验证补丁1 5:
+2024-02-24 11:25:19,776 - Math_75 - INFO - 
+   return getExactPct(v);
+   
+2024-02-24 11:25:20,539 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:20,539 - Math_75 - INFO - 错误: 找不到符号
+return getExactPct(v);
+2024-02-24 11:25:20,539 - Math_75 - INFO - 补丁1 5 未成功编译
+2024-02-24 11:25:20,540 - Math_75 - INFO - 开始验证补丁1 6:
+2024-02-24 11:25:20,540 - Math_75 - INFO - 
+   return (double) elements.stream().filter(e -> e.equals(v)).count() / elements.size();
+   
+2024-02-24 11:25:21,129 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:21,129 - Math_75 - INFO - 错误: 非法的表达式开始
+return (double) elements.stream().filter(e -> e.equals(v)).count() / elements.size();
+2024-02-24 11:25:21,129 - Math_75 - INFO - 补丁1 6 未成功编译
+2024-02-24 11:25:21,130 - Math_75 - INFO - 开始验证补丁1 7:
+2024-02-24 11:25:21,130 - Math_75 - INFO - 
+return getExactPct((Comparable<?>) v);
+
+2024-02-24 11:25:21,868 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:21,868 - Math_75 - INFO - 错误: 找不到符号
+return getExactPct((Comparable<?>) v);
+2024-02-24 11:25:21,868 - Math_75 - INFO - 补丁1 7 未成功编译
+2024-02-24 11:25:21,869 - Math_75 - INFO - 开始验证补丁1 8:
+2024-02-24 11:25:21,869 - Math_75 - INFO - 
+double count = 0;
+for (Object obj : values) {
+    if (v.equals(obj)) {
+        count++;
+    }
+}
+return count / values.size();
+
+2024-02-24 11:25:22,617 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:22,617 - Math_75 - INFO - 错误: 找不到符号
+for (Object obj : values) {
+2024-02-24 11:25:22,617 - Math_75 - INFO - 补丁1 8 未成功编译
+2024-02-24 11:25:22,618 - Math_75 - INFO - 开始验证补丁1 9:
+2024-02-24 11:25:22,618 - Math_75 - INFO - 
+return (double) getCountOfValue(v) / totalCountOfValues;
+
+2024-02-24 11:25:23,351 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:23,352 - Math_75 - INFO - 错误: 找不到符号
+return (double) getCountOfValue(v) / totalCountOfValues;
+2024-02-24 11:25:23,352 - Math_75 - INFO - 补丁1 9 未成功编译
+2024-02-24 11:25:23,353 - Math_75 - INFO - 开始验证补丁2 1:
+2024-02-24 11:25:23,353 - Math_75 - INFO - 
+return getExactPct((Comparable<?>) v);
+
+2024-02-24 11:25:23,353 - Math_75 - INFO - 补丁2 1为重复的补丁
+2024-02-24 11:25:23,358 - Math_75 - INFO - 开始验证补丁2 2:
+2024-02-24 11:25:23,358 - Math_75 - INFO - 
+double count = 0;
+for (Object val : values) {
+    if (v.equals(val)) {
+        count++;
+    }
+}
+return count / values.size();
+
+2024-02-24 11:25:24,104 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:24,104 - Math_75 - INFO - 错误: 找不到符号
+for (Object val : values) {
+2024-02-24 11:25:24,104 - Math_75 - INFO - 补丁2 2 未成功编译
+2024-02-24 11:25:24,105 - Math_75 - INFO - 开始验证补丁2 3:
+2024-02-24 11:25:24,105 - Math_75 - INFO - 
+return getExactPct(v);
+
+2024-02-24 11:25:24,841 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:24,841 - Math_75 - INFO - 错误: 找不到符号
+return getExactPct(v);
+2024-02-24 11:25:24,841 - Math_75 - INFO - 补丁2 3 未成功编译
+2024-02-24 11:25:24,842 - Math_75 - INFO - 开始验证补丁2 4:
+2024-02-24 11:25:24,842 - Math_75 - INFO - 
+return (double) Collections.frequency(valuesCollection, v) / valuesCollection.size();
+
+2024-02-24 11:25:25,582 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:25,582 - Math_75 - INFO - 错误: 找不到符号
+return (double) Collections.frequency(valuesCollection, v) / valuesCollection.size();
+2024-02-24 11:25:25,582 - Math_75 - INFO - 补丁2 4 未成功编译
+2024-02-24 11:25:25,583 - Math_75 - INFO - 开始验证补丁2 5:
+2024-02-24 11:25:25,583 - Math_75 - INFO - 
+return countValuesEqualTo(v) / (double) totalCountOfValues();
+
+2024-02-24 11:25:26,324 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:26,324 - Math_75 - INFO - 错误: 找不到符号
+return countValuesEqualTo(v) / (double) totalCountOfValues();
+2024-02-24 11:25:26,324 - Math_75 - INFO - 补丁2 5 未成功编译
+2024-02-24 11:25:26,325 - Math_75 - INFO - 开始验证补丁2 6:
+2024-02-24 11:25:26,325 - Math_75 - INFO - 
+return getExactPct((Comparable<?>) v);
+
+2024-02-24 11:25:26,326 - Math_75 - INFO - 补丁2 6为重复的补丁
+2024-02-24 11:25:26,326 - Math_75 - INFO - 开始验证补丁2 7:
+2024-02-24 11:25:26,326 - Math_75 - INFO - 
+    return getExactPct((Comparable<?>) v);
+
+2024-02-24 11:25:27,064 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:27,064 - Math_75 - INFO - 错误: 找不到符号
+return getExactPct((Comparable<?>) v);
+2024-02-24 11:25:27,064 - Math_75 - INFO - 补丁2 7 未成功编译
+2024-02-24 11:25:27,065 - Math_75 - INFO - 开始验证补丁2 8:
+2024-02-24 11:25:27,065 - Math_75 - INFO - 
+    long count = getCount(v);
+    return count == 0 ? Double.NaN : ((double) count) / getTotalCount();
+
+2024-02-24 11:25:27,812 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:27,812 - Math_75 - INFO - 错误: 找不到符号
+return count == 0 ? Double.NaN : ((double) count) / getTotalCount();
+2024-02-24 11:25:27,812 - Math_75 - INFO - 补丁2 8 未成功编译
+2024-02-24 11:25:27,813 - Math_75 - INFO - 开始验证补丁2 9:
+2024-02-24 11:25:27,813 - Math_75 - INFO - 
+    return getPercentage((Comparable<?>) v);
+
+2024-02-24 11:25:28,552 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:28,552 - Math_75 - INFO - 错误: 找不到符号
+return getPercentage((Comparable<?>) v);
+2024-02-24 11:25:28,552 - Math_75 - INFO - 补丁2 9 未成功编译
+2024-02-24 11:25:28,553 - Math_75 - INFO - 开始验证补丁3 1:
+2024-02-24 11:25:28,553 - Math_75 - INFO - 
+    return getExactPct(v);
+
+2024-02-24 11:25:29,307 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:29,307 - Math_75 - INFO - 错误: 找不到符号
+return getExactPct(v);
+2024-02-24 11:25:29,307 - Math_75 - INFO - 补丁3 1 未成功编译
+2024-02-24 11:25:29,308 - Math_75 - INFO - 开始验证补丁3 2:
+2024-02-24 11:25:29,308 - Math_75 - INFO - 
+    return (double) countMatches(v) / totalCount();
+
+2024-02-24 11:25:30,037 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:30,038 - Math_75 - INFO - 错误: 找不到符号
+return (double) countMatches(v) / totalCount();
+2024-02-24 11:25:30,038 - Math_75 - INFO - 补丁3 2 未成功编译
+2024-02-24 11:25:30,039 - Math_75 - INFO - 开始验证补丁3 3:
+2024-02-24 11:25:30,039 - Math_75 - INFO - 
+    return getCumPct(v) - getCumPct(getPreviousValue(v));
+
+2024-02-24 11:25:30,773 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:30,773 - Math_75 - INFO - 错误: 找不到符号
+return getCumPct(v) - getCumPct(getPreviousValue(v));
+2024-02-24 11:25:30,773 - Math_75 - INFO - 补丁3 3 未成功编译
+2024-02-24 11:25:30,774 - Math_75 - INFO - 开始验证补丁3 4:
+2024-02-24 11:25:30,774 - Math_75 - INFO - 
+return getExactPct((Comparable<?>) v);
+
+2024-02-24 11:25:30,775 - Math_75 - INFO - 补丁3 4为重复的补丁
+2024-02-24 11:25:30,775 - Math_75 - INFO - 开始验证补丁3 5:
+2024-02-24 11:25:30,775 - Math_75 - INFO - 
+return values.isEmpty() ? Double.NaN : (double) countMatches(v) / values.size();
+
+2024-02-24 11:25:31,539 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:31,539 - Math_75 - INFO - 错误: 找不到符号
+return values.isEmpty() ? Double.NaN : (double) countMatches(v) / values.size();
+2024-02-24 11:25:31,539 - Math_75 - INFO - 补丁3 5 未成功编译
+2024-02-24 11:25:31,540 - Math_75 - INFO - 开始验证补丁3 6:
+2024-02-24 11:25:31,540 - Math_75 - INFO - 
+// Inside the hypothetical getCumPct method
+if(isEmpty()) {
+    return Double.NaN;
+} else {
+    int exactMatchCount = countExactMatches((Comparable<?>) v);
+    return exactMatchCount / (double) totalCount();
+}
+
+2024-02-24 11:25:32,297 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:32,297 - Math_75 - INFO - 错误: 找不到符号
+if(isEmpty()) {
+2024-02-24 11:25:32,297 - Math_75 - INFO - 补丁3 6 未成功编译
+2024-02-24 11:25:32,298 - Math_75 - INFO - 开始验证补丁3 7:
+2024-02-24 11:25:32,298 - Math_75 - INFO - 
+    return getExactPct(v);
+
+2024-02-24 11:25:32,298 - Math_75 - INFO - 补丁3 7为重复的补丁
+2024-02-24 11:25:32,303 - Math_75 - INFO - 开始验证补丁3 8:
+2024-02-24 11:25:32,303 - Math_75 - INFO - 
+    if (values.size() == 0) return Double.NaN;
+    long count = values.stream().filter(value -> value.equals(v)).count();
+    return (double) count / values.size();
+
+2024-02-24 11:25:32,894 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:32,894 - Math_75 - INFO - 错误: 非法的表达式开始
+long count = values.stream().filter(value -> value.equals(v)).count();
+2024-02-24 11:25:32,894 - Math_75 - INFO - 补丁3 8 未成功编译
+2024-02-24 11:25:32,895 - Math_75 - INFO - 开始验证补丁3 9:
+2024-02-24 11:25:32,895 - Math_75 - INFO - 
+    if (values.size() == 0) return Double.NaN;
+    int count = 0;
+    for (Object value : values) {
+        if (value.equals(v)) {
+            count++;
+        }
+    }
+    return (double) count / values.size();
+
+2024-02-24 11:25:33,631 - Math_75 - INFO - 编译失败
+2024-02-24 11:25:33,631 - Math_75 - INFO - 错误: 找不到符号
+if (values.size() == 0) return Double.NaN;
+2024-02-24 11:25:33,631 - Math_75 - INFO - 补丁3 9 未成功编译
+2024-02-24 11:25:33,631 - Math_75 - INFO - Math_75 未成功修复

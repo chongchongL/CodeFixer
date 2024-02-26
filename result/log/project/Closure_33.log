@@ -1,0 +1,423 @@
+2024-02-25 10:43:35,508 - Closure_33 - INFO - rm -rf /home/chongchong/d4j-project/Closure_33
+2024-02-25 10:43:35,509 - Closure_33 - INFO - 删除 Closure 33b 成功
+2024-02-25 10:43:35,509 - Closure_33 - INFO - defects4j checkout -p Closure -v 33b -w /home/chongchong/d4j-project/Closure_33
+2024-02-25 10:43:37,176 - Closure_33 - INFO - checkout Closure 33b 成功
+2024-02-25 10:43:48,591 - Closure_33 - INFO - 编译成功
+2024-02-25 10:44:35,599 - Closure_33 - INFO - 测试失败
+2024-02-25 10:44:35,599 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:44:36,620 - Closure_33 - INFO - 它的bug类型为:
+2024-02-25 10:44:36,620 - Closure_33 - INFO - 3
+2024-02-25 10:45:42,490 - Closure_33 - INFO - 开始验证补丁1 1:
+2024-02-25 10:45:42,490 - Closure_33 - INFO - 
+if (!(constraintObj instanceof AnonymousObjectType)) {
+  return;
+}
+
+2024-02-25 10:45:44,478 - Closure_33 - INFO - 编译失败
+2024-02-25 10:45:44,478 - Closure_33 - INFO - 错误: 找不到符号
+if (!(constraintObj instanceof AnonymousObjectType)) {
+2024-02-25 10:45:44,478 - Closure_33 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:45:44,479 - Closure_33 - INFO - 开始验证补丁1 2:
+2024-02-25 10:45:44,479 - Closure_33 - INFO - 
+if (constraintObj.getClass().isAnonymousClass()) {
+  // implementation for matching constraint goes here
+}
+
+2024-02-25 10:45:48,527 - Closure_33 - INFO - 编译成功
+2024-02-25 10:46:35,744 - Closure_33 - INFO - 测试失败
+2024-02-25 10:46:35,744 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:46:36,247 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:46:36,247 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:46:36,247 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:46:36,247 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:46:36,247 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:46:36,247 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:46:36,247 - Closure_33 - INFO - 补丁1 2测试失败
+2024-02-25 10:46:36,248 - Closure_33 - INFO - 开始验证补丁1 3:
+2024-02-25 10:46:36,248 - Closure_33 - INFO - 
+// Placeholder for constraint matching logic
+// TODO: Implement the method logic to match the constraint for anonymous types
+
+2024-02-25 10:46:40,307 - Closure_33 - INFO - 编译成功
+2024-02-25 10:47:27,035 - Closure_33 - INFO - 测试失败
+2024-02-25 10:47:27,035 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:47:27,541 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:47:27,541 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:47:27,541 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:47:27,541 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:47:27,541 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:47:27,541 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:47:27,541 - Closure_33 - INFO - 补丁1 3测试失败
+2024-02-25 10:47:27,542 - Closure_33 - INFO - 开始验证补丁1 4:
+2024-02-25 10:47:27,542 - Closure_33 - INFO - 
+    if (!(constraintObj instanceof JSType)) {
+      // Handle the error or return, as the constraintObj is not of the expected type.
+      return;
+    }
+    JSType constraintType = (JSType) constraintObj;
+    if (constraintType.isAnonymousObjectType()) {
+      // Your code to modify the object literal to match the constraint
+    }
+
+2024-02-25 10:47:29,517 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:29,517 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintType.isAnonymousObjectType()) {
+2024-02-25 10:47:29,517 - Closure_33 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:47:29,518 - Closure_33 - INFO - 开始验证补丁1 5:
+2024-02-25 10:47:29,518 - Closure_33 - INFO - 
+    if (constraintObj instanceof ObjectType && ((ObjectType) constraintObj).isAnonymous()) {
+      // Your code to handle the modification of the object literal
+    } else {
+      // Log the error or handle the case where the constraintObj is not anonymous.
+    }
+
+2024-02-25 10:47:31,515 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:31,515 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof ObjectType && ((ObjectType) constraintObj).isAnonymous()) {
+2024-02-25 10:47:31,515 - Closure_33 - INFO - 补丁1 5 未成功编译
+2024-02-25 10:47:31,516 - Closure_33 - INFO - 开始验证补丁1 6:
+2024-02-25 10:47:31,516 - Closure_33 - INFO - 
+    if (constraintObj instanceof PrototypeObjectType) {
+      PrototypeObjectType prototypeObjectType = (PrototypeObjectType) constraintObj;
+      if (prototypeObjectType.isAnonymous()) {
+        // Code to adjust the object literal to meet the requirements
+      }
+    }
+
+2024-02-25 10:47:33,520 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:33,520 - Closure_33 - INFO - 错误: 找不到符号
+if (prototypeObjectType.isAnonymous()) {
+2024-02-25 10:47:33,520 - Closure_33 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:47:33,522 - Closure_33 - INFO - 开始验证补丁1 7:
+2024-02-25 10:47:33,522 - Closure_33 - INFO - 
+    if (constraintObj instanceof ObjectType && constraintObj.isAnonymous()) {
+        // Potential implementation that modifies the constraintObj to match.
+        // Exact code would depend on the actual requirements and methods available within ObjectType.
+    }
+
+2024-02-25 10:47:35,554 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:35,554 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof ObjectType && constraintObj.isAnonymous()) {
+2024-02-25 10:47:35,554 - Closure_33 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:47:35,555 - Closure_33 - INFO - 开始验证补丁1 8:
+2024-02-25 10:47:35,555 - Closure_33 - INFO - 
+    if (!(constraintObj instanceof ObjectType)) {
+        return; // Exit the method if constraintObj is not an instance of ObjectType
+    }
+    if (constraintObj.isAnonymous()) {
+        // Implementation to handle modification of constraintObj.
+    }
+
+2024-02-25 10:47:37,560 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:37,560 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj.isAnonymous()) {
+2024-02-25 10:47:37,560 - Closure_33 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:47:37,561 - Closure_33 - INFO - 开始验证补丁1 9:
+2024-02-25 10:47:37,561 - Closure_33 - INFO - 
+    if (constraintObj instanceof ObjectType) {
+        ObjectType objType = (ObjectType) constraintObj;
+        if (objType.isAnonymous()) {
+            // Implementation for anonymous ObjectType handling
+        }
+    }
+
+2024-02-25 10:47:39,565 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:39,565 - Closure_33 - INFO - 错误: 找不到符号
+if (objType.isAnonymous()) {
+2024-02-25 10:47:39,565 - Closure_33 - INFO - 补丁1 9 未成功编译
+2024-02-25 10:47:39,566 - Closure_33 - INFO - 开始验证补丁2 1:
+2024-02-25 10:47:39,566 - Closure_33 - INFO - 
+    if (constraintObj instanceof AnonymousType) {
+        // Additional logic regarding the handling of constraint matching would go here
+    }
+
+2024-02-25 10:47:41,579 - Closure_33 - INFO - 编译失败
+2024-02-25 10:47:41,579 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof AnonymousType) {
+2024-02-25 10:47:41,579 - Closure_33 - INFO - 补丁2 1 未成功编译
+2024-02-25 10:47:41,580 - Closure_33 - INFO - 开始验证补丁2 2:
+2024-02-25 10:47:41,580 - Closure_33 - INFO - 
+    if (!(constraintObj instanceof NamedType)) {
+        // Additional logic regarding the handling of constraint matching for anonymous types
+    }
+
+2024-02-25 10:47:45,622 - Closure_33 - INFO - 编译成功
+2024-02-25 10:48:31,858 - Closure_33 - INFO - 测试失败
+2024-02-25 10:48:31,858 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:48:32,365 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:48:32,365 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:48:32,365 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:48:32,365 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:48:32,365 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:48:32,365 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:48:32,365 - Closure_33 - INFO - 补丁2 2测试失败
+2024-02-25 10:48:32,366 - Closure_33 - INFO - 开始验证补丁2 3:
+2024-02-25 10:48:32,366 - Closure_33 - INFO - 
+    if (constraintObj.getClass().isAnonymousClass()) {
+        // Additional logic pertaining to constraint matching on anonymous classes
+    }
+
+2024-02-25 10:48:36,420 - Closure_33 - INFO - 编译成功
+2024-02-25 10:49:24,302 - Closure_33 - INFO - 测试失败
+2024-02-25 10:49:24,302 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:49:24,809 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:49:24,809 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:49:24,809 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:49:24,809 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:49:24,809 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:49:24,809 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:49:24,809 - Closure_33 - INFO - 补丁2 3测试失败
+2024-02-25 10:49:24,810 - Closure_33 - INFO - 开始验证补丁2 4:
+2024-02-25 10:49:24,810 - Closure_33 - INFO - 
+if (constraintObj instanceof Map) {
+  Map<?, ?> constraintMap = (Map<?, ?>) constraintObj;
+  // Further logic to handle the constraint matching and modification
+}
+
+2024-02-25 10:49:28,899 - Closure_33 - INFO - 编译成功
+2024-02-25 10:50:16,127 - Closure_33 - INFO - 测试失败
+2024-02-25 10:50:16,127 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:50:16,634 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:50:16,634 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:50:16,634 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:50:16,634 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:50:16,634 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:50:16,634 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:50:16,634 - Closure_33 - INFO - 补丁2 4测试失败
+2024-02-25 10:50:16,635 - Closure_33 - INFO - 开始验证补丁2 5:
+2024-02-25 10:50:16,635 - Closure_33 - INFO - 
+if (constraintObj.isAnonymous()) {
+  // Logic to check or enforce the constraint on the anonymous type
+}
+
+2024-02-25 10:50:18,599 - Closure_33 - INFO - 编译失败
+2024-02-25 10:50:18,599 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj.isAnonymous()) {
+2024-02-25 10:50:18,599 - Closure_33 - INFO - 补丁2 5 未成功编译
+2024-02-25 10:50:18,600 - Closure_33 - INFO - 开始验证补丁2 6:
+2024-02-25 10:50:18,601 - Closure_33 - INFO - 
+if (constraintObj instanceof SomeSpecificType) {
+  SomeSpecificType specificConstraint = (SomeSpecificType) constraintObj;
+  // Logic to adjust the local object to match the constraints imposed by `specificConstraint`
+}
+
+2024-02-25 10:50:20,597 - Closure_33 - INFO - 编译失败
+2024-02-25 10:50:20,597 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof SomeSpecificType) {
+2024-02-25 10:50:20,597 - Closure_33 - INFO - 补丁2 6 未成功编译
+2024-02-25 10:50:20,598 - Closure_33 - INFO - 开始验证补丁2 7:
+2024-02-25 10:50:20,598 - Closure_33 - INFO - 
+    if (constraintObj instanceof AnonymousType) {
+        // Type matching code or other logic goes here
+    }
+    // ... rest of the method ...
+
+2024-02-25 10:50:22,623 - Closure_33 - INFO - 编译失败
+2024-02-25 10:50:22,623 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof AnonymousType) {
+2024-02-25 10:50:22,623 - Closure_33 - INFO - 补丁2 7 未成功编译
+2024-02-25 10:50:22,625 - Closure_33 - INFO - 开始验证补丁2 8:
+2024-02-25 10:50:22,625 - Closure_33 - INFO - 
+    if (!(constraintObj instanceof ObjectType)) {
+        return;
+    }
+    // ... rest of the method ...
+
+2024-02-25 10:50:26,687 - Closure_33 - INFO - 编译成功
+2024-02-25 10:51:13,270 - Closure_33 - INFO - 测试失败
+2024-02-25 10:51:13,270 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:51:13,782 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:51:13,782 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:51:13,782 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:51:13,782 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:51:13,782 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:51:13,782 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:51:13,782 - Closure_33 - INFO - 补丁2 8测试失败
+2024-02-25 10:51:13,783 - Closure_33 - INFO - 开始验证补丁2 9:
+2024-02-25 10:51:13,783 - Closure_33 - INFO - 
+    // Type matching code or other logic for generically handling ObjectType
+    // ... rest of the method ...
+
+2024-02-25 10:51:17,827 - Closure_33 - INFO - 编译成功
+2024-02-25 10:52:04,885 - Closure_33 - INFO - 测试失败
+2024-02-25 10:52:04,885 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:52:05,398 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:52:05,398 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:52:05,398 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:52:05,398 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:52:05,398 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:52:05,398 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:52:05,398 - Closure_33 - INFO - 补丁2 9测试失败
+2024-02-25 10:52:05,399 - Closure_33 - INFO - 开始验证补丁3 1:
+2024-02-25 10:52:05,399 - Closure_33 - INFO - 
+if (constraintObj instanceof AnonRecordType) {
+  AnonRecordType anonRecordType = (AnonRecordType) constraintObj;
+  // Code to modify the object literal to match the constraint.
+}
+
+2024-02-25 10:52:07,369 - Closure_33 - INFO - 编译失败
+2024-02-25 10:52:07,369 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof AnonRecordType) {
+2024-02-25 10:52:07,369 - Closure_33 - INFO - 补丁3 1 未成功编译
+2024-02-25 10:52:07,370 - Closure_33 - INFO - 开始验证补丁3 2:
+2024-02-25 10:52:07,370 - Closure_33 - INFO - 
+if (!(constraintObj instanceof AnonymousType)) {
+  return;
+}
+// Code to modify the object literal to match the constraint.
+
+2024-02-25 10:52:09,346 - Closure_33 - INFO - 编译失败
+2024-02-25 10:52:09,346 - Closure_33 - INFO - 错误: 找不到符号
+if (!(constraintObj instanceof AnonymousType)) {
+2024-02-25 10:52:09,346 - Closure_33 - INFO - 补丁3 2 未成功编译
+2024-02-25 10:52:09,347 - Closure_33 - INFO - 开始验证补丁3 3:
+2024-02-25 10:52:09,347 - Closure_33 - INFO - 
+if (constraintObj instanceof RecordType) {
+  RecordType recordType = (RecordType) constraintObj;
+  // Additional code needed to modify the object literal to match the RecordType constraint
+}
+
+2024-02-25 10:52:13,422 - Closure_33 - INFO - 编译成功
+2024-02-25 10:52:59,898 - Closure_33 - INFO - 测试失败
+2024-02-25 10:52:59,898 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:53:00,403 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:53:00,403 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:53:00,403 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:53:00,403 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:53:00,403 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:53:00,403 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:53:00,403 - Closure_33 - INFO - 补丁3 3测试失败
+2024-02-25 10:53:00,404 - Closure_33 - INFO - 开始验证补丁3 4:
+2024-02-25 10:53:00,404 - Closure_33 - INFO - 
+    if (!(constraintObj instanceof AnonymousType)) {
+        return;
+    }
+    // Handle the case where the constraint object is a record type.
+    if (constraintObj instanceof RecordType) {
+        modifyObjectLiteralToMatchRecordType(constraintObj);
+    }
+
+2024-02-25 10:53:02,367 - Closure_33 - INFO - 编译失败
+2024-02-25 10:53:02,367 - Closure_33 - INFO - 错误: 找不到符号
+if (!(constraintObj instanceof AnonymousType)) {
+2024-02-25 10:53:02,367 - Closure_33 - INFO - 补丁3 4 未成功编译
+2024-02-25 10:53:02,368 - Closure_33 - INFO - 开始验证补丁3 5:
+2024-02-25 10:53:02,368 - Closure_33 - INFO - 
+    if (constraintObj.isAnonymous()) {
+        // Handle record type constraint
+        if (constraintObj instanceof RecordType) {
+            // Logic to modify object literal to match the record type
+            // Modify the object literal here
+        }
+    }
+
+2024-02-25 10:53:04,342 - Closure_33 - INFO - 编译失败
+2024-02-25 10:53:04,342 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj.isAnonymous()) {
+2024-02-25 10:53:04,342 - Closure_33 - INFO - 补丁3 5 未成功编译
+2024-02-25 10:53:04,343 - Closure_33 - INFO - 开始验证补丁3 6:
+2024-02-25 10:53:04,344 - Closure_33 - INFO - 
+    if (!constraintObj.getName().equals("AnonymousType")) {
+        return;
+    }
+    // Assuming we have a method to check if the object is a record type
+    if (constraintObj.isRecordType()) {
+        // Assuming we have a method to modify the object literal
+        modifyObjectToMatch(constraintObj);
+    }
+
+2024-02-25 10:53:06,332 - Closure_33 - INFO - 编译失败
+2024-02-25 10:53:06,332 - Closure_33 - INFO - 错误: 找不到符号
+if (!constraintObj.getName().equals("AnonymousType")) {
+2024-02-25 10:53:06,332 - Closure_33 - INFO - 补丁3 6 未成功编译
+2024-02-25 10:53:06,333 - Closure_33 - INFO - 开始验证补丁3 7:
+2024-02-25 10:53:06,333 - Closure_33 - INFO - 
+if (constraintObj instanceof AnonymousType) {
+  // Presuming AnonymousType is a class representing an anonymous type
+  // and RecordType represents the record type structure we need to match against
+  if (constraintObj instanceof RecordType) {
+    RecordType record = (RecordType) constraintObj;
+    // Logic to modify the object to match the constraint
+    // ...
+  }
+}
+
+2024-02-25 10:53:08,342 - Closure_33 - INFO - 编译失败
+2024-02-25 10:53:08,342 - Closure_33 - INFO - 错误: 找不到符号
+if (constraintObj instanceof AnonymousType) {
+2024-02-25 10:53:08,342 - Closure_33 - INFO - 补丁3 7 未成功编译
+2024-02-25 10:53:08,343 - Closure_33 - INFO - 开始验证补丁3 8:
+2024-02-25 10:53:08,343 - Closure_33 - INFO - 
+if (constraintObj == null) {
+  throw new IllegalArgumentException("Constraint object cannot be null");
+}
+// Further logic assuming constraintObj is not null
+
+2024-02-25 10:53:12,394 - Closure_33 - INFO - 编译成功
+2024-02-25 10:53:58,983 - Closure_33 - INFO - 测试失败
+2024-02-25 10:53:58,983 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:53:59,496 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:53:59,496 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:53:59,496 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:53:59,496 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:53:59,496 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:53:59,496 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:53:59,496 - Closure_33 - INFO - 补丁3 8测试失败
+2024-02-25 10:53:59,497 - Closure_33 - INFO - 开始验证补丁3 9:
+2024-02-25 10:53:59,497 - Closure_33 - INFO - 
+// Implementation for matching constraints goes here
+// TODO: Apply the necessary transformations to the object literal
+
+2024-02-25 10:54:03,559 - Closure_33 - INFO - 编译成功
+2024-02-25 10:54:49,890 - Closure_33 - INFO - 测试失败
+2024-02-25 10:54:49,890 - Closure_33 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+
+2024-02-25 10:54:50,402 - Closure_33 - INFO - 选择失败的测试用例为:
+2024-02-25 10:54:50,402 - Closure_33 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue700
+2024-02-25 10:54:50,402 - Closure_33 - INFO - 失败的测试代码为:
+2024-02-25 10:54:50,402 - Closure_33 - INFO -     testTypes(
+
+2024-02-25 10:54:50,402 - Closure_33 - INFO - 失败信息为:
+2024-02-25 10:54:50,402 - Closure_33 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 10:54:50,402 - Closure_33 - INFO - 补丁3 9测试失败
+2024-02-25 10:54:50,402 - Closure_33 - INFO - Closure_33 未成功修复

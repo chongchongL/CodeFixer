@@ -1,0 +1,30 @@
+2024-02-24 01:14:27,521 - Math_82 - INFO - rm -rf /home/chongchong/d4j-project/Math_82
+2024-02-24 01:14:27,522 - Math_82 - INFO - 删除 Math 82b 成功
+2024-02-24 01:14:27,522 - Math_82 - INFO - defects4j checkout -p Math -v 82b -w /home/chongchong/d4j-project/Math_82
+2024-02-24 01:14:30,957 - Math_82 - INFO - checkout Math 82b 成功
+2024-02-24 01:14:36,681 - Math_82 - INFO - 编译成功
+2024-02-24 01:14:43,316 - Math_82 - INFO - 测试失败
+2024-02-24 01:14:43,316 - Math_82 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath288
+
+2024-02-24 01:14:44,220 - Math_82 - INFO - 它的bug类型为:
+2024-02-24 01:14:44,220 - Math_82 - INFO - 1
+2024-02-24 01:15:25,712 - Math_82 - INFO - Math_82 未成功修复
+2024-02-24 11:31:12,983 - Math_82 - INFO - rm -rf /home/chongchong/d4j-project/Math_82
+2024-02-24 11:31:13,011 - Math_82 - INFO - 删除 Math 82b 成功
+2024-02-24 11:31:13,011 - Math_82 - INFO - defects4j checkout -p Math -v 82b -w /home/chongchong/d4j-project/Math_82
+2024-02-24 11:31:16,440 - Math_82 - INFO - checkout Math 82b 成功
+2024-02-24 11:31:22,032 - Math_82 - INFO - 编译成功
+2024-02-24 11:31:28,605 - Math_82 - INFO - 测试失败
+2024-02-24 11:31:28,605 - Math_82 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath288
+
+2024-02-24 11:31:29,518 - Math_82 - INFO - 它的bug类型为:
+2024-02-24 11:31:29,518 - Math_82 - INFO - 1
+2024-02-24 11:32:07,122 - Math_82 - INFO - 开始验证补丁1 1:
+2024-02-24 11:32:07,122 - Math_82 - INFO - 
+            if (entry > 0) {
+
+2024-02-24 11:32:08,350 - Math_82 - INFO - 编译成功
+2024-02-24 11:32:15,100 - Math_82 - INFO - 测试成功
+2024-02-24 11:32:15,101 - Math_82 - INFO - 补丁1 1 通过了所有的测试用例

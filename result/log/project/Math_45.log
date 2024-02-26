@@ -1,0 +1,266 @@
+2024-02-25 12:55:47,316 - Math_45 - INFO - rm -rf /home/chongchong/d4j-project/Math_45
+2024-02-25 12:55:47,316 - Math_45 - INFO - 删除 Math 45b 成功
+2024-02-25 12:55:47,317 - Math_45 - INFO - defects4j checkout -p Math -v 45b -w /home/chongchong/d4j-project/Math_45
+2024-02-25 12:55:50,785 - Math_45 - INFO - checkout Math 45b 成功
+2024-02-25 12:55:57,478 - Math_45 - INFO - 编译成功
+2024-02-25 12:56:17,109 - Math_45 - INFO - 测试失败
+2024-02-25 12:56:17,109 - Math_45 - INFO - Failing tests: 1
+  - org.apache.commons.math.linear.OpenMapRealMatrixTest::testMath679
+
+2024-02-25 12:56:17,571 - Math_45 - INFO - 它的bug类型为:
+2024-02-25 12:56:17,571 - Math_45 - INFO - 3
+2024-02-25 12:57:27,995 - Math_45 - INFO - 开始验证补丁1 1:
+2024-02-25 12:57:27,995 - Math_45 - INFO - 
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+    throw new NumberIsTooLargeException(rowDimension, columnDimension, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:28,711 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:28,711 - Math_45 - INFO - 错误: 找不到符号
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+2024-02-25 12:57:28,711 - Math_45 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:57:28,712 - Math_45 - INFO - 开始验证补丁1 2:
+2024-02-25 12:57:28,712 - Math_45 - INFO - 
+if (rowDimension > 10000 || columnDimension > 10000) { // Assuming 10,000 is the upper bound
+    throw new NumberIsTooLargeException(rowDimension, columnDimension, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:29,440 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:29,440 - Math_45 - INFO - 错误: 可能已分配变量rows
+this.rows = rowDimension;
+2024-02-25 12:57:29,440 - Math_45 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:57:29,441 - Math_45 - INFO - 开始验证补丁1 3:
+2024-02-25 12:57:29,441 - Math_45 - INFO - 
+this.rows = rowDimension;
+
+2024-02-25 12:57:30,177 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:30,177 - Math_45 - INFO - 错误: 可能已分配变量rows
+this.rows = rowDimension;
+2024-02-25 12:57:30,178 - Math_45 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:57:30,179 - Math_45 - INFO - 开始验证补丁1 4:
+2024-02-25 12:57:30,179 - Math_45 - INFO - 
+if (rowDimension <= 0 || columnDimension <= 0) {
+    throw new NotStrictlyPositiveException("Row and column dimensions must be positive.");
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:30,915 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:30,915 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Row and column dimensions must be positive.");
+2024-02-25 12:57:30,915 - Math_45 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:57:30,916 - Math_45 - INFO - 开始验证补丁1 5:
+2024-02-25 12:57:30,916 - Math_45 - INFO - 
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+    throw new NumberIsTooLargeException("Matrix dimensions are too large.");
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:31,646 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:31,646 - Math_45 - INFO - 错误: 找不到符号
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+2024-02-25 12:57:31,646 - Math_45 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:57:31,647 - Math_45 - INFO - 开始验证补丁1 6:
+2024-02-25 12:57:31,647 - Math_45 - INFO - 
+if (rowDimension < 0 || columnDimension < 0) {
+    throw new NumberIsTooSmallException("Row and column dimensions must be non-negative.");
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:32,357 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:32,357 - Math_45 - INFO - 错误: 找不到符号
+throw new NumberIsTooSmallException("Row and column dimensions must be non-negative.");
+2024-02-25 12:57:32,357 - Math_45 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:57:32,358 - Math_45 - INFO - 开始验证补丁1 7:
+2024-02-25 12:57:32,358 - Math_45 - INFO - 
+if (rowDimension <= 0 || columnDimension <= 0) {
+    throw new NotStrictlyPositiveException(
+        rowDimension <= 0 ? rowDimension : columnDimension);
+}
+
+this.rows = rowDimension;
+
+2024-02-25 12:57:33,077 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:33,077 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException(
+2024-02-25 12:57:33,077 - Math_45 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:57:33,078 - Math_45 - INFO - 开始验证补丁1 8:
+2024-02-25 12:57:33,078 - Math_45 - INFO - 
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+    throw new NumberIsTooLargeException(
+        rowDimension > MAX_ROW ? rowDimension : columnDimension,
+        rowDimension > MAX_ROW ? MAX_ROW : MAX_COLUMN,
+        false);
+}
+
+this.rows = rowDimension;
+
+2024-02-25 12:57:33,797 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:33,797 - Math_45 - INFO - 错误: 找不到符号
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+2024-02-25 12:57:33,797 - Math_45 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:57:33,798 - Math_45 - INFO - 开始验证补丁1 9:
+2024-02-25 12:57:33,798 - Math_45 - INFO - 
+// Assume there is a method to check matrix size validity, e.g., isValidSize()
+if (!isValidSize(rowDimension, columnDimension)) {
+    throw new NumberIsTooLargeException(
+        "Matrix dimensions are too large: " + rowDimension + " x " + columnDimension);
+}
+
+this.rows = rowDimension;
+
+2024-02-25 12:57:34,537 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:34,537 - Math_45 - INFO - 错误: 找不到符号
+if (!isValidSize(rowDimension, columnDimension)) {
+2024-02-25 12:57:34,537 - Math_45 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:57:34,538 - Math_45 - INFO - 开始验证补丁2 1:
+2024-02-25 12:57:34,538 - Math_45 - INFO - 
+if (rowDimension < 0 || columnDimension < 0) {
+    throw new NotStrictlyPositiveException("Matrix dimensions must be positive.");
+}
+if (rowDimension * (long) columnDimension >= Integer.MAX_VALUE) {
+    throw new NumberIsTooLargeException(rowDimension * (long) columnDimension, Integer.MAX_VALUE, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:35,284 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:35,284 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Matrix dimensions must be positive.");
+2024-02-25 12:57:35,284 - Math_45 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:57:35,285 - Math_45 - INFO - 开始验证补丁2 2:
+2024-02-25 12:57:35,285 - Math_45 - INFO - 
+if (rowDimension < 0) {
+    throw new NotStrictlyPositiveException("Row dimension must be positive.");
+}
+if (columnDimension < 0) {
+    throw new NotStrictlyPositiveException("Column dimension must be positive.");
+}
+if (((long) rowDimension) * columnDimension >= Integer.MAX_VALUE) {
+    throw new NumberIsTooLargeException(rowDimension * (long) columnDimension, Integer.MAX_VALUE, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:35,997 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:35,997 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Row dimension must be positive.");
+2024-02-25 12:57:35,997 - Math_45 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:57:35,998 - Math_45 - INFO - 开始验证补丁2 3:
+2024-02-25 12:57:35,998 - Math_45 - INFO - 
+if (rowDimension <= 0 || columnDimension <= 0) {
+    throw new NotStrictlyPositiveException("Matrix dimensions must be strictly positive.");
+}
+if (rowDimension > Integer.MAX_VALUE / columnDimension) {
+    throw new NumberIsTooLargeException(rowDimension, Integer.MAX_VALUE / columnDimension, true);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:36,719 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:36,719 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Matrix dimensions must be strictly positive.");
+2024-02-25 12:57:36,719 - Math_45 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:57:36,720 - Math_45 - INFO - 开始验证补丁2 4:
+2024-02-25 12:57:36,720 - Math_45 - INFO - 
+if (rowDimension < 0 || columnDimension < 0) {
+    throw new NotStrictlyPositiveException("Row and column dimensions must be non-negative.");
+}
+if (rowDimension * (long) columnDimension >= Integer.MAX_VALUE) {
+    throw new NumberIsTooLargeException(rowDimension * (long) columnDimension, Integer.MAX_VALUE, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:37,431 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:37,431 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Row and column dimensions must be non-negative.");
+2024-02-25 12:57:37,432 - Math_45 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:57:37,433 - Math_45 - INFO - 开始验证补丁2 5:
+2024-02-25 12:57:37,433 - Math_45 - INFO - 
+if (rowDimension <= 0 || columnDimension <= 0) {
+    throw new NotStrictlyPositiveException("Row and column dimensions must be positive.");
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:37,433 - Math_45 - INFO - 补丁2 5为重复的补丁
+2024-02-25 12:57:37,434 - Math_45 - INFO - 开始验证补丁2 6:
+2024-02-25 12:57:37,434 - Math_45 - INFO - 
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+    throw new NumberIsTooLargeException("Dimensions exceed allowed maximums.");
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:38,146 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:38,146 - Math_45 - INFO - 错误: 找不到符号
+if (rowDimension > MAX_ROW || columnDimension > MAX_COLUMN) {
+2024-02-25 12:57:38,146 - Math_45 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:57:38,148 - Math_45 - INFO - 开始验证补丁2 7:
+2024-02-25 12:57:38,148 - Math_45 - INFO - 
+if (rowDimension < 0 || columnDimension < 0) {
+    throw new NotStrictlyPositiveException("Row and column dimensions must be non-negative.");
+}
+if (rowDimension * (long) columnDimension > Integer.MAX_VALUE) {
+    throw new NumberIsTooLargeException(rowDimension * (long) columnDimension, Integer.MAX_VALUE, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:38,862 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:38,862 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Row and column dimensions must be non-negative.");
+2024-02-25 12:57:38,862 - Math_45 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:57:38,863 - Math_45 - INFO - 开始验证补丁2 8:
+2024-02-25 12:57:38,863 - Math_45 - INFO - 
+if (rowDimension < 0 || columnDimension < 0) {
+    throw new NotStrictlyPositiveException("Row and column dimensions must be non-negative.");
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:39,587 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:39,587 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException("Row and column dimensions must be non-negative.");
+2024-02-25 12:57:39,587 - Math_45 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:57:39,588 - Math_45 - INFO - 开始验证补丁2 9:
+2024-02-25 12:57:39,588 - Math_45 - INFO - 
+this.rows = rowDimension;
+
+2024-02-25 12:57:39,588 - Math_45 - INFO - 补丁2 9为重复的补丁
+2024-02-25 12:57:39,589 - Math_45 - INFO - 开始验证补丁3 1:
+2024-02-25 12:57:39,589 - Math_45 - INFO - 
+if (rowDimension < 0 || columnDimension < 0) {
+    throw new NotStrictlyPositiveException(rowDimension < 0 ? rowDimension : columnDimension);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:40,324 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:40,324 - Math_45 - INFO - 错误: 找不到符号
+throw new NotStrictlyPositiveException(rowDimension < 0 ? rowDimension : columnDimension);
+2024-02-25 12:57:40,324 - Math_45 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:57:40,325 - Math_45 - INFO - 开始验证补丁3 2:
+2024-02-25 12:57:40,325 - Math_45 - INFO - 
+if ((long) rowDimension * (long) columnDimension > Integer.MAX_VALUE) {
+    throw new NumberIsTooLargeException(rowDimension * columnDimension, Integer.MAX_VALUE, false);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:41,044 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:41,044 - Math_45 - INFO - 错误: 可能已分配变量rows
+this.rows = rowDimension;
+2024-02-25 12:57:41,044 - Math_45 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:57:41,046 - Math_45 - INFO - 开始验证补丁3 3:
+2024-02-25 12:57:41,046 - Math_45 - INFO - 
+if (rowDimension > MAX_ROW_DIMENSION || columnDimension > MAX_COLUMN_DIMENSION) {
+    throw new NumberIsTooLargeException(rowDimension > MAX_ROW_DIMENSION ? rowDimension : columnDimension, MAX_ROW_DIMENSION > MAX_COLUMN_DIMENSION ? MAX_ROW_DIMENSION : MAX_COLUMN_DIMENSION, true);
+}
+this.rows = rowDimension;
+
+2024-02-25 12:57:41,759 - Math_45 - INFO - 编译失败
+2024-02-25 12:57:41,759 - Math_45 - INFO - 错误: 找不到符号
+if (rowDimension > MAX_ROW_DIMENSION || columnDimension > MAX_COLUMN_DIMENSION) {
+2024-02-25 12:57:41,759 - Math_45 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:57:41,760 - Math_45 - INFO - 开始验证补丁3 4:
+2024-02-25 12:57:41,760 - Math_45 - INFO - 
+if ((long) rowDimension * (long) columnDimension > Integer.MAX_VALUE) {
+    throw new NumberIsTooLargeException(rowDimension * columnDimension, Integer.MAX_VALUE, false);
+}
+
+2024-02-25 12:57:43,035 - Math_45 - INFO - 编译成功
+2024-02-25 12:58:02,830 - Math_45 - INFO - 测试成功
+2024-02-25 12:58:02,830 - Math_45 - INFO - 补丁3 4 通过了所有的测试用例

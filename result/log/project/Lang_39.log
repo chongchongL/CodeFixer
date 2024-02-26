@@ -1,0 +1,276 @@
+2024-02-25 12:22:58,856 - Lang_39 - INFO - rm -rf /home/chongchong/d4j-project/Lang_39
+2024-02-25 12:22:58,857 - Lang_39 - INFO - 删除 Lang 39b 成功
+2024-02-25 12:22:58,857 - Lang_39 - INFO - defects4j checkout -p Lang -v 39b -w /home/chongchong/d4j-project/Lang_39
+2024-02-25 12:23:02,247 - Lang_39 - INFO - checkout Lang 39b 成功
+2024-02-25 12:23:06,522 - Lang_39 - INFO - 编译成功
+2024-02-25 12:23:14,015 - Lang_39 - INFO - 测试失败
+2024-02-25 12:23:14,015 - Lang_39 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+
+2024-02-25 12:23:14,894 - Lang_39 - INFO - 它的bug类型为:
+2024-02-25 12:23:14,894 - Lang_39 - INFO - 3
+2024-02-25 12:23:49,535 - Lang_39 - INFO - 开始验证补丁1 1:
+2024-02-25 12:23:49,535 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:23:50,331 - Lang_39 - INFO - 编译失败
+2024-02-25 12:23:50,331 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:23:50,331 - Lang_39 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:23:50,332 - Lang_39 - INFO - 开始验证补丁1 2:
+2024-02-25 12:23:50,332 - Lang_39 - INFO - 
+int greater = (replacementList[i] != null ? replacementList[i].length() : 0) - (searchList[i] != null ? searchList[i].length() : 0);
+
+2024-02-25 12:23:51,145 - Lang_39 - INFO - 编译失败
+2024-02-25 12:23:51,145 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:23:51,145 - Lang_39 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:23:51,147 - Lang_39 - INFO - 开始验证补丁1 3:
+2024-02-25 12:23:51,147 - Lang_39 - INFO - 
+// Check for null before trying to access lengths to avoid NullPointerException
+if (replacementList[i] != null && searchList[i] != null) {
+    int greater = replacementList[i].length() - searchList[i].length();
+} else {
+    int greater = 0; // Assign zero difference if any is null
+}
+
+2024-02-25 12:23:52,362 - Lang_39 - INFO - 编译成功
+2024-02-25 12:23:59,838 - Lang_39 - INFO - 测试失败
+2024-02-25 12:23:59,838 - Lang_39 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+
+2024-02-25 12:24:00,281 - Lang_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:24:00,281 - Lang_39 - INFO - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+2024-02-25 12:24:00,281 - Lang_39 - INFO - 失败的测试代码为:
+2024-02-25 12:24:00,281 - Lang_39 - INFO -         assertEquals(StringUtils.replaceEach("aba", new String[]{"a", "b"}, new String[]{"c", null}),"cbc");
+
+2024-02-25 12:24:00,281 - Lang_39 - INFO - 失败信息为:
+2024-02-25 12:24:00,281 - Lang_39 - INFO - java.lang.NullPointerException
+
+2024-02-25 12:24:00,281 - Lang_39 - INFO - 补丁1 3测试失败
+2024-02-25 12:24:00,282 - Lang_39 - INFO - 开始验证补丁1 4:
+2024-02-25 12:24:00,282 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:24:00,282 - Lang_39 - INFO - 补丁1 4为重复的补丁
+2024-02-25 12:24:00,283 - Lang_39 - INFO - 开始验证补丁1 5:
+2024-02-25 12:24:00,283 - Lang_39 - INFO - 
+int greater = 0;
+if (replacementList[i] != null && searchList[i] != null) {
+    greater = replacementList[i].length() - searchList[i].length();
+}
+
+2024-02-25 12:24:01,096 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:01,096 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:01,096 - Lang_39 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:24:01,097 - Lang_39 - INFO - 开始验证补丁1 6:
+2024-02-25 12:24:01,097 - Lang_39 - INFO - 
+// Check to prevent NullPointerException
+int greater = 0;
+if (replacementList[i] != null && searchList[i] != null) {
+    // Calculate the length difference between the replacement and search strings
+    greater = replacementList[i].length() - searchList[i].length();
+}
+
+2024-02-25 12:24:01,922 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:01,922 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:01,922 - Lang_39 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:24:01,924 - Lang_39 - INFO - 开始验证补丁1 7:
+2024-02-25 12:24:01,924 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:24:01,924 - Lang_39 - INFO - 补丁1 7为重复的补丁
+2024-02-25 12:24:01,925 - Lang_39 - INFO - 开始验证补丁1 8:
+2024-02-25 12:24:01,925 - Lang_39 - INFO - 
+int greater = (replacementList[i] != null && searchList[i] != null) ?
+              replacementList[i].length() - searchList[i].length() : 0;
+
+2024-02-25 12:24:02,718 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:02,718 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:02,718 - Lang_39 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:24:02,720 - Lang_39 - INFO - 开始验证补丁1 9:
+2024-02-25 12:24:02,720 - Lang_39 - INFO - 
+int greater = (replacementList[i] != null) ? replacementList[i].length() - searchList[i].length() : -searchList[i].length();
+
+2024-02-25 12:24:03,552 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:03,552 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:03,552 - Lang_39 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:24:03,553 - Lang_39 - INFO - 开始验证补丁2 1:
+2024-02-25 12:24:03,553 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:24:03,553 - Lang_39 - INFO - 补丁2 1为重复的补丁
+2024-02-25 12:24:03,555 - Lang_39 - INFO - 开始验证补丁2 2:
+2024-02-25 12:24:03,555 - Lang_39 - INFO - 
+int greater = (replacementList[i] == null ? 0 : replacementList[i].length()) - searchList[i].length();
+
+2024-02-25 12:24:04,377 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:04,377 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:04,377 - Lang_39 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:24:04,378 - Lang_39 - INFO - 开始验证补丁2 3:
+2024-02-25 12:24:04,378 - Lang_39 - INFO - 
+int replacementLength = (replacementList[i] == null) ? 0 : replacementList[i].length();
+int searchLength = (searchList[i] == null) ? 0 : searchList[i].length();
+int greater = replacementLength - searchLength;
+
+2024-02-25 12:24:05,208 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:05,209 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 replacementLength
+int replacementLength = (replacementList[i] == null) ? 0 : replacementList[i].length();
+2024-02-25 12:24:05,209 - Lang_39 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:24:05,210 - Lang_39 - INFO - 开始验证补丁2 4:
+2024-02-25 12:24:05,210 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:24:05,210 - Lang_39 - INFO - 补丁2 4为重复的补丁
+2024-02-25 12:24:05,211 - Lang_39 - INFO - 开始验证补丁2 5:
+2024-02-25 12:24:05,211 - Lang_39 - INFO - 
+int greater = (replacementList[i] == null ? 0 : replacementList[i].length()) - searchList[i].length();
+
+2024-02-25 12:24:05,211 - Lang_39 - INFO - 补丁2 5为重复的补丁
+2024-02-25 12:24:05,212 - Lang_39 - INFO - 开始验证补丁2 6:
+2024-02-25 12:24:05,212 - Lang_39 - INFO - 
+int greater = (replacementList[i] == null ? 0 : replacementList[i].length()) - (searchList[i] == null ? 0 : searchList[i].length());
+
+2024-02-25 12:24:06,033 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:06,033 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:06,033 - Lang_39 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:24:06,034 - Lang_39 - INFO - 开始验证补丁2 7:
+2024-02-25 12:24:06,034 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:24:06,034 - Lang_39 - INFO - 补丁2 7为重复的补丁
+2024-02-25 12:24:06,035 - Lang_39 - INFO - 开始验证补丁2 8:
+2024-02-25 12:24:06,035 - Lang_39 - INFO - 
+int greater = (replacementList[i] == null ? 0 : replacementList[i].length()) - searchList[i].length();
+
+2024-02-25 12:24:06,035 - Lang_39 - INFO - 补丁2 8为重复的补丁
+2024-02-25 12:24:06,037 - Lang_39 - INFO - 开始验证补丁2 9:
+2024-02-25 12:24:06,037 - Lang_39 - INFO - 
+int greater = (replacementList[i] == null ? 0 : replacementList[i].length()) - (searchList[i] == null ? 0 : searchList[i].length());
+
+2024-02-25 12:24:06,037 - Lang_39 - INFO - 补丁2 9为重复的补丁
+2024-02-25 12:24:06,038 - Lang_39 - INFO - 开始验证补丁3 1:
+2024-02-25 12:24:06,038 - Lang_39 - INFO - 
+for (int i = 0; i < searchList.length; i++) {
+    if (replacementList[i] != null && searchList[i] != null) {
+        int greater = replacementList[i].length() - searchList[i].length();
+        if (greater > 0) {
+            increase += 3 * greater; // assume 3 matches
+        }
+    }
+}
+
+2024-02-25 12:24:06,838 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:06,838 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 i
+for (int i = 0; i < searchList.length; i++) {
+2024-02-25 12:24:06,838 - Lang_39 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:24:06,839 - Lang_39 - INFO - 开始验证补丁3 2:
+2024-02-25 12:24:06,839 - Lang_39 - INFO - 
+for (int i = 0; i < searchList.length; i++) {
+    int greater = replacementList[i].length() - searchList[i].length();
+    if (greater > 0) {
+        increase += 3 * greater; // assume 3 matches
+    }
+}
+
+2024-02-25 12:24:07,650 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:07,650 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 i
+for (int i = 0; i < searchList.length; i++) {
+2024-02-25 12:24:07,650 - Lang_39 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:24:07,651 - Lang_39 - INFO - 开始验证补丁3 3:
+2024-02-25 12:24:07,651 - Lang_39 - INFO - 
+for (int i = 0; i < searchList.length; i++) {
+    if (replacementList[i] != null) {
+        int greater = replacementList[i].length() - searchList[i].length();
+        if (greater > 0) {
+            increase += 3 * greater; // assume 3 matches
+        }
+    }
+}
+
+2024-02-25 12:24:08,435 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:08,435 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 i
+for (int i = 0; i < searchList.length; i++) {
+2024-02-25 12:24:08,435 - Lang_39 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:24:08,436 - Lang_39 - INFO - 开始验证补丁3 4:
+2024-02-25 12:24:08,436 - Lang_39 - INFO - 
+int greater = replacementList[i].length() - searchList[i].length();
+
+2024-02-25 12:24:08,436 - Lang_39 - INFO - 补丁3 4为重复的补丁
+2024-02-25 12:24:08,437 - Lang_39 - INFO - 开始验证补丁3 5:
+2024-02-25 12:24:08,437 - Lang_39 - INFO - 
+int greater = searchList[i] != null && replacementList[i] != null ? replacementList[i].length() - searchList[i].length() : 0;
+
+2024-02-25 12:24:09,273 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:09,273 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:09,274 - Lang_39 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:24:09,275 - Lang_39 - INFO - 开始验证补丁3 6:
+2024-02-25 12:24:09,275 - Lang_39 - INFO - 
+if (replacementList[i] != null && searchList[i] != null) {
+    int greater = replacementList[i].length() - searchList[i].length();
+    if (greater > 0) {
+        increase += 3 * greater; // assume 3 matches
+    }
+} else {
+    // Handle the case where either replacementList[i] or searchList[i] is null
+    // Appropriate action like logging or throwing an exception can be taken here
+}
+
+2024-02-25 12:24:10,501 - Lang_39 - INFO - 编译成功
+2024-02-25 12:24:17,967 - Lang_39 - INFO - 测试失败
+2024-02-25 12:24:17,967 - Lang_39 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+
+2024-02-25 12:24:18,413 - Lang_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:24:18,413 - Lang_39 - INFO - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+2024-02-25 12:24:18,413 - Lang_39 - INFO - 失败的测试代码为:
+2024-02-25 12:24:18,413 - Lang_39 - INFO -         assertEquals(StringUtils.replaceEach("aba", new String[]{"a", "b"}, new String[]{"c", null}),"cbc");
+
+2024-02-25 12:24:18,413 - Lang_39 - INFO - 失败信息为:
+2024-02-25 12:24:18,413 - Lang_39 - INFO - java.lang.NullPointerException
+
+2024-02-25 12:24:18,413 - Lang_39 - INFO - 补丁3 6测试失败
+2024-02-25 12:24:18,414 - Lang_39 - INFO - 开始验证补丁3 7:
+2024-02-25 12:24:18,414 - Lang_39 - INFO - 
+int greater = (replacementList[i] != null ? replacementList[i].length() : 0) - searchList[i].length();
+
+2024-02-25 12:24:19,232 - Lang_39 - INFO - 编译失败
+2024-02-25 12:24:19,232 - Lang_39 - INFO - 错误: 已在方法 replaceEach(String,String[],String[],boolean,int)中定义了变量 greater
+int greater = replacementList[i].length() - searchList[i].length();
+2024-02-25 12:24:19,232 - Lang_39 - INFO - 补丁3 7 未成功编译
+2024-02-25 12:24:19,233 - Lang_39 - INFO - 开始验证补丁3 8:
+2024-02-25 12:24:19,233 - Lang_39 - INFO - 
+if (replacementList[i] != null) {
+    int greater = replacementList[i].length() - searchList[i].length();
+    if (greater > 0) {
+        increase += 3 * greater; // assume 3 matches
+    }
+}
+
+2024-02-25 12:24:20,455 - Lang_39 - INFO - 编译成功
+2024-02-25 12:24:27,935 - Lang_39 - INFO - 测试失败
+2024-02-25 12:24:27,935 - Lang_39 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+
+2024-02-25 12:24:28,377 - Lang_39 - INFO - 选择失败的测试用例为:
+2024-02-25 12:24:28,377 - Lang_39 - INFO - org.apache.commons.lang3.StringUtilsTest::testReplace_StringStringArrayStringArray
+2024-02-25 12:24:28,377 - Lang_39 - INFO - 失败的测试代码为:
+2024-02-25 12:24:28,378 - Lang_39 - INFO -         assertEquals(StringUtils.replaceEach("aba", new String[]{"a", "b"}, new String[]{"c", null}),"cbc");
+
+2024-02-25 12:24:28,378 - Lang_39 - INFO - 失败信息为:
+2024-02-25 12:24:28,378 - Lang_39 - INFO - java.lang.NullPointerException
+
+2024-02-25 12:24:28,378 - Lang_39 - INFO - 补丁3 8测试失败
+2024-02-25 12:24:28,379 - Lang_39 - INFO - 开始验证补丁3 9:
+2024-02-25 12:24:28,379 - Lang_39 - INFO - 
+int greater = (replacementList[i] == null ? 0 : replacementList[i].length()) - (searchList[i] == null ? 0 : searchList[i].length());
+
+2024-02-25 12:24:28,379 - Lang_39 - INFO - 补丁3 9为重复的补丁
+2024-02-25 12:24:28,379 - Lang_39 - INFO - Lang_39 未成功修复

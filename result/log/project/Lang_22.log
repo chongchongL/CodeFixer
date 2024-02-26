@@ -1,0 +1,518 @@
+2024-02-26 01:29:08,597 - Lang_22 - INFO - rm -rf /home/chongchong/d4j-project/Lang_22
+2024-02-26 01:29:08,598 - Lang_22 - INFO - 删除 Lang 22b 成功
+2024-02-26 01:29:08,598 - Lang_22 - INFO - defects4j checkout -p Lang -v 22b -w /home/chongchong/d4j-project/Lang_22
+2024-02-26 01:29:11,961 - Lang_22 - INFO - checkout Lang 22b 成功
+2024-02-26 01:29:16,599 - Lang_22 - INFO - 编译成功
+2024-02-26 01:29:25,597 - Lang_22 - INFO - 测试失败
+2024-02-26 01:29:25,597 - Lang_22 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.math.FractionTest::testReducedFactory_int_int
+  - org.apache.commons.lang3.math.FractionTest::testReduce
+
+2024-02-26 01:29:26,484 - Lang_22 - INFO - 它的bug类型为:
+2024-02-26 01:29:26,484 - Lang_22 - INFO - 4
+2024-02-26 01:30:58,462 - Lang_22 - INFO - 开始验证补丁1 1:
+2024-02-26 01:30:58,462 - Lang_22 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+} else if (v == 0) {
+    return Math.abs(u);
+}
+
+while (v != 0) {
+    int t = v;
+    v = u % v;
+    u = t;
+}
+return Math.abs(u);
+
+2024-02-26 01:30:59,017 - Lang_22 - INFO - 编译失败
+2024-02-26 01:30:59,017 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:30:59,017 - Lang_22 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:30:59,018 - Lang_22 - INFO - 开始验证补丁1 2:
+2024-02-26 01:30:59,018 - Lang_22 - INFO - 
+if (u == 0 || v == 0) {
+    return Math.abs(u + v); // one of them is 0, so the GCD is the non-zero value
+}
+
+u = Math.abs(u);
+v = Math.abs(v);
+if (u == 1 || v == 1) {
+    return 1; // the GCD is 1 if either is 1
+}
+
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return u;
+
+2024-02-26 01:30:59,573 - Lang_22 - INFO - 编译失败
+2024-02-26 01:30:59,573 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:30:59,573 - Lang_22 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:30:59,574 - Lang_22 - INFO - 开始验证补丁1 3:
+2024-02-26 01:30:59,574 - Lang_22 - INFO - 
+if (u == 0) {
+    return v < 0 ? -v : v;
+} else if (v == 0) {
+    return u < 0 ? -u : u;
+}
+
+u = Math.abs(u);
+v = Math.abs(v);
+while (u != 0 && v != 0) {
+    if (u > v) {
+        u %= v;
+    } else {
+        v %= u;
+    }
+}
+return u + v; // one of them will be 0, so sum will be the GCD
+
+2024-02-26 01:31:00,129 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:00,129 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:00,129 - Lang_22 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:31:00,130 - Lang_22 - INFO - 开始验证补丁1 4:
+2024-02-26 01:31:00,130 - Lang_22 - INFO - 
+// Special handling for Integer.MIN_VALUE
+if (u == Integer.MIN_VALUE || v == Integer.MIN_VALUE) {
+    return Math.abs(Integer.MIN_VALUE);
+}
+// if either number is 1 or -1, the GCD is 1
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+// Euclidean algorithm for GCD
+while (v != 0) {
+    int t = v;
+    v = u % v;
+    u = t;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:00,671 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:00,671 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:00,671 - Lang_22 - INFO - 补丁1 4 未成功编译
+2024-02-26 01:31:00,672 - Lang_22 - INFO - 开始验证补丁1 5:
+2024-02-26 01:31:00,672 - Lang_22 - INFO - 
+if (u == 0 || v == 0) {
+    return Math.abs(u) + Math.abs(v); // if either is zero, return the non-zero value
+}
+int gcd = u; // Temporary variable for GCD
+while (v != 0) {
+    int t = v;  // Temporary variable for the second number
+    v = gcd % v;
+    gcd = t;
+}
+return Math.abs(gcd);  // Return absolute value of GCD
+
+2024-02-26 01:31:01,223 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:01,223 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:01,223 - Lang_22 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:31:01,224 - Lang_22 - INFO - 开始验证补丁1 6:
+2024-02-26 01:31:01,224 - Lang_22 - INFO - 
+// Handle special cases where one of the numbers is Integer.MIN_VALUE
+if (u == Integer.MIN_VALUE && v == Integer.MIN_VALUE) {
+    return Integer.MIN_VALUE;
+} else if (u == Integer.MIN_VALUE) {
+    u = u / 2;
+} else if (v == Integer.MIN_VALUE) {
+    v = v / 2;
+}
+// Euclidean algorithm implementation
+while (v != 0) {
+    if (u > v) {
+        u = u - v;
+    } else {
+        v = v - u;
+    }
+}
+return Math.abs(u);  // Return the absolute value of the GCD
+
+2024-02-26 01:31:01,773 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:01,773 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:01,773 - Lang_22 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:31:01,775 - Lang_22 - INFO - 开始验证补丁1 7:
+2024-02-26 01:31:01,775 - Lang_22 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+} else if (v == 0) {
+    return Math.abs(u);
+}
+
+2024-02-26 01:31:02,333 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:02,333 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:02,333 - Lang_22 - INFO - 补丁1 7 未成功编译
+2024-02-26 01:31:02,334 - Lang_22 - INFO - 开始验证补丁1 8:
+2024-02-26 01:31:02,334 - Lang_22 - INFO - 
+if (u == 0 && v == Integer.MIN_VALUE || v == 0 && u == Integer.MIN_VALUE) {
+    return Math.abs(Integer.MIN_VALUE);
+} else if (u == 0 || v == 0) {
+    return Math.abs(u + v); // one of u or v is zero
+}
+
+2024-02-26 01:31:02,882 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:02,882 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:02,882 - Lang_22 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:31:02,883 - Lang_22 - INFO - 开始验证补丁1 9:
+2024-02-26 01:31:02,883 - Lang_22 - INFO - 
+if (u == 0) {
+    return v == Integer.MIN_VALUE ? Math.abs(v) : Math.abs(v);
+} else if (v == 0) {
+    return u == Integer.MIN_VALUE ? Math.abs(u) : Math.abs(u);
+}
+
+2024-02-26 01:31:03,430 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:03,430 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:03,430 - Lang_22 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:31:03,431 - Lang_22 - INFO - 开始验证补丁2 1:
+2024-02-26 01:31:03,431 - Lang_22 - INFO - 
+// Check for absolute value of 1 to return GCD as 1
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+// Euclidean algorithm for finding GCD
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:03,979 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:03,979 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:03,979 - Lang_22 - INFO - 补丁2 1 未成功编译
+2024-02-26 01:31:03,980 - Lang_22 - INFO - 开始验证补丁2 2:
+2024-02-26 01:31:03,980 - Lang_22 - INFO - 
+// Precondition checks for non-zero parameters, throwing exception if either is zero
+if (u == 0 || v == 0) {
+    throw new IllegalArgumentException("Input values must be non-zero.");
+}
+// Check for absolute value of 1 to return GCD as 1
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+// Euclidean algorithm for finding GCD
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:04,535 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:04,536 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:04,536 - Lang_22 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:31:04,537 - Lang_22 - INFO - 开始验证补丁2 3:
+2024-02-26 01:31:04,537 - Lang_22 - INFO - 
+// Handle special case since negation of Integer.MIN_VALUE is beyond int range
+if (u == Integer.MIN_VALUE || v == Integer.MIN_VALUE) {
+    return Integer.MAX_VALUE;
+}
+// Check for absolute value of 1 to return GCD as 1
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+// Euclidean algorithm for finding GCD and preserving the negative sign
+int gcd = 0;
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+gcd = u;
+return (gcd > 0) ? gcd : -gcd; // Adjusting the sign according to the comment in the code
+
+2024-02-26 01:31:05,100 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:05,100 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:05,100 - Lang_22 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:31:05,101 - Lang_22 - INFO - 开始验证补丁2 4:
+2024-02-26 01:31:05,101 - Lang_22 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+} else if (v == 0) {
+    return Math.abs(u);
+}
+while (v != 0) {
+    if (u > v) {
+        u = u - v;
+    } else {
+        v = v - u;
+    }
+}
+return Math.abs(u);
+
+2024-02-26 01:31:05,652 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:05,652 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:05,652 - Lang_22 - INFO - 补丁2 4 未成功编译
+2024-02-26 01:31:05,654 - Lang_22 - INFO - 开始验证补丁2 5:
+2024-02-26 01:31:05,654 - Lang_22 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+}
+if (v == 0) {
+    return Math.abs(u);
+}
+while (v != 0) {
+    int tmp = u % v;
+    u = v;
+    v = tmp;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:06,206 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:06,206 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:06,206 - Lang_22 - INFO - 补丁2 5 未成功编译
+2024-02-26 01:31:06,207 - Lang_22 - INFO - 开始验证补丁2 6:
+2024-02-26 01:31:06,207 - Lang_22 - INFO - 
+u = Math.abs(u);
+v = Math.abs(v);
+if (u == 0 || v == 0) {
+    throw new IllegalArgumentException("Arguments 'u' and 'v' must be non-zero.");
+}
+while (u != v) {
+    if (u > v)
+        u = u - v;
+    else
+        v = v - u;
+}
+return u;
+
+2024-02-26 01:31:06,786 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:06,786 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:06,787 - Lang_22 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:31:06,788 - Lang_22 - INFO - 开始验证补丁2 7:
+2024-02-26 01:31:06,788 - Lang_22 - INFO - 
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+
+2024-02-26 01:31:07,338 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:07,338 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:07,339 - Lang_22 - INFO - 补丁2 7 未成功编译
+2024-02-26 01:31:07,340 - Lang_22 - INFO - 开始验证补丁2 8:
+2024-02-26 01:31:07,340 - Lang_22 - INFO - 
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+while (v != 0) {
+    int t = v;
+    v = u % v;
+    u = t;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:07,901 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:07,901 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:07,901 - Lang_22 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:31:07,902 - Lang_22 - INFO - 开始验证补丁2 9:
+2024-02-26 01:31:07,902 - Lang_22 - INFO - 
+if (u == Integer.MIN_VALUE || v == Integer.MIN_VALUE) {
+    throw new ArithmeticException("Overflow: GCD is not defined for Integer.MIN_VALUE");
+}
+if (Math.abs(u) == 1 || Math.abs(v) == 1) {
+    return 1;
+}
+while (v != 0) {
+    int t = v;
+    v = u % v;
+    u = t;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:08,461 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:08,461 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:08,461 - Lang_22 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:31:08,463 - Lang_22 - INFO - 开始验证补丁3 1:
+2024-02-26 01:31:08,463 - Lang_22 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+} else if (v == 0) {
+    return Math.abs(u);
+}
+
+u = Math.abs(u);
+v = Math.abs(v);
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return u;
+
+2024-02-26 01:31:09,013 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:09,013 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:09,013 - Lang_22 - INFO - 补丁3 1 未成功编译
+2024-02-26 01:31:09,014 - Lang_22 - INFO - 开始验证补丁3 2:
+2024-02-26 01:31:09,014 - Lang_22 - INFO - 
+if (u == 0 || u == Integer.MIN_VALUE) {
+    return Math.abs(v);
+} else if (v == 0 || v == Integer.MIN_VALUE) {
+    return Math.abs(u);
+}
+
+u = Math.abs(u);
+v = Math.abs(v);
+int temp;
+while (v != 0) {
+    temp = v;
+    v = u % v;
+    u = temp;
+}
+return u;
+
+2024-02-26 01:31:09,569 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:09,569 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:09,569 - Lang_22 - INFO - 补丁3 2 未成功编译
+2024-02-26 01:31:09,570 - Lang_22 - INFO - 开始验证补丁3 3:
+2024-02-26 01:31:09,570 - Lang_22 - INFO - 
+if (u == Integer.MIN_VALUE || v == Integer.MIN_VALUE) {
+    return Math.abs(greatestCommonDivisor(u / 2, v / 2)) * 2;
+}
+
+u = Math.abs(u);
+v = Math.abs(v);
+while (u != 0 && v != 0) {
+    if (u > v) {
+        u %= v;
+    } else {
+        v %= u;
+    }
+}
+return u + v;
+
+2024-02-26 01:31:10,118 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:10,118 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:10,118 - Lang_22 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:31:10,119 - Lang_22 - INFO - 开始验证补丁3 4:
+2024-02-26 01:31:10,119 - Lang_22 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+} else if (v == 0) {
+    return Math.abs(u);
+} else {
+    // Using Euclid's algorithm to find GCD
+    while (v != 0) {
+        int t = v;
+        v = u % v;
+        u = t;
+    }
+    return Math.abs(u);
+}
+
+2024-02-26 01:31:10,681 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:10,681 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:10,681 - Lang_22 - INFO - 补丁3 4 未成功编译
+2024-02-26 01:31:10,682 - Lang_22 - INFO - 开始验证补丁3 5:
+2024-02-26 01:31:10,682 - Lang_22 - INFO - 
+// Base cases: if either number is zero, return the other number
+if (u == 0) return Math.abs(v);
+if (v == 0) return Math.abs(u);
+// Euclid's algorithm for positive numbers
+u = Math.abs(u);
+v = Math.abs(v);
+while (u != v) {
+    if(u > v) u -= v;
+    else v -= u;
+}
+return u;
+
+2024-02-26 01:31:11,232 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:11,232 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:11,232 - Lang_22 - INFO - 补丁3 5 未成功编译
+2024-02-26 01:31:11,234 - Lang_22 - INFO - 开始验证补丁3 6:
+2024-02-26 01:31:11,234 - Lang_22 - INFO - 
+// Apply Euclid's algorithm directly, without prior checks for 0, due to non-zero precondition
+u = Math.abs(u);
+v = Math.abs(v);
+while (v != 0) {
+    int t = v;
+    v = u % v;
+    u = t;
+}
+return u;
+
+2024-02-26 01:31:11,783 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:11,783 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:11,783 - Lang_22 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:31:11,784 - Lang_22 - INFO - 开始验证补丁3 7:
+2024-02-26 01:31:11,784 - Lang_22 - INFO - 
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:12,335 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:12,335 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:12,335 - Lang_22 - INFO - 补丁3 7 未成功编译
+2024-02-26 01:31:12,336 - Lang_22 - INFO - 开始验证补丁3 8:
+2024-02-26 01:31:12,336 - Lang_22 - INFO - 
+if (u == 0) return Math.abs(v);
+if (v == 0) return Math.abs(u);
+int shift;
+for (shift = 0; ((u | v) & 1) == 0; ++shift) {
+    u >>= 1;
+    v >>= 1;
+}
+while ((u & 1) == 0)
+    u >>= 1;
+do {
+    while ((v & 1) == 0)
+        v >>= 1;
+    if (u > v) {
+        int t = v;
+        v = u;
+        u = t;
+    }
+    v = v - u;
+} while (v != 0);
+return Math.abs(u << shift);
+
+2024-02-26 01:31:12,889 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:12,889 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:12,889 - Lang_22 - INFO - 补丁3 8 未成功编译
+2024-02-26 01:31:12,891 - Lang_22 - INFO - 开始验证补丁3 9:
+2024-02-26 01:31:12,891 - Lang_22 - INFO - 
+if (u == Integer.MIN_VALUE || v == Integer.MIN_VALUE) {
+    return Math.abs(Integer.MIN_VALUE);
+}
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return Math.abs(u);
+
+2024-02-26 01:31:13,442 - Lang_22 - INFO - 编译失败
+2024-02-26 01:31:13,442 - Lang_22 - INFO - 错误: 非法的类型开始
+if (u>0) { u=-u; } // make u negative
+2024-02-26 01:31:13,442 - Lang_22 - INFO - 补丁3 9 未成功编译
+2024-02-26 01:31:13,442 - Lang_22 - INFO - Lang_22 未成功修复

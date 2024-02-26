@@ -1,0 +1,256 @@
+2024-02-25 12:31:47,789 - Lang_51 - INFO - rm -rf /home/chongchong/d4j-project/Lang_51
+2024-02-25 12:31:47,789 - Lang_51 - INFO - 删除 Lang 51b 成功
+2024-02-25 12:31:47,789 - Lang_51 - INFO - defects4j checkout -p Lang -v 51b -w /home/chongchong/d4j-project/Lang_51
+2024-02-25 12:31:51,113 - Lang_51 - INFO - checkout Lang 51b 成功
+2024-02-25 12:31:55,152 - Lang_51 - INFO - 编译成功
+2024-02-25 12:32:04,409 - Lang_51 - INFO - 测试失败
+2024-02-25 12:32:04,409 - Lang_51 - INFO - Failing tests: 1
+  - org.apache.commons.lang.BooleanUtilsTest::test_toBoolean_String
+
+2024-02-25 12:32:05,282 - Lang_51 - INFO - 它的bug类型为:
+2024-02-25 12:32:05,282 - Lang_51 - INFO - 3
+2024-02-25 12:33:04,009 - Lang_51 - INFO - 开始验证补丁1 1:
+2024-02-25 12:33:04,009 - Lang_51 - INFO - 
+            }
+            if (str.length() < 4) return false;
+            case 4: {
+
+2024-02-25 12:33:04,690 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:04,690 - Lang_51 - INFO - 错误: case 标签重复
+case 4: {
+2024-02-25 12:33:04,690 - Lang_51 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:33:04,691 - Lang_51 - INFO - 开始验证补丁1 2:
+2024-02-25 12:33:04,691 - Lang_51 - INFO - 
+            }
+            if (str == null || str.length() < 4) return false;
+            case 4: {
+
+2024-02-25 12:33:05,351 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:05,351 - Lang_51 - INFO - 错误: case 标签重复
+case 4: {
+2024-02-25 12:33:05,351 - Lang_51 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:33:05,352 - Lang_51 - INFO - 开始验证补丁1 3:
+2024-02-25 12:33:05,352 - Lang_51 - INFO - 
+            }
+            case 4: {
+                if (str == null || str.length() != 4) return false;
+
+2024-02-25 12:33:06,020 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:06,020 - Lang_51 - INFO - 错误: case 标签重复
+case 4: {
+2024-02-25 12:33:06,021 - Lang_51 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:33:06,022 - Lang_51 - INFO - 开始验证补丁1 4:
+2024-02-25 12:33:06,022 - Lang_51 - INFO - 
+            }
+            if (str.length() != 4) {
+                return false;
+            }
+            char ch = str.charAt(0);
+            if (ch == 't') {
+
+2024-02-25 12:33:06,676 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:06,676 - Lang_51 - INFO - 错误: 已在方法 toBoolean(String)中定义了变量 ch
+char ch = str.charAt(0);
+2024-02-25 12:33:06,676 - Lang_51 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:33:06,677 - Lang_51 - INFO - 开始验证补丁1 5:
+2024-02-25 12:33:06,677 - Lang_51 - INFO - 
+            }
+            char ch = str.charAt(0);
+            if (ch == 't' && str.length() == 4) {
+
+2024-02-25 12:33:07,341 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:07,341 - Lang_51 - INFO - 错误: 已在方法 toBoolean(String)中定义了变量 ch
+char ch = str.charAt(0);
+2024-02-25 12:33:07,341 - Lang_51 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:33:07,343 - Lang_51 - INFO - 开始验证补丁1 6:
+2024-02-25 12:33:07,343 - Lang_51 - INFO - 
+            }
+            char ch = str.charAt(0);
+            if (ch == 't') {
+                if (str.length() != 4) {
+                    return false;
+                }
+
+2024-02-25 12:33:08,009 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:08,009 - Lang_51 - INFO - 错误: 已在方法 toBoolean(String)中定义了变量 ch
+char ch = str.charAt(0);
+2024-02-25 12:33:08,009 - Lang_51 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:33:08,010 - Lang_51 - INFO - 开始验证补丁1 7:
+2024-02-25 12:33:08,010 - Lang_51 - INFO - 
+            } // This closes the previous case or block of code
+
+            case 4: {
+                if (str.length() < 4) { // Check if the string length is less than 4
+                    return false; // If it is, return false as we expect a string of at least length 4
+                }
+                char ch = str.charAt(0);
+                // existing code to check if the string is "true" or "TrUe", etc.
+
+2024-02-25 12:33:08,673 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:08,673 - Lang_51 - INFO - 错误: case 标签重复
+case 4: {
+2024-02-25 12:33:08,673 - Lang_51 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:33:08,674 - Lang_51 - INFO - 开始验证补丁1 8:
+2024-02-25 12:33:08,674 - Lang_51 - INFO - 
+            } // This closes the previous case or block of code
+
+            case 4: {
+                char ch = str.charAt(0);
+                if (str.length() != 4) { // Check if the string length is not exactly 4
+                    return false; // If not, return false
+                }
+                // existing code to check if the string is "true" or "TrUe", etc.
+
+2024-02-25 12:33:09,348 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:09,348 - Lang_51 - INFO - 错误: case 标签重复
+case 4: {
+2024-02-25 12:33:09,348 - Lang_51 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:33:09,349 - Lang_51 - INFO - 开始验证补丁1 9:
+2024-02-25 12:33:09,349 - Lang_51 - INFO - 
+            } // This closes the previous case or block of code
+
+            // Default case if none of the specific lengths match
+            default: {
+                return str.equalsIgnoreCase("true") || str.equalsIgnoreCase("yes");
+            }
+
+2024-02-25 12:33:09,884 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:09,884 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:09,884 - Lang_51 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:33:09,885 - Lang_51 - INFO - 开始验证补丁2 1:
+2024-02-25 12:33:09,885 - Lang_51 - INFO - 
+                } // Close the `if (ch == 'Y')` block
+                break; // Add a break statement to terminate the case properly
+
+2024-02-25 12:33:10,423 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:10,423 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:10,423 - Lang_51 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:33:10,424 - Lang_51 - INFO - 开始验证补丁2 2:
+2024-02-25 12:33:10,424 - Lang_51 - INFO - 
+                } // Close the `if (ch == 'Y')` block
+                break; // Add a break statement to terminate the case properly
+
+2024-02-25 12:33:10,424 - Lang_51 - INFO - 补丁2 2为重复的补丁
+2024-02-25 12:33:10,429 - Lang_51 - INFO - 开始验证补丁2 3:
+2024-02-25 12:33:10,429 - Lang_51 - INFO - 
+                } // Close the `if (ch == 'Y')` block
+                break; // Add a break statement to terminate the case properly
+            case <some_integer_value>: { // Open a new case block
+                // ... additional case logic here
+
+2024-02-25 12:33:10,958 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:10,959 - Lang_51 - INFO - 错误: -source 1.3 中不支持泛型
+case <some_integer_value>: { // Open a new case block
+2024-02-25 12:33:10,959 - Lang_51 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:33:10,960 - Lang_51 - INFO - 开始验证补丁2 4:
+2024-02-25 12:33:10,960 - Lang_51 - INFO - 
+            }
+
+2024-02-25 12:33:11,502 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:11,502 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:11,502 - Lang_51 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:33:11,503 - Lang_51 - INFO - 开始验证补丁2 5:
+2024-02-25 12:33:11,503 - Lang_51 - INFO - 
+            if (str.length() < 4) {
+                return false;
+            }
+            }
+
+2024-02-25 12:33:12,042 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:12,042 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:12,042 - Lang_51 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:33:12,043 - Lang_51 - INFO - 开始验证补丁2 6:
+2024-02-25 12:33:12,043 - Lang_51 - INFO - 
+            default:
+                throw new IllegalArgumentException("The string length is not supported");
+            }
+
+2024-02-25 12:33:12,587 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:12,587 - Lang_51 - INFO - 错误: 孤立的default
+default:
+2024-02-25 12:33:12,587 - Lang_51 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:33:12,588 - Lang_51 - INFO - 开始验证补丁2 7:
+2024-02-25 12:33:12,588 - Lang_51 - INFO - 
+            }
+
+2024-02-25 12:33:12,588 - Lang_51 - INFO - 补丁2 7为重复的补丁
+2024-02-25 12:33:12,589 - Lang_51 - INFO - 开始验证补丁2 8:
+2024-02-25 12:33:12,589 - Lang_51 - INFO - 
+            }
+            default:
+                return false;
+
+2024-02-25 12:33:13,145 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:13,145 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:13,145 - Lang_51 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:33:13,147 - Lang_51 - INFO - 开始验证补丁2 9:
+2024-02-25 12:33:13,147 - Lang_51 - INFO - 
+            }
+            // Any additional cases or validations for different string lengths could go here
+            default:
+                // Handle cases where the string length is different from the expected
+                return false;
+
+2024-02-25 12:33:13,683 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:13,684 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:13,684 - Lang_51 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:33:13,685 - Lang_51 - INFO - 开始验证补丁3 1:
+2024-02-25 12:33:13,685 - Lang_51 - INFO - 
+                }
+                break;
+
+2024-02-25 12:33:14,240 - Lang_51 - INFO - 编译失败
+2024-02-25 12:33:14,240 - Lang_51 - INFO - 错误: 孤立的case
+case 4: {
+2024-02-25 12:33:14,240 - Lang_51 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:33:14,241 - Lang_51 - INFO - 开始验证补丁3 2:
+2024-02-25 12:33:14,241 - Lang_51 - INFO - 
+                }
+                if (str.length() == 4) {
+
+2024-02-25 12:33:15,318 - Lang_51 - INFO - 编译成功
+2024-02-25 12:33:24,848 - Lang_51 - INFO - 测试失败
+2024-02-25 12:33:24,848 - Lang_51 - INFO - Failing tests: 1
+  - org.apache.commons.lang.BooleanUtilsTest::test_toBoolean_String
+
+2024-02-25 12:33:25,298 - Lang_51 - INFO - 选择失败的测试用例为:
+2024-02-25 12:33:25,298 - Lang_51 - INFO - org.apache.commons.lang.BooleanUtilsTest::test_toBoolean_String
+2024-02-25 12:33:25,298 - Lang_51 - INFO - 失败的测试代码为:
+2024-02-25 12:33:25,298 - Lang_51 - INFO -         assertEquals(false, BooleanUtils.toBoolean("tru"));
+
+2024-02-25 12:33:25,298 - Lang_51 - INFO - 失败信息为:
+2024-02-25 12:33:25,298 - Lang_51 - INFO - java.lang.StringIndexOutOfBoundsException: String index out of range: 3
+
+2024-02-25 12:33:25,298 - Lang_51 - INFO - 补丁3 2测试失败
+2024-02-25 12:33:25,299 - Lang_51 - INFO - 开始验证补丁3 3:
+2024-02-25 12:33:25,300 - Lang_51 - INFO - 
+                }
+                if (str.length() >= 4) {
+
+2024-02-25 12:33:26,354 - Lang_51 - INFO - 编译成功
+2024-02-25 12:33:35,633 - Lang_51 - INFO - 测试失败
+2024-02-25 12:33:35,633 - Lang_51 - INFO - Failing tests: 1
+  - org.apache.commons.lang.BooleanUtilsTest::test_toBoolean_String
+
+2024-02-25 12:33:36,068 - Lang_51 - INFO - 选择失败的测试用例为:
+2024-02-25 12:33:36,069 - Lang_51 - INFO - org.apache.commons.lang.BooleanUtilsTest::test_toBoolean_String
+2024-02-25 12:33:36,069 - Lang_51 - INFO - 失败的测试代码为:
+2024-02-25 12:33:36,069 - Lang_51 - INFO -         assertEquals(false, BooleanUtils.toBoolean("tru"));
+
+2024-02-25 12:33:36,069 - Lang_51 - INFO - 失败信息为:
+2024-02-25 12:33:36,069 - Lang_51 - INFO - java.lang.StringIndexOutOfBoundsException: String index out of range: 3
+
+2024-02-25 12:33:36,069 - Lang_51 - INFO - 补丁3 3测试失败
+2024-02-25 12:33:36,070 - Lang_51 - INFO - 开始验证补丁3 4:
+2024-02-25 12:33:36,070 - Lang_51 - INFO - 
+            break; // Properly terminate the case block
+
+2024-02-25 12:33:37,127 - Lang_51 - INFO - 编译成功
+2024-02-25 12:33:46,373 - Lang_51 - INFO - 测试成功
+2024-02-25 12:33:46,373 - Lang_51 - INFO - 补丁3 4 通过了所有的测试用例

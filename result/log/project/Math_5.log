@@ -1,0 +1,18 @@
+2024-02-24 09:03:41,535 - Math_5 - INFO - rm -rf /home/chongchong/d4j-project/Math_5
+2024-02-24 09:03:41,592 - Math_5 - INFO - 删除 Math 5b 成功
+2024-02-24 09:03:41,592 - Math_5 - INFO - defects4j checkout -p Math -v 5b -w /home/chongchong/d4j-project/Math_5
+2024-02-24 09:03:45,059 - Math_5 - INFO - checkout Math 5b 成功
+2024-02-24 09:03:52,450 - Math_5 - INFO - 编译成功
+2024-02-24 09:04:49,139 - Math_5 - INFO - 测试失败
+2024-02-24 09:04:49,140 - Math_5 - INFO - Failing tests: 1
+  - org.apache.commons.math3.complex.ComplexTest::testReciprocalZero
+
+2024-02-24 09:04:50,052 - Math_5 - INFO - 它的bug类型为:
+2024-02-24 09:04:50,052 - Math_5 - INFO - 1
+2024-02-24 09:05:19,908 - Math_5 - INFO - 开始验证补丁1 1:
+2024-02-24 09:05:19,908 - Math_5 - INFO - 
+return Complex.INF;
+
+2024-02-24 09:05:21,265 - Math_5 - INFO - 编译成功
+2024-02-24 09:06:18,623 - Math_5 - INFO - 测试成功
+2024-02-24 09:06:18,623 - Math_5 - INFO - 补丁1 1 通过了所有的测试用例

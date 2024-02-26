@@ -1,0 +1,44 @@
+2024-02-23 22:15:10,781 - Chart_8 - INFO - rm -rf /home/chongchong/d4j-project/Chart_8
+2024-02-23 22:15:10,833 - Chart_8 - INFO - 删除 Chart 8b 成功
+2024-02-23 22:15:10,833 - Chart_8 - INFO - defects4j checkout -p Chart -v 8b -w /home/chongchong/d4j-project/Chart_8
+2024-02-23 22:15:13,897 - Chart_8 - INFO - checkout Chart 8b 成功
+2024-02-23 22:15:17,343 - Chart_8 - INFO - 编译成功
+2024-02-23 22:15:23,884 - Chart_8 - INFO - 测试失败
+2024-02-23 22:15:23,884 - Chart_8 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.WeekTests::testConstructor
+
+2024-02-23 22:15:24,624 - Chart_8 - INFO - 它的bug类型为:
+2024-02-23 22:15:24,624 - Chart_8 - INFO - 1
+2024-02-23 22:21:23,767 - Chart_8 - INFO - rm -rf /home/chongchong/d4j-project/Chart_8
+2024-02-23 22:21:23,818 - Chart_8 - INFO - 删除 Chart 8b 成功
+2024-02-23 22:21:23,818 - Chart_8 - INFO - defects4j checkout -p Chart -v 8b -w /home/chongchong/d4j-project/Chart_8
+2024-02-23 22:21:26,853 - Chart_8 - INFO - checkout Chart 8b 成功
+2024-02-23 22:21:30,122 - Chart_8 - INFO - 编译成功
+2024-02-23 22:21:36,720 - Chart_8 - INFO - 测试失败
+2024-02-23 22:21:36,720 - Chart_8 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.WeekTests::testConstructor
+
+2024-02-23 22:21:37,461 - Chart_8 - INFO - 它的bug类型为:
+2024-02-23 22:21:37,461 - Chart_8 - INFO - 1
+2024-02-23 22:25:54,716 - Chart_8 - INFO - rm -rf /home/chongchong/d4j-project/Chart_8
+2024-02-23 22:25:54,768 - Chart_8 - INFO - 删除 Chart 8b 成功
+2024-02-23 22:25:54,768 - Chart_8 - INFO - defects4j checkout -p Chart -v 8b -w /home/chongchong/d4j-project/Chart_8
+2024-02-23 22:25:57,793 - Chart_8 - INFO - checkout Chart 8b 成功
+2024-02-23 22:26:01,283 - Chart_8 - INFO - 编译成功
+2024-02-23 22:26:07,931 - Chart_8 - INFO - 测试失败
+2024-02-23 22:26:07,931 - Chart_8 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.WeekTests::testConstructor
+
+2024-02-23 22:26:08,680 - Chart_8 - INFO - 它的bug类型为:
+2024-02-23 22:26:08,680 - Chart_8 - INFO - 1
+2024-02-23 22:27:24,945 - Chart_8 - INFO - 开始验证补丁1 1:
+2024-02-23 22:27:24,945 - Chart_8 - INFO - 
+this(time, zone, Locale.getDefault());
+
+
+2024-02-23 22:27:25,882 - Chart_8 - INFO - 编译成功
+2024-02-23 22:27:32,485 - Chart_8 - INFO - 测试成功
+2024-02-23 22:27:32,485 - Chart_8 - INFO - 补丁1 1 与人工补丁一致

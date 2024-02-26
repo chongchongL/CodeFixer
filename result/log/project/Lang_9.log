@@ -1,0 +1,868 @@
+2024-02-25 12:12:31,158 - Lang_9 - INFO - rm -rf /home/chongchong/d4j-project/Lang_9
+2024-02-25 12:12:31,159 - Lang_9 - INFO - 删除 Lang 9b 成功
+2024-02-25 12:12:31,160 - Lang_9 - INFO - defects4j checkout -p Lang -v 9b -w /home/chongchong/d4j-project/Lang_9
+2024-02-25 12:12:34,502 - Lang_9 - INFO - checkout Lang 9b 成功
+2024-02-25 12:12:39,506 - Lang_9 - INFO - 编译成功
+2024-02-25 12:12:51,772 - Lang_9 - INFO - 测试失败
+2024-02-25 12:12:51,772 - Lang_9 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+
+2024-02-25 12:12:52,638 - Lang_9 - INFO - 它的bug类型为:
+2024-02-25 12:12:52,639 - Lang_9 - INFO - 3
+2024-02-25 12:13:54,636 - Lang_9 - INFO - 开始验证补丁1 1:
+2024-02-25 12:13:54,636 - Lang_9 - INFO - 
+        if(nextStrategy != null && nextStrategy.addRegex(this, regex)) {
+            collector.add(nextStrategy);
+        }
+
+2024-02-25 12:13:55,741 - Lang_9 - INFO - 编译成功
+2024-02-25 12:14:08,030 - Lang_9 - INFO - 测试失败
+2024-02-25 12:14:08,030 - Lang_9 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+
+2024-02-25 12:14:08,463 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:14:08,463 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+2024-02-25 12:14:08,463 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:14:08,463 - Lang_9 - INFO -         testSdfAndFdp("'d'd'","d3", true); // should fail (unterminated quote)
+
+2024-02-25 12:14:08,463 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:14:08,463 - Lang_9 - INFO - junit.framework.AssertionFailedError: Parsed dates should be equal expected:<null> but was:<Fri Jan 02 21:00:00 PST 1970>
+
+2024-02-25 12:14:08,463 - Lang_9 - INFO - 补丁1 1测试失败
+2024-02-25 12:14:08,464 - Lang_9 - INFO - 开始验证补丁1 2:
+2024-02-25 12:14:08,464 - Lang_9 - INFO - 
+        if(nextFormatField != null && currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:14:09,155 - Lang_9 - INFO - 编译失败
+2024-02-25 12:14:09,155 - Lang_9 - INFO - 错误: 找不到符号
+if(nextFormatField != null && currentStrategy.addRegex(this, regex)) {
+2024-02-25 12:14:09,155 - Lang_9 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:14:09,156 - Lang_9 - INFO - 开始验证补丁1 3:
+2024-02-25 12:14:09,156 - Lang_9 - INFO - 
+        // The last strategy should not be added directly into the collector as it may refer to an unterminated quote.
+
+2024-02-25 12:14:10,249 - Lang_9 - INFO - 编译成功
+2024-02-25 12:14:22,472 - Lang_9 - INFO - 测试失败
+2024-02-25 12:14:22,472 - Lang_9 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+
+2024-02-25 12:14:22,906 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:14:22,906 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+2024-02-25 12:14:22,906 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:14:22,906 - Lang_9 - INFO -         testSdfAndFdp("'d'd'","d3", true); // should fail (unterminated quote)
+
+2024-02-25 12:14:22,906 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:14:22,906 - Lang_9 - INFO - junit.framework.AssertionFailedError: Parsed dates should be equal expected:<null> but was:<Fri Jan 02 21:00:00 PST 1970>
+
+2024-02-25 12:14:22,906 - Lang_9 - INFO - 补丁1 3测试失败
+2024-02-25 12:14:22,907 - Lang_9 - INFO - 开始验证补丁1 4:
+2024-02-25 12:14:22,907 - Lang_9 - INFO - 
+// Check if the last strategy can add to the regex
+if(currentStrategy != null && currentStrategy.addRegex(this, regex)) {
+    collector.add(currentStrategy);
+}
+
+2024-02-25 12:14:24,019 - Lang_9 - INFO - 编译成功
+2024-02-25 12:14:39,893 - Lang_9 - INFO - 测试失败
+2024-02-25 12:14:39,893 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:14:40,333 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:14:40,333 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:14:40,333 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:14:40,333 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:14:40,333 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:14:40,333 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:14:40,333 - Lang_9 - INFO - 补丁1 4测试失败
+2024-02-25 12:14:40,334 - Lang_9 - INFO - 开始验证补丁1 5:
+2024-02-25 12:14:40,334 - Lang_9 - INFO - 
+// Ensure that there is no unterminated quote at the end
+if(currentStrategy != null && !(currentStrategy instanceof QuoteStrategy) && currentStrategy.addRegex(this, regex)) {
+    collector.add(currentStrategy);
+}
+
+2024-02-25 12:14:41,026 - Lang_9 - INFO - 编译失败
+2024-02-25 12:14:41,026 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy != null && !(currentStrategy instanceof QuoteStrategy) && currentStrategy.addRegex(this, regex)) {
+2024-02-25 12:14:41,026 - Lang_9 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:14:41,027 - Lang_9 - INFO - 开始验证补丁1 6:
+2024-02-25 12:14:41,027 - Lang_9 - INFO - 
+// Attempt to add the last strategy, handle false return as error
+if(currentStrategy != null) {
+    if(currentStrategy.addRegex(this, regex)) {
+        collector.add(currentStrategy);
+    } else {
+        handleErrorForUnterminatedQuote(); // hypothetical method to handle the error
+    }
+}
+
+2024-02-25 12:14:41,705 - Lang_9 - INFO - 编译失败
+2024-02-25 12:14:41,706 - Lang_9 - INFO - 错误: 找不到符号
+handleErrorForUnterminatedQuote(); // hypothetical method to handle the error
+2024-02-25 12:14:41,706 - Lang_9 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:14:41,707 - Lang_9 - INFO - 开始验证补丁1 7:
+2024-02-25 12:14:41,707 - Lang_9 - INFO - 
+        // Handle the unterminated quote scenario
+        if (currentFormatField != null && currentFormatField.startsWith("'") && !currentFormatField.endsWith("'")) {
+            // Throw an exception or handle the unterminated quote according to the specification
+            throw new IllegalArgumentException("Unterminated quote in date format.");
+        }
+        if(currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+   
+2024-02-25 12:14:42,796 - Lang_9 - INFO - 编译成功
+2024-02-25 12:14:58,590 - Lang_9 - INFO - 测试失败
+2024-02-25 12:14:58,590 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:14:59,024 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:14:59,024 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:14:59,024 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:14:59,024 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:14:59,024 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:14:59,024 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:14:59,024 - Lang_9 - INFO - 补丁1 7测试失败
+2024-02-25 12:14:59,025 - Lang_9 - INFO - 开始验证补丁1 8:
+2024-02-25 12:14:59,025 - Lang_9 - INFO - 
+        // Skip adding the last strategy if there's an unterminated quote
+        if (currentFormatField == null || (!currentFormatField.startsWith("'") || currentFormatField.endsWith("'"))) {
+            if(currentStrategy.addRegex(this, regex)) {
+                collector.add(currentStrategy);
+            }
+        }
+   
+2024-02-25 12:15:00,121 - Lang_9 - INFO - 编译成功
+2024-02-25 12:15:15,908 - Lang_9 - INFO - 测试失败
+2024-02-25 12:15:15,908 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:15:16,342 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:15:16,342 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:15:16,342 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:15:16,342 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:15:16,342 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:15:16,342 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:15:16,342 - Lang_9 - INFO - 补丁1 8测试失败
+2024-02-25 12:15:16,343 - Lang_9 - INFO - 开始验证补丁1 9:
+2024-02-25 12:15:16,343 - Lang_9 - INFO - 
+        // Custom strategy handling for empty or unterminated quotes
+        if(currentStrategy != null && currentStrategy.isApplicableToEnd()) {
+            if(currentStrategy.addRegex(this, regex)) {
+                collector.add(currentStrategy);
+            }
+        }
+   
+2024-02-25 12:15:17,026 - Lang_9 - INFO - 编译失败
+2024-02-25 12:15:17,026 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy != null && currentStrategy.isApplicableToEnd()) {
+2024-02-25 12:15:17,026 - Lang_9 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:15:17,027 - Lang_9 - INFO - 开始验证补丁2 1:
+2024-02-25 12:15:17,027 - Lang_9 - INFO - 
+        if(currentStrategy != null && currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:15:18,112 - Lang_9 - INFO - 编译成功
+2024-02-25 12:15:33,991 - Lang_9 - INFO - 测试失败
+2024-02-25 12:15:33,991 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:15:34,427 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:15:34,428 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:15:34,428 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:15:34,428 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:15:34,428 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:15:34,428 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:15:34,428 - Lang_9 - INFO - 补丁2 1测试失败
+2024-02-25 12:15:34,429 - Lang_9 - INFO - 开始验证补丁2 2:
+2024-02-25 12:15:34,429 - Lang_9 - INFO - 
+        if(currentFormatField == null || (currentStrategy != null && currentStrategy.addRegex(this, regex))) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:15:35,513 - Lang_9 - INFO - 编译成功
+2024-02-25 12:15:51,627 - Lang_9 - INFO - 测试失败
+2024-02-25 12:15:51,627 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:15:52,073 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:15:52,073 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:15:52,073 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:15:52,073 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:15:52,073 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:15:52,073 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:15:52,073 - Lang_9 - INFO - 补丁2 2测试失败
+2024-02-25 12:15:52,074 - Lang_9 - INFO - 开始验证补丁2 3:
+2024-02-25 12:15:52,074 - Lang_9 - INFO - 
+        try {
+            if(currentStrategy.addRegex(this, regex)) {
+                collector.add(currentStrategy);
+            }
+        } catch (PatternSyntaxException e) {
+            // Handle the exception, perhaps set a flag indicating an invalid format
+        }
+
+2024-02-25 12:15:52,749 - Lang_9 - INFO - 编译失败
+2024-02-25 12:15:52,749 - Lang_9 - INFO - 错误: 找不到符号
+} catch (PatternSyntaxException e) {
+2024-02-25 12:15:52,749 - Lang_9 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:15:52,750 - Lang_9 - INFO - 开始验证补丁2 4:
+2024-02-25 12:15:52,750 - Lang_9 - INFO - 
+        if (!regex.toString().endsWith("'")) {
+            if(currentStrategy.addRegex(this, regex)) {
+                collector.add(currentStrategy);
+            }
+        } else {
+            throw new IllegalArgumentException("Unterminated quote in date format");
+        }
+
+2024-02-25 12:15:53,837 - Lang_9 - INFO - 编译成功
+2024-02-25 12:16:09,746 - Lang_9 - INFO - 测试失败
+2024-02-25 12:16:09,746 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:16:10,182 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:16:10,182 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:16:10,182 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:16:10,182 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:16:10,182 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:16:10,182 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:16:10,182 - Lang_9 - INFO - 补丁2 4测试失败
+2024-02-25 12:16:10,183 - Lang_9 - INFO - 开始验证补丁2 5:
+2024-02-25 12:16:10,183 - Lang_9 - INFO - 
+        // Check for unterminated quote
+        if (regex.lastIndexOf("'") > regex.lastIndexOf("')")) {
+            throw new IllegalArgumentException("Unterminated quote in date format");
+        } else if(currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:16:11,259 - Lang_9 - INFO - 编译成功
+2024-02-25 12:16:27,181 - Lang_9 - INFO - 测试失败
+2024-02-25 12:16:27,181 - Lang_9 - INFO - Failing tests: 43
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormatTest::testTimeDefaults
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateFormat_PrinterTest::testFormat
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:16:27,621 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:16:27,621 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:16:27,621 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:16:27,621 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:16:27,621 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:16:27,621 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:16:27,621 - Lang_9 - INFO - 补丁2 5测试失败
+2024-02-25 12:16:27,622 - Lang_9 - INFO - 开始验证补丁2 6:
+2024-02-25 12:16:27,622 - Lang_9 - INFO - 
+        // Final strategy validation including check for unterminated quote
+        if(currentFormatField.endsWith("'") || !currentStrategy.addRegex(this, regex)) {
+            throw new IllegalArgumentException("Format error in date pattern, possibly due to unterminated quote");
+        } else {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:16:28,728 - Lang_9 - INFO - 编译成功
+2024-02-25 12:16:44,628 - Lang_9 - INFO - 测试失败
+2024-02-25 12:16:44,629 - Lang_9 - INFO - Failing tests: 44
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormatTest::testDateDefaults
+  - org.apache.commons.lang3.time.FastDateFormatTest::testTimeDefaults
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateFormat_PrinterTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:16:45,068 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:16:45,068 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:16:45,068 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:16:45,068 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:16:45,068 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:16:45,068 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:16:45,068 - Lang_9 - INFO - 补丁2 6测试失败
+2024-02-25 12:16:45,069 - Lang_9 - INFO - 开始验证补丁2 7:
+2024-02-25 12:16:45,069 - Lang_9 - INFO - 
+        if(currentStrategy != null && currentStrategy.isComplete()) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:16:45,749 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:45,749 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy != null && currentStrategy.isComplete()) {
+2024-02-25 12:16:45,749 - Lang_9 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:16:45,750 - Lang_9 - INFO - 开始验证补丁2 8:
+2024-02-25 12:16:45,750 - Lang_9 - INFO - 
+        try {
+            if(currentStrategy != null && currentStrategy.addRegex(this, regex)) {
+                collector.add(currentStrategy);
+            }
+        } catch (InvalidFormatException e) {
+            // Handle the exception for invalid format, such as unterminated quote
+        }
+
+2024-02-25 12:16:46,432 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:46,432 - Lang_9 - INFO - 错误: 找不到符号
+} catch (InvalidFormatException e) {
+2024-02-25 12:16:46,432 - Lang_9 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:16:46,433 - Lang_9 - INFO - 开始验证补丁2 9:
+2024-02-25 12:16:46,433 - Lang_9 - INFO - 
+        if(currentStrategy != null && regex.toString().contains(currentStrategy.getPattern())) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:16:47,123 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:47,123 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy != null && regex.toString().contains(currentStrategy.getPattern())) {
+2024-02-25 12:16:47,123 - Lang_9 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:16:47,124 - Lang_9 - INFO - 开始验证补丁3 1:
+2024-02-25 12:16:47,124 - Lang_9 - INFO - 
+        if(currentStrategy.isNotTerminated()) {
+            throw new IllegalArgumentException("Unterminated quote in date format");
+        }
+        if(currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:16:47,801 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:47,801 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy.isNotTerminated()) {
+2024-02-25 12:16:47,801 - Lang_9 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:16:47,802 - Lang_9 - INFO - 开始验证补丁3 2:
+2024-02-25 12:16:47,802 - Lang_9 - INFO - 
+        if(!currentStrategy.validateFormat(nextFormatField)) {
+            throw new IllegalArgumentException("Invalid date format detected");
+        }
+        collector.add(currentStrategy);
+
+2024-02-25 12:16:48,488 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:48,488 - Lang_9 - INFO - 错误: 找不到符号
+if(!currentStrategy.validateFormat(nextFormatField)) {
+2024-02-25 12:16:48,489 - Lang_9 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:16:48,490 - Lang_9 - INFO - 开始验证补丁3 3:
+2024-02-25 12:16:48,490 - Lang_9 - INFO - 
+        try {
+            if(currentStrategy.addRegex(this, regex)) {
+                collector.add(currentStrategy);
+            }
+        } catch (FormatException e) {
+            throw new IllegalArgumentException("Error in date format", e);
+        }
+
+2024-02-25 12:16:49,176 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:49,176 - Lang_9 - INFO - 错误: 找不到符号
+} catch (FormatException e) {
+2024-02-25 12:16:49,176 - Lang_9 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:16:49,177 - Lang_9 - INFO - 开始验证补丁3 4:
+2024-02-25 12:16:49,177 - Lang_9 - INFO - 
+        if(currentStrategy != null && !currentStrategy.isTerminated()) {
+            throw new IllegalArgumentException("Unterminated quote in format pattern");
+        }
+        collector.add(currentStrategy);
+
+2024-02-25 12:16:49,857 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:49,857 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy != null && !currentStrategy.isTerminated()) {
+2024-02-25 12:16:49,857 - Lang_9 - INFO - 补丁3 4 未成功编译
+2024-02-25 12:16:49,858 - Lang_9 - INFO - 开始验证补丁3 5:
+2024-02-25 12:16:49,858 - Lang_9 - INFO - 
+        if(currentStrategy != null && currentStrategy.isValid()) {
+            collector.add(currentStrategy);
+        } else {
+            throw new IllegalArgumentException("Invalid format pattern detected");
+        }
+
+2024-02-25 12:16:50,537 - Lang_9 - INFO - 编译失败
+2024-02-25 12:16:50,537 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy != null && currentStrategy.isValid()) {
+2024-02-25 12:16:50,537 - Lang_9 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:16:50,539 - Lang_9 - INFO - 开始验证补丁3 6:
+2024-02-25 12:16:50,539 - Lang_9 - INFO - 
+        if(currentStrategy != null) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:16:51,627 - Lang_9 - INFO - 编译成功
+2024-02-25 12:17:08,993 - Lang_9 - INFO - 测试失败
+2024-02-25 12:17:08,993 - Lang_9 - INFO - Failing tests: 41
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:17:09,429 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:17:09,429 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:17:09,429 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:17:09,429 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:17:09,429 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:17:09,429 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:17:09,429 - Lang_9 - INFO - 补丁3 6测试失败
+2024-02-25 12:17:09,430 - Lang_9 - INFO - 开始验证补丁3 7:
+2024-02-25 12:17:09,430 - Lang_9 - INFO - 
+        // Check if the currentStrategy regex is successfully added before adding to collector
+        if(currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        } else {
+            // Handle the error if regex was not added due to an unterminated quote
+            throw new IllegalArgumentException("Unterminated quote in date format");
+        }
+
+2024-02-25 12:17:10,516 - Lang_9 - INFO - 编译成功
+2024-02-25 12:17:26,488 - Lang_9 - INFO - 测试失败
+2024-02-25 12:17:26,488 - Lang_9 - INFO - Failing tests: 44
+  - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+  - org.apache.commons.lang3.time.FastDateFormatTest::testDateDefaults
+  - org.apache.commons.lang3.time.FastDateFormatTest::testTimeDefaults
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testQuotes
+  - org.apache.commons.lang3.time.FastDateFormat_PrinterTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateParserTest::testMilleniumBug
+  - org.apache.commons.lang3.time.FastDateParserTest::testDayOf
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseZone
+  - org.apache.commons.lang3.time.FastDateParserTest::testAmPm
+  - org.apache.commons.lang3.time.FastDateParserTest::testLowYearPadding
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Long_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseNumerics
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang303
+  - org.apache.commons.lang3.time.FastDateParserTest::testLang538
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_832
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_ShortNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testParseLongShort
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_LongNoEra_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_AD
+  - org.apache.commons.lang3.time.FastDateParserTest::testLocales_Short_BC
+  - org.apache.commons.lang3.time.FastDateParserTest::testQuotes
+
+2024-02-25 12:17:26,925 - Lang_9 - INFO - 选择失败的测试用例为:
+2024-02-25 12:17:26,925 - Lang_9 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testParseSync
+2024-02-25 12:17:26,925 - Lang_9 - INFO - 失败的测试代码为:
+2024-02-25 12:17:26,925 - Lang_9 - INFO -         long fdfTime= measureTime(formatter, FastDateFormat.getInstance(pattern));
+
+2024-02-25 12:17:26,925 - Lang_9 - INFO - 失败信息为:
+2024-02-25 12:17:26,925 - Lang_9 - INFO - junit.framework.AssertionFailedError: expected:<0> but was:<100000>
+
+2024-02-25 12:17:26,925 - Lang_9 - INFO - 补丁3 7测试失败
+2024-02-25 12:17:26,926 - Lang_9 - INFO - 开始验证补丁3 8:
+2024-02-25 12:17:26,926 - Lang_9 - INFO - 
+        // Try adding the currentStrategy regex and add to collector if successful
+        if(currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        } else {
+            // Set a flag or take other appropriate action if regex was not added successfully
+            formatErrorDetected = true;
+        }
+        // Rest of the code should check formatErrorDetected before proceeding
+
+2024-02-25 12:17:27,602 - Lang_9 - INFO - 编译失败
+2024-02-25 12:17:27,602 - Lang_9 - INFO - 错误: 找不到符号
+formatErrorDetected = true;
+2024-02-25 12:17:27,602 - Lang_9 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:17:27,603 - Lang_9 - INFO - 开始验证补丁3 9:
+2024-02-25 12:17:27,603 - Lang_9 - INFO - 
+        // Only add the currentStrategy if the regex was properly terminated and added
+        if(currentStrategy.isPatternValid() && currentStrategy.addRegex(this, regex)) {
+            collector.add(currentStrategy);
+        }
+
+2024-02-25 12:17:28,272 - Lang_9 - INFO - 编译失败
+2024-02-25 12:17:28,272 - Lang_9 - INFO - 错误: 找不到符号
+if(currentStrategy.isPatternValid() && currentStrategy.addRegex(this, regex)) {
+2024-02-25 12:17:28,272 - Lang_9 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:17:28,272 - Lang_9 - INFO - Lang_9 未成功修复

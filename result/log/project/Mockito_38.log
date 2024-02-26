@@ -1,0 +1,33 @@
+2024-02-24 01:27:00,280 - Mockito_38 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_38
+2024-02-24 01:27:00,281 - Mockito_38 - INFO - 删除 Mockito 38b 成功
+2024-02-24 01:27:00,281 - Mockito_38 - INFO - defects4j checkout -p Mockito -v 38b -w /home/chongchong/d4j-project/Mockito_38
+2024-02-24 01:27:02,706 - Mockito_38 - INFO - checkout Mockito 38b 成功
+2024-02-24 01:27:07,018 - Mockito_38 - INFO - 编译成功
+2024-02-24 01:27:20,545 - Mockito_38 - INFO - 测试失败
+2024-02-24 01:27:20,545 - Mockito_38 - INFO - Failing tests: 2
+  - org.mockito.internal.verification.argumentmatching.ArgumentMatchingToolTest::shouldWorkFineWhenGivenArgIsNull
+  - org.mockitousage.bugs.ActualInvocationHasNullArgumentNPEBugTest::shouldAllowPassingNullArgument
+
+2024-02-24 01:27:21,410 - Mockito_38 - INFO - 它的bug类型为:
+2024-02-24 01:27:21,410 - Mockito_38 - INFO - 1
+2024-02-24 01:27:42,850 - Mockito_38 - INFO - Mockito_38 未成功修复
+2024-02-24 12:23:53,022 - Mockito_38 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_38
+2024-02-24 12:23:53,045 - Mockito_38 - INFO - 删除 Mockito 38b 成功
+2024-02-24 12:23:53,045 - Mockito_38 - INFO - defects4j checkout -p Mockito -v 38b -w /home/chongchong/d4j-project/Mockito_38
+2024-02-24 12:23:55,466 - Mockito_38 - INFO - checkout Mockito 38b 成功
+2024-02-24 12:23:59,838 - Mockito_38 - INFO - 编译成功
+2024-02-24 12:24:13,263 - Mockito_38 - INFO - 测试失败
+2024-02-24 12:24:13,263 - Mockito_38 - INFO - Failing tests: 2
+  - org.mockito.internal.verification.argumentmatching.ArgumentMatchingToolTest::shouldWorkFineWhenGivenArgIsNull
+  - org.mockitousage.bugs.ActualInvocationHasNullArgumentNPEBugTest::shouldAllowPassingNullArgument
+
+2024-02-24 12:24:14,125 - Mockito_38 - INFO - 它的bug类型为:
+2024-02-24 12:24:14,125 - Mockito_38 - INFO - 1
+2024-02-24 12:24:39,579 - Mockito_38 - INFO - 开始验证补丁1 1:
+2024-02-24 12:24:39,579 - Mockito_38 - INFO - 
+if (arg == null) return false;
+return StringDescription.toString(m).equals(arg.toString());
+
+2024-02-24 12:24:43,889 - Mockito_38 - INFO - 编译成功
+2024-02-24 12:24:57,268 - Mockito_38 - INFO - 测试成功
+2024-02-24 12:24:57,268 - Mockito_38 - INFO - 补丁1 1 通过了所有的测试用例

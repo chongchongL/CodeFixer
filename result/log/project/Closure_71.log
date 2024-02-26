@@ -1,0 +1,290 @@
+2024-02-24 00:37:12,271 - Closure_71 - INFO - rm -rf /home/chongchong/d4j-project/Closure_71
+2024-02-24 00:37:12,273 - Closure_71 - INFO - 删除 Closure 71b 成功
+2024-02-24 00:37:12,273 - Closure_71 - INFO - defects4j checkout -p Closure -v 71b -w /home/chongchong/d4j-project/Closure_71
+2024-02-24 00:37:14,102 - Closure_71 - INFO - checkout Closure 71b 成功
+2024-02-24 00:37:23,251 - Closure_71 - INFO - 编译成功
+2024-02-24 00:38:02,537 - Closure_71 - INFO - 测试失败
+2024-02-24 00:38:02,537 - Closure_71 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties6
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties8
+
+2024-02-24 00:38:03,545 - Closure_71 - INFO - 它的bug类型为:
+2024-02-24 00:38:03,545 - Closure_71 - INFO - 1
+2024-02-24 00:38:36,951 - Closure_71 - INFO - Closure_71 未成功修复
+2024-02-24 14:01:26,558 - Closure_71 - INFO - rm -rf /home/chongchong/d4j-project/Closure_71
+2024-02-24 14:01:26,602 - Closure_71 - INFO - 删除 Closure 71b 成功
+2024-02-24 14:01:26,602 - Closure_71 - INFO - defects4j checkout -p Closure -v 71b -w /home/chongchong/d4j-project/Closure_71
+2024-02-24 14:01:28,096 - Closure_71 - INFO - checkout Closure 71b 成功
+2024-02-24 14:01:36,903 - Closure_71 - INFO - 编译成功
+2024-02-24 14:02:16,163 - Closure_71 - INFO - 测试失败
+2024-02-24 14:02:16,163 - Closure_71 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties6
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties8
+
+2024-02-24 14:02:17,178 - Closure_71 - INFO - 它的bug类型为:
+2024-02-24 14:02:17,178 - Closure_71 - INFO - 1
+2024-02-24 14:04:04,673 - Closure_71 - INFO - 开始验证补丁1 1:
+2024-02-24 14:04:04,673 - Closure_71 - INFO - 
+boolean isOverride = objectType.isPropertyTypeDeclared(propertyName) &&
+
+2024-02-24 14:04:07,296 - Closure_71 - INFO - 编译成功
+2024-02-24 14:04:47,182 - Closure_71 - INFO - 测试失败
+2024-02-24 14:04:47,182 - Closure_71 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties6
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties8
+
+2024-02-24 14:04:47,682 - Closure_71 - INFO - 选择失败的测试用例为:
+2024-02-24 14:04:47,682 - Closure_71 - INFO - com.google.javascript.jscomp.CheckAccessControlsTest::testNoPrivateAccessForProperties6
+2024-02-24 14:04:47,682 - Closure_71 - INFO - 失败的测试代码为:
+2024-02-24 14:04:47,682 - Closure_71 - INFO -     test(new String[] {
+
+2024-02-24 14:04:47,682 - Closure_71 - INFO - 失败信息为:
+2024-02-24 14:04:47,682 - Closure_71 - INFO - junit.framework.AssertionFailedError: Overriding private property of Foo.prototype.
+
+2024-02-24 14:04:47,682 - Closure_71 - INFO - 补丁1 1测试失败
+2024-02-24 14:04:47,683 - Closure_71 - INFO - 开始验证补丁1 2:
+2024-02-24 14:04:47,683 - Closure_71 - INFO - 
+boolean isOverride = !objectType.isPrivate(propertyName) &&
+
+2024-02-24 14:04:48,938 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:48,938 - Closure_71 - INFO - 错误: 找不到符号
+boolean isOverride = !objectType.isPrivate(propertyName) &&
+2024-02-24 14:04:48,938 - Closure_71 - INFO - 补丁1 2 未成功编译
+2024-02-24 14:04:48,939 - Closure_71 - INFO - 开始验证补丁1 3:
+2024-02-24 14:04:48,939 - Closure_71 - INFO - 
+boolean isOverride = parent.isAssignmentToProperty() &&
+
+2024-02-24 14:04:50,199 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:50,199 - Closure_71 - INFO - 错误: 找不到符号
+boolean isOverride = parent.isAssignmentToProperty() &&
+2024-02-24 14:04:50,199 - Closure_71 - INFO - 补丁1 3 未成功编译
+2024-02-24 14:04:50,200 - Closure_71 - INFO - 开始验证补丁1 4:
+2024-02-24 14:04:50,200 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop && !objectType.isPropertyTypeDeclared(propertyName);
+
+2024-02-24 14:04:51,242 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:51,242 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:51,242 - Closure_71 - INFO - 补丁1 4 未成功编译
+2024-02-24 14:04:51,243 - Closure_71 - INFO - 开始验证补丁1 5:
+2024-02-24 14:04:51,243 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop && objectType.isPropertyTypeInferred(propertyName);
+
+2024-02-24 14:04:52,307 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:52,307 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:52,307 - Closure_71 - INFO - 补丁1 5 未成功编译
+2024-02-24 14:04:52,308 - Closure_71 - INFO - 开始验证补丁1 6:
+2024-02-24 14:04:52,308 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop && objectType.hasOwnProperty(propertyName);
+
+2024-02-24 14:04:53,366 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:53,366 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:53,366 - Closure_71 - INFO - 补丁1 6 未成功编译
+2024-02-24 14:04:53,368 - Closure_71 - INFO - 开始验证补丁1 7:
+2024-02-24 14:04:53,368 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop && !objectType.isPropertyVisible(propertyName);
+
+2024-02-24 14:04:54,413 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:54,413 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:54,413 - Closure_71 - INFO - 补丁1 7 未成功编译
+2024-02-24 14:04:54,414 - Closure_71 - INFO - 开始验证补丁1 8:
+2024-02-24 14:04:54,414 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop && objectType.canOverrideProperty(propertyName);
+
+2024-02-24 14:04:55,447 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:55,447 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:55,447 - Closure_71 - INFO - 补丁1 8 未成功编译
+2024-02-24 14:04:55,448 - Closure_71 - INFO - 开始验证补丁1 9:
+2024-02-24 14:04:55,448 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop && getprop.hasAccessToProperty(propertyName);
+
+2024-02-24 14:04:56,484 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:56,484 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:56,484 - Closure_71 - INFO - 补丁1 9 未成功编译
+2024-02-24 14:04:56,485 - Closure_71 - INFO - 开始验证补丁2 1:
+2024-02-24 14:04:56,485 - Closure_71 - INFO - 
+      boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop;
+
+2024-02-24 14:04:57,533 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:57,533 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:57,533 - Closure_71 - INFO - 补丁2 1 未成功编译
+2024-02-24 14:04:57,534 - Closure_71 - INFO - 开始验证补丁2 2:
+2024-02-24 14:04:57,534 - Closure_71 - INFO - 
+      boolean isOverride = !t.inFunction() && parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop;
+
+2024-02-24 14:04:58,577 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:58,577 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:58,577 - Closure_71 - INFO - 补丁2 2 未成功编译
+2024-02-24 14:04:58,579 - Closure_71 - INFO - 开始验证补丁2 3:
+2024-02-24 14:04:58,579 - Closure_71 - INFO - 
+      boolean isOverride = t.isGlobalScope() && parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop;
+
+2024-02-24 14:04:59,618 - Closure_71 - INFO - 编译失败
+2024-02-24 14:04:59,618 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:04:59,618 - Closure_71 - INFO - 补丁2 3 未成功编译
+2024-02-24 14:04:59,619 - Closure_71 - INFO - 开始验证补丁2 4:
+2024-02-24 14:04:59,619 - Closure_71 - INFO - 
+boolean isOverride = parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop;
+
+2024-02-24 14:05:00,671 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:00,672 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:00,672 - Closure_71 - INFO - 补丁2 4 未成功编译
+2024-02-24 14:05:00,673 - Closure_71 - INFO - 开始验证补丁2 5:
+2024-02-24 14:05:00,673 - Closure_71 - INFO - 
+boolean isOverride = t.isInGlobalScope() && parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop;
+
+2024-02-24 14:05:01,701 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:01,702 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:01,702 - Closure_71 - INFO - 补丁2 5 未成功编译
+2024-02-24 14:05:01,703 - Closure_71 - INFO - 开始验证补丁2 6:
+2024-02-24 14:05:01,703 - Closure_71 - INFO - 
+boolean isOverride = t.isInStaticScope() && parent.getType() == Token.ASSIGN && parent.getFirstChild() == getprop;
+
+2024-02-24 14:05:02,732 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:02,732 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:02,732 - Closure_71 - INFO - 补丁2 6 未成功编译
+2024-02-24 14:05:02,733 - Closure_71 - INFO - 开始验证补丁2 7:
+2024-02-24 14:05:02,733 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+                     parent.getType() == Token.ASSIGN &&
+                     parent.getFirstChild() == getprop;
+
+2024-02-24 14:05:03,780 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:03,780 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:03,780 - Closure_71 - INFO - 补丁2 7 未成功编译
+2024-02-24 14:05:03,782 - Closure_71 - INFO - 开始验证补丁2 8:
+2024-02-24 14:05:03,782 - Closure_71 - INFO - 
+boolean isOverride = traversal.inGlobalScope() &&
+                     parent.getType() == Token.ASSIGN &&
+                     parent.getFirstChild() == getprop;
+
+2024-02-24 14:05:04,810 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:04,810 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:04,810 - Closure_71 - INFO - 补丁2 8 未成功编译
+2024-02-24 14:05:04,811 - Closure_71 - INFO - 开始验证补丁2 9:
+2024-02-24 14:05:04,811 - Closure_71 - INFO - 
+boolean isOverride = (currentScope.isGlobalScope() || t.isAtGlobalScope()) &&
+                     parent.getType() == Token.ASSIGN &&
+                     parent.getFirstChild() == getprop;
+
+2024-02-24 14:05:05,855 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:05,855 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:05,855 - Closure_71 - INFO - 补丁2 9 未成功编译
+2024-02-24 14:05:05,856 - Closure_71 - INFO - 开始验证补丁3 1:
+2024-02-24 14:05:05,856 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() && 
+                     parent.getType() == Token.ASSIGN &&
+                     parent.getFirstChild() == getprop &&
+                     !objectType.getOwnProperty(propertyName).isPrivate();
+
+2024-02-24 14:05:06,904 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:06,904 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:06,904 - Closure_71 - INFO - 补丁3 1 未成功编译
+2024-02-24 14:05:06,905 - Closure_71 - INFO - 开始验证补丁3 2:
+2024-02-24 14:05:06,905 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() && 
+                     parent.getType() == Token.ASSIGN &&
+                     parent.getFirstChild() == getprop &&
+                     objectType.hasProperty(propertyName) &&
+                     !objectType.isPropertyTypeDeclared(propertyName);
+
+2024-02-24 14:05:07,952 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:07,952 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:07,952 - Closure_71 - INFO - 补丁3 2 未成功编译
+2024-02-24 14:05:07,953 - Closure_71 - INFO - 开始验证补丁3 3:
+2024-02-24 14:05:07,953 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+                     parent.getType() == Token.ASSIGN &&
+                     parent.getFirstChild() == getprop &&
+                     objectType.isPropertyInExterns(propertyName);
+
+2024-02-24 14:05:09,000 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:09,000 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:09,000 - Closure_71 - INFO - 补丁3 3 未成功编译
+2024-02-24 14:05:09,001 - Closure_71 - INFO - 开始验证补丁3 4:
+2024-02-24 14:05:09,001 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+    parent.getType() == Token.ASSIGN &&
+    parent.getFirstChild() == getprop && 
+    !objectType.getOwnPropertyNames().contains(propertyName) &&
+    objectType.isPropertyTypeInferred(propertyName);
+
+2024-02-24 14:05:10,046 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:10,046 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:10,046 - Closure_71 - INFO - 补丁3 4 未成功编译
+2024-02-24 14:05:10,047 - Closure_71 - INFO - 开始验证补丁3 5:
+2024-02-24 14:05:10,047 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+    parent.getType() == Token.ASSIGN &&
+    parent.getFirstChild() == getprop &&
+    !objectType.isPropertyTypeDeclared(propertyName);
+
+2024-02-24 14:05:11,095 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:11,095 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:11,095 - Closure_71 - INFO - 补丁3 5 未成功编译
+2024-02-24 14:05:11,097 - Closure_71 - INFO - 开始验证补丁3 6:
+2024-02-24 14:05:11,097 - Closure_71 - INFO - 
+boolean isOverride =
+    parent.getType() == Token.ASSIGN &&
+    parent.getFirstChild() == getprop &&
+    (t.inGlobalScope() || objectType.hasProperty(propertyName));
+
+2024-02-24 14:05:12,150 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:12,150 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:12,150 - Closure_71 - INFO - 补丁3 6 未成功编译
+2024-02-24 14:05:12,151 - Closure_71 - INFO - 开始验证补丁3 7:
+2024-02-24 14:05:12,152 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+    parent.getType() == Token.ASSIGN &&
+    parent.getFirstChild() == getprop &&
+    !objectType.getOwnProperty(propertyName).isPrivate();
+
+2024-02-24 14:05:13,191 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:13,191 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:13,191 - Closure_71 - INFO - 补丁3 7 未成功编译
+2024-02-24 14:05:13,192 - Closure_71 - INFO - 开始验证补丁3 8:
+2024-02-24 14:05:13,192 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+    parent.getType() == Token.ASSIGN &&
+    parent.getFirstChild() == getprop &&
+    objectType.isPropertyTypeDeclared(propertyName) &&
+    !objectType.isPropertyPrivate(propertyName);
+
+2024-02-24 14:05:14,237 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:14,237 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:14,237 - Closure_71 - INFO - 补丁3 8 未成功编译
+2024-02-24 14:05:14,238 - Closure_71 - INFO - 开始验证补丁3 9:
+2024-02-24 14:05:14,238 - Closure_71 - INFO - 
+boolean isOverride = t.inGlobalScope() &&
+    parent.getType() == Token.ASSIGN &&
+    parent.getFirstChild() == getprop &&
+    (objectType.getOwnProperty(propertyName) == null ||
+    !objectType.getOwnProperty(propertyName).isPrivate());
+
+2024-02-24 14:05:15,270 - Closure_71 - INFO - 编译失败
+2024-02-24 14:05:15,270 - Closure_71 - INFO - 错误: 不是语句
+parent.getType() == Token.ASSIGN &&
+2024-02-24 14:05:15,270 - Closure_71 - INFO - 补丁3 9 未成功编译
+2024-02-24 14:05:15,270 - Closure_71 - INFO - Closure_71 未成功修复

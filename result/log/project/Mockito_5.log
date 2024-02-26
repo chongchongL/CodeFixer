@@ -1,0 +1,231 @@
+2024-02-26 14:25:14,922 - Mockito_5 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_5
+2024-02-26 14:25:15,085 - Mockito_5 - INFO - 删除 Mockito 5b 成功
+2024-02-26 14:25:15,085 - Mockito_5 - INFO - defects4j checkout -p Mockito -v 5b -w /home/chongchong/d4j-project/Mockito_5
+2024-02-26 14:25:18,626 - Mockito_5 - INFO - checkout Mockito 5b 成功
+2024-02-26 14:26:14,296 - Mockito_5 - INFO - 编译成功
+2024-02-26 14:27:17,353 - Mockito_5 - INFO - 测试失败
+2024-02-26 14:27:17,353 - Mockito_5 - INFO - Failing tests: 1
+  - org.mockitointegration.NoJUnitDependenciesTest::pure_mockito_should_not_depend_JUnit
+
+2024-02-26 14:27:18,273 - Mockito_5 - INFO - 它的bug类型为:
+2024-02-26 14:27:18,273 - Mockito_5 - INFO - 1
+2024-02-26 14:28:03,158 - Mockito_5 - INFO - 开始验证补丁1 1:
+2024-02-26 14:28:03,158 - Mockito_5 - INFO - 
+    catch (MockitoAssertionError e) {
+        error = handleVerifyException(e);
+    }
+    
+2024-02-26 14:28:13,473 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:13,473 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:28:13,473 - Mockito_5 - INFO - 补丁1 1 未成功编译
+2024-02-26 14:28:13,474 - Mockito_5 - INFO - 开始验证补丁1 2:
+2024-02-26 14:28:13,474 - Mockito_5 - INFO - 
+    catch (org.mockito.exceptions.verification.VerificationInOrderFailure e) {
+        error = handleVerifyException(e);
+    }
+    
+2024-02-26 14:28:19,061 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:19,062 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:28:19,062 - Mockito_5 - INFO - 补丁1 2 未成功编译
+2024-02-26 14:28:19,063 - Mockito_5 - INFO - 开始验证补丁1 3:
+2024-02-26 14:28:19,063 - Mockito_5 - INFO - 
+    catch (Exception e) {
+        error = handleVerifyException(e);
+    }
+    
+2024-02-26 14:28:24,518 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:24,519 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:28:24,519 - Mockito_5 - INFO - 补丁1 3 未成功编译
+2024-02-26 14:28:24,520 - Mockito_5 - INFO - 开始验证补丁1 4:
+2024-02-26 14:28:24,520 - Mockito_5 - INFO - 
+            catch (org.mockito.exceptions.verification.VerificationInOrderFailure e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:28:29,831 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:29,831 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:28:29,831 - Mockito_5 - INFO - 补丁1 4 未成功编译
+2024-02-26 14:28:29,832 - Mockito_5 - INFO - 开始验证补丁1 5:
+2024-02-26 14:28:29,832 - Mockito_5 - INFO - 
+            catch (org.mockito.exceptions.base.MockitoAssertionError e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:28:35,398 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:35,398 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:28:35,398 - Mockito_5 - INFO - 补丁1 5 未成功编译
+2024-02-26 14:28:35,399 - Mockito_5 - INFO - 开始验证补丁1 6:
+2024-02-26 14:28:35,399 - Mockito_5 - INFO - 
+            catch (org.mockito.exceptions.verification.NoInteractionsWanted e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:28:40,973 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:40,973 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:28:40,973 - Mockito_5 - INFO - 补丁1 6 未成功编译
+2024-02-26 14:28:40,974 - Mockito_5 - INFO - 开始验证补丁1 7:
+2024-02-26 14:28:40,974 - Mockito_5 - INFO - 
+            } catch (org.mockito.exceptions.verification.VerifyException e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:28:46,714 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:46,714 - Mockito_5 - INFO - 错误: 有 'catch', 但是没有 'try'
+[exec] } catch (org.mockito.exceptions.verification.VerifyException e) {
+2024-02-26 14:28:46,714 - Mockito_5 - INFO - 补丁1 7 未成功编译
+2024-02-26 14:28:46,715 - Mockito_5 - INFO - 开始验证补丁1 8:
+2024-02-26 14:28:46,715 - Mockito_5 - INFO - 
+            } catch (Exception e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:28:57,407 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:28:57,407 - Mockito_5 - INFO - 错误: 有 'catch', 但是没有 'try'
+[exec] } catch (Exception e) {
+2024-02-26 14:28:57,407 - Mockito_5 - INFO - 补丁1 8 未成功编译
+2024-02-26 14:28:57,408 - Mockito_5 - INFO - 开始验证补丁1 9:
+2024-02-26 14:28:57,408 - Mockito_5 - INFO - 
+            } catch (RuntimeException e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:29:03,008 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:03,008 - Mockito_5 - INFO - 错误: 有 'catch', 但是没有 'try'
+[exec] } catch (RuntimeException e) {
+2024-02-26 14:29:03,008 - Mockito_5 - INFO - 补丁1 9 未成功编译
+2024-02-26 14:29:03,009 - Mockito_5 - INFO - 开始验证补丁2 1:
+2024-02-26 14:29:03,009 - Mockito_5 - INFO - 
+            // Removed catch block for org.mockito.exceptions.verification.junit.ArgumentsAreDifferent
+
+2024-02-26 14:29:13,551 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:13,551 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:13,551 - Mockito_5 - INFO - 补丁2 1 未成功编译
+2024-02-26 14:29:13,552 - Mockito_5 - INFO - 开始验证补丁2 2:
+2024-02-26 14:29:13,552 - Mockito_5 - INFO - 
+            catch (org.mockito.exceptions.base.MockitoAssertionError e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:29:13,552 - Mockito_5 - INFO - 补丁2 2为重复的补丁
+2024-02-26 14:29:13,557 - Mockito_5 - INFO - 开始验证补丁2 3:
+2024-02-26 14:29:13,557 - Mockito_5 - INFO - 
+            catch (Exception e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:29:19,335 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:19,335 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:19,335 - Mockito_5 - INFO - 补丁2 3 未成功编译
+2024-02-26 14:29:19,336 - Mockito_5 - INFO - 开始验证补丁2 4:
+2024-02-26 14:29:19,336 - Mockito_5 - INFO - 
+catch (MockitoAssertionError e) {
+    error = handleVerifyException(e);
+}
+
+2024-02-26 14:29:25,234 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:25,234 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:25,234 - Mockito_5 - INFO - 补丁2 4 未成功编译
+2024-02-26 14:29:25,235 - Mockito_5 - INFO - 开始验证补丁2 5:
+2024-02-26 14:29:25,235 - Mockito_5 - INFO - 
+catch (AssertionError e) {
+    error = handleVerifyException(e);
+}
+
+2024-02-26 14:29:30,369 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:30,369 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:30,369 - Mockito_5 - INFO - 补丁2 5 未成功编译
+2024-02-26 14:29:30,370 - Mockito_5 - INFO - 开始验证补丁2 6:
+2024-02-26 14:29:30,370 - Mockito_5 - INFO - 
+// Remove the specific JUnit exception handling to avoid JUnit dependency
+// No alternative catch block required if all exceptions are handled by the existing MockitoAssertionError catch block
+
+2024-02-26 14:29:40,992 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:40,992 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:40,992 - Mockito_5 - INFO - 补丁2 6 未成功编译
+2024-02-26 14:29:40,993 - Mockito_5 - INFO - 开始验证补丁2 7:
+2024-02-26 14:29:40,993 - Mockito_5 - INFO - 
+            catch (org.mockito.exceptions.verification.MockitoAssertionError e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:29:46,299 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:46,299 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:46,299 - Mockito_5 - INFO - 补丁2 7 未成功编译
+2024-02-26 14:29:46,300 - Mockito_5 - INFO - 开始验证补丁2 8:
+2024-02-26 14:29:46,300 - Mockito_5 - INFO - 
+            catch (org.mockito.exceptions.base.MockitoException e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:29:52,273 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:52,273 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:52,273 - Mockito_5 - INFO - 补丁2 8 未成功编译
+2024-02-26 14:29:52,274 - Mockito_5 - INFO - 开始验证补丁2 9:
+2024-02-26 14:29:52,274 - Mockito_5 - INFO - 
+            // Replacing with a more generic catch that avoids JUnit dependency
+            catch (RuntimeException e) {
+                error = handleVerifyException(e);
+            }
+
+2024-02-26 14:29:57,487 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:29:57,487 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:29:57,487 - Mockito_5 - INFO - 补丁2 9 未成功编译
+2024-02-26 14:29:57,488 - Mockito_5 - INFO - 开始验证补丁3 1:
+2024-02-26 14:29:57,488 - Mockito_5 - INFO - 
+catch (org.mockito.exceptions.verification.ArgumentsAreDifferent e) {
+    error = handleVerifyException(e);
+}
+
+2024-02-26 14:30:02,889 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:30:02,889 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:30:02,889 - Mockito_5 - INFO - 补丁3 1 未成功编译
+2024-02-26 14:30:02,890 - Mockito_5 - INFO - 开始验证补丁3 2:
+2024-02-26 14:30:02,890 - Mockito_5 - INFO - 
+catch (org.mockito.exceptions.base.MockitoAssertionError e) {
+    error = handleVerifyException(e);
+}
+
+2024-02-26 14:30:08,153 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:30:08,153 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:30:08,153 - Mockito_5 - INFO - 补丁3 2 未成功编译
+2024-02-26 14:30:08,154 - Mockito_5 - INFO - 开始验证补丁3 3:
+2024-02-26 14:30:08,154 - Mockito_5 - INFO - 
+catch (org.mockito.exceptions.verification.MockitoVerificationException e) {
+    error = handleVerifyException(e);
+}
+
+2024-02-26 14:30:14,057 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:30:14,057 - Mockito_5 - INFO - 错误: 非法的类型开始
+[exec]         if (error != null) {
+2024-02-26 14:30:14,057 - Mockito_5 - INFO - 补丁3 3 未成功编译
+2024-02-26 14:30:14,058 - Mockito_5 - INFO - 开始验证补丁3 4:
+2024-02-26 14:30:14,058 - Mockito_5 - INFO - 
+catch (org.mockito.exceptions.verification.ArgumentsAreDifferent e) {
+
+2024-02-26 14:30:20,388 - Mockito_5 - INFO - 编译失败
+2024-02-26 14:30:20,388 - Mockito_5 - INFO - 错误: 已捕获到异常
+[exec] catch (org.mockito.exceptions.verification.ArgumentsAreDifferent e) {
+2024-02-26 14:30:20,388 - Mockito_5 - INFO - 补丁3 4 未成功编译
+2024-02-26 14:30:20,389 - Mockito_5 - INFO - 开始验证补丁3 5:
+2024-02-26 14:30:20,389 - Mockito_5 - INFO - 
+catch (AssertionError e) {
+
+2024-02-26 14:31:04,192 - Mockito_5 - INFO - 编译成功
+2024-02-26 14:32:08,831 - Mockito_5 - INFO - 测试成功
+2024-02-26 14:32:08,831 - Mockito_5 - INFO - 补丁3 5 通过了所有的测试用例

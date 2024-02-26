@@ -1,0 +1,19 @@
+2024-02-25 00:47:13,270 - Math_101 - INFO - rm -rf /home/chongchong/d4j-project/Math_101
+2024-02-25 00:47:13,271 - Math_101 - INFO - 删除 Math 101b 成功
+2024-02-25 00:47:13,271 - Math_101 - INFO - defects4j checkout -p Math -v 101b -w /home/chongchong/d4j-project/Math_101
+2024-02-25 00:47:15,648 - Math_101 - INFO - checkout Math 101b 成功
+2024-02-25 00:47:21,492 - Math_101 - INFO - 编译成功
+2024-02-25 00:47:28,961 - Math_101 - INFO - 测试失败
+2024-02-25 00:47:28,961 - Math_101 - INFO - Failing tests: 2
+  - org.apache.commons.math.complex.ComplexFormatTest::testForgottenImaginaryCharacter
+  - org.apache.commons.math.complex.FrenchComplexFormatTest::testForgottenImaginaryCharacter
+
+2024-02-25 00:47:29,866 - Math_101 - INFO - 它的bug类型为:
+2024-02-25 00:47:29,866 - Math_101 - INFO - 2
+2024-02-25 00:48:11,732 - Math_101 - INFO - 开始验证补丁1 1:
+2024-02-25 00:48:11,732 - Math_101 - INFO - 
+        if (endIndex > source.length() ||
+
+2024-02-25 00:48:14,856 - Math_101 - INFO - 编译成功
+2024-02-25 00:48:22,402 - Math_101 - INFO - 测试成功
+2024-02-25 00:48:22,402 - Math_101 - INFO - 补丁1 1 通过了所有的测试用例

@@ -1,0 +1,18 @@
+2024-02-23 23:48:28,202 - Lang_59 - INFO - rm -rf /home/chongchong/d4j-project/Lang_59
+2024-02-23 23:48:28,202 - Lang_59 - INFO - 删除 Lang 59b 成功
+2024-02-23 23:48:28,202 - Lang_59 - INFO - defects4j checkout -p Lang -v 59b -w /home/chongchong/d4j-project/Lang_59
+2024-02-23 23:48:31,526 - Lang_59 - INFO - checkout Lang 59b 成功
+2024-02-23 23:48:35,614 - Lang_59 - INFO - 编译成功
+2024-02-23 23:48:44,057 - Lang_59 - INFO - 测试失败
+2024-02-23 23:48:44,058 - Lang_59 - INFO - Failing tests: 1
+  - org.apache.commons.lang.text.StrBuilderAppendInsertTest::testLang299
+
+2024-02-23 23:48:44,931 - Lang_59 - INFO - 它的bug类型为:
+2024-02-23 23:48:44,931 - Lang_59 - INFO - 1
+2024-02-23 23:50:25,446 - Lang_59 - INFO - 开始验证补丁1 1:
+2024-02-23 23:50:25,446 - Lang_59 - INFO - 
+str.getChars(0, width, buffer, size);
+
+2024-02-23 23:50:26,639 - Lang_59 - INFO - 编译成功
+2024-02-23 23:50:35,051 - Lang_59 - INFO - 测试成功
+2024-02-23 23:50:35,051 - Lang_59 - INFO - 补丁1 1 通过了所有的测试用例

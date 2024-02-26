@@ -1,0 +1,107 @@
+2024-02-24 22:22:28,550 - Closure_31 - INFO - rm -rf /home/chongchong/d4j-project/Closure_31
+2024-02-24 22:22:28,551 - Closure_31 - INFO - 删除 Closure 31b 成功
+2024-02-24 22:22:28,551 - Closure_31 - INFO - defects4j checkout -p Closure -v 31b -w /home/chongchong/d4j-project/Closure_31
+2024-02-24 22:22:30,121 - Closure_31 - INFO - checkout Closure 31b 成功
+2024-02-24 22:22:41,643 - Closure_31 - INFO - 编译成功
+2024-02-24 22:23:27,828 - Closure_31 - INFO - 测试失败
+2024-02-24 22:23:27,828 - Closure_31 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testDependencySortingWhitespaceMode
+
+2024-02-24 22:23:28,838 - Closure_31 - INFO - 它的bug类型为:
+2024-02-24 22:23:28,838 - Closure_31 - INFO - 2
+2024-02-24 22:24:31,317 - Closure_31 - INFO - 开始验证补丁1 1:
+2024-02-24 22:24:31,317 - Closure_31 - INFO - 
+      !options.skipNonOptimizations &&
+
+2024-02-24 22:24:33,460 - Closure_31 - INFO - 编译失败
+2024-02-24 22:24:33,461 - Closure_31 - INFO - 错误: 找不到符号
+!options.skipNonOptimizations &&
+2024-02-24 22:24:33,461 - Closure_31 - INFO - 补丁1 1 未成功编译
+2024-02-24 22:24:33,462 - Closure_31 - INFO - 开始验证补丁1 2:
+2024-02-24 22:24:33,462 - Closure_31 - INFO - 
+      options.shouldSortDependencies() &&
+
+2024-02-24 22:24:35,620 - Closure_31 - INFO - 编译失败
+2024-02-24 22:24:35,620 - Closure_31 - INFO - 错误: 找不到符号
+options.shouldSortDependencies() &&
+2024-02-24 22:24:35,620 - Closure_31 - INFO - 补丁1 2 未成功编译
+2024-02-24 22:24:35,621 - Closure_31 - INFO - 开始验证补丁1 3:
+2024-02-24 22:24:35,621 - Closure_31 - INFO - 
+      // Assuming removal of the negation is intentional and a method checking if 
+      // dependency sorting is not skipped
+      !options.skipDependencySorting &&
+
+2024-02-24 22:24:37,773 - Closure_31 - INFO - 编译失败
+2024-02-24 22:24:37,773 - Closure_31 - INFO - 错误: 找不到符号
+!options.skipDependencySorting &&
+2024-02-24 22:24:37,773 - Closure_31 - INFO - 补丁1 3 未成功编译
+2024-02-24 22:24:37,774 - Closure_31 - INFO - 开始验证补丁1 4:
+2024-02-24 22:24:37,774 - Closure_31 - INFO - 
+   !options.skipAllPasses &&
+   
+2024-02-24 22:24:42,277 - Closure_31 - INFO - 编译成功
+2024-02-24 22:25:29,142 - Closure_31 - INFO - 测试失败
+2024-02-24 22:25:29,142 - Closure_31 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testDependencySortingWhitespaceMode
+
+2024-02-24 22:25:29,651 - Closure_31 - INFO - 选择失败的测试用例为:
+2024-02-24 22:25:29,651 - Closure_31 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testDependencySortingWhitespaceMode
+2024-02-24 22:25:29,651 - Closure_31 - INFO - 失败的测试代码为:
+2024-02-24 22:25:29,651 - Closure_31 - INFO -     test(new String[] {
+
+2024-02-24 22:25:29,651 - Closure_31 - INFO - 失败信息为:
+2024-02-24 22:25:29,651 - Closure_31 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 22:25:29,651 - Closure_31 - INFO - 补丁1 4测试失败
+2024-02-24 22:25:29,652 - Closure_31 - INFO - 开始验证补丁1 5:
+2024-02-24 22:25:29,652 - Closure_31 - INFO - 
+   options.skipAllPasses &&
+   
+2024-02-24 22:25:34,165 - Closure_31 - INFO - 编译成功
+2024-02-24 22:26:20,961 - Closure_31 - INFO - 测试失败
+2024-02-24 22:26:20,961 - Closure_31 - INFO - Failing tests: 12
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn3
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn4
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn5
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn6
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingCircularDeps1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingCircularDeps2
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testOnlyClosureDependenciesOneEntryPoint
+  - com.google.javascript.jscomp.CompilerTest::testCommonJSProvidesAndRequire
+
+2024-02-24 22:26:21,473 - Closure_31 - INFO - 选择失败的测试用例为:
+2024-02-24 22:26:21,473 - Closure_31 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+2024-02-24 22:26:21,473 - Closure_31 - INFO - 失败的测试代码为:
+2024-02-24 22:26:21,473 - Closure_31 - INFO -     test(new String[] {
+
+2024-02-24 22:26:21,473 - Closure_31 - INFO - 失败信息为:
+2024-02-24 22:26:21,473 - Closure_31 - INFO - junit.framework.AssertionFailedError: Expected no warnings or errors
+
+2024-02-24 22:26:21,473 - Closure_31 - INFO - 补丁1 5测试失败
+2024-02-24 22:26:21,474 - Closure_31 - INFO - 开始验证补丁1 6:
+2024-02-24 22:26:21,474 - Closure_31 - INFO - 
+   options.someOtherRelevantCondition &&
+   
+2024-02-24 22:26:23,631 - Closure_31 - INFO - 编译失败
+2024-02-24 22:26:23,631 - Closure_31 - INFO - 错误: 找不到符号
+options.someOtherRelevantCondition &&
+2024-02-24 22:26:23,631 - Closure_31 - INFO - 补丁1 6 未成功编译
+2024-02-24 22:26:23,632 - Closure_31 - INFO - 开始验证补丁1 7:
+2024-02-24 22:26:23,632 - Closure_31 - INFO - 
+!options.skipNonTranspilationPasses &&
+
+2024-02-24 22:26:25,770 - Closure_31 - INFO - 编译失败
+2024-02-24 22:26:25,770 - Closure_31 - INFO - 错误: 找不到符号
+!options.skipNonTranspilationPasses &&
+2024-02-24 22:26:25,771 - Closure_31 - INFO - 补丁1 7 未成功编译
+2024-02-24 22:26:25,772 - Closure_31 - INFO - 开始验证补丁1 8:
+2024-02-24 22:26:25,772 - Closure_31 - INFO - 
+options.dependencyOptions.shouldSortDependencies() &&
+
+2024-02-24 22:26:30,237 - Closure_31 - INFO - 编译成功
+2024-02-24 22:27:16,492 - Closure_31 - INFO - 测试成功
+2024-02-24 22:27:16,492 - Closure_31 - INFO - 补丁1 8 通过了所有的测试用例

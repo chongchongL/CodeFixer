@@ -1,0 +1,22 @@
+2024-02-25 12:59:35,482 - Math_73 - INFO - rm -rf /home/chongchong/d4j-project/Math_73
+2024-02-25 12:59:35,483 - Math_73 - INFO - 删除 Math 73b 成功
+2024-02-25 12:59:35,483 - Math_73 - INFO - defects4j checkout -p Math -v 73b -w /home/chongchong/d4j-project/Math_73
+2024-02-25 12:59:37,904 - Math_73 - INFO - checkout Math 73b 成功
+2024-02-25 12:59:43,576 - Math_73 - INFO - 编译成功
+2024-02-25 12:59:50,201 - Math_73 - INFO - 测试失败
+2024-02-25 12:59:50,201 - Math_73 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BrentSolverTest::testBadEndpoints
+
+2024-02-25 12:59:51,127 - Math_73 - INFO - 它的bug类型为:
+2024-02-25 12:59:51,128 - Math_73 - INFO - 3
+2024-02-25 13:00:56,564 - Math_73 - INFO - 开始验证补丁1 1:
+2024-02-25 13:00:56,564 - Math_73 - INFO - 
+        // Check if the interval [min, max] brackets the root, if not throw an exception
+        if (yMin * yMax >= 0) {
+            throw new IllegalArgumentException("Function values at the interval endpoints must have different signs");
+        }
+
+
+2024-02-25 13:00:57,790 - Math_73 - INFO - 编译成功
+2024-02-25 13:01:04,390 - Math_73 - INFO - 测试成功
+2024-02-25 13:01:04,390 - Math_73 - INFO - 补丁1 1 通过了所有的测试用例

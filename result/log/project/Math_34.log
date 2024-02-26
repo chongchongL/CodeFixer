@@ -1,0 +1,30 @@
+2024-02-24 01:04:49,381 - Math_34 - INFO - rm -rf /home/chongchong/d4j-project/Math_34
+2024-02-24 01:04:49,382 - Math_34 - INFO - 删除 Math 34b 成功
+2024-02-24 01:04:49,382 - Math_34 - INFO - defects4j checkout -p Math -v 34b -w /home/chongchong/d4j-project/Math_34
+2024-02-24 01:04:52,835 - Math_34 - INFO - checkout Math 34b 成功
+2024-02-24 01:04:59,472 - Math_34 - INFO - 编译成功
+2024-02-24 01:05:29,198 - Math_34 - INFO - 测试失败
+2024-02-24 01:05:29,198 - Math_34 - INFO - Failing tests: 1
+  - org.apache.commons.math3.genetics.ListPopulationTest::testIterator
+
+2024-02-24 01:05:30,114 - Math_34 - INFO - 它的bug类型为:
+2024-02-24 01:05:30,115 - Math_34 - INFO - 1
+2024-02-24 01:05:55,460 - Math_34 - INFO - Math_34 未成功修复
+2024-02-24 09:33:52,677 - Math_34 - INFO - rm -rf /home/chongchong/d4j-project/Math_34
+2024-02-24 09:33:52,712 - Math_34 - INFO - 删除 Math 34b 成功
+2024-02-24 09:33:52,712 - Math_34 - INFO - defects4j checkout -p Math -v 34b -w /home/chongchong/d4j-project/Math_34
+2024-02-24 09:33:56,154 - Math_34 - INFO - checkout Math 34b 成功
+2024-02-24 09:34:02,781 - Math_34 - INFO - 编译成功
+2024-02-24 09:34:32,128 - Math_34 - INFO - 测试失败
+2024-02-24 09:34:32,128 - Math_34 - INFO - Failing tests: 1
+  - org.apache.commons.math3.genetics.ListPopulationTest::testIterator
+
+2024-02-24 09:34:33,037 - Math_34 - INFO - 它的bug类型为:
+2024-02-24 09:34:33,037 - Math_34 - INFO - 1
+2024-02-24 09:35:04,439 - Math_34 - INFO - 开始验证补丁1 1:
+2024-02-24 09:35:04,439 - Math_34 - INFO - 
+   return Collections.unmodifiableList(chromosomes).iterator();
+   
+2024-02-24 09:35:05,686 - Math_34 - INFO - 编译成功
+2024-02-24 09:35:35,328 - Math_34 - INFO - 测试成功
+2024-02-24 09:35:35,328 - Math_34 - INFO - 补丁1 1 通过了所有的测试用例

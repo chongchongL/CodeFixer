@@ -1,0 +1,18 @@
+2024-02-24 09:08:22,645 - Math_11 - INFO - rm -rf /home/chongchong/d4j-project/Math_11
+2024-02-24 09:08:22,703 - Math_11 - INFO - 删除 Math 11b 成功
+2024-02-24 09:08:22,703 - Math_11 - INFO - defects4j checkout -p Math -v 11b -w /home/chongchong/d4j-project/Math_11
+2024-02-24 09:08:26,136 - Math_11 - INFO - checkout Math 11b 成功
+2024-02-24 09:08:33,142 - Math_11 - INFO - 编译成功
+2024-02-24 09:09:25,737 - Math_11 - INFO - 测试失败
+2024-02-24 09:09:25,737 - Math_11 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.MultivariateNormalDistributionTest::testUnivariateDistribution
+
+2024-02-24 09:09:26,657 - Math_11 - INFO - 它的bug类型为:
+2024-02-24 09:09:26,657 - Math_11 - INFO - 1
+2024-02-24 09:10:09,355 - Math_11 - INFO - 开始验证补丁1 1:
+2024-02-24 09:10:09,355 - Math_11 - INFO - 
+return FastMath.pow(2 * FastMath.PI, -0.5 * dim) *
+
+2024-02-24 09:10:10,612 - Math_11 - INFO - 编译成功
+2024-02-24 09:11:03,219 - Math_11 - INFO - 测试成功
+2024-02-24 09:11:03,219 - Math_11 - INFO - 补丁1 1 通过了所有的测试用例

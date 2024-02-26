@@ -1,0 +1,364 @@
+2024-02-25 10:57:29,179 - Closure_36 - INFO - rm -rf /home/chongchong/d4j-project/Closure_36
+2024-02-25 10:57:29,180 - Closure_36 - INFO - 删除 Closure 36b 成功
+2024-02-25 10:57:29,180 - Closure_36 - INFO - defects4j checkout -p Closure -v 36b -w /home/chongchong/d4j-project/Closure_36
+2024-02-25 10:57:31,161 - Closure_36 - INFO - checkout Closure 36b 成功
+2024-02-25 10:57:42,737 - Closure_36 - INFO - 编译成功
+2024-02-25 10:58:28,452 - Closure_36 - INFO - 测试失败
+2024-02-25 10:58:28,452 - Closure_36 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testSingletonGetter1
+
+2024-02-25 10:58:29,464 - Closure_36 - INFO - 它的bug类型为:
+2024-02-25 10:58:29,464 - Closure_36 - INFO - 3
+2024-02-25 10:59:35,287 - Closure_36 - INFO - 开始验证补丁1 1:
+2024-02-25 10:59:35,287 - Closure_36 - INFO - 
+          // Calls as this would confuse class removing logic.
+        }
+
+2024-02-25 10:59:37,104 - Closure_36 - INFO - 编译失败
+2024-02-25 10:59:37,105 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 10:59:37,105 - Closure_36 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:59:37,106 - Closure_36 - INFO - 开始验证补丁1 2:
+2024-02-25 10:59:37,106 - Closure_36 - INFO - 
+          // Calls as this would confuse class removing logic.
+          return true;
+        }
+
+2024-02-25 10:59:38,906 - Closure_36 - INFO - 编译失败
+2024-02-25 10:59:38,906 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 10:59:38,906 - Closure_36 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:59:38,907 - Closure_36 - INFO - 开始验证补丁1 3:
+2024-02-25 10:59:38,907 - Closure_36 - INFO - 
+          // Calls as this would confuse class removing logic.
+          // Additional logic might be here
+        }
+
+2024-02-25 10:59:40,711 - Closure_36 - INFO - 编译失败
+2024-02-25 10:59:40,711 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 10:59:40,711 - Closure_36 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:59:40,712 - Closure_36 - INFO - 开始验证补丁1 4:
+2024-02-25 10:59:40,712 - Closure_36 - INFO - 
+// Assuming that there is an unintentional extra closing brace
+// Remove the erroneous closing brace
+
+2024-02-25 10:59:44,802 - Closure_36 - INFO - 编译成功
+2024-02-25 11:00:30,681 - Closure_36 - INFO - 测试失败
+2024-02-25 11:00:30,681 - Closure_36 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testSingletonGetter1
+
+2024-02-25 11:00:31,213 - Closure_36 - INFO - 选择失败的测试用例为:
+2024-02-25 11:00:31,213 - Closure_36 - INFO - com.google.javascript.jscomp.IntegrationTest::testSingletonGetter1
+2024-02-25 11:00:31,213 - Closure_36 - INFO - 失败的测试代码为:
+2024-02-25 11:00:31,213 - Closure_36 - INFO -     test(options,
+
+2024-02-25 11:00:31,213 - Closure_36 - INFO - 失败信息为:
+2024-02-25 11:00:31,213 - Closure_36 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:00:31,213 - Closure_36 - INFO - 补丁1 4测试失败
+2024-02-25 11:00:31,214 - Closure_36 - INFO - 开始验证补丁1 5:
+2024-02-25 11:00:31,214 - Closure_36 - INFO - 
+// If the code inside the conditional statement is missing, we might need to include it
+if (isSingletonGetter(callNode)) { 
+    return false; 
+}
+
+2024-02-25 11:00:33,173 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:33,173 - Closure_36 - INFO - 错误: 找不到符号
+if (isSingletonGetter(callNode)) {
+2024-02-25 11:00:33,173 - Closure_36 - INFO - 补丁1 5 未成功编译
+2024-02-25 11:00:33,175 - Closure_36 - INFO - 开始验证补丁1 6:
+2024-02-25 11:00:33,175 - Closure_36 - INFO - 
+// If the missing part is the code that should precede the 'return' statement
+if (!convention.shouldInlineSingletonGetter()) { 
+    return false; 
+}
+
+2024-02-25 11:00:35,140 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:35,140 - Closure_36 - INFO - 错误: 找不到符号
+if (!convention.shouldInlineSingletonGetter()) {
+2024-02-25 11:00:35,140 - Closure_36 - INFO - 补丁1 6 未成功编译
+2024-02-25 11:00:35,141 - Closure_36 - INFO - 开始验证补丁1 7:
+2024-02-25 11:00:35,141 - Closure_36 - INFO - 
+          if (relationship != null) {
+            return false;
+          }
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+      } // Remove the erroneous curly brace
+
+      return canMoveAggressively(value) ||
+          canMoveModerately(initialization, reference);
+    }
+
+2024-02-25 11:00:36,923 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:36,923 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:36,923 - Closure_36 - INFO - 补丁1 7 未成功编译
+2024-02-25 11:00:36,924 - Closure_36 - INFO - 开始验证补丁1 8:
+2024-02-25 11:00:36,924 - Closure_36 - INFO - 
+          if (relationship != null) {
+            return false;
+          } // Add the closing brace for the if statement
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+        } // Keep the existing brace as it may close another block
+
+      return canMoveAggressively(value) ||
+          canMoveModerately(initialization, reference);
+    }
+
+2024-02-25 11:00:38,740 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:38,740 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:38,740 - Closure_36 - INFO - 补丁1 8 未成功编译
+2024-02-25 11:00:38,742 - Closure_36 - INFO - 开始验证补丁1 9:
+2024-02-25 11:00:38,742 - Closure_36 - INFO - 
+          if (relationship != null) {
+            return false;
+          } else {
+            // Potentially missing logic goes here
+          }
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+      }
+
+      return canMoveAggressively(value) ||
+          canMoveModerately(initialization, reference);
+    }
+
+2024-02-25 11:00:40,572 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:40,572 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:40,573 - Closure_36 - INFO - 补丁1 9 未成功编译
+2024-02-25 11:00:40,574 - Closure_36 - INFO - 开始验证补丁2 1:
+2024-02-25 11:00:40,574 - Closure_36 - INFO - 
+          if (isSingletonGetterMethod(callNode)) {
+              return false;
+          }
+      }
+
+2024-02-25 11:00:42,371 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:42,371 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:42,371 - Closure_36 - INFO - 补丁2 1 未成功编译
+2024-02-25 11:00:42,373 - Closure_36 - INFO - 开始验证补丁2 2:
+2024-02-25 11:00:42,373 - Closure_36 - INFO - 
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+      }
+
+2024-02-25 11:00:44,154 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:44,154 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:44,154 - Closure_36 - INFO - 补丁2 2 未成功编译
+2024-02-25 11:00:44,155 - Closure_36 - INFO - 开始验证补丁2 3:
+2024-02-25 11:00:44,155 - Closure_36 - INFO - 
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+          }
+      }
+
+2024-02-25 11:00:45,946 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:45,946 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:45,947 - Closure_36 - INFO - 补丁2 3 未成功编译
+2024-02-25 11:00:45,948 - Closure_36 - INFO - 开始验证补丁2 4:
+2024-02-25 11:00:45,948 - Closure_36 - INFO - 
+          } // This closes the if block
+  
+2024-02-25 11:00:47,731 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:47,731 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:47,731 - Closure_36 - INFO - 补丁2 4 未成功编译
+2024-02-25 11:00:47,732 - Closure_36 - INFO - 开始验证补丁2 5:
+2024-02-25 11:00:47,732 - Closure_36 - INFO - 
+          // code related to the 'if' condition or loop if it was open
+          }
+  
+2024-02-25 11:00:49,535 - Closure_36 - INFO - 编译失败
+2024-02-25 11:00:49,535 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:00:49,535 - Closure_36 - INFO - 补丁2 5 未成功编译
+2024-02-25 11:00:49,536 - Closure_36 - INFO - 开始验证补丁2 6:
+2024-02-25 11:00:49,536 - Closure_36 - INFO - 
+          // Remove the solitary closing brace if it was superfluous and incorrectly placed
+  
+2024-02-25 11:00:53,603 - Closure_36 - INFO - 编译成功
+2024-02-25 11:01:39,580 - Closure_36 - INFO - 测试失败
+2024-02-25 11:01:39,580 - Closure_36 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testSingletonGetter1
+
+2024-02-25 11:01:40,093 - Closure_36 - INFO - 选择失败的测试用例为:
+2024-02-25 11:01:40,093 - Closure_36 - INFO - com.google.javascript.jscomp.IntegrationTest::testSingletonGetter1
+2024-02-25 11:01:40,093 - Closure_36 - INFO - 失败的测试代码为:
+2024-02-25 11:01:40,093 - Closure_36 - INFO -     test(options,
+
+2024-02-25 11:01:40,093 - Closure_36 - INFO - 失败信息为:
+2024-02-25 11:01:40,093 - Closure_36 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:01:40,093 - Closure_36 - INFO - 补丁2 6测试失败
+2024-02-25 11:01:40,095 - Closure_36 - INFO - 开始验证补丁2 7:
+2024-02-25 11:01:40,095 - Closure_36 - INFO - 
+        } // Correctly closing the previous block before the comment
+
+2024-02-25 11:01:41,888 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:41,888 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:41,888 - Closure_36 - INFO - 补丁2 7 未成功编译
+2024-02-25 11:01:41,890 - Closure_36 - INFO - 开始验证补丁2 8:
+2024-02-25 11:01:41,890 - Closure_36 - INFO - 
+        if (singletonGetterCondition) {
+          // Some logic related to singleton getters
+        }
+
+2024-02-25 11:01:43,883 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:43,883 - Closure_36 - INFO - 错误: 找不到符号
+if (singletonGetterCondition) {
+2024-02-25 11:01:43,883 - Closure_36 - INFO - 补丁2 8 未成功编译
+2024-02-25 11:01:43,884 - Closure_36 - INFO - 开始验证补丁2 9:
+2024-02-25 11:01:43,884 - Closure_36 - INFO - 
+        }
+        // Additional code might be here
+        // More logic or conditions
+      } // Correctly closing another block, if the previous solutions were not fitting the context
+
+2024-02-25 11:01:45,676 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:45,676 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:45,676 - Closure_36 - INFO - 补丁2 9 未成功编译
+2024-02-25 11:01:45,677 - Closure_36 - INFO - 开始验证补丁3 1:
+2024-02-25 11:01:45,677 - Closure_36 - INFO - 
+          // issue 668: Don't inline singleton getter methods
+          // Calls as this confused class removing logic.
+          return false; // Prevent inlining
+      }
+
+2024-02-25 11:01:47,451 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:47,451 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:47,451 - Closure_36 - INFO - 补丁3 1 未成功编译
+2024-02-25 11:01:47,452 - Closure_36 - INFO - 开始验证补丁3 2:
+2024-02-25 11:01:47,452 - Closure_36 - INFO - 
+          // issue 668: Don't inline singleton getter methods
+          // Calls as this confused class removing logic.
+          // Intentionally left blank to prevent inlining
+      }
+
+2024-02-25 11:01:49,244 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:49,244 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:49,244 - Closure_36 - INFO - 补丁3 2 未成功编译
+2024-02-25 11:01:49,245 - Closure_36 - INFO - 开始验证补丁3 3:
+2024-02-25 11:01:49,245 - Closure_36 - INFO - 
+          // issue 668: Don't inline singleton getter methods
+          // Calls as this confused class removing logic.
+          // Additional logic pertaining to singleton getter methods could be added here in the future
+      }
+
+2024-02-25 11:01:51,065 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:51,065 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:51,066 - Closure_36 - INFO - 补丁3 3 未成功编译
+2024-02-25 11:01:51,067 - Closure_36 - INFO - 开始验证补丁3 4:
+2024-02-25 11:01:51,067 - Closure_36 - INFO - 
+          // Properly close the if statement block
+          }
+
+2024-02-25 11:01:52,842 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:52,842 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:52,842 - Closure_36 - INFO - 补丁3 4 未成功编译
+2024-02-25 11:01:52,843 - Closure_36 - INFO - 开始验证补丁3 5:
+2024-02-25 11:01:52,843 - Closure_36 - INFO - 
+          // Properly close the if statement block and add an else block
+          } else {
+            // Relevant logic to be executed if relationship is not null
+          }
+
+2024-02-25 11:01:54,667 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:54,667 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:54,667 - Closure_36 - INFO - 补丁3 5 未成功编译
+2024-02-25 11:01:54,668 - Closure_36 - INFO - 开始验证补丁3 6:
+2024-02-25 11:01:54,668 - Closure_36 - INFO - 
+          // Blocks for additional logic that may have been mistakenly removed
+          } else if (someCondition) {
+            // Insert additional conditions and logic here
+          }
+          // Then close the block
+          }
+
+2024-02-25 11:01:56,461 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:56,461 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:01:56,461 - Closure_36 - INFO - 补丁3 6 未成功编译
+2024-02-25 11:01:56,462 - Closure_36 - INFO - 开始验证补丁3 7:
+2024-02-25 11:01:56,462 - Closure_36 - INFO - 
+          convention.getClassesDefinedByCall(callNode);
+          if (relationship != null) {
+            return false;
+          }
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+          // Correction: close the `if` block and the function properly
+        }
+      }
+
+      return canMoveAggressively(value) ||
+          canMoveModerately(initialization, reference);
+    }
+
+2024-02-25 11:01:58,240 - Closure_36 - INFO - 编译失败
+2024-02-25 11:01:58,240 - Closure_36 - INFO - 错误: 需要class, interface或enum
+return canMoveAggressively(value) ||
+2024-02-25 11:01:58,241 - Closure_36 - INFO - 补丁3 7 未成功编译
+2024-02-25 11:01:58,242 - Closure_36 - INFO - 开始验证补丁3 8:
+2024-02-25 11:01:58,242 - Closure_36 - INFO - 
+          convention.getClassesDefinedByCall(callNode);
+          if (relationship != null) {
+            return false;
+          }
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+          // Correction: close the `if` block and possibly add missing code
+        }
+        // Assume potential missing logic here
+        // ... (code logic related to singleton getter or other operations)
+      }
+
+      return canMoveAggressively(value) ||
+          canMoveModerately(initialization, reference);
+    }
+
+2024-02-25 11:02:00,029 - Closure_36 - INFO - 编译失败
+2024-02-25 11:02:00,029 - Closure_36 - INFO - 错误: 需要class, interface或enum
+return canMoveAggressively(value) ||
+2024-02-25 11:02:00,029 - Closure_36 - INFO - 补丁3 8 未成功编译
+2024-02-25 11:02:00,030 - Closure_36 - INFO - 开始验证补丁3 9:
+2024-02-25 11:02:00,030 - Closure_36 - INFO - 
+          convention.getClassesDefinedByCall(callNode);
+          if (relationship != null) {
+            return false;
+          }
+
+          // issue 668: Don't inline singleton getter methods
+          // calls as this confused class removing logic.
+          // Correction: remove both `}` presuming they are erroneous extra braces
+        }
+
+      return canMoveAggressively(value) ||
+          canMoveModerately(initialization, reference);
+    }
+
+2024-02-25 11:02:01,818 - Closure_36 - INFO - 编译失败
+2024-02-25 11:02:01,818 - Closure_36 - INFO - 错误: 非法的类型开始
+return canMoveAggressively(value) ||
+2024-02-25 11:02:01,818 - Closure_36 - INFO - 补丁3 9 未成功编译
+2024-02-25 11:02:01,818 - Closure_36 - INFO - Closure_36 未成功修复

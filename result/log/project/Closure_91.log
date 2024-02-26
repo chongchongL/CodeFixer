@@ -1,0 +1,386 @@
+2024-02-25 11:22:08,551 - Closure_91 - INFO - rm -rf /home/chongchong/d4j-project/Closure_91
+2024-02-25 11:22:08,552 - Closure_91 - INFO - 删除 Closure 91b 成功
+2024-02-25 11:22:08,552 - Closure_91 - INFO - defects4j checkout -p Closure -v 91b -w /home/chongchong/d4j-project/Closure_91
+2024-02-25 11:22:10,123 - Closure_91 - INFO - checkout Closure 91b 成功
+2024-02-25 11:22:16,218 - Closure_91 - INFO - 编译成功
+2024-02-25 11:22:46,720 - Closure_91 - INFO - 测试失败
+2024-02-25 11:22:46,720 - Closure_91 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+
+2024-02-25 11:22:47,596 - Closure_91 - INFO - 它的bug类型为:
+2024-02-25 11:22:47,596 - Closure_91 - INFO - 3
+2024-02-25 11:23:49,688 - Closure_91 - INFO - 开始验证补丁1 1:
+2024-02-25 11:23:49,688 - Closure_91 - INFO - 
+// Traversing function arguments if not object literal keys
+if (pType == Token.CALL) {
+  return true;
+}
+
+2024-02-25 11:23:50,829 - Closure_91 - INFO - 编译成功
+2024-02-25 11:24:19,861 - Closure_91 - INFO - 测试失败
+2024-02-25 11:24:19,861 - Closure_91 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+
+2024-02-25 11:24:20,294 - Closure_91 - INFO - 选择失败的测试用例为:
+2024-02-25 11:24:20,294 - Closure_91 - INFO - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+2024-02-25 11:24:20,294 - Closure_91 - INFO - 失败的测试代码为:
+2024-02-25 11:24:20,294 - Closure_91 - INFO -     testSame("/** @constructor */ function F() {}" +
+
+2024-02-25 11:24:20,294 - Closure_91 - INFO - 失败信息为:
+2024-02-25 11:24:20,295 - Closure_91 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_USED_GLOBAL_THIS. dangerous use of the global this object at testcode line 1 : 110 expected:<0> but was:<1>
+
+2024-02-25 11:24:20,295 - Closure_91 - INFO - 补丁1 1测试失败
+2024-02-25 11:24:20,296 - Closure_91 - INFO - 开始验证补丁1 2:
+2024-02-25 11:24:20,296 - Closure_91 - INFO - 
+// Continue traversal in case of function call
+if (pType == Token.CALL) {
+  return true;
+}
+
+2024-02-25 11:24:21,425 - Closure_91 - INFO - 编译成功
+2024-02-25 11:24:50,731 - Closure_91 - INFO - 测试失败
+2024-02-25 11:24:50,731 - Closure_91 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+
+2024-02-25 11:24:51,166 - Closure_91 - INFO - 选择失败的测试用例为:
+2024-02-25 11:24:51,166 - Closure_91 - INFO - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+2024-02-25 11:24:51,166 - Closure_91 - INFO - 失败的测试代码为:
+2024-02-25 11:24:51,166 - Closure_91 - INFO -     testSame("/** @constructor */ function F() {}" +
+
+2024-02-25 11:24:51,166 - Closure_91 - INFO - 失败信息为:
+2024-02-25 11:24:51,166 - Closure_91 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_USED_GLOBAL_THIS. dangerous use of the global this object at testcode line 1 : 110 expected:<0> but was:<1>
+
+2024-02-25 11:24:51,166 - Closure_91 - INFO - 补丁1 2测试失败
+2024-02-25 11:24:51,167 - Closure_91 - INFO - 开始验证补丁1 3:
+2024-02-25 11:24:51,167 - Closure_91 - INFO - 
+// Handle function call scenarios
+if (pType == Token.CALL) {
+  return true;
+}
+
+2024-02-25 11:24:52,305 - Closure_91 - INFO - 编译成功
+2024-02-25 11:25:21,758 - Closure_91 - INFO - 测试失败
+2024-02-25 11:25:21,758 - Closure_91 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+
+2024-02-25 11:25:22,190 - Closure_91 - INFO - 选择失败的测试用例为:
+2024-02-25 11:25:22,191 - Closure_91 - INFO - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+2024-02-25 11:25:22,191 - Closure_91 - INFO - 失败的测试代码为:
+2024-02-25 11:25:22,191 - Closure_91 - INFO -     testSame("/** @constructor */ function F() {}" +
+
+2024-02-25 11:25:22,191 - Closure_91 - INFO - 失败信息为:
+2024-02-25 11:25:22,191 - Closure_91 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_USED_GLOBAL_THIS. dangerous use of the global this object at testcode line 1 : 110 expected:<0> but was:<1>
+
+2024-02-25 11:25:22,191 - Closure_91 - INFO - 补丁1 3测试失败
+2024-02-25 11:25:22,192 - Closure_91 - INFO - 开始验证补丁1 4:
+2024-02-25 11:25:22,192 - Closure_91 - INFO - 
+      if (n.isFunction()) {
+        return false;
+      }
+
+2024-02-25 11:25:22,915 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:22,915 - Closure_91 - INFO - 错误: 找不到符号
+if (n.isFunction()) {
+2024-02-25 11:25:22,915 - Closure_91 - INFO - 补丁1 4 未成功编译
+2024-02-25 11:25:22,916 - Closure_91 - INFO - 开始验证补丁1 5:
+2024-02-25 11:25:22,916 - Closure_91 - INFO - 
+      if (n.isFunction() && !n.hasOneChild()) {
+        return false;
+      }
+
+2024-02-25 11:25:23,642 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:23,642 - Closure_91 - INFO - 错误: 找不到符号
+if (n.isFunction() && !n.hasOneChild()) {
+2024-02-25 11:25:23,642 - Closure_91 - INFO - 补丁1 5 未成功编译
+2024-02-25 11:25:23,643 - Closure_91 - INFO - 开始验证补丁1 6:
+2024-02-25 11:25:23,644 - Closure_91 - INFO - 
+      if (n.isFunction() && "F".equals(n.getFirstChild().getString())) {
+        return false;
+      }
+
+2024-02-25 11:25:24,378 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:24,378 - Closure_91 - INFO - 错误: 找不到符号
+if (n.isFunction() && "F".equals(n.getFirstChild().getString())) {
+2024-02-25 11:25:24,378 - Closure_91 - INFO - 补丁1 6 未成功编译
+2024-02-25 11:25:24,379 - Closure_91 - INFO - 开始验证补丁1 7:
+2024-02-25 11:25:24,379 - Closure_91 - INFO - 
+      // ... previous code indicating checks for token types
+      return true;
+    }
+    // Additional checks or functionality could be placed here
+    // This could be a correct place to continue the logic after the return statement
+
+2024-02-25 11:25:24,947 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:24,947 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:25:24,947 - Closure_91 - INFO - 补丁1 7 未成功编译
+2024-02-25 11:25:24,948 - Closure_91 - INFO - 开始验证补丁1 8:
+2024-02-25 11:25:24,948 - Closure_91 - INFO - 
+      // ... previous code indicating checks for token types
+      return false;
+    }
+    
+    // If the current node represents a function, do not traverse into it if it's lent to a prototype
+    if (nType == Token.FUNCTION && isLentToPrototype(n)) {
+        return false;
+    }
+
+2024-02-25 11:25:25,509 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:25,509 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:25:25,509 - Closure_91 - INFO - 补丁1 8 未成功编译
+2024-02-25 11:25:25,510 - Closure_91 - INFO - 开始验证补丁1 9:
+2024-02-25 11:25:25,510 - Closure_91 - INFO - 
+      // ... previous code indicating checks for token types
+      return false;
+    }
+    // Ensure 'this' is not used in a global context or a static method
+    if (usedInWrongContext(this)) {
+        reportError("Dangerous use of the global 'this' object");
+    }
+
+2024-02-25 11:25:26,058 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:26,058 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:25:26,058 - Closure_91 - INFO - 补丁1 9 未成功编译
+2024-02-25 11:25:26,059 - Closure_91 - INFO - 开始验证补丁2 1:
+2024-02-25 11:25:26,059 - Closure_91 - INFO - 
+      return true;
+
+2024-02-25 11:25:27,203 - Closure_91 - INFO - 编译成功
+2024-02-25 11:25:56,200 - Closure_91 - INFO - 测试失败
+2024-02-25 11:25:56,200 - Closure_91 - INFO - Failing tests: 8
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testStaticFunctionInMethod1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testStaticFunctionInMethod2
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testMethodInStaticFunction
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testMethod1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testMethod2
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testMethod3
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testMethod4
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+
+2024-02-25 11:25:56,633 - Closure_91 - INFO - 选择失败的测试用例为:
+2024-02-25 11:25:56,634 - Closure_91 - INFO - com.google.javascript.jscomp.CheckGlobalThisTest::testStaticFunctionInMethod1
+2024-02-25 11:25:56,634 - Closure_91 - INFO - 失败的测试代码为:
+2024-02-25 11:25:56,634 - Closure_91 - INFO -     testSame("A.prototype.m1 = function() { function me() { this.m2 = 5; } }");
+
+2024-02-25 11:25:56,634 - Closure_91 - INFO - 失败信息为:
+2024-02-25 11:25:56,634 - Closure_91 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_USED_GLOBAL_THIS. dangerous use of the global this object at testcode line 1 : 46 expected:<0> but was:<1>
+
+2024-02-25 11:25:56,634 - Closure_91 - INFO - 补丁2 1测试失败
+2024-02-25 11:25:56,635 - Closure_91 - INFO - 开始验证补丁2 2:
+2024-02-25 11:25:56,635 - Closure_91 - INFO - 
+    }
+    return true;
+
+2024-02-25 11:25:57,187 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:57,187 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:25:57,187 - Closure_91 - INFO - 补丁2 2 未成功编译
+2024-02-25 11:25:57,188 - Closure_91 - INFO - 开始验证补丁2 3:
+2024-02-25 11:25:57,188 - Closure_91 - INFO - 
+      }
+      return true;
+    }
+
+2024-02-25 11:25:57,738 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:57,738 - Closure_91 - INFO - 错误: 需要class, interface或enum
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:25:57,738 - Closure_91 - INFO - 补丁2 3 未成功编译
+2024-02-25 11:25:57,740 - Closure_91 - INFO - 开始验证补丁2 4:
+2024-02-25 11:25:57,740 - Closure_91 - INFO - 
+      // Do not traverse object literal keys or function expressions.
+      if (nType == Token.OBJECTLIT ||
+          (nType == Token.FUNCTION &&
+           parentType == Token.ASSIGN && 
+           parent.getFirstChild().getType() == Token.NAME)) {
+        return false;
+      } // This is a possible logical continuation, ensuring not to traverse object literals or specific functions.
+
+2024-02-25 11:25:58,476 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:58,476 - Closure_91 - INFO - 错误: 找不到符号
+if (nType == Token.OBJECTLIT ||
+2024-02-25 11:25:58,476 - Closure_91 - INFO - 补丁2 4 未成功编译
+2024-02-25 11:25:58,478 - Closure_91 - INFO - 开始验证补丁2 5:
+2024-02-25 11:25:58,478 - Closure_91 - INFO - 
+      // Do not traverse if the parent is an object literal.
+      if (nType == Token.OBJECTLIT) {
+        return false;
+      } // This is a simpler alternative, focusing only on object literals.
+
+2024-02-25 11:25:59,203 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:59,203 - Closure_91 - INFO - 错误: 找不到符号
+if (nType == Token.OBJECTLIT) {
+2024-02-25 11:25:59,203 - Closure_91 - INFO - 补丁2 5 未成功编译
+2024-02-25 11:25:59,205 - Closure_91 - INFO - 开始验证补丁2 6:
+2024-02-25 11:25:59,205 - Closure_91 - INFO - 
+      // Skip traversal for specified tokens
+      if (Arrays.asList(Token.ASSIGN, Token.STRING, Token.NUMBER).contains(nType)) {
+        return false;
+      } // This is another permissive fix which checks an array of tokens and skips traversal if matched.
+
+2024-02-25 11:25:59,939 - Closure_91 - INFO - 编译失败
+2024-02-25 11:25:59,939 - Closure_91 - INFO - 错误: 找不到符号
+if (Arrays.asList(Token.ASSIGN, Token.STRING, Token.NUMBER).contains(nType)) {
+2024-02-25 11:25:59,939 - Closure_91 - INFO - 补丁2 6 未成功编译
+2024-02-25 11:25:59,940 - Closure_91 - INFO - 开始验证补丁2 7:
+2024-02-25 11:25:59,940 - Closure_91 - INFO - 
+} // Added closing brace to properly close the preceding block before the comment.
+
+2024-02-25 11:26:00,486 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:00,487 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:26:00,487 - Closure_91 - INFO - 补丁2 7 未成功编译
+2024-02-25 11:26:00,488 - Closure_91 - INFO - 开始验证补丁2 8:
+2024-02-25 11:26:00,488 - Closure_91 - INFO - 
+return true;
+} // Added return statement and closing brace
+
+2024-02-25 11:26:01,059 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:01,059 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:26:01,059 - Closure_91 - INFO - 补丁2 8 未成功编译
+2024-02-25 11:26:01,060 - Closure_91 - INFO - 开始验证补丁2 9:
+2024-02-25 11:26:01,060 - Closure_91 - INFO - 
+// Added an else branch with a closing brace for the previous if condition
+else {
+  // Code that should run when no previous conditions are met
+}
+
+2024-02-25 11:26:02,195 - Closure_91 - INFO - 编译成功
+2024-02-25 11:26:31,286 - Closure_91 - INFO - 测试失败
+2024-02-25 11:26:31,286 - Closure_91 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+
+2024-02-25 11:26:31,721 - Closure_91 - INFO - 选择失败的测试用例为:
+2024-02-25 11:26:31,721 - Closure_91 - INFO - com.google.javascript.jscomp.CheckGlobalThisTest::testLendsAnnotation3
+2024-02-25 11:26:31,721 - Closure_91 - INFO - 失败的测试代码为:
+2024-02-25 11:26:31,721 - Closure_91 - INFO -     testSame("/** @constructor */ function F() {}" +
+
+2024-02-25 11:26:31,721 - Closure_91 - INFO - 失败信息为:
+2024-02-25 11:26:31,721 - Closure_91 - INFO - junit.framework.AssertionFailedError: Unexpected error(s): JSC_USED_GLOBAL_THIS. dangerous use of the global this object at testcode line 1 : 110 expected:<0> but was:<1>
+
+2024-02-25 11:26:31,721 - Closure_91 - INFO - 补丁2 9测试失败
+2024-02-25 11:26:31,722 - Closure_91 - INFO - 开始验证补丁3 1:
+2024-02-25 11:26:31,722 - Closure_91 - INFO - 
+      if (!(parent.isAssign() && parent.getFirstChild().isThis())) {
+        return false;
+      }
+
+2024-02-25 11:26:32,440 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:32,440 - Closure_91 - INFO - 错误: 找不到符号
+if (!(parent.isAssign() && parent.getFirstChild().isThis())) {
+2024-02-25 11:26:32,440 - Closure_91 - INFO - 补丁3 1 未成功编译
+2024-02-25 11:26:32,441 - Closure_91 - INFO - 开始验证补丁3 2:
+2024-02-25 11:26:32,441 - Closure_91 - INFO - 
+      if (isDangerousUseOfThis(parent)) {
+        return false;
+      }
+
+2024-02-25 11:26:33,162 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:33,162 - Closure_91 - INFO - 错误: 找不到符号
+if (isDangerousUseOfThis(parent)) {
+2024-02-25 11:26:33,162 - Closure_91 - INFO - 补丁3 2 未成功编译
+2024-02-25 11:26:33,163 - Closure_91 - INFO - 开始验证补丁3 3:
+2024-02-25 11:26:33,163 - Closure_91 - INFO - 
+      if (parent.isAssign() && parent.getFirstChild().isName("this")) {
+        return false;
+      }
+
+2024-02-25 11:26:33,901 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:33,902 - Closure_91 - INFO - 错误: 找不到符号
+if (parent.isAssign() && parent.getFirstChild().isName("this")) {
+2024-02-25 11:26:33,902 - Closure_91 - INFO - 补丁3 3 未成功编译
+2024-02-25 11:26:33,903 - Closure_91 - INFO - 开始验证补丁3 4:
+2024-02-25 11:26:33,903 - Closure_91 - INFO - 
+            pType == Token.ASSIGN ||
+
+            // object literal keys
+            pType == Token.STRING ||
+            pType == Token.NUMBER)) {
+        return false;
+      } // Correctly closing the if statement block
+<fill>
+      // This block may include logic for handling `this` or continuing the AST traversal
+      // Ensure `this` is not used dangerously
+    }
+
+    // Rest of the code...
+
+2024-02-25 11:26:34,443 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:34,443 - Closure_91 - INFO - 错误: 不是语句
+pType == Token.STRING ||
+2024-02-25 11:26:34,443 - Closure_91 - INFO - 补丁3 4 未成功编译
+2024-02-25 11:26:34,444 - Closure_91 - INFO - 开始验证补丁3 5:
+2024-02-25 11:26:34,444 - Closure_91 - INFO - 
+            pType == Token.ASSIGN ||
+
+            // object literal keys
+            pType == Token.STRING ||
+            pType == Token.NUMBER)) {
+        return false;
+      }
+<fill>
+      if (NodeUtil.isGlobalThis(node)) { // Logic to check for the dangerous use of `this`
+        return false;
+      }
+      // Continue with other conditions or logic as required
+    }
+
+    // Rest of the code...
+
+2024-02-25 11:26:35,003 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:35,003 - Closure_91 - INFO - 错误: 不是语句
+pType == Token.STRING ||
+2024-02-25 11:26:35,003 - Closure_91 - INFO - 补丁3 5 未成功编译
+2024-02-25 11:26:35,004 - Closure_91 - INFO - 开始验证补丁3 6:
+2024-02-25 11:26:35,004 - Closure_91 - INFO - 
+            pType == Token.ASSIGN ||
+
+            // object literal keys
+            pType == Token.STRING ||
+            pType == Token.NUMBER)) {
+        return false;
+      }
+<fill>
+      if (NodeUtil.isInStaticContext(node)) { // Logic to check for use of `this` in a static context
+        return false;
+      }
+      // Additional logic may be necessary depending on the surrounding code context
+    }
+
+    // Rest of the code...
+
+2024-02-25 11:26:35,576 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:35,576 - Closure_91 - INFO - 错误: 不是语句
+pType == Token.STRING ||
+2024-02-25 11:26:35,576 - Closure_91 - INFO - 补丁3 6 未成功编译
+2024-02-25 11:26:35,577 - Closure_91 - INFO - 开始验证补丁3 7:
+2024-02-25 11:26:35,577 - Closure_91 - INFO - 
+      // Object literals are not traversable if they are key-value pairs.
+    }
+
+2024-02-25 11:26:36,130 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:36,130 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:26:36,130 - Closure_91 - INFO - 补丁3 7 未成功编译
+2024-02-25 11:26:36,131 - Closure_91 - INFO - 开始验证补丁3 8:
+2024-02-25 11:26:36,131 - Closure_91 - INFO - 
+      return false; // Object literals with simple key types don't need traversal.
+    }
+
+2024-02-25 11:26:36,677 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:36,677 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:26:36,677 - Closure_91 - INFO - 补丁3 8 未成功编译
+2024-02-25 11:26:36,678 - Closure_91 - INFO - 开始验证补丁3 9:
+2024-02-25 11:26:36,678 - Closure_91 - INFO - 
+    } else {
+      // Continue traversal for other types.
+    }
+
+2024-02-25 11:26:37,231 - Closure_91 - INFO - 编译失败
+2024-02-25 11:26:37,232 - Closure_91 - INFO - 错误: 非法的类型开始
+if (parent != null && parent.getType() == Token.ASSIGN) {
+2024-02-25 11:26:37,232 - Closure_91 - INFO - 补丁3 9 未成功编译
+2024-02-25 11:26:37,232 - Closure_91 - INFO - Closure_91 未成功修复

@@ -1,0 +1,48 @@
+2024-02-24 00:21:00,142 - Closure_18 - INFO - rm -rf /home/chongchong/d4j-project/Closure_18
+2024-02-24 00:21:00,143 - Closure_18 - INFO - 删除 Closure 18b 成功
+2024-02-24 00:21:00,143 - Closure_18 - INFO - defects4j checkout -p Closure -v 18b -w /home/chongchong/d4j-project/Closure_18
+2024-02-24 00:21:02,171 - Closure_18 - INFO - checkout Closure 18b 成功
+2024-02-24 00:21:13,867 - Closure_18 - INFO - 编译成功
+2024-02-24 00:22:02,458 - Closure_18 - INFO - 测试失败
+2024-02-24 00:22:02,458 - Closure_18 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testDependencySorting
+
+2024-02-24 00:22:03,493 - Closure_18 - INFO - 它的bug类型为:
+2024-02-24 00:22:03,493 - Closure_18 - INFO - 1
+2024-02-24 00:22:38,861 - Closure_18 - INFO - Closure_18 未成功修复
+2024-02-24 13:06:34,220 - Closure_18 - INFO - rm -rf /home/chongchong/d4j-project/Closure_18
+2024-02-24 13:06:34,272 - Closure_18 - INFO - 删除 Closure 18b 成功
+2024-02-24 13:06:34,272 - Closure_18 - INFO - defects4j checkout -p Closure -v 18b -w /home/chongchong/d4j-project/Closure_18
+2024-02-24 13:06:36,134 - Closure_18 - INFO - checkout Closure 18b 成功
+2024-02-24 13:06:47,593 - Closure_18 - INFO - 编译成功
+2024-02-24 13:07:35,395 - Closure_18 - INFO - 测试失败
+2024-02-24 13:07:35,395 - Closure_18 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testDependencySorting
+
+2024-02-24 13:07:36,408 - Closure_18 - INFO - 它的bug类型为:
+2024-02-24 13:07:36,408 - Closure_18 - INFO - 1
+2024-02-24 13:08:23,199 - Closure_18 - INFO - 开始验证补丁1 1:
+2024-02-24 13:08:23,199 - Closure_18 - INFO - 
+if (options.dependencyOptions.needsManagement() && options.closurePass) {
+
+2024-02-24 13:08:27,734 - Closure_18 - INFO - 编译成功
+2024-02-24 13:09:14,858 - Closure_18 - INFO - 测试失败
+2024-02-24 13:09:14,858 - Closure_18 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testDependencySorting
+
+2024-02-24 13:09:15,362 - Closure_18 - INFO - 选择失败的测试用例为:
+2024-02-24 13:09:15,363 - Closure_18 - INFO - com.google.javascript.jscomp.IntegrationTest::testDependencySorting
+2024-02-24 13:09:15,363 - Closure_18 - INFO - 失败的测试代码为:
+2024-02-24 13:09:15,363 - Closure_18 - INFO -     test(
+
+2024-02-24 13:09:15,363 - Closure_18 - INFO - 失败信息为:
+2024-02-24 13:09:15,363 - Closure_18 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:09:15,363 - Closure_18 - INFO - 补丁1 1测试失败
+2024-02-24 13:09:15,364 - Closure_18 - INFO - 开始验证补丁1 2:
+2024-02-24 13:09:15,364 - Closure_18 - INFO - 
+if (options.dependencyOptions.needsManagement() || options.closurePass) {
+
+2024-02-24 13:09:19,913 - Closure_18 - INFO - 编译成功
+2024-02-24 13:10:07,841 - Closure_18 - INFO - 测试成功
+2024-02-24 13:10:07,841 - Closure_18 - INFO - 补丁1 2 通过了所有的测试用例

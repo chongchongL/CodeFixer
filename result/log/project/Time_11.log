@@ -1,0 +1,130 @@
+2024-02-25 01:00:53,714 - Time_11 - INFO - rm -rf /home/chongchong/d4j-project/Time_11
+2024-02-25 01:00:53,715 - Time_11 - INFO - 删除 Time 11b 成功
+2024-02-25 01:00:53,715 - Time_11 - INFO - defects4j checkout -p Time -v 11b -w /home/chongchong/d4j-project/Time_11
+2024-02-25 01:00:55,020 - Time_11 - INFO - checkout Time 11b 成功
+2024-02-25 01:01:02,429 - Time_11 - INFO - 编译成功
+2024-02-25 01:01:10,271 - Time_11 - INFO - 测试失败
+2024-02-25 01:01:10,271 - Time_11 - INFO - Failing tests: 1
+  - org.joda.time.tz.TestCompiler::testDateTimeZoneBuilder
+
+2024-02-25 01:01:11,151 - Time_11 - INFO - 它的bug类型为:
+2024-02-25 01:01:11,151 - Time_11 - INFO - 2
+2024-02-25 01:02:08,028 - Time_11 - INFO - 开始验证补丁1 1:
+2024-02-25 01:02:08,029 - Time_11 - INFO - 
+    }
+    static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+            return Boolean.FALSE;
+        }
+    };
+
+2024-02-25 01:02:09,027 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:09,027 - Time_11 - INFO - 错误: 需要class, interface或enum
+static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+2024-02-25 01:02:09,027 - Time_11 - INFO - 补丁1 1 未成功编译
+2024-02-25 01:02:09,028 - Time_11 - INFO - 开始验证补丁1 2:
+2024-02-25 01:02:09,028 - Time_11 - INFO - 
+    }
+    static ThreadLocal<Boolean> cVerbose = ThreadLocal.withInitial(() -> Boolean.FALSE);
+
+2024-02-25 01:02:10,029 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:10,029 - Time_11 - INFO - 错误: 需要class, interface或enum
+static ThreadLocal<Boolean> cVerbose = ThreadLocal.withInitial(() -> Boolean.FALSE);
+2024-02-25 01:02:10,029 - Time_11 - INFO - 补丁1 2 未成功编译
+2024-02-25 01:02:10,030 - Time_11 - INFO - 开始验证补丁1 3:
+2024-02-25 01:02:10,030 - Time_11 - INFO - 
+    }
+    static {
+        cVerbose.set(Boolean.FALSE);
+    }
+
+2024-02-25 01:02:11,005 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:11,005 - Time_11 - INFO - 错误: 需要class, interface或enum
+static {
+2024-02-25 01:02:11,005 - Time_11 - INFO - 补丁1 3 未成功编译
+2024-02-25 01:02:11,006 - Time_11 - INFO - 开始验证补丁1 4:
+2024-02-25 01:02:11,006 - Time_11 - INFO - 
+}
+static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+        return Boolean.FALSE;
+    }
+};
+
+2024-02-25 01:02:11,986 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:11,987 - Time_11 - INFO - 错误: 需要class, interface或enum
+static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+2024-02-25 01:02:11,987 - Time_11 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:02:11,988 - Time_11 - INFO - 开始验证补丁1 5:
+2024-02-25 01:02:11,988 - Time_11 - INFO - 
+}
+static ThreadLocal<Boolean> cVerbose = ThreadLocal.withInitial(() -> Boolean.FALSE);
+
+2024-02-25 01:02:12,974 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:12,974 - Time_11 - INFO - 错误: 需要class, interface或enum
+static ThreadLocal<Boolean> cVerbose = ThreadLocal.withInitial(() -> Boolean.FALSE);
+2024-02-25 01:02:12,974 - Time_11 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:02:12,976 - Time_11 - INFO - 开始验证补丁1 6:
+2024-02-25 01:02:12,976 - Time_11 - INFO - 
+}
+static {
+    initThreadLocal();
+}
+
+private static void initThreadLocal() {
+    cVerbose = new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+            return Boolean.FALSE;
+        }
+    };
+}
+
+2024-02-25 01:02:13,958 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:13,958 - Time_11 - INFO - 错误: 需要class, interface或enum
+static {
+2024-02-25 01:02:13,958 - Time_11 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:02:13,959 - Time_11 - INFO - 开始验证补丁1 7:
+2024-02-25 01:02:13,959 - Time_11 - INFO - 
+    }
+    static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+            return Boolean.FALSE;
+        }
+    };
+
+2024-02-25 01:02:13,959 - Time_11 - INFO - 补丁1 7为重复的补丁
+2024-02-25 01:02:13,964 - Time_11 - INFO - 开始验证补丁1 8:
+2024-02-25 01:02:13,964 - Time_11 - INFO - 
+    }
+    static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+        protected Boolean initialValue() {
+            return Boolean.FALSE;
+        }
+    };
+
+2024-02-25 01:02:14,959 - Time_11 - INFO - 编译失败
+2024-02-25 01:02:14,959 - Time_11 - INFO - 错误: 需要class, interface或enum
+static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+2024-02-25 01:02:14,959 - Time_11 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:02:14,960 - Time_11 - INFO - 开始验证补丁1 9:
+2024-02-25 01:02:14,960 - Time_11 - INFO - 
+    }
+    static ThreadLocal<Boolean> cVerbose = ThreadLocal.withInitial(() -> Boolean.FALSE);
+
+2024-02-25 01:02:14,960 - Time_11 - INFO - 补丁1 9为重复的补丁
+2024-02-25 01:02:14,961 - Time_11 - INFO - 开始验证补丁2 1:
+2024-02-25 01:02:14,961 - Time_11 - INFO - 
+    static ThreadLocal<Boolean> cVerbose = new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+            return Boolean.FALSE;
+        }
+    };
+
+2024-02-25 01:02:17,989 - Time_11 - INFO - 编译成功
+2024-02-25 01:02:25,749 - Time_11 - INFO - 测试成功
+2024-02-25 01:02:25,749 - Time_11 - INFO - 补丁2 1 通过了所有的测试用例

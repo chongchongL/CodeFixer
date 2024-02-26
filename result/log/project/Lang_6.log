@@ -1,0 +1,38 @@
+2024-02-23 23:10:21,212 - Lang_6 - INFO - rm -rf /home/chongchong/d4j-project/Lang_6
+2024-02-23 23:10:21,212 - Lang_6 - INFO - 删除 Lang 6b 成功
+2024-02-23 23:10:21,212 - Lang_6 - INFO - defects4j checkout -p Lang -v 6b -w /home/chongchong/d4j-project/Lang_6
+2024-02-23 23:10:24,643 - Lang_6 - INFO - checkout Lang 6b 成功
+2024-02-23 23:10:30,012 - Lang_6 - INFO - 编译成功
+2024-02-23 23:10:43,797 - Lang_6 - INFO - 测试失败
+2024-02-23 23:10:43,797 - Lang_6 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.StringUtilsTest::testEscapeSurrogatePairs
+
+2024-02-23 23:10:44,663 - Lang_6 - INFO - 它的bug类型为:
+2024-02-23 23:10:44,663 - Lang_6 - INFO - 1
+2024-02-23 23:11:35,304 - Lang_6 - INFO - 开始验证补丁1 1:
+2024-02-23 23:11:35,304 - Lang_6 - INFO - 
+pos += Character.charCount(Character.codePointAt(input, pos));
+
+2024-02-23 23:11:36,332 - Lang_6 - INFO - 编译成功
+2024-02-23 23:11:49,868 - Lang_6 - INFO - 测试失败
+2024-02-23 23:11:49,868 - Lang_6 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.StringUtilsTest::testEscapeSurrogatePairs
+
+2024-02-23 23:11:50,301 - Lang_6 - INFO - 选择失败的测试用例为:
+2024-02-23 23:11:50,301 - Lang_6 - INFO - org.apache.commons.lang3.StringUtilsTest::testEscapeSurrogatePairs
+2024-02-23 23:11:50,301 - Lang_6 - INFO - 失败的测试代码为:
+2024-02-23 23:11:50,301 - Lang_6 - INFO -         assertEquals("\uD83D\uDE30", StringEscapeUtils.escapeCsv("\uD83D\uDE30"));
+
+2024-02-23 23:11:50,301 - Lang_6 - INFO - 失败信息为:
+2024-02-23 23:11:50,301 - Lang_6 - INFO - java.lang.StringIndexOutOfBoundsException: String index out of range: 2
+
+2024-02-23 23:11:50,301 - Lang_6 - INFO - 补丁1 1测试失败
+2024-02-23 23:11:50,302 - Lang_6 - INFO - 开始验证补丁1 2:
+2024-02-23 23:11:50,302 - Lang_6 - INFO - 
+if (pos < input.length()) {
+    pos += Character.charCount(Character.codePointAt(input, pos));
+}
+
+2024-02-23 23:11:51,318 - Lang_6 - INFO - 编译成功
+2024-02-23 23:12:04,798 - Lang_6 - INFO - 测试成功
+2024-02-23 23:12:04,799 - Lang_6 - INFO - 补丁1 2 通过了所有的测试用例

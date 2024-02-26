@@ -1,0 +1,245 @@
+2024-02-25 12:07:03,764 - Closure_133 - INFO - rm -rf /home/chongchong/d4j-project/Closure_133
+2024-02-25 12:07:03,765 - Closure_133 - INFO - 删除 Closure 133b 成功
+2024-02-25 12:07:03,765 - Closure_133 - INFO - defects4j checkout -p Closure -v 133b -w /home/chongchong/d4j-project/Closure_133
+2024-02-25 12:07:06,326 - Closure_133 - INFO - checkout Closure 133b 成功
+2024-02-25 12:07:18,006 - Closure_133 - INFO - 编译成功
+2024-02-25 12:08:18,398 - Closure_133 - INFO - 测试失败
+2024-02-25 12:08:18,398 - Closure_133 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testTextExtents
+
+2024-02-25 12:08:19,434 - Closure_133 - INFO - 它的bug类型为:
+2024-02-25 12:08:19,435 - Closure_133 - INFO - 3
+2024-02-25 12:09:23,720 - Closure_133 - INFO - 开始验证补丁1 1:
+2024-02-25 12:09:23,720 - Closure_133 - INFO - 
+    return result;
+}
+
+2024-02-25 12:09:25,600 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:25,600 - Closure_133 - INFO - 错误: 非法的类型开始
+return result;
+2024-02-25 12:09:25,600 - Closure_133 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:09:25,601 - Closure_133 - INFO - 开始验证补丁1 2:
+2024-02-25 12:09:25,601 - Closure_133 - INFO - 
+    if (result != null) {
+        return result.trim();
+    }
+    return null;
+}
+
+2024-02-25 12:09:27,450 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:27,450 - Closure_133 - INFO - 错误: 非法的类型开始
+return result;
+2024-02-25 12:09:27,451 - Closure_133 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:09:27,452 - Closure_133 - INFO - 开始验证补丁1 3:
+2024-02-25 12:09:27,452 - Closure_133 - INFO - 
+    if (result != null && !result.isEmpty()) {
+        return result;
+    } else {
+        throw new IllegalStateException("Recorded bad position information");
+    }
+}
+
+2024-02-25 12:09:29,292 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:29,292 - Closure_133 - INFO - 错误: 非法的类型开始
+return result;
+2024-02-25 12:09:29,292 - Closure_133 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:09:29,294 - Closure_133 - INFO - 开始验证补丁1 4:
+2024-02-25 12:09:29,294 - Closure_133 - INFO - 
+   return result.trim();
+   
+2024-02-25 12:09:31,361 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:31,361 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:31,361 - Closure_133 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:09:31,362 - Closure_133 - INFO - 开始验证补丁1 5:
+2024-02-25 12:09:31,362 - Closure_133 - INFO - 
+   return postProcessResult(result);
+   
+2024-02-25 12:09:33,435 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:33,435 - Closure_133 - INFO - 错误: 找不到符号
+return postProcessResult(result);
+2024-02-25 12:09:33,435 - Closure_133 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:09:33,437 - Closure_133 - INFO - 开始验证补丁1 6:
+2024-02-25 12:09:33,437 - Closure_133 - INFO - 
+   if (validateResult(result)) {
+       return result;
+   } else {
+       throw new IllegalStateException("Recorded bad position information");
+   }
+   
+2024-02-25 12:09:35,507 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:35,507 - Closure_133 - INFO - 错误: 找不到符号
+if (validateResult(result)) {
+2024-02-25 12:09:35,507 - Closure_133 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:09:35,508 - Closure_133 - INFO - 开始验证补丁1 7:
+2024-02-25 12:09:35,508 - Closure_133 - INFO - 
+return result;
+
+2024-02-25 12:09:37,647 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:37,647 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:37,647 - Closure_133 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:09:37,649 - Closure_133 - INFO - 开始验证补丁1 8:
+2024-02-25 12:09:37,649 - Closure_133 - INFO - 
+updatePositionInformation();
+return result;
+
+2024-02-25 12:09:39,721 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:39,721 - Closure_133 - INFO - 错误: 找不到符号
+updatePositionInformation();
+2024-02-25 12:09:39,721 - Closure_133 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:09:39,722 - Closure_133 - INFO - 开始验证补丁1 9:
+2024-02-25 12:09:39,722 - Closure_133 - INFO - 
+String trimmedResult = result.trim();
+return trimmedResult;
+
+2024-02-25 12:09:41,813 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:41,813 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:41,813 - Closure_133 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:09:41,814 - Closure_133 - INFO - 开始验证补丁2 1:
+2024-02-25 12:09:41,814 - Closure_133 - INFO - 
+    return result.trim();
+
+2024-02-25 12:09:43,906 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:43,906 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:43,906 - Closure_133 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:09:43,908 - Closure_133 - INFO - 开始验证补丁2 2:
+2024-02-25 12:09:43,908 - Closure_133 - INFO - 
+    return result.replaceAll("^\\s*\\*\\s*", "");
+
+2024-02-25 12:09:46,015 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:46,016 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:46,016 - Closure_133 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:09:46,017 - Closure_133 - INFO - 开始验证补丁2 3:
+2024-02-25 12:09:46,017 - Closure_133 - INFO - 
+    return result.replaceAll("\\s+$", "");
+
+2024-02-25 12:09:48,123 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:48,123 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:48,123 - Closure_133 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:09:48,124 - Closure_133 - INFO - 开始验证补丁2 4:
+2024-02-25 12:09:48,124 - Closure_133 - INFO - 
+return result.trim();
+
+2024-02-25 12:09:50,247 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:50,247 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:50,247 - Closure_133 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:09:50,248 - Closure_133 - INFO - 开始验证补丁2 5:
+2024-02-25 12:09:50,248 - Closure_133 - INFO - 
+return result.replaceFirst("^\\s*\\*", "");
+
+2024-02-25 12:09:52,340 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:52,340 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:52,340 - Closure_133 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:09:52,341 - Closure_133 - INFO - 开始验证补丁2 6:
+2024-02-25 12:09:52,341 - Closure_133 - INFO - 
+if (result.startsWith("*")) {
+    return result.substring(1).trim();
+} else {
+    return result.trim();
+}
+
+2024-02-25 12:09:54,444 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:54,444 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:54,445 - Closure_133 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:09:54,446 - Closure_133 - INFO - 开始验证补丁2 7:
+2024-02-25 12:09:54,446 - Closure_133 - INFO - 
+return result.trim();
+
+2024-02-25 12:09:54,446 - Closure_133 - INFO - 补丁2 7为重复的补丁
+2024-02-25 12:09:54,451 - Closure_133 - INFO - 开始验证补丁2 8:
+2024-02-25 12:09:54,451 - Closure_133 - INFO - 
+return result.replaceAll("^\\s*\\*\\s?", "");
+
+2024-02-25 12:09:56,518 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:56,518 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:56,518 - Closure_133 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:09:56,520 - Closure_133 - INFO - 开始验证补丁2 9:
+2024-02-25 12:09:56,520 - Closure_133 - INFO - 
+if (!result.startsWith("*")) {
+    throw new IllegalStateException("JSDoc line does not start with an asterisk: " + result);
+}
+return result.substring(1).trim();
+
+2024-02-25 12:09:58,635 - Closure_133 - INFO - 编译失败
+2024-02-25 12:09:58,635 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:09:58,635 - Closure_133 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:09:58,636 - Closure_133 - INFO - 开始验证补丁3 1:
+2024-02-25 12:09:58,636 - Closure_133 - INFO - 
+return result.trim();
+
+2024-02-25 12:09:58,636 - Closure_133 - INFO - 补丁3 1为重复的补丁
+2024-02-25 12:09:58,637 - Closure_133 - INFO - 开始验证补丁3 2:
+2024-02-25 12:09:58,637 - Closure_133 - INFO - 
+this.updateStreamPosition(); // or any method that updates the position
+return result;
+
+2024-02-25 12:10:00,719 - Closure_133 - INFO - 编译失败
+2024-02-25 12:10:00,719 - Closure_133 - INFO - 错误: 找不到符号
+this.updateStreamPosition(); // or any method that updates the position
+2024-02-25 12:10:00,720 - Closure_133 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:10:00,721 - Closure_133 - INFO - 开始验证补丁3 3:
+2024-02-25 12:10:00,721 - Closure_133 - INFO - 
+return processResult(result); // or any method that processes the result string
+
+2024-02-25 12:10:02,801 - Closure_133 - INFO - 编译失败
+2024-02-25 12:10:02,801 - Closure_133 - INFO - 错误: 找不到符号
+return processResult(result); // or any method that processes the result string
+2024-02-25 12:10:02,801 - Closure_133 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:10:02,803 - Closure_133 - INFO - 开始验证补丁3 4:
+2024-02-25 12:10:02,803 - Closure_133 - INFO - 
+return result;
+
+2024-02-25 12:10:02,803 - Closure_133 - INFO - 补丁3 4为重复的补丁
+2024-02-25 12:10:02,804 - Closure_133 - INFO - 开始验证补丁3 5:
+2024-02-25 12:10:02,804 - Closure_133 - INFO - 
+stream.advance(); // Presuming advance() is the method to update the position
+return result;
+
+2024-02-25 12:10:04,918 - Closure_133 - INFO - 编译失败
+2024-02-25 12:10:04,918 - Closure_133 - INFO - 错误: 找不到符号
+stream.advance(); // Presuming advance() is the method to update the position
+2024-02-25 12:10:04,918 - Closure_133 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:10:04,920 - Closure_133 - INFO - 开始验证补丁3 6:
+2024-02-25 12:10:04,920 - Closure_133 - INFO - 
+if (result != null && !result.isEmpty()) {
+  stream.advance(result.length()); // Presuming advance(int) updates based on the length of the consumed text
+}
+return result;
+
+2024-02-25 12:10:07,024 - Closure_133 - INFO - 编译失败
+2024-02-25 12:10:07,024 - Closure_133 - INFO - 错误: 找不到符号
+stream.advance(result.length()); // Presuming advance(int) updates based on the length of the consumed text
+2024-02-25 12:10:07,024 - Closure_133 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:10:07,025 - Closure_133 - INFO - 开始验证补丁3 7:
+2024-02-25 12:10:07,025 - Closure_133 - INFO - 
+    return result;
+
+2024-02-25 12:10:09,110 - Closure_133 - INFO - 编译失败
+2024-02-25 12:10:09,110 - Closure_133 - INFO - 错误: 无法访问的语句
+return result;
+2024-02-25 12:10:09,110 - Closure_133 - INFO - 补丁3 7 未成功编译
+2024-02-25 12:10:09,111 - Closure_133 - INFO - 开始验证补丁3 8:
+2024-02-25 12:10:09,111 - Closure_133 - INFO - 
+    stream.updatePosition();
+    return result;
+
+2024-02-25 12:10:11,199 - Closure_133 - INFO - 编译失败
+2024-02-25 12:10:11,199 - Closure_133 - INFO - 错误: 找不到符号
+stream.updatePosition();
+2024-02-25 12:10:11,199 - Closure_133 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:10:11,201 - Closure_133 - INFO - 开始验证补丁3 9:
+2024-02-25 12:10:11,201 - Closure_133 - INFO - 
+    return result;
+
+2024-02-25 12:10:11,201 - Closure_133 - INFO - 补丁3 9为重复的补丁
+2024-02-25 12:10:11,201 - Closure_133 - INFO - Closure_133 未成功修复

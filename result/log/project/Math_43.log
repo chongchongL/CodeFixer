@@ -1,0 +1,452 @@
+2024-02-26 01:48:56,345 - Math_43 - INFO - rm -rf /home/chongchong/d4j-project/Math_43
+2024-02-26 01:48:56,346 - Math_43 - INFO - 删除 Math 43b 成功
+2024-02-26 01:48:56,346 - Math_43 - INFO - defects4j checkout -p Math -v 43b -w /home/chongchong/d4j-project/Math_43
+2024-02-26 01:48:59,837 - Math_43 - INFO - checkout Math 43b 成功
+2024-02-26 01:49:06,634 - Math_43 - INFO - 编译成功
+2024-02-26 01:49:25,457 - Math_43 - INFO - 测试失败
+2024-02-26 01:49:25,457 - Math_43 - INFO - Failing tests: 6
+  - org.apache.commons.math.stat.descriptive.SummaryStatisticsTest::testOverrideMeanWithMathClass
+  - org.apache.commons.math.stat.descriptive.SummaryStatisticsTest::testOverrideGeoMeanWithMathClass
+  - org.apache.commons.math.stat.descriptive.SummaryStatisticsTest::testOverrideVarianceWithMathClass
+  - org.apache.commons.math.stat.descriptive.SynchronizedSummaryStatisticsTest::testOverrideMeanWithMathClass
+  - org.apache.commons.math.stat.descriptive.SynchronizedSummaryStatisticsTest::testOverrideGeoMeanWithMathClass
+  - org.apache.commons.math.stat.descriptive.SynchronizedSummaryStatisticsTest::testOverrideVarianceWithMathClass
+
+2024-02-26 01:49:26,396 - Math_43 - INFO - 它的bug类型为:
+2024-02-26 01:49:26,396 - Math_43 - INFO - 4
+2024-02-26 01:50:42,181 - Math_43 - INFO - 开始验证补丁1 1:
+2024-02-26 01:50:42,181 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:42,807 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:42,807 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:42,808 - Math_43 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:50:42,809 - Math_43 - INFO - 开始验证补丁1 2:
+2024-02-26 01:50:42,809 - Math_43 - INFO - 
+        boolean isMeanImplInstance = meanImpl instanceof Mean;
+        if (isMeanImplInstance) {
+            meanImpl.increment(value);
+        }
+        boolean isVarianceImplInstance = varianceImpl instanceof Variance;
+        if (isVarianceImplInstance) {
+            varianceImpl.increment(value);
+        }
+        boolean isGeoMeanImplInstance = geoMeanImpl instanceof GeometricMean;
+        if (isGeoMeanImplInstance) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:43,442 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:43,442 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:43,442 - Math_43 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:50:43,443 - Math_43 - INFO - 开始验证补丁1 3:
+2024-02-26 01:50:43,444 - Math_43 - INFO - 
+        incrementIfCorrectInstance(meanImpl, Mean.class, value);
+        incrementIfCorrectInstance(varianceImpl, Variance.class, value);
+        incrementIfCorrectInstance(geoMeanImpl, GeometricMean.class, value);
+
+        // ...additional method within the class...
+        private <T> void incrementIfCorrectInstance(StatisticsImpl impl, Class<T> clazz, double value) {
+            if (clazz.isInstance(impl)) {
+                impl.increment(value);
+            }
+        }
+
+2024-02-26 01:50:44,081 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:44,081 - Math_43 - INFO - 错误: 非法的表达式开始
+private <T> void incrementIfCorrectInstance(StatisticsImpl impl, Class<T> clazz, double value) {
+2024-02-26 01:50:44,081 - Math_43 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:50:44,082 - Math_43 - INFO - 开始验证补丁1 4:
+2024-02-26 01:50:44,082 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:44,082 - Math_43 - INFO - 补丁1 4为重复的补丁
+2024-02-26 01:50:44,083 - Math_43 - INFO - 开始验证补丁1 5:
+2024-02-26 01:50:44,083 - Math_43 - INFO - 
+        if (!(meanImpl instanceof Mean)) {
+            meanImpl.increment(value);
+        } else {
+            // Handle the case where meanImpl is an instance of Mean appropriately, if required
+        }
+        if (!(varianceImpl instanceof Variance)) {
+            varianceImpl.increment(value);
+        } else {
+            // Handle the case where varianceImpl is an instance of Variance appropriately, if required
+        }
+        if (!(geoMeanImpl instanceof GeometricMean)) {
+            geoMeanImpl.increment(value);
+        } else {
+            // Handle the case where geoMeanImpl is an instance of GeometricMean appropriately, if required
+        }
+
+2024-02-26 01:50:44,718 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:44,718 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:44,718 - Math_43 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:50:44,719 - Math_43 - INFO - 开始验证补丁1 6:
+2024-02-26 01:50:44,719 - Math_43 - INFO - 
+        if (!(meanImpl instanceof Mean)) {
+            meanImpl.increment(value);
+        } else {
+            // Presumably some alternative action needs to occur here
+        }
+        if (!(varianceImpl instanceof Variance)) {
+            varianceImpl.increment(value);
+        } else {
+            // Presumably some alternative action needs to occur here
+        }
+        if (!(geoMeanImpl instanceof GeometricMean)) {
+            geoMeanImpl.increment(value);
+        } else {
+            // Presumably some alternative action needs to occur here
+        }
+
+2024-02-26 01:50:45,350 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:45,350 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:45,350 - Math_43 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:50:45,351 - Math_43 - INFO - 开始验证补丁1 7:
+2024-02-26 01:50:45,351 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:45,351 - Math_43 - INFO - 补丁1 7为重复的补丁
+2024-02-26 01:50:45,357 - Math_43 - INFO - 开始验证补丁1 8:
+2024-02-26 01:50:45,357 - Math_43 - INFO - 
+        if (!(meanImpl instanceof Mean) == false) {
+            meanImpl.increment(value);
+        }
+        if (!(varianceImpl instanceof Variance) == false) {
+            varianceImpl.increment(value);
+        }
+        if (!(geoMeanImpl instanceof GeometricMean) == false) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:45,992 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:45,992 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:45,992 - Math_43 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:50:45,993 - Math_43 - INFO - 开始验证补丁1 9:
+2024-02-26 01:50:45,993 - Math_43 - INFO - 
+        if (!(!(meanImpl instanceof Mean))) {
+            meanImpl.increment(value);
+        }
+        if (!(!(varianceImpl instanceof Variance))) {
+            varianceImpl.increment(value);
+        }
+        if (!(!(geoMeanImpl instanceof GeometricMean))) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:46,629 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:46,629 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:46,629 - Math_43 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:50:46,630 - Math_43 - INFO - 开始验证补丁2 1:
+2024-02-26 01:50:46,630 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:46,630 - Math_43 - INFO - 补丁2 1为重复的补丁
+2024-02-26 01:50:46,631 - Math_43 - INFO - 开始验证补丁2 2:
+2024-02-26 01:50:46,631 - Math_43 - INFO - 
+        if (meanImpl != null) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl != null) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl != null) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:47,262 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:47,262 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:47,262 - Math_43 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:50:47,263 - Math_43 - INFO - 开始验证补丁2 3:
+2024-02-26 01:50:47,263 - Math_43 - INFO - 
+        meanImpl.increment(value);
+        varianceImpl.increment(value);
+        geoMeanImpl.increment(value);
+
+2024-02-26 01:50:47,897 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:47,897 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:47,897 - Math_43 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:50:47,898 - Math_43 - INFO - 开始验证补丁2 4:
+2024-02-26 01:50:47,898 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:47,898 - Math_43 - INFO - 补丁2 4为重复的补丁
+2024-02-26 01:50:47,899 - Math_43 - INFO - 开始验证补丁2 5:
+2024-02-26 01:50:47,899 - Math_43 - INFO - 
+        if (meanImpl.getClass().equals(Mean.class)) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl.getClass().equals(Variance.class)) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl.getClass().equals(GeometricMean.class)) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:48,530 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:48,530 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:48,530 - Math_43 - INFO - 补丁2 5 未成功编译
+2024-02-26 01:50:48,531 - Math_43 - INFO - 开始验证补丁2 6:
+2024-02-26 01:50:48,531 - Math_43 - INFO - 
+        if (Mean.class.isInstance(meanImpl)) {
+            meanImpl.increment(value);
+        }
+        if (Variance.class.isInstance(varianceImpl)) {
+            varianceImpl.increment(value);
+        }
+        if (GeometricMean.class.isInstance(geoMeanImpl)) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:49,161 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:49,161 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:49,161 - Math_43 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:50:49,162 - Math_43 - INFO - 开始验证补丁2 7:
+2024-02-26 01:50:49,162 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:49,162 - Math_43 - INFO - 补丁2 7为重复的补丁
+2024-02-26 01:50:49,163 - Math_43 - INFO - 开始验证补丁2 8:
+2024-02-26 01:50:49,163 - Math_43 - INFO - 
+        if (!(meanImpl instanceof Mean)) {
+            meanImpl.increment(value);
+        } else {
+            // Possible default action or alternative increment for Mean
+        }
+        if (!(varianceImpl instanceof Variance)) {
+            varianceImpl.increment(value);
+        } else {
+            // Possible default action or alternative increment for Variance
+        }
+        if (!(geoMeanImpl instanceof GeometricMean)) {
+            geoMeanImpl.increment(value);
+        } else {
+            // Possible default action or alternative increment for GeometricMean
+        }
+
+2024-02-26 01:50:49,790 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:49,790 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:49,790 - Math_43 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:50:49,791 - Math_43 - INFO - 开始验证补丁2 9:
+2024-02-26 01:50:49,791 - Math_43 - INFO - 
+        if (!meanImpl.getClass().equals(Mean.class)) {
+            meanImpl.increment(value);
+        }
+        if (!varianceImpl.getClass().equals(Variance.class)) {
+            varianceImpl.increment(value);
+        }
+        if (!geoMeanImpl.getClass().equals(GeometricMean.class)) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:50,415 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:50,415 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:50,415 - Math_43 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:50:50,417 - Math_43 - INFO - 开始验证补丁3 1:
+2024-02-26 01:50:50,417 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:50,417 - Math_43 - INFO - 补丁3 1为重复的补丁
+2024-02-26 01:50:50,422 - Math_43 - INFO - 开始验证补丁3 2:
+2024-02-26 01:50:50,422 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (!(geoMeanImpl instanceof GeometricMean)) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:51,039 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:51,039 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:51,039 - Math_43 - INFO - 补丁3 2 未成功编译
+2024-02-26 01:50:51,041 - Math_43 - INFO - 开始验证补丁3 3:
+2024-02-26 01:50:51,041 - Math_43 - INFO - 
+        if (!(meanImpl instanceof Mean)) {
+            // Possible handling for non-Mean instances
+        } else {
+            meanImpl.increment(value);
+        }
+        if (!(varianceImpl instanceof Variance)) {
+            // Possible handling for non-Variance instances
+        } else {
+            varianceImpl.increment(value);
+        }
+        if (!(geoMeanImpl instanceof GeometricMean)) {
+            // Possible handling for non-GeometricMean instances
+        } else {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:51,675 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:51,675 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:51,675 - Math_43 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:50:51,676 - Math_43 - INFO - 开始验证补丁3 4:
+2024-02-26 01:50:51,676 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:51,676 - Math_43 - INFO - 补丁3 4为重复的补丁
+2024-02-26 01:50:51,677 - Math_43 - INFO - 开始验证补丁3 5:
+2024-02-26 01:50:51,677 - Math_43 - INFO - 
+        // Assuming instance checks should be for specific subclasses, if they exist
+        if (meanImpl instanceof SpecificMean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof SpecificVariance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof SpecificGeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:52,323 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:52,323 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:52,323 - Math_43 - INFO - 补丁3 5 未成功编译
+2024-02-26 01:50:52,324 - Math_43 - INFO - 开始验证补丁3 6:
+2024-02-26 01:50:52,324 - Math_43 - INFO - 
+        // Assuming the instances should not be the base classes but rather a specific subclass
+        if (!(meanImpl instanceof SomeSubclassOfMean)) {
+            meanImpl.increment(value);
+        }
+        if (!(varianceImpl instanceof SomeSubclassOfVariance)) {
+            varianceImpl.increment(value);
+        }
+        if (!(geoMeanImpl instanceof SomeSubclassOfGeometricMean)) {
+            geoMeanImpl.increment(value);
+        }
+
+2024-02-26 01:50:52,965 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:52,965 - Math_43 - INFO - 错误: 需要<标识符>
+n++;
+2024-02-26 01:50:52,965 - Math_43 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:50:52,966 - Math_43 - INFO - 开始验证补丁3 7:
+2024-02-26 01:50:52,966 - Math_43 - INFO - 
+        if (meanImpl instanceof Mean) {
+            meanImpl.increment(value);
+        }
+        if (varianceImpl instanceof Variance) {
+            varianceImpl.increment(value);
+        }
+        if (geoMeanImpl instanceof GeometricMean) {
+            geoMeanImpl.increment(value);
+        }
+        n++;
+    }
+
+2024-02-26 01:50:53,597 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:53,597 - Math_43 - INFO - 错误: 需要<标识符>
+geoMeanImpl.increment(value);
+2024-02-26 01:50:53,597 - Math_43 - INFO - 补丁3 7 未成功编译
+2024-02-26 01:50:53,598 - Math_43 - INFO - 开始验证补丁3 8:
+2024-02-26 01:50:53,598 - Math_43 - INFO - 
+        meanImpl.increment(value);
+        varianceImpl.increment(value);
+        geoMeanImpl.increment(value);
+        n++;
+    }
+
+2024-02-26 01:50:54,220 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:54,220 - Math_43 - INFO - 错误: 需要<标识符>
+geoMeanImpl.increment(value);
+2024-02-26 01:50:54,220 - Math_43 - INFO - 补丁3 8 未成功编译
+2024-02-26 01:50:54,221 - Math_43 - INFO - 开始验证补丁3 9:
+2024-02-26 01:50:54,221 - Math_43 - INFO - 
+        if (!(meanImpl instanceof SomeOtherMeanClass)) {
+            meanImpl.increment(value);
+        }
+        if (!(varianceImpl instanceof SomeOtherVarianceClass)) {
+            varianceImpl.increment(value);
+        }
+        if (!(geoMeanImpl instanceof SomeOtherGeometricMeanClass)) {
+            geoMeanImpl.increment(value);
+        }
+        n++;
+    }
+
+2024-02-26 01:50:54,847 - Math_43 - INFO - 编译失败
+2024-02-26 01:50:54,847 - Math_43 - INFO - 错误: 需要<标识符>
+geoMeanImpl.increment(value);
+2024-02-26 01:50:54,848 - Math_43 - INFO - 补丁3 9 未成功编译
+2024-02-26 01:50:54,848 - Math_43 - INFO - Math_43 未成功修复

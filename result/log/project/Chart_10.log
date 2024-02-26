@@ -1,0 +1,219 @@
+2024-02-23 22:03:25,570 - Chart_10 - INFO - rm -rf /home/chongchong/d4j-project/Chart_10
+2024-02-23 22:03:25,571 - Chart_10 - INFO - 删除 Chart 10b 成功
+2024-02-23 22:03:25,571 - Chart_10 - INFO - defects4j checkout -p Chart -v 10b -w /home/chongchong/d4j-project/Chart_10
+2024-02-23 22:03:28,564 - Chart_10 - INFO - checkout Chart 10b 成功
+2024-02-23 22:03:32,065 - Chart_10 - INFO - 编译成功
+2024-02-23 22:03:38,618 - Chart_10 - INFO - 测试失败
+2024-02-23 22:03:38,618 - Chart_10 - INFO - Failing tests: 2
+  - org.jfree.chart.imagemap.junit.StandardToolTipTagFragmentGeneratorTests::testGenerateURLFragment
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 22:03:39,364 - Chart_10 - INFO - 它的bug类型为:
+2024-02-23 22:03:39,364 - Chart_10 - INFO - 1
+2024-02-23 22:05:11,868 - Chart_10 - INFO - 开始验证补丁1 1:
+2024-02-23 22:05:11,868 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:12,349 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:12,349 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:12,349 - Chart_10 - INFO - 补丁1 1 未成功编译
+2024-02-23 22:05:12,350 - Chart_10 - INFO - 开始验证补丁1 2:
+2024-02-23 22:05:12,350 - Chart_10 - INFO - 
+return " title=\"" + org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(toolTipText) + "\" alt=\"\"";
+
+2024-02-23 22:05:12,805 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:12,806 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:12,806 - Chart_10 - INFO - 补丁1 2 未成功编译
+2024-02-23 22:05:12,806 - Chart_10 - INFO - 开始验证补丁1 3:
+2024-02-23 22:05:12,807 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replaceAll("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:13,261 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:13,261 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:13,261 - Chart_10 - INFO - 补丁1 3 未成功编译
+2024-02-23 22:05:13,262 - Chart_10 - INFO - 开始验证补丁1 4:
+2024-02-23 22:05:13,262 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:13,262 - Chart_10 - INFO - 补丁1 4为重复的补丁
+2024-02-23 22:05:13,263 - Chart_10 - INFO - 开始验证补丁1 5:
+2024-02-23 22:05:13,263 - Chart_10 - INFO - 
+String escapedToolTipText = toolTipText.replace("\"", "&quot;");
+return " title=\"" + escapedToolTipText + "\" alt=\"\"";
+
+2024-02-23 22:05:13,739 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:13,739 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:13,740 - Chart_10 - INFO - 补丁1 5 未成功编译
+2024-02-23 22:05:13,741 - Chart_10 - INFO - 开始验证补丁1 6:
+2024-02-23 22:05:13,741 - Chart_10 - INFO - 
+StringBuilder sb = new StringBuilder();
+for (char c : toolTipText.toCharArray()) {
+    if (c == '\"') {
+        sb.append("&quot;");
+    } else {
+        sb.append(c);
+    }
+}
+return " title=\"" + sb.toString() + "\" alt=\"\"";
+
+2024-02-23 22:05:14,209 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:14,209 - Chart_10 - INFO - 错误: -source 1.4 中不支持 for-each 循环
+for (char c : toolTipText.toCharArray()) {
+2024-02-23 22:05:14,209 - Chart_10 - INFO - 补丁1 6 未成功编译
+2024-02-23 22:05:14,210 - Chart_10 - INFO - 开始验证补丁1 7:
+2024-02-23 22:05:14,210 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:14,210 - Chart_10 - INFO - 补丁1 7为重复的补丁
+2024-02-23 22:05:14,211 - Chart_10 - INFO - 开始验证补丁1 8:
+2024-02-23 22:05:14,211 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replaceAll("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:14,211 - Chart_10 - INFO - 补丁1 8为重复的补丁
+2024-02-23 22:05:14,212 - Chart_10 - INFO - 开始验证补丁1 9:
+2024-02-23 22:05:14,212 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replaceFirst("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:14,672 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:14,672 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:14,672 - Chart_10 - INFO - 补丁1 9 未成功编译
+2024-02-23 22:05:14,673 - Chart_10 - INFO - 开始验证补丁2 1:
+2024-02-23 22:05:14,673 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;")
+        + "\" alt=\"\"";
+
+2024-02-23 22:05:15,134 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:15,134 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:15,134 - Chart_10 - INFO - 补丁2 1 未成功编译
+2024-02-23 22:05:15,135 - Chart_10 - INFO - 开始验证补丁2 2:
+2024-02-23 22:05:15,135 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replaceAll("\"", "&quot;")
+        + "\" alt=\"\"";
+
+2024-02-23 22:05:15,610 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:15,610 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:15,610 - Chart_10 - INFO - 补丁2 2 未成功编译
+2024-02-23 22:05:15,611 - Chart_10 - INFO - 开始验证补丁2 3:
+2024-02-23 22:05:15,611 - Chart_10 - INFO - 
+return " title=\"" + org.apache.commons.text.StringEscapeUtils.escapeHtml4(toolTipText)
+        + "\" alt=\"\"";
+
+2024-02-23 22:05:16,080 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:16,080 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:16,080 - Chart_10 - INFO - 补丁2 3 未成功编译
+2024-02-23 22:05:16,081 - Chart_10 - INFO - 开始验证补丁2 4:
+2024-02-23 22:05:16,081 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:16,081 - Chart_10 - INFO - 补丁2 4为重复的补丁
+2024-02-23 22:05:16,082 - Chart_10 - INFO - 开始验证补丁2 5:
+2024-02-23 22:05:16,082 - Chart_10 - INFO - 
+return " title=\"" + org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(toolTipText) + "\" alt=\"\"";
+
+2024-02-23 22:05:16,082 - Chart_10 - INFO - 补丁2 5为重复的补丁
+2024-02-23 22:05:16,082 - Chart_10 - INFO - 开始验证补丁2 6:
+2024-02-23 22:05:16,083 - Chart_10 - INFO - 
+StringBuilder sb = new StringBuilder();
+for (char c : toolTipText.toCharArray()) {
+    if (c == '\"') {
+        sb.append("&quot;");
+    } else {
+        sb.append(c);
+    }
+}
+return " title=\"" + sb.toString() + "\" alt=\"\"";
+
+2024-02-23 22:05:16,083 - Chart_10 - INFO - 补丁2 6为重复的补丁
+2024-02-23 22:05:16,083 - Chart_10 - INFO - 开始验证补丁2 7:
+2024-02-23 22:05:16,083 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;")
+        + "\" alt=\"\"";
+
+2024-02-23 22:05:16,083 - Chart_10 - INFO - 补丁2 7为重复的补丁
+2024-02-23 22:05:16,084 - Chart_10 - INFO - 开始验证补丁2 8:
+2024-02-23 22:05:16,084 - Chart_10 - INFO - 
+return " title=\"" + org.apache.commons.lang3.StringEscapeUtils.escapeHtml4(toolTipText)
+        + "\" alt=\"\"";
+
+2024-02-23 22:05:16,554 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:16,554 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:16,554 - Chart_10 - INFO - 补丁2 8 未成功编译
+2024-02-23 22:05:16,555 - Chart_10 - INFO - 开始验证补丁2 9:
+2024-02-23 22:05:16,555 - Chart_10 - INFO - 
+return " title=\"" + (toolTipText == null ? "" : toolTipText.replace("\"", "&quot;"))
+        + "\" alt=\"\"";
+
+2024-02-23 22:05:17,015 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:17,015 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:17,015 - Chart_10 - INFO - 补丁2 9 未成功编译
+2024-02-23 22:05:17,016 - Chart_10 - INFO - 开始验证补丁3 1:
+2024-02-23 22:05:17,016 - Chart_10 - INFO - 
+    return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:17,480 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:17,480 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:17,481 - Chart_10 - INFO - 补丁3 1 未成功编译
+2024-02-23 22:05:17,482 - Chart_10 - INFO - 开始验证补丁3 2:
+2024-02-23 22:05:17,482 - Chart_10 - INFO - 
+    return " title=\"" + HtmlUtils.htmlEscape(toolTipText) + "\" alt=\"\"";
+
+2024-02-23 22:05:17,963 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:17,963 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:17,963 - Chart_10 - INFO - 补丁3 2 未成功编译
+2024-02-23 22:05:17,964 - Chart_10 - INFO - 开始验证补丁3 3:
+2024-02-23 22:05:17,964 - Chart_10 - INFO - 
+    toolTipText = toolTipText.replaceAll("\"", "&quot;");
+    return " title=\"" + toolTipText + "\" alt=\"\"";
+
+2024-02-23 22:05:18,403 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:18,403 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:18,403 - Chart_10 - INFO - 补丁3 3 未成功编译
+2024-02-23 22:05:18,404 - Chart_10 - INFO - 开始验证补丁3 4:
+2024-02-23 22:05:18,404 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:18,404 - Chart_10 - INFO - 补丁3 4为重复的补丁
+2024-02-23 22:05:18,405 - Chart_10 - INFO - 开始验证补丁3 5:
+2024-02-23 22:05:18,405 - Chart_10 - INFO - 
+String escapedToolTipText = toolTipText.replace("\"", "&quot;");
+return " title=\"" + escapedToolTipText + "\" alt=\"\"";
+
+2024-02-23 22:05:18,405 - Chart_10 - INFO - 补丁3 5为重复的补丁
+2024-02-23 22:05:18,405 - Chart_10 - INFO - 开始验证补丁3 6:
+2024-02-23 22:05:18,406 - Chart_10 - INFO - 
+return " title=\"" + HtmlUtils.htmlEscape(toolTipText) + "\" alt=\"\"";
+
+2024-02-23 22:05:18,887 - Chart_10 - INFO - 编译失败
+2024-02-23 22:05:18,888 - Chart_10 - INFO - 错误: 不是语句
++ "\" alt=\"\"";
+2024-02-23 22:05:18,888 - Chart_10 - INFO - 补丁3 6 未成功编译
+2024-02-23 22:05:18,889 - Chart_10 - INFO - 开始验证补丁3 7:
+2024-02-23 22:05:18,889 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replace("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:18,889 - Chart_10 - INFO - 补丁3 7为重复的补丁
+2024-02-23 22:05:18,889 - Chart_10 - INFO - 开始验证补丁3 8:
+2024-02-23 22:05:18,889 - Chart_10 - INFO - 
+String escapedToolTipText = toolTipText.replace("\"", "&quot;");
+return " title=\"" + escapedToolTipText + "\" alt=\"\"";
+
+2024-02-23 22:05:18,889 - Chart_10 - INFO - 补丁3 8为重复的补丁
+2024-02-23 22:05:18,890 - Chart_10 - INFO - 开始验证补丁3 9:
+2024-02-23 22:05:18,890 - Chart_10 - INFO - 
+return " title=\"" + toolTipText.replaceAll("\"", "&quot;") + "\" alt=\"\"";
+
+2024-02-23 22:05:18,890 - Chart_10 - INFO - 补丁3 9为重复的补丁
+2024-02-23 22:05:18,890 - Chart_10 - INFO - Chart_10 未成功修复

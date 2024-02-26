@@ -1,0 +1,39 @@
+2024-02-26 00:28:16,991 - Closure_13 - INFO - rm -rf /home/chongchong/d4j-project/Closure_13
+2024-02-26 00:28:16,992 - Closure_13 - INFO - 删除 Closure 13b 成功
+2024-02-26 00:28:16,992 - Closure_13 - INFO - defects4j checkout -p Closure -v 13b -w /home/chongchong/d4j-project/Closure_13
+2024-02-26 00:28:20,055 - Closure_13 - INFO - checkout Closure 13b 成功
+2024-02-26 00:28:31,661 - Closure_13 - INFO - 编译成功
+2024-02-26 00:29:21,894 - Closure_13 - INFO - 测试失败
+2024-02-26 00:29:21,895 - Closure_13 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testIssue787
+
+2024-02-26 00:29:22,968 - Closure_13 - INFO - 它的bug类型为:
+2024-02-26 00:29:22,968 - Closure_13 - INFO - 4
+2024-02-26 00:30:26,567 - Closure_13 - INFO - 开始验证补丁1 1:
+2024-02-26 00:30:26,567 - Closure_13 - INFO - 
+traverse(c);
+c = c.getNext();
+
+2024-02-26 00:30:30,686 - Closure_13 - INFO - 编译成功
+2024-02-26 00:31:20,861 - Closure_13 - INFO - 测试失败
+2024-02-26 00:31:20,861 - Closure_13 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.IntegrationTest::testIssue787
+
+2024-02-26 00:31:21,389 - Closure_13 - INFO - 选择失败的测试用例为:
+2024-02-26 00:31:21,389 - Closure_13 - INFO - com.google.javascript.jscomp.IntegrationTest::testIssue787
+2024-02-26 00:31:21,389 - Closure_13 - INFO - 失败的测试代码为:
+2024-02-26 00:31:21,389 - Closure_13 - INFO -     test(options, code, result);
+
+2024-02-26 00:31:21,389 - Closure_13 - INFO - 失败信息为:
+2024-02-26 00:31:21,389 - Closure_13 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-26 00:31:21,389 - Closure_13 - INFO - 补丁1 1测试失败
+2024-02-26 00:31:21,390 - Closure_13 - INFO - 开始验证补丁1 2:
+2024-02-26 00:31:21,390 - Closure_13 - INFO - 
+Node next = c.getNext();
+traverse(c);
+c = next;
+
+2024-02-26 00:31:25,512 - Closure_13 - INFO - 编译成功
+2024-02-26 00:32:14,968 - Closure_13 - INFO - 测试成功
+2024-02-26 00:32:14,968 - Closure_13 - INFO - 补丁1 2 通过了所有的测试用例

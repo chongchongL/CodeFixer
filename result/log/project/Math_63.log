@@ -1,0 +1,169 @@
+2024-02-24 01:09:53,692 - Math_63 - INFO - rm -rf /home/chongchong/d4j-project/Math_63
+2024-02-24 01:09:53,692 - Math_63 - INFO - 删除 Math 63b 成功
+2024-02-24 01:09:53,693 - Math_63 - INFO - defects4j checkout -p Math -v 63b -w /home/chongchong/d4j-project/Math_63
+2024-02-24 01:09:56,120 - Math_63 - INFO - checkout Math 63b 成功
+2024-02-24 01:10:02,233 - Math_63 - INFO - 编译成功
+2024-02-24 01:10:15,643 - Math_63 - INFO - 测试失败
+2024-02-24 01:10:15,643 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 01:10:16,548 - Math_63 - INFO - 它的bug类型为:
+2024-02-24 01:10:16,548 - Math_63 - INFO - 1
+2024-02-24 01:11:30,510 - Math_63 - INFO - Math_63 未成功修复
+2024-02-24 11:03:55,846 - Math_63 - INFO - rm -rf /home/chongchong/d4j-project/Math_63
+2024-02-24 11:03:55,872 - Math_63 - INFO - 删除 Math 63b 成功
+2024-02-24 11:03:55,872 - Math_63 - INFO - defects4j checkout -p Math -v 63b -w /home/chongchong/d4j-project/Math_63
+2024-02-24 11:03:58,295 - Math_63 - INFO - checkout Math 63b 成功
+2024-02-24 11:04:04,281 - Math_63 - INFO - 编译成功
+2024-02-24 11:04:17,712 - Math_63 - INFO - 测试失败
+2024-02-24 11:04:17,712 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:04:18,629 - Math_63 - INFO - 它的bug类型为:
+2024-02-24 11:04:18,629 - Math_63 - INFO - 1
+2024-02-24 11:05:04,509 - Math_63 - INFO - 开始验证补丁1 1:
+2024-02-24 11:05:04,509 - Math_63 - INFO - return Double.compare(x, y) == 0;
+2024-02-24 11:05:05,851 - Math_63 - INFO - 编译成功
+2024-02-24 11:05:19,166 - Math_63 - INFO - 测试失败
+2024-02-24 11:05:19,166 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:05:19,624 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:05:19,624 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:05:19,624 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:05:19,624 - Math_63 - INFO -         assertFalse(MathUtils.equals(new double[] { Double.NaN },
+
+2024-02-24 11:05:19,624 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:05:19,624 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:05:19,624 - Math_63 - INFO - 补丁1 1测试失败
+2024-02-24 11:05:19,625 - Math_63 - INFO - 开始验证补丁1 2:
+2024-02-24 11:05:19,625 - Math_63 - INFO - return x == y || (Double.isNaN(x) && Double.isNaN(y));
+2024-02-24 11:05:20,954 - Math_63 - INFO - 编译成功
+2024-02-24 11:05:34,385 - Math_63 - INFO - 测试失败
+2024-02-24 11:05:34,385 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:05:34,857 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:05:34,857 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:05:34,857 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:05:34,857 - Math_63 - INFO -         assertFalse(MathUtils.equals(new double[] { Double.NaN },
+
+2024-02-24 11:05:34,857 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:05:34,857 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:05:34,857 - Math_63 - INFO - 补丁1 2测试失败
+2024-02-24 11:05:34,858 - Math_63 - INFO - 开始验证补丁1 3:
+2024-02-24 11:05:34,858 - Math_63 - INFO - return Double.doubleToLongBits(x) == Double.doubleToLongBits(y);
+2024-02-24 11:05:36,175 - Math_63 - INFO - 编译成功
+2024-02-24 11:05:49,654 - Math_63 - INFO - 测试失败
+2024-02-24 11:05:49,654 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:05:50,125 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:05:50,125 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:05:50,125 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:05:50,125 - Math_63 - INFO -         assertFalse(MathUtils.equals(new double[] { Double.NaN },
+
+2024-02-24 11:05:50,125 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:05:50,125 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:05:50,125 - Math_63 - INFO - 补丁1 3测试失败
+2024-02-24 11:05:50,126 - Math_63 - INFO - 开始验证补丁1 4:
+2024-02-24 11:05:50,126 - Math_63 - INFO - 
+return !Double.isNaN(x) && !Double.isNaN(y) && Math.abs(x - y) < 1e-9;
+
+2024-02-24 11:05:51,455 - Math_63 - INFO - 编译成功
+2024-02-24 11:06:05,020 - Math_63 - INFO - 测试失败
+2024-02-24 11:06:05,020 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:06:05,489 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:06:05,489 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:06:05,489 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:06:05,489 - Math_63 - INFO -         assertTrue(MathUtils.equals(new double[] {
+
+2024-02-24 11:06:05,489 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:06:05,489 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:06:05,489 - Math_63 - INFO - 补丁1 4测试失败
+2024-02-24 11:06:05,490 - Math_63 - INFO - 开始验证补丁1 5:
+2024-02-24 11:06:05,490 - Math_63 - INFO - 
+return (Double.isNaN(x) && Double.isNaN(y)) || (!Double.isNaN(x) && !Double.isNaN(y) && Math.abs(x - y) < 1e-9);
+
+2024-02-24 11:06:06,826 - Math_63 - INFO - 编译成功
+2024-02-24 11:06:20,398 - Math_63 - INFO - 测试失败
+2024-02-24 11:06:20,398 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:06:20,868 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:06:20,868 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:06:20,868 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:06:20,868 - Math_63 - INFO -         assertTrue(MathUtils.equals(new double[] {
+
+2024-02-24 11:06:20,868 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:06:20,868 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:06:20,868 - Math_63 - INFO - 补丁1 5测试失败
+2024-02-24 11:06:20,869 - Math_63 - INFO - 开始验证补丁1 6:
+2024-02-24 11:06:20,869 - Math_63 - INFO - 
+return Double.compare(x, y) == 0;
+
+2024-02-24 11:06:22,214 - Math_63 - INFO - 编译成功
+2024-02-24 11:06:35,586 - Math_63 - INFO - 测试失败
+2024-02-24 11:06:35,586 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:06:36,052 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:06:36,052 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:06:36,052 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:06:36,052 - Math_63 - INFO -         assertFalse(MathUtils.equals(new double[] { Double.NaN },
+
+2024-02-24 11:06:36,052 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:06:36,052 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:06:36,052 - Math_63 - INFO - 补丁1 6测试失败
+2024-02-24 11:06:36,053 - Math_63 - INFO - 开始验证补丁1 7:
+2024-02-24 11:06:36,053 - Math_63 - INFO - 
+    return Double.compare(x, y) == 0;
+
+2024-02-24 11:06:37,393 - Math_63 - INFO - 编译成功
+2024-02-24 11:06:51,102 - Math_63 - INFO - 测试失败
+2024-02-24 11:06:51,102 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:06:51,562 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:06:51,562 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:06:51,563 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:06:51,563 - Math_63 - INFO -         assertFalse(MathUtils.equals(new double[] { Double.NaN },
+
+2024-02-24 11:06:51,563 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:06:51,563 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:06:51,563 - Math_63 - INFO - 补丁1 7测试失败
+2024-02-24 11:06:51,564 - Math_63 - INFO - 开始验证补丁1 8:
+2024-02-24 11:06:51,564 - Math_63 - INFO - 
+    final double EPSILON = 1e-9;
+    return (Double.isNaN(x) && Double.isNaN(y)) || Math.abs(x - y) < EPSILON;
+
+2024-02-24 11:06:52,913 - Math_63 - INFO - 编译成功
+2024-02-24 11:07:06,478 - Math_63 - INFO - 测试失败
+2024-02-24 11:07:06,478 - Math_63 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+
+2024-02-24 11:07:06,950 - Math_63 - INFO - 选择失败的测试用例为:
+2024-02-24 11:07:06,950 - Math_63 - INFO - org.apache.commons.math.util.MathUtilsTest::testArrayEquals
+2024-02-24 11:07:06,950 - Math_63 - INFO - 失败的测试代码为:
+2024-02-24 11:07:06,950 - Math_63 - INFO -         assertTrue(MathUtils.equals(new double[] {
+
+2024-02-24 11:07:06,950 - Math_63 - INFO - 失败信息为:
+2024-02-24 11:07:06,950 - Math_63 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:07:06,950 - Math_63 - INFO - 补丁1 8测试失败
+2024-02-24 11:07:06,951 - Math_63 - INFO - 开始验证补丁1 9:
+2024-02-24 11:07:06,951 - Math_63 - INFO - 
+    return x == y;
+
+2024-02-24 11:07:08,300 - Math_63 - INFO - 编译成功
+2024-02-24 11:07:21,821 - Math_63 - INFO - 测试成功
+2024-02-24 11:07:21,821 - Math_63 - INFO - 补丁1 9 通过了所有的测试用例

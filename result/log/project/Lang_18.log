@@ -1,0 +1,80 @@
+2024-02-26 01:27:52,276 - Lang_18 - INFO - rm -rf /home/chongchong/d4j-project/Lang_18
+2024-02-26 01:27:52,277 - Lang_18 - INFO - 删除 Lang 18b 成功
+2024-02-26 01:27:52,277 - Lang_18 - INFO - defects4j checkout -p Lang -v 18b -w /home/chongchong/d4j-project/Lang_18
+2024-02-26 01:27:55,608 - Lang_18 - INFO - checkout Lang 18b 成功
+2024-02-26 01:28:00,173 - Lang_18 - INFO - 编译成功
+2024-02-26 01:28:09,355 - Lang_18 - INFO - 测试失败
+2024-02-26 01:28:09,355 - Lang_18 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.FastDateFormatTest::testFormat
+
+2024-02-26 01:28:10,249 - Lang_18 - INFO - 它的bug类型为:
+2024-02-26 01:28:10,249 - Lang_18 - INFO - 4
+2024-02-26 01:28:46,000 - Lang_18 - INFO - 开始验证补丁1 1:
+2024-02-26 01:28:46,000 - Lang_18 - INFO - 
+if (tokenLen == 2) {
+    rule = TwoDigitYearField.INSTANCE;
+} else {
+    rule = selectNumberRule(Calendar.YEAR, tokenLen);
+}
+break;
+
+2024-02-26 01:28:46,541 - Lang_18 - INFO - 编译失败
+2024-02-26 01:28:46,541 - Lang_18 - INFO - 错误: 孤立的case
+case 'M': // month in year (text and number)
+2024-02-26 01:28:46,541 - Lang_18 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:28:46,542 - Lang_18 - INFO - 开始验证补丁1 2:
+2024-02-26 01:28:46,542 - Lang_18 - INFO - 
+if (tokenLen < 4) {
+    rule = selectNumberRule(Calendar.YEAR, tokenLen);
+} else {
+    rule = TwoDigitYearField.INSTANCE;
+}
+break;
+
+2024-02-26 01:28:47,078 - Lang_18 - INFO - 编译失败
+2024-02-26 01:28:47,078 - Lang_18 - INFO - 错误: 孤立的case
+case 'M': // month in year (text and number)
+2024-02-26 01:28:47,078 - Lang_18 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:28:47,079 - Lang_18 - INFO - 开始验证补丁1 3:
+2024-02-26 01:28:47,079 - Lang_18 - INFO - 
+rule = selectNumberRule(Calendar.YEAR, tokenLen);
+break;
+
+2024-02-26 01:28:47,644 - Lang_18 - INFO - 编译失败
+2024-02-26 01:28:47,644 - Lang_18 - INFO - 错误: 孤立的case
+case 'M': // month in year (text and number)
+2024-02-26 01:28:47,644 - Lang_18 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:28:47,646 - Lang_18 - INFO - 开始验证补丁1 4:
+2024-02-26 01:28:47,646 - Lang_18 - INFO - 
+if (tokenLen >= 4) {
+    rule = selectNumberRule(Calendar.YEAR, tokenLen);
+} else {
+    rule = selectNumberRule(Calendar.YEAR, 2);
+}
+
+2024-02-26 01:28:48,780 - Lang_18 - INFO - 编译成功
+2024-02-26 01:28:57,938 - Lang_18 - INFO - 测试失败
+2024-02-26 01:28:57,938 - Lang_18 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.time.FastDateFormatTest::testShortDateStyleWithLocales
+  - org.apache.commons.lang3.time.FastDateFormatTest::testFormat
+
+2024-02-26 01:28:58,376 - Lang_18 - INFO - 选择失败的测试用例为:
+2024-02-26 01:28:58,376 - Lang_18 - INFO - org.apache.commons.lang3.time.FastDateFormatTest::testShortDateStyleWithLocales
+2024-02-26 01:28:58,376 - Lang_18 - INFO - 失败的测试代码为:
+2024-02-26 01:28:58,376 - Lang_18 - INFO -         assertEquals("2/3/04", fdf.format(cal));
+
+2024-02-26 01:28:58,376 - Lang_18 - INFO - 失败信息为:
+2024-02-26 01:28:58,376 - Lang_18 - INFO - junit.framework.ComparisonFailure: expected:<2/3/[]04> but was:<2/3/[20]04>
+
+2024-02-26 01:28:58,376 - Lang_18 - INFO - 补丁1 4测试失败
+2024-02-26 01:28:58,377 - Lang_18 - INFO - 开始验证补丁1 5:
+2024-02-26 01:28:58,377 - Lang_18 - INFO - 
+if (tokenLen == 2) {
+    rule = TwoDigitYearField.INSTANCE;
+} else {
+    rule = selectNumberRule(Calendar.YEAR, tokenLen);
+}
+
+2024-02-26 01:28:59,499 - Lang_18 - INFO - 编译成功
+2024-02-26 01:29:08,587 - Lang_18 - INFO - 测试成功
+2024-02-26 01:29:08,587 - Lang_18 - INFO - 补丁1 5 通过了所有的测试用例

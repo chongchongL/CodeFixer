@@ -1,0 +1,100 @@
+2024-02-25 10:28:04,709 - Closure_5 - INFO - rm -rf /home/chongchong/d4j-project/Closure_5
+2024-02-25 10:28:04,709 - Closure_5 - INFO - 删除 Closure 5b 成功
+2024-02-25 10:28:04,709 - Closure_5 - INFO - defects4j checkout -p Closure -v 5b -w /home/chongchong/d4j-project/Closure_5
+2024-02-25 10:28:07,655 - Closure_5 - INFO - checkout Closure 5b 成功
+2024-02-25 10:28:19,374 - Closure_5 - INFO - 编译成功
+2024-02-25 10:29:15,002 - Closure_5 - INFO - 测试失败
+2024-02-25 10:29:15,002 - Closure_5 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineObjectLiteralsTest::testNoInlineDeletedProperties
+
+2024-02-25 10:29:16,055 - Closure_5 - INFO - 它的bug类型为:
+2024-02-25 10:29:16,055 - Closure_5 - INFO - 3
+2024-02-25 10:30:09,818 - Closure_5 - INFO - 开始验证补丁1 1:
+2024-02-25 10:30:09,818 - Closure_5 - INFO - 
+if (nodeToDelete.isDelProp()) {
+  return false;
+}
+
+2024-02-25 10:30:11,832 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:11,832 - Closure_5 - INFO - 错误: 找不到符号
+if (nodeToDelete.isDelProp()) {
+2024-02-25 10:30:11,833 - Closure_5 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:30:11,833 - Closure_5 - INFO - 开始验证补丁1 2:
+2024-02-25 10:30:11,834 - Closure_5 - INFO - 
+if (!objectLiteral.hasOwnDefinedProperty(nodeToDelete.getPropertyName())) {
+  return false;
+}
+
+2024-02-25 10:30:13,872 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:13,872 - Closure_5 - INFO - 错误: 找不到符号
+if (!objectLiteral.hasOwnDefinedProperty(nodeToDelete.getPropertyName())) {
+2024-02-25 10:30:13,872 - Closure_5 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:30:13,873 - Closure_5 - INFO - 开始验证补丁1 3:
+2024-02-25 10:30:13,873 - Closure_5 - INFO - 
+if (objectLiteral.isPropertyDeleted(nodeToDelete.getPropertyName())) {
+  return false;
+}
+
+2024-02-25 10:30:15,927 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:15,927 - Closure_5 - INFO - 错误: 找不到符号
+if (objectLiteral.isPropertyDeleted(nodeToDelete.getPropertyName())) {
+2024-02-25 10:30:15,927 - Closure_5 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:30:15,928 - Closure_5 - INFO - 开始验证补丁1 4:
+2024-02-25 10:30:15,928 - Closure_5 - INFO - 
+          if (node.isDelProp()) {
+            return false;
+          }
+
+2024-02-25 10:30:17,980 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:17,980 - Closure_5 - INFO - 错误: 找不到符号
+if (node.isDelProp()) {
+2024-02-25 10:30:17,981 - Closure_5 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:30:17,982 - Closure_5 - INFO - 开始验证补丁1 5:
+2024-02-25 10:30:17,982 - Closure_5 - INFO - 
+          if (node.getType() == Token.DELPROP) {
+            return false;
+          }
+
+2024-02-25 10:30:20,019 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:20,019 - Closure_5 - INFO - 错误: 找不到符号
+if (node.getType() == Token.DELPROP) {
+2024-02-25 10:30:20,019 - Closure_5 - INFO - 补丁1 5 未成功编译
+2024-02-25 10:30:20,020 - Closure_5 - INFO - 开始验证补丁1 6:
+2024-02-25 10:30:20,020 - Closure_5 - INFO - 
+          if (parent.hasProperty("deleted") && parent.getBooleanProperty("deleted")) {
+            return false;
+          }
+
+2024-02-25 10:30:22,037 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:22,037 - Closure_5 - INFO - 错误: 找不到符号
+if (parent.hasProperty("deleted") && parent.getBooleanProperty("deleted")) {
+2024-02-25 10:30:22,037 - Closure_5 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:30:22,038 - Closure_5 - INFO - 开始验证补丁1 7:
+2024-02-25 10:30:22,038 - Closure_5 - INFO - 
+if (nodeToDelete.hasChildren()) {
+  return false;
+}
+
+2024-02-25 10:30:24,081 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:24,081 - Closure_5 - INFO - 错误: 找不到符号
+if (nodeToDelete.hasChildren()) {
+2024-02-25 10:30:24,081 - Closure_5 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:30:24,082 - Closure_5 - INFO - 开始验证补丁1 8:
+2024-02-25 10:30:24,082 - Closure_5 - INFO - 
+if (_propertyIsOnObjectPrototype(gramps)) {
+  return false;
+}
+
+2024-02-25 10:30:26,109 - Closure_5 - INFO - 编译失败
+2024-02-25 10:30:26,109 - Closure_5 - INFO - 错误: 找不到符号
+if (_propertyIsOnObjectPrototype(gramps)) {
+2024-02-25 10:30:26,109 - Closure_5 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:30:26,111 - Closure_5 - INFO - 开始验证补丁1 9:
+2024-02-25 10:30:26,111 - Closure_5 - INFO - 
+if (gramps.isDelProp()) {
+  return false;
+}
+
+2024-02-25 10:30:30,273 - Closure_5 - INFO - 编译成功
+2024-02-25 10:31:26,945 - Closure_5 - INFO - 测试成功
+2024-02-25 10:31:26,945 - Closure_5 - INFO - 补丁1 9 通过了所有的测试用例

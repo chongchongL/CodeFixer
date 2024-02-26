@@ -1,0 +1,878 @@
+2024-02-26 00:37:37,933 - Closure_48 - INFO - rm -rf /home/chongchong/d4j-project/Closure_48
+2024-02-26 00:37:37,934 - Closure_48 - INFO - 删除 Closure 48b 成功
+2024-02-26 00:37:37,934 - Closure_48 - INFO - defects4j checkout -p Closure -v 48b -w /home/chongchong/d4j-project/Closure_48
+2024-02-26 00:37:40,856 - Closure_48 - INFO - checkout Closure 48b 成功
+2024-02-26 00:37:51,980 - Closure_48 - INFO - 编译成功
+2024-02-26 00:38:36,601 - Closure_48 - INFO - 测试失败
+2024-02-26 00:38:36,601 - Closure_48 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:38:37,690 - Closure_48 - INFO - 它的bug类型为:
+2024-02-26 00:38:37,690 - Closure_48 - INFO - 4
+2024-02-26 00:39:31,747 - Closure_48 - INFO - 开始验证补丁1 1:
+2024-02-26 00:39:31,748 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info != null && !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:39:36,038 - Closure_48 - INFO - 编译成功
+2024-02-26 00:40:19,814 - Closure_48 - INFO - 测试失败
+2024-02-26 00:40:19,814 - Closure_48 - INFO - Failing tests: 10
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:40:20,337 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:40:20,337 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:40:20,337 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:40:20,337 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:40:20,337 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:40:20,337 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:40:20,337 - Closure_48 - INFO - 补丁1 1测试失败
+2024-02-26 00:40:20,338 - Closure_48 - INFO - 开始验证补丁1 2:
+2024-02-26 00:40:20,338 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            !rhsValue.isFunction() &&
+            (info != null && !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:40:24,638 - Closure_48 - INFO - 编译成功
+2024-02-26 00:41:09,616 - Closure_48 - INFO - 测试失败
+2024-02-26 00:41:09,616 - Closure_48 - INFO - Failing tests: 22
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:41:10,138 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:41:10,138 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+2024-02-26 00:41:10,138 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:41:10,138 - Closure_48 - INFO -     testTypes("/** @constructor */function O() {};" +
+
+2024-02-26 00:41:10,138 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:41:10,138 - Closure_48 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-26 00:41:10,138 - Closure_48 - INFO - 补丁1 2测试失败
+2024-02-26 00:41:10,139 - Closure_48 - INFO - 开始验证补丁1 3:
+2024-02-26 00:41:10,139 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info != null || scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:41:14,455 - Closure_48 - INFO - 编译成功
+2024-02-26 00:41:58,145 - Closure_48 - INFO - 测试失败
+2024-02-26 00:41:58,145 - Closure_48 - INFO - Failing tests: 14
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl4
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testInferredParam1
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod4
+  - com.google.javascript.jscomp.TypeCheckTest::testInferredReturn7
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl4
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:41:58,661 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:41:58,661 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:41:58,661 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:41:58,661 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:41:58,661 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:41:58,662 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:41:58,662 - Closure_48 - INFO - 补丁1 3测试失败
+2024-02-26 00:41:58,663 - Closure_48 - INFO - 开始验证补丁1 4:
+2024-02-26 00:41:58,663 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info != null && !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:41:58,663 - Closure_48 - INFO - 补丁1 4为重复的补丁
+2024-02-26 00:41:58,664 - Closure_48 - INFO - 开始验证补丁1 5:
+2024-02-26 00:41:58,664 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info != null || !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:42:02,920 - Closure_48 - INFO - 编译成功
+2024-02-26 00:42:46,609 - Closure_48 - INFO - 测试失败
+2024-02-26 00:42:46,609 - Closure_48 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:42:47,134 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:42:47,134 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+2024-02-26 00:42:47,135 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:42:47,135 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:42:47,135 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:42:47,135 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:42:47,135 - Closure_48 - INFO - 补丁1 5测试失败
+2024-02-26 00:42:47,136 - Closure_48 - INFO - 开始验证补丁1 6:
+2024-02-26 00:42:47,136 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = (rhsValue == null ||
+            !rhsValue.isFunction() ||
+            (info == null && scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:42:51,424 - Closure_48 - INFO - 编译成功
+2024-02-26 00:43:34,636 - Closure_48 - INFO - 测试失败
+2024-02-26 00:43:34,637 - Closure_48 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:43:35,165 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:43:35,165 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+2024-02-26 00:43:35,165 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:43:35,165 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:43:35,165 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:43:35,165 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:43:35,165 - Closure_48 - INFO - 补丁1 6测试失败
+2024-02-26 00:43:35,166 - Closure_48 - INFO - 开始验证补丁1 7:
+2024-02-26 00:43:35,166 - Closure_48 - INFO - 
+    if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            info != null && !scope.isDeclared(qName, false));
+    }
+    
+2024-02-26 00:43:39,415 - Closure_48 - INFO - 编译成功
+2024-02-26 00:44:23,644 - Closure_48 - INFO - 测试失败
+2024-02-26 00:44:23,644 - Closure_48 - INFO - Failing tests: 10
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:44:24,166 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:44:24,167 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:44:24,167 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:44:24,167 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:44:24,167 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:44:24,167 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:44:24,167 - Closure_48 - INFO - 补丁1 7测试失败
+2024-02-26 00:44:24,168 - Closure_48 - INFO - 开始验证补丁1 8:
+2024-02-26 00:44:24,168 - Closure_48 - INFO - 
+    if (inferred) {
+        // Determining declaration for #2 with additional parenthesis for clarity
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info != null && !scope.isDeclared(qName, false)));
+    }
+    
+2024-02-26 00:44:28,422 - Closure_48 - INFO - 编译成功
+2024-02-26 00:45:14,230 - Closure_48 - INFO - 测试失败
+2024-02-26 00:45:14,230 - Closure_48 - INFO - Failing tests: 10
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:45:14,752 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:45:14,752 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:45:14,752 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:45:14,752 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:45:14,752 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:45:14,752 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:45:14,752 - Closure_48 - INFO - 补丁1 8测试失败
+2024-02-26 00:45:14,753 - Closure_48 - INFO - 开始验证补丁1 9:
+2024-02-26 00:45:14,753 - Closure_48 - INFO - 
+    if (inferred) {
+        // Explained as if the logic required exactly one condition to be true
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info != null) && (!scope.isDeclared(qName, false)));
+    }
+    
+2024-02-26 00:45:19,009 - Closure_48 - INFO - 编译成功
+2024-02-26 00:46:03,086 - Closure_48 - INFO - 测试失败
+2024-02-26 00:46:03,086 - Closure_48 - INFO - Failing tests: 10
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:46:03,606 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:46:03,606 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:46:03,606 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:46:03,606 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:46:03,606 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:46:03,606 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:46:03,606 - Closure_48 - INFO - 补丁1 9测试失败
+2024-02-26 00:46:03,607 - Closure_48 - INFO - 开始验证补丁2 1:
+2024-02-26 00:46:03,607 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     (info == null && !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:46:07,903 - Closure_48 - INFO - 编译成功
+2024-02-26 00:46:51,773 - Closure_48 - INFO - 测试失败
+2024-02-26 00:46:51,773 - Closure_48 - INFO - Failing tests: 19
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testWarningForSubclassMethod
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.SymbolTableTest::testSuperClassReference
+  - com.google.javascript.jscomp.TightenTypesTest::testSubclass
+  - com.google.javascript.jscomp.TightenTypesTest::testCallPrototypeFunction
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+
+2024-02-26 00:46:52,290 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:46:52,290 - Closure_48 - INFO - com.google.javascript.jscomp.CheckAccessControlsTest::testWarningForSubclassMethod
+2024-02-26 00:46:52,290 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:46:52,290 - Closure_48 - INFO -     testDep("/** @constructor */ function Foo() {}" +
+
+2024-02-26 00:46:52,290 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:46:52,290 - Closure_48 - INFO - junit.framework.AssertionFailedError: There should be one error.  expected:<1> but was:<0>
+
+2024-02-26 00:46:52,290 - Closure_48 - INFO - 补丁2 1测试失败
+2024-02-26 00:46:52,291 - Closure_48 - INFO - 开始验证补丁2 2:
+2024-02-26 00:46:52,291 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2.
+        // Note: This assumes a double negation error in the original condition.
+        inferred = (rhsValue != null &&
+                    rhsValue.isFunction() &&
+                    (info == null && !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:46:56,582 - Closure_48 - INFO - 编译成功
+2024-02-26 00:47:40,863 - Closure_48 - INFO - 测试失败
+2024-02-26 00:47:40,863 - Closure_48 - INFO - Failing tests: 81
+  - com.google.javascript.jscomp.AmbiguatePropertiesTest::testTwoVar1
+  - com.google.javascript.jscomp.AmbiguatePropertiesTest::testRenamingMap
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testConstantProperty3
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testAndOrBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testTryFinallyBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testBreakBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testLabeledContinueBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testContinueBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testForBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testSwitchBranchDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testWhileBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testAssignedAfterMerge
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testDoBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testHookBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testSwitchBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testReturnBranchNoDifference
+  - com.google.javascript.jscomp.CheckPropertyOrderTest::testLabeledBreakBranchNoDifference
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType3
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes2
+  - com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAddMethodsPrototypeTwoWays
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testGlobalThis2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAddingMethodsPrototypeIdiomAndObjectLiteralSimpleNamespace
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testThis3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDfa8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAssign2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAssign3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testAssign4
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testPropertyInferredPropagation
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testQualifiedNameInference1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testQualifiedNameInference3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl4
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testAddMethodsPrototypeTwoWays
+  - com.google.javascript.jscomp.TypeCheckTest::testObjLitDef1a
+  - com.google.javascript.jscomp.TypeCheckTest::testObjLitDef1b
+  - com.google.javascript.jscomp.TypeCheckTest::testObjLitDef2a
+  - com.google.javascript.jscomp.TypeCheckTest::testObjLitDef2b
+  - com.google.javascript.jscomp.TypeCheckTest::testGlobalThis2
+  - com.google.javascript.jscomp.TypeCheckTest::testInferredParam1
+  - com.google.javascript.jscomp.TypeCheckTest::testAddingMethodsPrototypeIdiomAndObjectLiteralSimpleNamespace
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod4
+  - com.google.javascript.jscomp.TypeCheckTest::testConstructorType8
+  - com.google.javascript.jscomp.TypeCheckTest::testThis3
+  - com.google.javascript.jscomp.TypeCheckTest::testDfa8
+  - com.google.javascript.jscomp.TypeCheckTest::testInferredReturn7
+  - com.google.javascript.jscomp.TypeCheckTest::testAssign2
+  - com.google.javascript.jscomp.TypeCheckTest::testAssign3
+  - com.google.javascript.jscomp.TypeCheckTest::testAssign4
+  - com.google.javascript.jscomp.TypeCheckTest::testPropertyInferredPropagation
+  - com.google.javascript.jscomp.TypeCheckTest::testUndeclaredGlobalProperty1
+  - com.google.javascript.jscomp.TypeCheckTest::testUndeclaredGlobalProperty2
+  - com.google.javascript.jscomp.TypeCheckTest::testObjectLiteralDeclaration2
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue537a
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue537b
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference1
+  - com.google.javascript.jscomp.TypeCheckTest::testQualifiedNameInference3
+  - com.google.javascript.jscomp.TypeCheckTest::testLocallyInferredGlobalProperty1
+  - com.google.javascript.jscomp.TypeCheckTest::testAnonymousPrototype1
+  - com.google.javascript.jscomp.TypeCheckTest::testAnonymousPrototype2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl4
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testAddMethodsPrototypeTwoWays
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testPrototypeInit
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testGlobalThis2
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction2
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testPropertiesOnInterface2
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testInferredPrototypeProperty1
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testInferredPrototypeProperty2
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testPropertyOnUnknownSuperClass1
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testPropertyOnUnknownSuperClass2
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testBogusPrototypeInit
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testInferredProperty1
+
+2024-02-26 00:47:41,390 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:47:41,390 - Closure_48 - INFO - com.google.javascript.jscomp.AmbiguatePropertiesTest::testTwoVar1
+2024-02-26 00:47:41,390 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:47:41,391 - Closure_48 - INFO -     test(js, output);
+
+2024-02-26 00:47:41,391 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:47:41,391 - Closure_48 - INFO - junit.framework.AssertionFailedError: Unexpected warning(s): JSC_DUP_VAR_DECLARATION. variable Foo.prototype.z redefined with type number, original definition at testcode:2 with type number at testcode line 3 : 0 expected:<0> but was:<1>
+
+2024-02-26 00:47:41,391 - Closure_48 - INFO - 补丁2 2测试失败
+2024-02-26 00:47:41,392 - Closure_48 - INFO - 开始验证补丁2 3:
+2024-02-26 00:47:41,392 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        // Note: This assumes that the scope declaration check was not needed.
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     info != null);
+      }
+
+2024-02-26 00:47:45,739 - Closure_48 - INFO - 编译成功
+2024-02-26 00:48:29,460 - Closure_48 - INFO - 测试失败
+2024-02-26 00:48:29,460 - Closure_48 - INFO - Failing tests: 9
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:48:29,980 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:48:29,980 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:48:29,980 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:48:29,980 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:48:29,980 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:48:29,980 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:48:29,980 - Closure_48 - INFO - 补丁2 3测试失败
+2024-02-26 00:48:29,981 - Closure_48 - INFO - 开始验证补丁2 4:
+2024-02-26 00:48:29,981 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (info == null && !scope.isDeclared(qName, false)));
+      }
+
+      }
+
+2024-02-26 00:48:31,791 - Closure_48 - INFO - 编译失败
+2024-02-26 00:48:31,791 - Closure_48 - INFO - 错误: 非法的类型开始
+if (!inferred) {
+2024-02-26 00:48:31,792 - Closure_48 - INFO - 补丁2 4 未成功编译
+2024-02-26 00:48:31,793 - Closure_48 - INFO - 开始验证补丁2 5:
+2024-02-26 00:48:31,793 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+            rhsValue.isFunction() &&
+            (!scope.isDeclared(qName, false) || info == null));
+      }
+
+      }
+
+2024-02-26 00:48:33,600 - Closure_48 - INFO - 编译失败
+2024-02-26 00:48:33,601 - Closure_48 - INFO - 错误: 非法的类型开始
+if (!inferred) {
+2024-02-26 00:48:33,601 - Closure_48 - INFO - 补丁2 5 未成功编译
+2024-02-26 00:48:33,602 - Closure_48 - INFO - 开始验证补丁2 6:
+2024-02-26 00:48:33,602 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = rhsValue != null &&
+                   rhsValue.isFunction() &&
+                   (info != null || !scope.isDeclared(qName, false));
+      }
+
+      }
+
+2024-02-26 00:48:35,405 - Closure_48 - INFO - 编译失败
+2024-02-26 00:48:35,405 - Closure_48 - INFO - 错误: 非法的类型开始
+if (!inferred) {
+2024-02-26 00:48:35,406 - Closure_48 - INFO - 补丁2 6 未成功编译
+2024-02-26 00:48:35,407 - Closure_48 - INFO - 开始验证补丁2 7:
+2024-02-26 00:48:35,407 - Closure_48 - INFO - 
+if (inferred) {
+  // Determining declaration for #2
+  inferred = !(rhsValue != null &&
+               rhsValue.isFunction() &&
+               info == null && !scope.isDeclared(qName, false));
+}
+
+2024-02-26 00:48:39,689 - Closure_48 - INFO - 编译成功
+2024-02-26 00:49:23,575 - Closure_48 - INFO - 测试失败
+2024-02-26 00:49:23,575 - Closure_48 - INFO - Failing tests: 19
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testWarningForSubclassMethod
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.SymbolTableTest::testSuperClassReference
+  - com.google.javascript.jscomp.TightenTypesTest::testSubclass
+  - com.google.javascript.jscomp.TightenTypesTest::testCallPrototypeFunction
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+
+2024-02-26 00:49:24,098 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:49:24,098 - Closure_48 - INFO - com.google.javascript.jscomp.CheckAccessControlsTest::testWarningForSubclassMethod
+2024-02-26 00:49:24,098 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:49:24,099 - Closure_48 - INFO -     testDep("/** @constructor */ function Foo() {}" +
+
+2024-02-26 00:49:24,099 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:49:24,099 - Closure_48 - INFO - junit.framework.AssertionFailedError: There should be one error.  expected:<1> but was:<0>
+
+2024-02-26 00:49:24,099 - Closure_48 - INFO - 补丁2 7测试失败
+2024-02-26 00:49:24,100 - Closure_48 - INFO - 开始验证补丁2 8:
+2024-02-26 00:49:24,100 - Closure_48 - INFO - 
+if (inferred) {
+  // Determining declaration for #2
+  inferred = !(rhsValue != null &&
+               rhsValue.isFunction() &&
+               (info == null && !(scope.isDeclared(qName, false))));
+}
+
+2024-02-26 00:49:28,372 - Closure_48 - INFO - 编译成功
+2024-02-26 00:50:12,373 - Closure_48 - INFO - 测试失败
+2024-02-26 00:50:12,373 - Closure_48 - INFO - Failing tests: 19
+  - com.google.javascript.jscomp.CheckAccessControlsTest::testWarningForSubclassMethod
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.SymbolTableTest::testSuperClassReference
+  - com.google.javascript.jscomp.TightenTypesTest::testSubclass
+  - com.google.javascript.jscomp.TightenTypesTest::testCallPrototypeFunction
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+
+2024-02-26 00:50:12,905 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:50:12,906 - Closure_48 - INFO - com.google.javascript.jscomp.CheckAccessControlsTest::testWarningForSubclassMethod
+2024-02-26 00:50:12,906 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:50:12,906 - Closure_48 - INFO -     testDep("/** @constructor */ function Foo() {}" +
+
+2024-02-26 00:50:12,906 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:50:12,906 - Closure_48 - INFO - junit.framework.AssertionFailedError: There should be one error.  expected:<1> but was:<0>
+
+2024-02-26 00:50:12,906 - Closure_48 - INFO - 补丁2 8测试失败
+2024-02-26 00:50:12,907 - Closure_48 - INFO - 开始验证补丁2 9:
+2024-02-26 00:50:12,907 - Closure_48 - INFO - 
+if (inferred) {
+  // Determining declaration for #2
+  inferred = !(rhsValue != null &&
+               rhsValue.isFunction() &&
+               (info != null && scope.isDeclared(qName, false)));
+}
+
+2024-02-26 00:50:17,206 - Closure_48 - INFO - 编译成功
+2024-02-26 00:51:01,634 - Closure_48 - INFO - 测试失败
+2024-02-26 00:51:01,634 - Closure_48 - INFO - Failing tests: 22
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:51:02,169 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:51:02,169 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+2024-02-26 00:51:02,169 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:51:02,169 - Closure_48 - INFO -     testTypes("/** @constructor */function O() {};" +
+
+2024-02-26 00:51:02,169 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:51:02,169 - Closure_48 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-26 00:51:02,169 - Closure_48 - INFO - 补丁2 9测试失败
+2024-02-26 00:51:02,170 - Closure_48 - INFO - 开始验证补丁3 1:
+2024-02-26 00:51:02,170 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     !scope.isDeclared(qName, false));
+      }
+
+2024-02-26 00:51:06,418 - Closure_48 - INFO - 编译成功
+2024-02-26 00:51:50,276 - Closure_48 - INFO - 测试失败
+2024-02-26 00:51:50,276 - Closure_48 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:51:50,798 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:51:50,798 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+2024-02-26 00:51:50,798 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:51:50,798 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:51:50,798 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:51:50,798 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:51:50,798 - Closure_48 - INFO - 补丁3 1测试失败
+2024-02-26 00:51:50,799 - Closure_48 - INFO - 开始验证补丁3 2:
+2024-02-26 00:51:50,799 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     scope.isDeclared(qName, false));
+      }
+
+2024-02-26 00:51:55,087 - Closure_48 - INFO - 编译成功
+2024-02-26 00:52:38,641 - Closure_48 - INFO - 测试失败
+2024-02-26 00:52:38,641 - Closure_48 - INFO - Failing tests: 26
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl4
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testInferredParam1
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testInferredReturn7
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl4
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:52:39,163 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:52:39,163 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+2024-02-26 00:52:39,163 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:52:39,163 - Closure_48 - INFO -     testTypes("/** @constructor */function O() {};" +
+
+2024-02-26 00:52:39,163 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:52:39,163 - Closure_48 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-26 00:52:39,163 - Closure_48 - INFO - 补丁3 2测试失败
+2024-02-26 00:52:39,164 - Closure_48 - INFO - 开始验证补丁3 3:
+2024-02-26 00:52:39,164 - Closure_48 - INFO - 
+      if (inferred) {
+        // Determining declaration for #2
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     (info != null && !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:52:43,424 - Closure_48 - INFO - 编译成功
+2024-02-26 00:53:28,449 - Closure_48 - INFO - 测试失败
+2024-02-26 00:53:28,449 - Closure_48 - INFO - Failing tests: 10
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:53:28,971 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:53:28,971 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+2024-02-26 00:53:28,971 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:53:28,971 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:53:28,971 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:53:28,971 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:53:28,971 - Closure_48 - INFO - 补丁3 3测试失败
+2024-02-26 00:53:28,973 - Closure_48 - INFO - 开始验证补丁3 4:
+2024-02-26 00:53:28,973 - Closure_48 - INFO - 
+      if (inferred) {
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     !scope.isDeclared(qName, false));
+      }
+
+2024-02-26 00:53:33,322 - Closure_48 - INFO - 编译成功
+2024-02-26 00:54:16,674 - Closure_48 - INFO - 测试失败
+2024-02-26 00:54:16,674 - Closure_48 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:54:17,204 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:54:17,204 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+2024-02-26 00:54:17,204 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:54:17,204 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:54:17,204 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:54:17,204 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:54:17,204 - Closure_48 - INFO - 补丁3 4测试失败
+2024-02-26 00:54:17,205 - Closure_48 - INFO - 开始验证补丁3 5:
+2024-02-26 00:54:17,205 - Closure_48 - INFO - 
+      if (inferred && rhsValue != null &&
+          rhsValue.isFunction() &&
+          !scope.isDeclared(qName, false)) {
+        inferred = false;
+      }
+
+2024-02-26 00:54:21,615 - Closure_48 - INFO - 编译成功
+2024-02-26 00:55:05,898 - Closure_48 - INFO - 测试失败
+2024-02-26 00:55:05,899 - Closure_48 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:55:06,420 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:55:06,420 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+2024-02-26 00:55:06,420 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:55:06,420 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:55:06,420 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:55:06,420 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:55:06,420 - Closure_48 - INFO - 补丁3 5测试失败
+2024-02-26 00:55:06,421 - Closure_48 - INFO - 开始验证补丁3 6:
+2024-02-26 00:55:06,421 - Closure_48 - INFO - 
+      if (inferred) {
+        if (rhsValue != null && 
+            rhsValue.isFunction() && 
+            !scope.isDeclared(qName, false)) {
+          inferred = false;
+        }
+      }
+
+2024-02-26 00:55:10,666 - Closure_48 - INFO - 编译成功
+2024-02-26 00:55:54,025 - Closure_48 - INFO - 测试失败
+2024-02-26 00:55:54,025 - Closure_48 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:55:54,548 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:55:54,548 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+2024-02-26 00:55:54,548 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:55:54,548 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:55:54,548 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:55:54,548 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:55:54,548 - Closure_48 - INFO - 补丁3 6测试失败
+2024-02-26 00:55:54,549 - Closure_48 - INFO - 开始验证补丁3 7:
+2024-02-26 00:55:54,549 - Closure_48 - INFO - 
+      if (inferred) {
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     !scope.isDeclared(qName, false));
+      }
+
+2024-02-26 00:55:54,549 - Closure_48 - INFO - 补丁3 7为重复的补丁
+2024-02-26 00:55:54,550 - Closure_48 - INFO - 开始验证补丁3 8:
+2024-02-26 00:55:54,550 - Closure_48 - INFO - 
+      if (inferred) {
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     info != null) ||
+                     !scope.isDeclared(qName, false);
+      }
+
+2024-02-26 00:55:58,919 - Closure_48 - INFO - 编译成功
+2024-02-26 00:56:44,371 - Closure_48 - INFO - 测试失败
+2024-02-26 00:56:44,371 - Closure_48 - INFO - Failing tests: 22
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExternStubs4
+  - com.google.javascript.jscomp.SymbolTableTest::testLocalThisReferences2
+  - com.google.javascript.jscomp.SymbolTableTest::testMissingConstructorTag
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod2
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateInstanceMethod3
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison1
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison2
+  - com.google.javascript.jscomp.TypeCheckTest::testValueOfComparison3
+  - com.google.javascript.jscomp.TypeCheckTest::testStaticMethodDeclaration3
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference6
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference7
+  - com.google.javascript.jscomp.TypeCheckTest::testMethodInference8
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateStaticMethodDecl5
+  - com.google.javascript.jscomp.TypedScopeCreatorTest::testMethodBeforeFunction1
+
+2024-02-26 00:56:44,901 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:56:44,901 - Closure_48 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testValueOfComparison1
+2024-02-26 00:56:44,901 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:56:44,901 - Closure_48 - INFO -     testTypes("/** @constructor */function O() {};" +
+
+2024-02-26 00:56:44,901 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:56:44,901 - Closure_48 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-26 00:56:44,901 - Closure_48 - INFO - 补丁3 8测试失败
+2024-02-26 00:56:44,902 - Closure_48 - INFO - 开始验证补丁3 9:
+2024-02-26 00:56:44,902 - Closure_48 - INFO - 
+      if (inferred) {
+        inferred = !(rhsValue != null &&
+                     rhsValue.isFunction() &&
+                     (info != null || !scope.isDeclared(qName, false)));
+      }
+
+2024-02-26 00:56:49,121 - Closure_48 - INFO - 编译成功
+2024-02-26 00:57:33,950 - Closure_48 - INFO - 测试失败
+2024-02-26 00:57:33,950 - Closure_48 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+
+2024-02-26 00:57:34,487 - Closure_48 - INFO - 选择失败的测试用例为:
+2024-02-26 00:57:34,487 - Closure_48 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue586
+2024-02-26 00:57:34,487 - Closure_48 - INFO - 失败的测试代码为:
+2024-02-26 00:57:34,487 - Closure_48 - INFO -     testTypes(
+
+2024-02-26 00:57:34,487 - Closure_48 - INFO - 失败信息为:
+2024-02-26 00:57:34,487 - Closure_48 - INFO - junit.framework.AssertionFailedError: expected a warning
+
+2024-02-26 00:57:34,487 - Closure_48 - INFO - 补丁3 9测试失败
+2024-02-26 00:57:34,487 - Closure_48 - INFO - Closure_48 未成功修复

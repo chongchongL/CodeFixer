@@ -1,0 +1,482 @@
+2024-02-25 12:10:11,204 - Lang_11 - INFO - rm -rf /home/chongchong/d4j-project/Lang_11
+2024-02-25 12:10:11,205 - Lang_11 - INFO - 删除 Lang 11b 成功
+2024-02-25 12:10:11,205 - Lang_11 - INFO - defects4j checkout -p Lang -v 11b -w /home/chongchong/d4j-project/Lang_11
+2024-02-25 12:10:14,548 - Lang_11 - INFO - checkout Lang 11b 成功
+2024-02-25 12:10:19,362 - Lang_11 - INFO - 编译成功
+2024-02-25 12:10:31,189 - Lang_11 - INFO - 测试失败
+2024-02-25 12:10:31,189 - Lang_11 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG807
+
+2024-02-25 12:10:32,060 - Lang_11 - INFO - 它的bug类型为:
+2024-02-25 12:10:32,060 - Lang_11 - INFO - 3
+2024-02-25 12:11:26,095 - Lang_11 - INFO - 开始验证补丁1 1:
+2024-02-25 12:11:26,095 - Lang_11 - INFO - 
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = 'A';  // Assuming 'A' is the intended start value for this scenario               
+                }
+            }  // Correctly close the block here
+
+            // Validate start value and throw an error if it's not positive
+            if (start <= 0) {
+                throw new IllegalArgumentException("start must be positive");
+            }
+
+            char[] buffer = new char[count];
+            // ... rest of the code continues
+   
+2024-02-25 12:11:26,612 - Lang_11 - INFO - 编译失败
+2024-02-25 12:11:26,612 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:11:26,612 - Lang_11 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:11:26,614 - Lang_11 - INFO - 开始验证补丁1 2:
+2024-02-25 12:11:26,614 - Lang_11 - INFO - 
+            int start = 'A';  // Initialize start with a default positive value
+
+            if (!letters && !numbers) {
+                end = Integer.MAX_VALUE;
+            } else {
+                end = 'z' + 1;               
+            }
+        }  // Correctly close the block here
+
+        // Check if start is valid (positive)
+        if (start <= 0) {
+            throw new IllegalArgumentException("start must be positive");
+        }
+
+        char[] buffer = new char[count];
+        // ... rest of the code continues
+   
+2024-02-25 12:11:27,145 - Lang_11 - INFO - 编译失败
+2024-02-25 12:11:27,145 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:11:27,145 - Lang_11 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:11:27,146 - Lang_11 - INFO - 开始验证补丁1 3:
+2024-02-25 12:11:27,146 - Lang_11 - INFO - 
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = 'A';                
+                }
+            }  // Correctly close the block here
+
+            // Check if start value was set, assuming it should be positive
+            if (start <= 0) {
+                throw new IllegalArgumentException("start must be positive");
+            }
+
+            char[] buffer = new char[count];
+            // ... rest of the code continues
+   
+2024-02-25 12:11:27,666 - Lang_11 - INFO - 编译失败
+2024-02-25 12:11:27,666 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:11:27,666 - Lang_11 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:11:27,667 - Lang_11 - INFO - 开始验证补丁1 4:
+2024-02-25 12:11:27,667 - Lang_11 - INFO - 
+        // Correct the block scoping issue
+        if (!letters && !numbers) {
+            end = Integer.MAX_VALUE;
+        } else {
+            end = 'z' + 1;
+            start = ' ';                
+        }
+        // Ensure `start` variable is initialized before use
+        if (start <= 0) {
+            throw new IllegalArgumentException("The start value must be positive");
+        }
+
+2024-02-25 12:11:28,699 - Lang_11 - INFO - 编译成功
+2024-02-25 12:11:40,498 - Lang_11 - INFO - 测试失败
+2024-02-25 12:11:40,499 - Lang_11 - INFO - Failing tests: 4
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG805
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG807
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLang100
+  - org.apache.commons.lang3.RandomStringUtilsTest::testRandomStringUtils
+
+2024-02-25 12:11:40,934 - Lang_11 - INFO - 选择失败的测试用例为:
+2024-02-25 12:11:40,935 - Lang_11 - INFO - org.apache.commons.lang3.RandomStringUtilsTest::testLANG805
+2024-02-25 12:11:40,935 - Lang_11 - INFO - 失败的测试代码为:
+2024-02-25 12:11:40,935 - Lang_11 - INFO -         assertEquals("aaa", RandomStringUtils.random(3,0,0,false,false,new char[]{'a'},new Random(seed)));
+
+2024-02-25 12:11:40,935 - Lang_11 - INFO - 失败信息为:
+2024-02-25 12:11:40,935 - Lang_11 - INFO - java.lang.IllegalArgumentException: The start value must be positive
+
+2024-02-25 12:11:40,935 - Lang_11 - INFO - 补丁1 4测试失败
+2024-02-25 12:11:40,936 - Lang_11 - INFO - 开始验证补丁1 5:
+2024-02-25 12:11:40,936 - Lang_11 - INFO - 
+        // Initialize `start` before the if-else block
+        start = ' ';
+        if (!letters && !numbers) {
+            end = Integer.MAX_VALUE;
+        } else {
+            end = 'z' + 1;                
+        }
+
+2024-02-25 12:11:41,938 - Lang_11 - INFO - 编译成功
+2024-02-25 12:11:53,756 - Lang_11 - INFO - 测试失败
+2024-02-25 12:11:53,757 - Lang_11 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG805
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG807
+
+2024-02-25 12:11:54,199 - Lang_11 - INFO - 选择失败的测试用例为:
+2024-02-25 12:11:54,199 - Lang_11 - INFO - org.apache.commons.lang3.RandomStringUtilsTest::testLANG805
+2024-02-25 12:11:54,199 - Lang_11 - INFO - 失败的测试代码为:
+2024-02-25 12:11:54,199 - Lang_11 - INFO -         assertEquals("aaa", RandomStringUtils.random(3,0,0,false,false,new char[]{'a'},new Random(seed)));
+
+2024-02-25 12:11:54,199 - Lang_11 - INFO - 失败信息为:
+2024-02-25 12:11:54,199 - Lang_11 - INFO - java.lang.ArrayIndexOutOfBoundsException: 1242338189
+
+2024-02-25 12:11:54,199 - Lang_11 - INFO - 补丁1 5测试失败
+2024-02-25 12:11:54,200 - Lang_11 - INFO - 开始验证补丁1 6:
+2024-02-25 12:11:54,200 - Lang_11 - INFO - 
+        // Add an error message related to the `start` variable
+        if (start <= 0) {
+            throw new IllegalArgumentException("The start value must be positive");
+        }
+
+2024-02-25 12:11:55,209 - Lang_11 - INFO - 编译成功
+2024-02-25 12:12:07,054 - Lang_11 - INFO - 测试失败
+2024-02-25 12:12:07,054 - Lang_11 - INFO - Failing tests: 4
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG805
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG807
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLang100
+  - org.apache.commons.lang3.RandomStringUtilsTest::testRandomStringUtils
+
+2024-02-25 12:12:07,489 - Lang_11 - INFO - 选择失败的测试用例为:
+2024-02-25 12:12:07,489 - Lang_11 - INFO - org.apache.commons.lang3.RandomStringUtilsTest::testLANG805
+2024-02-25 12:12:07,489 - Lang_11 - INFO - 失败的测试代码为:
+2024-02-25 12:12:07,489 - Lang_11 - INFO -         assertEquals("aaa", RandomStringUtils.random(3,0,0,false,false,new char[]{'a'},new Random(seed)));
+
+2024-02-25 12:12:07,489 - Lang_11 - INFO - 失败信息为:
+2024-02-25 12:12:07,489 - Lang_11 - INFO - java.lang.IllegalArgumentException: The start value must be positive
+
+2024-02-25 12:12:07,489 - Lang_11 - INFO - 补丁1 6测试失败
+2024-02-25 12:12:07,490 - Lang_11 - INFO - 开始验证补丁1 7:
+2024-02-25 12:12:07,490 - Lang_11 - INFO - 
+                // Removed erroneous closing brace
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = ' ';                
+                } // Correct scope for the initialization of start and end variables
+
+                // Additional code to ensure 'start' is validated, assuming 'start' should be positive
+                if (start < 0) {
+                    throw new IllegalArgumentException("start must be positive");
+                }
+
+                char[] buffer = new char[count];
+                int gap = end - start;
+
+                while (count-- != 0) {
+                    char ch;
+                    if (chars == null) {
+
+2024-02-25 12:12:08,012 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:08,012 - Lang_11 - INFO - 错误: 非法的表达式开始
+public static String random(int count, String chars) {
+2024-02-25 12:12:08,012 - Lang_11 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:12:08,013 - Lang_11 - INFO - 开始验证补丁1 8:
+2024-02-25 12:12:08,013 - Lang_11 - INFO - 
+                // No change in the braces but added a validation for 'start'
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = ' ';                
+                }
+            } // End of the code block
+
+            // Adding validation for 'start' outside of the code block where it's set
+            if (start < 0) {
+                throw new IllegalArgumentException("start must be positive");
+            }
+
+            char[] buffer = new char[count];
+            int gap = end - start;
+
+            while (count-- != 0) {
+                char ch;
+                if (chars == null) {
+
+2024-02-25 12:12:08,515 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:08,515 - Lang_11 - INFO - 错误: 非法的表达式开始
+public static String random(int count, String chars) {
+2024-02-25 12:12:08,515 - Lang_11 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:12:08,516 - Lang_11 - INFO - 开始验证补丁1 9:
+2024-02-25 12:12:08,516 - Lang_11 - INFO - 
+                // No change in the braces but added a validation for 'start'
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = ' ';                
+                }
+            } // End of the code block
+
+            // Assuming that 'count' should also be positive
+            if (count < 0) {
+                throw new IllegalArgumentException("count must be positive");
+            }
+
+            if (start < 0) {
+                throw new IllegalArgumentException("start must be positive");
+            }
+
+            char[] buffer = new char[count];
+            int gap = end - start;
+
+            while (count-- != 0) {
+                char ch;
+                if (chars == null) {
+
+2024-02-25 12:12:09,032 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:09,032 - Lang_11 - INFO - 错误: 非法的表达式开始
+public static String random(int count, String chars) {
+2024-02-25 12:12:09,032 - Lang_11 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:12:09,033 - Lang_11 - INFO - 开始验证补丁2 1:
+2024-02-25 12:12:09,033 - Lang_11 - INFO - 
+            } // end of the if-else block
+
+2024-02-25 12:12:09,551 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:09,552 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:09,552 - Lang_11 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:12:09,553 - Lang_11 - INFO - 开始验证补丁2 2:
+2024-02-25 12:12:09,553 - Lang_11 - INFO - 
+            } // end of the if-else block
+            int count = /* appropriate initialization */;
+
+2024-02-25 12:12:10,077 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:10,077 - Lang_11 - INFO - 错误: 非法的表达式开始
+int count = /* appropriate initialization */;
+2024-02-25 12:12:10,077 - Lang_11 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:12:10,079 - Lang_11 - INFO - 开始验证补丁2 3:
+2024-02-25 12:12:10,079 - Lang_11 - INFO - 
+            } // end of the if-else block
+            int start; // variable declaration, if not already declared
+            int count = /* appropriate initialization */;
+
+2024-02-25 12:12:10,590 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:10,590 - Lang_11 - INFO - 错误: 非法的表达式开始
+int count = /* appropriate initialization */;
+2024-02-25 12:12:10,590 - Lang_11 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:12:10,591 - Lang_11 - INFO - 开始验证补丁2 4:
+2024-02-25 12:12:10,591 - Lang_11 - INFO - 
+                } // This closes the else block
+            } // This closes the if block
+
+2024-02-25 12:12:11,105 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:11,105 - Lang_11 - INFO - 错误: 需要class, interface或enum
+char[] buffer = new char[count];
+2024-02-25 12:12:11,105 - Lang_11 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:12:11,106 - Lang_11 - INFO - 开始验证补丁2 5:
+2024-02-25 12:12:11,106 - Lang_11 - INFO - 
+                } // This closes the else block
+                // Additional or modified code could go here, if needed for context
+            } // This closes the if block
+
+2024-02-25 12:12:11,613 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:11,613 - Lang_11 - INFO - 错误: 需要class, interface或enum
+char[] buffer = new char[count];
+2024-02-25 12:12:11,613 - Lang_11 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:12:11,614 - Lang_11 - INFO - 开始验证补丁2 6:
+2024-02-25 12:12:11,614 - Lang_11 - INFO - 
+                }
+                // Potential initialization or validation of start or end
+                // to ensure 'start' is correctly set for the error handling
+            } // This closes the if/else block
+
+2024-02-25 12:12:12,121 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:12,121 - Lang_11 - INFO - 错误: 需要class, interface或enum
+char[] buffer = new char[count];
+2024-02-25 12:12:12,121 - Lang_11 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:12:12,122 - Lang_11 - INFO - 开始验证补丁2 7:
+2024-02-25 12:12:12,122 - Lang_11 - INFO - 
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = ' ';                
+                }
+            } // This closing brace matches the opening brace of the if-else construct
+            
+            // Additional code if required goes here
+
+        char[] buffer = new char[count];
+        int gap = end - start;
+
+        while (count-- != 0) {
+            char ch;
+            if (chars == null) {
+
+2024-02-25 12:12:12,625 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:12,625 - Lang_11 - INFO - 错误: 非法的表达式开始
+public static String random(int count, String chars) {
+2024-02-25 12:12:12,625 - Lang_11 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:12:12,626 - Lang_11 - INFO - 开始验证补丁2 8:
+2024-02-25 12:12:12,626 - Lang_11 - INFO - 
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = ' ';                
+                }
+                // Some logic that was supposed to be within the same block as the if-else
+                // For instance, a check that must be outside the if-else scope
+                checkVariableRange(start, end);
+            } // This closes the overall conditional or method block
+
+        char[] buffer = new char[count];
+        int gap = end - start;
+
+        while (count-- != 0) {
+            char ch;
+            if (chars == null) {
+
+2024-02-25 12:12:13,127 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:13,128 - Lang_11 - INFO - 错误: 非法的表达式开始
+public static String random(int count, String chars) {
+2024-02-25 12:12:13,128 - Lang_11 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:12:13,129 - Lang_11 - INFO - 开始验证补丁2 9:
+2024-02-25 12:12:13,129 - Lang_11 - INFO - 
+                if (!letters && !numbers) {
+                    end = Integer.MAX_VALUE;
+                } else {
+                    end = 'z' + 1;
+                    start = ' ';                
+                }
+                // This could be where the logic to handle the start should be placed
+                if(start < 0) {
+                    throw new IllegalArgumentException("Start must be positive");
+                }
+            } // Assuming this is the correct placement for the closing brace that encapsulates logic related to `start`  
+
+        char[] buffer = new char[count];
+        int gap = end - start;
+
+        while (count-- != 0) {
+            char ch;
+            if (chars == null) {
+
+2024-02-25 12:12:13,634 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:13,634 - Lang_11 - INFO - 错误: 非法的表达式开始
+public static String random(int count, String chars) {
+2024-02-25 12:12:13,634 - Lang_11 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:12:13,635 - Lang_11 - INFO - 开始验证补丁3 1:
+2024-02-25 12:12:13,635 - Lang_11 - INFO - 
+            // Remove the erroneous closing brace
+        }
+        // Rest of the method continues here
+        char[] buffer = new char[count];
+        // ...
+
+2024-02-25 12:12:14,157 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:14,157 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:14,157 - Lang_11 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:12:14,158 - Lang_11 - INFO - 开始验证补丁3 2:
+2024-02-25 12:12:14,158 - Lang_11 - INFO - 
+            // Additional code to handle error conditions could be inserted here
+            throw new IllegalArgumentException("n must be positive and start must be less than end");
+        }
+        // Rest of the method continues here
+        char[] buffer = new char[count];
+        // ...
+
+2024-02-25 12:12:14,681 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:14,681 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:14,682 - Lang_11 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:12:14,683 - Lang_11 - INFO - 开始验证补丁3 3:
+2024-02-25 12:12:14,683 - Lang_11 - INFO - 
+            // Conditional block to initialize start if not already set
+            if (start == 0) {
+                start = '0';
+            }
+        }
+        // Rest of the method continues here
+        char[] buffer = new char[count];
+        // ...
+
+2024-02-25 12:12:15,201 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:15,201 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:15,201 - Lang_11 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:12:15,202 - Lang_11 - INFO - 开始验证补丁3 4:
+2024-02-25 12:12:15,202 - Lang_11 - INFO - 
+                // Assuming this brace is closing the else block                
+                }
+                // The <fill> placeholder should be replaced with nothing or potentially necessary logic that goes here
+                // (rest of the code follows)
+
+2024-02-25 12:12:15,725 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:15,725 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:15,725 - Lang_11 - INFO - 补丁3 4 未成功编译
+2024-02-25 12:12:15,727 - Lang_11 - INFO - 开始验证补丁3 5:
+2024-02-25 12:12:15,727 - Lang_11 - INFO - 
+                // Assuming this brace is closing the else block
+                //}
+                // The <fill> placeholder should be replaced with necessary logic or could be left empty
+                // (rest of the code follows)
+
+2024-02-25 12:12:16,739 - Lang_11 - INFO - 编译成功
+2024-02-25 12:12:28,622 - Lang_11 - INFO - 测试失败
+2024-02-25 12:12:28,622 - Lang_11 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.RandomStringUtilsTest::testLANG807
+
+2024-02-25 12:12:29,060 - Lang_11 - INFO - 选择失败的测试用例为:
+2024-02-25 12:12:29,060 - Lang_11 - INFO - org.apache.commons.lang3.RandomStringUtilsTest::testLANG807
+2024-02-25 12:12:29,060 - Lang_11 - INFO - 失败的测试代码为:
+2024-02-25 12:12:29,060 - Lang_11 - INFO -             assertTrue("Message (" + msg + ") must contain 'start'", msg.contains("start"));
+
+2024-02-25 12:12:29,060 - Lang_11 - INFO - 失败信息为:
+2024-02-25 12:12:29,060 - Lang_11 - INFO - junit.framework.AssertionFailedError: Message (n must be positive) must contain 'start'
+
+2024-02-25 12:12:29,060 - Lang_11 - INFO - 补丁3 5测试失败
+2024-02-25 12:12:29,061 - Lang_11 - INFO - 开始验证补丁3 6:
+2024-02-25 12:12:29,061 - Lang_11 - INFO - 
+                // Assuming correct closing of else block
+                }
+                // Add logic to initialize or handle `start`
+                if (count < 0) {
+                    throw new IllegalArgumentException("'count' must be positive and 'start' must be correctly initialized");
+                }
+                // (rest of the code follows)
+
+2024-02-25 12:12:29,576 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:29,576 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:29,577 - Lang_11 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:12:29,578 - Lang_11 - INFO - 开始验证补丁3 7:
+2024-02-25 12:12:29,578 - Lang_11 - INFO - 
+} // End of the conditional block
+
+2024-02-25 12:12:30,104 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:30,104 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:30,104 - Lang_11 - INFO - 补丁3 7 未成功编译
+2024-02-25 12:12:30,105 - Lang_11 - INFO - 开始验证补丁3 8:
+2024-02-25 12:12:30,105 - Lang_11 - INFO - 
+} // End of the method
+
+2024-02-25 12:12:30,631 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:30,631 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:30,631 - Lang_11 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:12:30,632 - Lang_11 - INFO - 开始验证补丁3 9:
+2024-02-25 12:12:30,632 - Lang_11 - INFO - 
+} // Additional logic not shown might be required here before closing the method
+
+2024-02-25 12:12:31,153 - Lang_11 - INFO - 编译失败
+2024-02-25 12:12:31,153 - Lang_11 - INFO - 错误: 非法的类型开始
+while (count-- != 0) {
+2024-02-25 12:12:31,153 - Lang_11 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:12:31,153 - Lang_11 - INFO - Lang_11 未成功修复

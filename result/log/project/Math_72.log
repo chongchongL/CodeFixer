@@ -1,0 +1,250 @@
+2024-02-26 09:58:51,286 - Math_72 - INFO - rm -rf /home/chongchong/d4j-project/Math_72
+2024-02-26 09:58:51,287 - Math_72 - INFO - 删除 Math 72b 成功
+2024-02-26 09:58:51,287 - Math_72 - INFO - defects4j checkout -p Math -v 72b -w /home/chongchong/d4j-project/Math_72
+2024-02-26 09:58:53,718 - Math_72 - INFO - checkout Math 72b 成功
+2024-02-26 09:58:59,490 - Math_72 - INFO - 编译成功
+2024-02-26 09:59:06,366 - Math_72 - INFO - 测试失败
+2024-02-26 09:59:06,366 - Math_72 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BrentSolverTest::testRootEndpoints
+
+2024-02-26 09:59:07,302 - Math_72 - INFO - 它的bug类型为:
+2024-02-26 09:59:07,302 - Math_72 - INFO - 4
+2024-02-26 09:59:38,534 - Math_72 - INFO - 开始验证补丁1 1:
+2024-02-26 09:59:38,534 - Math_72 - INFO - 
+setResult(min, 0);
+return result;
+
+2024-02-26 09:59:39,241 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:39,241 - Math_72 - INFO - 错误: 找不到符号
+if (yInitial * yMax < 0) {
+2024-02-26 09:59:39,241 - Math_72 - INFO - 补丁1 1 未成功编译
+2024-02-26 09:59:39,242 - Math_72 - INFO - 开始验证补丁1 2:
+2024-02-26 09:59:39,242 - Math_72 - INFO - 
+result = min;
+return result;
+
+2024-02-26 09:59:39,962 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:39,962 - Math_72 - INFO - 错误: 找不到符号
+if (yInitial * yMax < 0) {
+2024-02-26 09:59:39,962 - Math_72 - INFO - 补丁1 2 未成功编译
+2024-02-26 09:59:39,963 - Math_72 - INFO - 开始验证补丁1 3:
+2024-02-26 09:59:39,963 - Math_72 - INFO - 
+result = setResult(min, 0);
+return result;
+
+2024-02-26 09:59:40,675 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:40,675 - Math_72 - INFO - 错误: 不兼容的类型
+result = setResult(min, 0);
+2024-02-26 09:59:40,675 - Math_72 - INFO - 补丁1 3 未成功编译
+2024-02-26 09:59:40,676 - Math_72 - INFO - 开始验证补丁1 4:
+2024-02-26 09:59:40,677 - Math_72 - INFO - 
+setResult(min, 0);
+return result;
+
+2024-02-26 09:59:40,677 - Math_72 - INFO - 补丁1 4为重复的补丁
+2024-02-26 09:59:40,677 - Math_72 - INFO - 开始验证补丁1 5:
+2024-02-26 09:59:40,677 - Math_72 - INFO - 
+result = min;
+return result;
+
+2024-02-26 09:59:40,677 - Math_72 - INFO - 补丁1 5为重复的补丁
+2024-02-26 09:59:40,678 - Math_72 - INFO - 开始验证补丁1 6:
+2024-02-26 09:59:40,678 - Math_72 - INFO - 
+return min;
+
+2024-02-26 09:59:40,678 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:40,679 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:40,679 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:40,679 - Math_72 - INFO - 开始验证补丁1 7:
+2024-02-26 09:59:40,680 - Math_72 - INFO - 
+setResult(min, 0);
+
+2024-02-26 09:59:40,680 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:40,680 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:40,680 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:40,681 - Math_72 - INFO - 开始验证补丁1 8:
+2024-02-26 09:59:40,681 - Math_72 - INFO - 
+result = min;
+
+2024-02-26 09:59:40,681 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:40,681 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:40,681 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:40,682 - Math_72 - INFO - 开始验证补丁1 9:
+2024-02-26 09:59:40,682 - Math_72 - INFO - 
+setResult(min, someErrorEstimateOrIterationCount);
+
+2024-02-26 09:59:40,682 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:40,682 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:40,682 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:40,683 - Math_72 - INFO - 开始验证补丁2 1:
+2024-02-26 09:59:40,683 - Math_72 - INFO - 
+setResult(min, 0);
+
+2024-02-26 09:59:40,683 - Math_72 - INFO - 补丁2 1为重复的补丁
+2024-02-26 09:59:40,683 - Math_72 - INFO - 开始验证补丁2 2:
+2024-02-26 09:59:40,683 - Math_72 - INFO - 
+result = min;
+
+2024-02-26 09:59:40,683 - Math_72 - INFO - 补丁2 2为重复的补丁
+2024-02-26 09:59:40,684 - Math_72 - INFO - 开始验证补丁2 3:
+2024-02-26 09:59:40,684 - Math_72 - INFO - 
+result = new RootResult(min, 0);
+
+2024-02-26 09:59:40,684 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:40,685 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:40,685 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:40,685 - Math_72 - INFO - 开始验证补丁2 4:
+2024-02-26 09:59:40,685 - Math_72 - INFO - 
+setResult(min, 0);
+return result;
+
+2024-02-26 09:59:40,685 - Math_72 - INFO - 补丁2 4为重复的补丁
+2024-02-26 09:59:40,686 - Math_72 - INFO - 开始验证补丁2 5:
+2024-02-26 09:59:40,686 - Math_72 - INFO - 
+setResult(yMin, min);
+return result;
+
+2024-02-26 09:59:41,410 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:41,410 - Math_72 - INFO - 错误: 对于setResult(double,double), 找不到合适的方法
+setResult(yMin, min);
+2024-02-26 09:59:41,410 - Math_72 - INFO - 补丁2 5 未成功编译
+2024-02-26 09:59:41,411 - Math_72 - INFO - 开始验证补丁2 6:
+2024-02-26 09:59:41,411 - Math_72 - INFO - 
+return min;
+
+2024-02-26 09:59:41,411 - Math_72 - INFO - 补丁2 6为重复的补丁
+2024-02-26 09:59:41,412 - Math_72 - INFO - 开始验证补丁2 7:
+2024-02-26 09:59:41,412 - Math_72 - INFO - 
+setResult(min, 0);
+
+2024-02-26 09:59:41,412 - Math_72 - INFO - 补丁2 7为重复的补丁
+2024-02-26 09:59:41,413 - Math_72 - INFO - 开始验证补丁2 8:
+2024-02-26 09:59:41,413 - Math_72 - INFO - 
+return min;
+
+2024-02-26 09:59:41,413 - Math_72 - INFO - 补丁2 8为重复的补丁
+2024-02-26 09:59:41,414 - Math_72 - INFO - 开始验证补丁2 9:
+2024-02-26 09:59:41,414 - Math_72 - INFO - 
+setResult(yMin, 0);
+
+2024-02-26 09:59:41,414 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:41,414 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:41,414 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:41,415 - Math_72 - INFO - 开始验证补丁3 1:
+2024-02-26 09:59:41,415 - Math_72 - INFO - 
+setResult(min, yMin);
+return result;
+
+2024-02-26 09:59:42,133 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:42,133 - Math_72 - INFO - 错误: 对于setResult(double,double), 找不到合适的方法
+setResult(min, yMin);
+2024-02-26 09:59:42,134 - Math_72 - INFO - 补丁3 1 未成功编译
+2024-02-26 09:59:42,135 - Math_72 - INFO - 开始验证补丁3 2:
+2024-02-26 09:59:42,135 - Math_72 - INFO - 
+setResult(min);
+return result;
+
+2024-02-26 09:59:42,854 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:42,854 - Math_72 - INFO - 错误: 对于setResult(double), 找不到合适的方法
+setResult(min);
+2024-02-26 09:59:42,854 - Math_72 - INFO - 补丁3 2 未成功编译
+2024-02-26 09:59:42,855 - Math_72 - INFO - 开始验证补丁3 3:
+2024-02-26 09:59:42,855 - Math_72 - INFO - 
+setResult(min, yMin, functionValueAccuracy);
+return result;
+
+2024-02-26 09:59:43,570 - Math_72 - INFO - 编译失败
+2024-02-26 09:59:43,571 - Math_72 - INFO - 错误: 对于setResult(double,double,double), 找不到合适的方法
+setResult(min, yMin, functionValueAccuracy);
+2024-02-26 09:59:43,571 - Math_72 - INFO - 补丁3 3 未成功编译
+2024-02-26 09:59:43,572 - Math_72 - INFO - 开始验证补丁3 4:
+2024-02-26 09:59:43,572 - Math_72 - INFO - 
+setResult(min, 0);
+
+2024-02-26 09:59:43,572 - Math_72 - INFO - 补丁3 4为重复的补丁
+2024-02-26 09:59:43,573 - Math_72 - INFO - 开始验证补丁3 5:
+2024-02-26 09:59:43,573 - Math_72 - INFO - 
+setResult(min);
+
+2024-02-26 09:59:43,573 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:43,573 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:43,573 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:43,574 - Math_72 - INFO - 开始验证补丁3 6:
+2024-02-26 09:59:43,574 - Math_72 - INFO - 
+result = min;
+
+2024-02-26 09:59:43,574 - Math_72 - INFO - 补丁3 6为重复的补丁
+2024-02-26 09:59:43,575 - Math_72 - INFO - 开始验证补丁3 7:
+2024-02-26 09:59:43,575 - Math_72 - INFO - 
+setResult(min, 0);
+
+2024-02-26 09:59:43,575 - Math_72 - INFO - 补丁3 7为重复的补丁
+2024-02-26 09:59:43,575 - Math_72 - INFO - 开始验证补丁3 8:
+2024-02-26 09:59:43,575 - Math_72 - INFO - 
+setResult(yMin, min);
+
+2024-02-26 09:59:43,576 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:43,576 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:43,576 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:43,577 - Math_72 - INFO - 开始验证补丁3 9:
+2024-02-26 09:59:43,577 - Math_72 - INFO - 
+setResult(min, yMin);
+
+2024-02-26 09:59:43,577 - Math_72 - INFO - 补丁Math 72 出错，信息如下：
+2024-02-26 09:59:43,577 - Math_72 - ERROR - list index out of range
+2024-02-26 09:59:43,577 - Math_72 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 09:59:43,577 - Math_72 - INFO - Math_72 未成功修复

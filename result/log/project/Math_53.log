@@ -1,0 +1,280 @@
+2024-02-25 12:58:02,839 - Math_53 - INFO - rm -rf /home/chongchong/d4j-project/Math_53
+2024-02-25 12:58:02,840 - Math_53 - INFO - 删除 Math 53b 成功
+2024-02-25 12:58:02,840 - Math_53 - INFO - defects4j checkout -p Math -v 53b -w /home/chongchong/d4j-project/Math_53
+2024-02-25 12:58:05,272 - Math_53 - INFO - checkout Math 53b 成功
+2024-02-25 12:58:11,477 - Math_53 - INFO - 编译成功
+2024-02-25 12:58:32,480 - Math_53 - INFO - 测试失败
+2024-02-25 12:58:32,480 - Math_53 - INFO - Failing tests: 1
+  - org.apache.commons.math.complex.ComplexTest::testAddNaN
+
+2024-02-25 12:58:33,393 - Math_53 - INFO - 它的bug类型为:
+2024-02-25 12:58:33,393 - Math_53 - INFO - 3
+2024-02-25 12:59:21,319 - Math_53 - INFO - 开始验证补丁1 1:
+2024-02-25 12:59:21,319 - Math_53 - INFO - 
+   double realPart = real + rhs.getReal();
+   double imaginaryPart = imaginary + rhs.getImaginary();
+   if (Double.isNaN(realPart) && !Double.isNaN(real)) {
+       realPart = rhs.getReal();
+   }
+   if (Double.isNaN(imaginaryPart) && !Double.isNaN(imaginary)) {
+       imaginaryPart = rhs.getImaginary();
+   }
+   return createComplex(realPart, imaginaryPart);
+   
+2024-02-25 12:59:22,046 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:22,046 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:22,046 - Math_53 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:59:22,048 - Math_53 - INFO - 开始验证补丁1 2:
+2024-02-25 12:59:22,048 - Math_53 - INFO - 
+   return createComplex(
+       Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal(),
+       Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary());
+   
+2024-02-25 12:59:22,776 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:22,776 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:22,776 - Math_53 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:59:22,777 - Math_53 - INFO - 开始验证补丁1 3:
+2024-02-25 12:59:22,777 - Math_53 - INFO - 
+   // This requires modification inside the createComplex method
+   // to check for NaN values.
+   return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+   // The createComplex method would then contain the logic to handle NaN
+   
+2024-02-25 12:59:23,503 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:23,503 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:23,503 - Math_53 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:59:23,504 - Math_53 - INFO - 开始验证补丁1 4:
+2024-02-25 12:59:23,504 - Math_53 - INFO - 
+return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+
+2024-02-25 12:59:24,237 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:24,237 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:24,237 - Math_53 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:59:24,238 - Math_53 - INFO - 开始验证补丁1 5:
+2024-02-25 12:59:24,238 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal()) || Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary())) {
+    return createComplex(Double.NaN, Double.NaN);
+} else {
+    return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+}
+
+2024-02-25 12:59:24,976 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:24,977 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:24,977 - Math_53 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:59:24,978 - Math_53 - INFO - 开始验证补丁1 6:
+2024-02-25 12:59:24,978 - Math_53 - INFO - 
+double realPart = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+double imaginaryPart = Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary();
+return createComplex(realPart, imaginaryPart);
+
+2024-02-25 12:59:25,725 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:25,725 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:25,725 - Math_53 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:59:25,726 - Math_53 - INFO - 开始验证补丁1 7:
+2024-02-25 12:59:25,726 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal()) || Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary())) {
+    double realPart = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+    double imaginaryPart = Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary();
+    return createComplex(realPart, imaginaryPart);
+} else {
+    return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+}
+
+2024-02-25 12:59:26,458 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:26,458 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:26,458 - Math_53 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:59:26,459 - Math_53 - INFO - 开始验证补丁1 8:
+2024-02-25 12:59:26,459 - Math_53 - INFO - 
+double realPart = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+double imaginaryPart = Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary();
+return createComplex(realPart, imaginaryPart);
+
+2024-02-25 12:59:26,459 - Math_53 - INFO - 补丁1 8为重复的补丁
+2024-02-25 12:59:26,460 - Math_53 - INFO - 开始验证补丁1 9:
+2024-02-25 12:59:26,460 - Math_53 - INFO - 
+return createComplex(
+    (Double.isNaN(real) || Double.isNaN(rhs.getReal())) ? Double.NaN : real + rhs.getReal(),
+    (Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary())) ? Double.NaN : imaginary + rhs.getImaginary()
+);
+
+2024-02-25 12:59:27,186 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:27,186 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:27,186 - Math_53 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:59:27,188 - Math_53 - INFO - 开始验证补丁2 1:
+2024-02-25 12:59:27,188 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal())) {
+    return createComplex(Double.NaN, imaginary + rhs.getImaginary());
+} else {
+    return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+}
+
+2024-02-25 12:59:27,927 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:27,927 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:27,927 - Math_53 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:59:27,928 - Math_53 - INFO - 开始验证补丁2 2:
+2024-02-25 12:59:27,928 - Math_53 - INFO - 
+double newReal = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+return createComplex(newReal, imaginary + rhs.getImaginary());
+
+2024-02-25 12:59:28,655 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:28,655 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:28,655 - Math_53 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:59:28,657 - Math_53 - INFO - 开始验证补丁2 3:
+2024-02-25 12:59:28,657 - Math_53 - INFO - 
+return createComplex(
+    Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal(),
+    Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary()
+);
+
+2024-02-25 12:59:29,395 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:29,395 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:29,395 - Math_53 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:59:29,397 - Math_53 - INFO - 开始验证补丁2 4:
+2024-02-25 12:59:29,397 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal())) {
+    return createComplex(Double.NaN, imaginary + rhs.getImaginary());
+} else {
+    return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+}
+
+2024-02-25 12:59:29,397 - Math_53 - INFO - 补丁2 4为重复的补丁
+2024-02-25 12:59:29,402 - Math_53 - INFO - 开始验证补丁2 5:
+2024-02-25 12:59:29,402 - Math_53 - INFO - 
+double newReal = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+return createComplex(newReal, imaginary + rhs.getImaginary());
+
+2024-02-25 12:59:29,402 - Math_53 - INFO - 补丁2 5为重复的补丁
+2024-02-25 12:59:29,403 - Math_53 - INFO - 开始验证补丁2 6:
+2024-02-25 12:59:29,403 - Math_53 - INFO - 
+double realPart = real;
+double imaginaryPart = imaginary + rhs.getImaginary();
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal())) {
+    realPart = Double.NaN;
+}
+return createComplex(realPart, imaginaryPart);
+
+2024-02-25 12:59:30,139 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:30,139 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:30,139 - Math_53 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:59:30,140 - Math_53 - INFO - 开始验证补丁2 7:
+2024-02-25 12:59:30,140 - Math_53 - INFO - 
+return createComplex(real + rhs.getReal(),
+
+2024-02-25 12:59:30,736 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:30,736 - Math_53 - INFO - 错误: 非法的表达式开始
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:30,736 - Math_53 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:59:30,738 - Math_53 - INFO - 开始验证补丁2 8:
+2024-02-25 12:59:30,738 - Math_53 - INFO - 
+double realResult = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+double imaginaryResult = Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary();
+return createComplex(realResult, imaginaryResult);
+
+2024-02-25 12:59:31,463 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:31,463 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:31,463 - Math_53 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:59:31,464 - Math_53 - INFO - 开始验证补丁2 9:
+2024-02-25 12:59:31,464 - Math_53 - INFO - 
+return createComplex(real + rhs.getReal(),
+
+2024-02-25 12:59:31,464 - Math_53 - INFO - 补丁2 9为重复的补丁
+2024-02-25 12:59:31,465 - Math_53 - INFO - 开始验证补丁2 10:
+2024-02-25 12:59:31,465 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal())) {
+    return createComplex(Double.NaN, imaginary + rhs.getImaginary());
+} else {
+   return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+}
+
+2024-02-25 12:59:32,180 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:32,180 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:32,180 - Math_53 - INFO - 补丁2 10 未成功编译
+2024-02-25 12:59:32,181 - Math_53 - INFO - 开始验证补丁3 1:
+2024-02-25 12:59:32,182 - Math_53 - INFO - 
+return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+
+2024-02-25 12:59:32,182 - Math_53 - INFO - 补丁3 1为重复的补丁
+2024-02-25 12:59:32,183 - Math_53 - INFO - 开始验证补丁3 2:
+2024-02-25 12:59:32,183 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal()) || Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary())) {
+    return createComplex(Double.NaN, Double.NaN);
+} else {
+    return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+}
+
+2024-02-25 12:59:32,183 - Math_53 - INFO - 补丁3 2为重复的补丁
+2024-02-25 12:59:32,184 - Math_53 - INFO - 开始验证补丁3 3:
+2024-02-25 12:59:32,184 - Math_53 - INFO - 
+double newReal = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+double newImaginary = Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary();
+return createComplex(newReal, newImaginary);
+
+2024-02-25 12:59:32,907 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:32,907 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:32,907 - Math_53 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:59:32,909 - Math_53 - INFO - 开始验证补丁3 4:
+2024-02-25 12:59:32,909 - Math_53 - INFO - 
+return new Complex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+
+2024-02-25 12:59:33,635 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:33,635 - Math_53 - INFO - 错误: 无法访问的语句
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:33,635 - Math_53 - INFO - 补丁3 4 未成功编译
+2024-02-25 12:59:33,636 - Math_53 - INFO - 开始验证补丁3 5:
+2024-02-25 12:59:33,637 - Math_53 - INFO - 
+return createComplex(real + rhs.getReal(), imaginary + rhs.getImaginary());
+
+2024-02-25 12:59:33,637 - Math_53 - INFO - 补丁3 5为重复的补丁
+2024-02-25 12:59:33,638 - Math_53 - INFO - 开始验证补丁3 6:
+2024-02-25 12:59:33,638 - Math_53 - INFO - 
+double newReal = Double.isNaN(real) || Double.isNaN(rhs.getReal()) ? Double.NaN : real + rhs.getReal();
+double newImaginary = Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary()) ? Double.NaN : imaginary + rhs.getImaginary();
+return createComplex(newReal, newImaginary);
+
+2024-02-25 12:59:33,638 - Math_53 - INFO - 补丁3 6为重复的补丁
+2024-02-25 12:59:33,639 - Math_53 - INFO - 开始验证补丁3 7:
+2024-02-25 12:59:33,639 - Math_53 - INFO - 
+return new Complex(real + rhs.getReal(), 
+
+2024-02-25 12:59:34,239 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:34,239 - Math_53 - INFO - 错误: 非法的表达式开始
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:34,239 - Math_53 - INFO - 补丁3 7 未成功编译
+2024-02-25 12:59:34,240 - Math_53 - INFO - 开始验证补丁3 8:
+2024-02-25 12:59:34,240 - Math_53 - INFO - 
+if (Double.isNaN(real) || Double.isNaN(rhs.getReal()) || Double.isNaN(imaginary) || Double.isNaN(rhs.getImaginary())) {
+    return new Complex(Double.NaN, Double.NaN);
+} else {
+    return new Complex(real + rhs.getReal(), 
+
+2024-02-25 12:59:34,858 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:34,858 - Math_53 - INFO - 错误: 非法的表达式开始
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:34,858 - Math_53 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:59:34,859 - Math_53 - INFO - 开始验证补丁3 9:
+2024-02-25 12:59:34,859 - Math_53 - INFO - 
+if (Double.isNaN(real + rhs.getReal()) || Double.isNaN(imaginary + rhs.getImaginary())) {
+    return new Complex(Double.NaN, Double.NaN);
+} else {
+    return new Complex(real + rhs.getReal(), 
+
+2024-02-25 12:59:35,477 - Math_53 - INFO - 编译失败
+2024-02-25 12:59:35,477 - Math_53 - INFO - 错误: 非法的表达式开始
+return createComplex(real + rhs.getReal(),
+2024-02-25 12:59:35,477 - Math_53 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:59:35,477 - Math_53 - INFO - Math_53 未成功修复

@@ -1,0 +1,422 @@
+2024-02-25 11:42:24,994 - Closure_120 - INFO - rm -rf /home/chongchong/d4j-project/Closure_120
+2024-02-25 11:42:24,995 - Closure_120 - INFO - 删除 Closure 120b 成功
+2024-02-25 11:42:24,995 - Closure_120 - INFO - defects4j checkout -p Closure -v 120b -w /home/chongchong/d4j-project/Closure_120
+2024-02-25 11:42:27,790 - Closure_120 - INFO - checkout Closure 120b 成功
+2024-02-25 11:42:39,778 - Closure_120 - INFO - 编译成功
+2024-02-25 11:43:38,187 - Closure_120 - INFO - 测试失败
+2024-02-25 11:43:38,187 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:43:39,217 - Closure_120 - INFO - 它的bug类型为:
+2024-02-25 11:43:39,217 - Closure_120 - INFO - 3
+2024-02-25 11:44:28,709 - Closure_120 - INFO - 开始验证补丁1 1:
+2024-02-25 11:44:28,709 - Closure_120 - INFO - 
+        if (block.isFunction) {
+          return true; // Assuming a function block means we are not in a loop
+        }
+
+2024-02-25 11:44:32,842 - Closure_120 - INFO - 编译成功
+2024-02-25 11:45:31,439 - Closure_120 - INFO - 测试失败
+2024-02-25 11:45:31,439 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:45:31,948 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:45:31,948 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:45:31,948 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:45:31,948 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:45:31,948 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:45:31,948 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:45:31,948 - Closure_120 - INFO - 补丁1 1测试失败
+2024-02-25 11:45:31,949 - Closure_120 - INFO - 开始验证补丁1 2:
+2024-02-25 11:45:31,949 - Closure_120 - INFO - 
+        if (block.isFunction) {
+          // No action needed, just continue checking the parent blocks
+        }
+
+2024-02-25 11:45:36,126 - Closure_120 - INFO - 编译成功
+2024-02-25 11:46:34,297 - Closure_120 - INFO - 测试失败
+2024-02-25 11:46:34,297 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:46:34,803 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:46:34,803 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:46:34,803 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:46:34,803 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:46:34,803 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:46:34,804 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:46:34,804 - Closure_120 - INFO - 补丁1 2测试失败
+2024-02-25 11:46:34,805 - Closure_120 - INFO - 开始验证补丁1 3:
+2024-02-25 11:46:34,805 - Closure_120 - INFO - 
+        if (block.isFunction) {
+          // If needed, perform additional checks here before concluding the decision
+          // For now, continue checking the parent blocks
+        }
+
+2024-02-25 11:46:39,026 - Closure_120 - INFO - 编译成功
+2024-02-25 11:47:37,872 - Closure_120 - INFO - 测试失败
+2024-02-25 11:47:37,872 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:47:38,379 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:47:38,379 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:47:38,379 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:47:38,379 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:47:38,379 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:47:38,379 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:47:38,379 - Closure_120 - INFO - 补丁1 3测试失败
+2024-02-25 11:47:38,380 - Closure_120 - INFO - 开始验证补丁1 4:
+2024-02-25 11:47:38,380 - Closure_120 - INFO - 
+        // The break statement is removed to allow the loop to continue.
+
+2024-02-25 11:47:42,550 - Closure_120 - INFO - 编译成功
+2024-02-25 11:48:40,672 - Closure_120 - INFO - 测试失败
+2024-02-25 11:48:40,672 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:48:41,189 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:48:41,189 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:48:41,189 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:48:41,189 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:48:41,189 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:48:41,189 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:48:41,189 - Closure_120 - INFO - 补丁1 4测试失败
+2024-02-25 11:48:41,190 - Closure_120 - INFO - 开始验证补丁1 5:
+2024-02-25 11:48:41,190 - Closure_120 - INFO - 
+        // Perform the necessary action for a function block here
+        // (e.g., set a flag, call a method, etc.), then break or return if needed.
+        // The break statement should be replaced with the appropriate logic.
+
+2024-02-25 11:48:45,351 - Closure_120 - INFO - 编译成功
+2024-02-25 11:49:43,337 - Closure_120 - INFO - 测试失败
+2024-02-25 11:49:43,337 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:49:43,856 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:49:43,856 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:49:43,856 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:49:43,856 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:49:43,856 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:49:43,856 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:49:43,856 - Closure_120 - INFO - 补丁1 5测试失败
+2024-02-25 11:49:43,857 - Closure_120 - INFO - 开始验证补丁1 6:
+2024-02-25 11:49:43,857 - Closure_120 - INFO - 
+        return true; // If a function block is encountered, no loops are found within this function.
+
+2024-02-25 11:49:45,887 - Closure_120 - INFO - 编译失败
+2024-02-25 11:49:45,887 - Closure_120 - INFO - 错误: 无法访问的语句
+break;
+2024-02-25 11:49:45,887 - Closure_120 - INFO - 补丁1 6 未成功编译
+2024-02-25 11:49:45,888 - Closure_120 - INFO - 开始验证补丁1 7:
+2024-02-25 11:49:45,888 - Closure_120 - INFO - 
+        return true; // If the block is a function, then searching further is not applicable.
+}
+
+2024-02-25 11:49:47,718 - Closure_120 - INFO - 编译失败
+2024-02-25 11:49:47,718 - Closure_120 - INFO - 错误: 有 'if', 但是没有 'else'
+} else if (block.isLoop) {
+2024-02-25 11:49:47,718 - Closure_120 - INFO - 补丁1 7 未成功编译
+2024-02-25 11:49:47,719 - Closure_120 - INFO - 开始验证补丁1 8:
+2024-02-25 11:49:47,719 - Closure_120 - INFO - 
+        // If the block is a function, then searching further is not applicable, but we continue the search at the next higher level.
+        continue;
+}
+
+2024-02-25 11:49:49,519 - Closure_120 - INFO - 编译失败
+2024-02-25 11:49:49,519 - Closure_120 - INFO - 错误: 有 'if', 但是没有 'else'
+} else if (block.isLoop) {
+2024-02-25 11:49:49,519 - Closure_120 - INFO - 补丁1 8 未成功编译
+2024-02-25 11:49:49,520 - Closure_120 - INFO - 开始验证补丁1 9:
+2024-02-25 11:49:49,520 - Closure_120 - INFO - 
+        // If the block is a function, check additional conditions or perform actions before breaking.
+        // Additional logic would be implemented here
+        break;
+}
+
+2024-02-25 11:49:51,378 - Closure_120 - INFO - 编译失败
+2024-02-25 11:49:51,378 - Closure_120 - INFO - 错误: 有 'if', 但是没有 'else'
+} else if (block.isLoop) {
+2024-02-25 11:49:51,378 - Closure_120 - INFO - 补丁1 9 未成功编译
+2024-02-25 11:49:51,379 - Closure_120 - INFO - 开始验证补丁2 1:
+2024-02-25 11:49:51,379 - Closure_120 - INFO - 
+        return true;
+
+2024-02-25 11:49:53,402 - Closure_120 - INFO - 编译失败
+2024-02-25 11:49:53,402 - Closure_120 - INFO - 错误: 无法访问的语句
+break;
+2024-02-25 11:49:53,402 - Closure_120 - INFO - 补丁2 1 未成功编译
+2024-02-25 11:49:53,404 - Closure_120 - INFO - 开始验证补丁2 2:
+2024-02-25 11:49:53,404 - Closure_120 - INFO - 
+        continue;
+
+2024-02-25 11:49:55,432 - Closure_120 - INFO - 编译失败
+2024-02-25 11:49:55,432 - Closure_120 - INFO - 错误: 无法访问的语句
+break;
+2024-02-25 11:49:55,432 - Closure_120 - INFO - 补丁2 2 未成功编译
+2024-02-25 11:49:55,433 - Closure_120 - INFO - 开始验证补丁2 3:
+2024-02-25 11:49:55,433 - Closure_120 - INFO - 
+        // No action needed, continue to parent
+
+2024-02-25 11:49:59,617 - Closure_120 - INFO - 编译成功
+2024-02-25 11:50:58,042 - Closure_120 - INFO - 测试失败
+2024-02-25 11:50:58,042 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:50:58,558 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:50:58,558 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:50:58,558 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:50:58,558 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:50:58,558 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:50:58,558 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:50:58,558 - Closure_120 - INFO - 补丁2 3测试失败
+2024-02-25 11:50:58,559 - Closure_120 - INFO - 开始验证补丁2 4:
+2024-02-25 11:50:58,559 - Closure_120 - INFO - 
+        return true;
+
+2024-02-25 11:50:58,559 - Closure_120 - INFO - 补丁2 4为重复的补丁
+2024-02-25 11:50:58,560 - Closure_120 - INFO - 开始验证补丁2 5:
+2024-02-25 11:50:58,560 - Closure_120 - INFO - 
+        // No action needed, continue checking parent blocks.
+
+2024-02-25 11:51:02,736 - Closure_120 - INFO - 编译成功
+2024-02-25 11:52:00,727 - Closure_120 - INFO - 测试失败
+2024-02-25 11:52:00,727 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:52:01,235 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:52:01,235 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:52:01,235 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:52:01,235 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:52:01,235 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:52:01,235 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:52:01,235 - Closure_120 - INFO - 补丁2 5测试失败
+2024-02-25 11:52:01,236 - Closure_120 - INFO - 开始验证补丁2 6:
+2024-02-25 11:52:01,236 - Closure_120 - INFO - 
+        if (block.isEntryBlock()) {
+            return true;
+        }
+
+2024-02-25 11:52:03,259 - Closure_120 - INFO - 编译失败
+2024-02-25 11:52:03,259 - Closure_120 - INFO - 错误: 找不到符号
+if (block.isEntryBlock()) {
+2024-02-25 11:52:03,259 - Closure_120 - INFO - 补丁2 6 未成功编译
+2024-02-25 11:52:03,260 - Closure_120 - INFO - 开始验证补丁2 7:
+2024-02-25 11:52:03,261 - Closure_120 - INFO - 
+        } else if (block.isLoop) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+2024-02-25 11:52:05,092 - Closure_120 - INFO - 编译失败
+2024-02-25 11:52:05,092 - Closure_120 - INFO - 错误: 非法的类型开始
+break;
+2024-02-25 11:52:05,092 - Closure_120 - INFO - 补丁2 7 未成功编译
+2024-02-25 11:52:05,094 - Closure_120 - INFO - 开始验证补丁2 8:
+2024-02-25 11:52:05,094 - Closure_120 - INFO - 
+        if (block.isFunction) {
+          // If we've reached a function block, we stop looking further up as
+          // this assignment is not in a loop within this function context.
+          return true;
+        }
+
+2024-02-25 11:52:09,378 - Closure_120 - INFO - 编译成功
+2024-02-25 11:53:07,135 - Closure_120 - INFO - 测试失败
+2024-02-25 11:53:07,135 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:53:07,651 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:53:07,651 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:53:07,651 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:53:07,651 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:53:07,651 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:53:07,651 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:53:07,651 - Closure_120 - INFO - 补丁2 8测试失败
+2024-02-25 11:53:07,652 - Closure_120 - INFO - 开始验证补丁2 9:
+2024-02-25 11:53:07,652 - Closure_120 - INFO - 
+        if (block.isFunction) {
+          // If we've found a function, we check its parent to determine if we're in a nested loop
+          block = block.getParent();
+          continue;
+        }
+
+2024-02-25 11:53:11,832 - Closure_120 - INFO - 编译成功
+2024-02-25 11:54:09,778 - Closure_120 - INFO - 测试失败
+2024-02-25 11:54:09,778 - Closure_120 - INFO - Failing tests: 14
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAliasOfEnumWithInstanceofCheck
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testCollapsePropertiesOfClass1
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testGlobalWriteToNonAncestor
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAliasOfFunction
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias1
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias2
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias3
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias4
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias5
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias6
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAlias7
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testNoInlineGetpropIntoCall
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalWriteToNonAncestor
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:54:10,296 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:54:10,296 - Closure_120 - INFO - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalAliasOfEnumWithInstanceofCheck
+2024-02-25 11:54:10,296 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:54:10,296 - Closure_120 - INFO -     test(
+
+2024-02-25 11:54:10,296 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:54:10,296 - Closure_120 - INFO - java.lang.NullPointerException
+
+2024-02-25 11:54:10,296 - Closure_120 - INFO - 补丁2 9测试失败
+2024-02-25 11:54:10,297 - Closure_120 - INFO - 开始验证补丁3 1:
+2024-02-25 11:54:10,297 - Closure_120 - INFO - 
+if (block.isFunction) {
+  return true;
+} else if (block.isLoop) {
+  return false;
+}
+
+2024-02-25 11:54:14,460 - Closure_120 - INFO - 编译成功
+2024-02-25 11:55:12,096 - Closure_120 - INFO - 测试失败
+2024-02-25 11:55:12,096 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:55:12,602 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:55:12,602 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:55:12,602 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:55:12,603 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:55:12,603 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:55:12,603 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:55:12,603 - Closure_120 - INFO - 补丁3 1测试失败
+2024-02-25 11:55:12,604 - Closure_120 - INFO - 开始验证补丁3 2:
+2024-02-25 11:55:12,604 - Closure_120 - INFO - 
+if (block.isFunction) {
+  // No action needed, just avoid breaking the loop
+} else if (block.isLoop) {
+  return false;
+}
+
+2024-02-25 11:55:16,798 - Closure_120 - INFO - 编译成功
+2024-02-25 11:56:15,345 - Closure_120 - INFO - 测试失败
+2024-02-25 11:56:15,345 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:56:15,853 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:56:15,854 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:56:15,854 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:56:15,854 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:56:15,854 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:56:15,854 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:56:15,854 - Closure_120 - INFO - 补丁3 2测试失败
+2024-02-25 11:56:15,855 - Closure_120 - INFO - 开始验证补丁3 3:
+2024-02-25 11:56:15,855 - Closure_120 - INFO - 
+// if (block.isFunction) {
+//   // No action needed
+// } else 
+if (block.isLoop) {
+  return false;
+}
+
+2024-02-25 11:56:20,036 - Closure_120 - INFO - 编译成功
+2024-02-25 11:57:17,643 - Closure_120 - INFO - 测试失败
+2024-02-25 11:57:17,643 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:57:18,150 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:57:18,150 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:57:18,150 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:57:18,150 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:57:18,150 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:57:18,150 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:57:18,150 - Closure_120 - INFO - 补丁3 3测试失败
+2024-02-25 11:57:18,151 - Closure_120 - INFO - 开始验证补丁3 4:
+2024-02-25 11:57:18,151 - Closure_120 - INFO - 
+return true; // Encounter of a function block should terminate the loop positively, since we're not in a nested loop
+
+2024-02-25 11:57:20,186 - Closure_120 - INFO - 编译失败
+2024-02-25 11:57:20,186 - Closure_120 - INFO - 错误: 无法访问的语句
+break;
+2024-02-25 11:57:20,186 - Closure_120 - INFO - 补丁3 4 未成功编译
+2024-02-25 11:57:20,187 - Closure_120 - INFO - 开始验证补丁3 5:
+2024-02-25 11:57:20,187 - Closure_120 - INFO - 
+// No action required when a function block is encountered, simply continue to traverse the parent blocks
+
+2024-02-25 11:57:24,363 - Closure_120 - INFO - 编译成功
+2024-02-25 11:58:21,930 - Closure_120 - INFO - 测试失败
+2024-02-25 11:58:21,930 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:58:22,439 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:58:22,439 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:58:22,439 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:58:22,439 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:58:22,439 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:58:22,439 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:58:22,439 - Closure_120 - INFO - 补丁3 5测试失败
+2024-02-25 11:58:22,440 - Closure_120 - INFO - 开始验证补丁3 6:
+2024-02-25 11:58:22,440 - Closure_120 - INFO - 
+foundFunction = true; // Assuming there is a flag to keep track of encountering a function
+
+2024-02-25 11:58:24,472 - Closure_120 - INFO - 编译失败
+2024-02-25 11:58:24,472 - Closure_120 - INFO - 错误: 找不到符号
+foundFunction = true; // Assuming there is a flag to keep track of encountering a function
+2024-02-25 11:58:24,472 - Closure_120 - INFO - 补丁3 6 未成功编译
+2024-02-25 11:58:24,474 - Closure_120 - INFO - 开始验证补丁3 7:
+2024-02-25 11:58:24,474 - Closure_120 - INFO - 
+// No action needed, continue to the parent block
+
+2024-02-25 11:58:28,718 - Closure_120 - INFO - 编译成功
+2024-02-25 11:59:27,620 - Closure_120 - INFO - 测试失败
+2024-02-25 11:59:27,620 - Closure_120 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+
+2024-02-25 11:59:28,126 - Closure_120 - INFO - 选择失败的测试用例为:
+2024-02-25 11:59:28,127 - Closure_120 - INFO - com.google.javascript.jscomp.InlineVariablesTest::testExternalIssue1053
+2024-02-25 11:59:28,127 - Closure_120 - INFO - 失败的测试代码为:
+2024-02-25 11:59:28,127 - Closure_120 - INFO -     testSame(
+
+2024-02-25 11:59:28,127 - Closure_120 - INFO - 失败信息为:
+2024-02-25 11:59:28,127 - Closure_120 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 11:59:28,127 - Closure_120 - INFO - 补丁3 7测试失败
+2024-02-25 11:59:28,128 - Closure_120 - INFO - 开始验证补丁3 8:
+2024-02-25 11:59:28,128 - Closure_120 - INFO - 
+return true;
+
+2024-02-25 11:59:30,157 - Closure_120 - INFO - 编译失败
+2024-02-25 11:59:30,157 - Closure_120 - INFO - 错误: 无法访问的语句
+break;
+2024-02-25 11:59:30,157 - Closure_120 - INFO - 补丁3 8 未成功编译
+2024-02-25 11:59:30,158 - Closure_120 - INFO - 开始验证补丁3 9:
+2024-02-25 11:59:30,158 - Closure_120 - INFO - 
+// Additional condition or function call could be placed here if needed. For example:
+checkForNestedLoops(block);
+
+2024-02-25 11:59:32,209 - Closure_120 - INFO - 编译失败
+2024-02-25 11:59:32,209 - Closure_120 - INFO - 错误: 找不到符号
+checkForNestedLoops(block);
+2024-02-25 11:59:32,209 - Closure_120 - INFO - 补丁3 9 未成功编译
+2024-02-25 11:59:32,209 - Closure_120 - INFO - Closure_120 未成功修复

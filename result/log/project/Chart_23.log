@@ -1,0 +1,979 @@
+2024-02-25 10:10:56,941 - Chart_23 - INFO - rm -rf /home/chongchong/d4j-project/Chart_23
+2024-02-25 10:10:56,942 - Chart_23 - INFO - 删除 Chart 23b 成功
+2024-02-25 10:10:56,942 - Chart_23 - INFO - defects4j checkout -p Chart -v 23b -w /home/chongchong/d4j-project/Chart_23
+2024-02-25 10:11:00,084 - Chart_23 - INFO - checkout Chart 23b 成功
+2024-02-25 10:11:05,508 - Chart_23 - INFO - 编译成功
+2024-02-25 10:11:13,054 - Chart_23 - INFO - 测试失败
+2024-02-25 10:11:13,054 - Chart_23 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-25 10:11:13,935 - Chart_23 - INFO - 它的bug类型为:
+2024-02-25 10:11:13,935 - Chart_23 - INFO - 3
+2024-02-25 10:12:12,982 - Chart_23 - INFO - 开始验证补丁1 1:
+2024-02-25 10:12:12,982 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    // Your code for equals method should go here
+}
+
+2024-02-25 10:12:13,606 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:13,606 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:12:13,606 - Chart_23 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:12:13,607 - Chart_23 - INFO - 开始验证补丁1 2:
+2024-02-25 10:12:13,607 - Chart_23 - INFO - 
+public boolean isSame(Object obj) {
+    // Your code to check if this object is the same as obj should go here
+}
+
+2024-02-25 10:12:14,402 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:14,402 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:12:14,402 - Chart_23 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:12:14,403 - Chart_23 - INFO - 开始验证补丁1 3:
+2024-02-25 10:12:14,403 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    // Your code for equals method should go here
+}
+
+/**
+ * Returns an icon.
+ *
+ * @param shape  the shape.
+ * @param fillPaint  the fill paint.
+ * @param outlinePaint  the outline paint.
+ * @return The icon created from the parameters.
+ */
+public Icon getIcon(Shape shape, Paint fillPaint, Paint outlinePaint) {
+    // Your code to create and return an Icon
+}
+
+2024-02-25 10:12:15,012 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:15,012 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:12:15,012 - Chart_23 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:12:15,013 - Chart_23 - INFO - 开始验证补丁1 4:
+2024-02-25 10:12:15,014 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Cast obj to the correct class and compare relevant fields for equality
+    // Example:
+    // MyObject other = (MyObject) obj;
+    // return this.field1.equals(other.field1) 
+    //     && this.field2.equals(other.field2);
+}
+
+2024-02-25 10:12:15,784 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:15,784 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:12:15,785 - Chart_23 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:12:15,786 - Chart_23 - INFO - 开始验证补丁1 5:
+2024-02-25 10:12:15,786 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Assuming all relevant fields are compared; if not, some may be missing
+    MyObject other = (MyObject) obj;
+    return this.field.equals(other.field);
+}
+
+2024-02-25 10:12:16,553 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:16,553 - Chart_23 - INFO - 错误: 找不到符号
+MyObject other = (MyObject) obj;
+2024-02-25 10:12:16,553 - Chart_23 - INFO - 补丁1 5 未成功编译
+2024-02-25 10:12:16,554 - Chart_23 - INFO - 开始验证补丁1 6:
+2024-02-25 10:12:16,554 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || !(obj instanceof MyObject)) {
+        return false;
+    }
+    // Incorrect casting may lead to ClassCastException
+    MyObject other = (MyClass) obj; // Should be (MyObject) obj
+    return this.field.equals(other.field);
+}
+
+2024-02-25 10:12:17,329 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:17,329 - Chart_23 - INFO - 错误: 找不到符号
+if (obj == null || !(obj instanceof MyObject)) {
+2024-02-25 10:12:17,329 - Chart_23 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:12:17,330 - Chart_23 - INFO - 开始验证补丁1 7:
+2024-02-25 10:12:17,330 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass() != obj.getClass()) {
+        return false;
+    }
+    final OtherClass other = (OtherClass) obj;
+    // Replace 'OtherClass' with the actual class name and add field comparisons.
+    // Example field comparison if we had a field called 'exampleField':
+    // if (!Objects.equals(this.exampleField, other.exampleField)) {
+    //     return false;
+    // }
+    return true; // Replace with actual field comparisons.
+}
+
+2024-02-25 10:12:18,104 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:18,104 - Chart_23 - INFO - 错误: 找不到符号
+final OtherClass other = (OtherClass) obj;
+2024-02-25 10:12:18,104 - Chart_23 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:12:18,105 - Chart_23 - INFO - 开始验证补丁1 8:
+2024-02-25 10:12:18,105 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (!(obj instanceof OtherClass)) {
+        return false;
+    }
+    OtherClass other = (OtherClass) obj;
+    // Assume we have fields called 'field1' and 'field2' that need to be compared
+    return Objects.equals(this.field1, other.field1)
+        && Objects.equals(this.field2, other.field2);
+}
+
+2024-02-25 10:12:18,869 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:18,869 - Chart_23 - INFO - 错误: 找不到符号
+if (!(obj instanceof OtherClass)) {
+2024-02-25 10:12:18,869 - Chart_23 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:12:18,870 - Chart_23 - INFO - 开始验证补丁1 9:
+2024-02-25 10:12:18,870 - Chart_23 - INFO - 
+// Potential utility method if the objects have mutable fields that affect equality
+public void resetToInitialState() {
+    // Code to reset the object's fields to the initial state.
+}
+
+// Modified equals method with field comparison, including the above reset method if needed
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (!(obj instanceof OtherClass)) {
+        return false;
+    }
+    OtherClass other = (OtherClass) obj;
+    // Reset objects to initial state if needed
+    this.resetToInitialState();
+    other.resetToInitialState();
+    // Field comparisons after reset
+    return Objects.equals(this.field1, other.field1)
+        && Objects.equals(this.field2, other.field2);
+}
+
+2024-02-25 10:12:19,637 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:19,637 - Chart_23 - INFO - 错误: 找不到符号
+if (!(obj instanceof OtherClass)) {
+2024-02-25 10:12:19,637 - Chart_23 - INFO - 补丁1 9 未成功编译
+2024-02-25 10:12:19,638 - Chart_23 - INFO - 开始验证补丁2 1:
+2024-02-25 10:12:19,638 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    OtherClass other = (OtherClass) obj;
+    // Assuming there is a field that needs to be compared to determine equality.
+    // Replace 'field' with the actual field name, and add other fields as necessary.
+    return Objects.equals(this.field, other.field);
+}
+
+2024-02-25 10:12:20,413 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:20,413 - Chart_23 - INFO - 错误: 找不到符号
+OtherClass other = (OtherClass) obj;
+2024-02-25 10:12:20,414 - Chart_23 - INFO - 补丁2 1 未成功编译
+2024-02-25 10:12:20,415 - Chart_23 - INFO - 开始验证补丁2 2:
+2024-02-25 10:12:20,415 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (obj == this) {
+        return true;
+    }
+    if (obj instanceof OtherClass) {
+        OtherClass other = (OtherClass) obj;
+        // Check each significant field
+        // If other fields are involved in the equality check, more conditions need to be added
+        return this.field == other.field ||
+               (this.field != null && this.field.equals(other.field));
+    }
+    return false;
+}
+
+2024-02-25 10:12:21,189 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:21,189 - Chart_23 - INFO - 错误: 找不到符号
+if (obj instanceof OtherClass) {
+2024-02-25 10:12:21,189 - Chart_23 - INFO - 补丁2 2 未成功编译
+2024-02-25 10:12:21,190 - Chart_23 - INFO - 开始验证补丁2 3:
+2024-02-25 10:12:21,190 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    if (obj == this) {
+        return true;
+    }
+    if (!(obj instanceof OtherClass)) {
+        return false;
+    }
+    OtherClass other = (OtherClass) obj;
+    // Advanced field comparison, suitable for non-primitive fields.
+    // This assumes there's a 'field' that must be checked for equality.
+    return this.field == other.field ||
+           (this.field != null && this.field.equals(other.field));
+}
+
+2024-02-25 10:12:21,768 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:21,768 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:12:21,768 - Chart_23 - INFO - 补丁2 3 未成功编译
+2024-02-25 10:12:21,769 - Chart_23 - INFO - 开始验证补丁2 4:
+2024-02-25 10:12:21,769 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    YourClass other = (YourClass) obj;
+    // Check all relevant fields for equality, for example:
+    // return this.field1.equals(other.field1) && 
+    //        Objects.equals(this.field2, other.field2);
+    // Additional field checks would be needed here
+    // ...
+
+    // Placeholder for actual field equality checks
+}
+
+2024-02-25 10:12:22,570 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:22,570 - Chart_23 - INFO - 错误: 找不到符号
+YourClass other = (YourClass) obj;
+2024-02-25 10:12:22,570 - Chart_23 - INFO - 补丁2 4 未成功编译
+2024-02-25 10:12:22,571 - Chart_23 - INFO - 开始验证补丁2 5:
+2024-02-25 10:12:22,571 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (!(obj instanceof YourClass)) {
+        return false;
+    }
+    YourClass other = (YourClass) obj;
+    // Use Objects.equals to handle nulls safely for each field comparison
+    // return Objects.equals(this.field1, other.field1) && 
+    //        Objects.equals(this.field2, other.field2);
+    // Additional field checks would be needed here
+    // ...
+
+    // Placeholder for actual field equality checks
+}
+
+2024-02-25 10:12:23,363 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:23,363 - Chart_23 - INFO - 错误: 找不到符号
+if (!(obj instanceof YourClass)) {
+2024-02-25 10:12:23,363 - Chart_23 - INFO - 补丁2 5 未成功编译
+2024-02-25 10:12:23,364 - Chart_23 - INFO - 开始验证补丁2 6:
+2024-02-25 10:12:23,364 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    YourClass other = (YourClass) obj;
+    // Assuming a specific comparison is erroneous
+    // For example, handling a List or array field with .equals might fail
+    // return Arrays.equals(this.arrayField, other.arrayField) &&
+    //        Objects.equals(this.field2, other.field2);
+
+    // Placeholder for actual field equality checks which handle special cases correctly
+}
+
+2024-02-25 10:12:24,126 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:24,126 - Chart_23 - INFO - 错误: 找不到符号
+YourClass other = (YourClass) obj;
+2024-02-25 10:12:24,126 - Chart_23 - INFO - 补丁2 6 未成功编译
+2024-02-25 10:12:24,127 - Chart_23 - INFO - 开始验证补丁2 7:
+2024-02-25 10:12:24,127 - Chart_23 - INFO - 
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        // Additional field comparisons go here
+        // Assuming there are fields other than 'shape', 'fillPaint', and 'outlinePaint'
+        // to compare to fulfill the 'equals' contract.
+        // Replace 'AnotherFieldType', 'anotherField', with actual field types and names.
+        AnotherFieldType anotherField = (AnotherFieldType) obj;
+        return Objects.equals(this.shape, anotherField.shape)
+            && Objects.equals(this.fillPaint, anotherField.fillPaint)
+            && Objects.equals(this.outlinePaint, anotherField.outlinePaint);
+        // Ensure all relevant fields are checked for equality
+    }
+
+2024-02-25 10:12:24,901 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:24,901 - Chart_23 - INFO - 错误: 找不到符号
+AnotherFieldType anotherField = (AnotherFieldType) obj;
+2024-02-25 10:12:24,901 - Chart_23 - INFO - 补丁2 7 未成功编译
+2024-02-25 10:12:24,902 - Chart_23 - INFO - 开始验证补丁2 8:
+2024-02-25 10:12:24,902 - Chart_23 - INFO - 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (!(obj instanceof MyClass)) return false; // Replace 'MyClass' with the actual class name
+
+        MyClass other = (MyClass) obj;
+        // Assuming 'equals' implementations for 'shape', 'fillPaint', and 'outlinePaint' exist
+        return this.shape.equals(other.shape)
+            && this.fillPaint.equals(other.fillPaint)
+            && this.outlinePaint.equals(other.outlinePaint);
+        // Consider proper null checks or Objects.equals for null safety if required
+    }
+
+2024-02-25 10:12:25,490 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:25,491 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:12:25,491 - Chart_23 - INFO - 补丁2 8 未成功编译
+2024-02-25 10:12:25,492 - Chart_23 - INFO - 开始验证补丁2 9:
+2024-02-25 10:12:25,492 - Chart_23 - INFO - 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof MyClass)) { // Replace 'MyClass' with the actual class name
+            return false;
+        }
+        MyClass other = (MyClass) obj;
+        return (this.shape != null && this.shape.equals(other.shape))
+            && (this.fillPaint != null && this.fillPaint.equals(other.fillPaint))
+            && (this.outlinePaint != null && this.outlinePaint.equals(other.outlinePaint));
+        // Direct null checks can be replaced with Objects.equals for null safety if preferred
+    }
+
+2024-02-25 10:12:26,074 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:26,074 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:12:26,074 - Chart_23 - INFO - 补丁2 9 未成功编译
+2024-02-25 10:12:26,075 - Chart_23 - INFO - 开始验证补丁3 1:
+2024-02-25 10:12:26,075 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Cast obj to the appropriate type and check for content equality
+    // Assuming ClassType is the type of the current class
+    ClassType other = (ClassType) obj;
+    // Compare fields for equality
+    return Objects.equals(this.someField, other.someField)
+            && Objects.equals(this.anotherField, other.anotherField);
+    // Include additional fields in the equality check as necessary
+}
+
+2024-02-25 10:12:26,832 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:26,833 - Chart_23 - INFO - 错误: 找不到符号
+ClassType other = (ClassType) obj;
+2024-02-25 10:12:26,833 - Chart_23 - INFO - 补丁3 1 未成功编译
+2024-02-25 10:12:26,834 - Chart_23 - INFO - 开始验证补丁3 2:
+2024-02-25 10:12:26,834 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (obj instanceof ClassType) {
+        ClassType other = (ClassType) obj;
+        // Compare fields for equality
+        return Objects.equals(this.someField, other.someField)
+               && Objects.equals(this.anotherField, other.anotherField);
+        // Include additional fields in the equality check as necessary
+    }
+    return false;
+}
+
+2024-02-25 10:12:27,610 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:27,610 - Chart_23 - INFO - 错误: 找不到符号
+if (obj instanceof ClassType) {
+2024-02-25 10:12:27,610 - Chart_23 - INFO - 补丁3 2 未成功编译
+2024-02-25 10:12:27,611 - Chart_23 - INFO - 开始验证补丁3 3:
+2024-02-25 10:12:27,611 - Chart_23 - INFO - 
+public boolean someOtherMethod(Object obj) {
+    // Implementation of a method that does not check for equality
+    // But the placeholder was mistakenly replaced with an 'equals' method signature,
+    // and this method should have been here instead.
+    // ...
+    return true; // or some other appropriate return value
+}
+
+2024-02-25 10:12:28,868 - Chart_23 - INFO - 编译成功
+2024-02-25 10:12:36,365 - Chart_23 - INFO - 测试失败
+2024-02-25 10:12:36,365 - Chart_23 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-25 10:12:36,802 - Chart_23 - INFO - 选择失败的测试用例为:
+2024-02-25 10:12:36,802 - Chart_23 - INFO - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+2024-02-25 10:12:36,802 - Chart_23 - INFO - 失败的测试代码为:
+2024-02-25 10:12:36,802 - Chart_23 - INFO -         assertFalse(r1.equals(r2));
+
+2024-02-25 10:12:36,802 - Chart_23 - INFO - 失败信息为:
+2024-02-25 10:12:36,802 - Chart_23 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 10:12:36,802 - Chart_23 - INFO - 补丁3 3测试失败
+2024-02-25 10:12:36,803 - Chart_23 - INFO - 开始验证补丁3 4:
+2024-02-25 10:12:36,803 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Assuming `MyClass` is the class name and it has relevant fields to compare
+    MyClass other = (MyClass) obj;
+    // Include field comparison for equality (assuming fields field1, field2, ...)
+    return Objects.equals(this.field1, other.field1)
+        && Objects.equals(this.field2, other.field2)
+        // ... other field comparisons
+        ;
+}
+
+2024-02-25 10:12:37,562 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:37,563 - Chart_23 - INFO - 错误: 找不到符号
+MyClass other = (MyClass) obj;
+2024-02-25 10:12:37,563 - Chart_23 - INFO - 补丁3 4 未成功编译
+2024-02-25 10:12:37,564 - Chart_23 - INFO - 开始验证补丁3 5:
+2024-02-25 10:12:37,564 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (!(obj instanceof MyClass)) {
+        return false;
+    }
+    MyClass other = (MyClass) obj;
+    // Direct field comparison without requiring `Objects.equals`
+    return this.field1 == other.field1
+        && this.field2 == other.field2
+        // ... other field comparisons
+        ;
+}
+
+2024-02-25 10:12:38,328 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:38,328 - Chart_23 - INFO - 错误: 找不到符号
+if (!(obj instanceof MyClass)) {
+2024-02-25 10:12:38,329 - Chart_23 - INFO - 补丁3 5 未成功编译
+2024-02-25 10:12:38,330 - Chart_23 - INFO - 开始验证补丁3 6:
+2024-02-25 10:12:38,330 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    MyClass other = (MyClass) obj;
+    // For collection comparison, deep equality check is necessary
+    return this.items != null ? this.items.equals(other.items) : other.items == null;
+}
+
+2024-02-25 10:12:39,116 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:39,116 - Chart_23 - INFO - 错误: 找不到符号
+MyClass other = (MyClass) obj;
+2024-02-25 10:12:39,116 - Chart_23 - INFO - 补丁3 6 未成功编译
+2024-02-25 10:12:39,117 - Chart_23 - INFO - 开始验证补丁3 7:
+2024-02-25 10:12:39,117 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    // method implementation
+}
+
+2024-02-25 10:12:39,889 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:39,889 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:12:39,889 - Chart_23 - INFO - 补丁3 7 未成功编译
+2024-02-25 10:12:39,890 - Chart_23 - INFO - 开始验证补丁3 8:
+2024-02-25 10:12:39,890 - Chart_23 - INFO - 
+public boolean checkCondition(Object obj) {
+    // method implementation
+}
+
+2024-02-25 10:12:40,652 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:40,652 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:12:40,652 - Chart_23 - INFO - 补丁3 8 未成功编译
+2024-02-25 10:12:40,653 - Chart_23 - INFO - 开始验证补丁3 9:
+2024-02-25 10:12:40,653 - Chart_23 - INFO - 
+public Icon getIcon(Shape shape, Paint fillPaint, Paint outlinePaint) {
+    // method implementation
+}
+
+2024-02-25 10:12:41,416 - Chart_23 - INFO - 编译失败
+2024-02-25 10:12:41,416 - Chart_23 - INFO - 错误: 已在类 MinMaxCategoryRenderer中定义了方法 getIcon(Shape,Paint,Paint)
+private Icon getIcon(Shape shape, final Paint fillPaint,
+2024-02-25 10:12:41,416 - Chart_23 - INFO - 补丁3 9 未成功编译
+2024-02-25 10:12:41,416 - Chart_23 - INFO - Chart_23 未成功修复
+2024-02-25 10:26:17,269 - Chart_23 - INFO - rm -rf /home/chongchong/d4j-project/Chart_23
+2024-02-25 10:26:17,320 - Chart_23 - INFO - 删除 Chart 23b 成功
+2024-02-25 10:26:17,320 - Chart_23 - INFO - defects4j checkout -p Chart -v 23b -w /home/chongchong/d4j-project/Chart_23
+2024-02-25 10:26:20,254 - Chart_23 - INFO - checkout Chart 23b 成功
+2024-02-25 10:26:25,697 - Chart_23 - INFO - 编译成功
+2024-02-25 10:26:33,148 - Chart_23 - INFO - 测试失败
+2024-02-25 10:26:33,148 - Chart_23 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-25 10:26:34,012 - Chart_23 - INFO - 它的bug类型为:
+2024-02-25 10:26:34,012 - Chart_23 - INFO - 3
+2024-02-25 10:27:28,465 - Chart_23 - INFO - 开始验证补丁1 1:
+2024-02-25 10:27:28,466 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Cast and compare further fields if necessary
+    //<Type> other = (<Type>) obj;
+    //return field1.equals(other.field1) && field2 == other.field2; // example comparison
+}
+
+2024-02-25 10:27:29,235 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:29,235 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:29,235 - Chart_23 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:27:29,236 - Chart_23 - INFO - 开始验证补丁1 2:
+2024-02-25 10:27:29,236 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    if (obj instanceof <Type>) {
+       <Type> other = (<Type>) obj;
+       // Check for equality of relevant fields
+       return field1.equals(other.field1) && field2.equals(other.field2);
+    }
+    return false;
+}
+
+2024-02-25 10:27:29,826 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:29,826 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:27:29,826 - Chart_23 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:27:29,827 - Chart_23 - INFO - 开始验证补丁1 3:
+2024-02-25 10:27:29,828 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (obj == this) {
+        return true;
+    }
+    if (!(obj instanceof <Type>)) {
+        return false;
+    }
+    <Type> other = (<Type>) obj;
+    // Compare the relevant fields here
+    return field1 == other.field1 && (field2 == null ? other.field2 == null : field2.equals(other.field2));
+}
+
+2024-02-25 10:27:30,414 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:30,414 - Chart_23 - INFO - 错误: -source 1.4 中不支持泛型
+if (!(obj instanceof <Type>)) {
+2024-02-25 10:27:30,414 - Chart_23 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:27:30,415 - Chart_23 - INFO - 开始验证补丁1 4:
+2024-02-25 10:27:30,415 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass() != obj.getClass()) {
+        return false;
+    }
+    // Cast and compare relevant fields
+    MyClass other = (MyClass) obj;
+    // Assuming there are fields to be compared; replace with actual field comparisons
+    return Objects.equals(this.someField, other.someField);
+}
+
+2024-02-25 10:27:31,206 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:31,206 - Chart_23 - INFO - 错误: 找不到符号
+MyClass other = (MyClass) obj;
+2024-02-25 10:27:31,206 - Chart_23 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:27:31,207 - Chart_23 - INFO - 开始验证补丁1 5:
+2024-02-25 10:27:31,208 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    return this == obj;
+}
+
+2024-02-25 10:27:32,470 - Chart_23 - INFO - 编译成功
+2024-02-25 10:27:39,942 - Chart_23 - INFO - 测试失败
+2024-02-25 10:27:39,943 - Chart_23 - INFO - Failing tests: 5
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testSerialization
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testCloning
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testHashcode
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-25 10:27:40,375 - Chart_23 - INFO - 选择失败的测试用例为:
+2024-02-25 10:27:40,375 - Chart_23 - INFO - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testSerialization
+2024-02-25 10:27:40,375 - Chart_23 - INFO - 失败的测试代码为:
+2024-02-25 10:27:40,375 - Chart_23 - INFO -         assertEquals(r1, r2);
+
+2024-02-25 10:27:40,375 - Chart_23 - INFO - 失败信息为:
+2024-02-25 10:27:40,375 - Chart_23 - INFO - junit.framework.AssertionFailedError: expected:<org.jfree.chart.renderer.category.MinMaxCategoryRenderer@1dc4114d> but was:<org.jfree.chart.renderer.category.MinMaxCategoryRenderer@1dc4114d>
+
+2024-02-25 10:27:40,375 - Chart_23 - INFO - 补丁1 5测试失败
+2024-02-25 10:27:40,376 - Chart_23 - INFO - 开始验证补丁1 6:
+2024-02-25 10:27:40,376 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (!(obj instanceof MyClass)) {
+        return false;
+    }
+    MyClass other = (MyClass) obj;
+    // Assuming complex conditions for equality
+    boolean conditionA = this.attribute1.equals(other.attribute1);
+    boolean conditionB = this.attribute2.equals(other.attribute2);
+    return conditionA && conditionB;
+}
+
+2024-02-25 10:27:41,150 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:41,150 - Chart_23 - INFO - 错误: 找不到符号
+if (!(obj instanceof MyClass)) {
+2024-02-25 10:27:41,150 - Chart_23 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:27:41,151 - Chart_23 - INFO - 开始验证补丁1 7:
+2024-02-25 10:27:41,151 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Further object field comparisons
+}
+
+2024-02-25 10:27:41,910 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:41,910 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:41,910 - Chart_23 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:27:41,911 - Chart_23 - INFO - 开始验证补丁1 8:
+2024-02-25 10:27:41,911 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    if (obj instanceof MyClass) {
+        MyClass other = (MyClass) obj;
+        // Compare the relevant fields of 'this' and 'other'
+    }
+    return false;
+}
+
+2024-02-25 10:27:42,500 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:42,500 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:27:42,500 - Chart_23 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:27:42,501 - Chart_23 - INFO - 开始验证补丁1 9:
+2024-02-25 10:27:42,501 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (!(obj instanceof MyClass)) return false;
+    
+    MyClass that = (MyClass) obj;
+    
+    // Compare all relevant fields here
+    return /* condition based on field comparison */;
+}
+
+2024-02-25 10:27:43,097 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:43,097 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:27:43,097 - Chart_23 - INFO - 补丁1 9 未成功编译
+2024-02-25 10:27:43,098 - Chart_23 - INFO - 开始验证补丁2 1:
+2024-02-25 10:27:43,098 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    // method implementation
+}
+
+2024-02-25 10:27:43,863 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:43,863 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:43,864 - Chart_23 - INFO - 补丁2 1 未成功编译
+2024-02-25 10:27:43,865 - Chart_23 - INFO - 开始验证补丁2 2:
+2024-02-25 10:27:43,865 - Chart_23 - INFO - 
+public boolean isObjectValid(Object obj) {
+    // method implementation
+}
+
+2024-02-25 10:27:44,623 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:44,623 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:44,623 - Chart_23 - INFO - 补丁2 2 未成功编译
+2024-02-25 10:27:44,624 - Chart_23 - INFO - 开始验证补丁2 3:
+2024-02-25 10:27:44,624 - Chart_23 - INFO - 
+public int hashCode() {
+    // method implementation
+}
+
+2024-02-25 10:27:45,389 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:45,389 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:45,389 - Chart_23 - INFO - 补丁2 3 未成功编译
+2024-02-25 10:27:45,390 - Chart_23 - INFO - 开始验证补丁2 4:
+2024-02-25 10:27:45,390 - Chart_23 - INFO - 
+public boolean checkObject(Object obj) {
+    // implementation logic
+    return false; // return value should be based on method logic
+}
+
+2024-02-25 10:27:46,655 - Chart_23 - INFO - 编译成功
+2024-02-25 10:27:54,038 - Chart_23 - INFO - 测试失败
+2024-02-25 10:27:54,038 - Chart_23 - INFO - Failing tests: 2
+  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-25 10:27:54,476 - Chart_23 - INFO - 选择失败的测试用例为:
+2024-02-25 10:27:54,476 - Chart_23 - INFO - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testEquals
+2024-02-25 10:27:54,476 - Chart_23 - INFO - 失败的测试代码为:
+2024-02-25 10:27:54,476 - Chart_23 - INFO -         assertFalse(r1.equals(r2));
+
+2024-02-25 10:27:54,477 - Chart_23 - INFO - 失败信息为:
+2024-02-25 10:27:54,477 - Chart_23 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 10:27:54,477 - Chart_23 - INFO - 补丁2 4测试失败
+2024-02-25 10:27:54,478 - Chart_23 - INFO - 开始验证补丁2 5:
+2024-02-25 10:27:54,478 - Chart_23 - INFO - 
+/**
+ * ...
+ * @return An icon.
+ */
+public Icon getIcon(Shape shape, Paint fillPaint, Paint outlinePaint) {
+    // Method implementation
+    return null; // Should return an actual Icon instance based on parameters
+}
+
+2024-02-25 10:27:55,238 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:55,238 - Chart_23 - INFO - 错误: 已在类 MinMaxCategoryRenderer中定义了方法 getIcon(Shape,Paint,Paint)
+private Icon getIcon(Shape shape, final Paint fillPaint,
+2024-02-25 10:27:55,238 - Chart_23 - INFO - 补丁2 5 未成功编译
+2024-02-25 10:27:55,239 - Chart_23 - INFO - 开始验证补丁2 6:
+2024-02-25 10:27:55,239 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    
+    // Further checks for field equality
+    // ...
+
+    return false; // Should return true if objects are equal, otherwise false
+}
+
+2024-02-25 10:27:55,827 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:55,827 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:27:55,827 - Chart_23 - INFO - 补丁2 6 未成功编译
+2024-02-25 10:27:55,828 - Chart_23 - INFO - 开始验证补丁2 7:
+2024-02-25 10:27:55,828 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    // Implementation of the equals method that checks if this object
+    // is equal to the obj argument, taking into account null handling,
+    // class comparison, and any other relevant fields comparison.
+}
+
+2024-02-25 10:27:56,595 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:56,595 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:56,595 - Chart_23 - INFO - 补丁2 7 未成功编译
+2024-02-25 10:27:56,596 - Chart_23 - INFO - 开始验证补丁2 8:
+2024-02-25 10:27:56,596 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    // Additional comparisons of this object's fields with obj's fields.
+}
+
+2024-02-25 10:27:57,359 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:57,359 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:57,359 - Chart_23 - INFO - 补丁2 8 未成功编译
+2024-02-25 10:27:57,360 - Chart_23 - INFO - 开始验证补丁2 9:
+2024-02-25 10:27:57,360 - Chart_23 - INFO - 
+public boolean isEqual(Object obj) {
+    // This implementation might use a different method name, such as isEqual,
+    // and may include comparisons to determine if this object is equivalent
+    // in value to the "obj" parameter, including null handling.
+}
+
+2024-02-25 10:27:58,140 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:58,140 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:58,140 - Chart_23 - INFO - 补丁2 9 未成功编译
+2024-02-25 10:27:58,142 - Chart_23 - INFO - 开始验证补丁3 1:
+2024-02-25 10:27:58,142 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    // Implementation of equals method
+    if (obj == this) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Cast obj to the appropriate type and compare the fields
+    // Type other = (Type) obj;
+    // return field1.equals(other.field1)
+    //        && field2.equals(other.field2);
+    // ... other fields
+}
+
+2024-02-25 10:27:58,915 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:58,915 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:58,915 - Chart_23 - INFO - 补丁3 1 未成功编译
+2024-02-25 10:27:58,916 - Chart_23 - INFO - 开始验证补丁3 2:
+2024-02-25 10:27:58,916 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null) {
+        return false;
+    }
+    if (getClass() != obj.getClass()) {
+        return false;
+    }
+    // cast and compare fields
+    // Type other = (Type) obj;
+    // return field1.equals(other.field1)
+    //        && field2.equals(other.field2);
+    // ... other fields
+}
+
+2024-02-25 10:27:59,689 - Chart_23 - INFO - 编译失败
+2024-02-25 10:27:59,689 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:27:59,689 - Chart_23 - INFO - 补丁3 2 未成功编译
+2024-02-25 10:27:59,690 - Chart_23 - INFO - 开始验证补丁3 3:
+2024-02-25 10:27:59,690 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (obj == null) {
+        return false;
+    }
+    if (!(obj instanceof ClassName)) {
+        return false;
+    }
+    ClassName other = (ClassName) obj;
+    // Compare relevant fields for equality
+    // return field1.equals(other.field1)
+    //        && field2.equals(other.field2);
+    // ... other fields
+}
+
+2024-02-25 10:28:00,453 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:00,453 - Chart_23 - INFO - 错误: 找不到符号
+if (!(obj instanceof ClassName)) {
+2024-02-25 10:28:00,454 - Chart_23 - INFO - 补丁3 3 未成功编译
+2024-02-25 10:28:00,455 - Chart_23 - INFO - 开始验证补丁3 4:
+2024-02-25 10:28:00,455 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    // ... method implementation checks whether 'this' and 'obj' are equal ...
+}
+
+2024-02-25 10:28:01,212 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:01,212 - Chart_23 - INFO - 错误: 缺少返回语句
+}
+2024-02-25 10:28:01,212 - Chart_23 - INFO - 补丁3 4 未成功编译
+2024-02-25 10:28:01,213 - Chart_23 - INFO - 开始验证补丁3 5:
+2024-02-25 10:28:01,214 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    // ... method implementation goes here ...
+}
+
+2024-02-25 10:28:01,806 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:01,807 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:28:01,807 - Chart_23 - INFO - 补丁3 5 未成功编译
+2024-02-25 10:28:01,808 - Chart_23 - INFO - 开始验证补丁3 6:
+2024-02-25 10:28:01,808 - Chart_23 - INFO - 
+@Override
+public boolean equals(Object obj) {
+    // ... equals method implementation goes here ...
+}
+
+// Another unrelated method mentioned in the subsequent comment
+public Icon getIcon(Shape shape, Paint fillPaint, Paint outlinePaint) {
+    // ... getIcon method implementation goes here ...
+}
+
+2024-02-25 10:28:02,409 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:02,409 - Chart_23 - INFO - 错误: -source 1.4 中不支持注释
+@Override
+2024-02-25 10:28:02,409 - Chart_23 - INFO - 补丁3 6 未成功编译
+2024-02-25 10:28:02,410 - Chart_23 - INFO - 开始验证补丁3 7:
+2024-02-25 10:28:02,410 - Chart_23 - INFO - 
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+        return false;
+    }
+    // Assuming there are fields that should be compared for equality
+    ClassName other = (ClassName) obj;
+    // Compare relevant fields for equality
+    // Example:
+    // return this.field1.equals(other.field1) && this.field2 == other.field2;
+}
+
+2024-02-25 10:28:03,174 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:03,175 - Chart_23 - INFO - 错误: 找不到符号
+ClassName other = (ClassName) obj;
+2024-02-25 10:28:03,175 - Chart_23 - INFO - 补丁3 7 未成功编译
+2024-02-25 10:28:03,176 - Chart_23 - INFO - 开始验证补丁3 8:
+2024-02-25 10:28:03,176 - Chart_23 - INFO - 
+public boolean compareObjects(ClassType obj) {
+    // Implementation code comparing current instance to obj
+}
+
+2024-02-25 10:28:03,940 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:03,940 - Chart_23 - INFO - 错误: 找不到符号
+public boolean compareObjects(ClassType obj) {
+2024-02-25 10:28:03,940 - Chart_23 - INFO - 补丁3 8 未成功编译
+2024-02-25 10:28:03,941 - Chart_23 - INFO - 开始验证补丁3 9:
+2024-02-25 10:28:03,941 - Chart_23 - INFO - 
+public Icon getIcon(Shape shape, Paint fillPaint, Paint outlinePaint) {
+    // Implementation code to create and return an Icon
+}
+
+2024-02-25 10:28:04,705 - Chart_23 - INFO - 编译失败
+2024-02-25 10:28:04,705 - Chart_23 - INFO - 错误: 已在类 MinMaxCategoryRenderer中定义了方法 getIcon(Shape,Paint,Paint)
+private Icon getIcon(Shape shape, final Paint fillPaint,
+2024-02-25 10:28:04,705 - Chart_23 - INFO - 补丁3 9 未成功编译
+2024-02-25 10:28:04,705 - Chart_23 - INFO - Chart_23 未成功修复

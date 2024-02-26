@@ -1,0 +1,285 @@
+2024-02-23 23:22:08,734 - Lang_24 - INFO - rm -rf /home/chongchong/d4j-project/Lang_24
+2024-02-23 23:22:08,735 - Lang_24 - INFO - 删除 Lang 24b 成功
+2024-02-23 23:22:08,735 - Lang_24 - INFO - defects4j checkout -p Lang -v 24b -w /home/chongchong/d4j-project/Lang_24
+2024-02-23 23:22:12,082 - Lang_24 - INFO - checkout Lang 24b 成功
+2024-02-23 23:22:16,727 - Lang_24 - INFO - 编译成功
+2024-02-23 23:22:25,591 - Lang_24 - INFO - 测试失败
+2024-02-23 23:22:25,591 - Lang_24 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+
+2024-02-23 23:22:26,478 - Lang_24 - INFO - 它的bug类型为:
+2024-02-23 23:22:26,478 - Lang_24 - INFO - 1
+2024-02-23 23:23:35,584 - Lang_24 - INFO - 开始验证补丁1 1:
+2024-02-23 23:23:35,584 - Lang_24 - INFO - 
+return foundDigit && !hasExp && !hasDec;
+
+2024-02-23 23:23:36,287 - Lang_24 - INFO - 编译失败
+2024-02-23 23:23:36,287 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !hasDec;
+2024-02-23 23:23:36,287 - Lang_24 - INFO - 补丁1 1 未成功编译
+2024-02-23 23:23:36,288 - Lang_24 - INFO - 开始验证补丁1 2:
+2024-02-23 23:23:36,288 - Lang_24 - INFO - 
+return foundDigit && !hasExponent && !hasDecimal;
+
+2024-02-23 23:23:36,971 - Lang_24 - INFO - 编译失败
+2024-02-23 23:23:36,972 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExponent && !hasDecimal;
+2024-02-23 23:23:36,972 - Lang_24 - INFO - 补丁1 2 未成功编译
+2024-02-23 23:23:36,973 - Lang_24 - INFO - 开始验证补丁1 3:
+2024-02-23 23:23:36,973 - Lang_24 - INFO - 
+return foundDigit && !hasE && !hasDot;
+
+2024-02-23 23:23:37,662 - Lang_24 - INFO - 编译失败
+2024-02-23 23:23:37,663 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasE && !hasDot;
+2024-02-23 23:23:37,663 - Lang_24 - INFO - 补丁1 3 未成功编译
+2024-02-23 23:23:37,664 - Lang_24 - INFO - 开始验证补丁1 4:
+2024-02-23 23:23:37,664 - Lang_24 - INFO - 
+return foundDigit && !hasExp && !hasDecimal;
+
+2024-02-23 23:23:38,346 - Lang_24 - INFO - 编译失败
+2024-02-23 23:23:38,346 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !hasDecimal;
+2024-02-23 23:23:38,346 - Lang_24 - INFO - 补丁1 4 未成功编译
+2024-02-23 23:23:38,347 - Lang_24 - INFO - 开始验证补丁1 5:
+2024-02-23 23:23:38,347 - Lang_24 - INFO - 
+return foundDigit && !hasExp;
+
+2024-02-23 23:23:39,443 - Lang_24 - INFO - 编译成功
+2024-02-23 23:23:48,332 - Lang_24 - INFO - 测试失败
+2024-02-23 23:23:48,332 - Lang_24 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+
+2024-02-23 23:23:48,783 - Lang_24 - INFO - 选择失败的测试用例为:
+2024-02-23 23:23:48,783 - Lang_24 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+2024-02-23 23:23:48,783 - Lang_24 - INFO - 失败的测试代码为:
+2024-02-23 23:23:48,783 - Lang_24 - INFO -         assertFalse("isNumber(String) LANG-664 failed", NumberUtils.isNumber(val));
+
+2024-02-23 23:23:48,783 - Lang_24 - INFO - 失败信息为:
+2024-02-23 23:23:48,783 - Lang_24 - INFO - junit.framework.AssertionFailedError: isNumber(String) LANG-664 failed
+
+2024-02-23 23:23:48,783 - Lang_24 - INFO - 补丁1 5测试失败
+2024-02-23 23:23:48,784 - Lang_24 - INFO - 开始验证补丁1 6:
+2024-02-23 23:23:48,784 - Lang_24 - INFO - 
+return foundDigit && !hasDecimal;
+
+2024-02-23 23:23:49,472 - Lang_24 - INFO - 编译失败
+2024-02-23 23:23:49,473 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasDecimal;
+2024-02-23 23:23:49,473 - Lang_24 - INFO - 补丁1 6 未成功编译
+2024-02-23 23:23:49,474 - Lang_24 - INFO - 开始验证补丁1 7:
+2024-02-23 23:23:49,474 - Lang_24 - INFO - 
+                return foundDigit && !hasExp && !hasDecimalPoint;
+
+2024-02-23 23:23:50,161 - Lang_24 - INFO - 编译失败
+2024-02-23 23:23:50,161 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !hasDecimalPoint;
+2024-02-23 23:23:50,161 - Lang_24 - INFO - 补丁1 7 未成功编译
+2024-02-23 23:23:50,162 - Lang_24 - INFO - 开始验证补丁1 8:
+2024-02-23 23:23:50,162 - Lang_24 - INFO - 
+                return foundDigit && !hasExp;
+
+2024-02-23 23:23:51,239 - Lang_24 - INFO - 编译成功
+2024-02-23 23:24:00,158 - Lang_24 - INFO - 测试失败
+2024-02-23 23:24:00,158 - Lang_24 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+
+2024-02-23 23:24:00,599 - Lang_24 - INFO - 选择失败的测试用例为:
+2024-02-23 23:24:00,600 - Lang_24 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+2024-02-23 23:24:00,600 - Lang_24 - INFO - 失败的测试代码为:
+2024-02-23 23:24:00,600 - Lang_24 - INFO -         assertFalse("isNumber(String) LANG-664 failed", NumberUtils.isNumber(val));
+
+2024-02-23 23:24:00,600 - Lang_24 - INFO - 失败信息为:
+2024-02-23 23:24:00,600 - Lang_24 - INFO - junit.framework.AssertionFailedError: isNumber(String) LANG-664 failed
+
+2024-02-23 23:24:00,600 - Lang_24 - INFO - 补丁1 8测试失败
+2024-02-23 23:24:00,601 - Lang_24 - INFO - 开始验证补丁1 9:
+2024-02-23 23:24:00,601 - Lang_24 - INFO - 
+                return foundDigit && !hasExp && !hasDec;
+
+2024-02-23 23:24:01,294 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:01,294 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !hasDec;
+2024-02-23 23:24:01,294 - Lang_24 - INFO - 补丁1 9 未成功编译
+2024-02-23 23:24:01,295 - Lang_24 - INFO - 开始验证补丁2 1:
+2024-02-23 23:24:01,295 - Lang_24 - INFO - 
+if (chars[i] == 'l' || chars[i] == 'L') {
+    return foundDigit && !hasExp && !hasDec; // Checks for a digit, and that there are no exponent or decimal point before 'L'
+}
+
+2024-02-23 23:24:01,988 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:01,988 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !hasDec; // Checks for a digit, and that there are no exponent or decimal point before 'L'
+2024-02-23 23:24:01,988 - Lang_24 - INFO - 补丁2 1 未成功编译
+2024-02-23 23:24:01,989 - Lang_24 - INFO - 开始验证补丁2 2:
+2024-02-23 23:24:01,989 - Lang_24 - INFO - 
+if (chars[i] == 'l' || chars[i] == 'L') {
+    return foundDigit && !allowSigns && !hasExp && !hasDec; // Checks for a digit, no signs, and that there are no exponent or decimal point before 'L'
+}
+
+2024-02-23 23:24:02,679 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:02,679 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !allowSigns && !hasExp && !hasDec; // Checks for a digit, no signs, and that there are no exponent or decimal point before 'L'
+2024-02-23 23:24:02,679 - Lang_24 - INFO - 补丁2 2 未成功编译
+2024-02-23 23:24:02,680 - Lang_24 - INFO - 开始验证补丁2 3:
+2024-02-23 23:24:02,680 - Lang_24 - INFO - 
+if (chars[i] == 'l' || chars[i] == 'L') {
+    if (!hasExp && !hasDec) {
+        return foundDigit; // Only return true for foundDigit if there is no exponent or decimal, which are not allowed before 'L'
+    } else {
+        return false; // Return false if there is an exponent or decimal point
+    }
+}
+
+2024-02-23 23:24:03,368 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:03,368 - Lang_24 - INFO - 错误: 找不到符号
+if (!hasExp && !hasDec) {
+2024-02-23 23:24:03,369 - Lang_24 - INFO - 补丁2 3 未成功编译
+2024-02-23 23:24:03,370 - Lang_24 - INFO - 开始验证补丁2 4:
+2024-02-23 23:24:03,370 - Lang_24 - INFO - 
+if (foundDigit && !hasExp && !hasDec) {
+    return false; // 'L' not allowed with an exponent or decimal point
+} else {
+    return foundDigit; // 'L' is allowed as it follows digits, no exponent or decimal
+}
+
+2024-02-23 23:24:04,053 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:04,054 - Lang_24 - INFO - 错误: 找不到符号
+if (foundDigit && !hasExp && !hasDec) {
+2024-02-23 23:24:04,054 - Lang_24 - INFO - 补丁2 4 未成功编译
+2024-02-23 23:24:04,055 - Lang_24 - INFO - 开始验证补丁2 5:
+2024-02-23 23:24:04,055 - Lang_24 - INFO - 
+return foundDigit && !hasExp; // Assuming presence of decimal is handled elsewhere or hasExp covers both
+
+2024-02-23 23:24:05,136 - Lang_24 - INFO - 编译成功
+2024-02-23 23:24:13,979 - Lang_24 - INFO - 测试失败
+2024-02-23 23:24:13,979 - Lang_24 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+
+2024-02-23 23:24:14,430 - Lang_24 - INFO - 选择失败的测试用例为:
+2024-02-23 23:24:14,430 - Lang_24 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+2024-02-23 23:24:14,430 - Lang_24 - INFO - 失败的测试代码为:
+2024-02-23 23:24:14,430 - Lang_24 - INFO -         assertFalse("isNumber(String) LANG-664 failed", NumberUtils.isNumber(val));
+
+2024-02-23 23:24:14,430 - Lang_24 - INFO - 失败信息为:
+2024-02-23 23:24:14,431 - Lang_24 - INFO - junit.framework.AssertionFailedError: isNumber(String) LANG-664 failed
+
+2024-02-23 23:24:14,431 - Lang_24 - INFO - 补丁2 5测试失败
+2024-02-23 23:24:14,432 - Lang_24 - INFO - 开始验证补丁2 6:
+2024-02-23 23:24:14,432 - Lang_24 - INFO - 
+if (!foundDigit || hasExp || hasDec) {
+    return false; // 'L' only allowed if there is a digit and no exponent or decimal
+} else {
+    return true; // Valid long suffix
+}
+
+2024-02-23 23:24:15,118 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:15,118 - Lang_24 - INFO - 错误: 找不到符号
+if (!foundDigit || hasExp || hasDec) {
+2024-02-23 23:24:15,118 - Lang_24 - INFO - 补丁2 6 未成功编译
+2024-02-23 23:24:15,119 - Lang_24 - INFO - 开始验证补丁2 7:
+2024-02-23 23:24:15,119 - Lang_24 - INFO - 
+return foundDigit && !hasExp && !hasDec;
+
+2024-02-23 23:24:15,119 - Lang_24 - INFO - 补丁2 7为重复的补丁
+2024-02-23 23:24:15,120 - Lang_24 - INFO - 开始验证补丁2 8:
+2024-02-23 23:24:15,120 - Lang_24 - INFO - 
+return foundDigit && !hasExp;
+
+2024-02-23 23:24:15,120 - Lang_24 - INFO - 补丁2 8为重复的补丁
+2024-02-23 23:24:15,121 - Lang_24 - INFO - 开始验证补丁2 9:
+2024-02-23 23:24:15,121 - Lang_24 - INFO - 
+if (hasExp || hasDec) {
+    return false;
+}
+return foundDigit;
+
+2024-02-23 23:24:15,803 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:15,803 - Lang_24 - INFO - 错误: 找不到符号
+if (hasExp || hasDec) {
+2024-02-23 23:24:15,803 - Lang_24 - INFO - 补丁2 9 未成功编译
+2024-02-23 23:24:15,804 - Lang_24 - INFO - 开始验证补丁3 1:
+2024-02-23 23:24:15,804 - Lang_24 - INFO - 
+if (hasExp || hasDec) {
+    return false; // 'L' not allowed with exponent or decimal point
+}
+return foundDigit; // valid long number without exponent and decimal point
+
+2024-02-23 23:24:16,495 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:16,496 - Lang_24 - INFO - 错误: 找不到符号
+if (hasExp || hasDec) {
+2024-02-23 23:24:16,496 - Lang_24 - INFO - 补丁3 1 未成功编译
+2024-02-23 23:24:16,497 - Lang_24 - INFO - 开始验证补丁3 2:
+2024-02-23 23:24:16,497 - Lang_24 - INFO - 
+if (hasExp) {
+    return false; // 'L' not allowed with exponent
+}
+return foundDigit; // 'L' is allowed as long as there's no exponent
+
+2024-02-23 23:24:17,586 - Lang_24 - INFO - 编译成功
+2024-02-23 23:24:26,525 - Lang_24 - INFO - 测试失败
+2024-02-23 23:24:26,525 - Lang_24 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+
+2024-02-23 23:24:26,967 - Lang_24 - INFO - 选择失败的测试用例为:
+2024-02-23 23:24:26,967 - Lang_24 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+2024-02-23 23:24:26,968 - Lang_24 - INFO - 失败的测试代码为:
+2024-02-23 23:24:26,968 - Lang_24 - INFO -         assertFalse("isNumber(String) LANG-664 failed", NumberUtils.isNumber(val));
+
+2024-02-23 23:24:26,968 - Lang_24 - INFO - 失败信息为:
+2024-02-23 23:24:26,968 - Lang_24 - INFO - junit.framework.AssertionFailedError: isNumber(String) LANG-664 failed
+
+2024-02-23 23:24:26,968 - Lang_24 - INFO - 补丁3 2测试失败
+2024-02-23 23:24:26,969 - Lang_24 - INFO - 开始验证补丁3 3:
+2024-02-23 23:24:26,969 - Lang_24 - INFO - 
+return foundDigit && !hasExp && !hasDec; // 'L' is valid only if there's a digit and no exponent or decimal point
+
+2024-02-23 23:24:27,658 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:27,658 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !hasDec; // 'L' is valid only if there's a digit and no exponent or decimal point
+2024-02-23 23:24:27,658 - Lang_24 - INFO - 补丁3 3 未成功编译
+2024-02-23 23:24:27,659 - Lang_24 - INFO - 开始验证补丁3 4:
+2024-02-23 23:24:27,659 - Lang_24 - INFO - 
+if (hasExp || foundDecimal) {
+    return false;
+} else {
+    return foundDigit;
+}
+
+2024-02-23 23:24:28,346 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:28,346 - Lang_24 - INFO - 错误: 找不到符号
+if (hasExp || foundDecimal) {
+2024-02-23 23:24:28,346 - Lang_24 - INFO - 补丁3 4 未成功编译
+2024-02-23 23:24:28,347 - Lang_24 - INFO - 开始验证补丁3 5:
+2024-02-23 23:24:28,347 - Lang_24 - INFO - 
+return foundDigit && !hasExp && !foundDecimal;
+
+2024-02-23 23:24:29,033 - Lang_24 - INFO - 编译失败
+2024-02-23 23:24:29,034 - Lang_24 - INFO - 错误: 找不到符号
+return foundDigit && !hasExp && !foundDecimal;
+2024-02-23 23:24:29,034 - Lang_24 - INFO - 补丁3 5 未成功编译
+2024-02-23 23:24:29,035 - Lang_24 - INFO - 开始验证补丁3 6:
+2024-02-23 23:24:29,035 - Lang_24 - INFO - 
+return !hasExp && (foundDigit || !allowSigns);
+
+2024-02-23 23:24:30,128 - Lang_24 - INFO - 编译成功
+2024-02-23 23:24:39,013 - Lang_24 - INFO - 测试失败
+2024-02-23 23:24:39,013 - Lang_24 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+
+2024-02-23 23:24:39,451 - Lang_24 - INFO - 选择失败的测试用例为:
+2024-02-23 23:24:39,451 - Lang_24 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+2024-02-23 23:24:39,451 - Lang_24 - INFO - 失败的测试代码为:
+2024-02-23 23:24:39,451 - Lang_24 - INFO -         assertFalse("isNumber(String) LANG-664 failed", NumberUtils.isNumber(val));
+
+2024-02-23 23:24:39,451 - Lang_24 - INFO - 失败信息为:
+2024-02-23 23:24:39,451 - Lang_24 - INFO - junit.framework.AssertionFailedError: isNumber(String) LANG-664 failed
+
+2024-02-23 23:24:39,451 - Lang_24 - INFO - 补丁3 6测试失败
+2024-02-23 23:24:39,452 - Lang_24 - INFO - 开始验证补丁3 7:
+2024-02-23 23:24:39,452 - Lang_24 - INFO - 
+return foundDigit && !hasExp && !hasDecPoint; // assuming 'hasDecPoint' tracks the presence of a decimal point
+
+2024-02-23 23:24:40,544 - Lang_24 - INFO - 编译成功
+2024-02-23 23:24:49,436 - Lang_24 - INFO - 测试成功
+2024-02-23 23:24:49,436 - Lang_24 - INFO - 补丁3 7 通过了所有的测试用例

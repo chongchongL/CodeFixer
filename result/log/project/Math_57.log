@@ -1,0 +1,30 @@
+2024-02-24 01:08:39,406 - Math_57 - INFO - rm -rf /home/chongchong/d4j-project/Math_57
+2024-02-24 01:08:39,407 - Math_57 - INFO - 删除 Math 57b 成功
+2024-02-24 01:08:39,407 - Math_57 - INFO - defects4j checkout -p Math -v 57b -w /home/chongchong/d4j-project/Math_57
+2024-02-24 01:08:41,836 - Math_57 - INFO - checkout Math 57b 成功
+2024-02-24 01:08:47,962 - Math_57 - INFO - 编译成功
+2024-02-24 01:09:08,053 - Math_57 - INFO - 测试失败
+2024-02-24 01:09:08,053 - Math_57 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest::testSmallDistances
+
+2024-02-24 01:09:08,961 - Math_57 - INFO - 它的bug类型为:
+2024-02-24 01:09:08,961 - Math_57 - INFO - 1
+2024-02-24 01:09:53,691 - Math_57 - INFO - Math_57 未成功修复
+2024-02-24 10:47:46,058 - Math_57 - INFO - rm -rf /home/chongchong/d4j-project/Math_57
+2024-02-24 10:47:46,087 - Math_57 - INFO - 删除 Math 57b 成功
+2024-02-24 10:47:46,087 - Math_57 - INFO - defects4j checkout -p Math -v 57b -w /home/chongchong/d4j-project/Math_57
+2024-02-24 10:47:48,499 - Math_57 - INFO - checkout Math 57b 成功
+2024-02-24 10:47:54,480 - Math_57 - INFO - 编译成功
+2024-02-24 10:48:14,491 - Math_57 - INFO - 测试失败
+2024-02-24 10:48:14,491 - Math_57 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest::testSmallDistances
+
+2024-02-24 10:48:15,401 - Math_57 - INFO - 它的bug类型为:
+2024-02-24 10:48:15,402 - Math_57 - INFO - 1
+2024-02-24 10:49:06,155 - Math_57 - INFO - 开始验证补丁1 1:
+2024-02-24 10:49:06,155 - Math_57 - INFO - 
+            double sum = 0;
+
+2024-02-24 10:49:07,416 - Math_57 - INFO - 编译成功
+2024-02-24 10:49:27,350 - Math_57 - INFO - 测试成功
+2024-02-24 10:49:27,350 - Math_57 - INFO - 补丁1 1 通过了所有的测试用例

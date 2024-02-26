@@ -1,0 +1,237 @@
+2024-02-26 01:56:11,695 - Math_87 - INFO - rm -rf /home/chongchong/d4j-project/Math_87
+2024-02-26 01:56:11,696 - Math_87 - INFO - 删除 Math 87b 成功
+2024-02-26 01:56:11,696 - Math_87 - INFO - defects4j checkout -p Math -v 87b -w /home/chongchong/d4j-project/Math_87
+2024-02-26 01:56:15,140 - Math_87 - INFO - checkout Math 87b 成功
+2024-02-26 01:56:20,384 - Math_87 - INFO - 编译成功
+2024-02-26 01:56:26,845 - Math_87 - INFO - 测试失败
+2024-02-26 01:56:26,845 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:56:27,762 - Math_87 - INFO - 它的bug类型为:
+2024-02-26 01:56:27,762 - Math_87 - INFO - 4
+2024-02-26 01:57:32,690 - Math_87 - INFO - 开始验证补丁1 1:
+2024-02-26 01:57:32,691 - Math_87 - INFO - 
+if (MathUtils.equals(getEntry(i, col), 0.0, epsilon) == false) {
+    if (row == null) {
+        row = i;
+    } else {
+        return null; // Another non-zero entry found, not a basic column
+    }
+}
+
+2024-02-26 01:57:33,945 - Math_87 - INFO - 编译成功
+2024-02-26 01:57:40,281 - Math_87 - INFO - 测试失败
+2024-02-26 01:57:40,281 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:57:40,745 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:57:40,745 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+2024-02-26 01:57:40,745 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:57:40,746 - Math_87 - INFO -         assertEquals(10.0, solution.getPoint()[0], 0.0);
+
+2024-02-26 01:57:40,746 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:57:40,746 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<10.0> but was:<0.0>
+
+2024-02-26 01:57:40,746 - Math_87 - INFO - 补丁1 1测试失败
+2024-02-26 01:57:40,747 - Math_87 - INFO - 开始验证补丁1 2:
+2024-02-26 01:57:40,747 - Math_87 - INFO - 
+if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
+    if (row == null) {
+        row = i;
+    } else {
+        // reset row to null as the column is not basic (multiple non-zero entries)
+        row = null;
+        break; // exit the loop since the column isn't basic
+    }
+}
+
+2024-02-26 01:57:41,995 - Math_87 - INFO - 编译成功
+2024-02-26 01:57:48,480 - Math_87 - INFO - 测试失败
+2024-02-26 01:57:48,480 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:57:48,938 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:57:48,938 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+2024-02-26 01:57:48,938 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:57:48,938 - Math_87 - INFO -         assertEquals(10.0, solution.getPoint()[0], 0.0);
+
+2024-02-26 01:57:48,938 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:57:48,938 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<10.0> but was:<0.0>
+
+2024-02-26 01:57:48,939 - Math_87 - INFO - 补丁1 2测试失败
+2024-02-26 01:57:48,940 - Math_87 - INFO - 开始验证补丁1 3:
+2024-02-26 01:57:48,940 - Math_87 - INFO - 
+if (MathUtils.equals(getEntry(i, col), 0.0, epsilon) == false) {
+    if (row != null) {
+        return null; // Another non-zero entry found, so column is not basic
+    }
+    row = i; // Set the current row, since no other non-zero entries have been encountered
+}
+
+2024-02-26 01:57:50,179 - Math_87 - INFO - 编译成功
+2024-02-26 01:57:56,548 - Math_87 - INFO - 测试失败
+2024-02-26 01:57:56,548 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:57:57,012 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:57:57,012 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+2024-02-26 01:57:57,012 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:57:57,012 - Math_87 - INFO -         assertEquals(10.0, solution.getPoint()[0], 0.0);
+
+2024-02-26 01:57:57,012 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:57:57,012 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<10.0> but was:<0.0>
+
+2024-02-26 01:57:57,012 - Math_87 - INFO - 补丁1 3测试失败
+2024-02-26 01:57:57,013 - Math_87 - INFO - 开始验证补丁1 4:
+2024-02-26 01:57:57,013 - Math_87 - INFO - 
+if (MathUtils.equals(getEntry(i, col), 1.0, epsilon)) {
+    if (row == null) {
+        row = i;
+    } else {
+        return null;  // More than one non-zero entry means the column is not basic
+    }
+}
+
+2024-02-26 01:57:58,268 - Math_87 - INFO - 编译成功
+2024-02-26 01:58:04,679 - Math_87 - INFO - 测试失败
+2024-02-26 01:58:04,679 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath272
+
+2024-02-26 01:58:05,138 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:58:05,138 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath272
+2024-02-26 01:58:05,139 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:58:05,139 - Math_87 - INFO -         assertEquals(0.0, solution.getPoint()[0], .0000001);
+
+2024-02-26 01:58:05,139 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:58:05,139 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<1.0>
+
+2024-02-26 01:58:05,139 - Math_87 - INFO - 补丁1 4测试失败
+2024-02-26 01:58:05,140 - Math_87 - INFO - 开始验证补丁1 5:
+2024-02-26 01:58:05,140 - Math_87 - INFO - 
+if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
+    if (row == null) {
+        row = i;
+    } else {
+        row = null; // Ensures only one non-zero value in the column
+        break; // exit the loop as we found multiple non-zero entries
+    }
+}
+
+2024-02-26 01:58:06,389 - Math_87 - INFO - 编译成功
+2024-02-26 01:58:12,747 - Math_87 - INFO - 测试失败
+2024-02-26 01:58:12,747 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:58:13,210 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:58:13,210 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+2024-02-26 01:58:13,210 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:58:13,210 - Math_87 - INFO -         assertEquals(10.0, solution.getPoint()[0], 0.0);
+
+2024-02-26 01:58:13,210 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:58:13,210 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<10.0> but was:<0.0>
+
+2024-02-26 01:58:13,210 - Math_87 - INFO - 补丁1 5测试失败
+2024-02-26 01:58:13,211 - Math_87 - INFO - 开始验证补丁1 6:
+2024-02-26 01:58:13,211 - Math_87 - INFO - 
+double entry = getEntry(i, col);
+if (entry != 0.0 && Math.abs(entry) > epsilon) {
+    if (row == null) {
+        row = i;
+    } else {
+        return null; // Column is not basic as it has more than one non-zero entry
+    }
+}
+
+2024-02-26 01:58:14,488 - Math_87 - INFO - 编译成功
+2024-02-26 01:58:21,048 - Math_87 - INFO - 测试失败
+2024-02-26 01:58:21,048 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:58:21,510 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:58:21,510 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+2024-02-26 01:58:21,510 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:58:21,510 - Math_87 - INFO -         assertEquals(10.0, solution.getPoint()[0], 0.0);
+
+2024-02-26 01:58:21,510 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:58:21,510 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<10.0> but was:<0.0>
+
+2024-02-26 01:58:21,511 - Math_87 - INFO - 补丁1 6测试失败
+2024-02-26 01:58:21,512 - Math_87 - INFO - 开始验证补丁1 7:
+2024-02-26 01:58:21,512 - Math_87 - INFO - 
+if (MathUtils.equals(getEntry(i, col), 1.0, epsilon)) {
+    if (row == null) {
+        row = i;
+    } else {
+        return null;  // this column has more than one non-zero entry, so not basic
+    }
+}
+
+2024-02-26 01:58:22,769 - Math_87 - INFO - 编译成功
+2024-02-26 01:58:29,121 - Math_87 - INFO - 测试失败
+2024-02-26 01:58:29,121 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath272
+
+2024-02-26 01:58:29,581 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:58:29,581 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath272
+2024-02-26 01:58:29,581 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:58:29,581 - Math_87 - INFO -         assertEquals(0.0, solution.getPoint()[0], .0000001);
+
+2024-02-26 01:58:29,581 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:58:29,581 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<0.0> but was:<1.0>
+
+2024-02-26 01:58:29,581 - Math_87 - INFO - 补丁1 7测试失败
+2024-02-26 01:58:29,582 - Math_87 - INFO - 开始验证补丁1 8:
+2024-02-26 01:58:29,582 - Math_87 - INFO - 
+if (MathUtils.compare(getEntry(i, col), 0.0, epsilon) != 0) {
+    if (row == null) {
+        row = i;
+    } else {
+        return null;  // this column has more than one non-zero entry, so not basic
+    }
+}
+
+2024-02-26 01:58:30,329 - Math_87 - INFO - 编译失败
+2024-02-26 01:58:30,329 - Math_87 - INFO - 错误: 找不到符号
+if (MathUtils.compare(getEntry(i, col), 0.0, epsilon) != 0) {
+2024-02-26 01:58:30,329 - Math_87 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:58:30,330 - Math_87 - INFO - 开始验证补丁1 9:
+2024-02-26 01:58:30,330 - Math_87 - INFO - 
+if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
+    if (row == null) {
+        row = i;
+    } else {
+        return null;  // this column has more than one non-zero entry; it is not a basic column
+    }
+}
+
+2024-02-26 01:58:31,577 - Math_87 - INFO - 编译成功
+2024-02-26 01:58:37,960 - Math_87 - INFO - 测试失败
+2024-02-26 01:58:37,960 - Math_87 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+
+2024-02-26 01:58:38,427 - Math_87 - INFO - 选择失败的测试用例为:
+2024-02-26 01:58:38,427 - Math_87 - INFO - org.apache.commons.math.optimization.linear.SimplexSolverTest::testSingleVariableAndConstraint
+2024-02-26 01:58:38,427 - Math_87 - INFO - 失败的测试代码为:
+2024-02-26 01:58:38,427 - Math_87 - INFO -         assertEquals(10.0, solution.getPoint()[0], 0.0);
+
+2024-02-26 01:58:38,427 - Math_87 - INFO - 失败信息为:
+2024-02-26 01:58:38,427 - Math_87 - INFO - junit.framework.AssertionFailedError: expected:<10.0> but was:<0.0>
+
+2024-02-26 01:58:38,427 - Math_87 - INFO - 补丁1 9测试失败
+2024-02-26 01:58:38,429 - Math_87 - INFO - 开始验证补丁2 1:
+2024-02-26 01:58:38,429 - Math_87 - INFO - 
+if (MathUtils.equals(getEntry(i, col), 1.0, epsilon)) {
+    if (row == null) {
+        row = i;
+    } else {
+        // If another row with 1.0 is found, the column is not basic
+        return null;
+    }
+} else if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
+    // If a non-zero entry that's not 1.0 is found, the column is not basic
+    return null;
+}
+
+2024-02-26 01:58:39,679 - Math_87 - INFO - 编译成功
+2024-02-26 01:58:46,036 - Math_87 - INFO - 测试成功
+2024-02-26 01:58:46,036 - Math_87 - INFO - 补丁2 1 通过了所有的测试用例

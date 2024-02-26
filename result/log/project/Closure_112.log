@@ -1,0 +1,256 @@
+2024-02-25 01:30:56,258 - Closure_112 - INFO - rm -rf /home/chongchong/d4j-project/Closure_112
+2024-02-25 01:30:56,259 - Closure_112 - INFO - 删除 Closure 112b 成功
+2024-02-25 01:30:56,259 - Closure_112 - INFO - defects4j checkout -p Closure -v 112b -w /home/chongchong/d4j-project/Closure_112
+2024-02-25 01:30:59,054 - Closure_112 - INFO - checkout Closure 112b 成功
+2024-02-25 01:31:11,126 - Closure_112 - INFO - 编译成功
+2024-02-25 01:32:10,115 - Closure_112 - INFO - 测试失败
+2024-02-25 01:32:10,115 - Closure_112 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+  - com.google.javascript.jscomp.TypeCheckTest::testTemplatized11
+
+2024-02-25 01:32:11,129 - Closure_112 - INFO - 它的bug类型为:
+2024-02-25 01:32:11,129 - Closure_112 - INFO - 2
+2024-02-25 01:33:06,421 - Closure_112 - INFO - 开始验证补丁1 1:
+2024-02-25 01:33:06,421 - Closure_112 - INFO - 
+    Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:33:10,818 - Closure_112 - INFO - 编译成功
+2024-02-25 01:34:09,852 - Closure_112 - INFO - 测试失败
+2024-02-25 01:34:09,852 - Closure_112 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+  - com.google.javascript.jscomp.TypeCheckTest::testTemplatized11
+
+2024-02-25 01:34:10,361 - Closure_112 - INFO - 选择失败的测试用例为:
+2024-02-25 01:34:10,361 - Closure_112 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+2024-02-25 01:34:10,361 - Closure_112 - INFO - 失败的测试代码为:
+2024-02-25 01:34:10,361 - Closure_112 - INFO -     testTypes(
+
+2024-02-25 01:34:10,361 - Closure_112 - INFO - 失败信息为:
+2024-02-25 01:34:10,361 - Closure_112 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 01:34:10,361 - Closure_112 - INFO - 补丁1 1测试失败
+2024-02-25 01:34:10,362 - Closure_112 - INFO - 开始验证补丁1 2:
+2024-02-25 01:34:10,362 - Closure_112 - INFO - 
+    // Assuming inferTemplateTypesFromParameters was corrected
+    Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:34:14,717 - Closure_112 - INFO - 编译成功
+2024-02-25 01:35:14,070 - Closure_112 - INFO - 测试失败
+2024-02-25 01:35:14,070 - Closure_112 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+  - com.google.javascript.jscomp.TypeCheckTest::testTemplatized11
+
+2024-02-25 01:35:14,578 - Closure_112 - INFO - 选择失败的测试用例为:
+2024-02-25 01:35:14,578 - Closure_112 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+2024-02-25 01:35:14,578 - Closure_112 - INFO - 失败的测试代码为:
+2024-02-25 01:35:14,578 - Closure_112 - INFO -     testTypes(
+
+2024-02-25 01:35:14,578 - Closure_112 - INFO - 失败信息为:
+2024-02-25 01:35:14,578 - Closure_112 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 01:35:14,578 - Closure_112 - INFO - 补丁1 2测试失败
+2024-02-25 01:35:14,579 - Closure_112 - INFO - 开始验证补丁1 3:
+2024-02-25 01:35:14,579 - Closure_112 - INFO - 
+    // Suppose inferTemplateTypesFromParameters now requires additional data or has a new signature
+    Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n, additionalData);
+
+2024-02-25 01:35:16,692 - Closure_112 - INFO - 编译失败
+2024-02-25 01:35:16,692 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n, additionalData);
+2024-02-25 01:35:16,692 - Closure_112 - INFO - 补丁1 3 未成功编译
+2024-02-25 01:35:16,693 - Closure_112 - INFO - 开始验证补丁1 4:
+2024-02-25 01:35:16,694 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:35:21,009 - Closure_112 - INFO - 编译成功
+2024-02-25 01:36:19,429 - Closure_112 - INFO - 测试失败
+2024-02-25 01:36:19,429 - Closure_112 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+  - com.google.javascript.jscomp.TypeCheckTest::testTemplatized11
+
+2024-02-25 01:36:19,936 - Closure_112 - INFO - 选择失败的测试用例为:
+2024-02-25 01:36:19,937 - Closure_112 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+2024-02-25 01:36:19,937 - Closure_112 - INFO - 失败的测试代码为:
+2024-02-25 01:36:19,937 - Closure_112 - INFO -     testTypes(
+
+2024-02-25 01:36:19,937 - Closure_112 - INFO - 失败信息为:
+2024-02-25 01:36:19,937 - Closure_112 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 01:36:19,937 - Closure_112 - INFO - 补丁1 4测试失败
+2024-02-25 01:36:19,938 - Closure_112 - INFO - 开始验证补丁1 5:
+2024-02-25 01:36:19,938 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = Maps.newHashMap(inferTemplateTypesFromParameters(fnType, n));
+
+2024-02-25 01:36:24,309 - Closure_112 - INFO - 编译成功
+2024-02-25 01:37:23,689 - Closure_112 - INFO - 测试失败
+2024-02-25 01:37:23,689 - Closure_112 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+  - com.google.javascript.jscomp.TypeCheckTest::testTemplatized11
+
+2024-02-25 01:37:24,206 - Closure_112 - INFO - 选择失败的测试用例为:
+2024-02-25 01:37:24,206 - Closure_112 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue1058
+2024-02-25 01:37:24,206 - Closure_112 - INFO - 失败的测试代码为:
+2024-02-25 01:37:24,206 - Closure_112 - INFO -     testTypes(
+
+2024-02-25 01:37:24,206 - Closure_112 - INFO - 失败信息为:
+2024-02-25 01:37:24,206 - Closure_112 - INFO - junit.framework.AssertionFailedError: unexpected warnings(s):
+
+2024-02-25 01:37:24,206 - Closure_112 - INFO - 补丁1 5测试失败
+2024-02-25 01:37:24,208 - Closure_112 - INFO - 开始验证补丁1 6:
+2024-02-25 01:37:24,208 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n, additionalConfig);
+
+2024-02-25 01:37:26,297 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:26,297 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n, additionalConfig);
+2024-02-25 01:37:26,297 - Closure_112 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:37:26,299 - Closure_112 - INFO - 开始验证补丁1 7:
+2024-02-25 01:37:26,299 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:26,299 - Closure_112 - INFO - 补丁1 7为重复的补丁
+2024-02-25 01:37:26,300 - Closure_112 - INFO - 开始验证补丁1 8:
+2024-02-25 01:37:26,300 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = fnType.inferTemplateTypesFromParameters(n);
+
+2024-02-25 01:37:28,416 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:28,416 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = fnType.inferTemplateTypesFromParameters(n);
+2024-02-25 01:37:28,416 - Closure_112 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:37:28,417 - Closure_112 - INFO - 开始验证补丁1 9:
+2024-02-25 01:37:28,417 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = TemplateTypeInference.inferFromParameters(fnType, n);
+
+2024-02-25 01:37:30,528 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:30,528 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = TemplateTypeInference.inferFromParameters(fnType, n);
+2024-02-25 01:37:30,528 - Closure_112 - INFO - 补丁1 9 未成功编译
+2024-02-25 01:37:30,529 - Closure_112 - INFO - 开始验证补丁2 1:
+2024-02-25 01:37:30,529 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:30,529 - Closure_112 - INFO - 补丁2 1为重复的补丁
+2024-02-25 01:37:30,535 - Closure_112 - INFO - 开始验证补丁2 2:
+2024-02-25 01:37:30,535 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, n.getArguments());
+
+2024-02-25 01:37:32,620 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:32,620 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, n.getArguments());
+2024-02-25 01:37:32,620 - Closure_112 - INFO - 补丁2 2 未成功编译
+2024-02-25 01:37:32,622 - Closure_112 - INFO - 开始验证补丁2 3:
+2024-02-25 01:37:32,622 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, n, additionalContext);
+
+2024-02-25 01:37:34,745 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:34,745 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, n, additionalContext);
+2024-02-25 01:37:34,745 - Closure_112 - INFO - 补丁2 3 未成功编译
+2024-02-25 01:37:34,747 - Closure_112 - INFO - 开始验证补丁2 4:
+2024-02-25 01:37:34,747 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:34,747 - Closure_112 - INFO - 补丁2 4为重复的补丁
+2024-02-25 01:37:34,752 - Closure_112 - INFO - 开始验证补丁2 5:
+2024-02-25 01:37:34,752 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, n.getArguments());
+
+2024-02-25 01:37:34,752 - Closure_112 - INFO - 补丁2 5为重复的补丁
+2024-02-25 01:37:34,753 - Closure_112 - INFO - 开始验证补丁2 6:
+2024-02-25 01:37:34,753 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = new HashMap<>(); // Initialize the map
+if (!inferTemplateTypesFromParameters(fnType, n, inferred)) {
+    return false; // handle the failure to infer types
+}
+
+2024-02-25 01:37:36,593 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:36,593 - Closure_112 - INFO - 错误: -source 1.6 中不支持 diamond 运算符
+Map<TemplateType, JSType> inferred = new HashMap<>(); // Initialize the map
+2024-02-25 01:37:36,593 - Closure_112 - INFO - 补丁2 6 未成功编译
+2024-02-25 01:37:36,594 - Closure_112 - INFO - 开始验证补丁2 7:
+2024-02-25 01:37:36,594 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:36,594 - Closure_112 - INFO - 补丁2 7为重复的补丁
+2024-02-25 01:37:36,595 - Closure_112 - INFO - 开始验证补丁2 8:
+2024-02-25 01:37:36,595 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, callTarget);
+
+2024-02-25 01:37:38,716 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:38,716 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = inferTemplateTypes(fnType, callTarget);
+2024-02-25 01:37:38,716 - Closure_112 - INFO - 补丁2 8 未成功编译
+2024-02-25 01:37:38,717 - Closure_112 - INFO - 开始验证补丁2 9:
+2024-02-25 01:37:38,717 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = new HashMap<>();
+// Implementation that populates the inferred map based on fnType and n
+populateInferredMap(inferred, fnType, n);
+
+2024-02-25 01:37:40,560 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:40,560 - Closure_112 - INFO - 错误: -source 1.6 中不支持 diamond 运算符
+Map<TemplateType, JSType> inferred = new HashMap<>();
+2024-02-25 01:37:40,560 - Closure_112 - INFO - 补丁2 9 未成功编译
+2024-02-25 01:37:40,562 - Closure_112 - INFO - 开始验证补丁3 1:
+2024-02-25 01:37:40,562 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:40,562 - Closure_112 - INFO - 补丁3 1为重复的补丁
+2024-02-25 01:37:40,563 - Closure_112 - INFO - 开始验证补丁3 2:
+2024-02-25 01:37:40,563 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = fnType.getTemplateTypeMap().inferTemplateTypes(n);
+
+2024-02-25 01:37:42,648 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:42,648 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = fnType.getTemplateTypeMap().inferTemplateTypes(n);
+2024-02-25 01:37:42,648 - Closure_112 - INFO - 补丁3 2 未成功编译
+2024-02-25 01:37:42,649 - Closure_112 - INFO - 开始验证补丁3 3:
+2024-02-25 01:37:42,649 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = InferTemplates.inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:44,767 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:44,767 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = InferTemplates.inferTemplateTypesFromParameters(fnType, n);
+2024-02-25 01:37:44,767 - Closure_112 - INFO - 补丁3 3 未成功编译
+2024-02-25 01:37:44,768 - Closure_112 - INFO - 开始验证补丁3 4:
+2024-02-25 01:37:44,768 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:44,768 - Closure_112 - INFO - 补丁3 4为重复的补丁
+2024-02-25 01:37:44,774 - Closure_112 - INFO - 开始验证补丁3 5:
+2024-02-25 01:37:44,774 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = new HashMap<TemplateType, JSType>();
+
+2024-02-25 01:37:46,892 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:46,892 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = new HashMap<TemplateType, JSType>();
+2024-02-25 01:37:46,892 - Closure_112 - INFO - 补丁3 5 未成功编译
+2024-02-25 01:37:46,893 - Closure_112 - INFO - 开始验证补丁3 6:
+2024-02-25 01:37:46,893 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = alternativeInferenceMethod(fnType, n);
+
+2024-02-25 01:37:49,012 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:49,013 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = alternativeInferenceMethod(fnType, n);
+2024-02-25 01:37:49,013 - Closure_112 - INFO - 补丁3 6 未成功编译
+2024-02-25 01:37:49,014 - Closure_112 - INFO - 开始验证补丁3 7:
+2024-02-25 01:37:49,014 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:49,014 - Closure_112 - INFO - 补丁3 7为重复的补丁
+2024-02-25 01:37:49,019 - Closure_112 - INFO - 开始验证补丁3 8:
+2024-02-25 01:37:49,019 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = TemplateTypeInference.inferTemplateTypesFromParameters(fnType, n);
+
+2024-02-25 01:37:51,131 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:51,131 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = TemplateTypeInference.inferTemplateTypesFromParameters(fnType, n);
+2024-02-25 01:37:51,131 - Closure_112 - INFO - 补丁3 8 未成功编译
+2024-02-25 01:37:51,132 - Closure_112 - INFO - 开始验证补丁3 9:
+2024-02-25 01:37:51,132 - Closure_112 - INFO - 
+Map<TemplateType, JSType> inferred = new HashMap<TemplateType, JSType>(inferTemplateTypesFromParameters(fnType, n));
+
+2024-02-25 01:37:53,227 - Closure_112 - INFO - 编译失败
+2024-02-25 01:37:53,227 - Closure_112 - INFO - 错误: 找不到符号
+Map<TemplateType, JSType> inferred = new HashMap<TemplateType, JSType>(inferTemplateTypesFromParameters(fnType, n));
+2024-02-25 01:37:53,228 - Closure_112 - INFO - 补丁3 9 未成功编译
+2024-02-25 01:37:53,228 - Closure_112 - INFO - Closure_112 未成功修复

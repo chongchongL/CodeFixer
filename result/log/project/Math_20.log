@@ -1,0 +1,316 @@
+2024-02-25 00:39:46,494 - Math_20 - INFO - rm -rf /home/chongchong/d4j-project/Math_20
+2024-02-25 00:39:46,524 - Math_20 - INFO - 删除 Math 20b 成功
+2024-02-25 00:39:46,524 - Math_20 - INFO - defects4j checkout -p Math -v 20b -w /home/chongchong/d4j-project/Math_20
+2024-02-25 00:39:49,989 - Math_20 - INFO - checkout Math 20b 成功
+2024-02-25 00:39:56,844 - Math_20 - INFO - 编译成功
+2024-02-25 00:40:33,674 - Math_20 - INFO - 测试失败
+2024-02-25 00:40:33,674 - Math_20 - INFO - Failing tests: 1
+  - org.apache.commons.math3.optimization.direct.CMAESOptimizerTest::testMath864
+
+2024-02-25 00:40:34,585 - Math_20 - INFO - 它的bug类型为:
+2024-02-25 00:40:34,585 - Math_20 - INFO - 2
+2024-02-25 00:41:41,052 - Math_20 - INFO - 开始验证补丁1 1:
+2024-02-25 00:41:41,052 - Math_20 - INFO - 
+            double[] decoded = decode(x);
+            for (int i = 0; i < decoded.length; i++) {
+                if (decoded[i] > 0.5) {
+                    decoded[i] = 0.5;
+                }
+            }
+            return decoded;
+
+2024-02-25 00:41:41,871 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:41,871 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:41,871 - Math_20 - INFO - 补丁1 1 未成功编译
+2024-02-25 00:41:41,872 - Math_20 - INFO - 开始验证补丁1 2:
+2024-02-25 00:41:41,872 - Math_20 - INFO - 
+            double[] decoded = decode(x);
+            return Arrays.stream(decoded).map(val -> Math.min(val, 0.5)).toArray();
+
+2024-02-25 00:41:42,491 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:42,491 - Math_20 - INFO - 错误: 非法的表达式开始
+return Arrays.stream(decoded).map(val -> Math.min(val, 0.5)).toArray();
+2024-02-25 00:41:42,491 - Math_20 - INFO - 补丁1 2 未成功编译
+2024-02-25 00:41:42,493 - Math_20 - INFO - 开始验证补丁1 3:
+2024-02-25 00:41:42,493 - Math_20 - INFO - 
+            double[] decoded = decode(x);
+            for (int i = 0; i < decoded.length; i++) {
+                decoded[i] = Math.min(decoded[i], 0.5);
+            }
+            return decoded;
+
+2024-02-25 00:41:43,316 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:43,316 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:43,316 - Math_20 - INFO - 补丁1 3 未成功编译
+2024-02-25 00:41:43,317 - Math_20 - INFO - 开始验证补丁1 4:
+2024-02-25 00:41:43,317 - Math_20 - INFO - 
+return enforceBounds(decode(x));
+
+2024-02-25 00:41:44,151 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:44,151 - Math_20 - INFO - 错误: 找不到符号
+return enforceBounds(decode(x));
+2024-02-25 00:41:44,151 - Math_20 - INFO - 补丁1 4 未成功编译
+2024-02-25 00:41:44,152 - Math_20 - INFO - 开始验证补丁1 5:
+2024-02-25 00:41:44,152 - Math_20 - INFO - 
+double[] decoded = decode(x);
+for (int i = 0; i < decoded.length; i++) {
+    decoded[i] = Math.min(Math.max(decoded[i], 0), 0.5);
+}
+return decoded;
+
+2024-02-25 00:41:44,979 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:44,979 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:44,979 - Math_20 - INFO - 补丁1 5 未成功编译
+2024-02-25 00:41:44,980 - Math_20 - INFO - 开始验证补丁1 6:
+2024-02-25 00:41:44,980 - Math_20 - INFO - 
+double[] decoded = decode(x);
+return repair(decoded);
+
+2024-02-25 00:41:45,785 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:45,785 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:45,785 - Math_20 - INFO - 补丁1 6 未成功编译
+2024-02-25 00:41:45,786 - Math_20 - INFO - 开始验证补丁1 7:
+2024-02-25 00:41:45,786 - Math_20 - INFO - 
+return repair(decode(x));
+
+2024-02-25 00:41:46,604 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:46,604 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:46,605 - Math_20 - INFO - 补丁1 7 未成功编译
+2024-02-25 00:41:46,606 - Math_20 - INFO - 开始验证补丁1 8:
+2024-02-25 00:41:46,606 - Math_20 - INFO - 
+double[] decoded = decode(x);
+for (int i = 0; i < decoded.length; i++) {
+    if (decoded[i] > upperBound) {
+        decoded[i] = upperBound;
+    } else if (decoded[i] < lowerBound) {
+        decoded[i] = lowerBound;
+    }
+}
+return decoded;
+
+2024-02-25 00:41:47,424 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:47,424 - Math_20 - INFO - 错误: upperBound可以在BaseAbstractMultivariateSimpleBoundsOptimizer中访问private
+if (decoded[i] > upperBound) {
+2024-02-25 00:41:47,424 - Math_20 - INFO - 补丁1 8 未成功编译
+2024-02-25 00:41:47,426 - Math_20 - INFO - 开始验证补丁1 9:
+2024-02-25 00:41:47,426 - Math_20 - INFO - 
+return decode(x);
+
+2024-02-25 00:41:48,246 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:48,247 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:48,247 - Math_20 - INFO - 补丁1 9 未成功编译
+2024-02-25 00:41:48,248 - Math_20 - INFO - 开始验证补丁2 1:
+2024-02-25 00:41:48,248 - Math_20 - INFO - 
+return decode(repair(x));
+
+2024-02-25 00:41:49,063 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:49,064 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:49,064 - Math_20 - INFO - 补丁2 1 未成功编译
+2024-02-25 00:41:49,065 - Math_20 - INFO - 开始验证补丁2 2:
+2024-02-25 00:41:49,065 - Math_20 - INFO - 
+if(isValid(x)) {
+    return decode(x);
+} else {
+    double[] repairedX = correctValues(x);
+    return decode(repairedX);
+}
+
+2024-02-25 00:41:49,878 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:49,878 - Math_20 - INFO - 错误: 找不到符号
+if(isValid(x)) {
+2024-02-25 00:41:49,878 - Math_20 - INFO - 补丁2 2 未成功编译
+2024-02-25 00:41:49,879 - Math_20 - INFO - 开始验证补丁2 3:
+2024-02-25 00:41:49,879 - Math_20 - INFO - 
+for(int i = 0; i < x.length; i++) {
+    x[i] = repairValue(x[i]);
+}
+return decode(x);
+
+2024-02-25 00:41:50,702 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:50,702 - Math_20 - INFO - 错误: 找不到符号
+x[i] = repairValue(x[i]);
+2024-02-25 00:41:50,703 - Math_20 - INFO - 补丁2 3 未成功编译
+2024-02-25 00:41:50,704 - Math_20 - INFO - 开始验证补丁2 4:
+2024-02-25 00:41:50,704 - Math_20 - INFO - 
+            // Assuming `repair` is a method defined to correct the values within x if necessary
+            double[] repairedX = repair(x);
+            return decode(repairedX);
+
+2024-02-25 00:41:51,525 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:51,525 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:51,525 - Math_20 - INFO - 补丁2 4 未成功编译
+2024-02-25 00:41:51,526 - Math_20 - INFO - 开始验证补丁2 5:
+2024-02-25 00:41:51,526 - Math_20 - INFO - 
+            // If repair logic is simple and can be inlined, for example assuming a simple clamp to [0,1]
+            for (int i = 0; i < x.length; i++) {
+                x[i] = Math.min(1, Math.max(0, x[i]));
+            }
+            return decode(x);
+
+2024-02-25 00:41:52,335 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:52,335 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:52,335 - Math_20 - INFO - 补丁2 5 未成功编译
+2024-02-25 00:41:52,336 - Math_20 - INFO - 开始验证补丁2 6:
+2024-02-25 00:41:52,336 - Math_20 - INFO - 
+            // If repair function is not defined separately, integrate the repair logic directly
+            for (int i = 0; i < x.length; i++) {
+                // Apply some hypothetical bounds check and fix
+                if (x[i] < lowerBound) { 
+                    x[i] = lowerBound; 
+                } else if (x[i] > upperBound) { 
+                    x[i] = upperBound; 
+                }
+            }
+            return decode(x);
+
+2024-02-25 00:41:53,157 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:53,157 - Math_20 - INFO - 错误: lowerBound可以在BaseAbstractMultivariateSimpleBoundsOptimizer中访问private
+if (x[i] < lowerBound) {
+2024-02-25 00:41:53,157 - Math_20 - INFO - 补丁2 6 未成功编译
+2024-02-25 00:41:53,158 - Math_20 - INFO - 开始验证补丁2 7:
+2024-02-25 00:41:53,158 - Math_20 - INFO - 
+return decode(repair(x));
+
+2024-02-25 00:41:53,158 - Math_20 - INFO - 补丁2 7为重复的补丁
+2024-02-25 00:41:53,159 - Math_20 - INFO - 开始验证补丁2 8:
+2024-02-25 00:41:53,159 - Math_20 - INFO - 
+for (int i = 0; i < x.length; i++) {
+    if (x[i] < lowerBound) {
+        x[i] = lowerBound;
+    } else if (x[i] > upperBound) {
+        x[i] = upperBound;
+    }
+}
+return decode(x);
+
+2024-02-25 00:41:53,975 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:53,975 - Math_20 - INFO - 错误: lowerBound可以在BaseAbstractMultivariateSimpleBoundsOptimizer中访问private
+if (x[i] < lowerBound) {
+2024-02-25 00:41:53,975 - Math_20 - INFO - 补丁2 8 未成功编译
+2024-02-25 00:41:53,976 - Math_20 - INFO - 开始验证补丁2 9:
+2024-02-25 00:41:53,976 - Math_20 - INFO - 
+if (!isNormalized(x)) {
+    x = normalize(x);
+}
+return decode(x);
+
+2024-02-25 00:41:54,866 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:54,866 - Math_20 - INFO - 错误: 找不到符号
+if (!isNormalized(x)) {
+2024-02-25 00:41:54,866 - Math_20 - INFO - 补丁2 9 未成功编译
+2024-02-25 00:41:54,867 - Math_20 - INFO - 开始验证补丁3 1:
+2024-02-25 00:41:54,867 - Math_20 - INFO - 
+            // Repair x if necessary before decoding
+            // Assuming there are defined methods `repair` and `checkBounds` that can be used
+            double[] repairedX = repair(x);
+            if (checkBounds(repairedX)) {
+                return decode(repairedX);
+            } else {
+                // Handle the case where x cannot be repaired
+                throw new IllegalArgumentException("Repaired values are out of bounds");
+            }
+
+2024-02-25 00:41:55,699 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:55,699 - Math_20 - INFO - 错误: 找不到符号
+if (checkBounds(repairedX)) {
+2024-02-25 00:41:55,699 - Math_20 - INFO - 补丁3 1 未成功编译
+2024-02-25 00:41:55,700 - Math_20 - INFO - 开始验证补丁3 2:
+2024-02-25 00:41:55,700 - Math_20 - INFO - 
+            // Directly using a method to repair and check bounds, then decode
+            // Assuming `repairAndCheckBounds` method exists
+            double[] repairedX = repairAndCheckBounds(x);
+            return decode(repairedX);
+
+2024-02-25 00:41:56,516 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:56,516 - Math_20 - INFO - 错误: 找不到符号
+double[] repairedX = repairAndCheckBounds(x);
+2024-02-25 00:41:56,516 - Math_20 - INFO - 补丁3 2 未成功编译
+2024-02-25 00:41:56,517 - Math_20 - INFO - 开始验证补丁3 3:
+2024-02-25 00:41:56,517 - Math_20 - INFO - 
+            // Just returning the decoded value after a simple repair step
+            // This assumes a simple case where `repair` method can directly modify `x`
+            repair(x); // repair is assumed to modify x in place
+            return decode(x);
+
+2024-02-25 00:41:57,344 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:57,344 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:57,344 - Math_20 - INFO - 补丁3 3 未成功编译
+2024-02-25 00:41:57,345 - Math_20 - INFO - 开始验证补丁3 4:
+2024-02-25 00:41:57,345 - Math_20 - INFO - 
+            // Repair the normalized variable to ensure it's within bounds
+            double[] repaired = repair(x);
+            // Decode the repaired variables into their original values
+            return decode(repaired);
+
+2024-02-25 00:41:58,165 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:58,165 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:41:58,165 - Math_20 - INFO - 补丁3 4 未成功编译
+2024-02-25 00:41:58,166 - Math_20 - INFO - 开始验证补丁3 5:
+2024-02-25 00:41:58,166 - Math_20 - INFO - 
+            // Ensure the variable x is within the required bounds directly
+            double[] boundsChecked = checkBounds(x);
+            // Decode the bounds-checked variables into their original values
+            return decode(boundsChecked);
+
+2024-02-25 00:41:58,984 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:58,984 - Math_20 - INFO - 错误: 找不到符号
+double[] boundsChecked = checkBounds(x);
+2024-02-25 00:41:58,984 - Math_20 - INFO - 补丁3 5 未成功编译
+2024-02-25 00:41:58,985 - Math_20 - INFO - 开始验证补丁3 6:
+2024-02-25 00:41:58,986 - Math_20 - INFO - 
+            // Directly include repair logic inside this method if the method does not exist
+            for (int i = 0; i < x.length; i++) {
+                if (x[i] < lower[i]) x[i] = lower[i];
+                else if (x[i] > upper[i]) x[i] = upper[i];
+            }
+            // Decode the variables into their original values
+            return decode(x);
+
+2024-02-25 00:41:59,824 - Math_20 - INFO - 编译失败
+2024-02-25 00:41:59,824 - Math_20 - INFO - 错误: 找不到符号
+if (x[i] < lower[i]) x[i] = lower[i];
+2024-02-25 00:41:59,824 - Math_20 - INFO - 补丁3 6 未成功编译
+2024-02-25 00:41:59,825 - Math_20 - INFO - 开始验证补丁3 7:
+2024-02-25 00:41:59,825 - Math_20 - INFO - 
+            // Assuming there exists a method repair(x) to repair the values before decoding
+            double[] repaired = repair(x);
+            return decode(repaired);
+
+2024-02-25 00:42:00,639 - Math_20 - INFO - 编译失败
+2024-02-25 00:42:00,639 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:42:00,639 - Math_20 - INFO - 补丁3 7 未成功编译
+2024-02-25 00:42:00,641 - Math_20 - INFO - 开始验证补丁3 8:
+2024-02-25 00:42:00,641 - Math_20 - INFO - 
+            // In case the repair logic is to be directly implemented in this method
+            for (int i = 0; i < x.length; i++) {
+                if (x[i] < lower[i]) x[i] = lower[i];
+                else if (x[i] > upper[i]) x[i] = upper[i];
+            }
+            return decode(x);
+
+2024-02-25 00:42:01,476 - Math_20 - INFO - 编译失败
+2024-02-25 00:42:01,476 - Math_20 - INFO - 错误: 找不到符号
+if (x[i] < lower[i]) x[i] = lower[i];
+2024-02-25 00:42:01,476 - Math_20 - INFO - 补丁3 8 未成功编译
+2024-02-25 00:42:01,477 - Math_20 - INFO - 开始验证补丁3 9:
+2024-02-25 00:42:01,477 - Math_20 - INFO - 
+            // If repair logic is minimal and only ensures array is within bounds
+            return decode(Arrays.copyOf(x, x.length)); // This ensures the original array is not modified
+
+2024-02-25 00:42:02,333 - Math_20 - INFO - 编译失败
+2024-02-25 00:42:02,333 - Math_20 - INFO - 错误: 无法访问的语句
+decode(x);
+2024-02-25 00:42:02,333 - Math_20 - INFO - 补丁3 9 未成功编译
+2024-02-25 00:42:02,333 - Math_20 - INFO - Math_20 未成功修复

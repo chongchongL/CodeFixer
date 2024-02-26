@@ -1,0 +1,255 @@
+2024-02-23 23:50:51,557 - Lang_61 - INFO - rm -rf /home/chongchong/d4j-project/Lang_61
+2024-02-23 23:50:51,558 - Lang_61 - INFO - 删除 Lang 61b 成功
+2024-02-23 23:50:51,558 - Lang_61 - INFO - defects4j checkout -p Lang -v 61b -w /home/chongchong/d4j-project/Lang_61
+2024-02-23 23:50:54,882 - Lang_61 - INFO - checkout Lang 61b 成功
+2024-02-23 23:50:58,813 - Lang_61 - INFO - 编译成功
+2024-02-23 23:51:07,289 - Lang_61 - INFO - 测试失败
+2024-02-23 23:51:07,289 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+  - org.apache.commons.lang.text.StrBuilderTest::testLang294
+
+2024-02-23 23:51:08,165 - Lang_61 - INFO - 它的bug类型为:
+2024-02-23 23:51:08,165 - Lang_61 - INFO - 1
+2024-02-23 23:51:57,758 - Lang_61 - INFO - 开始验证补丁1 1:
+2024-02-23 23:51:57,758 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:51:58,951 - Lang_61 - INFO - 编译成功
+2024-02-23 23:52:07,387 - Lang_61 - INFO - 测试失败
+2024-02-23 23:52:07,387 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+  - org.apache.commons.lang.text.StrBuilderTest::testLang294
+
+2024-02-23 23:52:07,820 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:52:07,820 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+2024-02-23 23:52:07,820 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:52:07,820 - Lang_61 - INFO -         assertEquals(-1, sb.indexOf("three"));
+
+2024-02-23 23:52:07,820 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:52:07,820 - Lang_61 - INFO - junit.framework.AssertionFailedError: expected:<-1> but was:<6>
+
+2024-02-23 23:52:07,820 - Lang_61 - INFO - 补丁1 1测试失败
+2024-02-23 23:52:07,821 - Lang_61 - INFO - 开始验证补丁1 2:
+2024-02-23 23:52:07,821 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen + 1;
+
+2024-02-23 23:52:09,006 - Lang_61 - INFO - 编译成功
+2024-02-23 23:52:17,451 - Lang_61 - INFO - 测试失败
+2024-02-23 23:52:17,451 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+  - org.apache.commons.lang.text.StrBuilderTest::testLang294
+
+2024-02-23 23:52:17,889 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:52:17,889 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+2024-02-23 23:52:17,889 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:52:17,889 - Lang_61 - INFO -         assertEquals(-1, sb.indexOf("three"));
+
+2024-02-23 23:52:17,889 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:52:17,889 - Lang_61 - INFO - junit.framework.AssertionFailedError: expected:<-1> but was:<6>
+
+2024-02-23 23:52:17,889 - Lang_61 - INFO - 补丁1 2测试失败
+2024-02-23 23:52:17,890 - Lang_61 - INFO - 开始验证补丁1 3:
+2024-02-23 23:52:17,890 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:19,084 - Lang_61 - INFO - 编译成功
+2024-02-23 23:52:27,526 - Lang_61 - INFO - 测试失败
+2024-02-23 23:52:27,526 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOf_String_int
+
+2024-02-23 23:52:27,963 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:52:27,963 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String
+2024-02-23 23:52:27,963 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:52:27,963 - Lang_61 - INFO -         assertEquals("b-c-", sb.toString());
+
+2024-02-23 23:52:27,963 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:52:27,964 - Lang_61 - INFO - junit.framework.ComparisonFailure: expected:<b-c[-]> but was:<b-c[cb]>
+
+2024-02-23 23:52:27,964 - Lang_61 - INFO - 补丁1 3测试失败
+2024-02-23 23:52:27,965 - Lang_61 - INFO - 开始验证补丁1 4:
+2024-02-23 23:52:27,965 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:27,965 - Lang_61 - INFO - 补丁1 4为重复的补丁
+2024-02-23 23:52:27,966 - Lang_61 - INFO - 开始验证补丁1 5:
+2024-02-23 23:52:27,966 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:27,966 - Lang_61 - INFO - 补丁1 5为重复的补丁
+2024-02-23 23:52:27,966 - Lang_61 - INFO - 开始验证补丁1 6:
+2024-02-23 23:52:27,966 - Lang_61 - INFO - 
+int len = BUFFER_SIZE - strLen;
+
+2024-02-23 23:52:28,741 - Lang_61 - INFO - 编译失败
+2024-02-23 23:52:28,741 - Lang_61 - INFO - 错误: 找不到符号
+int len = BUFFER_SIZE - strLen;
+2024-02-23 23:52:28,741 - Lang_61 - INFO - 补丁1 6 未成功编译
+2024-02-23 23:52:28,742 - Lang_61 - INFO - 开始验证补丁1 7:
+2024-02-23 23:52:28,742 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:28,742 - Lang_61 - INFO - 补丁1 7为重复的补丁
+2024-02-23 23:52:28,743 - Lang_61 - INFO - 开始验证补丁1 8:
+2024-02-23 23:52:28,743 - Lang_61 - INFO - 
+int len = thisBuf.length; // Assumes the loop logic is corrected to take strLen into account within the loop
+
+2024-02-23 23:52:29,917 - Lang_61 - INFO - 编译成功
+2024-02-23 23:52:38,379 - Lang_61 - INFO - 测试失败
+2024-02-23 23:52:38,380 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+  - org.apache.commons.lang.text.StrBuilderTest::testLang294
+
+2024-02-23 23:52:38,822 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:52:38,822 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+2024-02-23 23:52:38,822 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:52:38,822 - Lang_61 - INFO -         assertEquals(-1, sb.indexOf("three"));
+
+2024-02-23 23:52:38,822 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:52:38,822 - Lang_61 - INFO - junit.framework.AssertionFailedError: expected:<-1> but was:<6>
+
+2024-02-23 23:52:38,822 - Lang_61 - INFO - 补丁1 8测试失败
+2024-02-23 23:52:38,823 - Lang_61 - INFO - 开始验证补丁1 9:
+2024-02-23 23:52:38,823 - Lang_61 - INFO - 
+int len = size - strLen; // Assumes 'size' is already set to the correct length of the content within 'thisBuf'
+
+2024-02-23 23:52:40,020 - Lang_61 - INFO - 编译成功
+2024-02-23 23:52:48,545 - Lang_61 - INFO - 测试失败
+2024-02-23 23:52:48,545 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOf_String_int
+
+2024-02-23 23:52:48,989 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:52:48,989 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String
+2024-02-23 23:52:48,989 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:52:48,989 - Lang_61 - INFO -         assertEquals("b-c-", sb.toString());
+
+2024-02-23 23:52:48,989 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:52:48,989 - Lang_61 - INFO - junit.framework.ComparisonFailure: expected:<b-c[-]> but was:<b-c[cb]>
+
+2024-02-23 23:52:48,989 - Lang_61 - INFO - 补丁1 9测试失败
+2024-02-23 23:52:48,990 - Lang_61 - INFO - 开始验证补丁2 1:
+2024-02-23 23:52:48,990 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:48,990 - Lang_61 - INFO - 补丁2 1为重复的补丁
+2024-02-23 23:52:48,991 - Lang_61 - INFO - 开始验证补丁2 2:
+2024-02-23 23:52:48,991 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen + 1;
+
+2024-02-23 23:52:48,991 - Lang_61 - INFO - 补丁2 2为重复的补丁
+2024-02-23 23:52:48,992 - Lang_61 - INFO - 开始验证补丁2 3:
+2024-02-23 23:52:48,992 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:48,992 - Lang_61 - INFO - 补丁2 3为重复的补丁
+2024-02-23 23:52:48,993 - Lang_61 - INFO - 开始验证补丁2 4:
+2024-02-23 23:52:48,993 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:48,993 - Lang_61 - INFO - 补丁2 4为重复的补丁
+2024-02-23 23:52:48,994 - Lang_61 - INFO - 开始验证补丁2 5:
+2024-02-23 23:52:48,994 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen + 1;
+
+2024-02-23 23:52:48,994 - Lang_61 - INFO - 补丁2 5为重复的补丁
+2024-02-23 23:52:48,994 - Lang_61 - INFO - 开始验证补丁2 6:
+2024-02-23 23:52:48,994 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:48,995 - Lang_61 - INFO - 补丁2 6为重复的补丁
+2024-02-23 23:52:48,995 - Lang_61 - INFO - 开始验证补丁2 7:
+2024-02-23 23:52:48,995 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:48,995 - Lang_61 - INFO - 补丁2 7为重复的补丁
+2024-02-23 23:52:48,996 - Lang_61 - INFO - 开始验证补丁2 8:
+2024-02-23 23:52:48,996 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:48,996 - Lang_61 - INFO - 补丁2 8为重复的补丁
+2024-02-23 23:52:48,997 - Lang_61 - INFO - 开始验证补丁2 9:
+2024-02-23 23:52:48,997 - Lang_61 - INFO - 
+int len = BUFFER_MAX_LENGTH - strLen;
+
+2024-02-23 23:52:49,771 - Lang_61 - INFO - 编译失败
+2024-02-23 23:52:49,771 - Lang_61 - INFO - 错误: 找不到符号
+int len = BUFFER_MAX_LENGTH - strLen;
+2024-02-23 23:52:49,771 - Lang_61 - INFO - 补丁2 9 未成功编译
+2024-02-23 23:52:49,772 - Lang_61 - INFO - 开始验证补丁3 1:
+2024-02-23 23:52:49,772 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:49,772 - Lang_61 - INFO - 补丁3 1为重复的补丁
+2024-02-23 23:52:49,773 - Lang_61 - INFO - 开始验证补丁3 2:
+2024-02-23 23:52:49,773 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:49,773 - Lang_61 - INFO - 补丁3 2为重复的补丁
+2024-02-23 23:52:49,774 - Lang_61 - INFO - 开始验证补丁3 3:
+2024-02-23 23:52:49,774 - Lang_61 - INFO - 
+int len = Math.min(thisBuf.length, size) - strLen;
+
+2024-02-23 23:52:50,954 - Lang_61 - INFO - 编译成功
+2024-02-23 23:52:59,465 - Lang_61 - INFO - 测试失败
+2024-02-23 23:52:59,465 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOf_String_int
+
+2024-02-23 23:52:59,906 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:52:59,906 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String
+2024-02-23 23:52:59,906 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:52:59,906 - Lang_61 - INFO -         assertEquals("b-c-", sb.toString());
+
+2024-02-23 23:52:59,906 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:52:59,906 - Lang_61 - INFO - junit.framework.ComparisonFailure: expected:<b-c[-]> but was:<b-c[cb]>
+
+2024-02-23 23:52:59,906 - Lang_61 - INFO - 补丁3 3测试失败
+2024-02-23 23:52:59,907 - Lang_61 - INFO - 开始验证补丁3 4:
+2024-02-23 23:52:59,907 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:52:59,907 - Lang_61 - INFO - 补丁3 4为重复的补丁
+2024-02-23 23:52:59,908 - Lang_61 - INFO - 开始验证补丁3 5:
+2024-02-23 23:52:59,908 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:52:59,908 - Lang_61 - INFO - 补丁3 5为重复的补丁
+2024-02-23 23:52:59,909 - Lang_61 - INFO - 开始验证补丁3 6:
+2024-02-23 23:52:59,909 - Lang_61 - INFO - 
+int len = thisBuf.length;
+
+2024-02-23 23:53:01,097 - Lang_61 - INFO - 编译成功
+2024-02-23 23:53:09,526 - Lang_61 - INFO - 测试失败
+2024-02-23 23:53:09,526 - Lang_61 - INFO - Failing tests: 2
+  - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+  - org.apache.commons.lang.text.StrBuilderTest::testLang294
+
+2024-02-23 23:53:09,970 - Lang_61 - INFO - 选择失败的测试用例为:
+2024-02-23 23:53:09,970 - Lang_61 - INFO - org.apache.commons.lang.text.StrBuilderTest::testIndexOfLang294
+2024-02-23 23:53:09,970 - Lang_61 - INFO - 失败的测试代码为:
+2024-02-23 23:53:09,970 - Lang_61 - INFO -         assertEquals(-1, sb.indexOf("three"));
+
+2024-02-23 23:53:09,970 - Lang_61 - INFO - 失败信息为:
+2024-02-23 23:53:09,970 - Lang_61 - INFO - junit.framework.AssertionFailedError: expected:<-1> but was:<6>
+
+2024-02-23 23:53:09,970 - Lang_61 - INFO - 补丁3 6测试失败
+2024-02-23 23:53:09,971 - Lang_61 - INFO - 开始验证补丁3 7:
+2024-02-23 23:53:09,971 - Lang_61 - INFO - 
+int len = thisBuf.length - strLen;
+
+2024-02-23 23:53:09,971 - Lang_61 - INFO - 补丁3 7为重复的补丁
+2024-02-23 23:53:09,972 - Lang_61 - INFO - 开始验证补丁3 8:
+2024-02-23 23:53:09,972 - Lang_61 - INFO - 
+int len = size - strLen;
+
+2024-02-23 23:53:09,972 - Lang_61 - INFO - 补丁3 8为重复的补丁
+2024-02-23 23:53:09,973 - Lang_61 - INFO - 开始验证补丁3 9:
+2024-02-23 23:53:09,973 - Lang_61 - INFO - 
+int len = thisBuf.length() - strLen;
+
+2024-02-23 23:53:10,736 - Lang_61 - INFO - 编译失败
+2024-02-23 23:53:10,737 - Lang_61 - INFO - 错误: 找不到符号
+int len = thisBuf.length() - strLen;
+2024-02-23 23:53:10,737 - Lang_61 - INFO - 补丁3 9 未成功编译
+2024-02-23 23:53:10,737 - Lang_61 - INFO - Lang_61 未成功修复

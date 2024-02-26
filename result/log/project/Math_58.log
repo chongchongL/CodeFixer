@@ -1,0 +1,536 @@
+2024-02-24 01:06:25,180 - Math_58 - INFO - rm -rf /home/chongchong/d4j-project/Math_58
+2024-02-24 01:06:25,181 - Math_58 - INFO - 删除 Math 58b 成功
+2024-02-24 01:06:25,181 - Math_58 - INFO - defects4j checkout -p Math -v 58b -w /home/chongchong/d4j-project/Math_58
+2024-02-24 01:06:27,605 - Math_58 - INFO - checkout Math 58b 成功
+2024-02-24 01:06:33,662 - Math_58 - INFO - 编译成功
+2024-02-24 01:06:53,354 - Math_58 - INFO - 测试失败
+2024-02-24 01:06:53,354 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 01:06:54,272 - Math_58 - INFO - 它的bug类型为:
+2024-02-24 01:06:54,272 - Math_58 - INFO - 1
+2024-02-24 01:07:28,932 - Math_58 - INFO - Math_58 未成功修复
+2024-02-24 10:51:08,738 - Math_58 - INFO - rm -rf /home/chongchong/d4j-project/Math_58
+2024-02-24 10:51:08,768 - Math_58 - INFO - 删除 Math 58b 成功
+2024-02-24 10:51:08,768 - Math_58 - INFO - defects4j checkout -p Math -v 58b -w /home/chongchong/d4j-project/Math_58
+2024-02-24 10:51:11,117 - Math_58 - INFO - checkout Math 58b 成功
+2024-02-24 10:51:17,130 - Math_58 - INFO - 编译成功
+2024-02-24 10:51:36,883 - Math_58 - INFO - 测试失败
+2024-02-24 10:51:36,883 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:51:37,791 - Math_58 - INFO - 它的bug类型为:
+2024-02-24 10:51:37,791 - Math_58 - INFO - 1
+2024-02-24 10:52:35,404 - Math_58 - INFO - 开始验证补丁1 1:
+2024-02-24 10:52:35,404 - Math_58 - INFO - 
+    return fit(new Gaussian.Parametric(), validateGuess(guess));
+
+2024-02-24 10:52:36,119 - Math_58 - INFO - 编译失败
+2024-02-24 10:52:36,119 - Math_58 - INFO - 错误: 找不到符号
+return fit(new Gaussian.Parametric(), validateGuess(guess));
+2024-02-24 10:52:36,119 - Math_58 - INFO - 补丁1 1 未成功编译
+2024-02-24 10:52:36,120 - Math_58 - INFO - 开始验证补丁1 2:
+2024-02-24 10:52:36,120 - Math_58 - INFO - 
+private double[] validateGuess(double[] guess) {
+    guess[2] = Math.max(guess[2], 0.0001); // ensure sigma is positive
+    return guess;
+}
+
+2024-02-24 10:52:36,711 - Math_58 - INFO - 编译失败
+2024-02-24 10:52:36,711 - Math_58 - INFO - 错误: 非法的表达式开始
+private double[] validateGuess(double[] guess) {
+2024-02-24 10:52:36,712 - Math_58 - INFO - 补丁1 2 未成功编译
+2024-02-24 10:52:36,713 - Math_58 - INFO - 开始验证补丁1 3:
+2024-02-24 10:52:36,713 - Math_58 - INFO - 
+    if (guess[2] <= 0) {
+        guess[2] = 0.0001; // Set a small positive number for sigma
+    }
+    return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:52:37,963 - Math_58 - INFO - 编译成功
+2024-02-24 10:52:57,680 - Math_58 - INFO - 测试失败
+2024-02-24 10:52:57,680 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:52:58,141 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:52:58,141 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:52:58,141 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:52:58,142 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:52:58,142 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:52:58,142 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:52:58,142 - Math_58 - INFO - 补丁1 3测试失败
+2024-02-24 10:52:58,143 - Math_58 - INFO - 开始验证补丁1 4:
+2024-02-24 10:52:58,143 - Math_58 - INFO - 
+    try {
+        return fit(new Gaussian.Parametric(), guess);
+    } catch (NotStrictlyPositiveException e) {
+        guess[2] = 0.0001; // Provide a new positive guess for sigma
+        return fit(new Gaussian.Parametric(), guess);
+    }
+
+2024-02-24 10:52:59,377 - Math_58 - INFO - 编译成功
+2024-02-24 10:53:19,151 - Math_58 - INFO - 测试失败
+2024-02-24 10:53:19,151 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:53:19,606 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:53:19,606 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:53:19,606 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:53:19,606 - Math_58 - INFO -         Assert.assertEquals(53.1572792, p[1], 1e-7);
+
+2024-02-24 10:53:19,606 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:53:19,606 - Math_58 - INFO - junit.framework.AssertionFailedError: expected:<53.1572792> but was:<26.0>
+
+2024-02-24 10:53:19,606 - Math_58 - INFO - 补丁1 4测试失败
+2024-02-24 10:53:19,607 - Math_58 - INFO - 开始验证补丁1 4:
+2024-02-24 10:53:19,607 - Math_58 - INFO - 
+return fit(new Gaussian.Parametric(), validateGuess(guess));
+
+2024-02-24 10:53:20,327 - Math_58 - INFO - 编译失败
+2024-02-24 10:53:20,327 - Math_58 - INFO - 错误: 找不到符号
+return fit(new Gaussian.Parametric(), validateGuess(guess));
+2024-02-24 10:53:20,327 - Math_58 - INFO - 补丁1 4 未成功编译
+2024-02-24 10:53:20,328 - Math_58 - INFO - 开始验证补丁1 5:
+2024-02-24 10:53:20,328 - Math_58 - INFO - 
+if (guess[2] <= 0) {
+    guess[2] = 0.1; // Assign a small positive value to sigma
+}
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:53:21,570 - Math_58 - INFO - 编译成功
+2024-02-24 10:53:41,365 - Math_58 - INFO - 测试失败
+2024-02-24 10:53:41,366 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:53:41,828 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:53:41,828 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:53:41,828 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:53:41,828 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:53:41,828 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:53:41,828 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:53:41,828 - Math_58 - INFO - 补丁1 5测试失败
+2024-02-24 10:53:41,829 - Math_58 - INFO - 开始验证补丁1 6:
+2024-02-24 10:53:41,829 - Math_58 - INFO - 
+for (int i = 0; i < guess.length; i++) {
+    if (guess[i] <= 0) {
+        guess[i] = 0.1; // Replace any non-positive values with a small positive value
+    }
+}
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:53:43,061 - Math_58 - INFO - 编译成功
+2024-02-24 10:54:03,024 - Math_58 - INFO - 测试失败
+2024-02-24 10:54:03,024 - Math_58 - INFO - Failing tests: 4
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit04
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit05
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit06
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:54:03,486 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:54:03,486 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit04
+2024-02-24 10:54:03,486 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:54:03,486 - Math_58 - INFO -         Assert.assertEquals(233003.2967252038, parameters[0], 1e-4);
+
+2024-02-24 10:54:03,486 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:54:03,486 - Math_58 - INFO - junit.framework.AssertionFailedError: expected:<233003.2967252038> but was:<233003.30113298618>
+
+2024-02-24 10:54:03,486 - Math_58 - INFO - 补丁1 6测试失败
+2024-02-24 10:54:03,487 - Math_58 - INFO - 开始验证补丁1 7:
+2024-02-24 10:54:03,487 - Math_58 - INFO - 
+if (guess[2] <= 0) {
+    guess[2] = 1.0; // Assuming index 2 is for sigma, replace with the minimum positive value
+}
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:54:04,731 - Math_58 - INFO - 编译成功
+2024-02-24 10:54:24,556 - Math_58 - INFO - 测试失败
+2024-02-24 10:54:24,556 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:54:25,015 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:54:25,015 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:54:25,015 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:54:25,015 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:54:25,015 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:54:25,015 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:54:25,015 - Math_58 - INFO - 补丁1 7测试失败
+2024-02-24 10:54:25,016 - Math_58 - INFO - 开始验证补丁1 8:
+2024-02-24 10:54:25,016 - Math_58 - INFO - 
+double[] validatedGuess = validateGuess(guess); // Assuming validateGuess is a method to ensure guess values are strictly positive
+return fit(new Gaussian.Parametric(), validatedGuess);
+
+2024-02-24 10:54:25,746 - Math_58 - INFO - 编译失败
+2024-02-24 10:54:25,747 - Math_58 - INFO - 错误: 找不到符号
+double[] validatedGuess = validateGuess(guess); // Assuming validateGuess is a method to ensure guess values are strictly positive
+2024-02-24 10:54:25,747 - Math_58 - INFO - 补丁1 8 未成功编译
+2024-02-24 10:54:25,748 - Math_58 - INFO - 开始验证补丁1 9:
+2024-02-24 10:54:25,748 - Math_58 - INFO - 
+try {
+    return fit(new Gaussian.Parametric(), guess);
+} catch (NotStrictlyPositiveException e) {
+    double[] newGuess = recomputeGuess(guess); // Assuming recomputeGuess is a method to generate a new valid guess
+    return fit(new Gaussian.Parametric(), newGuess);
+}
+
+2024-02-24 10:54:26,470 - Math_58 - INFO - 编译失败
+2024-02-24 10:54:26,470 - Math_58 - INFO - 错误: 找不到符号
+double[] newGuess = recomputeGuess(guess); // Assuming recomputeGuess is a method to generate a new valid guess
+2024-02-24 10:54:26,470 - Math_58 - INFO - 补丁1 9 未成功编译
+2024-02-24 10:54:26,471 - Math_58 - INFO - 开始验证补丁2 1:
+2024-02-24 10:54:26,471 - Math_58 - INFO - 
+if (guess[2] <= 0) {
+    throw new NotStrictlyPositiveException(guess[2]);
+}
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:54:27,734 - Math_58 - INFO - 编译成功
+2024-02-24 10:54:47,471 - Math_58 - INFO - 测试失败
+2024-02-24 10:54:47,471 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:54:47,929 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:54:47,929 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:54:47,929 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:54:47,929 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:54:47,929 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:54:47,929 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:54:47,929 - Math_58 - INFO - 补丁2 1测试失败
+2024-02-24 10:54:47,930 - Math_58 - INFO - 开始验证补丁2 2:
+2024-02-24 10:54:47,930 - Math_58 - INFO - 
+guess[2] = Math.max(guess[2], Double.MIN_VALUE);
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:54:49,174 - Math_58 - INFO - 编译成功
+2024-02-24 10:55:08,892 - Math_58 - INFO - 测试失败
+2024-02-24 10:55:08,892 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:55:09,355 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:55:09,355 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:55:09,355 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:55:09,355 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:55:09,355 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:55:09,355 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:55:09,355 - Math_58 - INFO - 补丁2 2测试失败
+2024-02-24 10:55:09,356 - Math_58 - INFO - 开始验证补丁2 3:
+2024-02-24 10:55:09,356 - Math_58 - INFO - 
+if (guess.length > 2 && guess[2] <= 0) {
+    guess[2] = 0.1; // Assume a small positive value for sigma
+}
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:55:10,588 - Math_58 - INFO - 编译成功
+2024-02-24 10:55:30,337 - Math_58 - INFO - 测试失败
+2024-02-24 10:55:30,337 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:55:30,793 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:55:30,793 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:55:30,793 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:55:30,793 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:55:30,793 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:55:30,793 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:55:30,793 - Math_58 - INFO - 补丁2 3测试失败
+2024-02-24 10:55:30,794 - Math_58 - INFO - 开始验证补丁2 4:
+2024-02-24 10:55:30,794 - Math_58 - INFO - 
+        // Add a check to ensure sigma is positive
+        if (guess[2] <= 0) {
+            guess[2] = 0.1; // Assign a small positive value to sigma if negative or zero
+        }
+        return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:55:32,028 - Math_58 - INFO - 编译成功
+2024-02-24 10:55:51,802 - Math_58 - INFO - 测试失败
+2024-02-24 10:55:51,802 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:55:52,261 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:55:52,261 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:55:52,261 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:55:52,261 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:55:52,261 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:55:52,261 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:55:52,261 - Math_58 - INFO - 补丁2 4测试失败
+2024-02-24 10:55:52,262 - Math_58 - INFO - 开始验证补丁2 5:
+2024-02-24 10:55:52,262 - Math_58 - INFO - 
+        // Directly throw an exception if sigma is not positive, prompting a review of the ParameterGuesser
+        if (guess[2] <= 0) {
+            throw new NotStrictlyPositiveException(guess[2]);
+        }
+        return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:55:53,501 - Math_58 - INFO - 编译成功
+2024-02-24 10:56:13,294 - Math_58 - INFO - 测试失败
+2024-02-24 10:56:13,294 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:56:13,752 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:56:13,752 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:56:13,752 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:56:13,752 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:56:13,752 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:56:13,752 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:56:13,752 - Math_58 - INFO - 补丁2 5测试失败
+2024-02-24 10:56:13,753 - Math_58 - INFO - 开始验证补丁2 6:
+2024-02-24 10:56:13,753 - Math_58 - INFO - 
+        // Modify the ParameterGuesser to produce only positive sigma values
+        // This implies an update in the ParameterGuesser class, not shown here
+        final double[] correctedGuess = (new ParameterGuesser(getObservations())).guess();
+        // Ensure the corrected guess has a strictly positive sigma
+        if (correctedGuess[2] <= 0) {
+            correctedGuess[2] = 0.1; // Assign a small positive standard deviation if the guess is non-positive
+        }
+        return fit(new Gaussian.Parametric(), correctedGuess);
+
+2024-02-24 10:56:15,002 - Math_58 - INFO - 编译成功
+2024-02-24 10:56:34,753 - Math_58 - INFO - 测试失败
+2024-02-24 10:56:34,753 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:56:35,209 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:56:35,209 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:56:35,209 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:56:35,209 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:56:35,209 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:56:35,209 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:56:35,209 - Math_58 - INFO - 补丁2 6测试失败
+2024-02-24 10:56:35,210 - Math_58 - INFO - 开始验证补丁2 7:
+2024-02-24 10:56:35,210 - Math_58 - INFO - 
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:56:36,438 - Math_58 - INFO - 编译成功
+2024-02-24 10:56:56,087 - Math_58 - INFO - 测试失败
+2024-02-24 10:56:56,087 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:56:56,558 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:56:56,558 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:56:56,558 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:56:56,558 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:56:56,558 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:56:56,558 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:56:56,558 - Math_58 - INFO - 补丁2 7测试失败
+2024-02-24 10:56:56,559 - Math_58 - INFO - 开始验证补丁2 8:
+2024-02-24 10:56:56,559 - Math_58 - INFO - 
+if (guess[2] <= 0) {
+    throw new NotStrictlyPositiveException(guess[2]);
+}
+
+2024-02-24 10:56:57,280 - Math_58 - INFO - 编译失败
+2024-02-24 10:56:57,280 - Math_58 - INFO - 错误: 缺少返回语句
+}
+2024-02-24 10:56:57,280 - Math_58 - INFO - 补丁2 8 未成功编译
+2024-02-24 10:56:57,281 - Math_58 - INFO - 开始验证补丁2 9:
+2024-02-24 10:56:57,281 - Math_58 - INFO - 
+guess[2] = Math.abs(guess[2]); // Ensure that sigma is positive
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:56:58,540 - Math_58 - INFO - 编译成功
+2024-02-24 10:57:18,420 - Math_58 - INFO - 测试失败
+2024-02-24 10:57:18,420 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:57:18,873 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:57:18,873 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:57:18,873 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:57:18,873 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:57:18,873 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:57:18,873 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:57:18,873 - Math_58 - INFO - 补丁2 9测试失败
+2024-02-24 10:57:18,874 - Math_58 - INFO - 开始验证补丁2 10:
+2024-02-24 10:57:18,874 - Math_58 - INFO - 
+guess[2] = Math.max(guess[2], 1e-10); // Replace 1e-10 with the smallest allowed sigma value
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:57:20,104 - Math_58 - INFO - 编译成功
+2024-02-24 10:57:39,749 - Math_58 - INFO - 测试失败
+2024-02-24 10:57:39,749 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:57:40,205 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:57:40,205 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:57:40,205 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:57:40,205 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:57:40,205 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:57:40,206 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:57:40,206 - Math_58 - INFO - 补丁2 10测试失败
+2024-02-24 10:57:40,207 - Math_58 - INFO - 开始验证补丁3 1:
+2024-02-24 10:57:40,207 - Math_58 - INFO - 
+   if (guess[2] <= 0) {
+       throw new NotStrictlyPositiveException(guess[2]);
+   }
+   return fit(new Gaussian.Parametric(), guess);
+   
+2024-02-24 10:57:41,430 - Math_58 - INFO - 编译成功
+2024-02-24 10:58:01,220 - Math_58 - INFO - 测试失败
+2024-02-24 10:58:01,220 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:58:01,676 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:58:01,676 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:58:01,676 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:58:01,676 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:58:01,676 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:58:01,676 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:58:01,676 - Math_58 - INFO - 补丁3 1测试失败
+2024-02-24 10:58:01,677 - Math_58 - INFO - 开始验证补丁3 2:
+2024-02-24 10:58:01,677 - Math_58 - INFO - 
+   guess[2] = Math.abs(guess[2]);
+   return fit(new Gaussian.Parametric(), guess);
+   
+2024-02-24 10:58:02,918 - Math_58 - INFO - 编译成功
+2024-02-24 10:58:22,577 - Math_58 - INFO - 测试失败
+2024-02-24 10:58:22,577 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:58:23,039 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:58:23,039 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:58:23,039 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:58:23,039 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:58:23,039 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:58:23,039 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:58:23,039 - Math_58 - INFO - 补丁3 2测试失败
+2024-02-24 10:58:23,040 - Math_58 - INFO - 开始验证补丁3 3:
+2024-02-24 10:58:23,041 - Math_58 - INFO - 
+   if (guess[2] <= 0) {
+       guess[2] = 1.0; // Replace with a reasonable default standard deviation if negative or zero
+   }
+   return fit(new Gaussian.Parametric(), guess);
+   
+2024-02-24 10:58:24,314 - Math_58 - INFO - 编译成功
+2024-02-24 10:58:43,980 - Math_58 - INFO - 测试失败
+2024-02-24 10:58:43,980 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:58:44,436 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:58:44,436 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:58:44,436 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:58:44,436 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:58:44,436 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:58:44,436 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:58:44,436 - Math_58 - INFO - 补丁3 3测试失败
+2024-02-24 10:58:44,437 - Math_58 - INFO - 开始验证补丁3 4:
+2024-02-24 10:58:44,437 - Math_58 - INFO - 
+return fit(new org.apache.commons.math.analysis.function.Gaussian.Parametric(), guess);
+
+2024-02-24 10:58:45,668 - Math_58 - INFO - 编译成功
+2024-02-24 10:59:05,399 - Math_58 - INFO - 测试失败
+2024-02-24 10:59:05,399 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:59:05,856 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:59:05,856 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:59:05,856 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:59:05,856 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:59:05,856 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:59:05,856 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:59:05,856 - Math_58 - INFO - 补丁3 4测试失败
+2024-02-24 10:59:05,857 - Math_58 - INFO - 开始验证补丁3 5:
+2024-02-24 10:59:05,857 - Math_58 - INFO - 
+return FittingClass.fit(new org.apache.commons.math.analysis.function.Gaussian.Parametric(), guess);
+
+2024-02-24 10:59:06,562 - Math_58 - INFO - 编译失败
+2024-02-24 10:59:06,562 - Math_58 - INFO - 错误: 找不到符号
+return FittingClass.fit(new org.apache.commons.math.analysis.function.Gaussian.Parametric(), guess);
+2024-02-24 10:59:06,562 - Math_58 - INFO - 补丁3 5 未成功编译
+2024-02-24 10:59:06,563 - Math_58 - INFO - 开始验证补丁3 6:
+2024-02-24 10:59:06,563 - Math_58 - INFO - 
+if (guess[2] <= 0) guess[2] = 0.1; // Set to a small positive value if non-positive
+return fit(new org.apache.commons.math.analysis.function.Gaussian.Parametric(), guess);
+
+2024-02-24 10:59:07,817 - Math_58 - INFO - 编译成功
+2024-02-24 10:59:27,574 - Math_58 - INFO - 测试失败
+2024-02-24 10:59:27,575 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:59:28,035 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:59:28,035 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:59:28,035 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:59:28,035 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:59:28,035 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:59:28,035 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:59:28,035 - Math_58 - INFO - 补丁3 6测试失败
+2024-02-24 10:59:28,036 - Math_58 - INFO - 开始验证补丁3 7:
+2024-02-24 10:59:28,036 - Math_58 - INFO - 
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:59:28,036 - Math_58 - INFO - 补丁3 7为重复的补丁
+2024-02-24 10:59:28,037 - Math_58 - INFO - 开始验证补丁3 8:
+2024-02-24 10:59:28,037 - Math_58 - INFO - 
+if (guess[2] <= 0) {
+    guess[2] = 0.1; // Replace with a small positive number if sigma is not positive
+}
+return fit(new Gaussian.Parametric(), guess);
+
+2024-02-24 10:59:29,277 - Math_58 - INFO - 编译成功
+2024-02-24 10:59:48,986 - Math_58 - INFO - 测试失败
+2024-02-24 10:59:48,987 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 10:59:49,443 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 10:59:49,443 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 10:59:49,443 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 10:59:49,443 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 10:59:49,443 - Math_58 - INFO - 失败信息为:
+2024-02-24 10:59:49,443 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 10:59:49,443 - Math_58 - INFO - 补丁3 8测试失败
+2024-02-24 10:59:49,444 - Math_58 - INFO - 开始验证补丁3 9:
+2024-02-24 10:59:49,444 - Math_58 - INFO - 
+try {
+    return fit(new Gaussian.Parametric(), guess);
+} catch (NotStrictlyPositiveException e) {
+    guess[2] = Math.abs(guess[2]); // Make sure sigma is positive
+    return fit(new Gaussian.Parametric(), guess);
+}
+
+2024-02-24 10:59:50,675 - Math_58 - INFO - 编译成功
+2024-02-24 11:00:10,650 - Math_58 - INFO - 测试失败
+2024-02-24 11:00:10,650 - Math_58 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+
+2024-02-24 11:00:11,114 - Math_58 - INFO - 选择失败的测试用例为:
+2024-02-24 11:00:11,114 - Math_58 - INFO - org.apache.commons.math.optimization.fitting.GaussianFitterTest::testMath519
+2024-02-24 11:00:11,114 - Math_58 - INFO - 失败的测试代码为:
+2024-02-24 11:00:11,114 - Math_58 - INFO -         final double[] p = fitter.fit();
+
+2024-02-24 11:00:11,114 - Math_58 - INFO - 失败信息为:
+2024-02-24 11:00:11,114 - Math_58 - INFO - org.apache.commons.math.exception.NotStrictlyPositiveException: -1.277 is smaller than, or equal to, the minimum (0)
+
+2024-02-24 11:00:11,114 - Math_58 - INFO - 补丁3 9测试失败
+2024-02-24 11:00:11,114 - Math_58 - INFO - Math_58 未成功修复

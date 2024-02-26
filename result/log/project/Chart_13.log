@@ -1,0 +1,38 @@
+2024-02-23 22:53:00,660 - Chart_13 - INFO - rm -rf /home/chongchong/d4j-project/Chart_13
+2024-02-23 22:53:00,661 - Chart_13 - INFO - 删除 Chart 13b 成功
+2024-02-23 22:53:00,661 - Chart_13 - INFO - defects4j checkout -p Chart -v 13b -w /home/chongchong/d4j-project/Chart_13
+2024-02-23 22:53:03,633 - Chart_13 - INFO - checkout Chart 13b 成功
+2024-02-23 22:53:07,007 - Chart_13 - INFO - 编译成功
+2024-02-23 22:53:13,643 - Chart_13 - INFO - 测试失败
+2024-02-23 22:53:13,643 - Chart_13 - INFO - Failing tests: 2
+  - org.jfree.chart.block.junit.BorderArrangementTests::testSizingWithWidthConstraint
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 22:53:14,387 - Chart_13 - INFO - 它的bug类型为:
+2024-02-23 22:53:14,387 - Chart_13 - INFO - 1
+2024-02-23 22:54:39,487 - Chart_13 - INFO - 开始验证补丁1 1:
+2024-02-23 22:54:39,487 - Chart_13 - INFO - 
+new Range(0.0, constraint.getWidth() - w[2]),
+
+2024-02-23 22:54:40,411 - Chart_13 - INFO - 编译成功
+2024-02-23 22:54:47,102 - Chart_13 - INFO - 测试失败
+2024-02-23 22:54:47,102 - Chart_13 - INFO - Failing tests: 2
+  - org.jfree.chart.block.junit.BorderArrangementTests::testSizingWithWidthConstraint
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 22:54:47,467 - Chart_13 - INFO - 选择失败的测试用例为:
+2024-02-23 22:54:47,467 - Chart_13 - INFO - org.jfree.chart.block.junit.BorderArrangementTests::testSizingWithWidthConstraint
+2024-02-23 22:54:47,467 - Chart_13 - INFO - 失败的测试代码为:
+2024-02-23 22:54:47,467 - Chart_13 - INFO -         size = container.arrange(g2, constraint);
+
+2024-02-23 22:54:47,467 - Chart_13 - INFO - 失败信息为:
+2024-02-23 22:54:47,467 - Chart_13 - INFO - java.lang.IllegalArgumentException: Range(double, double): require lower (0.0) <= upper (-2.3000000000000007).
+
+2024-02-23 22:54:47,467 - Chart_13 - INFO - 补丁1 1测试失败
+2024-02-23 22:54:47,468 - Chart_13 - INFO - 开始验证补丁1 2:
+2024-02-23 22:54:47,468 - Chart_13 - INFO - 
+new Range(0.0, constraint.getWidth()),
+
+2024-02-23 22:54:48,450 - Chart_13 - INFO - 编译成功
+2024-02-23 22:54:55,076 - Chart_13 - INFO - 测试成功
+2024-02-23 22:54:55,076 - Chart_13 - INFO - 补丁1 2 通过了所有的测试用例

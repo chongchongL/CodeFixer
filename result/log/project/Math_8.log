@@ -1,0 +1,530 @@
+2024-02-26 01:33:21,025 - Math_8 - INFO - rm -rf /home/chongchong/d4j-project/Math_8
+2024-02-26 01:33:21,026 - Math_8 - INFO - 删除 Math 8b 成功
+2024-02-26 01:33:21,026 - Math_8 - INFO - defects4j checkout -p Math -v 8b -w /home/chongchong/d4j-project/Math_8
+2024-02-26 01:33:24,570 - Math_8 - INFO - checkout Math 8b 成功
+2024-02-26 01:33:31,713 - Math_8 - INFO - 编译成功
+2024-02-26 01:34:27,092 - Math_8 - INFO - 测试失败
+2024-02-26 01:34:27,092 - Math_8 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+
+2024-02-26 01:34:28,017 - Math_8 - INFO - 它的bug类型为:
+2024-02-26 01:34:28,017 - Math_8 - INFO - 4
+2024-02-26 01:35:41,050 - Math_8 - INFO - 开始验证补丁1 1:
+2024-02-26 01:35:41,050 - Math_8 - INFO - 
+public T[] sample(int sampleSize, Class<T> clazz) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(clazz, sampleSize);
+    // ... (rest of the method)
+}
+
+2024-02-26 01:35:41,652 - Math_8 - INFO - 编译失败
+2024-02-26 01:35:41,653 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:35:41,653 - Math_8 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:35:41,654 - Math_8 - INFO - 开始验证补丁1 2:
+2024-02-26 01:35:41,654 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    if(singletons == null || singletons.isEmpty()) {
+        throw new IllegalArgumentException("Singletons collection must not be empty");
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+    // ... (rest of the method)
+}
+
+2024-02-26 01:35:42,266 - Math_8 - INFO - 编译失败
+2024-02-26 01:35:42,266 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:35:42,266 - Math_8 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:35:42,268 - Math_8 - INFO - 开始验证补丁1 3:
+2024-02-26 01:35:42,268 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) new Object[sampleSize];
+    // ... (rest of the method)
+}
+
+2024-02-26 01:35:42,878 - Math_8 - INFO - 编译失败
+2024-02-26 01:35:42,878 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:35:42,879 - Math_8 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:35:42,880 - Math_8 - INFO - 开始验证补丁1 4:
+2024-02-26 01:35:42,880 - Math_8 - INFO - 
+public T[] sample(int sampleSize, Class<T> clazz) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(clazz, sampleSize);
+
+    // Rest of the code
+}
+
+2024-02-26 01:35:43,490 - Math_8 - INFO - 编译失败
+2024-02-26 01:35:43,490 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:35:43,490 - Math_8 - INFO - 补丁1 4 未成功编译
+2024-02-26 01:35:43,491 - Math_8 - INFO - 开始验证补丁1 5:
+2024-02-26 01:35:43,491 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+
+    if(singletons == null || singletons.isEmpty()) {
+        throw new IllegalArgumentException("Singletons collection must not be null or empty");
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+
+    // Rest of the code
+}
+
+2024-02-26 01:35:44,102 - Math_8 - INFO - 编译失败
+2024-02-26 01:35:44,102 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:35:44,102 - Math_8 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:35:44,103 - Math_8 - INFO - 开始验证补丁1 6:
+2024-02-26 01:35:44,103 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) new Object[sampleSize];
+
+    // Rest of the code
+}
+
+2024-02-26 01:35:44,709 - Math_8 - INFO - 编译失败
+2024-02-26 01:35:44,709 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:35:44,709 - Math_8 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:35:44,710 - Math_8 - INFO - 开始验证补丁1 7:
+2024-02-26 01:35:44,710 - Math_8 - INFO - 
+public T[] sample(int sampleSize, Class<T> clazz) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(clazz, sampleSize);
+    // ... rest of the method ...
+
+2024-02-26 01:35:46,012 - Math_8 - INFO - 编译成功
+2024-02-26 01:36:41,030 - Math_8 - INFO - 测试失败
+2024-02-26 01:36:41,030 - Math_8 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+
+2024-02-26 01:36:41,493 - Math_8 - INFO - 选择失败的测试用例为:
+2024-02-26 01:36:41,493 - Math_8 - INFO - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+2024-02-26 01:36:41,493 - Math_8 - INFO - 失败的测试代码为:
+2024-02-26 01:36:41,493 - Math_8 - INFO -         Assert.assertEquals(1, new DiscreteDistribution<Object>(list).sample(1).length);
+
+2024-02-26 01:36:41,493 - Math_8 - INFO - 失败信息为:
+2024-02-26 01:36:41,493 - Math_8 - INFO - java.lang.NoSuchMethodError: org.apache.commons.math3.distribution.DiscreteDistribution.sample(I)[Ljava/lang/Object;
+
+2024-02-26 01:36:41,493 - Math_8 - INFO - 补丁1 7测试失败
+2024-02-26 01:36:41,494 - Math_8 - INFO - 开始验证补丁1 8:
+2024-02-26 01:36:41,494 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    if (singletons.isEmpty()) {
+        throw new IllegalArgumentException("The singletons collection must not be empty");
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+    // ... rest of the method ...
+
+2024-02-26 01:36:42,803 - Math_8 - INFO - 编译成功
+2024-02-26 01:37:38,655 - Math_8 - INFO - 测试失败
+2024-02-26 01:37:38,655 - Math_8 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+
+2024-02-26 01:37:39,113 - Math_8 - INFO - 选择失败的测试用例为:
+2024-02-26 01:37:39,113 - Math_8 - INFO - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+2024-02-26 01:37:39,113 - Math_8 - INFO - 失败的测试代码为:
+2024-02-26 01:37:39,113 - Math_8 - INFO -         Assert.assertEquals(1, new DiscreteDistribution<Object>(list).sample(1).length);
+
+2024-02-26 01:37:39,113 - Math_8 - INFO - 失败信息为:
+2024-02-26 01:37:39,113 - Math_8 - INFO - java.lang.ArrayStoreException: org.apache.commons.math3.distribution.DiscreteRealDistributionTest$2
+
+2024-02-26 01:37:39,113 - Math_8 - INFO - 补丁1 8测试失败
+2024-02-26 01:37:39,114 - Math_8 - INFO - 开始验证补丁1 9:
+2024-02-26 01:37:39,114 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    // Assuming there's a safe way to obtain the correct component type for T[]
+    final T[] out = createArray(sampleSize);
+
+    // ... rest of the method ...
+}
+
+// This method would need to be properly implemented to provide type-safe array creation
+private T[] createArray(int sampleSize) {
+    // Implementation to create a type-safe generic array
+}
+
+2024-02-26 01:37:39,720 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:39,720 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:39,720 - Math_8 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:37:39,722 - Math_8 - INFO - 开始验证补丁2 1:
+2024-02-26 01:37:39,722 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+    
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) Array.newInstance(singletons.get(0).getClass(), sampleSize);
+    // Rest of the code...
+
+2024-02-26 01:37:40,459 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:40,459 - Math_8 - INFO - 错误: 找不到符号
+final T[] out = (T[]) Array.newInstance(singletons.get(0).getClass(), sampleSize);
+2024-02-26 01:37:40,460 - Math_8 - INFO - 补丁2 1 未成功编译
+2024-02-26 01:37:40,461 - Math_8 - INFO - 开始验证补丁2 2:
+2024-02-26 01:37:40,461 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+    
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) Array.newInstance(sample().getClass(), sampleSize);
+    // Rest of the code...
+
+2024-02-26 01:37:41,200 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:41,201 - Math_8 - INFO - 错误: 找不到符号
+final T[] out = (T[]) Array.newInstance(sample().getClass(), sampleSize);
+2024-02-26 01:37:41,201 - Math_8 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:37:41,202 - Math_8 - INFO - 开始验证补丁2 3:
+2024-02-26 01:37:41,202 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+    
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) Array.newInstance(singletons.get(0).getClass(), sampleSize);
+    // Rest of the code...
+
+2024-02-26 01:37:41,202 - Math_8 - INFO - 补丁2 3为重复的补丁
+2024-02-26 01:37:41,203 - Math_8 - INFO - 开始验证补丁2 4:
+2024-02-26 01:37:41,203 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(sample().getClass(), sampleSize);
+
+    // ... (rest of the code)
+}
+
+2024-02-26 01:37:41,829 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:41,829 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:41,829 - Math_8 - INFO - 补丁2 4 未成功编译
+2024-02-26 01:37:41,830 - Math_8 - INFO - 开始验证补丁2 5:
+2024-02-26 01:37:41,830 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    if (singletons.isEmpty()) {
+        throw new IllegalArgumentException("The 'singletons' list cannot be empty.");
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+
+    // ... (rest of the code)
+}
+
+2024-02-26 01:37:42,438 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:42,439 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:42,439 - Math_8 - INFO - 补丁2 5 未成功编译
+2024-02-26 01:37:42,440 - Math_8 - INFO - 开始验证补丁2 6:
+2024-02-26 01:37:42,440 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) new Object[sampleSize];
+
+    // ... (rest of the code)
+}
+
+2024-02-26 01:37:43,074 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:43,074 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:43,075 - Math_8 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:37:43,076 - Math_8 - INFO - 开始验证补丁2 7:
+2024-02-26 01:37:43,076 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+
+    for (int i = 0; i < sampleSize; i++) {
+        out[i] = sample();
+    }
+    return out;
+}
+
+2024-02-26 01:37:43,692 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:43,692 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:43,692 - Math_8 - INFO - 补丁2 7 未成功编译
+2024-02-26 01:37:43,693 - Math_8 - INFO - 开始验证补丁2 8:
+2024-02-26 01:37:43,693 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    // Assume sample() returns type T and is consistent across invocations
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(sample().getClass(), sampleSize);
+
+    for (int i = 0; i < sampleSize; i++) {
+        out[i] = sample();
+    }
+    return out;
+}
+
+2024-02-26 01:37:44,306 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:44,306 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:44,306 - Math_8 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:37:44,307 - Math_8 - INFO - 开始验证补丁2 9:
+2024-02-26 01:37:44,307 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    // Following line assumes T is accessible and there is a way to create an array of type T
+    // This method requires a class literal of T, which may not always be available or practical
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) Array.newInstance(T.class, sampleSize);
+
+    for (int i = 0; i < sampleSize; i++) {
+        out[i] = sample();
+    }
+    return out;
+}
+
+2024-02-26 01:37:44,917 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:44,917 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:44,917 - Math_8 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:37:44,918 - Math_8 - INFO - 开始验证补丁3 1:
+2024-02-26 01:37:44,919 - Math_8 - INFO - 
+public T[] sample(int sampleSize, Class<T> clazz) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+    
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(clazz, sampleSize);
+    // rest of the code
+}
+
+2024-02-26 01:37:45,525 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:45,525 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:45,525 - Math_8 - INFO - 补丁3 1 未成功编译
+2024-02-26 01:37:45,526 - Math_8 - INFO - 开始验证补丁3 2:
+2024-02-26 01:37:45,526 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+    
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass().getComponentType(), sampleSize);
+    // rest of the code
+}
+
+2024-02-26 01:37:46,143 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:46,143 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:46,143 - Math_8 - INFO - 补丁3 2 未成功编译
+2024-02-26 01:37:46,144 - Math_8 - INFO - 开始验证补丁3 3:
+2024-02-26 01:37:46,144 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+    
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(Object.class, sampleSize);
+    // rest of the code
+}
+
+2024-02-26 01:37:46,758 - Math_8 - INFO - 编译失败
+2024-02-26 01:37:46,758 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:37:46,758 - Math_8 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:37:46,759 - Math_8 - INFO - 开始验证补丁3 4:
+2024-02-26 01:37:46,759 - Math_8 - INFO - 
+public T[] sample(int sampleSize, Class<T> clazz) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[])java.lang.reflect.Array.newInstance(clazz, sampleSize);
+
+2024-02-26 01:37:48,069 - Math_8 - INFO - 编译成功
+2024-02-26 01:38:43,688 - Math_8 - INFO - 测试失败
+2024-02-26 01:38:43,688 - Math_8 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+
+2024-02-26 01:38:44,158 - Math_8 - INFO - 选择失败的测试用例为:
+2024-02-26 01:38:44,158 - Math_8 - INFO - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+2024-02-26 01:38:44,158 - Math_8 - INFO - 失败的测试代码为:
+2024-02-26 01:38:44,158 - Math_8 - INFO -         Assert.assertEquals(1, new DiscreteDistribution<Object>(list).sample(1).length);
+
+2024-02-26 01:38:44,158 - Math_8 - INFO - 失败信息为:
+2024-02-26 01:38:44,158 - Math_8 - INFO - java.lang.NoSuchMethodError: org.apache.commons.math3.distribution.DiscreteDistribution.sample(I)[Ljava/lang/Object;
+
+2024-02-26 01:38:44,158 - Math_8 - INFO - 补丁3 4测试失败
+2024-02-26 01:38:44,159 - Math_8 - INFO - 开始验证补丁3 5:
+2024-02-26 01:38:44,159 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[])java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+
+2024-02-26 01:38:45,452 - Math_8 - INFO - 编译成功
+2024-02-26 01:39:40,564 - Math_8 - INFO - 测试失败
+2024-02-26 01:39:40,564 - Math_8 - INFO - Failing tests: 1
+  - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+
+2024-02-26 01:39:41,018 - Math_8 - INFO - 选择失败的测试用例为:
+2024-02-26 01:39:41,018 - Math_8 - INFO - org.apache.commons.math3.distribution.DiscreteRealDistributionTest::testIssue942
+2024-02-26 01:39:41,018 - Math_8 - INFO - 失败的测试代码为:
+2024-02-26 01:39:41,019 - Math_8 - INFO -         Assert.assertEquals(1, new DiscreteDistribution<Object>(list).sample(1).length);
+
+2024-02-26 01:39:41,019 - Math_8 - INFO - 失败信息为:
+2024-02-26 01:39:41,019 - Math_8 - INFO - java.lang.ArrayStoreException: org.apache.commons.math3.distribution.DiscreteRealDistributionTest$2
+
+2024-02-26 01:39:41,019 - Math_8 - INFO - 补丁3 5测试失败
+2024-02-26 01:39:41,020 - Math_8 - INFO - 开始验证补丁3 6:
+2024-02-26 01:39:41,020 - Math_8 - INFO - 
+public T[] sample(int sampleSize, ClassProvider<T> classProvider) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[])java.lang.reflect.Array.newInstance(classProvider.getClassObject(), sampleSize);
+
+2024-02-26 01:39:41,954 - Math_8 - INFO - 编译失败
+2024-02-26 01:39:41,954 - Math_8 - INFO - 错误: 找不到符号
+public T[] sample(int sampleSize, ClassProvider<T> classProvider) throws NotStrictlyPositiveException {
+2024-02-26 01:39:41,954 - Math_8 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:39:41,955 - Math_8 - INFO - 开始验证补丁3 7:
+2024-02-26 01:39:41,955 - Math_8 - INFO - 
+public T[] sample(int sampleSize, Class<T> clazz) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(clazz, sampleSize);
+    // ... rest of the code ...
+}
+
+2024-02-26 01:39:42,586 - Math_8 - INFO - 编译失败
+2024-02-26 01:39:42,587 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:39:42,587 - Math_8 - INFO - 补丁3 7 未成功编译
+2024-02-26 01:39:42,588 - Math_8 - INFO - 开始验证补丁3 8:
+2024-02-26 01:39:42,588 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+
+    T firstSingleton = singletons.get(0);
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) java.lang.reflect.Array.newInstance(firstSingleton.getClass(), sampleSize);
+    // ... rest of the code ...
+}
+
+2024-02-26 01:39:43,222 - Math_8 - INFO - 编译失败
+2024-02-26 01:39:43,222 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:39:43,222 - Math_8 - INFO - 补丁3 8 未成功编译
+2024-02-26 01:39:43,223 - Math_8 - INFO - 开始验证补丁3 9:
+2024-02-26 01:39:43,223 - Math_8 - INFO - 
+public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
+    if (sampleSize <= 0) {
+        throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize);
+    }
+
+    @SuppressWarnings("unchecked")
+    final T[] out = (T[]) new Object[sampleSize];
+    // ... rest of the code ...
+}
+
+2024-02-26 01:39:43,838 - Math_8 - INFO - 编译失败
+2024-02-26 01:39:43,838 - Math_8 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < sampleSize; i++) {
+2024-02-26 01:39:43,838 - Math_8 - INFO - 补丁3 9 未成功编译
+2024-02-26 01:39:43,838 - Math_8 - INFO - Math_8 未成功修复

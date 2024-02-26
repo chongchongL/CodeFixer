@@ -1,0 +1,333 @@
+2024-02-25 00:16:48,962 - Math_9 - INFO - rm -rf /home/chongchong/d4j-project/Math_9
+2024-02-25 00:16:48,963 - Math_9 - INFO - 删除 Math 9b 成功
+2024-02-25 00:16:48,963 - Math_9 - INFO - defects4j checkout -p Math -v 9b -w /home/chongchong/d4j-project/Math_9
+2024-02-25 00:16:52,440 - Math_9 - INFO - checkout Math 9b 成功
+2024-02-25 00:16:59,729 - Math_9 - INFO - 编译成功
+2024-02-25 00:17:56,658 - Math_9 - INFO - 测试失败
+2024-02-25 00:17:56,658 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:17:57,570 - Math_9 - INFO - 它的bug类型为:
+2024-02-25 00:17:57,570 - Math_9 - INFO - 2
+2024-02-25 00:18:57,933 - Math_9 - INFO - 开始验证补丁1 1:
+2024-02-25 00:18:57,933 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.add(direction.scalarMultiply(-1)));
+
+2024-02-25 00:18:59,207 - Math_9 - INFO - 编译成功
+2024-02-25 00:19:55,247 - Math_9 - INFO - 测试失败
+2024-02-25 00:19:55,247 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:19:55,706 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:19:55,707 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:19:55,707 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:19:55,707 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:19:55,707 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:19:55,707 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<0.028581782243293483>
+
+2024-02-25 00:19:55,707 - Math_9 - INFO - 补丁1 1测试失败
+2024-02-25 00:19:55,708 - Math_9 - INFO - 开始验证补丁1 2:
+2024-02-25 00:19:55,708 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:19:56,976 - Math_9 - INFO - 编译成功
+2024-02-25 00:20:52,843 - Math_9 - INFO - 测试失败
+2024-02-25 00:20:52,843 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:20:53,309 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:20:53,309 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:20:53,309 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:20:53,309 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:20:53,309 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:20:53,309 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.25723603464229045>
+
+2024-02-25 00:20:53,309 - Math_9 - INFO - 补丁1 2测试失败
+2024-02-25 00:20:53,310 - Math_9 - INFO - 开始验证补丁1 3:
+2024-02-25 00:20:53,310 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.subtract(direction.scalarMultiply(2)));
+
+2024-02-25 00:20:54,585 - Math_9 - INFO - 编译成功
+2024-02-25 00:21:50,035 - Math_9 - INFO - 测试失败
+2024-02-25 00:21:50,035 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:21:50,489 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:21:50,489 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:21:50,489 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:21:50,489 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:21:50,489 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:21:50,489 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<0.028581782126973262>
+
+2024-02-25 00:21:50,489 - Math_9 - INFO - 补丁1 3测试失败
+2024-02-25 00:21:50,490 - Math_9 - INFO - 开始验证补丁1 4:
+2024-02-25 00:21:50,490 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.add(direction));
+
+2024-02-25 00:21:51,756 - Math_9 - INFO - 编译成功
+2024-02-25 00:22:47,456 - Math_9 - INFO - 测试失败
+2024-02-25 00:22:47,457 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:22:47,911 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:22:47,911 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:22:47,911 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:22:47,911 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:22:47,911 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:22:47,911 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.028581782243293483>
+
+2024-02-25 00:22:47,912 - Math_9 - INFO - 补丁1 4测试失败
+2024-02-25 00:22:47,913 - Math_9 - INFO - 开始验证补丁1 5:
+2024-02-25 00:22:47,913 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.scalarMultiply(-1.0));
+
+2024-02-25 00:22:49,193 - Math_9 - INFO - 编译成功
+2024-02-25 00:23:45,196 - Math_9 - INFO - 测试失败
+2024-02-25 00:23:45,196 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:23:45,653 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:23:45,653 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:23:45,653 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:23:45,653 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:23:45,653 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:23:45,653 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.25723603464229045>
+
+2024-02-25 00:23:45,653 - Math_9 - INFO - 补丁1 5测试失败
+2024-02-25 00:23:45,654 - Math_9 - INFO - 开始验证补丁1 6:
+2024-02-25 00:23:45,654 - Math_9 - INFO - 
+final Line reverted = new Line(zero.subtract(direction), zero);
+
+2024-02-25 00:23:46,917 - Math_9 - INFO - 编译成功
+2024-02-25 00:24:42,238 - Math_9 - INFO - 测试失败
+2024-02-25 00:24:42,238 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:24:42,699 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:24:42,699 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:24:42,699 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:24:42,699 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:24:42,699 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:24:42,699 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.028581782243293483>
+
+2024-02-25 00:24:42,699 - Math_9 - INFO - 补丁1 6测试失败
+2024-02-25 00:24:42,700 - Math_9 - INFO - 开始验证补丁1 7:
+2024-02-25 00:24:42,700 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.add(direction.negate()));
+
+2024-02-25 00:24:43,982 - Math_9 - INFO - 编译成功
+2024-02-25 00:25:40,032 - Math_9 - INFO - 测试失败
+2024-02-25 00:25:40,032 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:25:40,485 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:25:40,485 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:25:40,485 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:25:40,485 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:25:40,485 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:25:40,485 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<0.028581782243293483>
+
+2024-02-25 00:25:40,485 - Math_9 - INFO - 补丁1 7测试失败
+2024-02-25 00:25:40,486 - Math_9 - INFO - 开始验证补丁1 8:
+2024-02-25 00:25:40,486 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:25:40,486 - Math_9 - INFO - 补丁1 8为重复的补丁
+2024-02-25 00:25:40,487 - Math_9 - INFO - 开始验证补丁1 9:
+2024-02-25 00:25:40,487 - Math_9 - INFO - 
+final Line reverted = new Line(zero.subtract(direction), zero);
+
+2024-02-25 00:25:40,487 - Math_9 - INFO - 补丁1 9为重复的补丁
+2024-02-25 00:25:40,488 - Math_9 - INFO - 开始验证补丁2 1:
+2024-02-25 00:25:40,488 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:25:40,488 - Math_9 - INFO - 补丁2 1为重复的补丁
+2024-02-25 00:25:40,489 - Math_9 - INFO - 开始验证补丁2 2:
+2024-02-25 00:25:40,489 - Math_9 - INFO - 
+final Line reverted = new Line(origin, direction.negate());
+
+2024-02-25 00:25:41,215 - Math_9 - INFO - 编译失败
+2024-02-25 00:25:41,215 - Math_9 - INFO - 错误: 找不到符号
+final Line reverted = new Line(origin, direction.negate());
+2024-02-25 00:25:41,215 - Math_9 - INFO - 补丁2 2 未成功编译
+2024-02-25 00:25:41,216 - Math_9 - INFO - 开始验证补丁2 3:
+2024-02-25 00:25:41,216 - Math_9 - INFO - 
+final Line reverted = new Line(zero.add(direction), direction.negate());
+
+2024-02-25 00:25:42,489 - Math_9 - INFO - 编译成功
+2024-02-25 00:26:38,697 - Math_9 - INFO - 测试失败
+2024-02-25 00:26:38,697 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:26:39,157 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:26:39,157 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:26:39,157 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:26:39,157 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:26:39,157 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:26:39,157 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.2572360301334216>
+
+2024-02-25 00:26:39,157 - Math_9 - INFO - 补丁2 3测试失败
+2024-02-25 00:26:39,158 - Math_9 - INFO - 开始验证补丁2 4:
+2024-02-25 00:26:39,158 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:26:39,158 - Math_9 - INFO - 补丁2 4为重复的补丁
+2024-02-25 00:26:39,159 - Math_9 - INFO - 开始验证补丁2 5:
+2024-02-25 00:26:39,159 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.add(direction.negate()));
+
+2024-02-25 00:26:39,159 - Math_9 - INFO - 补丁2 5为重复的补丁
+2024-02-25 00:26:39,160 - Math_9 - INFO - 开始验证补丁2 6:
+2024-02-25 00:26:39,160 - Math_9 - INFO - 
+final Line reverted = new Line(zero, new Vector3D(-direction.getX(), -direction.getY(), -direction.getZ()));
+
+2024-02-25 00:26:40,431 - Math_9 - INFO - 编译成功
+2024-02-25 00:27:36,373 - Math_9 - INFO - 测试失败
+2024-02-25 00:27:36,373 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:27:36,832 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:27:36,832 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:27:36,832 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:27:36,832 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:27:36,832 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:27:36,832 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.25723603464229045>
+
+2024-02-25 00:27:36,832 - Math_9 - INFO - 补丁2 6测试失败
+2024-02-25 00:27:36,833 - Math_9 - INFO - 开始验证补丁2 7:
+2024-02-25 00:27:36,833 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:27:36,833 - Math_9 - INFO - 补丁2 7为重复的补丁
+2024-02-25 00:27:36,834 - Math_9 - INFO - 开始验证补丁2 8:
+2024-02-25 00:27:36,834 - Math_9 - INFO - 
+final Line reverted = new Line(zero.add(direction), zero);
+
+2024-02-25 00:27:38,121 - Math_9 - INFO - 编译成功
+2024-02-25 00:28:34,464 - Math_9 - INFO - 测试失败
+2024-02-25 00:28:34,464 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:28:34,939 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:28:34,939 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:28:34,939 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:28:34,939 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:28:34,939 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:28:34,939 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<0.028581782243293483>
+
+2024-02-25 00:28:34,939 - Math_9 - INFO - 补丁2 8测试失败
+2024-02-25 00:28:34,940 - Math_9 - INFO - 开始验证补丁2 9:
+2024-02-25 00:28:34,940 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.add(direction.negate()));
+
+2024-02-25 00:28:34,940 - Math_9 - INFO - 补丁2 9为重复的补丁
+2024-02-25 00:28:34,941 - Math_9 - INFO - 开始验证补丁3 1:
+2024-02-25 00:28:34,941 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:28:34,941 - Math_9 - INFO - 补丁3 1为重复的补丁
+2024-02-25 00:28:34,942 - Math_9 - INFO - 开始验证补丁3 2:
+2024-02-25 00:28:34,942 - Math_9 - INFO - 
+final Line reverted = new Line(zero, zero.add(direction.scalarMultiply(-1)));
+
+2024-02-25 00:28:34,942 - Math_9 - INFO - 补丁3 2为重复的补丁
+2024-02-25 00:28:34,943 - Math_9 - INFO - 开始验证补丁3 3:
+2024-02-25 00:28:34,943 - Math_9 - INFO - 
+Vector3D reversedDirection = new Vector3D(-direction.getX(), -direction.getY(), -direction.getZ());
+final Line reverted = new Line(zero, zero.add(reversedDirection));
+
+2024-02-25 00:28:36,200 - Math_9 - INFO - 编译成功
+2024-02-25 00:29:32,370 - Math_9 - INFO - 测试失败
+2024-02-25 00:29:32,370 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:29:32,858 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:29:32,858 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:29:32,858 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:29:32,858 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:29:32,858 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:29:32,858 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<0.028581782243293483>
+
+2024-02-25 00:29:32,858 - Math_9 - INFO - 补丁3 3测试失败
+2024-02-25 00:29:32,859 - Math_9 - INFO - 开始验证补丁3 4:
+2024-02-25 00:29:32,859 - Math_9 - INFO - 
+final Line reverted = new Line(zero, direction.negate());
+
+2024-02-25 00:29:32,859 - Math_9 - INFO - 补丁3 4为重复的补丁
+2024-02-25 00:29:32,860 - Math_9 - INFO - 开始验证补丁3 5:
+2024-02-25 00:29:32,860 - Math_9 - INFO - 
+final Line reverted = new Line(zero, new Vector3D(-direction.getX(), -direction.getY(), -direction.getZ()));
+
+2024-02-25 00:29:32,860 - Math_9 - INFO - 补丁3 5为重复的补丁
+2024-02-25 00:29:32,861 - Math_9 - INFO - 开始验证补丁3 6:
+2024-02-25 00:29:32,861 - Math_9 - INFO - 
+final Line reverted = new Line(zero.add(direction), zero);
+
+2024-02-25 00:29:32,861 - Math_9 - INFO - 补丁3 6为重复的补丁
+2024-02-25 00:29:32,862 - Math_9 - INFO - 开始验证补丁3 7:
+2024-02-25 00:29:32,862 - Math_9 - INFO - 
+   final Line reverted = new Line(zero, direction.negate());
+   
+2024-02-25 00:29:34,144 - Math_9 - INFO - 编译成功
+2024-02-25 00:30:30,520 - Math_9 - INFO - 测试失败
+2024-02-25 00:30:30,520 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:30:30,986 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:30:30,987 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:30:30,987 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:30:30,987 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:30:30,987 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:30:30,987 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.25723603464229045>
+
+2024-02-25 00:30:30,987 - Math_9 - INFO - 补丁3 7测试失败
+2024-02-25 00:30:30,988 - Math_9 - INFO - 开始验证补丁3 8:
+2024-02-25 00:30:30,988 - Math_9 - INFO - 
+   final Line reverted = new Line(zero, new Vector3D(-direction.getX(), -direction.getY(), -direction.getZ()));
+   
+2024-02-25 00:30:32,256 - Math_9 - INFO - 编译成功
+2024-02-25 00:31:28,436 - Math_9 - INFO - 测试失败
+2024-02-25 00:31:28,436 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:31:28,901 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:31:28,902 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:31:28,902 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:31:28,902 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:31:28,902 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:31:28,902 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<-0.25723603464229045>
+
+2024-02-25 00:31:28,902 - Math_9 - INFO - 补丁3 8测试失败
+2024-02-25 00:31:28,903 - Math_9 - INFO - 开始验证补丁3 9:
+2024-02-25 00:31:28,903 - Math_9 - INFO - 
+   final Line reverted = new Line(zero.add(direction), zero);
+   
+2024-02-25 00:31:30,167 - Math_9 - INFO - 编译成功
+2024-02-25 00:32:26,336 - Math_9 - INFO - 测试失败
+2024-02-25 00:32:26,336 - Math_9 - INFO - Failing tests: 1
+  - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+
+2024-02-25 00:32:26,799 - Math_9 - INFO - 选择失败的测试用例为:
+2024-02-25 00:32:26,799 - Math_9 - INFO - org.apache.commons.math3.geometry.euclidean.threed.LineTest::testRevert
+2024-02-25 00:32:26,799 - Math_9 - INFO - 失败的测试代码为:
+2024-02-25 00:32:26,799 - Math_9 - INFO -         Assert.assertArrayEquals(expected.toArray(), reverted.getDirection().toArray(), 0);
+
+2024-02-25 00:32:26,799 - Math_9 - INFO - 失败信息为:
+2024-02-25 00:32:26,799 - Math_9 - INFO - junit.framework.AssertionFailedError: arrays first differed at element [0]; expected:<0.028581782127907646> but was:<0.028581782243293483>
+
+2024-02-25 00:32:26,799 - Math_9 - INFO - 补丁3 9测试失败
+2024-02-25 00:32:26,799 - Math_9 - INFO - Math_9 未成功修复

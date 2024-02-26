@@ -1,0 +1,220 @@
+2024-02-24 01:21:08,486 - Mockito_24 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_24
+2024-02-24 01:21:08,487 - Mockito_24 - INFO - 删除 Mockito 24b 成功
+2024-02-24 01:21:08,487 - Mockito_24 - INFO - defects4j checkout -p Mockito -v 24b -w /home/chongchong/d4j-project/Mockito_24
+2024-02-24 01:21:11,974 - Mockito_24 - INFO - checkout Mockito 24b 成功
+2024-02-24 01:21:21,145 - Mockito_24 - INFO - 编译成功
+2024-02-24 01:21:49,945 - Mockito_24 - INFO - 测试失败
+2024-02-24 01:21:49,945 - Mockito_24 - INFO - Failing tests: 2
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_zero_if_mock_is_compared_to_itself
+  - org.mockitousage.bugs.ShouldMocksCompareToBeConsistentWithEqualsTest::should_compare_to_be_consistent_with_equals_when_comparing_the_same_reference
+
+2024-02-24 01:21:50,807 - Mockito_24 - INFO - 它的bug类型为:
+2024-02-24 01:21:50,807 - Mockito_24 - INFO - 1
+2024-02-24 01:23:14,876 - Mockito_24 - INFO - Mockito_24 未成功修复
+2024-02-24 12:13:31,271 - Mockito_24 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_24
+2024-02-24 12:13:31,301 - Mockito_24 - INFO - 删除 Mockito 24b 成功
+2024-02-24 12:13:31,301 - Mockito_24 - INFO - defects4j checkout -p Mockito -v 24b -w /home/chongchong/d4j-project/Mockito_24
+2024-02-24 12:13:34,793 - Mockito_24 - INFO - checkout Mockito 24b 成功
+2024-02-24 12:13:44,996 - Mockito_24 - INFO - 编译成功
+2024-02-24 12:14:13,515 - Mockito_24 - INFO - 测试失败
+2024-02-24 12:14:13,517 - Mockito_24 - INFO - Failing tests: 2
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_zero_if_mock_is_compared_to_itself
+  - org.mockitousage.bugs.ShouldMocksCompareToBeConsistentWithEqualsTest::should_compare_to_be_consistent_with_equals_when_comparing_the_same_reference
+
+2024-02-24 12:14:14,396 - Mockito_24 - INFO - 它的bug类型为:
+2024-02-24 12:14:14,396 - Mockito_24 - INFO - 1
+2024-02-24 12:14:50,222 - Mockito_24 - INFO - 开始验证补丁1 1:
+2024-02-24 12:14:50,222 - Mockito_24 - INFO - 
+return invocation.getMock().equals(invocation.getArgument(0)) ? 0 : 1;
+
+2024-02-24 12:14:52,145 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:14:52,145 - Mockito_24 - INFO - 错误: 找不到符号
+return invocation.getMock().equals(invocation.getArgument(0)) ? 0 : 1;
+2024-02-24 12:14:52,145 - Mockito_24 - INFO - 补丁1 1 未成功编译
+2024-02-24 12:14:52,146 - Mockito_24 - INFO - 开始验证补丁1 2:
+2024-02-24 12:14:52,146 - Mockito_24 - INFO - 
+if (invocation.getMock() == invocation.getArgument(0)) return 0; else return 1;
+
+2024-02-24 12:14:54,041 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:14:54,041 - Mockito_24 - INFO - 错误: 找不到符号
+if (invocation.getMock() == invocation.getArgument(0)) return 0; else return 1;
+2024-02-24 12:14:54,041 - Mockito_24 - INFO - 补丁1 2 未成功编译
+2024-02-24 12:14:54,042 - Mockito_24 - INFO - 开始验证补丁1 3:
+2024-02-24 12:14:54,042 - Mockito_24 - INFO - 
+return invocation.getMock() == invocation.getArgument(0) ? 0 : 1;
+
+2024-02-24 12:14:55,939 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:14:55,939 - Mockito_24 - INFO - 错误: 找不到符号
+return invocation.getMock() == invocation.getArgument(0) ? 0 : 1;
+2024-02-24 12:14:55,939 - Mockito_24 - INFO - 补丁1 3 未成功编译
+2024-02-24 12:14:55,940 - Mockito_24 - INFO - 开始验证补丁1 4:
+2024-02-24 12:14:55,940 - Mockito_24 - INFO - 
+if (invocation.getMock().equals(invocation.getArgument(0))) {
+    return 0;
+} else {
+    return 1;
+}
+
+2024-02-24 12:14:57,909 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:14:57,909 - Mockito_24 - INFO - 错误: 找不到符号
+if (invocation.getMock().equals(invocation.getArgument(0))) {
+2024-02-24 12:14:57,909 - Mockito_24 - INFO - 补丁1 4 未成功编译
+2024-02-24 12:14:57,910 - Mockito_24 - INFO - 开始验证补丁1 5:
+2024-02-24 12:14:57,910 - Mockito_24 - INFO - 
+Object arg = invocation.getArgument(0);
+return invocation.getMock().equals(arg) ? 0 : 1;
+
+2024-02-24 12:14:59,815 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:14:59,816 - Mockito_24 - INFO - 错误: 找不到符号
+Object arg = invocation.getArgument(0);
+2024-02-24 12:14:59,816 - Mockito_24 - INFO - 补丁1 5 未成功编译
+2024-02-24 12:14:59,817 - Mockito_24 - INFO - 开始验证补丁1 6:
+2024-02-24 12:14:59,817 - Mockito_24 - INFO - 
+return invocation.getMock() == invocation.getArgument(0) ? 0 : 1;
+
+2024-02-24 12:14:59,817 - Mockito_24 - INFO - 补丁1 6为重复的补丁
+2024-02-24 12:14:59,818 - Mockito_24 - INFO - 开始验证补丁1 7:
+2024-02-24 12:14:59,818 - Mockito_24 - INFO - 
+if (invocation.getMock().equals(invocation.getArgument(0))) {
+    return 0;
+} else {
+    return 1;
+}
+
+2024-02-24 12:14:59,818 - Mockito_24 - INFO - 补丁1 7为重复的补丁
+2024-02-24 12:14:59,818 - Mockito_24 - INFO - 开始验证补丁1 8:
+2024-02-24 12:14:59,818 - Mockito_24 - INFO - 
+Object argument = invocation.getArgument(0);
+return invocation.getMock().equals(argument) ? 0 : 1;
+
+2024-02-24 12:15:01,704 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:01,705 - Mockito_24 - INFO - 错误: 找不到符号
+Object argument = invocation.getArgument(0);
+2024-02-24 12:15:01,705 - Mockito_24 - INFO - 补丁1 8 未成功编译
+2024-02-24 12:15:01,706 - Mockito_24 - INFO - 开始验证补丁1 9:
+2024-02-24 12:15:01,706 - Mockito_24 - INFO - 
+if (invocation.getMock() == invocation.getArgument(0)) {
+    return 0;
+} else {
+    return 1;
+}
+
+2024-02-24 12:15:03,592 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:03,593 - Mockito_24 - INFO - 错误: 找不到符号
+if (invocation.getMock() == invocation.getArgument(0)) {
+2024-02-24 12:15:03,593 - Mockito_24 - INFO - 补丁1 9 未成功编译
+2024-02-24 12:15:03,594 - Mockito_24 - INFO - 开始验证补丁2 1:
+2024-02-24 12:15:03,594 - Mockito_24 - INFO - 
+if (invocation.getMock() == invocation.getArgument(0)) {
+    return 0;
+}
+return 1;
+
+2024-02-24 12:15:05,507 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:05,507 - Mockito_24 - INFO - 错误: 找不到符号
+if (invocation.getMock() == invocation.getArgument(0)) {
+2024-02-24 12:15:05,507 - Mockito_24 - INFO - 补丁2 1 未成功编译
+2024-02-24 12:15:05,508 - Mockito_24 - INFO - 开始验证补丁2 2:
+2024-02-24 12:15:05,508 - Mockito_24 - INFO - 
+Object other = invocation.getArgument(0);
+return (invocation.getMock().equals(other)) ? 0 : 1;
+
+2024-02-24 12:15:07,376 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:07,376 - Mockito_24 - INFO - 错误: 找不到符号
+Object other = invocation.getArgument(0);
+2024-02-24 12:15:07,376 - Mockito_24 - INFO - 补丁2 2 未成功编译
+2024-02-24 12:15:07,377 - Mockito_24 - INFO - 开始验证补丁2 3:
+2024-02-24 12:15:07,377 - Mockito_24 - INFO - 
+return (invocation.getMock() == invocation.getArgument(0)) ? 0 : 1;
+
+2024-02-24 12:15:09,253 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:09,253 - Mockito_24 - INFO - 错误: 找不到符号
+return (invocation.getMock() == invocation.getArgument(0)) ? 0 : 1;
+2024-02-24 12:15:09,253 - Mockito_24 - INFO - 补丁2 3 未成功编译
+2024-02-24 12:15:09,254 - Mockito_24 - INFO - 开始验证补丁2 4:
+2024-02-24 12:15:09,254 - Mockito_24 - INFO - 
+return invocation.getMock().equals(invocation.getArgument(0)) ? 0 : 1;
+
+2024-02-24 12:15:09,254 - Mockito_24 - INFO - 补丁2 4为重复的补丁
+2024-02-24 12:15:09,255 - Mockito_24 - INFO - 开始验证补丁2 5:
+2024-02-24 12:15:09,255 - Mockito_24 - INFO - 
+if (invocation.getMock() == invocation.getArgument(0)) {
+    return 0;
+} else {
+    return 1;
+}
+
+2024-02-24 12:15:09,255 - Mockito_24 - INFO - 补丁2 5为重复的补丁
+2024-02-24 12:15:09,256 - Mockito_24 - INFO - 开始验证补丁2 6:
+2024-02-24 12:15:09,256 - Mockito_24 - INFO - 
+return (invocation.getMock() == invocation.getArgument(0)) ? 0 : 1;
+
+2024-02-24 12:15:09,256 - Mockito_24 - INFO - 补丁2 6为重复的补丁
+2024-02-24 12:15:09,256 - Mockito_24 - INFO - 开始验证补丁2 7:
+2024-02-24 12:15:09,256 - Mockito_24 - INFO - 
+if (invocation.getMock().equals(invocation.getArgument(0))) {
+    return 0;
+} else {
+    return 1;
+}
+
+2024-02-24 12:15:09,257 - Mockito_24 - INFO - 补丁2 7为重复的补丁
+2024-02-24 12:15:09,257 - Mockito_24 - INFO - 开始验证补丁2 8:
+2024-02-24 12:15:09,257 - Mockito_24 - INFO - 
+return invocation.getMock() == invocation.getArgument(0) ? 0 : 1;
+
+2024-02-24 12:15:09,257 - Mockito_24 - INFO - 补丁2 8为重复的补丁
+2024-02-24 12:15:09,258 - Mockito_24 - INFO - 开始验证补丁2 9:
+2024-02-24 12:15:09,258 - Mockito_24 - INFO - 
+if (invocation.getMock() == invocation.getArgument(0)) {
+    return 0;
+} else {
+    return -1; // or another non-zero value as per the implementation requirements
+}
+
+2024-02-24 12:15:11,178 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:11,178 - Mockito_24 - INFO - 错误: 找不到符号
+if (invocation.getMock() == invocation.getArgument(0)) {
+2024-02-24 12:15:11,179 - Mockito_24 - INFO - 补丁2 9 未成功编译
+2024-02-24 12:15:11,179 - Mockito_24 - INFO - 开始验证补丁3 1:
+2024-02-24 12:15:11,180 - Mockito_24 - INFO - 
+} else if (methodsGuru.isCompareToMethod(invocation.getMethod())) {
+    Object self = invocation.getMock();
+    Object other = invocation.getArguments()[0]; // Assuming the first argument is the object to compare to
+    return self == other ? 0 : 1; // Return 0 if the same reference, otherwise return non-zero
+}
+
+2024-02-24 12:15:12,092 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:12,092 - Mockito_24 - INFO - 错误: 非法的类型开始
+return returnValueFor(returnType);
+2024-02-24 12:15:12,092 - Mockito_24 - INFO - 补丁3 1 未成功编译
+2024-02-24 12:15:12,093 - Mockito_24 - INFO - 开始验证补丁3 2:
+2024-02-24 12:15:12,093 - Mockito_24 - INFO - 
+} else if (methodsGuru.isCompareToMethod(invocation.getMethod())) {
+    // Assuming there's a method to safely check if objects are the same reference
+    return methodsGuru.areSameReferences(invocation.getMock(), invocation.getArguments()[0]) ? 0 : 1;
+}
+
+2024-02-24 12:15:12,992 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:12,992 - Mockito_24 - INFO - 错误: 非法的类型开始
+return returnValueFor(returnType);
+2024-02-24 12:15:12,992 - Mockito_24 - INFO - 补丁3 2 未成功编译
+2024-02-24 12:15:12,993 - Mockito_24 - INFO - 开始验证补丁3 3:
+2024-02-24 12:15:12,993 - Mockito_24 - INFO - 
+} else if (methodsGuru.isCompareToMethod(invocation.getMethod())) {
+    Object[] args = invocation.getArguments();
+    Object self = invocation.getMock();
+    return (args.length > 0 && self == args[0]) ? 0 : 1; // Return 0 if same reference, 1 otherwise
+}
+
+2024-02-24 12:15:13,915 - Mockito_24 - INFO - 编译失败
+2024-02-24 12:15:13,915 - Mockito_24 - INFO - 错误: 非法的类型开始
+return returnValueFor(returnType);
+2024-02-24 12:15:13,915 - Mockito_24 - INFO - 补丁3 3 未成功编译
+2024-02-24 12:15:13,916 - Mockito_24 - INFO - 开始验证补丁3 4:
+2024-02-24 12:15:13,916 - Mockito_24 - INFO - 
+return invocation.getMock() == invocation.getArguments()[0] ? 0 : 1;
+
+2024-02-24 12:15:21,933 - Mockito_24 - INFO - 编译成功
+2024-02-24 12:15:50,422 - Mockito_24 - INFO - 测试成功
+2024-02-24 12:15:50,423 - Mockito_24 - INFO - 补丁3 4 通过了所有的测试用例

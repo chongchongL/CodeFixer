@@ -1,0 +1,239 @@
+2024-02-24 00:54:00,827 - Closure_130 - INFO - rm -rf /home/chongchong/d4j-project/Closure_130
+2024-02-24 00:54:00,827 - Closure_130 - INFO - 删除 Closure 130b 成功
+2024-02-24 00:54:00,827 - Closure_130 - INFO - defects4j checkout -p Closure -v 130b -w /home/chongchong/d4j-project/Closure_130
+2024-02-24 00:54:03,415 - Closure_130 - INFO - checkout Closure 130b 成功
+2024-02-24 00:54:15,158 - Closure_130 - INFO - 编译成功
+2024-02-24 00:55:07,426 - Closure_130 - INFO - 测试失败
+2024-02-24 00:55:07,426 - Closure_130 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testIssue931
+
+2024-02-24 00:55:08,446 - Closure_130 - INFO - 它的bug类型为:
+2024-02-24 00:55:08,446 - Closure_130 - INFO - 1
+2024-02-24 00:56:14,343 - Closure_130 - INFO - Closure_130 未成功修复
+2024-02-24 14:50:45,955 - Closure_130 - INFO - rm -rf /home/chongchong/d4j-project/Closure_130
+2024-02-24 14:50:46,014 - Closure_130 - INFO - 删除 Closure 130b 成功
+2024-02-24 14:50:46,014 - Closure_130 - INFO - defects4j checkout -p Closure -v 130b -w /home/chongchong/d4j-project/Closure_130
+2024-02-24 14:50:48,815 - Closure_130 - INFO - checkout Closure 130b 成功
+2024-02-24 14:51:00,528 - Closure_130 - INFO - 编译成功
+2024-02-24 14:51:56,111 - Closure_130 - INFO - 测试失败
+2024-02-24 14:51:56,111 - Closure_130 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testIssue931
+
+2024-02-24 14:51:57,120 - Closure_130 - INFO - 它的bug类型为:
+2024-02-24 14:51:57,120 - Closure_130 - INFO - 1
+2024-02-24 14:52:56,721 - Closure_130 - INFO - 开始验证补丁1 1:
+2024-02-24 14:52:56,722 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:52:58,554 - Closure_130 - INFO - 编译失败
+2024-02-24 14:52:58,554 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:52:58,554 - Closure_130 - INFO - 补丁1 1 未成功编译
+2024-02-24 14:52:58,555 - Closure_130 - INFO - 开始验证补丁1 2:
+2024-02-24 14:52:58,555 - Closure_130 - INFO - 
+if (name.globalGets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:00,391 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:00,391 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:00,392 - Closure_130 - INFO - 补丁1 2 未成功编译
+2024-02-24 14:53:00,393 - Closure_130 - INFO - 开始验证补丁1 3:
+2024-02-24 14:53:00,393 - Closure_130 - INFO - 
+if (name != null && name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:02,232 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:02,232 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:02,232 - Closure_130 - INFO - 补丁1 3 未成功编译
+2024-02-24 14:53:02,233 - Closure_130 - INFO - 开始验证补丁1 4:
+2024-02-24 14:53:02,233 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:02,233 - Closure_130 - INFO - 补丁1 4为重复的补丁
+2024-02-24 14:53:02,234 - Closure_130 - INFO - 开始验证补丁1 5:
+2024-02-24 14:53:02,234 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets > 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:04,089 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:04,089 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:04,089 - Closure_130 - INFO - 补丁1 5 未成功编译
+2024-02-24 14:53:04,090 - Closure_130 - INFO - 开始验证补丁1 6:
+2024-02-24 14:53:04,090 - Closure_130 - INFO - 
+if (name.globalSets >= 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:05,925 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:05,925 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:05,925 - Closure_130 - INFO - 补丁1 6 未成功编译
+2024-02-24 14:53:05,926 - Closure_130 - INFO - 开始验证补丁1 7:
+2024-02-24 14:53:05,926 - Closure_130 - INFO - 
+      if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:07,756 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:07,756 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:07,756 - Closure_130 - INFO - 补丁1 7 未成功编译
+2024-02-24 14:53:07,757 - Closure_130 - INFO - 开始验证补丁1 8:
+2024-02-24 14:53:07,757 - Closure_130 - INFO - 
+      if (name.globalSets == 1 && name.localSets >= 1 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:09,588 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:09,588 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:09,588 - Closure_130 - INFO - 补丁1 8 未成功编译
+2024-02-24 14:53:09,589 - Closure_130 - INFO - 开始验证补丁1 9:
+2024-02-24 14:53:09,589 - Closure_130 - INFO - 
+      if (name.globalSets == 0 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:11,455 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:11,455 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:11,455 - Closure_130 - INFO - 补丁1 9 未成功编译
+2024-02-24 14:53:11,456 - Closure_130 - INFO - 开始验证补丁2 1:
+2024-02-24 14:53:11,456 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:11,456 - Closure_130 - INFO - 补丁2 1为重复的补丁
+2024-02-24 14:53:11,457 - Closure_130 - INFO - 开始验证补丁2 2:
+2024-02-24 14:53:11,457 - Closure_130 - INFO - 
+if (name.globalSets >= 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:11,457 - Closure_130 - INFO - 补丁2 2为重复的补丁
+2024-02-24 14:53:11,458 - Closure_130 - INFO - 开始验证补丁2 3:
+2024-02-24 14:53:11,458 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0) {
+
+2024-02-24 14:53:13,308 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:13,308 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:13,308 - Closure_130 - INFO - 补丁2 3 未成功编译
+2024-02-24 14:53:13,309 - Closure_130 - INFO - 开始验证补丁2 4:
+2024-02-24 14:53:13,309 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:13,309 - Closure_130 - INFO - 补丁2 4为重复的补丁
+2024-02-24 14:53:13,310 - Closure_130 - INFO - 开始验证补丁2 5:
+2024-02-24 14:53:13,310 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets <= 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:15,153 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:15,153 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:15,153 - Closure_130 - INFO - 补丁2 5 未成功编译
+2024-02-24 14:53:15,154 - Closure_130 - INFO - 开始验证补丁2 6:
+2024-02-24 14:53:15,154 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets == 0) {
+
+2024-02-24 14:53:16,984 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:16,984 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:16,984 - Closure_130 - INFO - 补丁2 6 未成功编译
+2024-02-24 14:53:16,985 - Closure_130 - INFO - 开始验证补丁2 7:
+2024-02-24 14:53:16,985 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:16,985 - Closure_130 - INFO - 补丁2 7为重复的补丁
+2024-02-24 14:53:16,986 - Closure_130 - INFO - 开始验证补丁2 8:
+2024-02-24 14:53:16,986 - Closure_130 - INFO - 
+if (name.globalSets > 0 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:18,840 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:18,840 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:18,840 - Closure_130 - INFO - 补丁2 8 未成功编译
+2024-02-24 14:53:18,841 - Closure_130 - INFO - 开始验证补丁2 9:
+2024-02-24 14:53:18,841 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets == 0) {
+
+2024-02-24 14:53:18,841 - Closure_130 - INFO - 补丁2 9为重复的补丁
+2024-02-24 14:53:18,846 - Closure_130 - INFO - 开始验证补丁3 1:
+2024-02-24 14:53:18,846 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:18,846 - Closure_130 - INFO - 补丁3 1为重复的补丁
+2024-02-24 14:53:18,848 - Closure_130 - INFO - 开始验证补丁3 2:
+2024-02-24 14:53:18,848 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && !(name.aliasingGets > 0)) {
+
+2024-02-24 14:53:20,678 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:20,678 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:20,678 - Closure_130 - INFO - 补丁3 2 未成功编译
+2024-02-24 14:53:20,679 - Closure_130 - INFO - 开始验证补丁3 3:
+2024-02-24 14:53:20,679 - Closure_130 - INFO - 
+if (name.globalSets == 1 || name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:22,508 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:22,508 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:22,508 - Closure_130 - INFO - 补丁3 3 未成功编译
+2024-02-24 14:53:22,509 - Closure_130 - INFO - 开始验证补丁3 4:
+2024-02-24 14:53:22,509 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:22,509 - Closure_130 - INFO - 补丁3 4为重复的补丁
+2024-02-24 14:53:22,510 - Closure_130 - INFO - 开始验证补丁3 5:
+2024-02-24 14:53:22,510 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && name.aliasingGets >= 1) {
+
+2024-02-24 14:53:24,369 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:24,369 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:24,369 - Closure_130 - INFO - 补丁3 5 未成功编译
+2024-02-24 14:53:24,370 - Closure_130 - INFO - 开始验证补丁3 6:
+2024-02-24 14:53:24,370 - Closure_130 - INFO - 
+if (name.globalSets >= 1 && name.localSets <= 0 && name.aliasingGets > 0) {
+
+2024-02-24 14:53:26,242 - Closure_130 - INFO - 编译失败
+2024-02-24 14:53:26,243 - Closure_130 - INFO - 错误: 不是语句
+name.aliasingGets > 0) {
+2024-02-24 14:53:26,243 - Closure_130 - INFO - 补丁3 6 未成功编译
+2024-02-24 14:53:26,244 - Closure_130 - INFO - 开始验证补丁3 7:
+2024-02-24 14:53:26,244 - Closure_130 - INFO - 
+if (name.globalSets == 1 && name.localSets == 0 && 
+
+2024-02-24 14:53:30,462 - Closure_130 - INFO - 编译成功
+2024-02-24 14:54:23,278 - Closure_130 - INFO - 测试失败
+2024-02-24 14:54:23,278 - Closure_130 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testIssue931
+
+2024-02-24 14:54:23,780 - Closure_130 - INFO - 选择失败的测试用例为:
+2024-02-24 14:54:23,780 - Closure_130 - INFO - com.google.javascript.jscomp.CollapsePropertiesTest::testIssue931
+2024-02-24 14:54:23,780 - Closure_130 - INFO - 失败的测试代码为:
+2024-02-24 14:54:23,780 - Closure_130 - INFO -     testSame(
+
+2024-02-24 14:54:23,780 - Closure_130 - INFO - 失败信息为:
+2024-02-24 14:54:23,780 - Closure_130 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 14:54:23,780 - Closure_130 - INFO - 补丁3 7测试失败
+2024-02-24 14:54:23,781 - Closure_130 - INFO - 开始验证补丁3 8:
+2024-02-24 14:54:23,781 - Closure_130 - INFO - 
+if (name.globalSets >= 1 && name.localSets <= 1 && 
+
+2024-02-24 14:54:27,942 - Closure_130 - INFO - 编译成功
+2024-02-24 14:55:20,021 - Closure_130 - INFO - 测试失败
+2024-02-24 14:55:20,021 - Closure_130 - INFO - Failing tests: 4
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalWriteToAncestor
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testInlineAliasWithModifications
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testIssue931
+  - com.google.javascript.jscomp.CollapsePropertiesTest::testGlobalWriteToAncestor
+
+2024-02-24 14:55:20,525 - Closure_130 - INFO - 选择失败的测试用例为:
+2024-02-24 14:55:20,525 - Closure_130 - INFO - com.google.javascript.jscomp.CollapsePropertiesTest::testLocalWriteToAncestor
+2024-02-24 14:55:20,525 - Closure_130 - INFO - 失败的测试代码为:
+2024-02-24 14:55:20,525 - Closure_130 - INFO -     testSame("var a = {b: 3}; function f() { a = 5; var x = a; f(a.b); } ");
+
+2024-02-24 14:55:20,525 - Closure_130 - INFO - 失败信息为:
+2024-02-24 14:55:20,525 - Closure_130 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 14:55:20,525 - Closure_130 - INFO - 补丁3 8测试失败
+2024-02-24 14:55:20,526 - Closure_130 - INFO - 开始验证补丁3 9:
+2024-02-24 14:55:20,526 - Closure_130 - INFO - 
+if (name.globalSets > 0 && name.localSets == 0 && name.aliasingGets == 0
+
+2024-02-24 14:55:22,335 - Closure_130 - INFO - 编译失败
+2024-02-24 14:55:22,335 - Closure_130 - INFO - 错误: 需要')'
+if (name.globalSets > 0 && name.localSets == 0 && name.aliasingGets == 0
+2024-02-24 14:55:22,335 - Closure_130 - INFO - 补丁3 9 未成功编译
+2024-02-24 14:55:22,335 - Closure_130 - INFO - Closure_130 未成功修复

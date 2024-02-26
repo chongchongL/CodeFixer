@@ -1,0 +1,60 @@
+2024-02-24 00:27:57,453 - Closure_57 - INFO - rm -rf /home/chongchong/d4j-project/Closure_57
+2024-02-24 00:27:57,454 - Closure_57 - INFO - 删除 Closure 57b 成功
+2024-02-24 00:27:57,454 - Closure_57 - INFO - defects4j checkout -p Closure -v 57b -w /home/chongchong/d4j-project/Closure_57
+2024-02-24 00:27:59,173 - Closure_57 - INFO - checkout Closure 57b 成功
+2024-02-24 00:28:10,153 - Closure_57 - INFO - 编译成功
+2024-02-24 00:28:53,012 - Closure_57 - INFO - 测试失败
+2024-02-24 00:28:53,012 - Closure_57 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.ClosureCodingConventionTest::testRequire
+
+2024-02-24 00:28:54,024 - Closure_57 - INFO - 它的bug类型为:
+2024-02-24 00:28:54,024 - Closure_57 - INFO - 1
+2024-02-24 00:29:25,736 - Closure_57 - INFO - Closure_57 未成功修复
+2024-02-24 13:25:23,789 - Closure_57 - INFO - rm -rf /home/chongchong/d4j-project/Closure_57
+2024-02-24 13:25:23,845 - Closure_57 - INFO - 删除 Closure 57b 成功
+2024-02-24 13:25:23,845 - Closure_57 - INFO - defects4j checkout -p Closure -v 57b -w /home/chongchong/d4j-project/Closure_57
+2024-02-24 13:25:25,732 - Closure_57 - INFO - checkout Closure 57b 成功
+2024-02-24 13:25:36,818 - Closure_57 - INFO - 编译成功
+2024-02-24 13:26:19,937 - Closure_57 - INFO - 测试失败
+2024-02-24 13:26:19,937 - Closure_57 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.ClosureCodingConventionTest::testRequire
+
+2024-02-24 13:26:20,947 - Closure_57 - INFO - 它的bug类型为:
+2024-02-24 13:26:20,947 - Closure_57 - INFO - 1
+2024-02-24 13:27:40,314 - Closure_57 - INFO - 开始验证补丁1 1:
+2024-02-24 13:27:40,314 - Closure_57 - INFO - 
+if (target != null && "GETPROP".equals(target.getType().toString())) {
+  className = target.getSecondChild().getString();
+}
+
+2024-02-24 13:27:42,108 - Closure_57 - INFO - 编译失败
+2024-02-24 13:27:42,109 - Closure_57 - INFO - 错误: 非法的类型开始
+return className;
+2024-02-24 13:27:42,109 - Closure_57 - INFO - 补丁1 1 未成功编译
+2024-02-24 13:27:42,110 - Closure_57 - INFO - 开始验证补丁1 2:
+2024-02-24 13:27:42,110 - Closure_57 - INFO - 
+if (target != null && "NAME".equals(target.getType().toString())) {
+  className = target.getString();
+}
+
+2024-02-24 13:27:43,897 - Closure_57 - INFO - 编译失败
+2024-02-24 13:27:43,897 - Closure_57 - INFO - 错误: 非法的类型开始
+return className;
+2024-02-24 13:27:43,897 - Closure_57 - INFO - 补丁1 2 未成功编译
+2024-02-24 13:27:43,898 - Closure_57 - INFO - 开始验证补丁1 3:
+2024-02-24 13:27:43,898 - Closure_57 - INFO - 
+if (target != null && "STRING".equals(target.getType().toString())) {
+  className = target.getString();
+}
+
+2024-02-24 13:27:45,666 - Closure_57 - INFO - 编译失败
+2024-02-24 13:27:45,666 - Closure_57 - INFO - 错误: 非法的类型开始
+return className;
+2024-02-24 13:27:45,666 - Closure_57 - INFO - 补丁1 3 未成功编译
+2024-02-24 13:27:45,667 - Closure_57 - INFO - 开始验证补丁1 4:
+2024-02-24 13:27:45,667 - Closure_57 - INFO - 
+if (target != null && NodeUtil.isString(target)) {
+
+2024-02-24 13:27:49,682 - Closure_57 - INFO - 编译成功
+2024-02-24 13:28:33,076 - Closure_57 - INFO - 测试成功
+2024-02-24 13:28:33,076 - Closure_57 - INFO - 补丁1 4 通过了所有的测试用例

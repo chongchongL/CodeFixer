@@ -1,0 +1,42 @@
+2024-02-24 00:40:24,846 - Closure_86 - INFO - rm -rf /home/chongchong/d4j-project/Closure_86
+2024-02-24 00:40:24,847 - Closure_86 - INFO - 删除 Closure 86b 成功
+2024-02-24 00:40:24,847 - Closure_86 - INFO - defects4j checkout -p Closure -v 86b -w /home/chongchong/d4j-project/Closure_86
+2024-02-24 00:40:26,621 - Closure_86 - INFO - checkout Closure 86b 成功
+2024-02-24 00:40:33,962 - Closure_86 - INFO - 编译成功
+2024-02-24 00:41:07,215 - Closure_86 - INFO - 测试失败
+2024-02-24 00:41:07,215 - Closure_86 - INFO - Failing tests: 7
+  - com.google.javascript.jscomp.NodeUtilTest::testLocalValue1
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testLocalizedSideEffects8
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testLocalizedSideEffects9
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExterns_new4
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExterns_new6
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testIssue303b
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testIssue303
+
+2024-02-24 00:41:08,227 - Closure_86 - INFO - 它的bug类型为:
+2024-02-24 00:41:08,227 - Closure_86 - INFO - 1
+2024-02-24 00:42:00,477 - Closure_86 - INFO - Closure_86 未成功修复
+2024-02-24 14:09:22,257 - Closure_86 - INFO - rm -rf /home/chongchong/d4j-project/Closure_86
+2024-02-24 14:09:22,289 - Closure_86 - INFO - 删除 Closure 86b 成功
+2024-02-24 14:09:22,289 - Closure_86 - INFO - defects4j checkout -p Closure -v 86b -w /home/chongchong/d4j-project/Closure_86
+2024-02-24 14:09:24,114 - Closure_86 - INFO - checkout Closure 86b 成功
+2024-02-24 14:09:31,178 - Closure_86 - INFO - 编译成功
+2024-02-24 14:10:04,708 - Closure_86 - INFO - 测试失败
+2024-02-24 14:10:04,708 - Closure_86 - INFO - Failing tests: 7
+  - com.google.javascript.jscomp.NodeUtilTest::testLocalValue1
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testLocalizedSideEffects8
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testLocalizedSideEffects9
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExterns_new4
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExterns_new6
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testIssue303b
+  - com.google.javascript.jscomp.PureFunctionIdentifierTest::testIssue303
+
+2024-02-24 14:10:05,720 - Closure_86 - INFO - 它的bug类型为:
+2024-02-24 14:10:05,720 - Closure_86 - INFO - 1
+2024-02-24 14:10:59,122 - Closure_86 - INFO - 开始验证补丁1 1:
+2024-02-24 14:10:59,122 - Closure_86 - INFO - 
+return false; // Replace with an appropriate method call or check to verify non-aliasing, if such a method is not currently implemented, simply returning false is safer based on the TODO.
+
+2024-02-24 14:11:01,436 - Closure_86 - INFO - 编译成功
+2024-02-24 14:11:34,739 - Closure_86 - INFO - 测试成功
+2024-02-24 14:11:34,739 - Closure_86 - INFO - 补丁1 1 通过了所有的测试用例

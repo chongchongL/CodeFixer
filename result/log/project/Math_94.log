@@ -1,0 +1,236 @@
+2024-02-24 01:17:13,182 - Math_94 - INFO - rm -rf /home/chongchong/d4j-project/Math_94
+2024-02-24 01:17:13,183 - Math_94 - INFO - 删除 Math 94b 成功
+2024-02-24 01:17:13,183 - Math_94 - INFO - defects4j checkout -p Math -v 94b -w /home/chongchong/d4j-project/Math_94
+2024-02-24 01:17:16,600 - Math_94 - INFO - checkout Math 94b 成功
+2024-02-24 01:17:21,332 - Math_94 - INFO - 编译成功
+2024-02-24 01:17:28,005 - Math_94 - INFO - 测试失败
+2024-02-24 01:17:28,006 - Math_94 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testGcd
+
+2024-02-24 01:17:28,910 - Math_94 - INFO - 它的bug类型为:
+2024-02-24 01:17:28,911 - Math_94 - INFO - 1
+2024-02-24 01:18:05,040 - Math_94 - INFO - Math_94 未成功修复
+2024-02-24 11:36:22,153 - Math_94 - INFO - rm -rf /home/chongchong/d4j-project/Math_94
+2024-02-24 11:36:22,175 - Math_94 - INFO - 删除 Math 94b 成功
+2024-02-24 11:36:22,175 - Math_94 - INFO - defects4j checkout -p Math -v 94b -w /home/chongchong/d4j-project/Math_94
+2024-02-24 11:36:25,591 - Math_94 - INFO - checkout Math 94b 成功
+2024-02-24 11:36:30,177 - Math_94 - INFO - 编译成功
+2024-02-24 11:36:36,694 - Math_94 - INFO - 测试失败
+2024-02-24 11:36:36,694 - Math_94 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.MathUtilsTest::testGcd
+
+2024-02-24 11:36:37,613 - Math_94 - INFO - 它的bug类型为:
+2024-02-24 11:36:37,613 - Math_94 - INFO - 1
+2024-02-24 11:37:20,229 - Math_94 - INFO - 开始验证补丁1 1:
+2024-02-24 11:37:20,229 - Math_94 - INFO - 
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return Math.abs(u);
+
+2024-02-24 11:37:20,822 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:20,823 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:20,823 - Math_94 - INFO - 补丁1 1 未成功编译
+2024-02-24 11:37:20,824 - Math_94 - INFO - 开始验证补丁1 2:
+2024-02-24 11:37:20,824 - Math_94 - INFO - 
+if (u == 0) return Math.abs(v);
+if (v == 0) return Math.abs(u);
+while (v != 0) {
+    int temp = v;
+    v = u % v;
+    u = temp;
+}
+return Math.abs(u);
+
+2024-02-24 11:37:21,416 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:21,416 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:21,416 - Math_94 - INFO - 补丁1 2 未成功编译
+2024-02-24 11:37:21,418 - Math_94 - INFO - 开始验证补丁1 3:
+2024-02-24 11:37:21,418 - Math_94 - INFO - 
+return gcdHelper(Math.abs(u), Math.abs(v));
+
+2024-02-24 11:37:22,009 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:22,009 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:22,009 - Math_94 - INFO - 补丁1 3 未成功编译
+2024-02-24 11:37:22,010 - Math_94 - INFO - 开始验证补丁1 4:
+2024-02-24 11:37:22,011 - Math_94 - INFO - 
+   while (v != 0) {
+       int temp = u % v;
+       u = v;
+       v = temp;
+   }
+   return Math.abs(u);
+   
+2024-02-24 11:37:22,600 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:22,600 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:22,600 - Math_94 - INFO - 补丁1 4 未成功编译
+2024-02-24 11:37:22,601 - Math_94 - INFO - 开始验证补丁1 5:
+2024-02-24 11:37:22,601 - Math_94 - INFO - 
+   if (v == 0) {
+       return Math.abs(u);
+   }
+   return gcd(v, u % v);
+   
+2024-02-24 11:37:23,193 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:23,193 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:23,193 - Math_94 - INFO - 补丁1 5 未成功编译
+2024-02-24 11:37:23,194 - Math_94 - INFO - 开始验证补丁1 6:
+2024-02-24 11:37:23,194 - Math_94 - INFO - 
+   if (u == 0) {
+       return Math.abs(v);
+   } else if (v == 0) {
+       return Math.abs(u);
+   }
+   // Implementation of Euclidean algorithm follows
+   while (v != 0) {
+       int tmp = u;
+       u = v;
+       v = tmp % v;
+   }
+   return Math.abs(u);
+   
+2024-02-24 11:37:23,783 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:23,783 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:23,783 - Math_94 - INFO - 补丁1 6 未成功编译
+2024-02-24 11:37:23,784 - Math_94 - INFO - 开始验证补丁1 7:
+2024-02-24 11:37:23,784 - Math_94 - INFO - 
+while (v != 0) {
+    int r = u % v;
+    u = v;
+    v = r;
+}
+return Math.abs(u);
+
+2024-02-24 11:37:24,381 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:24,381 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:24,381 - Math_94 - INFO - 补丁1 7 未成功编译
+2024-02-24 11:37:24,382 - Math_94 - INFO - 开始验证补丁1 8:
+2024-02-24 11:37:24,382 - Math_94 - INFO - 
+if (v == 0) {
+    return Math.abs(u);
+} else {
+    return gcd(v, u % v);
+}
+
+2024-02-24 11:37:24,968 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:24,968 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:24,968 - Math_94 - INFO - 补丁1 8 未成功编译
+2024-02-24 11:37:24,969 - Math_94 - INFO - 开始验证补丁1 9:
+2024-02-24 11:37:24,969 - Math_94 - INFO - 
+int gcd = 1;
+for (int i = 1; i <= Math.abs(u) && i <= Math.abs(v); i++) {
+    if (u % i == 0 && v % i == 0) {
+        gcd = i;
+    }
+}
+return gcd;
+
+2024-02-24 11:37:25,560 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:25,560 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:25,560 - Math_94 - INFO - 补丁1 9 未成功编译
+2024-02-24 11:37:25,561 - Math_94 - INFO - 开始验证补丁2 1:
+2024-02-24 11:37:25,561 - Math_94 - INFO - 
+   if (u == 0) return Math.abs(v);
+   if (v == 0) return Math.abs(u);
+   while (v != 0) {
+       int r = u % v;
+       u = v;
+       v = r;
+   }
+   return Math.abs(u);
+   
+2024-02-24 11:37:26,158 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:26,158 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:26,158 - Math_94 - INFO - 补丁2 1 未成功编译
+2024-02-24 11:37:26,159 - Math_94 - INFO - 开始验证补丁2 2:
+2024-02-24 11:37:26,159 - Math_94 - INFO - 
+   if (u == 0) return Math.abs(v);
+   if (v == 0) return Math.abs(u);
+   return gcd(v, u % v);
+   
+2024-02-24 11:37:26,752 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:26,752 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:26,752 - Math_94 - INFO - 补丁2 2 未成功编译
+2024-02-24 11:37:26,753 - Math_94 - INFO - 开始验证补丁2 3:
+2024-02-24 11:37:26,754 - Math_94 - INFO - 
+   if (u == 0) return Math.abs(v);
+   if (v == 0) return Math.abs(u);
+   return v == 0 ? Math.abs(u) : gcd(v, u % v);
+   
+2024-02-24 11:37:27,358 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:27,358 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:27,358 - Math_94 - INFO - 补丁2 3 未成功编译
+2024-02-24 11:37:27,359 - Math_94 - INFO - 开始验证补丁2 4:
+2024-02-24 11:37:27,359 - Math_94 - INFO - 
+if (u == 0) return v;
+if (v == 0) return u;
+
+2024-02-24 11:37:27,959 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:27,959 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:27,959 - Math_94 - INFO - 补丁2 4 未成功编译
+2024-02-24 11:37:27,961 - Math_94 - INFO - 开始验证补丁2 5:
+2024-02-24 11:37:27,961 - Math_94 - INFO - 
+if (u == 0 || v == 0) return u != 0 ? u : v;
+
+2024-02-24 11:37:28,549 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:28,549 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:28,549 - Math_94 - INFO - 补丁2 5 未成功编译
+2024-02-24 11:37:28,550 - Math_94 - INFO - 开始验证补丁2 6:
+2024-02-24 11:37:28,550 - Math_94 - INFO - 
+if (u == 0) return Math.abs(v);
+if (v == 0) return Math.abs(u);
+
+2024-02-24 11:37:29,136 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:29,136 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:29,136 - Math_94 - INFO - 补丁2 6 未成功编译
+2024-02-24 11:37:29,137 - Math_94 - INFO - 开始验证补丁2 7:
+2024-02-24 11:37:29,137 - Math_94 - INFO - 
+if (u == 0 || v == 0) {
+    return u != 0 ? Math.abs(u) : Math.abs(v);
+}
+
+2024-02-24 11:37:29,725 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:29,726 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:29,726 - Math_94 - INFO - 补丁2 7 未成功编译
+2024-02-24 11:37:29,727 - Math_94 - INFO - 开始验证补丁2 8:
+2024-02-24 11:37:29,727 - Math_94 - INFO - 
+if (u == 0) {
+    return Math.abs(v);
+} else if (v == 0) {
+    return Math.abs(u);
+}
+
+2024-02-24 11:37:30,312 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:30,312 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:30,312 - Math_94 - INFO - 补丁2 8 未成功编译
+2024-02-24 11:37:30,313 - Math_94 - INFO - 开始验证补丁2 9:
+2024-02-24 11:37:30,313 - Math_94 - INFO - 
+return u != 0 ? Math.abs(u) : (v != 0 ? Math.abs(v) : 0);
+
+2024-02-24 11:37:30,899 - Math_94 - INFO - 编译失败
+2024-02-24 11:37:30,899 - Math_94 - INFO - 错误: 非法的类型开始
+if (u > 0) {
+2024-02-24 11:37:30,899 - Math_94 - INFO - 补丁2 9 未成功编译
+2024-02-24 11:37:30,901 - Math_94 - INFO - 开始验证补丁3 1:
+2024-02-24 11:37:30,901 - Math_94 - INFO - 
+if (u == 0 || v == 0) {
+2024-02-23 21:34:22,407 - Chart_1 - INFO - 补丁3 1 与人工补丁一致

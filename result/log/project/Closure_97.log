@@ -1,0 +1,72 @@
+2024-02-25 01:20:53,028 - Closure_97 - INFO - rm -rf /home/chongchong/d4j-project/Closure_97
+2024-02-25 01:20:53,029 - Closure_97 - INFO - 删除 Closure 97b 成功
+2024-02-25 01:20:53,029 - Closure_97 - INFO - defects4j checkout -p Closure -v 97b -w /home/chongchong/d4j-project/Closure_97
+2024-02-25 01:20:54,763 - Closure_97 - INFO - checkout Closure 97b 成功
+2024-02-25 01:21:00,649 - Closure_97 - INFO - 编译成功
+2024-02-25 01:21:26,826 - Closure_97 - INFO - 测试失败
+2024-02-25 01:21:26,826 - Closure_97 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+
+2024-02-25 01:21:27,701 - Closure_97 - INFO - 它的bug类型为:
+2024-02-25 01:21:27,701 - Closure_97 - INFO - 2
+2024-02-25 01:22:06,128 - Closure_97 - INFO - 开始验证补丁1 1:
+2024-02-25 01:22:06,128 - Closure_97 - INFO - 
+result = ((long)lvalInt) & 0xFFFFFFFFL >>> rvalInt;
+
+2024-02-25 01:22:07,373 - Closure_97 - INFO - 编译成功
+2024-02-25 01:22:33,514 - Closure_97 - INFO - 测试失败
+2024-02-25 01:22:33,514 - Closure_97 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+
+2024-02-25 01:22:33,951 - Closure_97 - INFO - 选择失败的测试用例为:
+2024-02-25 01:22:33,951 - Closure_97 - INFO - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+2024-02-25 01:22:33,951 - Closure_97 - INFO - 失败的测试代码为:
+2024-02-25 01:22:33,951 - Closure_97 - INFO -     fold("x = 10 >>> 1", "x = 5");
+
+2024-02-25 01:22:33,951 - Closure_97 - INFO - 失败信息为:
+2024-02-25 01:22:33,951 - Closure_97 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 01:22:33,951 - Closure_97 - INFO - 补丁1 1测试失败
+2024-02-25 01:22:33,952 - Closure_97 - INFO - 开始验证补丁1 2:
+2024-02-25 01:22:33,952 - Closure_97 - INFO - 
+result = (int)(((long)lvalInt >>> rvalInt) & 0xFFFFFFFFL);
+
+2024-02-25 01:22:35,174 - Closure_97 - INFO - 编译成功
+2024-02-25 01:23:01,465 - Closure_97 - INFO - 测试失败
+2024-02-25 01:23:01,465 - Closure_97 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+
+2024-02-25 01:23:01,898 - Closure_97 - INFO - 选择失败的测试用例为:
+2024-02-25 01:23:01,898 - Closure_97 - INFO - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+2024-02-25 01:23:01,898 - Closure_97 - INFO - 失败的测试代码为:
+2024-02-25 01:23:01,898 - Closure_97 - INFO -     fold("x = -1 >>> 1", "x = 2147483647"); // 0x7fffffff
+
+2024-02-25 01:23:01,898 - Closure_97 - INFO - 失败信息为:
+2024-02-25 01:23:01,898 - Closure_97 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 01:23:01,898 - Closure_97 - INFO - 补丁1 2测试失败
+2024-02-25 01:23:01,899 - Closure_97 - INFO - 开始验证补丁1 3:
+2024-02-25 01:23:01,899 - Closure_97 - INFO - 
+result = (int)((long)lvalInt >>> rvalInt);
+
+2024-02-25 01:23:03,133 - Closure_97 - INFO - 编译成功
+2024-02-25 01:23:29,292 - Closure_97 - INFO - 测试失败
+2024-02-25 01:23:29,292 - Closure_97 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+
+2024-02-25 01:23:29,725 - Closure_97 - INFO - 选择失败的测试用例为:
+2024-02-25 01:23:29,725 - Closure_97 - INFO - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBitShifts
+2024-02-25 01:23:29,725 - Closure_97 - INFO - 失败的测试代码为:
+2024-02-25 01:23:29,725 - Closure_97 - INFO -     fold("x = -1 >>> 1", "x = 2147483647"); // 0x7fffffff
+
+2024-02-25 01:23:29,725 - Closure_97 - INFO - 失败信息为:
+2024-02-25 01:23:29,725 - Closure_97 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 01:23:29,725 - Closure_97 - INFO - 补丁1 3测试失败
+2024-02-25 01:23:29,726 - Closure_97 - INFO - 开始验证补丁1 4:
+2024-02-25 01:23:29,726 - Closure_97 - INFO - 
+result = ((long) lvalInt & 0xFFFFFFFFL) >>> rvalInt;
+
+2024-02-25 01:23:30,938 - Closure_97 - INFO - 编译成功
+2024-02-25 01:23:56,963 - Closure_97 - INFO - 测试成功
+2024-02-25 01:23:56,963 - Closure_97 - INFO - 补丁1 4 通过了所有的测试用例

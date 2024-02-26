@@ -1,0 +1,36 @@
+2024-02-24 01:24:46,392 - Mockito_26 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_26
+2024-02-24 01:24:46,393 - Mockito_26 - INFO - 删除 Mockito 26b 成功
+2024-02-24 01:24:46,393 - Mockito_26 - INFO - defects4j checkout -p Mockito -v 26b -w /home/chongchong/d4j-project/Mockito_26
+2024-02-24 01:24:49,884 - Mockito_26 - INFO - checkout Mockito 26b 成功
+2024-02-24 01:24:58,658 - Mockito_26 - INFO - 编译成功
+2024-02-24 01:25:22,292 - Mockito_26 - INFO - 测试失败
+2024-02-24 01:25:22,292 - Mockito_26 - INFO - Failing tests: 4
+  - org.mockito.internal.progress.HandyReturnValuesTest::should_default_values_for_primitive
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_primitive
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsMocksTest::should_return_the_usual_default_values_for_primitives
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNullsTest::should_return_the_usual_default_values_for_primitives
+
+2024-02-24 01:25:23,177 - Mockito_26 - INFO - 它的bug类型为:
+2024-02-24 01:25:23,177 - Mockito_26 - INFO - 1
+2024-02-24 01:26:00,244 - Mockito_26 - INFO - Mockito_26 未成功修复
+2024-02-24 12:17:21,285 - Mockito_26 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_26
+2024-02-24 12:17:21,319 - Mockito_26 - INFO - 删除 Mockito 26b 成功
+2024-02-24 12:17:21,319 - Mockito_26 - INFO - defects4j checkout -p Mockito -v 26b -w /home/chongchong/d4j-project/Mockito_26
+2024-02-24 12:17:24,803 - Mockito_26 - INFO - checkout Mockito 26b 成功
+2024-02-24 12:17:33,354 - Mockito_26 - INFO - 编译成功
+2024-02-24 12:17:57,070 - Mockito_26 - INFO - 测试失败
+2024-02-24 12:17:57,070 - Mockito_26 - INFO - Failing tests: 4
+  - org.mockito.internal.progress.HandyReturnValuesTest::should_default_values_for_primitive
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_primitive
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsMocksTest::should_return_the_usual_default_values_for_primitives
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNullsTest::should_return_the_usual_default_values_for_primitives
+
+2024-02-24 12:17:57,966 - Mockito_26 - INFO - 它的bug类型为:
+2024-02-24 12:17:57,966 - Mockito_26 - INFO - 1
+2024-02-24 12:18:15,040 - Mockito_26 - INFO - 开始验证补丁1 4:
+2024-02-24 12:18:15,040 - Mockito_26 - INFO - 
+primitiveValues.put(double.class, 0.0d);
+
+2024-02-24 12:18:22,408 - Mockito_26 - INFO - 编译成功
+2024-02-24 12:18:45,939 - Mockito_26 - INFO - 测试成功
+2024-02-24 12:18:45,939 - Mockito_26 - INFO - 补丁1 4 通过了所有的测试用例

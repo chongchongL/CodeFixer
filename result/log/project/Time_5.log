@@ -1,0 +1,466 @@
+2024-02-26 10:36:32,109 - Time_5 - INFO - rm -rf /home/chongchong/d4j-project/Time_5
+2024-02-26 10:36:32,110 - Time_5 - INFO - 删除 Time 5b 成功
+2024-02-26 10:36:32,110 - Time_5 - INFO - defects4j checkout -p Time -v 5b -w /home/chongchong/d4j-project/Time_5
+2024-02-26 10:36:35,465 - Time_5 - INFO - checkout Time 5b 成功
+2024-02-26 10:36:41,640 - Time_5 - INFO - 编译成功
+2024-02-26 10:36:49,842 - Time_5 - INFO - 测试失败
+2024-02-26 10:36:49,842 - Time_5 - INFO - Failing tests: 3
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_months1
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_months2
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_monthsWeeks
+
+2024-02-26 10:36:50,728 - Time_5 - INFO - 它的bug类型为:
+2024-02-26 10:36:50,728 - Time_5 - INFO - 4
+2024-02-26 10:37:46,842 - Time_5 - INFO - 开始验证补丁1 1:
+2024-02-26 10:37:46,842 - Time_5 - INFO - 
+            years = FieldUtils.safeAdd(years, months / 12);
+            months = months % 12;
+            if (type.isSupported(DurationFieldType.years()) && years != 0) {
+                result = result.withYears(years);
+            }
+            if (type.isSupported(DurationFieldType.months()) && months != 0) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:37:47,392 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:47,392 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:47,392 - Time_5 - INFO - 补丁1 1 未成功编译
+2024-02-26 10:37:47,394 - Time_5 - INFO - 开始验证补丁1 2:
+2024-02-26 10:37:47,394 - Time_5 - INFO - 
+            years = FieldUtils.safeAdd(years, months / 12);
+            months = months % 12;
+            if (years != 0) {
+                if (type.isSupported(DurationFieldType.years())) {
+                    result = result.withYears(years);
+                }
+            }
+            if (months != 0) {
+                if (type.isSupported(DurationFieldType.months())) {
+                    result = result.withMonths(months);
+                }
+            }
+
+2024-02-26 10:37:47,948 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:47,948 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:47,949 - Time_5 - INFO - 补丁1 2 未成功编译
+2024-02-26 10:37:47,950 - Time_5 - INFO - 开始验证补丁1 3:
+2024-02-26 10:37:47,950 - Time_5 - INFO - 
+            if (type.isSupported(DurationFieldType.years()) || type.isSupported(DurationFieldType.months())) {
+                years = FieldUtils.safeAdd(years, months / 12);
+                months = months % 12;
+                if (years != 0 && type.isSupported(DurationFieldType.years())) {
+                    result = result.withYears(years);
+                }
+                if (months != 0 && type.isSupported(DurationFieldType.months())) {
+                    result = result.withMonths(months);
+                }
+            }
+
+2024-02-26 10:37:48,504 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:48,505 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:48,505 - Time_5 - INFO - 补丁1 3 未成功编译
+2024-02-26 10:37:48,506 - Time_5 - INFO - 开始验证补丁1 4:
+2024-02-26 10:37:48,506 - Time_5 - INFO - 
+years = FieldUtils.safeAdd(years, months / 12);
+months = months % 12;
+if (type.isSupported(DurationFieldType.years()) && years != 0) {
+    result = result.withYears(years);
+}
+if (type.isSupported(DurationFieldType.months()) && months != 0) {
+    result = result.withMonths(months);
+}
+
+2024-02-26 10:37:49,062 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:49,062 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:49,062 - Time_5 - INFO - 补丁1 4 未成功编译
+2024-02-26 10:37:49,064 - Time_5 - INFO - 开始验证补丁1 5:
+2024-02-26 10:37:49,064 - Time_5 - INFO - 
+years = FieldUtils.safeToInt(FieldUtils.safeAdd(years, months / 12));
+months = months % 12;
+if (years != 0) {
+    if (type.isSupported(DurationFieldType.years())) {
+        result = result.withYears(years);
+    } else {
+        months = FieldUtils.safeAdd(months, years * 12);
+    }
+}
+if (months != 0) {
+    if (type.isSupported(DurationFieldType.months())) {
+        result = result.withMonths(months);
+    }
+}
+
+2024-02-26 10:37:49,622 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:49,622 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:49,622 - Time_5 - INFO - 补丁1 5 未成功编译
+2024-02-26 10:37:49,623 - Time_5 - INFO - 开始验证补丁1 6:
+2024-02-26 10:37:49,623 - Time_5 - INFO - 
+years += months / 12;
+months %= 12;
+if (type.isSupported(DurationFieldType.years()) && years != 0) {
+    result = result.withYears(years);
+}
+if (type.isSupported(DurationFieldType.months())) {
+    result = result.withMonths(months);
+} else if (years != 0) {
+    // If months are not supported, add the equivalent in years
+    years += months / 12;
+    result = result.withYears(years);
+}
+
+2024-02-26 10:37:50,171 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:50,171 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:50,171 - Time_5 - INFO - 补丁1 6 未成功编译
+2024-02-26 10:37:50,172 - Time_5 - INFO - 开始验证补丁1 7:
+2024-02-26 10:37:50,172 - Time_5 - INFO - 
+            years = FieldUtils.safeAdd(years, months / 12);
+            months = months % 12;
+            if (years != 0 && type.isSupported(DurationFieldType.years())) {
+                result = result.withYears(years);
+            }
+            if (months != 0 && type.isSupported(DurationFieldType.months())) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:37:50,732 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:50,732 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:50,732 - Time_5 - INFO - 补丁1 7 未成功编译
+2024-02-26 10:37:50,733 - Time_5 - INFO - 开始验证补丁1 8:
+2024-02-26 10:37:50,733 - Time_5 - INFO - 
+            years = FieldUtils.safeAdd(years, months / 12);
+            months = months % 12;
+            if (type.isSupported(DurationFieldType.years())) {
+                result = result.withYears(years);
+            }
+            if (type.isSupported(DurationFieldType.months())) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:37:51,295 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:51,296 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:51,296 - Time_5 - INFO - 补丁1 8 未成功编译
+2024-02-26 10:37:51,297 - Time_5 - INFO - 开始验证补丁1 9:
+2024-02-26 10:37:51,297 - Time_5 - INFO - 
+            int totalMonths = FieldUtils.safeAdd(months, years * 12);
+            years = totalMonths / 12;
+            months = totalMonths % 12;
+            if (type.isSupported(DurationFieldType.years())) {
+                result = result.withYears(years);
+            }
+            if (type.isSupported(DurationFieldType.months())) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:37:51,856 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:51,856 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:51,856 - Time_5 - INFO - 补丁1 9 未成功编译
+2024-02-26 10:37:51,857 - Time_5 - INFO - 开始验证补丁2 1:
+2024-02-26 10:37:51,857 - Time_5 - INFO - 
+years = FieldUtils.safeAdd(years, months / 12);
+months = months % 12;
+if (type.isSupported(DurationFieldType.years()) && years != 0) {
+    result = result.withYears(years);
+}
+if (type.isSupported(DurationFieldType.months()) && months != 0) {
+    result = result.withMonths(months);
+}
+
+2024-02-26 10:37:51,857 - Time_5 - INFO - 补丁2 1为重复的补丁
+2024-02-26 10:37:51,858 - Time_5 - INFO - 开始验证补丁2 2:
+2024-02-26 10:37:51,858 - Time_5 - INFO - 
+months = FieldUtils.safeAdd(months, years * 12);
+if (months != 0) {
+    result = result.withMonths(months);
+}
+
+2024-02-26 10:37:52,417 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:52,417 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:52,417 - Time_5 - INFO - 补丁2 2 未成功编译
+2024-02-26 10:37:52,418 - Time_5 - INFO - 开始验证补丁2 3:
+2024-02-26 10:37:52,418 - Time_5 - INFO - 
+if (months != 0) {
+    result = result.withMonths(months);
+}
+
+2024-02-26 10:37:52,973 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:52,973 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:52,973 - Time_5 - INFO - 补丁2 3 未成功编译
+2024-02-26 10:37:52,974 - Time_5 - INFO - 开始验证补丁2 4:
+2024-02-26 10:37:52,974 - Time_5 - INFO - 
+            months += years * 12; // Normalize months total
+            years = 0; // Reset years since PeriodType does not support it
+            if (months != 0) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:37:53,532 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:53,532 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:53,532 - Time_5 - INFO - 补丁2 4 未成功编译
+2024-02-26 10:37:53,533 - Time_5 - INFO - 开始验证补丁2 5:
+2024-02-26 10:37:53,533 - Time_5 - INFO - 
+            // Normalize months to ensure months are less than 12
+            years = FieldUtils.safeAdd(years, months / 12);
+            months = months % 12;
+            // Assures that the PeriodType supports years before setting it
+            if (type.isSupported(DurationFieldType.years()) && years != 0) {
+                result = result.withYears(years);
+            }
+            if (type.isSupported(DurationFieldType.months()) && months != 0) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:37:54,075 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:54,075 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:54,075 - Time_5 - INFO - 补丁2 5 未成功编译
+2024-02-26 10:37:54,076 - Time_5 - INFO - 开始验证补丁2 6:
+2024-02-26 10:37:54,076 - Time_5 - INFO - 
+            // Only adjust months as PeriodType.months() should not account for years
+            if (months != 0) {
+                result = result.withMonths(months % 12);
+            }
+
+2024-02-26 10:37:54,627 - Time_5 - INFO - 编译失败
+2024-02-26 10:37:54,627 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:37:54,628 - Time_5 - INFO - 补丁2 6 未成功编译
+2024-02-26 10:37:54,629 - Time_5 - INFO - 开始验证补丁2 7:
+2024-02-26 10:37:54,629 - Time_5 - INFO - 
+            months = FieldUtils.safeAdd(months, years * 12);
+            result = result.withMonths(months);
+
+2024-02-26 10:37:57,203 - Time_5 - INFO - 编译成功
+2024-02-26 10:38:05,467 - Time_5 - INFO - 测试失败
+2024-02-26 10:38:05,467 - Time_5 - INFO - Failing tests: 8
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthDay
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonthWeekDay
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth1
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth2
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonth1
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonth2
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthWeekDay
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonthDay
+
+2024-02-26 10:38:05,917 - Time_5 - INFO - 选择失败的测试用例为:
+2024-02-26 10:38:05,917 - Time_5 - INFO - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthDay
+2024-02-26 10:38:05,917 - Time_5 - INFO - 失败的测试代码为:
+2024-02-26 10:38:05,917 - Time_5 - INFO -         assertEquals(new Period(2, 3, 0, 37, 3, 0, 0, 0, PeriodType.yearMonthDayTime()), result);
+
+2024-02-26 10:38:05,917 - Time_5 - INFO - 失败信息为:
+2024-02-26 10:38:05,917 - Time_5 - INFO - junit.framework.AssertionFailedError: expected:<P2Y3M37DT3H> but was:<P27M37DT3H>
+
+2024-02-26 10:38:05,917 - Time_5 - INFO - 补丁2 7测试失败
+2024-02-26 10:38:05,918 - Time_5 - INFO - 开始验证补丁2 8:
+2024-02-26 10:38:05,918 - Time_5 - INFO - 
+            if (type.isSupported(DurationFieldType.years())) {
+                years = FieldUtils.safeAdd(years, months / 12);
+                result = result.withYears(years);
+            }
+            months = months % 12;
+            if (type.isSupported(DurationFieldType.months())) {
+                result = result.withMonths(months);
+            }
+
+2024-02-26 10:38:06,482 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:06,482 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:06,482 - Time_5 - INFO - 补丁2 8 未成功编译
+2024-02-26 10:38:06,483 - Time_5 - INFO - 开始验证补丁2 9:
+2024-02-26 10:38:06,483 - Time_5 - INFO - 
+            months = months + years * 12; // Normalize total months
+            years = 0; // Explicitly set years to zero as they are consolidated into months
+            result = result.withMonths(months); // The type PeriodType.months() suggests only months are needed
+
+2024-02-26 10:38:09,026 - Time_5 - INFO - 编译成功
+2024-02-26 10:38:17,189 - Time_5 - INFO - 测试失败
+2024-02-26 10:38:17,189 - Time_5 - INFO - Failing tests: 8
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthDay
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonthWeekDay
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth1
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth2
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonth1
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonth2
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthWeekDay
+  - org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonthDay
+
+2024-02-26 10:38:17,660 - Time_5 - INFO - 选择失败的测试用例为:
+2024-02-26 10:38:17,660 - Time_5 - INFO - org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthDay
+2024-02-26 10:38:17,660 - Time_5 - INFO - 失败的测试代码为:
+2024-02-26 10:38:17,660 - Time_5 - INFO -         assertEquals(new Period(2, 3, 0, 37, 3, 0, 0, 0, PeriodType.yearMonthDayTime()), result);
+
+2024-02-26 10:38:17,660 - Time_5 - INFO - 失败信息为:
+2024-02-26 10:38:17,660 - Time_5 - INFO - junit.framework.AssertionFailedError: expected:<P2Y3M37DT3H> but was:<P27M37DT3H>
+
+2024-02-26 10:38:17,660 - Time_5 - INFO - 补丁2 9测试失败
+2024-02-26 10:38:17,661 - Time_5 - INFO - 开始验证补丁3 1:
+2024-02-26 10:38:17,661 - Time_5 - INFO - 
+if (type.isSupported(DurationFieldType.years())) {
+    years = FieldUtils.safeAdd(years, months / 12);
+    months = months % 12;
+    if (years != 0) {
+        result = result.withYears(years);
+    }
+}
+if (type.isSupported(DurationFieldType.months())) {
+    if (months != 0) {
+        result = result.withMonths(months);
+    }
+}
+return result;
+
+2024-02-26 10:38:18,228 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:18,228 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:18,228 - Time_5 - INFO - 补丁3 1 未成功编译
+2024-02-26 10:38:18,229 - Time_5 - INFO - 开始验证补丁3 2:
+2024-02-26 10:38:18,229 - Time_5 - INFO - 
+years = type.isSupported(DurationFieldType.years()) ? FieldUtils.safeAdd(years, months / 12) : 0;
+months = type.isSupported(DurationFieldType.months()) ? months % 12 : 0;
+if (years != 0) {
+    result = result.withYears(years);
+}
+if (months != 0) {
+    result = result.withMonths(months);
+}
+return result;
+
+2024-02-26 10:38:18,790 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:18,790 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:18,790 - Time_5 - INFO - 补丁3 2 未成功编译
+2024-02-26 10:38:18,791 - Time_5 - INFO - 开始验证补丁3 3:
+2024-02-26 10:38:18,791 - Time_5 - INFO - 
+if (type.isSupported(DurationFieldType.years()) || type.isSupported(DurationFieldType.months())) {
+    years = FieldUtils.safeAdd(years, months / 12);
+    months = months % 12;
+    if (years != 0 && type.isSupported(DurationFieldType.years())) {
+        result = result.withYears(years);
+    }
+    if (months != 0 && type.isSupported(DurationFieldType.months())) {
+        result = result.withMonths(months);
+    }
+}
+return result;
+
+2024-02-26 10:38:19,349 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:19,349 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:19,349 - Time_5 - INFO - 补丁3 3 未成功编译
+2024-02-26 10:38:19,351 - Time_5 - INFO - 开始验证补丁3 4:
+2024-02-26 10:38:19,351 - Time_5 - INFO - 
+if (type.isSupported(DurationFieldType.years())) {
+    years = FieldUtils.safeAdd(years, months / 12);
+    months = months % 12;
+    result = result.withYears(years);
+}
+if (type.isSupported(DurationFieldType.months())) {
+    result = result.withMonths(months);
+}
+return result;
+
+2024-02-26 10:38:19,901 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:19,901 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:19,901 - Time_5 - INFO - 补丁3 4 未成功编译
+2024-02-26 10:38:19,902 - Time_5 - INFO - 开始验证补丁3 5:
+2024-02-26 10:38:19,902 - Time_5 - INFO - 
+years = FieldUtils.safeAdd(years, months / 12);
+months = months % 12;
+if (type.isSupported(DurationFieldType.years()) && years != 0) {
+    result = result.withYears(years);
+}
+if (type.isSupported(DurationFieldType.months()) && months != 0) {
+    result = result.withMonths(months);
+}
+return result;
+
+2024-02-26 10:38:20,481 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:20,481 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:20,481 - Time_5 - INFO - 补丁3 5 未成功编译
+2024-02-26 10:38:20,482 - Time_5 - INFO - 开始验证补丁3 6:
+2024-02-26 10:38:20,482 - Time_5 - INFO - 
+int addedYears = months / 12;
+months %= 12;
+if (type.isSupported(DurationFieldType.years())) {
+    years = FieldUtils.safeAdd(years, addedYears);
+    result = result.withYears(years);
+}
+if (type.isSupported(DurationFieldType.months())) {
+    result = result.withMonths(months);
+}
+return result;
+
+2024-02-26 10:38:21,039 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:21,039 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:21,039 - Time_5 - INFO - 补丁3 6 未成功编译
+2024-02-26 10:38:21,040 - Time_5 - INFO - 开始验证补丁3 7:
+2024-02-26 10:38:21,041 - Time_5 - INFO - 
+        // Check if the fields are supported before attempting to add them
+        if (type.isSupported(DurationFieldType.years())) {
+            years = FieldUtils.safeAdd(years, months / 12);
+            if (years != 0) {
+                result = result.withYears(years);
+            }
+        }
+        if (type.isSupported(DurationFieldType.months())) {
+            months = months % 12;
+            if (months != 0) {
+                result = result.withMonths(months);
+            }
+        }
+
+2024-02-26 10:38:21,582 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:21,582 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:21,582 - Time_5 - INFO - 补丁3 7 未成功编译
+2024-02-26 10:38:21,583 - Time_5 - INFO - 开始验证补丁3 8:
+2024-02-26 10:38:21,583 - Time_5 - INFO - 
+        // Simpler check without utility method safeAdd, assuming the addition is safe
+        if (type.isSupported(DurationFieldType.years())) {
+            years += months / 12;
+            if (years != 0) {
+                result = result.withYears(years);
+            }
+        }
+        if (type.isSupported(DurationFieldType.months())) {
+            months %= 12;
+            if (months != 0) {
+                result = result.withMonths(months);
+            }
+        }
+
+2024-02-26 10:38:22,134 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:22,134 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:22,134 - Time_5 - INFO - 补丁3 8 未成功编译
+2024-02-26 10:38:22,135 - Time_5 - INFO - 开始验证补丁3 9:
+2024-02-26 10:38:22,135 - Time_5 - INFO - 
+        // Assuming the period type supports both years and months
+        years += months / 12;
+        months %= 12;
+        if (years != 0) {
+            result = result.withYears(years);
+        }
+        if (months != 0) {
+            result = result.withMonths(months);
+        }
+
+2024-02-26 10:38:22,702 - Time_5 - INFO - 编译失败
+2024-02-26 10:38:22,702 - Time_5 - INFO - 错误: 进行语法分析时已到达文件结尾
+}
+2024-02-26 10:38:22,702 - Time_5 - INFO - 补丁3 9 未成功编译
+2024-02-26 10:38:22,702 - Time_5 - INFO - Time_5 未成功修复

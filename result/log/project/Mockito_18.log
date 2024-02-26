@@ -1,0 +1,65 @@
+2024-02-25 13:01:13,481 - Mockito_18 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_18
+2024-02-25 13:01:13,482 - Mockito_18 - INFO - 删除 Mockito 18b 成功
+2024-02-25 13:01:13,482 - Mockito_18 - INFO - defects4j checkout -p Mockito -v 18b -w /home/chongchong/d4j-project/Mockito_18
+2024-02-25 13:01:16,984 - Mockito_18 - INFO - checkout Mockito 18b 成功
+2024-02-25 13:01:21,856 - Mockito_18 - INFO - 编译失败
+2024-02-25 13:01:21,856 - Mockito_18 - INFO - 
+2024-02-25 13:01:22,299 - Mockito_18 - INFO - 它的bug类型为:
+2024-02-25 13:01:22,299 - Mockito_18 - INFO - 3
+2024-02-26 16:12:20,042 - Mockito_18 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_18
+2024-02-26 16:12:20,322 - Mockito_18 - INFO - 删除 Mockito 18b 成功
+2024-02-26 16:12:20,323 - Mockito_18 - INFO - defects4j checkout -p Mockito -v 18b -w /home/chongchong/d4j-project/Mockito_18
+2024-02-26 16:12:23,862 - Mockito_18 - INFO - checkout Mockito 18b 成功
+2024-02-26 16:13:04,067 - Mockito_18 - INFO - 编译成功
+2024-02-26 16:14:16,093 - Mockito_18 - INFO - 测试失败
+2024-02-26 16:14:16,093 - Mockito_18 - INFO - Failing tests: 1
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_empty_iterable
+
+2024-02-26 16:14:16,997 - Mockito_18 - INFO - 它的bug类型为:
+2024-02-26 16:14:16,997 - Mockito_18 - INFO - 3
+2024-02-26 16:15:08,434 - Mockito_18 - INFO - 开始验证补丁1 1:
+2024-02-26 16:15:08,434 - Mockito_18 - INFO - 
+        } else if (type == Collection.class) {
+            return new ArrayList<Object>();
+
+2024-02-26 16:15:36,077 - Mockito_18 - INFO - 编译成功
+2024-02-26 16:16:48,558 - Mockito_18 - INFO - 测试失败
+2024-02-26 16:16:48,558 - Mockito_18 - INFO - Failing tests: 1
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_empty_iterable
+
+2024-02-26 16:16:49,019 - Mockito_18 - INFO - 选择失败的测试用例为:
+2024-02-26 16:16:49,019 - Mockito_18 - INFO - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_empty_iterable
+2024-02-26 16:16:49,019 - Mockito_18 - INFO - 失败的测试代码为:
+2024-02-26 16:16:49,019 - Mockito_18 - INFO -         assertFalse(((Iterable) values.returnValueFor(Iterable.class)).iterator().hasNext());
+
+2024-02-26 16:16:49,019 - Mockito_18 - INFO - 失败信息为:
+2024-02-26 16:16:49,019 - Mockito_18 - INFO - java.lang.NullPointerException
+
+2024-02-26 16:16:49,020 - Mockito_18 - INFO - 补丁1 1测试失败
+2024-02-26 16:16:49,020 - Mockito_18 - INFO - 开始验证补丁1 2:
+2024-02-26 16:16:49,020 - Mockito_18 - INFO - 
+        } else if (type == List.class) {
+            return new ArrayList<Object>();
+
+2024-02-26 16:17:16,675 - Mockito_18 - INFO - 编译成功
+2024-02-26 16:18:28,014 - Mockito_18 - INFO - 测试失败
+2024-02-26 16:18:28,014 - Mockito_18 - INFO - Failing tests: 1
+  - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_empty_iterable
+
+2024-02-26 16:18:28,468 - Mockito_18 - INFO - 选择失败的测试用例为:
+2024-02-26 16:18:28,468 - Mockito_18 - INFO - org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValuesTest::should_return_empty_iterable
+2024-02-26 16:18:28,468 - Mockito_18 - INFO - 失败的测试代码为:
+2024-02-26 16:18:28,468 - Mockito_18 - INFO -         assertFalse(((Iterable) values.returnValueFor(Iterable.class)).iterator().hasNext());
+
+2024-02-26 16:18:28,468 - Mockito_18 - INFO - 失败信息为:
+2024-02-26 16:18:28,468 - Mockito_18 - INFO - java.lang.NullPointerException
+
+2024-02-26 16:18:28,468 - Mockito_18 - INFO - 补丁1 2测试失败
+2024-02-26 16:18:28,469 - Mockito_18 - INFO - 开始验证补丁1 3:
+2024-02-26 16:18:28,469 - Mockito_18 - INFO - 
+        } else if (type == Iterable.class) {
+            return new ArrayList<Object>();
+
+2024-02-26 16:18:56,008 - Mockito_18 - INFO - 编译成功
+2024-02-26 16:20:08,245 - Mockito_18 - INFO - 测试成功
+2024-02-26 16:20:08,245 - Mockito_18 - INFO - 补丁1 3 通过了所有的测试用例

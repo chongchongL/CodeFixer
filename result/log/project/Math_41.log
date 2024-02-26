@@ -1,0 +1,63 @@
+2024-02-24 01:05:55,460 - Math_41 - INFO - rm -rf /home/chongchong/d4j-project/Math_41
+2024-02-24 01:05:55,461 - Math_41 - INFO - 删除 Math 41b 成功
+2024-02-24 01:05:55,461 - Math_41 - INFO - defects4j checkout -p Math -v 41b -w /home/chongchong/d4j-project/Math_41
+2024-02-24 01:05:58,937 - Math_41 - INFO - checkout Math 41b 成功
+2024-02-24 01:06:05,666 - Math_41 - INFO - 编译成功
+2024-02-24 01:06:24,723 - Math_41 - INFO - 测试失败
+2024-02-24 01:06:24,724 - Math_41 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.descriptive.moment.VarianceTest::testEvaluateArraySegmentWeighted
+
+2024-02-24 09:40:40,792 - Math_41 - INFO - rm -rf /home/chongchong/d4j-project/Math_41
+2024-02-24 09:40:40,826 - Math_41 - INFO - 删除 Math 41b 成功
+2024-02-24 09:40:40,826 - Math_41 - INFO - defects4j checkout -p Math -v 41b -w /home/chongchong/d4j-project/Math_41
+2024-02-24 09:40:44,299 - Math_41 - INFO - checkout Math 41b 成功
+2024-02-24 09:40:50,908 - Math_41 - INFO - 编译成功
+2024-02-24 09:41:10,433 - Math_41 - INFO - 测试失败
+2024-02-24 09:41:10,433 - Math_41 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.descriptive.moment.VarianceTest::testEvaluateArraySegmentWeighted
+
+2024-02-24 10:07:56,870 - Math_41 - INFO - rm -rf /home/chongchong/d4j-project/Math_41
+2024-02-24 10:07:56,898 - Math_41 - INFO - 删除 Math 41b 成功
+2024-02-24 10:07:56,898 - Math_41 - INFO - defects4j checkout -p Math -v 41b -w /home/chongchong/d4j-project/Math_41
+2024-02-24 10:08:00,320 - Math_41 - INFO - checkout Math 41b 成功
+2024-02-24 10:08:07,159 - Math_41 - INFO - 编译成功
+2024-02-24 10:08:26,870 - Math_41 - INFO - 测试失败
+2024-02-24 10:08:26,870 - Math_41 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.descriptive.moment.VarianceTest::testEvaluateArraySegmentWeighted
+
+2024-02-24 10:14:40,332 - Math_41 - INFO - rm -rf /home/chongchong/d4j-project/Math_41
+2024-02-24 10:14:40,360 - Math_41 - INFO - 删除 Math 41b 成功
+2024-02-24 10:14:40,360 - Math_41 - INFO - defects4j checkout -p Math -v 41b -w /home/chongchong/d4j-project/Math_41
+2024-02-24 10:14:43,825 - Math_41 - INFO - checkout Math 41b 成功
+2024-02-24 10:14:50,577 - Math_41 - INFO - 编译成功
+2024-02-24 10:15:10,135 - Math_41 - INFO - 测试失败
+2024-02-24 10:15:10,135 - Math_41 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.descriptive.moment.VarianceTest::testEvaluateArraySegmentWeighted
+
+2024-02-24 10:43:39,948 - Math_41 - INFO - rm -rf /home/chongchong/d4j-project/Math_41
+2024-02-24 10:43:39,975 - Math_41 - INFO - 删除 Math 41b 成功
+2024-02-24 10:43:39,975 - Math_41 - INFO - defects4j checkout -p Math -v 41b -w /home/chongchong/d4j-project/Math_41
+2024-02-24 10:43:43,444 - Math_41 - INFO - checkout Math 41b 成功
+2024-02-24 10:43:50,286 - Math_41 - INFO - 编译成功
+2024-02-24 10:44:09,691 - Math_41 - INFO - 测试失败
+2024-02-24 10:44:09,691 - Math_41 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.descriptive.moment.VarianceTest::testEvaluateArraySegmentWeighted
+
+2024-02-24 10:44:35,769 - Math_41 - INFO - rm -rf /home/chongchong/d4j-project/Math_41
+2024-02-24 10:44:35,797 - Math_41 - INFO - 删除 Math 41b 成功
+2024-02-24 10:44:35,797 - Math_41 - INFO - defects4j checkout -p Math -v 41b -w /home/chongchong/d4j-project/Math_41
+2024-02-24 10:44:39,234 - Math_41 - INFO - checkout Math 41b 成功
+2024-02-24 10:44:45,963 - Math_41 - INFO - 编译成功
+2024-02-24 10:45:05,750 - Math_41 - INFO - 测试失败
+2024-02-24 10:45:05,750 - Math_41 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.descriptive.moment.VarianceTest::testEvaluateArraySegmentWeighted
+
+2024-02-24 10:45:06,668 - Math_41 - INFO - 它的bug类型为:
+2024-02-24 10:45:06,668 - Math_41 - INFO - 1
+2024-02-24 10:45:47,554 - Math_41 - INFO - 开始验证补丁1 1:
+2024-02-24 10:45:47,554 - Math_41 - INFO - 
+for (int i = begin; i < begin + length; i++) {
+
+2024-02-24 10:45:48,806 - Math_41 - INFO - 编译成功
+2024-02-24 10:46:08,328 - Math_41 - INFO - 测试成功
+2024-02-24 10:46:08,328 - Math_41 - INFO - 补丁1 1 通过了所有的测试用例

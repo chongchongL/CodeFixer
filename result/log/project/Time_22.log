@@ -1,0 +1,332 @@
+2024-02-26 10:06:35,750 - Time_22 - INFO - rm -rf /home/chongchong/d4j-project/Time_22
+2024-02-26 10:06:35,751 - Time_22 - INFO - 删除 Time 22b 成功
+2024-02-26 10:06:35,751 - Time_22 - INFO - defects4j checkout -p Time -v 22b -w /home/chongchong/d4j-project/Time_22
+2024-02-26 10:06:39,338 - Time_22 - INFO - checkout Time 22b 成功
+2024-02-26 10:06:45,529 - Time_22 - INFO - 编译成功
+2024-02-26 10:06:53,174 - Time_22 - INFO - 测试失败
+2024-02-26 10:06:53,174 - Time_22 - INFO - Failing tests: 3
+  - org.joda.time.TestDuration_Basics::testToPeriod_fixedZone
+  - org.joda.time.TestMonthDay_Properties::testPropertyGetMonthOfYear
+  - org.joda.time.TestPeriod_Constructors::testConstructor_long_fixedZone
+
+2024-02-26 10:06:54,070 - Time_22 - INFO - 它的bug类型为:
+2024-02-26 10:06:54,070 - Time_22 - INFO - 4
+2024-02-26 10:07:54,005 - Time_22 - INFO - 开始验证补丁1 1:
+2024-02-26 10:07:54,005 - Time_22 - INFO - 
+    protected BasePeriod(long duration) {
+        super(duration / DateTimeConstants.MILLIS_PER_HOUR / DateTimeConstants.HOURS_PER_DAY, // hours
+              (duration / DateTimeConstants.MILLIS_PER_HOUR) % DateTimeConstants.HOURS_PER_DAY, // minutes
+              (duration / DateTimeConstants.MILLIS_PER_MINUTE) % DateTimeConstants.MINUTES_PER_HOUR, // seconds
+              duration % DateTimeConstants.MILLIS_PER_MINUTE); // milliseconds
+    }
+
+2024-02-26 10:07:54,577 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:54,577 - Time_22 - INFO - 错误: 非法的表达式开始
+protected BasePeriod(long duration) {
+2024-02-26 10:07:54,577 - Time_22 - INFO - 补丁1 1 未成功编译
+2024-02-26 10:07:54,578 - Time_22 - INFO - 开始验证补丁1 2:
+2024-02-26 10:07:54,578 - Time_22 - INFO - 
+    protected BasePeriod(long duration) {
+        super(duration / 3600000, // hours
+              (duration % 3600000) / 60000, // minutes
+              (duration % 60000) / 1000, // seconds
+              duration % 1000); // milliseconds
+    }
+
+2024-02-26 10:07:55,146 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:55,146 - Time_22 - INFO - 错误: 非法的表达式开始
+protected BasePeriod(long duration) {
+2024-02-26 10:07:55,146 - Time_22 - INFO - 补丁1 2 未成功编译
+2024-02-26 10:07:55,147 - Time_22 - INFO - 开始验证补丁1 3:
+2024-02-26 10:07:55,147 - Time_22 - INFO - 
+    protected BasePeriod(long duration) {
+        this(new PeriodType(), duration, null);
+    }
+
+2024-02-26 10:07:55,731 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:55,731 - Time_22 - INFO - 错误: 非法的表达式开始
+protected BasePeriod(long duration) {
+2024-02-26 10:07:55,731 - Time_22 - INFO - 补丁1 3 未成功编译
+2024-02-26 10:07:55,732 - Time_22 - INFO - 开始验证补丁1 4:
+2024-02-26 10:07:55,732 - Time_22 - INFO - 
+// The duration needs to be properly converted to hours, minutes, seconds, and milliseconds.
+long hours = duration / 3600000; // 1 hour = 3600000 ms
+long remainingDuration = duration % 3600000;
+long minutes = remainingDuration / 60000; // 1 minute = 60000 ms
+remainingDuration %= 60000;
+long seconds = remainingDuration / 1000; // 1 second = 1000 ms
+long milliseconds = remainingDuration % 1000;
+
+this(hours, minutes, seconds, milliseconds);
+
+2024-02-26 10:07:56,407 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:56,407 - Time_22 - INFO - 错误: 对this的调用必须是构造器中的第一个语句
+this(hours, minutes, seconds, milliseconds);
+2024-02-26 10:07:56,407 - Time_22 - INFO - 补丁1 4 未成功编译
+2024-02-26 10:07:56,408 - Time_22 - INFO - 开始验证补丁1 5:
+2024-02-26 10:07:56,408 - Time_22 - INFO - 
+// Assuming there's a constructor that takes care of the conversion when just the milliseconds are provided.
+this(duration);
+
+2024-02-26 10:07:57,103 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:57,103 - Time_22 - INFO - 错误: 递归构造器调用
+protected BasePeriod(long duration) {
+2024-02-26 10:07:57,104 - Time_22 - INFO - 补丁1 5 未成功编译
+2024-02-26 10:07:57,105 - Time_22 - INFO - 开始验证补丁1 6:
+2024-02-26 10:07:57,105 - Time_22 - INFO - 
+// If the BasePeriod class has a method to handle conversion and another constructor that takes the units separately.
+PeriodType type = PeriodType.standard(); // Assuming standard type includes hours, minutes, seconds and milliseconds.
+this(new Period(duration, type, ISOChronology.getInstanceUTC()));
+
+2024-02-26 10:07:57,770 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:57,770 - Time_22 - INFO - 错误: 对this的调用必须是构造器中的第一个语句
+this(new Period(duration, type, ISOChronology.getInstanceUTC()));
+2024-02-26 10:07:57,770 - Time_22 - INFO - 补丁1 6 未成功编译
+2024-02-26 10:07:57,771 - Time_22 - INFO - 开始验证补丁1 7:
+2024-02-26 10:07:57,771 - Time_22 - INFO - 
+this(0, 0, 0, 0, 0, 0, 0, duration, ISOChronology.getInstanceUTC());
+
+2024-02-26 10:07:57,771 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:07:57,771 - Time_22 - ERROR - list index out of range
+2024-02-26 10:07:57,771 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:07:57,772 - Time_22 - INFO - 开始验证补丁1 8:
+2024-02-26 10:07:57,772 - Time_22 - INFO - 
+long days = duration / DateTimeConstants.MILLIS_PER_DAY;
+long hours = (duration % DateTimeConstants.MILLIS_PER_DAY) / DateTimeConstants.MILLIS_PER_HOUR;
+long minutes = (duration % DateTimeConstants.MILLIS_PER_HOUR) / DateTimeConstants.MILLIS_PER_MINUTE;
+long seconds = (duration % DateTimeConstants.MILLIS_PER_MINUTE) / DateTimeConstants.MILLIS_PER_SECOND;
+long millis = duration % DateTimeConstants.MILLIS_PER_SECOND;
+this(days, hours, minutes, seconds, millis);
+
+2024-02-26 10:07:58,449 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:58,449 - Time_22 - INFO - 错误: 找不到符号
+long days = duration / DateTimeConstants.MILLIS_PER_DAY;
+2024-02-26 10:07:58,449 - Time_22 - INFO - 补丁1 8 未成功编译
+2024-02-26 10:07:58,450 - Time_22 - INFO - 开始验证补丁1 9:
+2024-02-26 10:07:58,450 - Time_22 - INFO - 
+PeriodConverter converter = null;
+PeriodType type = null;
+this(duration, type, converter);
+
+2024-02-26 10:07:59,128 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:59,128 - Time_22 - INFO - 错误: 对this的调用必须是构造器中的第一个语句
+this(duration, type, converter);
+2024-02-26 10:07:59,128 - Time_22 - INFO - 补丁1 9 未成功编译
+2024-02-26 10:07:59,129 - Time_22 - INFO - 开始验证补丁2 1:
+2024-02-26 10:07:59,129 - Time_22 - INFO - 
+    this(duration, ISOChronology.getInstanceUTC(), null);
+    // Ensure the right chronology (UTC) is used for calculating the period
+
+2024-02-26 10:07:59,818 - Time_22 - INFO - 编译失败
+2024-02-26 10:07:59,818 - Time_22 - INFO - 错误: 对于BasePeriod(long,ISOChronology,<空值>), 找不到合适的构造器
+this(duration, ISOChronology.getInstanceUTC(), null);
+2024-02-26 10:07:59,818 - Time_22 - INFO - 补丁2 1 未成功编译
+2024-02-26 10:07:59,819 - Time_22 - INFO - 开始验证补丁2 2:
+2024-02-26 10:07:59,819 - Time_22 - INFO - 
+    this(duration, ISOChronology.getInstance(), PeriodType.standard());
+    // Use the ISOChronology and standard period type for accurate calculations
+
+2024-02-26 10:08:00,494 - Time_22 - INFO - 编译失败
+2024-02-26 10:08:00,495 - Time_22 - INFO - 错误: 对于BasePeriod(long,ISOChronology,PeriodType), 找不到合适的构造器
+this(duration, ISOChronology.getInstance(), PeriodType.standard());
+2024-02-26 10:08:00,495 - Time_22 - INFO - 补丁2 2 未成功编译
+2024-02-26 10:08:00,496 - Time_22 - INFO - 开始验证补丁2 3:
+2024-02-26 10:08:00,496 - Time_22 - INFO - 
+    this(0, 0, 0, 0, 0, 0, 0, duration, null);
+    // Explicitly break down the duration into the period fields assuming no field larger than milliseconds
+
+2024-02-26 10:08:01,169 - Time_22 - INFO - 编译失败
+2024-02-26 10:08:01,169 - Time_22 - INFO - 错误: 对于BasePeriod(int,int,int,int,int,int,int,long,<空值>), 找不到合适的构造器
+this(0, 0, 0, 0, 0, 0, 0, duration, null);
+2024-02-26 10:08:01,169 - Time_22 - INFO - 补丁2 3 未成功编译
+2024-02-26 10:08:01,170 - Time_22 - INFO - 开始验证补丁2 4:
+2024-02-26 10:08:01,170 - Time_22 - INFO - 
+this(duration, ISOChronology.getInstanceUTC(), null);
+
+2024-02-26 10:08:01,170 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,170 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,170 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,171 - Time_22 - INFO - 开始验证补丁2 5:
+2024-02-26 10:08:01,171 - Time_22 - INFO - 
+this(duration, ISOChronology.getInstance(), PeriodType.standard());
+
+2024-02-26 10:08:01,171 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,171 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,171 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,172 - Time_22 - INFO - 开始验证补丁2 6:
+2024-02-26 10:08:01,172 - Time_22 - INFO - 
+this(new Period(duration, PeriodType.millis()));
+
+2024-02-26 10:08:01,172 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,172 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,172 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,173 - Time_22 - INFO - 开始验证补丁2 7:
+2024-02-26 10:08:01,173 - Time_22 - INFO - 
+this(duration, PeriodType.standard(), ISOChronology.getInstanceUTC());
+
+2024-02-26 10:08:01,173 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,173 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,173 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,174 - Time_22 - INFO - 开始验证补丁2 8:
+2024-02-26 10:08:01,174 - Time_22 - INFO - 
+this(duration, PeriodType.millis());
+
+2024-02-26 10:08:01,174 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,175 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,175 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,175 - Time_22 - INFO - 开始验证补丁2 9:
+2024-02-26 10:08:01,175 - Time_22 - INFO - 
+super(duration);
+
+2024-02-26 10:08:01,176 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,176 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,176 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,177 - Time_22 - INFO - 开始验证补丁3 1:
+2024-02-26 10:08:01,177 - Time_22 - INFO - 
+this(new PeriodType(null), duration, null);
+
+2024-02-26 10:08:01,177 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,177 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,177 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,178 - Time_22 - INFO - 开始验证补丁3 2:
+2024-02-26 10:08:01,178 - Time_22 - INFO - 
+this(duration, ISOChronology.getInstanceUTC(), PeriodType.standard());
+
+2024-02-26 10:08:01,178 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,178 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,178 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,179 - Time_22 - INFO - 开始验证补丁3 3:
+2024-02-26 10:08:01,179 - Time_22 - INFO - 
+super(duration, null, null);
+
+2024-02-26 10:08:01,179 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,179 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,179 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,180 - Time_22 - INFO - 开始验证补丁3 4:
+2024-02-26 10:08:01,180 - Time_22 - INFO - 
+this(duration, ISOChronology.getInstanceUTC(), null);
+
+2024-02-26 10:08:01,180 - Time_22 - INFO - 补丁3 4为重复的补丁
+2024-02-26 10:08:01,181 - Time_22 - INFO - 开始验证补丁3 5:
+2024-02-26 10:08:01,181 - Time_22 - INFO - 
+this(duration, ISOChronology.getInstance(), LocalDate.now().getZone());
+
+2024-02-26 10:08:01,181 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,181 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,181 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,182 - Time_22 - INFO - 开始验证补丁3 6:
+2024-02-26 10:08:01,182 - Time_22 - INFO - 
+this(Years.years(0), Months.months(0), Weeks.weeks(0), Days.days((int) (duration / DateTimeConstants.MILLIS_PER_DAY)), Hours.hours((int) (duration % DateTimeConstants.MILLIS_PER_DAY / DateTimeConstants.MILLIS_PER_HOUR)), Minutes.minutes((int) (duration % DateTimeConstants.MILLIS_PER_HOUR / DateTimeConstants.MILLIS_PER_MINUTE)), Seconds.seconds((int) (duration % DateTimeConstants.MILLIS_PER_MINUTE / DateTimeConstants.MILLIS_PER_SECOND)), Millis.millis((int) (duration % DateTimeConstants.MILLIS_PER_SECOND)), null);
+
+2024-02-26 10:08:01,182 - Time_22 - INFO - 补丁Time 22 出错，信息如下：
+2024-02-26 10:08:01,182 - Time_22 - ERROR - list index out of range
+2024-02-26 10:08:01,182 - Time_22 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:08:01,183 - Time_22 - INFO - 开始验证补丁3 7:
+2024-02-26 10:08:01,183 - Time_22 - INFO - 
+this.years = 0;
+this.months = 0;
+this.weeks = 0;
+this.days = (int) (duration / DateTimeConstants.MILLIS_PER_DAY);
+int leftover = (int) (duration % DateTimeConstants.MILLIS_PER_DAY);
+this.hours = leftover / DateTimeConstants.MILLIS_PER_HOUR;
+leftover %= DateTimeConstants.MILLIS_PER_HOUR;
+this.minutes = leftover / DateTimeConstants.MILLIS_PER_MINUTE;
+leftover %= DateTimeConstants.MILLIS_PER_MINUTE;
+this.seconds = leftover / DateTimeConstants.MILLIS_PER_SECOND;
+this.milliseconds = leftover % DateTimeConstants.MILLIS_PER_SECOND;
+
+2024-02-26 10:08:01,857 - Time_22 - INFO - 编译失败
+2024-02-26 10:08:01,857 - Time_22 - INFO - 错误: 找不到符号
+this.years = 0;
+2024-02-26 10:08:01,857 - Time_22 - INFO - 补丁3 7 未成功编译
+2024-02-26 10:08:01,858 - Time_22 - INFO - 开始验证补丁3 8:
+2024-02-26 10:08:01,858 - Time_22 - INFO - 
+PeriodType type = PeriodType.standard(); // Assumes standard period type for day and lower fields.
+setPeriod(duration, type);
+
+2024-02-26 10:08:02,531 - Time_22 - INFO - 编译失败
+2024-02-26 10:08:02,531 - Time_22 - INFO - 错误: 对于setPeriod(long,PeriodType), 找不到合适的方法
+setPeriod(duration, type);
+2024-02-26 10:08:02,531 - Time_22 - INFO - 补丁3 8 未成功编译
+2024-02-26 10:08:02,532 - Time_22 - INFO - 开始验证补丁3 9:
+2024-02-26 10:08:02,532 - Time_22 - INFO - 
+// Assumes that the constructor itself should not do the calculation and a factory method should be used.
+this(Period.fieldDifference(new DateTime(0), new DateTime(duration)));
+
+2024-02-26 10:08:03,206 - Time_22 - INFO - 编译失败
+2024-02-26 10:08:03,206 - Time_22 - INFO - 错误: 找不到符号
+this(Period.fieldDifference(new DateTime(0), new DateTime(duration)));
+2024-02-26 10:08:03,206 - Time_22 - INFO - 补丁3 9 未成功编译
+2024-02-26 10:08:03,206 - Time_22 - INFO - Time_22 未成功修复

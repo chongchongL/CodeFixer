@@ -1,0 +1,382 @@
+2024-02-25 01:02:25,758 - Closure_35 - INFO - rm -rf /home/chongchong/d4j-project/Closure_35
+2024-02-25 01:02:25,759 - Closure_35 - INFO - 删除 Closure 35b 成功
+2024-02-25 01:02:25,759 - Closure_35 - INFO - defects4j checkout -p Closure -v 35b -w /home/chongchong/d4j-project/Closure_35
+2024-02-25 01:02:27,608 - Closure_35 - INFO - checkout Closure 35b 成功
+2024-02-25 01:02:38,874 - Closure_35 - INFO - 编译成功
+2024-02-25 01:03:26,375 - Closure_35 - INFO - 测试失败
+2024-02-25 01:03:26,380 - Closure_35 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue669
+
+2024-02-25 01:03:27,392 - Closure_35 - INFO - 它的bug类型为:
+2024-02-25 01:03:27,392 - Closure_35 - INFO - 2
+2024-02-25 01:04:42,684 - Closure_35 - INFO - 开始验证补丁1 1:
+2024-02-25 01:04:42,684 - Closure_35 - INFO - 
+               objType.defineInferredProperty(prop, typeToInfer, null);
+             }
+           }
+         }
+       }
+     }
+   
+2024-02-25 01:04:44,499 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:44,499 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:04:44,499 - Closure_35 - INFO - 补丁1 1 未成功编译
+2024-02-25 01:04:44,500 - Closure_35 - INFO - 开始验证补丁1 2:
+2024-02-25 01:04:44,500 - Closure_35 - INFO - 
+               objType.defineInferredProperty(prop, typeToInfer, null);
+             } else {
+               // Retain the original property type or implement some other logic
+               objType.defineInferredProperty(prop, objType.getPropertyType(prop), null);
+             }
+           }
+         }
+       }
+     }
+   
+2024-02-25 01:04:46,314 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:46,314 - Closure_35 - INFO - 错误: 非法的类型开始
+} else {
+2024-02-25 01:04:46,314 - Closure_35 - INFO - 补丁1 2 未成功编译
+2024-02-25 01:04:46,315 - Closure_35 - INFO - 开始验证补丁1 3:
+2024-02-25 01:04:46,315 - Closure_35 - INFO - 
+               objType.defineInferredProperty(prop, typeToInfer, null);
+             } else {
+               // Change from VOID_TYPE to another type, handle the fact that property is not present 
+               // Call a method or set a specific type that makes sense in your context
+               JSType appropriateType = // ... determine appropriate type to use here
+               objType.defineInferredProperty(prop, appropriateType, null);
+             }
+           }
+         }
+       }
+     }
+   
+2024-02-25 01:04:48,115 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:48,115 - Closure_35 - INFO - 错误: 非法的类型开始
+} else {
+2024-02-25 01:04:48,115 - Closure_35 - INFO - 补丁1 3 未成功编译
+2024-02-25 01:04:48,116 - Closure_35 - INFO - 开始验证补丁1 4:
+2024-02-25 01:04:48,116 - Closure_35 - INFO - 
+    ObjectType constraintObj =
+        ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+    if (constraintObj != null && constraintObj.isRecordType()) {
+        ObjectType objType = ObjectType.cast(type.restrictByNotNullOrUndefined());
+        if (objType != null) {
+            for (String prop : constraintObj.getOwnPropertyNames()) {
+                JSType propType = constraintObj.getPropertyType(prop);
+                if (!objType.isPropertyTypeDeclared(prop)) {
+                    JSType typeToInfer = propType;
+                    if (!objType.hasProperty(prop)) {
+                        typeToInfer =
+                            getNativeType(VOID_TYPE).getLeastSupertype(propType);
+                    }
+                    objType.defineInferredProperty(prop, typeToInfer, null);
+                }
+            }
+        }
+    }
+
+2024-02-25 01:04:49,931 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:49,931 - Closure_35 - INFO - 错误: 需要class, interface或enum
+private FlowScope dereferencePointer(Node n, FlowScope scope) {
+2024-02-25 01:04:49,931 - Closure_35 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:04:49,932 - Closure_35 - INFO - 开始验证补丁1 5:
+2024-02-25 01:04:49,932 - Closure_35 - INFO - 
+    ObjectType constraintObj =
+        ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+    if (constraintObj != null && constraintObj.isRecordType()) {
+        ObjectType objType = ObjectType.cast(type.restrictByNotNullOrUndefined());
+        if (objType != null) {
+            for (String prop : constraintObj.getOwnPropertyNames()) {
+                JSType propType = constraintObj.getPropertyType(prop);
+                if (!objType.isPropertyTypeDeclared(prop)) {
+                    JSType typeToInfer = propType;
+                    if (!objType.hasProperty(prop)) {
+                        typeToInfer =
+                            getNativeType(VOID_TYPE).getLeastSupertype(propType);
+                    }
+                    objType.defineInferredProperty(prop, typeToInfer, null);
+                }
+            }
+            // Additional code may be needed here to finalize the property type adjustments
+        }
+    }
+
+2024-02-25 01:04:51,797 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:51,798 - Closure_35 - INFO - 错误: 需要class, interface或enum
+private FlowScope dereferencePointer(Node n, FlowScope scope) {
+2024-02-25 01:04:51,798 - Closure_35 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:04:51,799 - Closure_35 - INFO - 开始验证补丁1 6:
+2024-02-25 01:04:51,799 - Closure_35 - INFO - 
+    ObjectType constraintObj =
+        ObjectType.cast(constraint.restrictByNotNullOrUndefined());
+    if (constraintObj != null && constraintObj.isRecordType()) {
+        ObjectType objType = ObjectType.cast(type.restrictByNotNullOrUndefined());
+        if (objType != null) {
+            for (String prop : constraintObj.getOwnPropertyNames()) {
+                JSType propType = constraintObj.getPropertyType(prop);
+                if (!objType.isPropertyTypeDeclared(prop)) {
+                    JSType typeToInfer = propType;
+                    if (!objType.hasProperty(prop)) {
+                        typeToInfer =
+                            getNativeType(JSTypeNative.UNKNOWN_TYPE).getLeastSupertype(propType);
+                    }
+                    objType.defineInferredProperty(prop, typeToInfer, null);
+                }
+            }
+        }
+    }
+
+2024-02-25 01:04:53,617 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:53,617 - Closure_35 - INFO - 错误: 需要class, interface或enum
+private FlowScope dereferencePointer(Node n, FlowScope scope) {
+2024-02-25 01:04:53,617 - Closure_35 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:04:53,618 - Closure_35 - INFO - 开始验证补丁1 7:
+2024-02-25 01:04:53,619 - Closure_35 - INFO - 
+    }
+
+2024-02-25 01:04:55,402 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:55,402 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:04:55,402 - Closure_35 - INFO - 补丁1 7 未成功编译
+2024-02-25 01:04:55,403 - Closure_35 - INFO - 开始验证补丁1 8:
+2024-02-25 01:04:55,403 - Closure_35 - INFO - 
+        }
+    }
+
+2024-02-25 01:04:57,218 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:57,218 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:04:57,218 - Closure_35 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:04:57,219 - Closure_35 - INFO - 开始验证补丁1 9:
+2024-02-25 01:04:57,219 - Closure_35 - INFO - 
+        // Additional logic could be here
+        // ...
+    }
+
+2024-02-25 01:04:59,061 - Closure_35 - INFO - 编译失败
+2024-02-25 01:04:59,061 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:04:59,061 - Closure_35 - INFO - 补丁1 9 未成功编译
+2024-02-25 01:04:59,062 - Closure_35 - INFO - 开始验证补丁2 1:
+2024-02-25 01:04:59,062 - Closure_35 - INFO - 
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+   
+2024-02-25 01:05:00,880 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:00,880 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:00,880 - Closure_35 - INFO - 补丁2 1 未成功编译
+2024-02-25 01:05:00,881 - Closure_35 - INFO - 开始验证补丁2 2:
+2024-02-25 01:05:00,881 - Closure_35 - INFO - 
+               }
+             }
+           }
+         }
+       }
+       // Handle alternative case here, if needed
+     }
+   }
+   
+2024-02-25 01:05:02,677 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:02,677 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:02,677 - Closure_35 - INFO - 补丁2 2 未成功编译
+2024-02-25 01:05:02,679 - Closure_35 - INFO - 开始验证补丁2 3:
+2024-02-25 01:05:02,679 - Closure_35 - INFO - 
+               }
+             }
+           }
+         }
+       } catch (TypeInferenceException e) {
+         // Handle the exception
+       }
+     }
+   }
+   
+2024-02-25 01:05:04,472 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:04,472 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:04,472 - Closure_35 - INFO - 补丁2 3 未成功编译
+2024-02-25 01:05:04,473 - Closure_35 - INFO - 开始验证补丁2 4:
+2024-02-25 01:05:04,473 - Closure_35 - INFO - 
+      }
+    }
+  }
+}
+
+2024-02-25 01:05:06,294 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:06,294 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:06,294 - Closure_35 - INFO - 补丁2 4 未成功编译
+2024-02-25 01:05:06,295 - Closure_35 - INFO - 开始验证补丁2 5:
+2024-02-25 01:05:06,295 - Closure_35 - INFO - 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+2024-02-25 01:05:08,092 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:08,092 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:08,092 - Closure_35 - INFO - 补丁2 5 未成功编译
+2024-02-25 01:05:08,093 - Closure_35 - INFO - 开始验证补丁2 6:
+2024-02-25 01:05:08,093 - Closure_35 - INFO - 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+2024-02-25 01:05:08,093 - Closure_35 - INFO - 补丁2 6为重复的补丁
+2024-02-25 01:05:08,094 - Closure_35 - INFO - 开始验证补丁2 7:
+2024-02-25 01:05:08,094 - Closure_35 - INFO - 
+        }
+      }
+    }
+
+2024-02-25 01:05:09,927 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:09,928 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:09,928 - Closure_35 - INFO - 补丁2 7 未成功编译
+2024-02-25 01:05:09,929 - Closure_35 - INFO - 开始验证补丁2 8:
+2024-02-25 01:05:09,929 - Closure_35 - INFO - 
+            }
+          }
+        }
+      }
+    }
+
+2024-02-25 01:05:11,723 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:11,723 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:11,724 - Closure_35 - INFO - 补丁2 8 未成功编译
+2024-02-25 01:05:11,725 - Closure_35 - INFO - 开始验证补丁2 9:
+2024-02-25 01:05:11,725 - Closure_35 - INFO - 
+                typeToInfer = getNativeType(JSTypeNative.UNKNOWN_TYPE).getLeastSupertype(propType);
+              }
+              objType.defineInferredProperty(prop, typeToInfer, null);
+            }
+          }
+        }
+      }
+    }
+
+2024-02-25 01:05:13,542 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:13,543 - Closure_35 - INFO - 错误: 需要<标识符>
+objType.defineInferredProperty(prop, typeToInfer, null);
+2024-02-25 01:05:13,543 - Closure_35 - INFO - 补丁2 9 未成功编译
+2024-02-25 01:05:13,544 - Closure_35 - INFO - 开始验证补丁3 1:
+2024-02-25 01:05:13,544 - Closure_35 - INFO - 
+      }
+    }
+  }
+
+2024-02-25 01:05:15,357 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:15,357 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:15,357 - Closure_35 - INFO - 补丁3 1 未成功编译
+2024-02-25 01:05:15,358 - Closure_35 - INFO - 开始验证补丁3 2:
+2024-02-25 01:05:15,358 - Closure_35 - INFO - 
+      }
+    }
+    // Additional code might be intended to go here
+  }
+
+2024-02-25 01:05:17,139 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:17,139 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:17,139 - Closure_35 - INFO - 补丁3 2 未成功编译
+2024-02-25 01:05:17,140 - Closure_35 - INFO - 开始验证补丁3 3:
+2024-02-25 01:05:17,140 - Closure_35 - INFO - 
+        }
+      }
+    // Handle cases where constraintObj is null or is not a record type
+    }
+  }
+
+2024-02-25 01:05:18,930 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:18,930 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:18,930 - Closure_35 - INFO - 补丁3 3 未成功编译
+2024-02-25 01:05:18,931 - Closure_35 - INFO - 开始验证补丁3 4:
+2024-02-25 01:05:18,931 - Closure_35 - INFO - 
+    }
+  }
+  // Close the function body and class/enclosure as per the initial structure
+
+2024-02-25 01:05:20,750 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:20,750 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:20,750 - Closure_35 - INFO - 补丁3 4 未成功编译
+2024-02-25 01:05:20,751 - Closure_35 - INFO - 开始验证补丁3 5:
+2024-02-25 01:05:20,751 - Closure_35 - INFO - 
+      }
+    }
+  }
+  // This closes the outer if statement and the function block, assuming proper nesting from provided snippet.
+
+2024-02-25 01:05:22,555 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:22,555 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:22,555 - Closure_35 - INFO - 补丁3 5 未成功编译
+2024-02-25 01:05:22,557 - Closure_35 - INFO - 开始验证补丁3 6:
+2024-02-25 01:05:22,557 - Closure_35 - INFO - 
+        }
+      }
+    }
+  }
+  // This closes the for loop, the inner if statement, the outer if statement, and the function block, assuming an additional block is intended based on context which was not provided in the snippet.
+
+2024-02-25 01:05:24,423 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:24,423 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:24,423 - Closure_35 - INFO - 补丁3 6 未成功编译
+2024-02-25 01:05:24,424 - Closure_35 - INFO - 开始验证补丁3 7:
+2024-02-25 01:05:24,424 - Closure_35 - INFO - 
+    }
+  }
+}
+
+2024-02-25 01:05:26,211 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:26,211 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:26,211 - Closure_35 - INFO - 补丁3 7 未成功编译
+2024-02-25 01:05:26,212 - Closure_35 - INFO - 开始验证补丁3 8:
+2024-02-25 01:05:26,212 - Closure_35 - INFO - 
+          }
+        }
+      }
+    }
+  }
+
+2024-02-25 01:05:28,007 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:28,008 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:28,008 - Closure_35 - INFO - 补丁3 8 未成功编译
+2024-02-25 01:05:28,009 - Closure_35 - INFO - 开始验证补丁3 9:
+2024-02-25 01:05:28,009 - Closure_35 - INFO - 
+        }
+      }
+    }
+  }
+  // Additional code or method definitions may follow here
+
+2024-02-25 01:05:29,825 - Closure_35 - INFO - 编译失败
+2024-02-25 01:05:29,825 - Closure_35 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-25 01:05:29,825 - Closure_35 - INFO - 补丁3 9 未成功编译
+2024-02-25 01:05:29,825 - Closure_35 - INFO - Closure_35 未成功修复

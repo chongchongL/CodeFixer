@@ -1,0 +1,34 @@
+2024-02-24 01:23:14,876 - Mockito_29 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_29
+2024-02-24 01:23:14,877 - Mockito_29 - INFO - 删除 Mockito 29b 成功
+2024-02-24 01:23:14,877 - Mockito_29 - INFO - defects4j checkout -p Mockito -v 29b -w /home/chongchong/d4j-project/Mockito_29
+2024-02-24 01:23:17,234 - Mockito_29 - INFO - checkout Mockito 29b 成功
+2024-02-24 01:23:22,320 - Mockito_29 - INFO - 编译成功
+2024-02-24 01:23:40,859 - Mockito_29 - INFO - 测试失败
+2024-02-24 01:23:40,859 - Mockito_29 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.NPEWithCertainMatchersTest::shouldNotThrowNPEWhenNullPassedToSame
+
+2024-02-24 01:23:41,738 - Mockito_29 - INFO - 它的bug类型为:
+2024-02-24 01:23:41,738 - Mockito_29 - INFO - 1
+2024-02-24 01:24:46,392 - Mockito_29 - INFO - Mockito_29 未成功修复
+2024-02-24 12:19:29,660 - Mockito_29 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_29
+2024-02-24 12:19:29,686 - Mockito_29 - INFO - 删除 Mockito 29b 成功
+2024-02-24 12:19:29,686 - Mockito_29 - INFO - defects4j checkout -p Mockito -v 29b -w /home/chongchong/d4j-project/Mockito_29
+2024-02-24 12:19:32,061 - Mockito_29 - INFO - checkout Mockito 29b 成功
+2024-02-24 12:19:37,089 - Mockito_29 - INFO - 编译成功
+2024-02-24 12:19:55,842 - Mockito_29 - INFO - 测试失败
+2024-02-24 12:19:55,842 - Mockito_29 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.NPEWithCertainMatchersTest::shouldNotThrowNPEWhenNullPassedToSame
+
+2024-02-24 12:19:56,720 - Mockito_29 - INFO - 它的bug类型为:
+2024-02-24 12:19:56,720 - Mockito_29 - INFO - 1
+2024-02-24 12:20:18,829 - Mockito_29 - INFO - 开始验证补丁1 1:
+2024-02-24 12:20:18,829 - Mockito_29 - INFO - 
+        if (wanted == null) {
+            description.appendText("null");
+        } else {
+            description.appendText(wanted.toString());
+        }
+
+2024-02-24 12:20:23,920 - Mockito_29 - INFO - 编译成功
+2024-02-24 12:20:42,551 - Mockito_29 - INFO - 测试成功
+2024-02-24 12:20:42,551 - Mockito_29 - INFO - 补丁1 1 通过了所有的测试用例

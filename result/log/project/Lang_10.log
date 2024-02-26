@@ -1,0 +1,727 @@
+2024-02-26 11:20:57,033 - Lang_10 - INFO - rm -rf /home/chongchong/d4j-project/Lang_10
+2024-02-26 11:20:57,034 - Lang_10 - INFO - 删除 Lang 10b 成功
+2024-02-26 11:20:57,034 - Lang_10 - INFO - defects4j checkout -p Lang -v 10b -w /home/chongchong/d4j-project/Lang_10
+2024-02-26 11:21:00,416 - Lang_10 - INFO - checkout Lang 10b 成功
+2024-02-26 11:21:05,600 - Lang_10 - INFO - 编译成功
+2024-02-26 11:21:17,879 - Lang_10 - INFO - 测试失败
+2024-02-26 11:21:17,880 - Lang_10 - INFO - Failing tests: 2
+  - org.apache.commons.lang3.time.FastDateFormat_ParserTest::testLANG_831
+  - org.apache.commons.lang3.time.FastDateParserTest::testLANG_831
+
+2024-02-26 11:21:18,753 - Lang_10 - INFO - 它的bug类型为:
+2024-02-26 11:21:18,753 - Lang_10 - INFO - 4
+2024-02-26 11:23:01,927 - Lang_10 - INFO - 开始验证补丁1 1:
+2024-02-26 11:23:01,927 - Lang_10 - INFO - 
+        for(int i=0; i<value.length(); i++) {
+            char c = value.charAt(i);
+            switch(c) {
+                case '\\':
+                    regex.append("\\\\");
+                    break;
+                case '.':
+                    regex.append("\\.");
+                    break;
+                case '?':
+                    regex.append("\\?");
+                    break;
+                case '*':
+                    regex.append("\\*");
+                    break;
+                case '+':
+                    regex.append("\\+");
+                    break;
+                case '&':
+                    regex.append("\\&");
+                    break;
+                case ':':
+                    regex.append("\\:");
+                    break;
+                case '{':
+                    regex.append("\\{");
+                    break;
+                case '}':
+                    regex.append("\\}");
+                    break;
+                case '[':
+                    regex.append("\\[");
+                    break;
+                case ']':
+                    regex.append("\\]");
+                    break;
+                case '(':
+                    regex.append("\\(");
+                    break;
+                case ')':
+                    regex.append("\\)");
+                    break;
+                case '^':
+                    regex.append("\\^");
+                    break;
+                case '$':
+                    regex.append("\\$");
+                    break;
+                case '|':
+                    regex.append("\\|");
+                    break;
+                case '\'':
+                    if (unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+                        i++; // skip the next quote
+                        regex.append("'");
+                    } else {
+                        regex.append("\\'");
+                    }
+                    break;
+                // It is not clear what should be done with whitespace
+                // characters based on the previous implementation
+                // The whitespace handling logic can be added based on further requirements
+                default:
+                    regex.append(c);
+            }
+        }
+        return regex;
+
+2024-02-26 11:23:02,475 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:02,475 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:02,475 - Lang_10 - INFO - 补丁1 1 未成功编译
+2024-02-26 11:23:02,477 - Lang_10 - INFO - 开始验证补丁1 2:
+2024-02-26 11:23:02,477 - Lang_10 - INFO - 
+        for(int i=0; i<value.length(); i++) {
+            char c = value.charAt(i);
+            if(Character.isWhitespace(c)) {
+                regex.append("\\s");
+                continue;
+            }
+            else {
+                switch(c) {
+                    // ... (remaining cases are the same as the most probable solution above)
+                    case '\'':
+                        if (unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+                            i++; // correctly skip the escaped quote
+                        } else {
+                            regex.append("\\'");
+                        }
+                        break;
+                    default:
+                        regex.append(c);
+                }
+            }
+        }
+        return regex;
+
+2024-02-26 11:23:03,022 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:03,022 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:03,022 - Lang_10 - INFO - 补丁1 2 未成功编译
+2024-02-26 11:23:03,023 - Lang_10 - INFO - 开始验证补丁1 3:
+2024-02-26 11:23:03,023 - Lang_10 - INFO - 
+        boolean wasWhite = false;
+        for(int i=0; i<value.length(); i++) {
+            char c = value.charAt(i);
+            if(Character.isWhitespace(c)) {
+                if(!wasWhite) {
+                    wasWhite = true;
+                    regex.append("\\s*");
+                }
+            } else {
+                wasWhite = false;
+                switch(c) {
+                    // ... (remaining cases are the same as the most probable solution above)
+                    case '\'':
+                        if (unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+                            i++; // correctly skip the escaped quote
+                            regex.append("'");
+                        } else {
+                            regex.append("\\'");
+                        }
+                        break;
+                    default:
+                        regex.append(c);
+                }
+            }
+        }
+        return regex;
+
+2024-02-26 11:23:03,563 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:03,563 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:03,563 - Lang_10 - INFO - 补丁1 3 未成功编译
+2024-02-26 11:23:03,564 - Lang_10 - INFO - 开始验证补丁1 4:
+2024-02-26 11:23:03,564 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        if (!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s+");
+        }
+    } else {
+        wasWhite = false;
+        if (c == '\'' && unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            // Replace two consecutive quotes with a single quote in the regex
+            regex.append("'");
+            i++; // Skip the next quote
+        } else {
+            // Escape other regex special characters as needed
+            if ("\\.^$|?*+()[{".indexOf(c) >= 0) {
+                regex.append("\\");
+            }
+            regex.append(c);
+        }
+    }
+}
+return regex;
+
+2024-02-26 11:23:04,110 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:04,110 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:04,110 - Lang_10 - INFO - 补丁1 4 未成功编译
+2024-02-26 11:23:04,111 - Lang_10 - INFO - 开始验证补丁1 5:
+2024-02-26 11:23:04,111 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        if (!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s*+");
+        }
+    } else {
+        wasWhite = false;
+        // Escape other regex special characters or handle quotes as needed
+        if (c == '\'' && unquote) {
+            if (i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+                regex.append("'");
+                i++; // Skip the next quote
+            } else {
+                // Single quote handling if unquote is false or it is a single standalone quote
+                regex.append("\\'");
+            }
+        } else {
+            if ("\\.^$|?*+()[{".indexOf(c) >= 0) {
+                regex.append("\\");
+            }
+            regex.append(c);
+        }
+    }
+}
+return regex;
+
+2024-02-26 11:23:04,655 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:04,655 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:04,655 - Lang_10 - INFO - 补丁1 5 未成功编译
+2024-02-26 11:23:04,656 - Lang_10 - INFO - 开始验证补丁1 6:
+2024-02-26 11:23:04,656 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for (int i = 0; i < value.length(); ) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        if (!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s*+");
+        }
+        i++; // Move this increment inside the whitespace checking block
+    } else {
+        wasWhite = false;
+        // Properly handle quoted sequences or escape needed characters
+        if (c == '\'' && unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            regex.append("'");
+            i += 2; // Skip both quotes
+        } else {
+            if ("\\.^$|?*+()[{".indexOf(c) >= 0) {
+                regex.append("\\");
+            }
+            regex.append(c);
+            i++; // Now increment `i` here
+        }
+    }
+}
+return regex;
+
+2024-02-26 11:23:05,201 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:05,201 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:05,202 - Lang_10 - INFO - 补丁1 6 未成功编译
+2024-02-26 11:23:05,203 - Lang_10 - INFO - 开始验证补丁1 7:
+2024-02-26 11:23:05,203 - Lang_10 - INFO - 
+for(int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if(Character.isWhitespace(c)) {
+        if(!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s+");
+        }
+    } else {
+        wasWhite = false;
+        // Handle other characters and escaping logic here
+        // ...
+    }
+}
+
+2024-02-26 11:23:05,749 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:05,749 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:05,749 - Lang_10 - INFO - 补丁1 7 未成功编译
+2024-02-26 11:23:05,750 - Lang_10 - INFO - 开始验证补丁1 8:
+2024-02-26 11:23:05,750 - Lang_10 - INFO - 
+boolean wasWhite = false;
+StringBuilder escapedValue = new StringBuilder();
+for(int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if(Character.isWhitespace(c)) {
+        if(!wasWhite) {
+            wasWhite = true;
+        }
+    } else if(c == '\'') {
+        if(unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            i++;
+        } else {
+            escapedValue.append("\\'");
+        }
+        wasWhite = false;
+    } else {
+        if(wasWhite) {
+            escapedValue.append("\\s");
+            wasWhite = false;
+        }
+        escapedValue.append(c);
+    }
+}
+return escapedValue;
+
+2024-02-26 11:23:06,299 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:06,299 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:06,300 - Lang_10 - INFO - 补丁1 8 未成功编译
+2024-02-26 11:23:06,301 - Lang_10 - INFO - 开始验证补丁1 9:
+2024-02-26 11:23:06,301 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for(int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if(Character.isWhitespace(c)) {
+        if(!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s+");
+        }
+    } else {
+        if(wasWhite) {
+            wasWhite = false;
+        }
+        if(c == '\'' && unquote) {
+            if(i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+                regex.append("'");
+                i++; // Skip the next quote if unquoting is enabled
+            } else {
+                regex.append("\\'"); // Escape the single quote if unquote is not true
+            }
+        } else {
+            // Escaping for other special regex characters (here, just an example with a dot)
+            if(c == '.') {
+                regex.append("\\.");
+            } else {
+                regex.append(c);
+            }
+        }
+    }
+}
+
+2024-02-26 11:23:06,844 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:06,844 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:06,844 - Lang_10 - INFO - 补丁1 9 未成功编译
+2024-02-26 11:23:06,845 - Lang_10 - INFO - 开始验证补丁2 1:
+2024-02-26 11:23:06,845 - Lang_10 - INFO - 
+for(int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if(c == '\'' && unquote) {
+        if(i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            regex.append("'");
+            i++; // Skip the next quote
+            continue;
+        }
+    }
+    if(Character.isWhitespace(c)) {
+        regex.append("\\s+");
+    } else {
+        // Escape special regex characters
+        if("^$.*+?()[]{}|\\".indexOf(c) != -1) {
+            regex.append("\\");
+        }
+        regex.append(c);
+    }
+}
+
+2024-02-26 11:23:07,389 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:07,389 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:07,389 - Lang_10 - INFO - 补丁2 1 未成功编译
+2024-02-26 11:23:07,390 - Lang_10 - INFO - 开始验证补丁2 2:
+2024-02-26 11:23:07,390 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for(int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if(c == '\'' && unquote) {
+        if(i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            regex.append("'");
+            i++; // Skip the next quote
+            continue;
+        }
+    }
+    if(Character.isWhitespace(c)) {
+        if(!wasWhite) {
+            regex.append("\\s+");
+            wasWhite = true;
+        }
+    } else {
+        wasWhite = false;
+        regex.append(Pattern.quote(String.valueOf(c)));
+    }
+}
+
+2024-02-26 11:23:07,925 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:07,925 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:07,925 - Lang_10 - INFO - 补丁2 2 未成功编译
+2024-02-26 11:23:07,926 - Lang_10 - INFO - 开始验证补丁2 3:
+2024-02-26 11:23:07,926 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for(int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if(c == '\'' && unquote) {
+        if(i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            regex.append("'");
+            i++; // Skip the next quote since it's been unquoted
+            continue;
+        }
+    } else if(Character.isWhitespace(c)) {
+        if(!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s+");
+        }
+    } else {
+        wasWhite = false;
+        // Escape special regex characters
+        if("^$.*+?()[]{}|\\".indexOf(c) != -1) {
+            regex.append("\\").append(c);
+        } else {
+            regex.append(c);
+        }
+    }
+}
+
+2024-02-26 11:23:08,481 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:08,481 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:08,481 - Lang_10 - INFO - 补丁2 3 未成功编译
+2024-02-26 11:23:08,482 - Lang_10 - INFO - 开始验证补丁2 4:
+2024-02-26 11:23:08,482 - Lang_10 - INFO - 
+regex.append(Pattern.quote(value.substring(i, i + 1)));
+if (unquote && c == '\'' && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+    i++; // Skip the next quote
+}
+
+2024-02-26 11:23:09,016 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:09,016 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:09,016 - Lang_10 - INFO - 补丁2 4 未成功编译
+2024-02-26 11:23:09,018 - Lang_10 - INFO - 开始验证补丁2 5:
+2024-02-26 11:23:09,018 - Lang_10 - INFO - 
+regex.append("\\Q").append(value.substring(i, i + 1)).append("\\E");
+if (unquote && c == '\'' && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+    i++; // Skip one character when two consecutive quotes are found 
+}
+
+2024-02-26 11:23:09,564 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:09,564 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:09,565 - Lang_10 - INFO - 补丁2 5 未成功编译
+2024-02-26 11:23:09,566 - Lang_10 - INFO - 开始验证补丁2 6:
+2024-02-26 11:23:09,566 - Lang_10 - INFO - 
+if (!Character.isWhitespace(c)) {
+    regex.append("\\Q").append(c).append("\\E");
+}
+if (unquote && c == '\'' && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+    regex.append("'"); // Replace two single quotes with one
+    i++; // Correctly handle escaping of '' to '
+}
+
+2024-02-26 11:23:10,109 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:10,109 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:10,109 - Lang_10 - INFO - 补丁2 6 未成功编译
+2024-02-26 11:23:10,110 - Lang_10 - INFO - 开始验证补丁2 7:
+2024-02-26 11:23:10,110 - Lang_10 - INFO - 
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        if (!wasWhite) {
+            regex.append("\\s+");
+        }
+        wasWhite = true;
+    } else {
+        if (wasWhite) {
+            wasWhite = false;
+        }
+        if (unquote && c == '\'' && (i + 1 < value.length()) && value.charAt(i + 1) == '\'') {
+            regex.append('\'');
+            i++; // Skip the next quote
+        } else {
+            regex.append("\\Q");
+            regex.append(c); // Escape the character
+            regex.append("\\E");
+        }
+    }
+}
+return regex;
+
+2024-02-26 11:23:10,661 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:10,661 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:10,661 - Lang_10 - INFO - 补丁2 7 未成功编译
+2024-02-26 11:23:10,662 - Lang_10 - INFO - 开始验证补丁2 8:
+2024-02-26 11:23:10,662 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for(int i= 0; i < value.length(); ++i) {
+    char c = value.charAt(i);
+    if(Character.isWhitespace(c)) {
+        if(!wasWhite) {
+            wasWhite = true;
+            regex.append("\\s+");
+        }
+    } else {
+        wasWhite = false;
+        if(unquote && c == '\'' && (i + 1 < value.length()) && value.charAt(i + 1) == '\'') {
+            regex.append('\'');
+            i++; // Skip the next quote
+        } else {
+            regex.append(c);
+        }
+    }
+}
+return regex;
+
+2024-02-26 11:23:11,213 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:11,213 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:11,213 - Lang_10 - INFO - 补丁2 8 未成功编译
+2024-02-26 11:23:11,214 - Lang_10 - INFO - 开始验证补丁2 9:
+2024-02-26 11:23:11,214 - Lang_10 - INFO - 
+boolean wasWhite = false;
+for(int i = 0; i < value.length(); ++i) {
+    char c = value.charAt(i);
+    // Handle whitespace and collapsing sequences of whitespaces
+    if (Character.isWhitespace(c)) {
+        if (!wasWhite) {
+            regex.append("\\s*+");
+            wasWhite = true;
+        }
+    } else {
+        wasWhite = false;
+        // Escape non-whitespace characters and account for quotes
+        regex.append("\\Q").append(c).append("\\E");
+        if (unquote && c == '\'' && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            i++; // Skip the second quote
+        }
+    }
+}
+return regex;
+
+2024-02-26 11:23:11,747 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:11,747 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:11,747 - Lang_10 - INFO - 补丁2 9 未成功编译
+2024-02-26 11:23:11,748 - Lang_10 - INFO - 开始验证补丁3 1:
+2024-02-26 11:23:11,748 - Lang_10 - INFO - 
+    for (int i = 0; i < value.length(); ++i) {
+        char c = value.charAt(i);
+        if (Character.isWhitespace(c)) {
+            regex.append("\\s");
+        } else {
+            if (c == '\'') {
+                if (unquote && i < value.length() - 1 && value.charAt(i + 1) == '\'') {
+                    regex.append('\''); 
+                    i++; // Skip the next quote
+                } else {
+                    regex.append("\\'");
+                }
+            } else {
+                regex.append(c);
+            }
+        }
+    }
+    
+2024-02-26 11:23:12,298 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:12,298 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:12,298 - Lang_10 - INFO - 补丁3 1 未成功编译
+2024-02-26 11:23:12,299 - Lang_10 - INFO - 开始验证补丁3 2:
+2024-02-26 11:23:12,299 - Lang_10 - INFO - 
+    for (int i = 0; i < value.length(); ++i) {
+        char c = value.charAt(i);
+        if (Character.isWhitespace(c)) {
+            regex.append("\\s+");
+        } else {
+            regex.append(Pattern.quote(String.valueOf(c)));
+            if (unquote && c == '\'' && i < value.length() - 1 && value.charAt(i + 1) == '\'') {
+                i++; // Skip the next quote
+            }
+        }
+    }
+    
+2024-02-26 11:23:12,842 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:12,842 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:12,842 - Lang_10 - INFO - 补丁3 2 未成功编译
+2024-02-26 11:23:12,843 - Lang_10 - INFO - 开始验证补丁3 3:
+2024-02-26 11:23:12,843 - Lang_10 - INFO - 
+    for (int i = 0; i < value.length(); i++) {
+        char c = value.charAt(i);
+        switch (c) {
+            case ' ':
+            case '\t':
+            case '\r':
+            case '\n':
+                regex.append("\\s+");
+                break;
+            case '\'':
+                if (unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+                    regex.append('\'');
+                    i++; // Skip the next quote
+                } else {
+                    regex.append("\\'");
+                }
+                break;
+            default:
+                regex.append(c);
+                break;
+        }
+    }
+    
+2024-02-26 11:23:13,416 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:13,416 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:13,416 - Lang_10 - INFO - 补丁3 3 未成功编译
+2024-02-26 11:23:13,417 - Lang_10 - INFO - 开始验证补丁3 4:
+2024-02-26 11:23:13,417 - Lang_10 - INFO - 
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        regex.append("\\s+");
+    } else if (c == '\'' && unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+        regex.append('\'');
+        i++; // Skip the next quote
+    } else {
+        regex.append(c);
+    }
+}
+
+2024-02-26 11:23:13,959 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:13,960 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:13,960 - Lang_10 - INFO - 补丁3 4 未成功编译
+2024-02-26 11:23:13,961 - Lang_10 - INFO - 开始验证补丁3 5:
+2024-02-26 11:23:13,961 - Lang_10 - INFO - 
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        // Copy the first whitespace character and then replace any additional whitespace with a regex that matches one or more whitespaces
+        regex.append(c);
+        while (i + 1 < value.length() && Character.isWhitespace(value.charAt(i + 1))) {
+            i++;
+        }
+        regex.append("\\s*");
+    } else if (c == '\'' && unquote) {
+        if (i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            regex.append('\'');
+            i++; // Skip the next quote
+        } else {
+            regex.append("\\'");
+        }
+    } else {
+        regex.append(c);
+    }
+}
+
+2024-02-26 11:23:14,507 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:14,507 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:14,507 - Lang_10 - INFO - 补丁3 5 未成功编译
+2024-02-26 11:23:14,509 - Lang_10 - INFO - 开始验证补丁3 6:
+2024-02-26 11:23:14,509 - Lang_10 - INFO - 
+boolean previousWasWhitespace = false;
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        if (!previousWasWhitespace) {
+            regex.append("\\s+");
+            previousWasWhitespace = true;
+        }
+    } else {
+        if (c == '\'' && unquote && i + 1 < value.length() && value.charAt(i + 1) == '\'') {
+            regex.append('\'');
+            i++; // Skip the next quote
+        } else {
+            regex.append(Pattern.quote(String.valueOf(c)));
+        }
+        previousWasWhitespace = false;
+    }
+}
+
+2024-02-26 11:23:15,055 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:15,055 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:15,055 - Lang_10 - INFO - 补丁3 6 未成功编译
+2024-02-26 11:23:15,056 - Lang_10 - INFO - 开始验证补丁3 7:
+2024-02-26 11:23:15,056 - Lang_10 - INFO - 
+regex.append(Pattern.quote(String.valueOf(c)));
+if (unquote && c == '\'' && i < value.length() - 1 && value.charAt(i + 1) == '\'') {
+    i++; // Skip the next quote
+}
+
+2024-02-26 11:23:15,601 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:15,601 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:15,601 - Lang_10 - INFO - 补丁3 7 未成功编译
+2024-02-26 11:23:15,602 - Lang_10 - INFO - 开始验证补丁3 8:
+2024-02-26 11:23:15,602 - Lang_10 - INFO - 
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (Character.isWhitespace(c)) {
+        regex.append("\\s");
+    } else {
+        if (unquote && c == '\'' && i < value.length() - 1 && value.charAt(i + 1) == '\'') {
+            i++; // Skip the next quote
+        } else {
+            regex.append(Pattern.quote(String.valueOf(c)));
+        }
+    }
+}
+
+2024-02-26 11:23:16,146 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:16,146 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:16,146 - Lang_10 - INFO - 补丁3 8 未成功编译
+2024-02-26 11:23:16,147 - Lang_10 - INFO - 开始验证补丁3 9:
+2024-02-26 11:23:16,147 - Lang_10 - INFO - 
+boolean previousWasWhitespace = false;
+for (int i = 0; i < value.length(); i++) {
+    char c = value.charAt(i);
+    if (!previousWasWhitespace && Character.isWhitespace(c)) {
+        regex.append("\\s+");
+        previousWasWhitespace = true;
+    } else if (!Character.isWhitespace(c)) {
+        regex.append(Pattern.quote(String.valueOf(c)));
+        previousWasWhitespace = false;
+    } // No need to handle consecutive whitespace as it's already covered by the "\\s+" regex
+    if (unquote && c == '\'' && i < value.length() - 1 && value.charAt(i + 1) == '\'') {
+        i++; // Skip the next quote
+    }
+}
+
+2024-02-26 11:23:16,693 - Lang_10 - INFO - 编译失败
+2024-02-26 11:23:16,693 - Lang_10 - INFO - 错误: 非法的类型开始
+return regex;
+2024-02-26 11:23:16,693 - Lang_10 - INFO - 补丁3 9 未成功编译
+2024-02-26 11:23:16,693 - Lang_10 - INFO - Lang_10 未成功修复

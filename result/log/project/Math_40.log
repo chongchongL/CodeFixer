@@ -1,0 +1,537 @@
+2024-02-26 01:39:43,847 - Math_40 - INFO - rm -rf /home/chongchong/d4j-project/Math_40
+2024-02-26 01:39:43,848 - Math_40 - INFO - 删除 Math 40b 成功
+2024-02-26 01:39:43,849 - Math_40 - INFO - defects4j checkout -p Math -v 40b -w /home/chongchong/d4j-project/Math_40
+2024-02-26 01:39:47,356 - Math_40 - INFO - checkout Math 40b 成功
+2024-02-26 01:39:54,055 - Math_40 - INFO - 编译成功
+2024-02-26 01:40:13,281 - Math_40 - INFO - 测试失败
+2024-02-26 01:40:13,281 - Math_40 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+
+2024-02-26 01:40:14,220 - Math_40 - INFO - 它的bug类型为:
+2024-02-26 01:40:14,220 - Math_40 - INFO - 4
+2024-02-26 01:41:09,709 - Math_40 - INFO - 开始验证补丁1 1:
+2024-02-26 01:41:09,709 - Math_40 - INFO - 
+targetY = REDUCTION_FACTOR * yB;
+
+2024-02-26 01:41:10,969 - Math_40 - INFO - 编译成功
+2024-02-26 01:41:30,066 - Math_40 - INFO - 测试失败
+2024-02-26 01:41:30,066 - Math_40 - INFO - Failing tests: 5
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:41:30,528 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:41:30,528 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:41:30,528 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:41:30,528 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:41:30,528 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:41:30,528 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:41:30,528 - Math_40 - INFO - 补丁1 1测试失败
+2024-02-26 01:41:30,529 - Math_40 - INFO - 开始验证补丁1 2:
+2024-02-26 01:41:30,529 - Math_40 - INFO - 
+targetY = -Math.abs(REDUCTION_FACTOR) * yB;
+
+2024-02-26 01:41:31,777 - Math_40 - INFO - 编译成功
+2024-02-26 01:41:50,810 - Math_40 - INFO - 测试失败
+2024-02-26 01:41:50,810 - Math_40 - INFO - Failing tests: 3
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:41:51,274 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:41:51,274 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:41:51,274 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:41:51,274 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:41:51,274 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:41:51,274 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:41:51,274 - Math_40 - INFO - 补丁1 2测试失败
+2024-02-26 01:41:51,275 - Math_40 - INFO - 开始验证补丁1 3:
+2024-02-26 01:41:51,275 - Math_40 - INFO - 
+targetY = yB > 0 ? (1 - REDUCTION_FACTOR) * yB : (1 + REDUCTION_FACTOR) * yB;
+
+2024-02-26 01:41:52,560 - Math_40 - INFO - 编译成功
+2024-02-26 01:42:11,675 - Math_40 - INFO - 测试失败
+2024-02-26 01:42:11,675 - Math_40 - INFO - Failing tests: 9
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionRightSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionAboveSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionBelowSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionLeftSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+  - org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testEvents
+
+2024-02-26 01:42:12,143 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:42:12,143 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:42:12,143 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:42:12,143 - Math_40 - INFO -         compare(new TestFunction(6.3087771299726890947, -5, 10) {
+
+2024-02-26 01:42:12,143 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:42:12,143 - Math_40 - INFO - junit.framework.AssertionFailedError: expected:<6.308777129972689> but was:<NaN>
+
+2024-02-26 01:42:12,143 - Math_40 - INFO - 补丁1 3测试失败
+2024-02-26 01:42:12,144 - Math_40 - INFO - 开始验证补丁1 4:
+2024-02-26 01:42:12,144 - Math_40 - INFO - 
+targetY = REDUCTION_FACTOR * yB; // Assuming REDUCTION_FACTOR is a positive value less than 1
+
+2024-02-26 01:42:13,431 - Math_40 - INFO - 编译成功
+2024-02-26 01:42:32,119 - Math_40 - INFO - 测试失败
+2024-02-26 01:42:32,119 - Math_40 - INFO - Failing tests: 5
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:42:32,582 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:42:32,582 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:42:32,582 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:42:32,582 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:42:32,582 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:42:32,582 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:42:32,582 - Math_40 - INFO - 补丁1 4测试失败
+2024-02-26 01:42:32,583 - Math_40 - INFO - 开始验证补丁1 5:
+2024-02-26 01:42:32,583 - Math_40 - INFO - 
+targetY = -REDUCTION_FACTOR * Math.signum(yB) * yB; // Assuming REDUCTION_FACTOR is positive
+
+2024-02-26 01:42:33,884 - Math_40 - INFO - 编译成功
+2024-02-26 01:42:52,822 - Math_40 - INFO - 测试失败
+2024-02-26 01:42:52,822 - Math_40 - INFO - Failing tests: 5
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:42:53,284 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:42:53,284 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:42:53,284 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:42:53,284 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:42:53,284 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:42:53,284 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:42:53,284 - Math_40 - INFO - 补丁1 5测试失败
+2024-02-26 01:42:53,285 - Math_40 - INFO - 开始验证补丁1 6:
+2024-02-26 01:42:53,285 - Math_40 - INFO - 
+targetY = -1 * yB; // If the aim is to simply invert the value of yB
+
+2024-02-26 01:42:54,542 - Math_40 - INFO - 编译成功
+2024-02-26 01:43:13,182 - Math_40 - INFO - 测试失败
+2024-02-26 01:43:13,182 - Math_40 - INFO - Failing tests: 4
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:43:13,644 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:43:13,644 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:43:13,644 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:43:13,644 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:43:13,644 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:43:13,644 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:43:13,644 - Math_40 - INFO - 补丁1 6测试失败
+2024-02-26 01:43:13,645 - Math_40 - INFO - 开始验证补丁1 7:
+2024-02-26 01:43:13,645 - Math_40 - INFO - 
+            // we keep updating the high bracket, try to compensate this
+            targetY = REDUCTION_FACTOR * yB;
+            // Ensure there is also a condition for agingB similar to agingA
+            } else if (agingB >= MAXIMAL_AGING) {
+                // we keep updating the low bracket, try to compensate this
+                targetY = REDUCTION_FACTOR * yA;
+
+2024-02-26 01:43:14,907 - Math_40 - INFO - 编译成功
+2024-02-26 01:43:33,900 - Math_40 - INFO - 测试失败
+2024-02-26 01:43:33,900 - Math_40 - INFO - Failing tests: 9
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionRightSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionAboveSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionBelowSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionLeftSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:43:34,362 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:43:34,362 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:43:34,362 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:43:34,362 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:43:34,362 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:43:34,362 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:43:34,362 - Math_40 - INFO - 补丁1 7测试失败
+2024-02-26 01:43:34,363 - Math_40 - INFO - 开始验证补丁1 8:
+2024-02-26 01:43:34,363 - Math_40 - INFO - 
+            // we keep updating the high bracket, try to compensate this
+            targetY = -REDUCTION_FACTOR * Math.abs(yB);
+            // Ensure there is also a condition for agingB similar to agingA
+            } else if (agingB >= MAXIMAL_AGING) {
+                // we keep updating the low bracket, try to compensate this
+                targetY = -REDUCTION_FACTOR * Math.abs(yA);
+
+2024-02-26 01:43:35,633 - Math_40 - INFO - 编译成功
+2024-02-26 01:43:54,648 - Math_40 - INFO - 测试失败
+2024-02-26 01:43:54,648 - Math_40 - INFO - Failing tests: 8
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionRightSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionAboveSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionBelowSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionLeftSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+
+2024-02-26 01:43:55,109 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:43:55,109 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:43:55,109 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:43:55,109 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:43:55,109 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:43:55,109 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:43:55,109 - Math_40 - INFO - 补丁1 8测试失败
+2024-02-26 01:43:55,110 - Math_40 - INFO - 开始验证补丁1 9:
+2024-02-26 01:43:55,110 - Math_40 - INFO - 
+            // we keep updating the high bracket, try to compensate this
+            targetY = 0 - (REDUCTION_FACTOR * (yB - yA));
+            // Ensure there is also a condition for agingB similar to agingA
+            } else if (agingB >= MAXIMAL_AGING) {
+                // we keep updating the low bracket, try to compensate this
+                targetY = 0 + (REDUCTION_FACTOR * (yB - yA));
+
+2024-02-26 01:43:56,417 - Math_40 - INFO - 编译成功
+2024-02-26 01:44:15,217 - Math_40 - INFO - 测试失败
+2024-02-26 01:44:15,217 - Math_40 - INFO - Failing tests: 3
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:44:15,692 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:44:15,692 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:44:15,692 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:44:15,692 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:44:15,692 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:44:15,692 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:44:15,692 - Math_40 - INFO - 补丁1 9测试失败
+2024-02-26 01:44:15,693 - Math_40 - INFO - 开始验证补丁2 1:
+2024-02-26 01:44:15,693 - Math_40 - INFO - 
+targetY = REDUCTION_FACTOR * yB;
+
+2024-02-26 01:44:15,693 - Math_40 - INFO - 补丁2 1为重复的补丁
+2024-02-26 01:44:15,694 - Math_40 - INFO - 开始验证补丁2 2:
+2024-02-26 01:44:15,694 - Math_40 - INFO - 
+targetY = REDUCTION_FACTOR * Math.signum(yB) * agingA;
+
+2024-02-26 01:44:16,950 - Math_40 - INFO - 编译成功
+2024-02-26 01:44:35,678 - Math_40 - INFO - 测试失败
+2024-02-26 01:44:35,678 - Math_40 - INFO - Failing tests: 2
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:44:36,138 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:44:36,138 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+2024-02-26 01:44:36,138 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:44:36,138 - Math_40 - INFO -             Assert.assertTrue(solver.getEvaluations() <= counts[i] + 1);
+
+2024-02-26 01:44:36,138 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:44:36,138 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:44:36,138 - Math_40 - INFO - 补丁2 2测试失败
+2024-02-26 01:44:36,139 - Math_40 - INFO - 开始验证补丁2 3:
+2024-02-26 01:44:36,139 - Math_40 - INFO - 
+targetY = (REDUCTION_FACTOR * yB) / (agingA + 1);
+
+2024-02-26 01:44:37,413 - Math_40 - INFO - 编译成功
+2024-02-26 01:44:56,131 - Math_40 - INFO - 测试失败
+2024-02-26 01:44:56,131 - Math_40 - INFO - Failing tests: 4
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:44:56,593 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:44:56,593 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+2024-02-26 01:44:56,593 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:44:56,593 - Math_40 - INFO -         Assert.assertTrue(result - 0.5 > solver.getAbsoluteAccuracy());
+
+2024-02-26 01:44:56,593 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:44:56,593 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:44:56,593 - Math_40 - INFO - 补丁2 3测试失败
+2024-02-26 01:44:56,594 - Math_40 - INFO - 开始验证补丁2 4:
+2024-02-26 01:44:56,594 - Math_40 - INFO - 
+// Assuming yB and yA are correctly assigned as high and low bracket outputs respectively
+targetY = -REDUCTION_FACTOR * yB;
+
+2024-02-26 01:44:57,853 - Math_40 - INFO - 编译成功
+2024-02-26 01:45:17,131 - Math_40 - INFO - 测试失败
+2024-02-26 01:45:17,131 - Math_40 - INFO - Failing tests: 3
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:45:17,592 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:45:17,592 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:45:17,592 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:45:17,592 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:45:17,592 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:45:17,592 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:45:17,592 - Math_40 - INFO - 补丁2 4测试失败
+2024-02-26 01:45:17,593 - Math_40 - INFO - 开始验证补丁2 5:
+2024-02-26 01:45:17,593 - Math_40 - INFO - 
+// Switching the sign in case the reduction factor applies in the positive direction
+targetY = REDUCTION_FACTOR * yB; 
+
+2024-02-26 01:45:18,849 - Math_40 - INFO - 编译成功
+2024-02-26 01:45:37,623 - Math_40 - INFO - 测试失败
+2024-02-26 01:45:37,623 - Math_40 - INFO - Failing tests: 5
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:45:38,080 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:45:38,080 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:45:38,080 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:45:38,080 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:45:38,080 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:45:38,080 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:45:38,080 - Math_40 - INFO - 补丁2 5测试失败
+2024-02-26 01:45:38,081 - Math_40 - INFO - 开始验证补丁2 6:
+2024-02-26 01:45:38,081 - Math_40 - INFO - 
+// In case we need to incrementally adjust targetY based on some other condition or parameter
+targetY += -REDUCTION_FACTOR * yB;
+
+2024-02-26 01:45:38,844 - Math_40 - INFO - 编译失败
+2024-02-26 01:45:38,844 - Math_40 - INFO - 错误: 可能尚未初始化变量targetY
+targetY += -REDUCTION_FACTOR * yB;
+2024-02-26 01:45:38,844 - Math_40 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:45:38,845 - Math_40 - INFO - 开始验证补丁2 7:
+2024-02-26 01:45:38,845 - Math_40 - INFO - 
+targetY = -REDUCTION_FACTOR * yB;
+
+2024-02-26 01:45:40,148 - Math_40 - INFO - 编译成功
+2024-02-26 01:45:58,909 - Math_40 - INFO - 测试失败
+2024-02-26 01:45:58,909 - Math_40 - INFO - Failing tests: 3
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:45:59,372 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:45:59,372 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:45:59,372 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:45:59,372 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:45:59,372 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:45:59,372 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:45:59,372 - Math_40 - INFO - 补丁2 7测试失败
+2024-02-26 01:45:59,373 - Math_40 - INFO - 开始验证补丁2 8:
+2024-02-26 01:45:59,373 - Math_40 - INFO - 
+targetY = REDUCTION_FACTOR * yB;
+
+2024-02-26 01:45:59,373 - Math_40 - INFO - 补丁2 8为重复的补丁
+2024-02-26 01:45:59,374 - Math_40 - INFO - 开始验证补丁2 9:
+2024-02-26 01:45:59,374 - Math_40 - INFO - 
+targetY = (agingA - MAXIMAL_AGING) * REDUCTION_FACTOR * yB;
+
+2024-02-26 01:46:00,639 - Math_40 - INFO - 编译成功
+2024-02-26 01:46:19,725 - Math_40 - INFO - 测试失败
+2024-02-26 01:46:19,725 - Math_40 - INFO - Failing tests: 4
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:46:20,184 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:46:20,184 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:46:20,184 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:46:20,184 - Math_40 - INFO -         compare(new TestFunction(6.3087771299726890947, -5, 10) {
+
+2024-02-26 01:46:20,184 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:46:20,184 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:46:20,184 - Math_40 - INFO - 补丁2 9测试失败
+2024-02-26 01:46:20,185 - Math_40 - INFO - 开始验证补丁3 1:
+2024-02-26 01:46:20,185 - Math_40 - INFO - 
+targetY = REDUCTION_FACTOR * yB;
+
+2024-02-26 01:46:20,185 - Math_40 - INFO - 补丁3 1为重复的补丁
+2024-02-26 01:46:20,186 - Math_40 - INFO - 开始验证补丁3 2:
+2024-02-26 01:46:20,186 - Math_40 - INFO - 
+targetY = -REDUCTION_FACTOR * yB;
+} else if (agingB >= MAXIMAL_AGING) {
+    targetY = -REDUCTION_FACTOR * yA;
+
+2024-02-26 01:46:21,453 - Math_40 - INFO - 编译成功
+2024-02-26 01:46:40,466 - Math_40 - INFO - 测试失败
+2024-02-26 01:46:40,466 - Math_40 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+
+2024-02-26 01:46:40,925 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:46:40,925 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+2024-02-26 01:46:40,925 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:46:40,925 - Math_40 - INFO -         double result = solver.solve(100, sharpTurn, -0.9999999, 30, 15, AllowedSolution.RIGHT_SIDE);
+
+2024-02-26 01:46:40,925 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:46:40,925 - Math_40 - INFO - org.apache.commons.math.exception.TooManyEvaluationsException: illegal state: maximal count (100) exceeded: evaluations
+
+2024-02-26 01:46:40,925 - Math_40 - INFO - 补丁3 2测试失败
+2024-02-26 01:46:40,926 - Math_40 - INFO - 开始验证补丁3 3:
+2024-02-26 01:46:40,926 - Math_40 - INFO - 
+targetY = scaleFactor * REDUCTION_FACTOR * yB;
+
+2024-02-26 01:46:41,637 - Math_40 - INFO - 编译失败
+2024-02-26 01:46:41,637 - Math_40 - INFO - 错误: 找不到符号
+targetY = scaleFactor * REDUCTION_FACTOR * yB;
+2024-02-26 01:46:41,637 - Math_40 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:46:41,638 - Math_40 - INFO - 开始验证补丁3 4:
+2024-02-26 01:46:41,638 - Math_40 - INFO - 
+// we keep updating the high bracket, try to compensate this
+targetY = REDUCTION_FACTOR * yB; // Assuming REDUCTION_FACTOR should be positively applied to yB
+
+2024-02-26 01:46:42,899 - Math_40 - INFO - 编译成功
+2024-02-26 01:47:02,097 - Math_40 - INFO - 测试失败
+2024-02-26 01:47:02,097 - Math_40 - INFO - Failing tests: 5
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:47:02,556 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:47:02,556 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:47:02,556 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:47:02,556 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:47:02,556 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:47:02,556 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:47:02,556 - Math_40 - INFO - 补丁3 4测试失败
+2024-02-26 01:47:02,557 - Math_40 - INFO - 开始验证补丁3 5:
+2024-02-26 01:47:02,557 - Math_40 - INFO - 
+// we keep updating the high bracket, try to compensate this
+targetY = -REDUCTION_FACTOR * yB; // If the assumption is that the original code is correct in using -REDUCTION_FACTOR but the conditions to apply them need adjustment
+
+2024-02-26 01:47:03,821 - Math_40 - INFO - 编译成功
+2024-02-26 01:47:23,131 - Math_40 - INFO - 测试失败
+2024-02-26 01:47:23,131 - Math_40 - INFO - Failing tests: 3
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:47:23,600 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:47:23,600 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:47:23,600 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:47:23,600 - Math_40 - INFO -         compare(new TestFunction(1.4655712318767680266, -0.5, 1.5) {
+
+2024-02-26 01:47:23,600 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:47:23,600 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:47:23,600 - Math_40 - INFO - 补丁3 5测试失败
+2024-02-26 01:47:23,601 - Math_40 - INFO - 开始验证补丁3 6:
+2024-02-26 01:47:23,601 - Math_40 - INFO - 
+// Assuming there's a different strategy needed for compensation, based on the error analysis
+targetY = computeCompensation(yB); // where computeCompensation is a hypothetical method that correctly computes the targetY based on yB
+
+2024-02-26 01:47:24,324 - Math_40 - INFO - 编译失败
+2024-02-26 01:47:24,324 - Math_40 - INFO - 错误: 找不到符号
+targetY = computeCompensation(yB); // where computeCompensation is a hypothetical method that correctly computes the targetY based on yB
+2024-02-26 01:47:24,324 - Math_40 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:47:24,326 - Math_40 - INFO - 开始验证补丁3 7:
+2024-02-26 01:47:24,326 - Math_40 - INFO - 
+                targetY = REDUCTION_FACTOR * yB;
+            } else if (agingB >= MAXIMAL_AGING) {
+                targetY = REDUCTION_FACTOR * yA;
+
+2024-02-26 01:47:25,577 - Math_40 - INFO - 编译成功
+2024-02-26 01:47:44,519 - Math_40 - INFO - 测试失败
+2024-02-26 01:47:44,520 - Math_40 - INFO - Failing tests: 9
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionRightSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionAboveSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionBelowSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionLeftSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:47:44,980 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:47:44,980 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:47:44,980 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:47:44,980 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:47:44,980 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:47:44,980 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:47:44,980 - Math_40 - INFO - 补丁3 7测试失败
+2024-02-26 01:47:44,981 - Math_40 - INFO - 开始验证补丁3 8:
+2024-02-26 01:47:44,981 - Math_40 - INFO - 
+                targetY = Math.abs(REDUCTION_FACTOR) * yB;
+            } else if (agingB >= MAXIMAL_AGING) {
+                targetY = Math.abs(REDUCTION_FACTOR) * yA;
+
+2024-02-26 01:47:46,241 - Math_40 - INFO - 编译成功
+2024-02-26 01:48:05,327 - Math_40 - INFO - 测试失败
+2024-02-26 01:48:05,327 - Math_40 - INFO - Failing tests: 9
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionRightSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionAboveSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionBelowSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionLeftSide
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+
+2024-02-26 01:48:05,788 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:48:05,788 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+2024-02-26 01:48:05,788 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:48:05,788 - Math_40 - INFO -         compare(new TestFunction(9.6335955628326951924, 0.001, 10) {
+
+2024-02-26 01:48:05,788 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:48:05,788 - Math_40 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 01:48:05,788 - Math_40 - INFO - 补丁3 8测试失败
+2024-02-26 01:48:05,789 - Math_40 - INFO - 开始验证补丁3 9:
+2024-02-26 01:48:05,789 - Math_40 - INFO - 
+                targetY = -Math.abs(REDUCTION_FACTOR) * yB;
+            } else if (agingB >= MAXIMAL_AGING) {
+                targetY = -Math.abs(REDUCTION_FACTOR) * yA;
+
+2024-02-26 01:48:07,049 - Math_40 - INFO - 编译成功
+2024-02-26 01:48:25,649 - Math_40 - INFO - 测试失败
+2024-02-26 01:48:25,649 - Math_40 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+
+2024-02-26 01:48:26,109 - Math_40 - INFO - 选择失败的测试用例为:
+2024-02-26 01:48:26,109 - Math_40 - INFO - org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testIssue716
+2024-02-26 01:48:26,109 - Math_40 - INFO - 失败的测试代码为:
+2024-02-26 01:48:26,109 - Math_40 - INFO -         double result = solver.solve(100, sharpTurn, -0.9999999, 30, 15, AllowedSolution.RIGHT_SIDE);
+
+2024-02-26 01:48:26,109 - Math_40 - INFO - 失败信息为:
+2024-02-26 01:48:26,109 - Math_40 - INFO - org.apache.commons.math.exception.TooManyEvaluationsException: illegal state: maximal count (100) exceeded: evaluations
+
+2024-02-26 01:48:26,109 - Math_40 - INFO - 补丁3 9测试失败
+2024-02-26 01:48:26,109 - Math_40 - INFO - Math_40 未成功修复

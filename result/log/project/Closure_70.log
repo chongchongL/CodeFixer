@@ -1,0 +1,136 @@
+2024-02-24 00:38:36,952 - Closure_70 - INFO - rm -rf /home/chongchong/d4j-project/Closure_70
+2024-02-24 00:38:36,953 - Closure_70 - INFO - 删除 Closure 70b 成功
+2024-02-24 00:38:36,953 - Closure_70 - INFO - defects4j checkout -p Closure -v 70b -w /home/chongchong/d4j-project/Closure_70
+2024-02-24 00:38:38,824 - Closure_70 - INFO - checkout Closure 70b 成功
+2024-02-24 00:38:48,119 - Closure_70 - INFO - 编译成功
+2024-02-24 00:39:28,160 - Closure_70 - INFO - 测试失败
+2024-02-24 00:39:28,160 - Closure_70 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionArguments13
+  - com.google.javascript.jscomp.TypeCheckTest::testScoping12
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments13
+
+2024-02-24 00:39:29,193 - Closure_70 - INFO - 它的bug类型为:
+2024-02-24 00:39:29,193 - Closure_70 - INFO - 1
+2024-02-24 00:40:24,845 - Closure_70 - INFO - Closure_70 未成功修复
+2024-02-24 13:53:40,741 - Closure_70 - INFO - rm -rf /home/chongchong/d4j-project/Closure_70
+2024-02-24 13:53:40,784 - Closure_70 - INFO - 删除 Closure 70b 成功
+2024-02-24 13:53:40,784 - Closure_70 - INFO - defects4j checkout -p Closure -v 70b -w /home/chongchong/d4j-project/Closure_70
+2024-02-24 13:53:42,605 - Closure_70 - INFO - checkout Closure 70b 成功
+2024-02-24 13:53:51,651 - Closure_70 - INFO - 编译成功
+2024-02-24 13:54:31,893 - Closure_70 - INFO - 测试失败
+2024-02-24 13:54:31,893 - Closure_70 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionArguments13
+  - com.google.javascript.jscomp.TypeCheckTest::testScoping12
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments13
+
+2024-02-24 13:54:32,896 - Closure_70 - INFO - 它的bug类型为:
+2024-02-24 13:54:32,896 - Closure_70 - INFO - 1
+2024-02-24 13:55:29,450 - Closure_70 - INFO - 开始验证补丁1 1:
+2024-02-24 13:55:29,450 - Closure_70 - INFO - 
+jsDocParameter.getJSType(), true);
+
+2024-02-24 13:55:32,259 - Closure_70 - INFO - 编译成功
+2024-02-24 13:56:12,269 - Closure_70 - INFO - 测试失败
+2024-02-24 13:56:12,269 - Closure_70 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionArguments13
+  - com.google.javascript.jscomp.TypeCheckTest::testScoping12
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments13
+
+2024-02-24 13:56:12,777 - Closure_70 - INFO - 选择失败的测试用例为:
+2024-02-24 13:56:12,777 - Closure_70 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+2024-02-24 13:56:12,777 - Closure_70 - INFO - 失败的测试代码为:
+2024-02-24 13:56:12,777 - Closure_70 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-24 13:56:12,777 - Closure_70 - INFO - 失败信息为:
+2024-02-24 13:56:12,777 - Closure_70 - INFO - junit.framework.AssertionFailedError: expected:<2> but was:<1>
+
+2024-02-24 13:56:12,777 - Closure_70 - INFO - 补丁1 1测试失败
+2024-02-24 13:56:12,778 - Closure_70 - INFO - 开始验证补丁1 2:
+2024-02-24 13:56:12,778 - Closure_70 - INFO - 
+(jsDocParameter != null ? jsDocParameter.getJSType() : null), true);
+
+2024-02-24 13:56:15,616 - Closure_70 - INFO - 编译成功
+2024-02-24 13:56:55,542 - Closure_70 - INFO - 测试失败
+2024-02-24 13:56:55,542 - Closure_70 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionArguments13
+  - com.google.javascript.jscomp.TypeCheckTest::testScoping12
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments13
+
+2024-02-24 13:56:56,052 - Closure_70 - INFO - 选择失败的测试用例为:
+2024-02-24 13:56:56,052 - Closure_70 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+2024-02-24 13:56:56,052 - Closure_70 - INFO - 失败的测试代码为:
+2024-02-24 13:56:56,052 - Closure_70 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-24 13:56:56,052 - Closure_70 - INFO - 失败信息为:
+2024-02-24 13:56:56,052 - Closure_70 - INFO - junit.framework.AssertionFailedError: expected:<2> but was:<1>
+
+2024-02-24 13:56:56,052 - Closure_70 - INFO - 补丁1 2测试失败
+2024-02-24 13:56:56,053 - Closure_70 - INFO - 开始验证补丁1 3:
+2024-02-24 13:56:56,053 - Closure_70 - INFO - 
+jsDocParameter == null ? null : jsDocParameter.getJSType(), true);
+
+2024-02-24 13:56:58,858 - Closure_70 - INFO - 编译成功
+2024-02-24 13:57:39,416 - Closure_70 - INFO - 测试失败
+2024-02-24 13:57:39,416 - Closure_70 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionArguments13
+  - com.google.javascript.jscomp.TypeCheckTest::testScoping12
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments13
+
+2024-02-24 13:57:39,923 - Closure_70 - INFO - 选择失败的测试用例为:
+2024-02-24 13:57:39,923 - Closure_70 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+2024-02-24 13:57:39,923 - Closure_70 - INFO - 失败的测试代码为:
+2024-02-24 13:57:39,923 - Closure_70 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-24 13:57:39,923 - Closure_70 - INFO - 失败信息为:
+2024-02-24 13:57:39,923 - Closure_70 - INFO - junit.framework.AssertionFailedError: expected:<2> but was:<1>
+
+2024-02-24 13:57:39,923 - Closure_70 - INFO - 补丁1 3测试失败
+2024-02-24 13:57:39,924 - Closure_70 - INFO - 开始验证补丁1 4:
+2024-02-24 13:57:39,924 - Closure_70 - INFO - 
+jsDocParameter.getJSType(), true);
+
+2024-02-24 13:57:39,924 - Closure_70 - INFO - 补丁1 4为重复的补丁
+2024-02-24 13:57:39,925 - Closure_70 - INFO - 开始验证补丁1 5:
+2024-02-24 13:57:39,925 - Closure_70 - INFO - 
+jsDocParameter == null ? null : jsDocParameter.getJSType(), true);
+
+2024-02-24 13:57:39,925 - Closure_70 - INFO - 补丁1 5为重复的补丁
+2024-02-24 13:57:39,926 - Closure_70 - INFO - 开始验证补丁1 6:
+2024-02-24 13:57:39,926 - Closure_70 - INFO - 
+jsDocParameter.getJSType(), jsDocParameter != null);
+
+2024-02-24 13:57:42,732 - Closure_70 - INFO - 编译成功
+2024-02-24 13:58:23,055 - Closure_70 - INFO - 测试失败
+2024-02-24 13:58:23,055 - Closure_70 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.LooseTypeCheckTest::testFunctionArguments13
+  - com.google.javascript.jscomp.TypeCheckTest::testScoping12
+  - com.google.javascript.jscomp.TypeCheckTest::testDuplicateLocalVarDecl
+  - com.google.javascript.jscomp.TypeCheckTest::testFunctionArguments13
+
+2024-02-24 13:58:23,571 - Closure_70 - INFO - 选择失败的测试用例为:
+2024-02-24 13:58:23,571 - Closure_70 - INFO - com.google.javascript.jscomp.LooseTypeCheckTest::testDuplicateLocalVarDecl
+2024-02-24 13:58:23,571 - Closure_70 - INFO - 失败的测试代码为:
+2024-02-24 13:58:23,571 - Closure_70 - INFO -     testClosureTypesMultipleWarnings(
+
+2024-02-24 13:58:23,571 - Closure_70 - INFO - 失败信息为:
+2024-02-24 13:58:23,572 - Closure_70 - INFO - junit.framework.AssertionFailedError: expected:<2> but was:<1>
+
+2024-02-24 13:58:23,572 - Closure_70 - INFO - 补丁1 6测试失败
+2024-02-24 13:58:23,573 - Closure_70 - INFO - 开始验证补丁1 7:
+2024-02-24 13:58:23,573 - Closure_70 - INFO - 
+jsDocParameter.getJSType(), false);
+
+2024-02-24 13:58:26,394 - Closure_70 - INFO - 编译成功
+2024-02-24 13:59:08,075 - Closure_70 - INFO - 测试成功
+2024-02-24 13:59:08,075 - Closure_70 - INFO - 补丁1 7 通过了所有的测试用例

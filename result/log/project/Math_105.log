@@ -1,0 +1,312 @@
+2024-02-24 01:18:55,818 - Math_105 - INFO - rm -rf /home/chongchong/d4j-project/Math_105
+2024-02-24 01:18:55,819 - Math_105 - INFO - 删除 Math 105b 成功
+2024-02-24 01:18:55,819 - Math_105 - INFO - defects4j checkout -p Math -v 105b -w /home/chongchong/d4j-project/Math_105
+2024-02-24 01:18:58,151 - Math_105 - INFO - checkout Math 105b 成功
+2024-02-24 01:19:04,246 - Math_105 - INFO - 编译成功
+2024-02-24 01:19:09,664 - Math_105 - INFO - 测试失败
+2024-02-24 01:19:09,664 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 01:19:10,578 - Math_105 - INFO - 它的bug类型为:
+2024-02-24 01:19:10,578 - Math_105 - INFO - 1
+2024-02-24 01:19:58,759 - Math_105 - INFO - Math_105 未成功修复
+2024-02-24 11:58:06,228 - Math_105 - INFO - rm -rf /home/chongchong/d4j-project/Math_105
+2024-02-24 11:58:06,244 - Math_105 - INFO - 删除 Math 105b 成功
+2024-02-24 11:58:06,244 - Math_105 - INFO - defects4j checkout -p Math -v 105b -w /home/chongchong/d4j-project/Math_105
+2024-02-24 11:58:08,584 - Math_105 - INFO - checkout Math 105b 成功
+2024-02-24 11:58:13,637 - Math_105 - INFO - 编译成功
+2024-02-24 11:58:18,977 - Math_105 - INFO - 测试失败
+2024-02-24 11:58:18,977 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 11:58:19,879 - Math_105 - INFO - 它的bug类型为:
+2024-02-24 11:58:19,879 - Math_105 - INFO - 1
+2024-02-24 11:58:49,213 - Math_105 - INFO - 开始验证补丁1 1:
+2024-02-24 11:58:49,213 - Math_105 - INFO - 
+public double getSumSquaredErrors() {
+    return sumYY - (sumXY * sumXY / sumXX);
+}
+
+2024-02-24 11:58:50,718 - Math_105 - INFO - 编译失败
+2024-02-24 11:58:50,718 - Math_105 - INFO - 错误: 非法的表达式开始
+public double getSumSquaredErrors() {
+2024-02-24 11:58:50,718 - Math_105 - INFO - 补丁1 1 未成功编译
+2024-02-24 11:58:50,719 - Math_105 - INFO - 开始验证补丁1 2:
+2024-02-24 11:58:50,719 - Math_105 - INFO - 
+public double getSumSquaredErrors() {
+    return sumYY + (sumXY * sumXY / sumXX);
+}
+
+2024-02-24 11:58:52,236 - Math_105 - INFO - 编译失败
+2024-02-24 11:58:52,236 - Math_105 - INFO - 错误: 非法的表达式开始
+public double getSumSquaredErrors() {
+2024-02-24 11:58:52,236 - Math_105 - INFO - 补丁1 2 未成功编译
+2024-02-24 11:58:52,237 - Math_105 - INFO - 开始验证补丁1 3:
+2024-02-24 11:58:52,237 - Math_105 - INFO - 
+public double getSumSquaredErrors() {
+    return sumYY / (sumXY * sumXY / sumXX); // Note: This is highly uncommon for SSE calculations and is just a theoretical possibility
+}
+
+2024-02-24 11:58:53,760 - Math_105 - INFO - 编译失败
+2024-02-24 11:58:53,760 - Math_105 - INFO - 错误: 非法的表达式开始
+public double getSumSquaredErrors() {
+2024-02-24 11:58:53,760 - Math_105 - INFO - 补丁1 3 未成功编译
+2024-02-24 11:58:53,761 - Math_105 - INFO - 开始验证补丁1 4:
+2024-02-24 11:58:53,761 - Math_105 - INFO - 
+public double getSumSquaredErrors() {
+    return sumYY - (sumXY * sumXY / sumXX);
+}
+
+2024-02-24 11:58:53,761 - Math_105 - INFO - 补丁1 4为重复的补丁
+2024-02-24 11:58:53,762 - Math_105 - INFO - 开始验证补丁1 5:
+2024-02-24 11:58:53,762 - Math_105 - INFO - 
+public double getSumSquaredErrors() {
+    return sumYY + (sumXY * sumXY / sumXX);
+}
+
+2024-02-24 11:58:53,762 - Math_105 - INFO - 补丁1 5为重复的补丁
+2024-02-24 11:58:53,763 - Math_105 - INFO - 开始验证补丁1 6:
+2024-02-24 11:58:53,763 - Math_105 - INFO - 
+public double getSumSquaredErrors() {
+    return sumYY; // Assuming further calculation is handled elsewhere or to be implemented
+}
+
+2024-02-24 11:58:55,280 - Math_105 - INFO - 编译失败
+2024-02-24 11:58:55,280 - Math_105 - INFO - 错误: 非法的表达式开始
+public double getSumSquaredErrors() {
+2024-02-24 11:58:55,280 - Math_105 - INFO - 补丁1 6 未成功编译
+2024-02-24 11:58:55,281 - Math_105 - INFO - 开始验证补丁1 7:
+2024-02-24 11:58:55,281 - Math_105 - INFO - 
+return sumYY - (sumXY * sumXY / sumXX);
+
+2024-02-24 11:58:58,293 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:03,629 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:03,629 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 11:59:04,088 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:04,088 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+2024-02-24 11:59:04,088 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:04,088 - Math_105 - INFO -         assertTrue(reg.getSumSquaredErrors() >= 0.0);
+
+2024-02-24 11:59:04,088 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:04,088 - Math_105 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:59:04,088 - Math_105 - INFO - 补丁1 7测试失败
+2024-02-24 11:59:04,089 - Math_105 - INFO - 开始验证补丁1 8:
+2024-02-24 11:59:04,089 - Math_105 - INFO - 
+return sumYY + (sumXY * sumXY / sumXX);
+
+2024-02-24 11:59:07,066 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:12,408 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:12,408 - Math_105 - INFO - Failing tests: 5
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testCorr
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNaNs
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNorris
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testInference
+
+2024-02-24 11:59:12,878 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:12,878 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+2024-02-24 11:59:12,878 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:12,878 - Math_105 - INFO -         assertEquals("r-square", .896123, regression.getRSquare(), 10E-6);
+
+2024-02-24 11:59:12,878 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:12,878 - Math_105 - INFO - junit.framework.AssertionFailedError: r-square expected:<0.896123> but was:<-0.8961228923119133>
+
+2024-02-24 11:59:12,878 - Math_105 - INFO - 补丁1 8测试失败
+2024-02-24 11:59:12,879 - Math_105 - INFO - 开始验证补丁1 9:
+2024-02-24 11:59:12,879 - Math_105 - INFO - 
+return sumYY / (sumXY * sumXY / sumXX);
+
+2024-02-24 11:59:15,892 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:21,317 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:21,317 - Math_105 - INFO - Failing tests: 5
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testCorr
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNaNs
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNorris
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testInference
+
+2024-02-24 11:59:21,768 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:21,768 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+2024-02-24 11:59:21,768 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:21,768 - Math_105 - INFO -         assertEquals("r-square", .896123, regression.getRSquare(), 10E-6);
+
+2024-02-24 11:59:21,768 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:21,768 - Math_105 - INFO - junit.framework.AssertionFailedError: r-square expected:<0.896123> but was:<0.9998745348459054>
+
+2024-02-24 11:59:21,768 - Math_105 - INFO - 补丁1 9测试失败
+2024-02-24 11:59:21,769 - Math_105 - INFO - 开始验证补丁1 10:
+2024-02-24 11:59:21,769 - Math_105 - INFO - 
+return sumYY * (sumXY * sumXY / sumXX);
+
+2024-02-24 11:59:24,777 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:30,123 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:30,123 - Math_105 - INFO - Failing tests: 6
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testCorr
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testPerfect
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testPerfectNegative
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNorris
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testInference
+
+2024-02-24 11:59:30,577 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:30,577 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+2024-02-24 11:59:30,577 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:30,577 - Math_105 - INFO -         assertEquals("r-square", .896123, regression.getRSquare(), 10E-6);
+
+2024-02-24 11:59:30,577 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:30,577 - Math_105 - INFO - junit.framework.AssertionFailedError: r-square expected:<0.896123> but was:<-7969.3405078141295>
+
+2024-02-24 11:59:30,577 - Math_105 - INFO - 补丁1 10测试失败
+2024-02-24 11:59:30,578 - Math_105 - INFO - 开始验证补丁2 4:
+2024-02-24 11:59:30,578 - Math_105 - INFO - 
+return sumYY - (sumXY * sumXY) / sumXX;
+
+2024-02-24 11:59:31,705 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:35,239 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:35,239 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 11:59:35,697 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:35,697 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+2024-02-24 11:59:35,697 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:35,697 - Math_105 - INFO -         assertTrue(reg.getSumSquaredErrors() >= 0.0);
+
+2024-02-24 11:59:35,697 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:35,697 - Math_105 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:59:35,697 - Math_105 - INFO - 补丁2 4测试失败
+2024-02-24 11:59:35,698 - Math_105 - INFO - 开始验证补丁2 5:
+2024-02-24 11:59:35,698 - Math_105 - INFO - 
+return sumYY - Math.pow(sumXY, 2) / sumXX;
+
+2024-02-24 11:59:36,803 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:40,238 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:40,238 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 11:59:40,693 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:40,693 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+2024-02-24 11:59:40,693 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:40,693 - Math_105 - INFO -         assertTrue(reg.getSumSquaredErrors() >= 0.0);
+
+2024-02-24 11:59:40,693 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:40,693 - Math_105 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:59:40,693 - Math_105 - INFO - 补丁2 5测试失败
+2024-02-24 11:59:40,694 - Math_105 - INFO - 开始验证补丁2 6:
+2024-02-24 11:59:40,694 - Math_105 - INFO - 
+return (sumYY * sumYY) - (sumXY * sumXY) / sumXX;
+
+2024-02-24 11:59:41,796 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:45,242 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:45,242 - Math_105 - INFO - Failing tests: 6
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testCorr
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testPerfect
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testPerfectNegative
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNorris
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testInference
+
+2024-02-24 11:59:45,695 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:45,695 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+2024-02-24 11:59:45,695 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:45,695 - Math_105 - INFO -         assertEquals("r-square", .896123, regression.getRSquare(), 10E-6);
+
+2024-02-24 11:59:45,696 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:45,696 - Math_105 - INFO - junit.framework.AssertionFailedError: r-square expected:<0.896123> but was:<-8892.353288872404>
+
+2024-02-24 11:59:45,696 - Math_105 - INFO - 补丁2 6测试失败
+2024-02-24 11:59:45,697 - Math_105 - INFO - 开始验证补丁2 7:
+2024-02-24 11:59:45,697 - Math_105 - INFO - 
+    return sumYY - (sumXY * sumXY) / sumXX;
+
+2024-02-24 11:59:46,787 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:50,208 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:50,208 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 11:59:50,662 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:50,663 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+2024-02-24 11:59:50,663 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:50,663 - Math_105 - INFO -         assertTrue(reg.getSumSquaredErrors() >= 0.0);
+
+2024-02-24 11:59:50,663 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:50,663 - Math_105 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:59:50,663 - Math_105 - INFO - 补丁2 7测试失败
+2024-02-24 11:59:50,664 - Math_105 - INFO - 开始验证补丁2 8:
+2024-02-24 11:59:50,664 - Math_105 - INFO - 
+    return sumYY - sumXY / sumXX;
+
+2024-02-24 11:59:51,769 - Math_105 - INFO - 编译成功
+2024-02-24 11:59:55,179 - Math_105 - INFO - 测试失败
+2024-02-24 11:59:55,179 - Math_105 - INFO - Failing tests: 5
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testCorr
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNorris
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testInference
+
+2024-02-24 11:59:55,635 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 11:59:55,635 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+2024-02-24 11:59:55,636 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 11:59:55,636 - Math_105 - INFO -         assertEquals("r-square", .896123, regression.getRSquare(), 10E-6);
+
+2024-02-24 11:59:55,636 - Math_105 - INFO - 失败信息为:
+2024-02-24 11:59:55,636 - Math_105 - INFO - junit.framework.AssertionFailedError: r-square expected:<0.896123> but was:<-1.4878221453816902E-4>
+
+2024-02-24 11:59:55,636 - Math_105 - INFO - 补丁2 8测试失败
+2024-02-24 11:59:55,637 - Math_105 - INFO - 开始验证补丁2 9:
+2024-02-24 11:59:55,637 - Math_105 - INFO - 
+    return sumYY - sumXY + sumXY / sumXX;
+
+2024-02-24 11:59:56,739 - Math_105 - INFO - 编译成功
+2024-02-24 12:00:00,188 - Math_105 - INFO - 测试失败
+2024-02-24 12:00:00,188 - Math_105 - INFO - Failing tests: 4
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testCorr
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testNorris
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testInference
+
+2024-02-24 12:00:00,656 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 12:00:00,657 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testClear
+2024-02-24 12:00:00,657 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 12:00:00,657 - Math_105 - INFO -         assertEquals("r-square", .896123, regression.getRSquare(), 10E-6);
+
+2024-02-24 12:00:00,657 - Math_105 - INFO - 失败信息为:
+2024-02-24 12:00:00,657 - Math_105 - INFO - junit.framework.AssertionFailedError: r-square expected:<0.896123> but was:<-0.6770360928243498>
+
+2024-02-24 12:00:00,657 - Math_105 - INFO - 补丁2 9测试失败
+2024-02-24 12:00:00,658 - Math_105 - INFO - 开始验证补丁3 1:
+2024-02-24 12:00:00,658 - Math_105 - INFO - 
+return sumYY - (sumXY * sumXY) / sumXX;
+
+2024-02-24 12:00:00,658 - Math_105 - INFO - 补丁3 1为重复的补丁
+2024-02-24 12:00:00,659 - Math_105 - INFO - 开始验证补丁3 2:
+2024-02-24 12:00:00,659 - Math_105 - INFO - 
+return sumYY - sumXY / sumXX * sumXY;
+
+2024-02-24 12:00:01,763 - Math_105 - INFO - 编译成功
+2024-02-24 12:00:05,203 - Math_105 - INFO - 测试失败
+2024-02-24 12:00:05,204 - Math_105 - INFO - Failing tests: 1
+  - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+
+2024-02-24 12:00:05,653 - Math_105 - INFO - 选择失败的测试用例为:
+2024-02-24 12:00:05,653 - Math_105 - INFO - org.apache.commons.math.stat.regression.SimpleRegressionTest::testSSENonNegative
+2024-02-24 12:00:05,653 - Math_105 - INFO - 失败的测试代码为:
+2024-02-24 12:00:05,653 - Math_105 - INFO -         assertTrue(reg.getSumSquaredErrors() >= 0.0);
+
+2024-02-24 12:00:05,653 - Math_105 - INFO - 失败信息为:
+2024-02-24 12:00:05,653 - Math_105 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 12:00:05,653 - Math_105 - INFO - 补丁3 2测试失败
+2024-02-24 12:00:05,654 - Math_105 - INFO - 开始验证补丁3 3:
+2024-02-24 12:00:05,654 - Math_105 - INFO - 
+return Math.max(0, sumYY - (sumXY * sumXY) / sumXX);
+
+2024-02-24 12:00:06,767 - Math_105 - INFO - 编译成功
+2024-02-24 12:00:10,198 - Math_105 - INFO - 测试成功
+2024-02-24 12:00:10,198 - Math_105 - INFO - 补丁3 3 通过了所有的测试用例

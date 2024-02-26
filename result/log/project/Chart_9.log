@@ -1,0 +1,20 @@
+2024-02-23 22:07:13,741 - Chart_9 - INFO - rm -rf /home/chongchong/d4j-project/Chart_9
+2024-02-23 22:07:13,741 - Chart_9 - INFO - 删除 Chart 9b 成功
+2024-02-23 22:07:13,741 - Chart_9 - INFO - defects4j checkout -p Chart -v 9b -w /home/chongchong/d4j-project/Chart_9
+2024-02-23 22:07:16,772 - Chart_9 - INFO - checkout Chart 9b 成功
+2024-02-23 22:07:20,199 - Chart_9 - INFO - 编译成功
+2024-02-23 22:07:26,778 - Chart_9 - INFO - 测试失败
+2024-02-23 22:07:26,778 - Chart_9 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testBug1864222
+
+2024-02-23 22:07:27,514 - Chart_9 - INFO - 它的bug类型为:
+2024-02-23 22:07:27,514 - Chart_9 - INFO - 1
+2024-02-23 22:08:37,865 - Chart_9 - INFO - 开始验证补丁1 1:
+2024-02-23 22:08:37,865 - Chart_9 - INFO - 
+        
+        if (startIndex > endIndex || endIndex < 0) {
+
+2024-02-23 22:08:38,853 - Chart_9 - INFO - 编译成功
+2024-02-23 22:08:45,470 - Chart_9 - INFO - 测试成功
+2024-02-23 22:08:45,470 - Chart_9 - INFO - 补丁1 1 通过了所有的测试用例

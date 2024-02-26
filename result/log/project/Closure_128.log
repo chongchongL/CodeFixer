@@ -1,0 +1,24 @@
+2024-02-26 01:20:36,781 - Closure_128 - INFO - rm -rf /home/chongchong/d4j-project/Closure_128
+2024-02-26 01:20:36,782 - Closure_128 - INFO - 删除 Closure 128b 成功
+2024-02-26 01:20:36,782 - Closure_128 - INFO - defects4j checkout -p Closure -v 128b -w /home/chongchong/d4j-project/Closure_128
+2024-02-26 01:20:39,379 - Closure_128 - INFO - checkout Closure 128b 成功
+2024-02-26 01:20:51,461 - Closure_128 - INFO - 编译成功
+2024-02-26 01:21:44,090 - Closure_128 - INFO - 测试失败
+2024-02-26 01:21:44,090 - Closure_128 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testIssue942
+
+2024-02-26 01:21:45,138 - Closure_128 - INFO - 它的bug类型为:
+2024-02-26 01:21:45,138 - Closure_128 - INFO - 4
+2024-02-26 01:22:51,841 - Closure_128 - INFO - 开始验证补丁1 1:
+2024-02-26 01:22:51,842 - Closure_128 - INFO - 
+for (int index = 0; index < len; index++) {
+  char c = s.charAt(index);
+  if (c < '0' || c > '9') {
+    return false;
+  }
+}
+return len > 0 && (s.equals("0") || s.charAt(0) != '0');
+
+2024-02-26 01:22:56,159 - Closure_128 - INFO - 编译成功
+2024-02-26 01:23:49,716 - Closure_128 - INFO - 测试成功
+2024-02-26 01:23:49,716 - Closure_128 - INFO - 补丁1 1 通过了所有的测试用例

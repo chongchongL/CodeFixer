@@ -1,0 +1,11 @@
+2024-02-25 21:05:36,372 - Langg_3 - INFO - rm -rf /home/chongchong/d4j-project/Langg_3
+2024-02-25 21:05:36,373 - Langg_3 - INFO - 删除 Langg 3b 成功
+2024-02-25 21:05:36,373 - Langg_3 - INFO - defects4j checkout -p Langg -v 3b -w /home/chongchong/d4j-project/Langg_3
+2024-02-25 21:05:36,397 - Langg_3 - ERROR - checkout Langg 3b失败
+2024-02-25 21:05:36,397 - Langg_3 - ERROR - Error: Langg is a non-existent project
+ at /home/chongchong/defects4j/framework/core/Utils.pm line 470.
+	Utils::ensure_valid_bid("Langg", 3) called at /home/chongchong/defects4j/framework/core/Utils.pm line 502
+	Utils::ensure_valid_vid("Langg", "3b") called at /home/chongchong/defects4j/framework/bin/d4j/d4j-checkout line 87
+	require /home/chongchong/defects4j/framework/bin/d4j/d4j-checkout called at /home/chongchong/defects4j/framework/bin/defects4j line 195
+Compilation failed in require at /home/chongchong/defects4j/framework/bin/defects4j line 195.
+

@@ -1,0 +1,217 @@
+2024-02-25 13:04:02,103 - Time_24 - INFO - rm -rf /home/chongchong/d4j-project/Time_24
+2024-02-25 13:04:02,104 - Time_24 - INFO - 删除 Time 24b 成功
+2024-02-25 13:04:02,104 - Time_24 - INFO - defects4j checkout -p Time -v 24b -w /home/chongchong/d4j-project/Time_24
+2024-02-25 13:04:03,708 - Time_24 - INFO - checkout Time 24b 成功
+2024-02-25 13:04:09,940 - Time_24 - INFO - 编译成功
+2024-02-25 13:04:17,482 - Time_24 - INFO - 测试失败
+2024-02-25 13:04:17,482 - Time_24 - INFO - Failing tests: 8
+  - org.joda.time.TestMonthDay_Properties::testPropertyGetMonthOfYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_weekyear_month_week_2010
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_weekyear_month_week_2011
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_weekyear_month_week_2012
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_year_month_week_2010
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_year_month_week_2011
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_year_month_week_2012
+  - org.joda.time.format.TestDateTimeFormatter::testParseLocalDate_year_month_week_2016
+
+2024-02-25 13:04:18,376 - Time_24 - INFO - 它的bug类型为:
+2024-02-25 13:04:18,376 - Time_24 - INFO - 3
+2024-02-25 13:04:49,136 - Time_24 - INFO - 开始验证补丁1 1:
+2024-02-25 13:04:49,136 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:49,810 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:49,810 - Time_24 - INFO - 错误: 已捕获到异常
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:49,810 - Time_24 - INFO - 补丁1 1 未成功编译
+2024-02-25 13:04:49,811 - Time_24 - INFO - 开始验证补丁1 2:
+2024-02-25 13:04:49,811 - Time_24 - INFO - 
+        } catch (Exception e) {
+
+2024-02-25 13:04:50,478 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:50,479 - Time_24 - INFO - 错误: 已捕获到异常
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:50,479 - Time_24 - INFO - 补丁1 2 未成功编译
+2024-02-25 13:04:50,480 - Time_24 - INFO - 开始验证补丁1 3:
+2024-02-25 13:04:50,480 - Time_24 - INFO - 
+        } catch (SomeSpecificException e) {
+
+2024-02-25 13:04:51,146 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:51,146 - Time_24 - INFO - 错误: 找不到符号
+} catch (SomeSpecificException e) {
+2024-02-25 13:04:51,146 - Time_24 - INFO - 补丁1 3 未成功编译
+2024-02-25 13:04:51,147 - Time_24 - INFO - 开始验证补丁1 4:
+2024-02-25 13:04:51,148 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:51,148 - Time_24 - INFO - 补丁1 4为重复的补丁
+2024-02-25 13:04:51,149 - Time_24 - INFO - 开始验证补丁1 5:
+2024-02-25 13:04:51,149 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+        } catch (AnotherSpecificExceptionType ex) {
+            // handle another specific exception
+
+2024-02-25 13:04:51,897 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:51,897 - Time_24 - INFO - 错误: 找不到符号
+} catch (AnotherSpecificExceptionType ex) {
+2024-02-25 13:04:51,897 - Time_24 - INFO - 补丁1 5 未成功编译
+2024-02-25 13:04:51,898 - Time_24 - INFO - 开始验证补丁1 6:
+2024-02-25 13:04:51,898 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException | AnotherExceptionType e) {
+
+2024-02-25 13:04:52,434 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:52,434 - Time_24 - INFO - 错误: -source 1.5 中不支持 multi-catch 语句
+} catch (IllegalFieldValueException | AnotherExceptionType e) {
+2024-02-25 13:04:52,434 - Time_24 - INFO - 补丁1 6 未成功编译
+2024-02-25 13:04:52,435 - Time_24 - INFO - 开始验证补丁1 7:
+2024-02-25 13:04:52,435 - Time_24 - INFO - 
+} catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:53,120 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:53,120 - Time_24 - INFO - 错误: 已捕获到异常
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:53,120 - Time_24 - INFO - 补丁1 7 未成功编译
+2024-02-25 13:04:53,121 - Time_24 - INFO - 开始验证补丁1 8:
+2024-02-25 13:04:53,121 - Time_24 - INFO - 
+} catch (IllegalFieldValueException | OtherException e) {
+
+2024-02-25 13:04:53,658 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:53,658 - Time_24 - INFO - 错误: -source 1.5 中不支持 multi-catch 语句
+} catch (IllegalFieldValueException | OtherException e) {
+2024-02-25 13:04:53,658 - Time_24 - INFO - 补丁1 8 未成功编译
+2024-02-25 13:04:53,659 - Time_24 - INFO - 开始验证补丁1 9:
+2024-02-25 13:04:53,659 - Time_24 - INFO - 
+} catch (Exception e) {
+
+2024-02-25 13:04:54,368 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:54,368 - Time_24 - INFO - 错误: 已捕获到异常
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:54,368 - Time_24 - INFO - 补丁1 9 未成功编译
+2024-02-25 13:04:54,369 - Time_24 - INFO - 开始验证补丁2 1:
+2024-02-25 13:04:54,369 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:54,369 - Time_24 - INFO - 补丁2 1为重复的补丁
+2024-02-25 13:04:54,375 - Time_24 - INFO - 开始验证补丁2 2:
+2024-02-25 13:04:54,375 - Time_24 - INFO - 
+        } finally {
+            if (text != null) {
+                e.prependMessage("Cannot parse \"" + text + '"');
+            }
+            throw e;
+        }
+
+2024-02-25 13:04:54,919 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:54,919 - Time_24 - INFO - 错误: 非法的类型开始
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:54,919 - Time_24 - INFO - 补丁2 2 未成功编译
+2024-02-25 13:04:54,920 - Time_24 - INFO - 开始验证补丁2 3:
+2024-02-25 13:04:54,921 - Time_24 - INFO - 
+        } catch (Exception e) {
+            if (text != null) {
+                e.prependMessage("Cannot parse \"" + text + '"');
+            }
+            throw e;
+        }
+
+2024-02-25 13:04:55,462 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:55,462 - Time_24 - INFO - 错误: 非法的类型开始
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:55,462 - Time_24 - INFO - 补丁2 3 未成功编译
+2024-02-25 13:04:55,463 - Time_24 - INFO - 开始验证补丁2 4:
+2024-02-25 13:04:55,463 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:55,463 - Time_24 - INFO - 补丁2 4为重复的补丁
+2024-02-25 13:04:55,468 - Time_24 - INFO - 开始验证补丁2 5:
+2024-02-25 13:04:55,468 - Time_24 - INFO - 
+        } catch (Exception e) {
+
+2024-02-25 13:04:55,468 - Time_24 - INFO - 补丁2 5为重复的补丁
+2024-02-25 13:04:55,469 - Time_24 - INFO - 开始验证补丁2 6:
+2024-02-25 13:04:55,469 - Time_24 - INFO - 
+        } finally {
+            // some cleanup code if necessary
+        }
+
+2024-02-25 13:04:56,034 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:56,034 - Time_24 - INFO - 错误: 非法的类型开始
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:56,034 - Time_24 - INFO - 补丁2 6 未成功编译
+2024-02-25 13:04:56,035 - Time_24 - INFO - 开始验证补丁2 7:
+2024-02-25 13:04:56,035 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:56,035 - Time_24 - INFO - 补丁2 7为重复的补丁
+2024-02-25 13:04:56,036 - Time_24 - INFO - 开始验证补丁2 8:
+2024-02-25 13:04:56,036 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+        }
+
+2024-02-25 13:04:56,582 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:56,582 - Time_24 - INFO - 错误: 非法的类型开始
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:56,582 - Time_24 - INFO - 补丁2 8 未成功编译
+2024-02-25 13:04:56,583 - Time_24 - INFO - 开始验证补丁2 9:
+2024-02-25 13:04:56,583 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+        } finally {
+            // Some clean-up code if necessary
+        }
+
+2024-02-25 13:04:57,124 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:57,125 - Time_24 - INFO - 错误: 非法的类型开始
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:57,125 - Time_24 - INFO - 补丁2 9 未成功编译
+2024-02-25 13:04:57,126 - Time_24 - INFO - 开始验证补丁3 1:
+2024-02-25 13:04:57,126 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:57,126 - Time_24 - INFO - 补丁3 1为重复的补丁
+2024-02-25 13:04:57,127 - Time_24 - INFO - 开始验证补丁3 2:
+2024-02-25 13:04:57,127 - Time_24 - INFO - 
+        } catch (Exception e) {
+
+2024-02-25 13:04:57,127 - Time_24 - INFO - 补丁3 2为重复的补丁
+2024-02-25 13:04:57,128 - Time_24 - INFO - 开始验证补丁3 3:
+2024-02-25 13:04:57,128 - Time_24 - INFO - 
+        } finally {
+
+2024-02-25 13:04:57,666 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:57,667 - Time_24 - INFO - 错误: 有 'catch', 但是没有 'try'
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:57,667 - Time_24 - INFO - 补丁3 3 未成功编译
+2024-02-25 13:04:57,668 - Time_24 - INFO - 开始验证补丁3 4:
+2024-02-25 13:04:57,668 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:57,668 - Time_24 - INFO - 补丁3 4为重复的补丁
+2024-02-25 13:04:57,669 - Time_24 - INFO - 开始验证补丁3 5:
+2024-02-25 13:04:57,669 - Time_24 - INFO - 
+        } catch (Exception e) {
+
+2024-02-25 13:04:57,669 - Time_24 - INFO - 补丁3 5为重复的补丁
+2024-02-25 13:04:57,670 - Time_24 - INFO - 开始验证补丁3 6:
+2024-02-25 13:04:57,670 - Time_24 - INFO - 
+        } catch (RuntimeException e) {
+
+2024-02-25 13:04:58,348 - Time_24 - INFO - 编译失败
+2024-02-25 13:04:58,348 - Time_24 - INFO - 错误: 已捕获到异常
+} catch (IllegalFieldValueException e) {
+2024-02-25 13:04:58,348 - Time_24 - INFO - 补丁3 6 未成功编译
+2024-02-25 13:04:58,349 - Time_24 - INFO - 开始验证补丁3 7:
+2024-02-25 13:04:58,349 - Time_24 - INFO - 
+        } catch (IllegalFieldValueException e) {
+
+2024-02-25 13:04:58,349 - Time_24 - INFO - 补丁3 7为重复的补丁
+2024-02-25 13:04:58,350 - Time_24 - INFO - 开始验证补丁3 8:
+2024-02-25 13:04:58,350 - Time_24 - INFO - 
+        } catch (Exception e) {
+
+2024-02-25 13:04:58,350 - Time_24 - INFO - 补丁3 8为重复的补丁
+2024-02-25 13:04:58,351 - Time_24 - INFO - 开始验证补丁3 9:
+2024-02-25 13:04:58,351 - Time_24 - INFO - 
+        } finally {
+
+2024-02-25 13:04:58,352 - Time_24 - INFO - 补丁3 9为重复的补丁
+2024-02-25 13:04:58,352 - Time_24 - INFO - Time_24 未成功修复

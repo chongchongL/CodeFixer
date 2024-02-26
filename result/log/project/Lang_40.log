@@ -1,0 +1,51 @@
+2024-02-25 00:10:44,398 - Lang_40 - INFO - rm -rf /home/chongchong/d4j-project/Lang_40
+2024-02-25 00:10:44,399 - Lang_40 - INFO - 删除 Lang 40b 成功
+2024-02-25 00:10:44,399 - Lang_40 - INFO - defects4j checkout -p Lang -v 40b -w /home/chongchong/d4j-project/Lang_40
+2024-02-25 00:10:47,759 - Lang_40 - INFO - checkout Lang 40b 成功
+2024-02-25 00:10:51,835 - Lang_40 - INFO - 编译成功
+2024-02-25 00:10:59,209 - Lang_40 - INFO - 测试失败
+2024-02-25 00:10:59,210 - Lang_40 - INFO - Failing tests: 1
+  - org.apache.commons.lang.StringUtilsEqualsIndexOfTest::testContainsIgnoreCase_LocaleIndependence
+
+2024-02-25 00:11:00,076 - Lang_40 - INFO - 它的bug类型为:
+2024-02-25 00:11:00,076 - Lang_40 - INFO - 2
+2024-02-25 00:11:48,945 - Lang_40 - INFO - 开始验证补丁1 1:
+2024-02-25 00:11:48,945 - Lang_40 - INFO - 
+return str.toLowerCase(Locale.ROOT).contains(searchStr.toLowerCase(Locale.ROOT));
+
+2024-02-25 00:11:50,135 - Lang_40 - INFO - 编译成功
+2024-02-25 00:11:57,558 - Lang_40 - INFO - 测试失败
+2024-02-25 00:11:57,558 - Lang_40 - INFO - Failing tests: 1
+  - org.apache.commons.lang.StringUtilsEqualsIndexOfTest::testContainsIgnoreCase_LocaleIndependence
+
+2024-02-25 00:11:57,995 - Lang_40 - INFO - 选择失败的测试用例为:
+2024-02-25 00:11:57,995 - Lang_40 - INFO - org.apache.commons.lang.StringUtilsEqualsIndexOfTest::testContainsIgnoreCase_LocaleIndependence
+2024-02-25 00:11:57,995 - Lang_40 - INFO - 失败的测试代码为:
+2024-02-25 00:11:57,995 - Lang_40 - INFO -                     assertTrue(Locale.getDefault() + ": " + j + " " + tdata[j][0] + " " + tdata[j][1], StringUtils
+
+2024-02-25 00:11:57,995 - Lang_40 - INFO - 失败信息为:
+2024-02-25 00:11:57,995 - Lang_40 - INFO - junit.framework.AssertionFailedError: en: 2 ς σ
+
+2024-02-25 00:11:57,995 - Lang_40 - INFO - 补丁1 1测试失败
+2024-02-25 00:11:57,997 - Lang_40 - INFO - 开始验证补丁1 2:
+2024-02-25 00:11:57,997 - Lang_40 - INFO - 
+Collator collator = Collator.getInstance();
+collator.setStrength(Collator.PRIMARY); // PRIMARY strength for case-insensitive comparison
+return collator.compare(str, searchStr) == 0;
+
+2024-02-25 00:11:58,810 - Lang_40 - INFO - 编译失败
+2024-02-25 00:11:58,810 - Lang_40 - INFO - 错误: 找不到符号
+Collator collator = Collator.getInstance();
+2024-02-25 00:11:58,810 - Lang_40 - INFO - 补丁1 2 未成功编译
+2024-02-25 00:11:58,811 - Lang_40 - INFO - 开始验证补丁1 3:
+2024-02-25 00:11:58,811 - Lang_40 - INFO - 
+for (int i = 0; i <= str.length() - searchStr.length(); i++) {
+    if (str.regionMatches(true, i, searchStr, 0, searchStr.length())) {
+        return true;
+    }
+}
+return false;
+
+2024-02-25 00:12:00,027 - Lang_40 - INFO - 编译成功
+2024-02-25 00:12:07,413 - Lang_40 - INFO - 测试成功
+2024-02-25 00:12:07,413 - Lang_40 - INFO - 补丁1 3 通过了所有的测试用例

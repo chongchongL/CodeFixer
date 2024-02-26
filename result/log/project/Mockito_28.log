@@ -1,0 +1,413 @@
+2024-02-25 00:57:23,135 - Mockito_28 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_28
+2024-02-25 00:57:23,136 - Mockito_28 - INFO - 删除 Mockito 28b 成功
+2024-02-25 00:57:23,136 - Mockito_28 - INFO - defects4j checkout -p Mockito -v 28b -w /home/chongchong/d4j-project/Mockito_28
+2024-02-25 00:57:25,517 - Mockito_28 - INFO - checkout Mockito 28b 成功
+2024-02-25 00:57:30,550 - Mockito_28 - INFO - 编译成功
+2024-02-25 00:57:49,123 - Mockito_28 - INFO - 测试失败
+2024-02-25 00:57:49,123 - Mockito_28 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.InjectionByTypeShouldFirstLookForExactTypeThenAncestorTest::mock_should_be_injected_once_and_in_the_best_matching_type
+
+2024-02-25 00:57:50,007 - Mockito_28 - INFO - 它的bug类型为:
+2024-02-25 00:57:50,007 - Mockito_28 - INFO - 2
+2024-02-25 00:59:31,854 - Mockito_28 - INFO - 开始验证补丁1 1:
+2024-02-25 00:59:31,854 - Mockito_28 - INFO - 
+if (field.getType().isAssignableFrom(fieldInstance.getClass())) {
+    Optional<Object> mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+    if (mock.isPresent()) {
+        field.setAccessible(true);
+        field.set(fieldInstance, mock.get());
+    }
+}
+
+2024-02-25 00:59:33,497 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:33,497 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+2024-02-25 00:59:33,497 - Mockito_28 - INFO - 补丁1 1 未成功编译
+2024-02-25 00:59:33,498 - Mockito_28 - INFO - 开始验证补丁1 2:
+2024-02-25 00:59:33,498 - Mockito_28 - INFO - 
+Optional<Object> mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+if (mock.isPresent() && field.getType().isInstance(mock.get())) {
+    field.setAccessible(true);
+    field.set(fieldInstance, mock.get());
+}
+
+2024-02-25 00:59:35,080 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:35,081 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+2024-02-25 00:59:35,081 - Mockito_28 - INFO - 补丁1 2 未成功编译
+2024-02-25 00:59:35,082 - Mockito_28 - INFO - 开始验证补丁1 3:
+2024-02-25 00:59:35,082 - Mockito_28 - INFO - 
+Object mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).orElse(null);
+if (mock != null && field.getType().isInstance(mock)) {
+    field.setAccessible(true);
+    field.set(fieldInstance, mock);
+}
+
+2024-02-25 00:59:36,632 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:36,632 - Mockito_28 - INFO - 错误: 找不到符号
+Object mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).orElse(null);
+2024-02-25 00:59:36,632 - Mockito_28 - INFO - 补丁1 3 未成功编译
+2024-02-25 00:59:36,634 - Mockito_28 - INFO - 开始验证补丁1 4:
+2024-02-25 00:59:36,634 - Mockito_28 - INFO - 
+    private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+        for(Field field : orderedInstanceFieldsFrom(awaitInjectionClazz)) {
+            Optional<InjectionCandidate> candidate = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+            if(candidate.isPresent()) {
+                candidate.get().thenInject();
+            }
+        }
+    }
+
+2024-02-25 00:59:37,484 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:37,484 - Mockito_28 - INFO - 错误: 非法的表达式开始
+private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+2024-02-25 00:59:37,484 - Mockito_28 - INFO - 补丁1 4 未成功编译
+2024-02-25 00:59:37,485 - Mockito_28 - INFO - 开始验证补丁1 5:
+2024-02-25 00:59:37,485 - Mockito_28 - INFO - 
+    private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+        for(Field field : orderedInstanceFieldsFrom(awaitInjectionClazz)) {
+            List<InjectionCandidate> candidates = mockCandidateFilter.filterCandidates(mocks, field, fieldInstance);
+            if(!candidates.isEmpty()) {
+                candidates.get(0).thenInject(); // Assuming the first candidate is the best match, otherwise additional logic to find the best match may be needed
+            }
+        }
+    }
+
+2024-02-25 00:59:38,352 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:38,352 - Mockito_28 - INFO - 错误: 非法的表达式开始
+private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+2024-02-25 00:59:38,352 - Mockito_28 - INFO - 补丁1 5 未成功编译
+2024-02-25 00:59:38,353 - Mockito_28 - INFO - 开始验证补丁1 6:
+2024-02-25 00:59:38,353 - Mockito_28 - INFO - 
+    private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+        for(Field field : orderedInstanceFieldsFrom(awaitInjectionClazz)) {
+            InjectionCandidate currentBest = null;
+            for(Object mock : mocks) {
+                InjectionCandidate candidate = mockCandidateFilter.filterCandidate(mock, field, fieldInstance);
+                if(candidate.isBetterMatchThan(currentBest)) {
+                    currentBest = candidate;
+                }
+            }
+            if(currentBest != null) {
+                currentBest.thenInject();
+            }
+        }
+    }
+
+2024-02-25 00:59:39,186 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:39,186 - Mockito_28 - INFO - 错误: 非法的表达式开始
+private void injectMockCandidate(Class<?> awaitingInjectionClazz, Set<Object> mocks, Object fieldInstance) {
+2024-02-25 00:59:39,187 - Mockito_28 - INFO - 补丁1 6 未成功编译
+2024-02-25 00:59:39,188 - Mockito_28 - INFO - 开始验证补丁1 7:
+2024-02-25 00:59:39,188 - Mockito_28 - INFO - 
+MockCandidateFilterResult filterResult = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+if(filterResult.isSuitableCandidate()) {
+    filterResult.thenInject();
+}
+
+2024-02-25 00:59:40,738 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:40,738 - Mockito_28 - INFO - 错误: 找不到符号
+MockCandidateFilterResult filterResult = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+2024-02-25 00:59:40,738 - Mockito_28 - INFO - 补丁1 7 未成功编译
+2024-02-25 00:59:40,739 - Mockito_28 - INFO - 开始验证补丁1 8:
+2024-02-25 00:59:40,739 - Mockito_28 - INFO - 
+for(Object mock : mocks) {
+    if(mockCandidateFilter.shouldInjectMock(mock, field)) {
+        field.setAccessible(true);
+        field.set(fieldInstance, mock);
+        break;
+    }
+}
+
+2024-02-25 00:59:42,270 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:42,270 - Mockito_28 - INFO - 错误: 找不到符号
+if(mockCandidateFilter.shouldInjectMock(mock, field)) {
+2024-02-25 00:59:42,270 - Mockito_28 - INFO - 补丁1 8 未成功编译
+2024-02-25 00:59:42,271 - Mockito_28 - INFO - 开始验证补丁1 9:
+2024-02-25 00:59:42,271 - Mockito_28 - INFO - 
+Optional<Object> suitableMock = findSuitableMockForField(mocks, field);
+suitableMock.ifPresent(mock -> injectMockIntoField(mock, field, fieldInstance));
+
+2024-02-25 00:59:43,076 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:43,076 - Mockito_28 - INFO - 错误: 非法的表达式开始
+suitableMock.ifPresent(mock -> injectMockIntoField(mock, field, fieldInstance));
+2024-02-25 00:59:43,076 - Mockito_28 - INFO - 补丁1 9 未成功编译
+2024-02-25 00:59:43,078 - Mockito_28 - INFO - 开始验证补丁2 1:
+2024-02-25 00:59:43,078 - Mockito_28 - INFO - 
+if (mockCandidateFilter.filterCandidate(mocks, field).isPresent()) {
+    field.setAccessible(true);
+    field.set(fieldInstance, mockCandidateFilter.filterCandidate(mocks, field).get());
+}
+
+2024-02-25 00:59:44,588 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:44,588 - Mockito_28 - INFO - 错误: 无法将接口 MockCandidateFilter中的方法 filterCandidate应用到给定类型;
+if (mockCandidateFilter.filterCandidate(mocks, field).isPresent()) {
+2024-02-25 00:59:44,588 - Mockito_28 - INFO - 补丁2 1 未成功编译
+2024-02-25 00:59:44,589 - Mockito_28 - INFO - 开始验证补丁2 2:
+2024-02-25 00:59:44,589 - Mockito_28 - INFO - 
+Optional<Object> candidate = mockCandidateFilter.filterCandidate(mocks, field);
+if (candidate.isPresent()) {
+    field.setAccessible(true);
+    field.set(fieldInstance, candidate.get());
+}
+
+2024-02-25 00:59:46,131 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:46,131 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> candidate = mockCandidateFilter.filterCandidate(mocks, field);
+2024-02-25 00:59:46,131 - Mockito_28 - INFO - 补丁2 2 未成功编译
+2024-02-25 00:59:46,132 - Mockito_28 - INFO - 开始验证补丁2 3:
+2024-02-25 00:59:46,132 - Mockito_28 - INFO - 
+Object candidate = mockCandidateFilter.filterCandidate(mocks, field);
+if (candidate != null) {
+    field.setAccessible(true);
+    field.set(fieldInstance, candidate);
+}
+
+2024-02-25 00:59:47,697 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:47,697 - Mockito_28 - INFO - 错误: 无法将接口 MockCandidateFilter中的方法 filterCandidate应用到给定类型;
+Object candidate = mockCandidateFilter.filterCandidate(mocks, field);
+2024-02-25 00:59:47,698 - Mockito_28 - INFO - 补丁2 3 未成功编译
+2024-02-25 00:59:47,699 - Mockito_28 - INFO - 开始验证补丁2 4:
+2024-02-25 00:59:47,699 - Mockito_28 - INFO - 
+if (mockCandidateFilter.isSuitableCandidate(mocks, field)) {
+    Object mock = mockCandidateFilter.findSuitableMock(mocks, field);
+    field.setAccessible(true);
+    try {
+        field.set(fieldInstance, mock);
+    } catch (IllegalAccessException e) {
+        throw new RuntimeException("Could not inject mock into field: " + field.getName(), e);
+    }
+}
+
+2024-02-25 00:59:49,281 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:49,281 - Mockito_28 - INFO - 错误: 找不到符号
+if (mockCandidateFilter.isSuitableCandidate(mocks, field)) {
+2024-02-25 00:59:49,281 - Mockito_28 - INFO - 补丁2 4 未成功编译
+2024-02-25 00:59:49,282 - Mockito_28 - INFO - 开始验证补丁2 5:
+2024-02-25 00:59:49,282 - Mockito_28 - INFO - 
+Optional<Object> mockOpt = mockCandidateFilter.filterCandidate(mocks, field);
+if (mockOpt.isPresent()) {
+    field.setAccessible(true);
+    try {
+        field.set(fieldInstance, mockOpt.get());
+    } catch (IllegalAccessException e) {
+        throw new RuntimeException("Failed to inject mock into field: " + field.getName(), e);
+    }
+}
+
+2024-02-25 00:59:50,829 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:50,829 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> mockOpt = mockCandidateFilter.filterCandidate(mocks, field);
+2024-02-25 00:59:50,829 - Mockito_28 - INFO - 补丁2 5 未成功编译
+2024-02-25 00:59:50,830 - Mockito_28 - INFO - 开始验证补丁2 6:
+2024-02-25 00:59:50,831 - Mockito_28 - INFO - 
+MockInjectionResult result = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+if (!result.hasErrors()) {
+    result.thenInject();
+}
+
+2024-02-25 00:59:52,497 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:52,497 - Mockito_28 - INFO - 错误: 找不到符号
+MockInjectionResult result = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+2024-02-25 00:59:52,497 - Mockito_28 - INFO - 补丁2 6 未成功编译
+2024-02-25 00:59:52,498 - Mockito_28 - INFO - 开始验证补丁2 7:
+2024-02-25 00:59:52,498 - Mockito_28 - INFO - 
+if (field.getType().isAssignableFrom(fieldInstance.getClass())) {
+    continue;
+}
+Optional<Object> suitableMock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+if (suitableMock.isPresent()) {
+    field.setAccessible(true);
+    field.set(fieldInstance, suitableMock.get());
+}
+
+2024-02-25 00:59:54,056 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:54,056 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> suitableMock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+2024-02-25 00:59:54,056 - Mockito_28 - INFO - 补丁2 7 未成功编译
+2024-02-25 00:59:54,057 - Mockito_28 - INFO - 开始验证补丁2 8:
+2024-02-25 00:59:54,057 - Mockito_28 - INFO - 
+Optional<Object> suitableMock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+if (suitableMock.isPresent()) {
+    field.setAccessible(true);
+    field.set(fieldInstance, suitableMock.get());
+}
+
+2024-02-25 00:59:55,654 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:55,654 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> suitableMock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+2024-02-25 00:59:55,654 - Mockito_28 - INFO - 补丁2 8 未成功编译
+2024-02-25 00:59:55,655 - Mockito_28 - INFO - 开始验证补丁2 9:
+2024-02-25 00:59:55,655 - Mockito_28 - INFO - 
+mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).ifPresent(mock -> {
+    try {
+        field.setAccessible(true);
+        field.set(fieldInstance, mock);
+    } catch (IllegalAccessException e) {
+        throw new RuntimeException("Failed to inject mock into field: " + field.getName(), e);
+    }
+});
+
+2024-02-25 00:59:56,485 - Mockito_28 - INFO - 编译失败
+2024-02-25 00:59:56,485 - Mockito_28 - INFO - 错误: 非法的表达式开始
+mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).ifPresent(mock -> {
+2024-02-25 00:59:56,485 - Mockito_28 - INFO - 补丁2 9 未成功编译
+2024-02-25 00:59:56,486 - Mockito_28 - INFO - 开始验证补丁3 1:
+2024-02-25 00:59:56,486 - Mockito_28 - INFO - 
+if (field.getType().isAssignableFrom(fieldInstance.getClass())) {
+    mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();
+}
+
+2024-02-25 01:00:01,666 - Mockito_28 - INFO - 编译成功
+2024-02-25 01:00:20,583 - Mockito_28 - INFO - 测试失败
+2024-02-25 01:00:20,583 - Mockito_28 - INFO - Failing tests: 14
+  - org.mockitousage.annotation.DeprecatedAnnotationEngineApiTest::shouldInjectMocksIfThereIsNoUserDefinedEngine
+  - org.mockitousage.annotation.DeprecatedMockAnnotationTest::shouldInjectDeprecatedMockAnnotation
+  - org.mockitousage.annotation.MockInjectionTest::shouldInjectMocksByName
+  - org.mockitousage.annotation.MockInjectionTest::shouldIInjectMocksInSpy
+  - org.mockitousage.annotation.MockInjectionTest::shouldInjectSpies
+  - org.mockitousage.annotation.MockInjectionTest::shouldInjectMocksForClassHierarchyIfAnnotated
+  - org.mockitousage.annotation.MockInjectionTest::shouldInitializeSpyIfNullAndInjectMocks
+  - org.mockitousage.annotation.MockInjectionTest::shouldInjectMocksIfAnnotated
+  - org.mockitousage.bugs.InjectMocksShouldTryPropertySettersFirstBeforeFieldAccessTest::shouldInjectFieldIfNoSetter
+  - org.mockitousage.bugs.InjectMocksShouldTryPropertySettersFirstBeforeFieldAccessTest::shouldInjectUsingPropertySetterIfAvailable
+  - org.mockitousage.bugs.InjectionByTypeShouldFirstLookForExactTypeThenAncestorTest::mock_should_be_injected_once_and_in_the_best_matching_type
+  - org.mockitousage.bugs.ParentTestMockInjectionTest::injectMocksShouldInjectMocksFromTestSuperClasses
+  - org.mockitousage.junitrunner.JUnit44RunnerTest::shouldInjectMocksUsingRunner
+  - org.mockitousage.junitrunner.JUnit45RunnerTest::shouldInjectMocksUsingRunner
+
+2024-02-25 01:00:21,029 - Mockito_28 - INFO - 选择失败的测试用例为:
+2024-02-25 01:00:21,029 - Mockito_28 - INFO - org.mockitousage.annotation.DeprecatedAnnotationEngineApiTest::shouldInjectMocksIfThereIsNoUserDefinedEngine
+2024-02-25 01:00:21,029 - Mockito_28 - INFO - 失败的测试代码为:
+2024-02-25 01:00:21,029 - Mockito_28 - INFO -         assertNotNull(test.tested.dependency);
+
+2024-02-25 01:00:21,029 - Mockito_28 - INFO - 失败信息为:
+2024-02-25 01:00:21,029 - Mockito_28 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:00:21,029 - Mockito_28 - INFO - 补丁3 1测试失败
+2024-02-25 01:00:21,030 - Mockito_28 - INFO - 开始验证补丁3 2:
+2024-02-25 01:00:21,030 - Mockito_28 - INFO - 
+Optional<Object> bestMatchMock = mockCandidateFilter.findBestMatch(mocks, field);
+bestMatchMock.ifPresent(mock -> injectMock(field, fieldInstance, mock));
+
+2024-02-25 01:00:21,889 - Mockito_28 - INFO - 编译失败
+2024-02-25 01:00:21,889 - Mockito_28 - INFO - 错误: 非法的表达式开始
+bestMatchMock.ifPresent(mock -> injectMock(field, fieldInstance, mock));
+2024-02-25 01:00:21,889 - Mockito_28 - INFO - 补丁3 2 未成功编译
+2024-02-25 01:00:21,890 - Mockito_28 - INFO - 开始验证补丁3 3:
+2024-02-25 01:00:21,890 - Mockito_28 - INFO - 
+Object bestMatchMock = null;
+for (Object mock : mocks) {
+    if (field.getType().isInstance(mock)) {
+        if (bestMatchMock == null || field.getType().isAssignableFrom(mock.getClass())) {
+            bestMatchMock = mock;
+        }
+    }
+}
+if (bestMatchMock != null) {
+    field.setAccessible(true);
+    field.set(fieldInstance, bestMatchMock);
+}
+
+2024-02-25 01:00:23,458 - Mockito_28 - INFO - 编译失败
+2024-02-25 01:00:23,458 - Mockito_28 - INFO - 错误: 未报告的异常
+field.set(fieldInstance, bestMatchMock);
+2024-02-25 01:00:23,458 - Mockito_28 - INFO - 补丁3 3 未成功编译
+2024-02-25 01:00:23,459 - Mockito_28 - INFO - 开始验证补丁3 4:
+2024-02-25 01:00:23,459 - Mockito_28 - INFO - 
+if (field.getType().isAssignableFrom(fieldInstance.getClass())) {
+    mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();
+}
+
+2024-02-25 01:00:23,459 - Mockito_28 - INFO - 补丁3 4为重复的补丁
+2024-02-25 01:00:23,460 - Mockito_28 - INFO - 开始验证补丁3 5:
+2024-02-25 01:00:23,460 - Mockito_28 - INFO - 
+Optional<Object> mock = mockCandidateFilter.filterCandidate(mocks, field);
+if (mock.isPresent()) {
+    field.setAccessible(true);
+    field.set(fieldInstance, mock.get());
+}
+
+2024-02-25 01:00:25,043 - Mockito_28 - INFO - 编译失败
+2024-02-25 01:00:25,043 - Mockito_28 - INFO - 错误: 找不到符号
+Optional<Object> mock = mockCandidateFilter.filterCandidate(mocks, field);
+2024-02-25 01:00:25,043 - Mockito_28 - INFO - 补丁3 5 未成功编译
+2024-02-25 01:00:25,044 - Mockito_28 - INFO - 开始验证补丁3 6:
+2024-02-25 01:00:25,044 - Mockito_28 - INFO - 
+Object mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+if (mock != null && field.getType().isInstance(mock)) {
+    field.setAccessible(true);
+    field.set(fieldInstance, mock);
+}
+
+2024-02-25 01:00:26,601 - Mockito_28 - INFO - 编译失败
+2024-02-25 01:00:26,601 - Mockito_28 - INFO - 错误: 未报告的异常
+field.set(fieldInstance, mock);
+2024-02-25 01:00:26,601 - Mockito_28 - INFO - 补丁3 6 未成功编译
+2024-02-25 01:00:26,602 - Mockito_28 - INFO - 开始验证补丁3 7:
+2024-02-25 01:00:26,602 - Mockito_28 - INFO - 
+if (mockCandidateFilter.isCompatible(field, mocks)) {
+    Object mock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+    if (mock != null) {
+        field.setAccessible(true);
+        field.set(fieldInstance, mock);
+        break; // Assuming we inject the first compatible mock found
+    }
+}
+
+2024-02-25 01:00:28,184 - Mockito_28 - INFO - 编译失败
+2024-02-25 01:00:28,184 - Mockito_28 - INFO - 错误: 找不到符号
+if (mockCandidateFilter.isCompatible(field, mocks)) {
+2024-02-25 01:00:28,184 - Mockito_28 - INFO - 补丁3 7 未成功编译
+2024-02-25 01:00:28,185 - Mockito_28 - INFO - 开始验证补丁3 8:
+2024-02-25 01:00:28,185 - Mockito_28 - INFO - 
+Optional<Object> suitableMock = mockCandidateFilter.filterCandidate(mocks, field, fieldInstance);
+suitableMock.ifPresent(mock -> {
+    field.setAccessible(true);
+    try {
+        field.set(fieldInstance, suitableMock.get());
+    } catch (IllegalAccessException e) {
+        throw new RuntimeException(e);
+    }
+});
+
+2024-02-25 01:00:29,007 - Mockito_28 - INFO - 编译失败
+2024-02-25 01:00:29,007 - Mockito_28 - INFO - 错误: 非法的表达式开始
+suitableMock.ifPresent(mock -> {
+2024-02-25 01:00:29,007 - Mockito_28 - INFO - 补丁3 8 未成功编译
+2024-02-25 01:00:29,008 - Mockito_28 - INFO - 开始验证补丁3 9:
+2024-02-25 01:00:29,008 - Mockito_28 - INFO - 
+Object bestMatchMock = null;
+for (Object mock : mocks) {
+    if (field.getType().isAssignableFrom(mock.getClass())) {
+        if (bestMatchMock == null || mock.getClass().isAssignableFrom(bestMatchMock.getClass())) {
+            bestMatchMock = mock;
+        }
+    }
+}
+if (bestMatchMock != null) {
+    field.setAccessible(true);
+    try {
+        field.set(fieldInstance, bestMatchMock);
+    } catch (IllegalAccessException e) {
+        throw new RuntimeException(e);
+    }
+}
+
+2024-02-25 01:00:34,128 - Mockito_28 - INFO - 编译成功
+2024-02-25 01:00:53,254 - Mockito_28 - INFO - 测试失败
+2024-02-25 01:00:53,254 - Mockito_28 - INFO - Failing tests: 3
+  - org.mockitousage.annotation.MockInjectionTest::shouldInjectMocksByName
+  - org.mockitousage.bugs.InjectMocksShouldTryPropertySettersFirstBeforeFieldAccessTest::shouldInjectUsingPropertySetterIfAvailable
+  - org.mockitousage.bugs.InjectionByTypeShouldFirstLookForExactTypeThenAncestorTest::mock_should_be_injected_once_and_in_the_best_matching_type
+
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - 选择失败的测试用例为:
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - org.mockitousage.annotation.MockInjectionTest::shouldInjectMocksByName
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - 失败的测试代码为:
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - 		assertSame(histogram1, subUnderTest.getHistogram1());
+
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - 失败信息为:
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - junit.framework.AssertionFailedError: expected same:<histogram1> was not:<histogram2>
+
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - 补丁3 9测试失败
+2024-02-25 01:00:53,705 - Mockito_28 - INFO - Mockito_28 未成功修复

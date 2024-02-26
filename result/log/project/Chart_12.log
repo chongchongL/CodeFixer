@@ -1,0 +1,22 @@
+2024-02-23 22:36:24,221 - Chart_12 - INFO - rm -rf /home/chongchong/d4j-project/Chart_12
+2024-02-23 22:36:24,222 - Chart_12 - INFO - 删除 Chart 12b 成功
+2024-02-23 22:36:24,222 - Chart_12 - INFO - defects4j checkout -p Chart -v 12b -w /home/chongchong/d4j-project/Chart_12
+2024-02-23 22:36:27,179 - Chart_12 - INFO - checkout Chart 12b 成功
+2024-02-23 22:36:30,612 - Chart_12 - INFO - 编译成功
+2024-02-23 22:36:37,124 - Chart_12 - INFO - 测试失败
+2024-02-23 22:36:37,124 - Chart_12 - INFO - Failing tests: 2
+  - org.jfree.chart.plot.junit.MultiplePiePlotTests::testConstructor
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+
+2024-02-23 22:36:37,850 - Chart_12 - INFO - 它的bug类型为:
+2024-02-23 22:36:37,850 - Chart_12 - INFO - 1
+2024-02-23 22:37:07,619 - Chart_12 - INFO - 开始验证补丁1 1:
+2024-02-23 22:37:07,619 - Chart_12 - INFO - 
+this.dataset = dataset;
+if (dataset != null) {
+    dataset.addChangeListener(this);
+}
+
+2024-02-23 22:37:08,562 - Chart_12 - INFO - 编译成功
+2024-02-23 22:37:15,008 - Chart_12 - INFO - 测试成功
+2024-02-23 22:37:15,008 - Chart_12 - INFO - 补丁1 1 通过了所有的测试用例

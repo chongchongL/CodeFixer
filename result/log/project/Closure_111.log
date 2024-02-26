@@ -1,0 +1,305 @@
+2024-02-25 01:28:01,329 - Closure_111 - INFO - rm -rf /home/chongchong/d4j-project/Closure_111
+2024-02-25 01:28:01,330 - Closure_111 - INFO - 删除 Closure 111b 成功
+2024-02-25 01:28:01,330 - Closure_111 - INFO - defects4j checkout -p Closure -v 111b -w /home/chongchong/d4j-project/Closure_111
+2024-02-25 01:28:04,111 - Closure_111 - INFO - checkout Closure 111b 成功
+2024-02-25 01:28:16,114 - Closure_111 - INFO - 编译成功
+2024-02-25 01:29:15,226 - Closure_111 - INFO - 测试失败
+2024-02-25 01:29:15,226 - Closure_111 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsArray2
+
+2024-02-25 01:29:16,264 - Closure_111 - INFO - 它的bug类型为:
+2024-02-25 01:29:16,264 - Closure_111 - INFO - 2
+2024-02-25 01:30:15,628 - Closure_111 - INFO - 开始验证补丁1 1:
+2024-02-25 01:30:15,628 - Closure_111 - INFO - 
+return getNativeType(JSTypeNative.ARRAY_TYPE);
+
+2024-02-25 01:30:17,689 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:17,689 - Closure_111 - INFO - 错误: 找不到符号
+return getNativeType(JSTypeNative.ARRAY_TYPE);
+2024-02-25 01:30:17,689 - Closure_111 - INFO - 补丁1 1 未成功编译
+2024-02-25 01:30:17,690 - Closure_111 - INFO - 开始验证补丁1 2:
+2024-02-25 01:30:17,690 - Closure_111 - INFO - 
+return topType.isSubtype(getNativeType(JSTypeNative.ARRAY_TYPE)) ? getNativeType(JSTypeNative.ARRAY_TYPE) : null;
+
+2024-02-25 01:30:19,731 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:19,731 - Closure_111 - INFO - 错误: 找不到符号
+return topType.isSubtype(getNativeType(JSTypeNative.ARRAY_TYPE)) ? getNativeType(JSTypeNative.ARRAY_TYPE) : null;
+2024-02-25 01:30:19,732 - Closure_111 - INFO - 补丁1 2 未成功编译
+2024-02-25 01:30:19,733 - Closure_111 - INFO - 开始验证补丁1 3:
+2024-02-25 01:30:19,733 - Closure_111 - INFO - 
+JSType arrayType = getNativeType(JSTypeNative.ARRAY_TYPE);
+return topType.isEquivalentTo(arrayType) ? arrayType : null;
+
+2024-02-25 01:30:21,756 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:21,756 - Closure_111 - INFO - 错误: 找不到符号
+JSType arrayType = getNativeType(JSTypeNative.ARRAY_TYPE);
+2024-02-25 01:30:21,756 - Closure_111 - INFO - 补丁1 3 未成功编译
+2024-02-25 01:30:21,757 - Closure_111 - INFO - 开始验证补丁1 4:
+2024-02-25 01:30:21,757 - Closure_111 - INFO - 
+  @Override
+  protected JSType caseTopType(JSType topType) {
+    JSType arrayType = getNativeType(ARRAY_TYPE);
+    return topType.isEquivalentTo(arrayType) ? arrayType : null;
+  }
+
+2024-02-25 01:30:23,578 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:23,578 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:23,578 - Closure_111 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:30:23,579 - Closure_111 - INFO - 开始验证补丁1 5:
+2024-02-25 01:30:23,579 - Closure_111 - INFO - 
+  @Override
+  protected JSType caseTopType(JSType topType) {
+    return getNativeType(ARRAY_TYPE);
+  }
+
+2024-02-25 01:30:25,390 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:25,390 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:25,390 - Closure_111 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:30:25,391 - Closure_111 - INFO - 开始验证补丁1 6:
+2024-02-25 01:30:25,392 - Closure_111 - INFO - 
+  @Override
+  protected JSType caseTopType(JSType topType) {
+    JSType arrayType = getNativeType(ARRAY_TYPE);
+    if (someCondition(topType)) {
+      return arrayType;
+    } else {
+      throw new RuntimeException("TopType is not an array type");
+    }
+  }
+
+2024-02-25 01:30:27,235 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:27,235 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:27,235 - Closure_111 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:30:27,236 - Closure_111 - INFO - 开始验证补丁1 7:
+2024-02-25 01:30:27,236 - Closure_111 - INFO - 
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          JSType arrayType = getNativeType(ARRAY_TYPE);
+          return topType.isSubtypeOf(arrayType) ? arrayType : null;
+        }
+
+2024-02-25 01:30:29,068 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:29,068 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:29,068 - Closure_111 - INFO - 补丁1 7 未成功编译
+2024-02-25 01:30:29,069 - Closure_111 - INFO - 开始验证补丁1 8:
+2024-02-25 01:30:29,069 - Closure_111 - INFO - 
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          return getNativeType(ARRAY_TYPE);
+        }
+
+2024-02-25 01:30:30,891 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:30,891 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:30,891 - Closure_111 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:30:30,892 - Closure_111 - INFO - 开始验证补丁1 9:
+2024-02-25 01:30:30,892 - Closure_111 - INFO - 
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          return topType.toMaybeArrayType();
+        }
+
+2024-02-25 01:30:32,693 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:32,693 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:32,693 - Closure_111 - INFO - 补丁1 9 未成功编译
+2024-02-25 01:30:32,694 - Closure_111 - INFO - 开始验证补丁2 1:
+2024-02-25 01:30:32,694 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return getNativeType(ARRAY_TYPE);
+}
+
+2024-02-25 01:30:34,510 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:34,510 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:34,510 - Closure_111 - INFO - 补丁2 1 未成功编译
+2024-02-25 01:30:34,512 - Closure_111 - INFO - 开始验证补丁2 2:
+2024-02-25 01:30:34,512 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  JSType arrayType = getNativeType(ARRAY_TYPE);
+  return arrayType;
+}
+
+2024-02-25 01:30:36,317 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:36,317 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:36,317 - Closure_111 - INFO - 补丁2 2 未成功编译
+2024-02-25 01:30:36,318 - Closure_111 - INFO - 开始验证补丁2 3:
+2024-02-25 01:30:36,318 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  if (canBeArrayType(topType)) {
+    return getNativeType(ARRAY_TYPE);
+  }
+  return null;
+}
+
+2024-02-25 01:30:38,119 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:38,119 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:38,119 - Closure_111 - INFO - 补丁2 3 未成功编译
+2024-02-25 01:30:38,120 - Closure_111 - INFO - 开始验证补丁2 4:
+2024-02-25 01:30:38,120 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return getNativeType(ARRAY_TYPE);
+}
+
+2024-02-25 01:30:38,120 - Closure_111 - INFO - 补丁2 4为重复的补丁
+2024-02-25 01:30:38,121 - Closure_111 - INFO - 开始验证补丁2 5:
+2024-02-25 01:30:38,121 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  JSType arrayType = getNativeType(ARRAY_TYPE);
+  return topType.isEquivalentTo(arrayType) ? arrayType : null;
+}
+
+2024-02-25 01:30:39,921 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:39,921 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:39,921 - Closure_111 - INFO - 补丁2 5 未成功编译
+2024-02-25 01:30:39,923 - Closure_111 - INFO - 开始验证补丁2 6:
+2024-02-25 01:30:39,923 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  JSType arrayType = getNativeType(ARRAY_TYPE);
+  return topType.isSubtypeOf(arrayType) ? arrayType : topType;
+}
+
+2024-02-25 01:30:41,732 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:41,732 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:41,732 - Closure_111 - INFO - 补丁2 6 未成功编译
+2024-02-25 01:30:41,733 - Closure_111 - INFO - 开始验证补丁2 7:
+2024-02-25 01:30:41,733 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return getNativeType(ARRAY_TYPE);
+}
+
+2024-02-25 01:30:41,733 - Closure_111 - INFO - 补丁2 7为重复的补丁
+2024-02-25 01:30:41,734 - Closure_111 - INFO - 开始验证补丁2 8:
+2024-02-25 01:30:41,734 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  JSType arrayType = getNativeType(ARRAY_TYPE);
+  return topType.isSubtypeOf(arrayType) ? arrayType : topType;
+}
+
+2024-02-25 01:30:41,734 - Closure_111 - INFO - 补丁2 8为重复的补丁
+2024-02-25 01:30:41,735 - Closure_111 - INFO - 开始验证补丁2 9:
+2024-02-25 01:30:41,735 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return isAssumingNativeArray() ? getNativeType(ARRAY_TYPE) : topType;
+}
+
+2024-02-25 01:30:43,537 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:43,537 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:43,538 - Closure_111 - INFO - 补丁2 9 未成功编译
+2024-02-25 01:30:43,539 - Closure_111 - INFO - 开始验证补丁3 1:
+2024-02-25 01:30:43,539 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return getNativeType(JSTypeNative.ARRAY_TYPE);
+}
+
+2024-02-25 01:30:45,346 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:45,346 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:45,347 - Closure_111 - INFO - 补丁3 1 未成功编译
+2024-02-25 01:30:45,348 - Closure_111 - INFO - 开始验证补丁3 2:
+2024-02-25 01:30:45,348 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  JSType arrayType = getNativeType(JSTypeNative.ARRAY_TYPE);
+  return topType.canBeType(arrayType) ? arrayType : null;
+}
+
+2024-02-25 01:30:47,149 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:47,149 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:47,150 - Closure_111 - INFO - 补丁3 2 未成功编译
+2024-02-25 01:30:47,151 - Closure_111 - INFO - 开始验证补丁3 3:
+2024-02-25 01:30:47,151 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return topType.isSubtypeOf(getNativeType(JSTypeNative.ARRAY_TYPE)) ? topType : null;
+}
+
+2024-02-25 01:30:48,961 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:48,961 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:48,961 - Closure_111 - INFO - 补丁3 3 未成功编译
+2024-02-25 01:30:48,962 - Closure_111 - INFO - 开始验证补丁3 4:
+2024-02-25 01:30:48,962 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  return getNativeType(ARRAY_TYPE);
+}
+
+2024-02-25 01:30:48,962 - Closure_111 - INFO - 补丁3 4为重复的补丁
+2024-02-25 01:30:48,968 - Closure_111 - INFO - 开始验证补丁3 5:
+2024-02-25 01:30:48,968 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  JSType arrayType = getNativeType(ARRAY_TYPE);
+  return topType.isEquivalentTo(arrayType) ? arrayType : null;
+}
+
+2024-02-25 01:30:48,968 - Closure_111 - INFO - 补丁3 5为重复的补丁
+2024-02-25 01:30:48,969 - Closure_111 - INFO - 开始验证补丁3 6:
+2024-02-25 01:30:48,969 - Closure_111 - INFO - 
+@Override
+protected JSType caseTopType(JSType topType) {
+  // Assuming that the ARRAY_TYPE is indeed the top-most array type, which all array types inherit from.
+  JSType arrayType = getNativeType(ARRAY_TYPE);
+  return topType.isSubtype(arrayType) ? topType : null;
+}
+
+2024-02-25 01:30:50,793 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:50,793 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:50,793 - Closure_111 - INFO - 补丁3 6 未成功编译
+2024-02-25 01:30:50,794 - Closure_111 - INFO - 开始验证补丁3 7:
+2024-02-25 01:30:50,794 - Closure_111 - INFO - 
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          JSType arrayType = getNativeType(ARRAY_TYPE);
+          return arrayType; // Assuming ARRAY_TYPE is the type we want to restrict to when isArray returns true.
+        }
+
+2024-02-25 01:30:52,592 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:52,592 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:52,592 - Closure_111 - INFO - 补丁3 7 未成功编译
+2024-02-25 01:30:52,593 - Closure_111 - INFO - 开始验证补丁3 8:
+2024-02-25 01:30:52,594 - Closure_111 - INFO - 
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          return getNativeType(ARRAY_TYPE); // Directly returning the native array type since this is a restriction to array types.
+        }
+
+2024-02-25 01:30:54,433 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:54,433 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:54,433 - Closure_111 - INFO - 补丁3 8 未成功编译
+2024-02-25 01:30:54,434 - Closure_111 - INFO - 开始验证补丁3 9:
+2024-02-25 01:30:54,434 - Closure_111 - INFO - 
+        @Override
+        protected JSType caseTopType(JSType topType) {
+          return topType.isSubtypeOf(getNativeType(ARRAY_TYPE)) ? getNativeType(ARRAY_TYPE) : null; // Restricting to the array type if the top type is a subtype of the array.
+        }
+
+2024-02-25 01:30:56,254 - Closure_111 - INFO - 编译失败
+2024-02-25 01:30:56,254 - Closure_111 - INFO - 错误: 需要';'
+protected JSType caseTopType(JSType topType) {
+2024-02-25 01:30:56,254 - Closure_111 - INFO - 补丁3 9 未成功编译
+2024-02-25 01:30:56,254 - Closure_111 - INFO - Closure_111 未成功修复

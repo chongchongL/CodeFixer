@@ -1,0 +1,45 @@
+2024-02-24 22:46:24,434 - Closure_126 - INFO - rm -rf /home/chongchong/d4j-project/Closure_126
+2024-02-24 22:46:24,481 - Closure_126 - INFO - 删除 Closure 126b 成功
+2024-02-24 22:46:24,481 - Closure_126 - INFO - defects4j checkout -p Closure -v 126b -w /home/chongchong/d4j-project/Closure_126
+2024-02-24 22:46:27,143 - Closure_126 - INFO - checkout Closure 126b 成功
+2024-02-24 22:46:38,998 - Closure_126 - INFO - 编译成功
+2024-02-24 22:47:33,528 - Closure_126 - INFO - 测试失败
+2024-02-24 22:47:33,528 - Closure_126 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.MinimizeExitPointsTest::testDontRemoveBreakInTryFinally
+  - com.google.javascript.jscomp.MinimizeExitPointsTest::testFunctionReturnOptimization
+
+2024-02-24 22:47:34,533 - Closure_126 - INFO - 它的bug类型为:
+2024-02-24 22:47:34,533 - Closure_126 - INFO - 2
+2024-02-24 22:47:34,554 - Closure_126 - INFO - 开始验证补丁1 1:
+2024-02-24 22:47:34,554 - Closure_126 - INFO - 
+    // Existing finally block handling is removed to respect special rules for finally blocks.
+    // The code below should be commented out or deleted to prevent optimization of exit statements in finally blocks.
+    // if (NodeUtil.hasFinally(n)) {
+    //   Node finallyBlock = n.getLastChild();
+    //   tryMinimizeExits(finallyBlock, exitType, labelName);
+    // }
+
+2024-02-24 22:50:29,510 - Closure_126 - INFO - rm -rf /home/chongchong/d4j-project/Closure_126
+2024-02-24 22:50:29,555 - Closure_126 - INFO - 删除 Closure 126b 成功
+2024-02-24 22:50:29,556 - Closure_126 - INFO - defects4j checkout -p Closure -v 126b -w /home/chongchong/d4j-project/Closure_126
+2024-02-24 22:50:32,149 - Closure_126 - INFO - checkout Closure 126b 成功
+2024-02-24 22:50:44,289 - Closure_126 - INFO - 编译成功
+2024-02-24 22:51:37,356 - Closure_126 - INFO - 测试失败
+2024-02-24 22:51:37,356 - Closure_126 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.MinimizeExitPointsTest::testDontRemoveBreakInTryFinally
+  - com.google.javascript.jscomp.MinimizeExitPointsTest::testFunctionReturnOptimization
+
+2024-02-24 22:51:38,375 - Closure_126 - INFO - 它的bug类型为:
+2024-02-24 22:51:38,375 - Closure_126 - INFO - 2
+2024-02-24 22:51:38,384 - Closure_126 - INFO - 开始验证补丁1 1:
+2024-02-24 22:51:38,384 - Closure_126 - INFO - 
+    // Existing finally block handling is removed to respect special rules for finally blocks.
+    // The code below should be commented out or deleted to prevent optimization of exit statements in finally blocks.
+    // if (NodeUtil.hasFinally(n)) {
+    //   Node finallyBlock = n.getLastChild();
+    //   tryMinimizeExits(finallyBlock, exitType, labelName);
+    // }
+
+2024-02-24 22:51:42,483 - Closure_126 - INFO - 编译成功
+2024-02-24 22:52:36,230 - Closure_126 - INFO - 测试成功
+2024-02-24 22:52:36,230 - Closure_126 - INFO - 补丁1 1 通过了所有的测试用例

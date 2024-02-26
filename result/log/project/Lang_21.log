@@ -1,0 +1,18 @@
+2024-02-23 23:19:04,037 - Lang_21 - INFO - rm -rf /home/chongchong/d4j-project/Lang_21
+2024-02-23 23:19:04,038 - Lang_21 - INFO - 删除 Lang 21b 成功
+2024-02-23 23:19:04,038 - Lang_21 - INFO - defects4j checkout -p Lang -v 21b -w /home/chongchong/d4j-project/Lang_21
+2024-02-23 23:19:07,388 - Lang_21 - INFO - checkout Lang 21b 成功
+2024-02-23 23:19:11,999 - Lang_21 - INFO - 编译成功
+2024-02-23 23:19:20,849 - Lang_21 - INFO - 测试失败
+2024-02-23 23:19:20,849 - Lang_21 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.time.DateUtilsTest::testIsSameLocalTime_Cal
+
+2024-02-23 23:19:21,729 - Lang_21 - INFO - 它的bug类型为:
+2024-02-23 23:19:21,729 - Lang_21 - INFO - 1
+2024-02-23 23:20:17,338 - Lang_21 - INFO - 开始验证补丁1 1:
+2024-02-23 23:20:17,338 - Lang_21 - INFO - 
+cal1.get(Calendar.HOUR_OF_DAY) == cal2.get(Calendar.HOUR_OF_DAY) &&
+
+2024-02-23 23:20:18,442 - Lang_21 - INFO - 编译成功
+2024-02-23 23:20:27,439 - Lang_21 - INFO - 测试成功
+2024-02-23 23:20:27,439 - Lang_21 - INFO - 补丁1 1 通过了所有的测试用例

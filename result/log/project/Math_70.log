@@ -1,0 +1,30 @@
+2024-02-24 01:11:30,511 - Math_70 - INFO - rm -rf /home/chongchong/d4j-project/Math_70
+2024-02-24 01:11:30,512 - Math_70 - INFO - 删除 Math 70b 成功
+2024-02-24 01:11:30,512 - Math_70 - INFO - defects4j checkout -p Math -v 70b -w /home/chongchong/d4j-project/Math_70
+2024-02-24 01:11:33,937 - Math_70 - INFO - checkout Math 70b 成功
+2024-02-24 01:11:39,997 - Math_70 - INFO - 编译成功
+2024-02-24 01:11:47,409 - Math_70 - INFO - 测试失败
+2024-02-24 01:11:47,409 - Math_70 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BisectionSolverTest::testMath369
+
+2024-02-24 01:11:48,333 - Math_70 - INFO - 它的bug类型为:
+2024-02-24 01:11:48,333 - Math_70 - INFO - 1
+2024-02-24 01:12:37,056 - Math_70 - INFO - Math_70 未成功修复
+2024-02-24 11:21:16,841 - Math_70 - INFO - rm -rf /home/chongchong/d4j-project/Math_70
+2024-02-24 11:21:16,869 - Math_70 - INFO - 删除 Math 70b 成功
+2024-02-24 11:21:16,869 - Math_70 - INFO - defects4j checkout -p Math -v 70b -w /home/chongchong/d4j-project/Math_70
+2024-02-24 11:21:20,292 - Math_70 - INFO - checkout Math 70b 成功
+2024-02-24 11:21:26,133 - Math_70 - INFO - 编译成功
+2024-02-24 11:21:33,357 - Math_70 - INFO - 测试失败
+2024-02-24 11:21:33,357 - Math_70 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.BisectionSolverTest::testMath369
+
+2024-02-24 11:21:34,256 - Math_70 - INFO - 它的bug类型为:
+2024-02-24 11:21:34,256 - Math_70 - INFO - 1
+2024-02-24 11:22:10,129 - Math_70 - INFO - 开始验证补丁1 1:
+2024-02-24 11:22:10,129 - Math_70 - INFO - 
+return solve(f, min, max);
+
+2024-02-24 11:22:11,337 - Math_70 - INFO - 编译成功
+2024-02-24 11:22:18,464 - Math_70 - INFO - 测试成功
+2024-02-24 11:22:18,464 - Math_70 - INFO - 补丁1 1 通过了所有的测试用例

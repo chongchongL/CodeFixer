@@ -1,0 +1,455 @@
+2024-02-26 11:24:33,366 - Lang_27 - INFO - rm -rf /home/chongchong/d4j-project/Lang_27
+2024-02-26 11:24:33,366 - Lang_27 - INFO - 删除 Lang 27b 成功
+2024-02-26 11:24:33,366 - Lang_27 - INFO - defects4j checkout -p Lang -v 27b -w /home/chongchong/d4j-project/Lang_27
+2024-02-26 11:24:36,728 - Lang_27 - INFO - checkout Lang 27b 成功
+2024-02-26 11:24:41,126 - Lang_27 - INFO - 编译成功
+2024-02-26 11:24:50,034 - Lang_27 - INFO - 测试失败
+2024-02-26 11:24:50,034 - Lang_27 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber
+
+2024-02-26 11:24:50,946 - Lang_27 - INFO - 它的bug类型为:
+2024-02-26 11:24:50,946 - Lang_27 - INFO - 4
+2024-02-26 11:25:47,799 - Lang_27 - INFO - 开始验证补丁1 1:
+2024-02-26 11:25:47,799 - Lang_27 - INFO - 
+if (expPos < decPos) {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+dec = str.substring(decPos + 1, expPos);
+
+2024-02-26 11:25:48,491 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:48,491 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:48,491 - Lang_27 - INFO - 补丁1 1 未成功编译
+2024-02-26 11:25:48,492 - Lang_27 - INFO - 开始验证补丁1 2:
+2024-02-26 11:25:48,492 - Lang_27 - INFO - 
+int ePos = str.indexOf('e');
+int EPos = str.indexOf('E');
+int expPos = (ePos > -1 && EPos > -1) ? Math.min(ePos, EPos) : (ePos > -1 ? ePos : EPos);
+
+if (expPos < decPos) {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+dec = str.substring(decPos + 1, expPos);
+
+2024-02-26 11:25:49,182 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:49,182 - Lang_27 - INFO - 错误: 已在方法 createNumber(String)中定义了变量 expPos
+int expPos = (ePos > -1 && EPos > -1) ? Math.min(ePos, EPos) : (ePos > -1 ? ePos : EPos);
+2024-02-26 11:25:49,182 - Lang_27 - INFO - 补丁1 2 未成功编译
+2024-02-26 11:25:49,183 - Lang_27 - INFO - 开始验证补丁1 3:
+2024-02-26 11:25:49,183 - Lang_27 - INFO - 
+// Calculate expPos correctly above this code block
+
+if (expPos < decPos) {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+dec = str.substring(decPos + 1, expPos);
+mant = str.substring(0, decPos);
+
+2024-02-26 11:25:49,876 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:49,876 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:49,876 - Lang_27 - INFO - 补丁1 3 未成功编译
+2024-02-26 11:25:49,877 - Lang_27 - INFO - 开始验证补丁1 4:
+2024-02-26 11:25:49,877 - Lang_27 - INFO - 
+int expPos = Math.max(str.indexOf('e'), str.indexOf('E'));
+
+if (decPos > -1) {
+    if (expPos > -1) {
+        if (expPos < decPos) {
+            throw new NumberFormatException(str + " is not a valid number.");
+        }
+        dec = str.substring(decPos + 1, expPos);
+    } else {
+        dec = str.substring(decPos + 1);
+    }
+    mant = str.substring(0, decPos);
+} else {
+    if (expPos > -1) {
+        mant = str.substring(0, expPos);
+    } else {
+        mant = str;
+    }
+}
+
+2024-02-26 11:25:50,561 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:50,561 - Lang_27 - INFO - 错误: 已在方法 createNumber(String)中定义了变量 expPos
+int expPos = Math.max(str.indexOf('e'), str.indexOf('E'));
+2024-02-26 11:25:50,561 - Lang_27 - INFO - 补丁1 4 未成功编译
+2024-02-26 11:25:50,562 - Lang_27 - INFO - 开始验证补丁1 5:
+2024-02-26 11:25:50,562 - Lang_27 - INFO - 
+int expPos = str.indexOf('e');
+expPos = (expPos == -1) ? str.indexOf('E') : expPos;
+
+if (decPos > -1) {
+    if (expPos > -1) {
+        if (expPos < decPos) {
+            throw new NumberFormatException(str + " is not a valid number.");
+        }
+        dec = str.substring(decPos + 1, expPos);
+    } else {
+        dec = str.substring(decPos + 1);
+    }
+    mant = str.substring(0, decPos);
+} else {
+    if (expPos > -1) {
+        mant = str.substring(0, expPos);
+    } else {
+        mant = str;
+    }
+}
+
+2024-02-26 11:25:51,250 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:51,250 - Lang_27 - INFO - 错误: 已在方法 createNumber(String)中定义了变量 expPos
+int expPos = str.indexOf('e');
+2024-02-26 11:25:51,250 - Lang_27 - INFO - 补丁1 5 未成功编译
+2024-02-26 11:25:51,251 - Lang_27 - INFO - 开始验证补丁1 6:
+2024-02-26 11:25:51,251 - Lang_27 - INFO - 
+int ePos = str.indexOf('e');
+int EPos = str.indexOf('E');
+int expPos = (ePos > -1) ? ePos : EPos;
+
+if (decPos > -1) {
+    if (expPos > -1) {
+        if (expPos < decPos) {
+            throw new NumberFormatException(str + " is not a valid number.");
+        }
+        dec = str.substring(decPos + 1, expPos);
+    } else {
+        dec = str.substring(decPos + 1);
+    }
+    mant = str.substring(0, decPos);
+} else {
+    if (expPos > -1) {
+        mant = str.substring(0, expPos);
+    } else {
+        mant = str;
+    }
+}
+
+2024-02-26 11:25:51,949 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:51,949 - Lang_27 - INFO - 错误: 已在方法 createNumber(String)中定义了变量 expPos
+int expPos = (ePos > -1) ? ePos : EPos;
+2024-02-26 11:25:51,949 - Lang_27 - INFO - 补丁1 6 未成功编译
+2024-02-26 11:25:51,950 - Lang_27 - INFO - 开始验证补丁1 7:
+2024-02-26 11:25:51,950 - Lang_27 - INFO - 
+if (expPos > decPos) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1, expPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:25:52,642 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:52,642 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:52,642 - Lang_27 - INFO - 补丁1 7 未成功编译
+2024-02-26 11:25:52,643 - Lang_27 - INFO - 开始验证补丁1 8:
+2024-02-26 11:25:52,643 - Lang_27 - INFO - 
+int eIndex = str.indexOf('e');
+int EIndex = str.indexOf('E');
+expPos = (eIndex > -1 && EIndex > -1) ? Math.min(eIndex, EIndex) : Math.max(eIndex, EIndex) + 1;
+
+if (expPos > decPos) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1, expPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:25:53,328 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:53,329 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:53,329 - Lang_27 - INFO - 补丁1 8 未成功编译
+2024-02-26 11:25:53,330 - Lang_27 - INFO - 开始验证补丁1 9:
+2024-02-26 11:25:53,330 - Lang_27 - INFO - 
+expPos = Math.max(str.indexOf('e'), str.indexOf('E')) + 1;
+
+if (expPos > decPos) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1, expPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:25:54,022 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:54,023 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:54,023 - Lang_27 - INFO - 补丁1 9 未成功编译
+2024-02-26 11:25:54,024 - Lang_27 - INFO - 开始验证补丁2 1:
+2024-02-26 11:25:54,024 - Lang_27 - INFO - 
+if (expPos > decPos) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1, expPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:25:54,024 - Lang_27 - INFO - 补丁2 1为重复的补丁
+2024-02-26 11:25:54,025 - Lang_27 - INFO - 开始验证补丁2 2:
+2024-02-26 11:25:54,025 - Lang_27 - INFO - 
+if (expPos > decPos && expPos < str.length()) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1, expPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:25:54,722 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:54,722 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:54,722 - Lang_27 - INFO - 补丁2 2 未成功编译
+2024-02-26 11:25:54,723 - Lang_27 - INFO - 开始验证补丁2 3:
+2024-02-26 11:25:54,723 - Lang_27 - INFO - 
+// This block assumes an adjustment is made to expPos beforehand to calculate it correctly
+if (expPos > decPos) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1, expPos);
+} else if (expPos == -1) {
+    mant = str.substring(0, decPos);
+    dec = str.substring(decPos + 1);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:25:55,419 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:55,419 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:55,419 - Lang_27 - INFO - 补丁2 3 未成功编译
+2024-02-26 11:25:55,420 - Lang_27 - INFO - 开始验证补丁2 4:
+2024-02-26 11:25:55,420 - Lang_27 - INFO - 
+                if (expPos < decPos) {
+                    throw new NumberFormatException(str + " is not a valid number.");
+                }
+                dec = str.substring(decPos + 1, expPos);
+                mant = str.substring(0, decPos);
+
+2024-02-26 11:25:56,112 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:56,112 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:56,112 - Lang_27 - INFO - 补丁2 4 未成功编译
+2024-02-26 11:25:56,113 - Lang_27 - INFO - 开始验证补丁2 5:
+2024-02-26 11:25:56,113 - Lang_27 - INFO - 
+                if (expPos <= decPos) {
+                    throw new NumberFormatException(str + " is not a valid number.");
+                }
+                dec = str.substring(decPos + 1, expPos);
+                mant = str.substring(0, decPos);
+
+2024-02-26 11:25:56,833 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:56,833 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:56,833 - Lang_27 - INFO - 补丁2 5 未成功编译
+2024-02-26 11:25:56,834 - Lang_27 - INFO - 开始验证补丁2 6:
+2024-02-26 11:25:56,834 - Lang_27 - INFO - 
+                if (expPos <= decPos && expPos > -1) {
+                    throw new NumberFormatException(str + " is not a valid number.");
+                }
+                dec = str.substring(decPos + 1, expPos);
+                mant = str.substring(0, decPos);
+
+2024-02-26 11:25:57,533 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:57,533 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:57,533 - Lang_27 - INFO - 补丁2 6 未成功编译
+2024-02-26 11:25:57,534 - Lang_27 - INFO - 开始验证补丁2 7:
+2024-02-26 11:25:57,534 - Lang_27 - INFO - 
+if (expPos > decPos) {
+    dec = str.substring(decPos + 1, expPos);
+} else {
+    dec = str.substring(decPos + 1);
+}
+mant = str.substring(0, decPos);
+
+2024-02-26 11:25:58,218 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:58,218 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:58,218 - Lang_27 - INFO - 补丁2 7 未成功编译
+2024-02-26 11:25:58,219 - Lang_27 - INFO - 开始验证补丁2 8:
+2024-02-26 11:25:58,219 - Lang_27 - INFO - 
+if (expPos > decPos) {
+    dec = str.substring(decPos + 1, expPos);
+    mant = str.substring(0, decPos);
+} else {
+    dec = str.substring(decPos + 1);
+    mant = str;
+}
+
+2024-02-26 11:25:58,936 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:58,936 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:58,936 - Lang_27 - INFO - 补丁2 8 未成功编译
+2024-02-26 11:25:58,937 - Lang_27 - INFO - 开始验证补丁2 9:
+2024-02-26 11:25:58,937 - Lang_27 - INFO - 
+int actualExpPos = Math.max(str.indexOf('e'), str.indexOf('E'));
+if (actualExpPos > decPos) {
+    dec = str.substring(decPos + 1, actualExpPos);
+    mant = str.substring(0, decPos);
+} else {
+    dec = str.substring(decPos + 1);
+    mant = str;
+}
+
+2024-02-26 11:25:59,621 - Lang_27 - INFO - 编译失败
+2024-02-26 11:25:59,621 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:25:59,621 - Lang_27 - INFO - 补丁2 9 未成功编译
+2024-02-26 11:25:59,622 - Lang_27 - INFO - 开始验证补丁3 1:
+2024-02-26 11:25:59,622 - Lang_27 - INFO - 
+if (expPos > -1 && expPos < decPos) {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+dec = expPos > -1 ? str.substring(decPos + 1, expPos) : str.substring(decPos + 1);
+mant = str.substring(0, decPos);
+
+2024-02-26 11:26:00,311 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:00,311 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:26:00,311 - Lang_27 - INFO - 补丁3 1 未成功编译
+2024-02-26 11:26:00,313 - Lang_27 - INFO - 开始验证补丁3 2:
+2024-02-26 11:26:00,313 - Lang_27 - INFO - 
+int ePos = str.indexOf('e');
+int EPos = str.indexOf('E');
+int expPos = (ePos > -1) ? ePos : EPos;
+
+if (expPos > -1 && expPos < decPos) {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+dec = (expPos > -1) ? str.substring(decPos + 1, expPos) : str.substring(decPos + 1);
+mant = str.substring(0, decPos);
+
+2024-02-26 11:26:00,998 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:00,998 - Lang_27 - INFO - 错误: 已在方法 createNumber(String)中定义了变量 expPos
+int expPos = (ePos > -1) ? ePos : EPos;
+2024-02-26 11:26:00,998 - Lang_27 - INFO - 补丁3 2 未成功编译
+2024-02-26 11:26:00,999 - Lang_27 - INFO - 开始验证补丁3 3:
+2024-02-26 11:26:00,999 - Lang_27 - INFO - 
+int expPos = Math.max(str.indexOf('e'), str.indexOf('E'));
+
+if ((expPos != -1 && decPos != -1 && expPos < decPos) || (ePos != -1 && EPos != -1)) {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+dec = expPos > -1 ? str.substring(decPos + 1, expPos) : str.substring(decPos + 1);
+mant = str.substring(0, decPos);
+
+2024-02-26 11:26:01,699 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:01,699 - Lang_27 - INFO - 错误: 已在方法 createNumber(String)中定义了变量 expPos
+int expPos = Math.max(str.indexOf('e'), str.indexOf('E'));
+2024-02-26 11:26:01,699 - Lang_27 - INFO - 补丁3 3 未成功编译
+2024-02-26 11:26:01,700 - Lang_27 - INFO - 开始验证补丁3 4:
+2024-02-26 11:26:01,700 - Lang_27 - INFO - 
+                if (expPos > -1 && expPos < decPos) {
+                    throw new NumberFormatException(str + " is not a valid number.");
+                }
+                dec = str.substring(decPos + 1, expPos);
+            } else {
+                dec = str.substring(decPos + 1);
+            }
+            mant = str.substring(0, decPos);
+        } else {
+            if (expPos > -1) {
+                mant = str.substring(0, expPos);
+
+2024-02-26 11:26:02,794 - Lang_27 - INFO - 编译成功
+2024-02-26 11:26:11,684 - Lang_27 - INFO - 测试失败
+2024-02-26 11:26:11,684 - Lang_27 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber
+
+2024-02-26 11:26:12,130 - Lang_27 - INFO - 选择失败的测试用例为:
+2024-02-26 11:26:12,130 - Lang_27 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber
+2024-02-26 11:26:12,130 - Lang_27 - INFO - 失败的测试代码为:
+2024-02-26 11:26:12,130 - Lang_27 - INFO -         assertFalse("createNumber(String) succeeded", checkCreateNumber("1eE"));
+
+2024-02-26 11:26:12,130 - Lang_27 - INFO - 失败信息为:
+2024-02-26 11:26:12,130 - Lang_27 - INFO - java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+
+2024-02-26 11:26:12,130 - Lang_27 - INFO - 补丁3 4测试失败
+2024-02-26 11:26:12,131 - Lang_27 - INFO - 开始验证补丁3 5:
+2024-02-26 11:26:12,131 - Lang_27 - INFO - 
+                if (expPos <= decPos) {
+                    throw new NumberFormatException(str + " is not a valid number.");
+                }
+                dec = str.substring(decPos + 1, expPos);
+            } else {
+                dec = str.substring(decPos + 1);
+            }
+            mant = str.substring(0, decPos);
+        } else {
+            if (expPos > -1) {
+                mant = str.substring(0, expPos);
+
+2024-02-26 11:26:13,243 - Lang_27 - INFO - 编译成功
+2024-02-26 11:26:22,155 - Lang_27 - INFO - 测试失败
+2024-02-26 11:26:22,155 - Lang_27 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber
+
+2024-02-26 11:26:22,595 - Lang_27 - INFO - 选择失败的测试用例为:
+2024-02-26 11:26:22,595 - Lang_27 - INFO - org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber
+2024-02-26 11:26:22,595 - Lang_27 - INFO - 失败的测试代码为:
+2024-02-26 11:26:22,595 - Lang_27 - INFO -         assertFalse("createNumber(String) succeeded", checkCreateNumber("1eE"));
+
+2024-02-26 11:26:22,595 - Lang_27 - INFO - 失败信息为:
+2024-02-26 11:26:22,595 - Lang_27 - INFO - java.lang.StringIndexOutOfBoundsException: String index out of range: 4
+
+2024-02-26 11:26:22,595 - Lang_27 - INFO - 补丁3 5测试失败
+2024-02-26 11:26:22,596 - Lang_27 - INFO - 开始验证补丁3 6:
+2024-02-26 11:26:22,596 - Lang_27 - INFO - 
+                if (expPos >= 0 && expPos < decPos) {
+                    throw new NumberFormatException(str + " is not a valid number.");
+                }
+                // Check if the substring operation is valid before execution
+                if (expPos > decPos && expPos < str.length()) {
+                    dec = str.substring(decPos + 1, expPos);
+                }
+            } else {
+                dec = str.substring(decPos + 1);
+            }
+            mant = str.substring(0, decPos);
+        } else {
+            if (expPos >= 0) {
+                mant = str.substring(0, expPos);
+
+2024-02-26 11:26:23,284 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:23,285 - Lang_27 - INFO - 错误: 可能尚未初始化变量dec
+if (dec == null
+2024-02-26 11:26:23,285 - Lang_27 - INFO - 补丁3 6 未成功编译
+2024-02-26 11:26:23,286 - Lang_27 - INFO - 开始验证补丁3 7:
+2024-02-26 11:26:23,286 - Lang_27 - INFO - 
+if (expPos > decPos) {
+    dec = str.substring(decPos + 1, expPos);
+    mant = str.substring(0, decPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:26:23,974 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:23,974 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:26:23,974 - Lang_27 - INFO - 补丁3 7 未成功编译
+2024-02-26 11:26:23,975 - Lang_27 - INFO - 开始验证补丁3 8:
+2024-02-26 11:26:23,975 - Lang_27 - INFO - 
+if (expPos - 1 > decPos) {
+    dec = str.substring(decPos + 1, expPos - 1);
+    mant = str.substring(0, decPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:26:24,665 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:24,665 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:26:24,666 - Lang_27 - INFO - 补丁3 8 未成功编译
+2024-02-26 11:26:24,667 - Lang_27 - INFO - 开始验证补丁3 9:
+2024-02-26 11:26:24,667 - Lang_27 - INFO - 
+int actualExpPos = Math.max(str.indexOf('e'), str.indexOf('E'));
+if (actualExpPos > decPos) {
+    dec = str.substring(decPos + 1, actualExpPos);
+    mant = str.substring(0, decPos);
+} else {
+    throw new NumberFormatException(str + " is not a valid number.");
+}
+
+2024-02-26 11:26:25,354 - Lang_27 - INFO - 编译失败
+2024-02-26 11:26:25,354 - Lang_27 - INFO - 错误: 可能尚未初始化变量mant
+boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
+2024-02-26 11:26:25,354 - Lang_27 - INFO - 补丁3 9 未成功编译
+2024-02-26 11:26:25,354 - Lang_27 - INFO - Lang_27 未成功修复

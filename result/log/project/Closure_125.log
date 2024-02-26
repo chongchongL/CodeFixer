@@ -1,0 +1,66 @@
+2024-02-24 00:52:05,751 - Closure_125 - INFO - rm -rf /home/chongchong/d4j-project/Closure_125
+2024-02-24 00:52:05,752 - Closure_125 - INFO - 删除 Closure 125b 成功
+2024-02-24 00:52:05,752 - Closure_125 - INFO - defects4j checkout -p Closure -v 125b -w /home/chongchong/d4j-project/Closure_125
+2024-02-24 00:52:08,228 - Closure_125 - INFO - checkout Closure 125b 成功
+2024-02-24 00:52:20,307 - Closure_125 - INFO - 编译成功
+2024-02-24 00:53:17,889 - Closure_125 - INFO - 测试失败
+2024-02-24 00:53:17,890 - Closure_125 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1002
+
+2024-02-24 00:53:18,913 - Closure_125 - INFO - 它的bug类型为:
+2024-02-24 00:53:18,913 - Closure_125 - INFO - 1
+2024-02-24 00:54:00,826 - Closure_125 - INFO - Closure_125 未成功修复
+2024-02-24 14:45:06,676 - Closure_125 - INFO - rm -rf /home/chongchong/d4j-project/Closure_125
+2024-02-24 14:45:06,748 - Closure_125 - INFO - 删除 Closure 125b 成功
+2024-02-24 14:45:06,748 - Closure_125 - INFO - defects4j checkout -p Closure -v 125b -w /home/chongchong/d4j-project/Closure_125
+2024-02-24 14:45:09,211 - Closure_125 - INFO - checkout Closure 125b 成功
+2024-02-24 14:45:21,168 - Closure_125 - INFO - 编译成功
+2024-02-24 14:46:18,031 - Closure_125 - INFO - 测试失败
+2024-02-24 14:46:18,031 - Closure_125 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1002
+
+2024-02-24 14:46:19,057 - Closure_125 - INFO - 它的bug类型为:
+2024-02-24 14:46:19,057 - Closure_125 - INFO - 1
+2024-02-24 14:47:12,156 - Closure_125 - INFO - 开始验证补丁1 1:
+2024-02-24 14:47:12,156 - Closure_125 - INFO - 
+if (fnType != null) {
+
+2024-02-24 14:47:16,540 - Closure_125 - INFO - 编译成功
+2024-02-24 14:48:13,399 - Closure_125 - INFO - 测试失败
+2024-02-24 14:48:13,399 - Closure_125 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1002
+
+2024-02-24 14:48:13,906 - Closure_125 - INFO - 选择失败的测试用例为:
+2024-02-24 14:48:13,906 - Closure_125 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue1002
+2024-02-24 14:48:13,907 - Closure_125 - INFO - 失败的测试代码为:
+2024-02-24 14:48:13,907 - Closure_125 - INFO -     testTypes(
+
+2024-02-24 14:48:13,907 - Closure_125 - INFO - 失败信息为:
+2024-02-24 14:48:13,907 - Closure_125 - INFO - java.lang.IllegalStateException
+
+2024-02-24 14:48:13,907 - Closure_125 - INFO - 补丁1 1测试失败
+2024-02-24 14:48:13,908 - Closure_125 - INFO - 开始验证补丁1 2:
+2024-02-24 14:48:13,908 - Closure_125 - INFO - 
+if (fnType != null && fnType.canBeCalled()) {
+
+2024-02-24 14:48:18,264 - Closure_125 - INFO - 编译成功
+2024-02-24 14:49:15,176 - Closure_125 - INFO - 测试失败
+2024-02-24 14:49:15,176 - Closure_125 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.TypeCheckTest::testIssue1002
+
+2024-02-24 14:49:15,686 - Closure_125 - INFO - 选择失败的测试用例为:
+2024-02-24 14:49:15,686 - Closure_125 - INFO - com.google.javascript.jscomp.TypeCheckTest::testIssue1002
+2024-02-24 14:49:15,686 - Closure_125 - INFO - 失败的测试代码为:
+2024-02-24 14:49:15,686 - Closure_125 - INFO -     testTypes(
+
+2024-02-24 14:49:15,686 - Closure_125 - INFO - 失败信息为:
+2024-02-24 14:49:15,686 - Closure_125 - INFO - java.lang.IllegalStateException
+
+2024-02-24 14:49:15,686 - Closure_125 - INFO - 补丁1 2测试失败
+2024-02-24 14:49:15,687 - Closure_125 - INFO - 开始验证补丁1 3:
+2024-02-24 14:49:15,687 - Closure_125 - INFO - 
+if (fnType != null && fnType.isConstructor() && fnType.hasInstanceType()) {
+
+2024-02-24 14:49:20,070 - Closure_125 - INFO - 编译成功
+2024-02-24 14:50:17,214 - Closure_125 - INFO - 测试成功
+2024-02-24 14:50:17,214 - Closure_125 - INFO - 补丁1 3 通过了所有的测试用例

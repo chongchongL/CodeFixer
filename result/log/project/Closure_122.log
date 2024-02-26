@@ -1,0 +1,149 @@
+2024-02-25 01:37:53,233 - Closure_122 - INFO - rm -rf /home/chongchong/d4j-project/Closure_122
+2024-02-25 01:37:53,233 - Closure_122 - INFO - 删除 Closure 122b 成功
+2024-02-25 01:37:53,234 - Closure_122 - INFO - defects4j checkout -p Closure -v 122b -w /home/chongchong/d4j-project/Closure_122
+2024-02-25 01:37:56,048 - Closure_122 - INFO - checkout Closure 122b 成功
+2024-02-25 01:38:08,160 - Closure_122 - INFO - 编译成功
+2024-02-25 01:39:05,358 - Closure_122 - INFO - 测试失败
+2024-02-25 01:39:05,358 - Closure_122 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning3
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning4
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning5
+
+2024-02-25 01:39:06,371 - Closure_122 - INFO - 它的bug类型为:
+2024-02-25 01:39:06,372 - Closure_122 - INFO - 2
+2024-02-25 01:39:58,715 - Closure_122 - INFO - 开始验证补丁1 1:
+2024-02-25 01:39:58,715 - Closure_122 - INFO - 
+if (comment.getValue().matches("(?s).*\\n\\s*\\*@.*")) {
+
+2024-02-25 01:40:03,084 - Closure_122 - INFO - 编译成功
+2024-02-25 01:41:01,384 - Closure_122 - INFO - 测试失败
+2024-02-25 01:41:01,384 - Closure_122 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning1
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning4
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning5
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning6
+
+2024-02-25 01:41:01,884 - Closure_122 - INFO - 选择失败的测试用例为:
+2024-02-25 01:41:01,884 - Closure_122 - INFO - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning1
+2024-02-25 01:41:01,884 - Closure_122 - INFO - 失败的测试代码为:
+2024-02-25 01:41:01,884 - Closure_122 - INFO -     parse("/* @type {number} */ var x = 3;", SUSPICIOUS_COMMENT_WARNING);
+
+2024-02-25 01:41:01,884 - Closure_122 - INFO - 失败信息为:
+2024-02-25 01:41:01,884 - Closure_122 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:41:01,884 - Closure_122 - INFO - 补丁1 1测试失败
+2024-02-25 01:41:01,885 - Closure_122 - INFO - 开始验证补丁1 2:
+2024-02-25 01:41:01,885 - Closure_122 - INFO - 
+if (Pattern.compile("\\n\\s*\\*@").matcher(comment.getValue()).find()) {
+
+2024-02-25 01:41:06,260 - Closure_122 - INFO - 编译成功
+2024-02-25 01:42:05,110 - Closure_122 - INFO - 测试失败
+2024-02-25 01:42:05,110 - Closure_122 - INFO - Failing tests: 5
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning1
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning4
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning5
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning6
+
+2024-02-25 01:42:05,622 - Closure_122 - INFO - 选择失败的测试用例为:
+2024-02-25 01:42:05,622 - Closure_122 - INFO - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning1
+2024-02-25 01:42:05,622 - Closure_122 - INFO - 失败的测试代码为:
+2024-02-25 01:42:05,622 - Closure_122 - INFO -     parse("/* @type {number} */ var x = 3;", SUSPICIOUS_COMMENT_WARNING);
+
+2024-02-25 01:42:05,622 - Closure_122 - INFO - 失败信息为:
+2024-02-25 01:42:05,622 - Closure_122 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:42:05,623 - Closure_122 - INFO - 补丁1 2测试失败
+2024-02-25 01:42:05,624 - Closure_122 - INFO - 开始验证补丁1 3:
+2024-02-25 01:42:05,624 - Closure_122 - INFO - 
+if (comment.getValue().contains("/* @") || comment.getValue().matches(".*\\n\\s*\\*@.*")) {
+
+2024-02-25 01:42:10,021 - Closure_122 - INFO - 编译成功
+2024-02-25 01:43:07,246 - Closure_122 - INFO - 测试失败
+2024-02-25 01:43:07,246 - Closure_122 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning4
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning5
+
+2024-02-25 01:43:07,758 - Closure_122 - INFO - 选择失败的测试用例为:
+2024-02-25 01:43:07,758 - Closure_122 - INFO - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+2024-02-25 01:43:07,758 - Closure_122 - INFO - 失败的测试代码为:
+2024-02-25 01:43:07,758 - Closure_122 - INFO -     parse("/* \n * @type {number} */ var x = 3;", SUSPICIOUS_COMMENT_WARNING);
+
+2024-02-25 01:43:07,758 - Closure_122 - INFO - 失败信息为:
+2024-02-25 01:43:07,758 - Closure_122 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:43:07,758 - Closure_122 - INFO - 补丁1 3测试失败
+2024-02-25 01:43:07,759 - Closure_122 - INFO - 开始验证补丁1 4:
+2024-02-25 01:43:07,759 - Closure_122 - INFO - 
+if (comment.getValue().matches("(?s).*\\n\\s*\\*@.*")) {
+
+2024-02-25 01:43:07,759 - Closure_122 - INFO - 补丁1 4为重复的补丁
+2024-02-25 01:43:07,760 - Closure_122 - INFO - 开始验证补丁1 5:
+2024-02-25 01:43:07,760 - Closure_122 - INFO - 
+if (comment.getValue().contains("/* @") || Pattern.compile("\\n\\s*\\*@").matcher(comment.getValue()).find()) {
+
+2024-02-25 01:43:12,114 - Closure_122 - INFO - 编译成功
+2024-02-25 01:44:09,859 - Closure_122 - INFO - 测试失败
+2024-02-25 01:44:09,859 - Closure_122 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning4
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning5
+
+2024-02-25 01:44:10,370 - Closure_122 - INFO - 选择失败的测试用例为:
+2024-02-25 01:44:10,370 - Closure_122 - INFO - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+2024-02-25 01:44:10,370 - Closure_122 - INFO - 失败的测试代码为:
+2024-02-25 01:44:10,370 - Closure_122 - INFO -     parse("/* \n * @type {number} */ var x = 3;", SUSPICIOUS_COMMENT_WARNING);
+
+2024-02-25 01:44:10,370 - Closure_122 - INFO - 失败信息为:
+2024-02-25 01:44:10,370 - Closure_122 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:44:10,370 - Closure_122 - INFO - 补丁1 5测试失败
+2024-02-25 01:44:10,371 - Closure_122 - INFO - 开始验证补丁1 6:
+2024-02-25 01:44:10,371 - Closure_122 - INFO - 
+if (Pattern.matches(".*(/\\*\\s*@|\\n\\s*\\*@).*", comment.getValue())) {
+
+2024-02-25 01:44:14,763 - Closure_122 - INFO - 编译成功
+2024-02-25 01:45:12,456 - Closure_122 - INFO - 测试失败
+2024-02-25 01:45:12,457 - Closure_122 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning4
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning5
+
+2024-02-25 01:45:12,966 - Closure_122 - INFO - 选择失败的测试用例为:
+2024-02-25 01:45:12,966 - Closure_122 - INFO - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning2
+2024-02-25 01:45:12,966 - Closure_122 - INFO - 失败的测试代码为:
+2024-02-25 01:45:12,966 - Closure_122 - INFO -     parse("/* \n * @type {number} */ var x = 3;", SUSPICIOUS_COMMENT_WARNING);
+
+2024-02-25 01:45:12,966 - Closure_122 - INFO - 失败信息为:
+2024-02-25 01:45:12,966 - Closure_122 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:45:12,966 - Closure_122 - INFO - 补丁1 6测试失败
+2024-02-25 01:45:12,967 - Closure_122 - INFO - 开始验证补丁1 7:
+2024-02-25 01:45:12,967 - Closure_122 - INFO - 
+if (comment.getValue().matches("(?s).*\\n[ \\t]*\\*[ \\t]*@.*")) {
+
+2024-02-25 01:45:17,381 - Closure_122 - INFO - 编译成功
+2024-02-25 01:46:15,474 - Closure_122 - INFO - 测试失败
+2024-02-25 01:46:15,474 - Closure_122 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning1
+  - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning6
+
+2024-02-25 01:46:15,991 - Closure_122 - INFO - 选择失败的测试用例为:
+2024-02-25 01:46:15,991 - Closure_122 - INFO - com.google.javascript.jscomp.parsing.ParserTest::testSuspiciousBlockCommentWarning1
+2024-02-25 01:46:15,991 - Closure_122 - INFO - 失败的测试代码为:
+2024-02-25 01:46:15,991 - Closure_122 - INFO -     parse("/* @type {number} */ var x = 3;", SUSPICIOUS_COMMENT_WARNING);
+
+2024-02-25 01:46:15,991 - Closure_122 - INFO - 失败信息为:
+2024-02-25 01:46:15,991 - Closure_122 - INFO - junit.framework.AssertionFailedError
+
+2024-02-25 01:46:15,991 - Closure_122 - INFO - 补丁1 7测试失败
+2024-02-25 01:46:15,993 - Closure_122 - INFO - 开始验证补丁1 8:
+2024-02-25 01:46:15,993 - Closure_122 - INFO - 
+if (comment.getValue().contains("/* @") || 
+    Pattern.compile("\\n\\s*\\*\\s*@").matcher(comment.getValue()).find()) {
+
+2024-02-25 01:46:20,427 - Closure_122 - INFO - 编译成功
+2024-02-25 01:47:20,216 - Closure_122 - INFO - 测试成功
+2024-02-25 01:47:20,216 - Closure_122 - INFO - 补丁1 8 通过了所有的测试用例

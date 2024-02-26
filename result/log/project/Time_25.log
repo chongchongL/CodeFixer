@@ -1,0 +1,361 @@
+2024-02-25 13:02:44,702 - Time_25 - INFO - rm -rf /home/chongchong/d4j-project/Time_25
+2024-02-25 13:02:44,703 - Time_25 - INFO - 删除 Time 25b 成功
+2024-02-25 13:02:44,703 - Time_25 - INFO - defects4j checkout -p Time -v 25b -w /home/chongchong/d4j-project/Time_25
+2024-02-25 13:02:46,281 - Time_25 - INFO - checkout Time 25b 成功
+2024-02-25 13:02:52,366 - Time_25 - INFO - 编译成功
+2024-02-25 13:02:59,875 - Time_25 - INFO - 测试失败
+2024-02-25 13:02:59,876 - Time_25 - INFO - Failing tests: 4
+  - org.joda.time.TestDateTimeZoneCutover::test_DateTime_constructor_Moscow_Autumn
+  - org.joda.time.TestDateTimeZoneCutover::test_getOffsetFromLocal_Moscow_Autumn_overlap_mins
+  - org.joda.time.TestDateTimeZoneCutover::test_getOffsetFromLocal_Moscow_Autumn
+  - org.joda.time.TestMonthDay_Properties::testPropertyGetMonthOfYear
+
+2024-02-25 13:03:00,772 - Time_25 - INFO - 它的bug类型为:
+2024-02-25 13:03:00,772 - Time_25 - INFO - 3
+2024-02-25 13:03:46,577 - Time_25 - INFO - 开始验证补丁1 1:
+2024-02-25 13:03:46,577 - Time_25 - INFO - 
+                long nextLocal = nextTransition(instantAdjusted);
+                long nextAdjusted = nextTransition(instantLocal - offsetAdjusted);
+                if (nextLocal != nextAdjusted) {
+                    return offsetLocal;
+                }
+                return offsetAdjusted; // Fixed line to return the adjusted offset
+            }
+        }
+
+2024-02-25 13:03:47,133 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:47,133 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:47,133 - Time_25 - INFO - 补丁1 1 未成功编译
+2024-02-25 13:03:47,134 - Time_25 - INFO - 开始验证补丁1 2:
+2024-02-25 13:03:47,134 - Time_25 - INFO - 
+                long nextLocal = nextTransition(instantAdjusted);
+                long nextAdjusted = nextTransition(instantLocal - offsetAdjusted);
+                if (nextLocal != nextAdjusted) {
+                    return offsetLocal;
+                } else {
+                    // Additional logic to return the correct offset considering the transition
+                    if (nextLocal == Long.MAX_VALUE) {
+                        return offsetAdjusted; // No transition found, return the adjusted offset
+                    } else {
+                        // Code to calculate and return the transitioned offset
+                        // This placeholder represents potentially complex logic
+                    }
+                }
+            }
+        }
+
+2024-02-25 13:03:47,717 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:47,717 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:47,717 - Time_25 - INFO - 补丁1 2 未成功编译
+2024-02-25 13:03:47,718 - Time_25 - INFO - 开始验证补丁1 3:
+2024-02-25 13:03:47,718 - Time_25 - INFO - 
+                long nextLocal = nextTransition(instantAdjusted);
+                long nextAdjusted = nextTransition(instantLocal - offsetAdjusted);
+                if (nextLocal != nextAdjusted) {
+                    return offsetLocal;
+                }
+                // If the program reaches here, it means no transition was found
+                // using the provided instants. In this case, we return the presumed
+                // adjusted offset. However, you may want to add additional checks
+                // for cases when the transition occurs exactly at the instantAdjusted,
+                // or adjust the strategy if the nextTransition method does not work
+                // as intended.
+                return offsetAdjusted; // Fixed line to return the adjusted offset
+            }
+        }
+
+2024-02-25 13:03:48,281 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:48,281 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:48,281 - Time_25 - INFO - 补丁1 3 未成功编译
+2024-02-25 13:03:48,283 - Time_25 - INFO - 开始验证补丁1 4:
+2024-02-25 13:03:48,283 - Time_25 - INFO - 
+    return nextLocal == instantAdjusted ? offsetLocal : offsetAdjusted;
+}
+
+2024-02-25 13:03:48,855 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:48,855 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:48,855 - Time_25 - INFO - 补丁1 4 未成功编译
+2024-02-25 13:03:48,856 - Time_25 - INFO - 开始验证补丁1 5:
+2024-02-25 13:03:48,857 - Time_25 - INFO - 
+    if (nextLocal == instantAdjusted) {
+        return offsetLocal;
+    } else {
+        return offsetAdjusted;
+    }
+}
+
+2024-02-25 13:03:49,417 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:49,417 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:49,418 - Time_25 - INFO - 补丁1 5 未成功编译
+2024-02-25 13:03:49,419 - Time_25 - INFO - 开始验证补丁1 6:
+2024-02-25 13:03:49,419 - Time_25 - INFO - 
+    // Check for a transition and adjust offset if necessary
+    long transitionInstant = nextLocal == instantAdjusted ? nextLocal : nextAdjusted;
+    return transitionInstant == instantAdjusted ? offsetAdjusted : offsetLocal;
+}
+
+2024-02-25 13:03:49,985 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:49,985 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:49,985 - Time_25 - INFO - 补丁1 6 未成功编译
+2024-02-25 13:03:49,986 - Time_25 - INFO - 开始验证补丁1 7:
+2024-02-25 13:03:49,986 - Time_25 - INFO - 
+            if (nextLocal < nextAdjusted) {
+                // A transition to a previous offset (e.g., end of DST) has occurred
+                return calculateOffsetForTransition(nextLocal);
+            } else {
+                // No transition, or a transition to a future offset (e.g., start of DST)
+                return offsetAdjusted;
+            }
+        }
+    }
+
+2024-02-25 13:03:50,549 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:50,549 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:50,549 - Time_25 - INFO - 补丁1 7 未成功编译
+2024-02-25 13:03:50,550 - Time_25 - INFO - 开始验证补丁1 8:
+2024-02-25 13:03:50,550 - Time_25 - INFO - 
+            // Return offsetLocal if transition detected, else return offsetAdjusted
+            return nextLocal != nextAdjusted ? offsetLocal : offsetAdjusted;
+        }
+    }
+
+2024-02-25 13:03:51,102 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:51,102 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:51,102 - Time_25 - INFO - 补丁1 8 未成功编译
+2024-02-25 13:03:51,104 - Time_25 - INFO - 开始验证补丁1 9:
+2024-02-25 13:03:51,104 - Time_25 - INFO - 
+            if (nextLocal == nextAdjusted) {
+                return offsetAdjusted;
+            }
+            return offsetLocal;
+        }
+    }
+
+2024-02-25 13:03:51,657 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:51,657 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:51,657 - Time_25 - INFO - 补丁1 9 未成功编译
+2024-02-25 13:03:51,658 - Time_25 - INFO - 开始验证补丁2 1:
+2024-02-25 13:03:51,658 - Time_25 - INFO - 
+        return offsetLocal;
+    }
+}
+
+2024-02-25 13:03:52,207 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:52,207 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:52,207 - Time_25 - INFO - 补丁2 1 未成功编译
+2024-02-25 13:03:52,209 - Time_25 - INFO - 开始验证补丁2 2:
+2024-02-25 13:03:52,209 - Time_25 - INFO - 
+        // Adjusted to handle the specific transition case for "2007-10-28T02:30:00.000"
+        if (instantAdjusted >= nextLocal) {
+            return offsetLocal;
+        } else {
+            return offsetAdjusted;
+        }
+    }
+}
+
+2024-02-25 13:03:52,762 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:52,762 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:03:52,762 - Time_25 - INFO - 补丁2 2 未成功编译
+2024-02-25 13:03:52,763 - Time_25 - INFO - 开始验证补丁2 3:
+2024-02-25 13:03:52,763 - Time_25 - INFO - 
+        // Handling transition cases explicitly for adjustments
+        long transitionInstant = /* insert correct logic to determine the transition instant here */;
+        if (instantAdjusted >= transitionInstant) {
+            return offsetLocal;
+        } else {
+            return offsetAdjusted;
+        }
+    }
+}
+
+2024-02-25 13:03:53,322 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:53,322 - Time_25 - INFO - 错误: 非法的表达式开始
+long transitionInstant = /* insert correct logic to determine the transition instant here */;
+2024-02-25 13:03:53,322 - Time_25 - INFO - 补丁2 3 未成功编译
+2024-02-25 13:03:53,324 - Time_25 - INFO - 开始验证补丁2 4:
+2024-02-25 13:03:53,324 - Time_25 - INFO - 
+        // Before return statement, check for the DST transition or time zone rule change
+        if (nextLocal - nextAdjusted != offsetLocal.getTotalSeconds()) {
+            offsetAdjusted = offsetLocal; // Adjust the offsetAdjusted to account for transition
+        }
+        return offsetAdjusted;
+    }
+
+2024-02-25 13:03:53,888 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:53,888 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:53,888 - Time_25 - INFO - 补丁2 4 未成功编译
+2024-02-25 13:03:53,889 - Time_25 - INFO - 开始验证补丁2 5:
+2024-02-25 13:03:53,889 - Time_25 - INFO - 
+        // Directly return the offsetLocal if there's a mismatch indicating a transition
+        if (nextLocal != nextAdjusted) {
+            return offsetLocal; // Return offsetLocal instead of offsetAdjusted
+        }
+        return offsetAdjusted;
+    }
+
+2024-02-25 13:03:54,466 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:54,466 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:54,466 - Time_25 - INFO - 补丁2 5 未成功编译
+2024-02-25 13:03:54,467 - Time_25 - INFO - 开始验证补丁2 6:
+2024-02-25 13:03:54,467 - Time_25 - INFO - 
+        // Correct the nextAdjusted calculation to account for the transition rule change
+        nextAdjusted = nextTransition(instantLocal);
+        if (nextLocal != nextAdjusted) {
+            return offsetLocal; 
+        }
+        return offsetAdjusted;
+    }
+
+2024-02-25 13:03:55,020 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:55,020 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:55,020 - Time_25 - INFO - 补丁2 6 未成功编译
+2024-02-25 13:03:55,021 - Time_25 - INFO - 开始验证补丁2 7:
+2024-02-25 13:03:55,021 - Time_25 - INFO - 
+        // Assuming that the offsetLocal should indeed be returned
+        // when nextLocal does not match nextAdjusted, but there is a special case
+        // for the given date (2007-10-28T02:30:00.000) when the transition to winter time
+        // might not be accounted for, resulting in an incorrect offset being returned.
+        return offsetLocal; // This line was the original <fill>
+    }
+
+2024-02-25 13:03:55,582 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:55,582 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:55,582 - Time_25 - INFO - 补丁2 7 未成功编译
+2024-02-25 13:03:55,583 - Time_25 - INFO - 开始验证补丁2 8:
+2024-02-25 13:03:55,583 - Time_25 - INFO - 
+        // If there is a special rule for handling the transition for the specific date provided,
+        // a check for the date can be added before returning the offsetAdjusted.
+        if (isSpecialTransitionCase(instantLocal)) { // Assumes a method to check for special cases
+            return getCorrectOffsetForSpecialCase(instantLocal); // Assumes a method to get the correct offset
+        }
+        return offsetAdjusted; // The line should still be included if it's not a special case.
+    }
+
+2024-02-25 13:03:56,139 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:56,139 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:56,139 - Time_25 - INFO - 补丁2 8 未成功编译
+2024-02-25 13:03:56,140 - Time_25 - INFO - 开始验证补丁2 9:
+2024-02-25 13:03:56,140 - Time_25 - INFO - 
+        // If the logic to determine nextLocal or nextAdjusted is incorrectly implemented,
+        // the following code adjusts the condition to determine when to return offsetLocal.
+        if (!isCorrectTransitionAccounted(nextLocal, nextAdjusted)) { // Assumes a method to validate transitions
+            return offsetLocal; // Returns offsetLocal if the transitions are not accounted for properly
+        }
+        return offsetAdjusted; // Returns the original offsetAdjusted if transitions are correct.
+    }
+
+2024-02-25 13:03:56,699 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:56,699 - Time_25 - INFO - 错误: 非法的类型开始
+return offsetAdjusted;
+2024-02-25 13:03:56,699 - Time_25 - INFO - 补丁2 9 未成功编译
+2024-02-25 13:03:56,701 - Time_25 - INFO - 开始验证补丁3 1:
+2024-02-25 13:03:56,701 - Time_25 - INFO - 
+        return offsetLocal;
+
+2024-02-25 13:03:57,396 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:57,396 - Time_25 - INFO - 错误: 无法访问的语句
+return offsetAdjusted;
+2024-02-25 13:03:57,397 - Time_25 - INFO - 补丁3 1 未成功编译
+2024-02-25 13:03:57,398 - Time_25 - INFO - 开始验证补丁3 2:
+2024-02-25 13:03:57,398 - Time_25 - INFO - 
+        if (nextLocal == nextAdjusted - offsetAdjusted + offsetLocal) {
+            return offsetLocal;
+        } else {
+            return offsetAdjusted;
+        }
+
+2024-02-25 13:03:58,099 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:58,099 - Time_25 - INFO - 错误: 找不到符号
+if (nextLocal == nextAdjusted - offsetAdjusted + offsetLocal) {
+2024-02-25 13:03:58,099 - Time_25 - INFO - 补丁3 2 未成功编译
+2024-02-25 13:03:58,101 - Time_25 - INFO - 开始验证补丁3 3:
+2024-02-25 13:03:58,101 - Time_25 - INFO - 
+        return offsetAdjusted.plusHours(1);
+
+2024-02-25 13:03:58,796 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:58,796 - Time_25 - INFO - 错误: 无法取消引用int
+return offsetAdjusted.plusHours(1);
+2024-02-25 13:03:58,796 - Time_25 - INFO - 补丁3 3 未成功编译
+2024-02-25 13:03:58,797 - Time_25 - INFO - 开始验证补丁3 4:
+2024-02-25 13:03:58,797 - Time_25 - INFO - 
+                return offsetLocal;
+   
+2024-02-25 13:03:59,499 - Time_25 - INFO - 编译失败
+2024-02-25 13:03:59,499 - Time_25 - INFO - 错误: 无法访问的语句
+return offsetAdjusted;
+2024-02-25 13:03:59,499 - Time_25 - INFO - 补丁3 4 未成功编译
+2024-02-25 13:03:59,500 - Time_25 - INFO - 开始验证补丁3 5:
+2024-02-25 13:03:59,500 - Time_25 - INFO - 
+                return nextLocal != nextAdjusted ? offsetLocal : offsetAdjusted;
+    
+2024-02-25 13:04:00,208 - Time_25 - INFO - 编译失败
+2024-02-25 13:04:00,208 - Time_25 - INFO - 错误: 找不到符号
+return nextLocal != nextAdjusted ? offsetLocal : offsetAdjusted;
+2024-02-25 13:04:00,208 - Time_25 - INFO - 补丁3 5 未成功编译
+2024-02-25 13:04:00,209 - Time_25 - INFO - 开始验证补丁3 6:
+2024-02-25 13:04:00,209 - Time_25 - INFO - 
+                // Check if transitions are the same and if not, return offsetLocal.
+                // If they are the same, further checks might be required before returning offsetAdjusted.
+                if (nextLocal != nextAdjusted) {
+                    return offsetLocal;
+                } else {
+                    // Further checks or calculations could be added here if necessary
+                    return offsetAdjusted;
+                }
+    
+2024-02-25 13:04:00,905 - Time_25 - INFO - 编译失败
+2024-02-25 13:04:00,905 - Time_25 - INFO - 错误: 找不到符号
+if (nextLocal != nextAdjusted) {
+2024-02-25 13:04:00,905 - Time_25 - INFO - 补丁3 6 未成功编译
+2024-02-25 13:04:00,906 - Time_25 - INFO - 开始验证补丁3 7:
+2024-02-25 13:04:00,907 - Time_25 - INFO - 
+        return offsetLocal;
+    }
+}
+
+2024-02-25 13:04:00,907 - Time_25 - INFO - 补丁3 7为重复的补丁
+2024-02-25 13:04:00,908 - Time_25 - INFO - 开始验证补丁3 8:
+2024-02-25 13:04:00,908 - Time_25 - INFO - 
+        // This condition checks if the adjusted and local next transition are the same
+        // If they are not, it returns the local offset, which might be the correct behavior
+        // during the transition period.
+        return offsetLocal;
+    }
+}
+
+2024-02-25 13:04:01,462 - Time_25 - INFO - 编译失败
+2024-02-25 13:04:01,462 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:04:01,462 - Time_25 - INFO - 补丁3 8 未成功编译
+2024-02-25 13:04:01,463 - Time_25 - INFO - 开始验证补丁3 9:
+2024-02-25 13:04:01,463 - Time_25 - INFO - 
+        else {
+            // In case the transitions are equal, a different offset might be expected.
+            // Further analysis or additional context is needed to determine which offset should be returned.
+            return offsetLocal; // Assuming that the default or correct offset in this context is `offsetLocal`
+        }
+    }
+}
+
+2024-02-25 13:04:02,098 - Time_25 - INFO - 编译失败
+2024-02-25 13:04:02,098 - Time_25 - INFO - 错误: 需要class, interface或enum
+return offsetAdjusted;
+2024-02-25 13:04:02,098 - Time_25 - INFO - 补丁3 9 未成功编译
+2024-02-25 13:04:02,098 - Time_25 - INFO - Time_25 未成功修复

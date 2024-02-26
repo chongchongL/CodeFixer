@@ -1,0 +1,160 @@
+2024-02-26 01:02:37,341 - Closure_101 - INFO - rm -rf /home/chongchong/d4j-project/Closure_101
+2024-02-26 01:02:37,342 - Closure_101 - INFO - 删除 Closure 101b 成功
+2024-02-26 01:02:37,342 - Closure_101 - INFO - defects4j checkout -p Closure -v 101b -w /home/chongchong/d4j-project/Closure_101
+2024-02-26 01:02:40,252 - Closure_101 - INFO - checkout Closure 101b 成功
+2024-02-26 01:02:45,741 - Closure_101 - INFO - 编译成功
+2024-02-26 01:03:07,917 - Closure_101 - INFO - 测试失败
+2024-02-26 01:03:07,917 - Closure_101 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testProcessClosurePrimitives
+
+2024-02-26 01:03:08,815 - Closure_101 - INFO - 它的bug类型为:
+2024-02-26 01:03:08,815 - Closure_101 - INFO - 4
+2024-02-26 01:04:09,567 - Closure_101 - INFO - 开始验证补丁1 1:
+2024-02-26 01:04:09,567 - Closure_101 - INFO - 
+if (flags.process_closure_primitives) {
+   options.setProcessClosurePrimitives(true);
+}
+
+2024-02-26 01:04:10,349 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:10,349 - Closure_101 - INFO - 错误: 找不到符号
+options.setProcessClosurePrimitives(true);
+2024-02-26 01:04:10,349 - Closure_101 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:04:10,350 - Closure_101 - INFO - 开始验证补丁1 2:
+2024-02-26 01:04:10,350 - Closure_101 - INFO - 
+if (flags.process_closure_primitives) {
+   options.closurePass = true;
+   // Additional configuration that might be necessary for closure primitives
+   options.manageClosureDependencies = true;
+}
+
+2024-02-26 01:04:11,136 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:11,136 - Closure_101 - INFO - 错误: 找不到符号
+options.manageClosureDependencies = true;
+2024-02-26 01:04:11,136 - Closure_101 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:04:11,137 - Closure_101 - INFO - 开始验证补丁1 3:
+2024-02-26 01:04:11,137 - Closure_101 - INFO - 
+if (flags.process_closure_primitives) {
+   options.closurePass = true;
+}
+// Ensure all necessary options for closure primitives are set
+options.setWarningLevelForClosurePrimitives(WarningLevel.DEFAULT);
+
+2024-02-26 01:04:11,918 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:11,918 - Closure_101 - INFO - 错误: 找不到符号
+options.setWarningLevelForClosurePrimitives(WarningLevel.DEFAULT);
+2024-02-26 01:04:11,918 - Closure_101 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:04:11,919 - Closure_101 - INFO - 开始验证补丁1 4:
+2024-02-26 01:04:11,919 - Closure_101 - INFO - 
+if (flags.process_closure_primitives) {
+  options.setClosurePass(true);
+}
+
+2024-02-26 01:04:12,711 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:12,711 - Closure_101 - INFO - 错误: 找不到符号
+options.setClosurePass(true);
+2024-02-26 01:04:12,711 - Closure_101 - INFO - 补丁1 4 未成功编译
+2024-02-26 01:04:12,712 - Closure_101 - INFO - 开始验证补丁1 5:
+2024-02-26 01:04:12,712 - Closure_101 - INFO - 
+if (flags.process_closure_primitives) {
+  options.closurePass = true;
+  options.setManageClosureDependencies(true);
+}
+
+2024-02-26 01:04:13,508 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:13,508 - Closure_101 - INFO - 错误: 找不到符号
+options.setManageClosureDependencies(true);
+2024-02-26 01:04:13,508 - Closure_101 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:04:13,509 - Closure_101 - INFO - 开始验证补丁1 6:
+2024-02-26 01:04:13,510 - Closure_101 - INFO - 
+// Assuming closurePass needs to be set conditionally based on a more complex logic than just the provided flag:
+if (shouldEnableClosurePass(flags)) {
+  options.closurePass = true;
+}
+
+...
+// Elsewhere in the code, this method must be implemented
+private boolean shouldEnableClosurePass(Flags flags) {
+  // Complex logic to determine if we should enable the closure pass
+  return flags.process_closure_primitives && /* Other conditions */;
+}
+
+2024-02-26 01:04:14,085 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:14,085 - Closure_101 - INFO - 错误: 非法的表达式开始
+...
+2024-02-26 01:04:14,085 - Closure_101 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:04:14,086 - Closure_101 - INFO - 开始验证补丁1 7:
+2024-02-26 01:04:14,086 - Closure_101 - INFO - 
+    if (flags.process_closure_primitives) {
+      options.closurePass = true;
+      options.manageClosureDependencies = true; // Possibly required to manage dependencies
+    }
+    initOptionsFromFlags(options);
+    return options;
+  }
+
+2024-02-26 01:04:14,670 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:14,670 - Closure_101 - INFO - 错误: 方法声明无效; 需要返回类型
+initOptionsFromFlags(options);
+2024-02-26 01:04:14,670 - Closure_101 - INFO - 补丁1 7 未成功编译
+2024-02-26 01:04:14,671 - Closure_101 - INFO - 开始验证补丁1 8:
+2024-02-26 01:04:14,671 - Closure_101 - INFO - 
+    if (flags.process_closure_primitives) {
+      options.closurePass = true;
+      options.setManageClosureDependencies(true); // Assume there is a setter method for this property
+    }
+    initOptionsFromFlags(options);
+    return options;
+  }
+
+2024-02-26 01:04:15,242 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:15,242 - Closure_101 - INFO - 错误: 方法声明无效; 需要返回类型
+initOptionsFromFlags(options);
+2024-02-26 01:04:15,242 - Closure_101 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:04:15,243 - Closure_101 - INFO - 开始验证补丁1 9:
+2024-02-26 01:04:15,243 - Closure_101 - INFO - 
+    initOptionsFromFlags(options); // Initialize options with flags first
+    if (flags.process_closure_primitives) {
+      options.closurePass = true;
+    }
+    return options;
+  }
+
+2024-02-26 01:04:15,813 - Closure_101 - INFO - 编译失败
+2024-02-26 01:04:15,813 - Closure_101 - INFO - 错误: 方法声明无效; 需要返回类型
+initOptionsFromFlags(options);
+2024-02-26 01:04:15,813 - Closure_101 - INFO - 补丁1 9 未成功编译
+2024-02-26 01:04:15,814 - Closure_101 - INFO - 开始验证补丁2 1:
+2024-02-26 01:04:15,814 - Closure_101 - INFO - 
+    if (flags.process_closure_primitives) {
+      options.closurePass = true;
+    }
+
+2024-02-26 01:04:17,029 - Closure_101 - INFO - 编译成功
+2024-02-26 01:07:19,607 - Closure_101 - INFO - rm -rf /home/chongchong/d4j-project/Closure_101
+2024-02-26 01:07:19,631 - Closure_101 - INFO - 删除 Closure 101b 成功
+2024-02-26 01:07:19,631 - Closure_101 - INFO - defects4j checkout -p Closure -v 101b -w /home/chongchong/d4j-project/Closure_101
+2024-02-26 01:07:22,308 - Closure_101 - INFO - checkout Closure 101b 成功
+2024-02-26 01:07:28,032 - Closure_101 - INFO - 编译成功
+2024-02-26 01:07:50,060 - Closure_101 - INFO - 测试失败
+2024-02-26 01:07:50,060 - Closure_101 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testProcessClosurePrimitives
+
+2024-02-26 01:07:50,967 - Closure_101 - INFO - 它的bug类型为:
+2024-02-26 01:07:50,967 - Closure_101 - INFO - 4
+2024-02-26 01:09:02,223 - Closure_101 - INFO - 开始验证补丁1 1:
+2024-02-26 01:09:02,223 - Closure_101 - INFO - 
+    if (flags.process_closure_primitives) {
+      options.setClosurePass(true);
+    }
+
+2024-02-26 01:09:03,020 - Closure_101 - INFO - 编译失败
+2024-02-26 01:09:03,020 - Closure_101 - INFO - 错误: 找不到符号
+options.setClosurePass(true);
+2024-02-26 01:09:03,020 - Closure_101 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:09:03,021 - Closure_101 - INFO - 开始验证补丁1 2:
+2024-02-26 01:09:03,021 - Closure_101 - INFO - 
+    options.closurePass = flags.process_closure_primitives;
+
+2024-02-26 01:09:04,229 - Closure_101 - INFO - 编译成功
+2024-02-26 01:09:26,365 - Closure_101 - INFO - 测试成功
+2024-02-26 01:09:26,365 - Closure_101 - INFO - 补丁1 2 通过了所有的测试用例

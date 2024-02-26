@@ -1,0 +1,110 @@
+2024-02-24 08:57:06,204 - Closure_10 - INFO - rm -rf /home/chongchong/d4j-project/Closure_10
+2024-02-24 08:57:06,281 - Closure_10 - INFO - 删除 Closure 10b 成功
+2024-02-24 08:57:06,281 - Closure_10 - INFO - defects4j checkout -p Closure -v 10b -w /home/chongchong/d4j-project/Closure_10
+2024-02-24 08:57:09,156 - Closure_10 - INFO - checkout Closure 10b 成功
+2024-02-24 08:57:20,672 - Closure_10 - INFO - 编译成功
+2024-02-24 08:58:15,495 - Closure_10 - INFO - 测试失败
+2024-02-24 08:58:15,495 - Closure_10 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIssue821
+
+2024-02-24 08:58:16,535 - Closure_10 - INFO - 它的bug类型为:
+2024-02-24 08:58:16,535 - Closure_10 - INFO - 1
+2024-02-24 08:58:52,547 - Closure_10 - INFO - Closure_10 未成功修复
+2024-02-24 12:47:16,261 - Closure_10 - INFO - rm -rf /home/chongchong/d4j-project/Closure_10
+2024-02-24 12:47:16,315 - Closure_10 - INFO - 删除 Closure 10b 成功
+2024-02-24 12:47:16,315 - Closure_10 - INFO - defects4j checkout -p Closure -v 10b -w /home/chongchong/d4j-project/Closure_10
+2024-02-24 12:47:19,215 - Closure_10 - INFO - checkout Closure 10b 成功
+2024-02-24 12:47:30,727 - Closure_10 - INFO - 编译成功
+2024-02-24 12:48:25,114 - Closure_10 - INFO - 测试失败
+2024-02-24 12:48:25,114 - Closure_10 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIssue821
+
+2024-02-24 12:48:26,128 - Closure_10 - INFO - 它的bug类型为:
+2024-02-24 12:48:26,128 - Closure_10 - INFO - 1
+2024-02-24 12:50:33,325 - Closure_10 - INFO - 开始验证补丁1 1:
+2024-02-24 12:50:33,326 - Closure_10 - INFO - 
+return n.getChildCount() == 0 ? mayBeStringHelper(n) : allResultsMatch(n, MAY_BE_STRING_PREDICATE);
+
+2024-02-24 12:50:37,757 - Closure_10 - INFO - 编译成功
+2024-02-24 12:51:34,131 - Closure_10 - INFO - 测试失败
+2024-02-24 12:51:34,131 - Closure_10 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIssue821
+
+2024-02-24 12:51:34,642 - Closure_10 - INFO - 选择失败的测试用例为:
+2024-02-24 12:51:34,642 - Closure_10 - INFO - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIssue821
+2024-02-24 12:51:34,642 - Closure_10 - INFO - 失败的测试代码为:
+2024-02-24 12:51:34,642 - Closure_10 - INFO -     foldSame("var a =(Math.random()>0.5? '1' : 2 ) + 3 + 4;");
+
+2024-02-24 12:51:34,642 - Closure_10 - INFO - 失败信息为:
+2024-02-24 12:51:34,642 - Closure_10 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 12:51:34,642 - Closure_10 - INFO - 补丁1 1测试失败
+2024-02-24 12:51:34,643 - Closure_10 - INFO - 开始验证补丁1 2:
+2024-02-24 12:51:34,643 - Closure_10 - INFO - 
+return n.hasChildren() ? allResultsMatch(n.getFirstChild(), MAY_BE_STRING_PREDICATE) : mayBeStringHelper(n);
+
+2024-02-24 12:51:39,001 - Closure_10 - INFO - 编译成功
+2024-02-24 12:52:34,233 - Closure_10 - INFO - 测试失败
+2024-02-24 12:52:34,233 - Closure_10 - INFO - Failing tests: 6
+  - com.google.javascript.jscomp.IntegrationTest::testFlowSensitiveInlineVariables2
+  - com.google.javascript.jscomp.NodeUtilTest::testMayBeString
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testStringAdd
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldLeft
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIssue821
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldConstructor
+
+2024-02-24 12:52:34,749 - Closure_10 - INFO - 选择失败的测试用例为:
+2024-02-24 12:52:34,749 - Closure_10 - INFO - com.google.javascript.jscomp.IntegrationTest::testFlowSensitiveInlineVariables2
+2024-02-24 12:52:34,749 - Closure_10 - INFO - 失败的测试代码为:
+2024-02-24 12:52:34,749 - Closure_10 - INFO -     test(options,
+
+2024-02-24 12:52:34,749 - Closure_10 - INFO - 失败信息为:
+2024-02-24 12:52:34,749 - Closure_10 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 12:52:34,749 - Closure_10 - INFO - 补丁1 2测试失败
+2024-02-24 12:52:34,750 - Closure_10 - INFO - 开始验证补丁1 3:
+2024-02-24 12:52:34,750 - Closure_10 - INFO - 
+for (Node child : n.children()) {
+  if (!mayBeString(child, false)) {
+     return false;
+  }
+}
+return true;
+
+2024-02-24 12:52:39,107 - Closure_10 - INFO - 编译成功
+2024-02-24 12:53:37,455 - Closure_10 - INFO - 测试失败
+2024-02-24 12:53:37,455 - Closure_10 - INFO - Failing tests: 9
+  - com.google.javascript.jscomp.IntegrationTest::testFlowSensitiveInlineVariables2
+  - com.google.javascript.jscomp.NodeUtilTest::testMayBeString
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldBangConstants
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldLeftChildOp
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldComplex
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldArithmetic2
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testStringAdd
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testIssue821
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldConstructor
+
+2024-02-24 12:53:37,970 - Closure_10 - INFO - 选择失败的测试用例为:
+2024-02-24 12:53:37,970 - Closure_10 - INFO - com.google.javascript.jscomp.IntegrationTest::testFlowSensitiveInlineVariables2
+2024-02-24 12:53:37,970 - Closure_10 - INFO - 失败的测试代码为:
+2024-02-24 12:53:37,970 - Closure_10 - INFO -     test(options,
+
+2024-02-24 12:53:37,970 - Closure_10 - INFO - 失败信息为:
+2024-02-24 12:53:37,970 - Closure_10 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 12:53:37,970 - Closure_10 - INFO - 补丁1 3测试失败
+2024-02-24 12:53:37,971 - Closure_10 - INFO - 开始验证补丁1 4:
+2024-02-24 12:53:37,971 - Closure_10 - INFO - 
+return mayBeStringHelper(n) || (hasTernaryOperator(n) && allBranchesAreStrings(n));
+
+2024-02-24 12:53:40,048 - Closure_10 - INFO - 编译失败
+2024-02-24 12:53:40,048 - Closure_10 - INFO - 错误: 找不到符号
+return mayBeStringHelper(n) || (hasTernaryOperator(n) && allBranchesAreStrings(n));
+2024-02-24 12:53:40,048 - Closure_10 - INFO - 补丁1 4 未成功编译
+2024-02-24 12:53:40,049 - Closure_10 - INFO - 开始验证补丁1 5:
+2024-02-24 12:53:40,049 - Closure_10 - INFO - 
+return mayBeStringHelper(n);
+
+2024-02-24 12:53:44,424 - Closure_10 - INFO - 编译成功
+2024-02-24 12:54:39,686 - Closure_10 - INFO - 测试成功
+2024-02-24 12:54:39,687 - Closure_10 - INFO - 补丁1 5 通过了所有的测试用例

@@ -1,0 +1,238 @@
+2024-02-26 00:57:34,491 - Closure_78 - INFO - rm -rf /home/chongchong/d4j-project/Closure_78
+2024-02-26 00:57:34,492 - Closure_78 - INFO - 删除 Closure 78b 成功
+2024-02-26 00:57:34,492 - Closure_78 - INFO - defects4j checkout -p Closure -v 78b -w /home/chongchong/d4j-project/Closure_78
+2024-02-26 00:57:37,154 - Closure_78 - INFO - checkout Closure 78b 成功
+2024-02-26 00:57:45,883 - Closure_78 - INFO - 编译成功
+2024-02-26 00:58:23,186 - Closure_78 - INFO - 测试失败
+2024-02-26 00:58:23,186 - Closure_78 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldArithmetic
+
+2024-02-26 00:58:24,215 - Closure_78 - INFO - 它的bug类型为:
+2024-02-26 00:58:24,215 - Closure_78 - INFO - 4
+2024-02-26 00:59:24,837 - Closure_78 - INFO - 开始验证补丁1 1:
+2024-02-26 00:59:24,837 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+return null;
+
+2024-02-26 00:59:26,233 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:26,233 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:26,233 - Closure_78 - INFO - 补丁1 1 未成功编译
+2024-02-26 00:59:26,234 - Closure_78 - INFO - 开始验证补丁1 2:
+2024-02-26 00:59:26,234 - Closure_78 - INFO - 
+throw new ArithmeticException("Modulo by zero");
+
+2024-02-26 00:59:27,575 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:27,575 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:27,575 - Closure_78 - INFO - 补丁1 2 未成功编译
+2024-02-26 00:59:27,576 - Closure_78 - INFO - 开始验证补丁1 3:
+2024-02-26 00:59:27,576 - Closure_78 - INFO - 
+System.err.println("Error: Modulo by 0");
+return null;
+
+2024-02-26 00:59:28,918 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:28,918 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:28,918 - Closure_78 - INFO - 补丁1 3 未成功编译
+2024-02-26 00:59:28,920 - Closure_78 - INFO - 开始验证补丁1 4:
+2024-02-26 00:59:28,920 - Closure_78 - INFO - 
+          error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+          return null;
+
+2024-02-26 00:59:30,244 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:30,244 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:30,244 - Closure_78 - INFO - 补丁1 4 未成功编译
+2024-02-26 00:59:30,246 - Closure_78 - INFO - 开始验证补丁1 5:
+2024-02-26 00:59:30,246 - Closure_78 - INFO - 
+          throw new ArithmeticException("Cannot modulo by 0");
+
+2024-02-26 00:59:31,565 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:31,565 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:31,565 - Closure_78 - INFO - 补丁1 5 未成功编译
+2024-02-26 00:59:31,567 - Closure_78 - INFO - 开始验证补丁1 6:
+2024-02-26 00:59:31,567 - Closure_78 - INFO - 
+          error(DiagnosticType.error("JSC_INVALID_MODULO_OPERATION", "Cannot perform modulo by 0"), right);
+          return null;
+
+2024-02-26 00:59:32,892 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:32,893 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:32,893 - Closure_78 - INFO - 补丁1 6 未成功编译
+2024-02-26 00:59:32,894 - Closure_78 - INFO - 开始验证补丁1 7:
+2024-02-26 00:59:32,894 - Closure_78 - INFO - 
+        error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+        return null;
+      }
+      result = lval % rval;
+      break;
+
+2024-02-26 00:59:34,001 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:34,001 - Closure_78 - INFO - 错误: 孤立的default
+default:
+2024-02-26 00:59:34,001 - Closure_78 - INFO - 补丁1 7 未成功编译
+2024-02-26 00:59:34,002 - Closure_78 - INFO - 开始验证补丁1 8:
+2024-02-26 00:59:34,002 - Closure_78 - INFO - 
+        error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Modulo by 0"), right);
+        return null;
+      }
+      result = lval % rval;
+      break;
+
+2024-02-26 00:59:35,100 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:35,100 - Closure_78 - INFO - 错误: 孤立的default
+default:
+2024-02-26 00:59:35,100 - Closure_78 - INFO - 补丁1 8 未成功编译
+2024-02-26 00:59:35,102 - Closure_78 - INFO - 开始验证补丁1 9:
+2024-02-26 00:59:35,102 - Closure_78 - INFO - 
+        error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Cannot divide or modulo by 0"), right);
+        return null;
+      }
+      result = lval % rval;
+      break;
+
+2024-02-26 00:59:36,201 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:36,201 - Closure_78 - INFO - 错误: 孤立的default
+default:
+2024-02-26 00:59:36,201 - Closure_78 - INFO - 补丁1 9 未成功编译
+2024-02-26 00:59:36,202 - Closure_78 - INFO - 开始验证补丁2 1:
+2024-02-26 00:59:36,202 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"));
+return null;
+
+2024-02-26 00:59:37,521 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:37,521 - Closure_78 - INFO - 错误: 无法将类 AbstractPeepholeOptimization中的方法 error应用到给定类型;
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"));
+2024-02-26 00:59:37,521 - Closure_78 - INFO - 补丁2 1 未成功编译
+2024-02-26 00:59:37,522 - Closure_78 - INFO - 开始验证补丁2 2:
+2024-02-26 00:59:37,522 - Closure_78 - INFO - 
+throw new ArithmeticException("Divide by 0");
+
+2024-02-26 00:59:38,857 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:38,857 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:38,857 - Closure_78 - INFO - 补丁2 2 未成功编译
+2024-02-26 00:59:38,858 - Closure_78 - INFO - 开始验证补丁2 3:
+2024-02-26 00:59:38,858 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+return null;
+
+2024-02-26 00:59:40,182 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:40,182 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:40,182 - Closure_78 - INFO - 补丁2 3 未成功编译
+2024-02-26 00:59:40,183 - Closure_78 - INFO - 开始验证补丁2 4:
+2024-02-26 00:59:40,183 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+return null;
+
+2024-02-26 00:59:40,183 - Closure_78 - INFO - 补丁2 4为重复的补丁
+2024-02-26 00:59:40,184 - Closure_78 - INFO - 开始验证补丁2 5:
+2024-02-26 00:59:40,184 - Closure_78 - INFO - 
+throw new ArithmeticException("Cannot modulo by zero");
+
+2024-02-26 00:59:41,545 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:41,545 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:41,545 - Closure_78 - INFO - 补丁2 5 未成功编译
+2024-02-26 00:59:41,546 - Closure_78 - INFO - 开始验证补丁2 6:
+2024-02-26 00:59:41,546 - Closure_78 - INFO - 
+return error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+
+2024-02-26 00:59:42,869 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:42,869 - Closure_78 - INFO - 错误: 不兼容的类型
+return error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+2024-02-26 00:59:42,869 - Closure_78 - INFO - 补丁2 6 未成功编译
+2024-02-26 00:59:42,870 - Closure_78 - INFO - 开始验证补丁2 7:
+2024-02-26 00:59:42,870 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+return null;
+
+2024-02-26 00:59:42,870 - Closure_78 - INFO - 补丁2 7为重复的补丁
+2024-02-26 00:59:42,875 - Closure_78 - INFO - 开始验证补丁2 8:
+2024-02-26 00:59:42,875 - Closure_78 - INFO - 
+throw new ArithmeticException("Divide by 0");
+
+2024-02-26 00:59:42,875 - Closure_78 - INFO - 补丁2 8为重复的补丁
+2024-02-26 00:59:42,877 - Closure_78 - INFO - 开始验证补丁2 9:
+2024-02-26 00:59:42,877 - Closure_78 - INFO - 
+System.err.println("Error: Division by zero");
+return null;
+
+2024-02-26 00:59:44,206 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:44,206 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:44,206 - Closure_78 - INFO - 补丁2 9 未成功编译
+2024-02-26 00:59:44,207 - Closure_78 - INFO - 开始验证补丁3 1:
+2024-02-26 00:59:44,207 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+return null;
+
+2024-02-26 00:59:44,207 - Closure_78 - INFO - 补丁3 1为重复的补丁
+2024-02-26 00:59:44,208 - Closure_78 - INFO - 开始验证补丁3 2:
+2024-02-26 00:59:44,208 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Modulo by 0"), right);
+return null;
+
+2024-02-26 00:59:45,540 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:45,540 - Closure_78 - INFO - 错误: 无法访问的语句
+return null;
+2024-02-26 00:59:45,541 - Closure_78 - INFO - 补丁3 2 未成功编译
+2024-02-26 00:59:45,542 - Closure_78 - INFO - 开始验证补丁3 3:
+2024-02-26 00:59:45,542 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Modulo by 0"), right);
+return null;
+
+2024-02-26 00:59:45,542 - Closure_78 - INFO - 补丁3 3为重复的补丁
+2024-02-26 00:59:45,543 - Closure_78 - INFO - 开始验证补丁3 4:
+2024-02-26 00:59:45,543 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+return null;
+result = lval % rval;
+break;
+
+2024-02-26 00:59:46,881 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:46,881 - Closure_78 - INFO - 错误: 无法访问的语句
+result = lval % rval;
+2024-02-26 00:59:46,881 - Closure_78 - INFO - 补丁3 4 未成功编译
+2024-02-26 00:59:46,882 - Closure_78 - INFO - 开始验证补丁3 5:
+2024-02-26 00:59:46,882 - Closure_78 - INFO - 
+error(DiagnosticType.warning("JSC_MODULO_BY_0_WARNING", "Modulo might be by 0"), right);
+return null;
+result = lval % rval;
+break;
+
+2024-02-26 00:59:48,196 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:48,196 - Closure_78 - INFO - 错误: 无法访问的语句
+result = lval % rval;
+2024-02-26 00:59:48,196 - Closure_78 - INFO - 补丁3 5 未成功编译
+2024-02-26 00:59:48,197 - Closure_78 - INFO - 开始验证补丁3 6:
+2024-02-26 00:59:48,197 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+result = defaultValue; // Where defaultValue is a predefined constant appropriate for this context
+break;
+
+2024-02-26 00:59:49,522 - Closure_78 - INFO - 编译失败
+2024-02-26 00:59:49,522 - Closure_78 - INFO - 错误: 找不到符号
+result = defaultValue; // Where defaultValue is a predefined constant appropriate for this context
+2024-02-26 00:59:49,522 - Closure_78 - INFO - 补丁3 6 未成功编译
+2024-02-26 00:59:49,523 - Closure_78 - INFO - 开始验证补丁3 7:
+2024-02-26 00:59:49,524 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_MODULO_BY_0_ERROR", "Modulo by 0"), right);
+return null;
+
+2024-02-26 00:59:49,524 - Closure_78 - INFO - 补丁3 7为重复的补丁
+2024-02-26 00:59:49,525 - Closure_78 - INFO - 开始验证补丁3 8:
+2024-02-26 00:59:49,525 - Closure_78 - INFO - 
+error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+return null;
+
+2024-02-26 00:59:49,525 - Closure_78 - INFO - 补丁3 8为重复的补丁
+2024-02-26 00:59:49,526 - Closure_78 - INFO - 开始验证补丁3 9:
+2024-02-26 00:59:49,526 - Closure_78 - INFO - 
+throw new ArithmeticException("Cannot modulo by zero");
+
+2024-02-26 00:59:49,526 - Closure_78 - INFO - 补丁3 9为重复的补丁
+2024-02-26 00:59:49,526 - Closure_78 - INFO - Closure_78 未成功修复

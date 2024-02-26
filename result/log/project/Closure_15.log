@@ -1,0 +1,347 @@
+2024-02-25 10:37:22,133 - Closure_15 - INFO - rm -rf /home/chongchong/d4j-project/Closure_15
+2024-02-25 10:37:22,134 - Closure_15 - INFO - 删除 Closure 15b 成功
+2024-02-25 10:37:22,134 - Closure_15 - INFO - defects4j checkout -p Closure -v 15b -w /home/chongchong/d4j-project/Closure_15
+2024-02-25 10:37:24,176 - Closure_15 - INFO - checkout Closure 15b 成功
+2024-02-25 10:37:35,639 - Closure_15 - INFO - 编译成功
+2024-02-25 10:38:23,278 - Closure_15 - INFO - 测试失败
+2024-02-25 10:38:23,278 - Closure_15 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testSimpleForIn
+
+2024-02-25 10:38:24,296 - Closure_15 - INFO - 它的bug类型为:
+2024-02-25 10:38:24,297 - Closure_15 - INFO - 3
+2024-02-25 10:39:19,788 - Closure_15 - INFO - 开始验证补丁1 1:
+2024-02-25 10:39:19,788 - Closure_15 - INFO - 
+        if (n.isForIn() && !NodeUtil.forInHasNoSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:39:21,781 - Closure_15 - INFO - 编译失败
+2024-02-25 10:39:21,781 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && !NodeUtil.forInHasNoSideEffects(n)) {
+2024-02-25 10:39:21,781 - Closure_15 - INFO - 补丁1 1 未成功编译
+2024-02-25 10:39:21,782 - Closure_15 - INFO - 开始验证补丁1 2:
+2024-02-25 10:39:21,782 - Closure_15 - INFO - 
+        if (n.isAssign() && NodeUtil.assignmentHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:39:23,817 - Closure_15 - INFO - 编译失败
+2024-02-25 10:39:23,817 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isAssign() && NodeUtil.assignmentHasSideEffects(n)) {
+2024-02-25 10:39:23,817 - Closure_15 - INFO - 补丁1 2 未成功编译
+2024-02-25 10:39:23,818 - Closure_15 - INFO - 开始验证补丁1 3:
+2024-02-25 10:39:23,818 - Closure_15 - INFO - 
+        if (n.isDelProp() && NodeUtil.delPropHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:39:25,822 - Closure_15 - INFO - 编译失败
+2024-02-25 10:39:25,822 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isDelProp() && NodeUtil.delPropHasSideEffects(n)) {
+2024-02-25 10:39:25,822 - Closure_15 - INFO - 补丁1 3 未成功编译
+2024-02-25 10:39:25,823 - Closure_15 - INFO - 开始验证补丁1 4:
+2024-02-25 10:39:25,823 - Closure_15 - INFO - 
+        if ((n.isIn() || n.isDel()) && NodeUtil.mayHaveSideEffects(n)) {
+          return true;
+        }
+   
+2024-02-25 10:39:27,818 - Closure_15 - INFO - 编译失败
+2024-02-25 10:39:27,818 - Closure_15 - INFO - 错误: 找不到符号
+if ((n.isIn() || n.isDel()) && NodeUtil.mayHaveSideEffects(n)) {
+2024-02-25 10:39:27,818 - Closure_15 - INFO - 补丁1 4 未成功编译
+2024-02-25 10:39:27,820 - Closure_15 - INFO - 开始验证补丁1 5:
+2024-02-25 10:39:27,820 - Closure_15 - INFO - 
+        if (NodeUtil.mayHaveSideEffects(n)) {
+          return true;
+        }
+   
+2024-02-25 10:39:31,918 - Closure_15 - INFO - 编译成功
+2024-02-25 10:40:19,156 - Closure_15 - INFO - 测试失败
+2024-02-25 10:40:19,156 - Closure_15 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testIssue698
+
+2024-02-25 10:40:19,668 - Closure_15 - INFO - 选择失败的测试用例为:
+2024-02-25 10:40:19,668 - Closure_15 - INFO - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+2024-02-25 10:40:19,668 - Closure_15 - INFO - 失败的测试代码为:
+2024-02-25 10:40:19,668 - Closure_15 - INFO -     inline("var a = 1, b = 2;" +
+
+2024-02-25 10:40:19,668 - Closure_15 - INFO - 失败信息为:
+2024-02-25 10:40:19,668 - Closure_15 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 10:40:19,668 - Closure_15 - INFO - 补丁1 5测试失败
+2024-02-25 10:40:19,669 - Closure_15 - INFO - 开始验证补丁1 6:
+2024-02-25 10:40:19,669 - Closure_15 - INFO - 
+        if ((n.isForIn() || n.isForOf()) && containsSideEffectingCalls(n)) {
+          return true;
+        }
+   
+2024-02-25 10:40:21,672 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:21,672 - Closure_15 - INFO - 错误: 找不到符号
+if ((n.isForIn() || n.isForOf()) && containsSideEffectingCalls(n)) {
+2024-02-25 10:40:21,672 - Closure_15 - INFO - 补丁1 6 未成功编译
+2024-02-25 10:40:21,674 - Closure_15 - INFO - 开始验证补丁1 7:
+2024-02-25 10:40:21,674 - Closure_15 - INFO - 
+        if (n.isGetProp() && NodeUtil.getpropHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:40:23,669 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:23,669 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isGetProp() && NodeUtil.getpropHasSideEffects(n)) {
+2024-02-25 10:40:23,669 - Closure_15 - INFO - 补丁1 7 未成功编译
+2024-02-25 10:40:23,670 - Closure_15 - INFO - 开始验证补丁1 8:
+2024-02-25 10:40:23,670 - Closure_15 - INFO - 
+        if (n.isDelProp() && NodeUtil.delpopHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:40:25,716 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:25,716 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isDelProp() && NodeUtil.delpopHasSideEffects(n)) {
+2024-02-25 10:40:25,716 - Closure_15 - INFO - 补丁1 8 未成功编译
+2024-02-25 10:40:25,717 - Closure_15 - INFO - 开始验证补丁1 9:
+2024-02-25 10:40:25,717 - Closure_15 - INFO - 
+        if (n.isIn() && NodeUtil.inHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:40:27,717 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:27,717 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isIn() && NodeUtil.inHasSideEffects(n)) {
+2024-02-25 10:40:27,717 - Closure_15 - INFO - 补丁1 9 未成功编译
+2024-02-25 10:40:27,718 - Closure_15 - INFO - 开始验证补丁2 1:
+2024-02-25 10:40:27,718 - Closure_15 - INFO - 
+if (n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+  return true;
+}
+
+2024-02-25 10:40:29,704 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:29,705 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+2024-02-25 10:40:29,705 - Closure_15 - INFO - 补丁2 1 未成功编译
+2024-02-25 10:40:29,706 - Closure_15 - INFO - 开始验证补丁2 2:
+2024-02-25 10:40:29,706 - Closure_15 - INFO - 
+if (n.isIn() && NodeUtil.inHasSideEffects(n)) {
+  return true;
+}
+
+2024-02-25 10:40:31,689 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:31,689 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isIn() && NodeUtil.inHasSideEffects(n)) {
+2024-02-25 10:40:31,689 - Closure_15 - INFO - 补丁2 2 未成功编译
+2024-02-25 10:40:31,690 - Closure_15 - INFO - 开始验证补丁2 3:
+2024-02-25 10:40:31,690 - Closure_15 - INFO - 
+if (n.isForIn() && !NodeUtil.isSimpleForIn(n)) {
+  return true;
+}
+
+2024-02-25 10:40:33,681 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:33,682 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && !NodeUtil.isSimpleForIn(n)) {
+2024-02-25 10:40:33,682 - Closure_15 - INFO - 补丁2 3 未成功编译
+2024-02-25 10:40:33,683 - Closure_15 - INFO - 开始验证补丁2 4:
+2024-02-25 10:40:33,683 - Closure_15 - INFO - 
+        if (n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:40:35,686 - Closure_15 - INFO - 编译失败
+2024-02-25 10:40:35,686 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+2024-02-25 10:40:35,686 - Closure_15 - INFO - 补丁2 4 未成功编译
+2024-02-25 10:40:35,687 - Closure_15 - INFO - 开始验证补丁2 5:
+2024-02-25 10:40:35,687 - Closure_15 - INFO - 
+        if (NodeUtil.mayHaveSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:40:39,852 - Closure_15 - INFO - 编译成功
+2024-02-25 10:41:27,552 - Closure_15 - INFO - 测试失败
+2024-02-25 10:41:27,552 - Closure_15 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testIssue698
+
+2024-02-25 10:41:28,071 - Closure_15 - INFO - 选择失败的测试用例为:
+2024-02-25 10:41:28,071 - Closure_15 - INFO - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+2024-02-25 10:41:28,071 - Closure_15 - INFO - 失败的测试代码为:
+2024-02-25 10:41:28,071 - Closure_15 - INFO -     inline("var a = 1, b = 2;" +
+
+2024-02-25 10:41:28,071 - Closure_15 - INFO - 失败信息为:
+2024-02-25 10:41:28,071 - Closure_15 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 10:41:28,071 - Closure_15 - INFO - 补丁2 5测试失败
+2024-02-25 10:41:28,072 - Closure_15 - INFO - 开始验证补丁2 6:
+2024-02-25 10:41:28,072 - Closure_15 - INFO - 
+        if (n.isForIn() && NodeUtil.hasDeleteOperationInForIn(n)) {
+          return true;
+        }
+
+2024-02-25 10:41:30,062 - Closure_15 - INFO - 编译失败
+2024-02-25 10:41:30,062 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && NodeUtil.hasDeleteOperationInForIn(n)) {
+2024-02-25 10:41:30,062 - Closure_15 - INFO - 补丁2 6 未成功编译
+2024-02-25 10:41:30,063 - Closure_15 - INFO - 开始验证补丁2 7:
+2024-02-25 10:41:30,063 - Closure_15 - INFO - 
+        if (n.isFor() && n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:41:32,042 - Closure_15 - INFO - 编译失败
+2024-02-25 10:41:32,042 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isFor() && n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+2024-02-25 10:41:32,042 - Closure_15 - INFO - 补丁2 7 未成功编译
+2024-02-25 10:41:32,043 - Closure_15 - INFO - 开始验证补丁2 8:
+2024-02-25 10:41:32,043 - Closure_15 - INFO - 
+        if (n.isForIn() && apply(n.getFirstChild())) {
+          return true;
+        }
+
+2024-02-25 10:41:34,094 - Closure_15 - INFO - 编译失败
+2024-02-25 10:41:34,094 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && apply(n.getFirstChild())) {
+2024-02-25 10:41:34,095 - Closure_15 - INFO - 补丁2 8 未成功编译
+2024-02-25 10:41:34,096 - Closure_15 - INFO - 开始验证补丁2 9:
+2024-02-25 10:41:34,096 - Closure_15 - INFO - 
+        if (n.isForIn() && NodeUtil.forInBodyHasSideEffects(n.getFirstChild())) {
+          return true;
+        }
+
+2024-02-25 10:41:36,183 - Closure_15 - INFO - 编译失败
+2024-02-25 10:41:36,183 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && NodeUtil.forInBodyHasSideEffects(n.getFirstChild())) {
+2024-02-25 10:41:36,183 - Closure_15 - INFO - 补丁2 9 未成功编译
+2024-02-25 10:41:36,184 - Closure_15 - INFO - 开始验证补丁3 1:
+2024-02-25 10:41:36,184 - Closure_15 - INFO - 
+   if ((n.isForIn() && NodeUtil.forInHasSideEffects(n)) ||
+       (n.isDelProp() && NodeUtil.deletePropHasSideEffects(n))) {
+     return true;
+   }
+   
+2024-02-25 10:41:38,195 - Closure_15 - INFO - 编译失败
+2024-02-25 10:41:38,195 - Closure_15 - INFO - 错误: 找不到符号
+if ((n.isForIn() && NodeUtil.forInHasSideEffects(n)) ||
+2024-02-25 10:41:38,195 - Closure_15 - INFO - 补丁3 1 未成功编译
+2024-02-25 10:41:38,196 - Closure_15 - INFO - 开始验证补丁3 2:
+2024-02-25 10:41:38,196 - Closure_15 - INFO - 
+   if (NodeUtil.mayHaveSideEffects(n)) {
+     return true;
+   }
+   
+2024-02-25 10:41:42,295 - Closure_15 - INFO - 编译成功
+2024-02-25 10:42:30,221 - Closure_15 - INFO - 测试失败
+2024-02-25 10:42:30,222 - Closure_15 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testIssue698
+
+2024-02-25 10:42:30,734 - Closure_15 - INFO - 选择失败的测试用例为:
+2024-02-25 10:42:30,734 - Closure_15 - INFO - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+2024-02-25 10:42:30,734 - Closure_15 - INFO - 失败的测试代码为:
+2024-02-25 10:42:30,734 - Closure_15 - INFO -     inline("var a = 1, b = 2;" +
+
+2024-02-25 10:42:30,734 - Closure_15 - INFO - 失败信息为:
+2024-02-25 10:42:30,734 - Closure_15 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 10:42:30,734 - Closure_15 - INFO - 补丁3 2测试失败
+2024-02-25 10:42:30,735 - Closure_15 - INFO - 开始验证补丁3 3:
+2024-02-25 10:42:30,735 - Closure_15 - INFO - 
+   if (n.isForIn() || n.isDelProp()) {
+     return true;
+   }
+   
+2024-02-25 10:42:32,712 - Closure_15 - INFO - 编译失败
+2024-02-25 10:42:32,713 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() || n.isDelProp()) {
+2024-02-25 10:42:32,713 - Closure_15 - INFO - 补丁3 3 未成功编译
+2024-02-25 10:42:32,714 - Closure_15 - INFO - 开始验证补丁3 4:
+2024-02-25 10:42:32,714 - Closure_15 - INFO - 
+        if (n.isForIn() && NodeUtil.mayHaveSideEffects(n.getFirstChild())) {
+          return true;
+        }
+
+        if (n.isDelProp() && NodeUtil.mayHaveSideEffects(n.getFirstChild())) {
+          return true;
+        }
+
+2024-02-25 10:42:34,709 - Closure_15 - INFO - 编译失败
+2024-02-25 10:42:34,709 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && NodeUtil.mayHaveSideEffects(n.getFirstChild())) {
+2024-02-25 10:42:34,709 - Closure_15 - INFO - 补丁3 4 未成功编译
+2024-02-25 10:42:34,710 - Closure_15 - INFO - 开始验证补丁3 5:
+2024-02-25 10:42:34,710 - Closure_15 - INFO - 
+        if (n.isIn() && NodeUtil.mayHaveSideEffects(n.getSecondChild())) {
+          return true;
+        }
+
+        if (n.isDelProp() && NodeUtil.mayHaveSideEffects(n.getFirstChild())) {
+          return true;
+        }
+
+2024-02-25 10:42:36,679 - Closure_15 - INFO - 编译失败
+2024-02-25 10:42:36,679 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isIn() && NodeUtil.mayHaveSideEffects(n.getSecondChild())) {
+2024-02-25 10:42:36,679 - Closure_15 - INFO - 补丁3 5 未成功编译
+2024-02-25 10:42:36,680 - Closure_15 - INFO - 开始验证补丁3 6:
+2024-02-25 10:42:36,680 - Closure_15 - INFO - 
+        if ((n.isForIn() || n.isIn()) && NodeUtil.mayHaveSideEffects(n)) {
+          return true;
+        }
+
+        // Assuming that the existence of a property deletion is implicitly a side effect.
+        if (n.isDelProp()) {
+          return true;
+        }
+
+2024-02-25 10:42:38,664 - Closure_15 - INFO - 编译失败
+2024-02-25 10:42:38,664 - Closure_15 - INFO - 错误: 找不到符号
+if ((n.isForIn() || n.isIn()) && NodeUtil.mayHaveSideEffects(n)) {
+2024-02-25 10:42:38,664 - Closure_15 - INFO - 补丁3 6 未成功编译
+2024-02-25 10:42:38,665 - Closure_15 - INFO - 开始验证补丁3 7:
+2024-02-25 10:42:38,666 - Closure_15 - INFO - 
+        if (n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+          return true;
+        }
+
+        if (n.isDelProp() && NodeUtil.deleteHasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:42:40,642 - Closure_15 - INFO - 编译失败
+2024-02-25 10:42:40,642 - Closure_15 - INFO - 错误: 找不到符号
+if (n.isForIn() && NodeUtil.forInHasSideEffects(n)) {
+2024-02-25 10:42:40,642 - Closure_15 - INFO - 补丁3 7 未成功编译
+2024-02-25 10:42:40,643 - Closure_15 - INFO - 开始验证补丁3 8:
+2024-02-25 10:42:40,643 - Closure_15 - INFO - 
+        if ((n.isForIn() || n.isDelProp()) && NodeUtil.hasSideEffects(n)) {
+          return true;
+        }
+
+2024-02-25 10:42:42,638 - Closure_15 - INFO - 编译失败
+2024-02-25 10:42:42,638 - Closure_15 - INFO - 错误: 找不到符号
+if ((n.isForIn() || n.isDelProp()) && NodeUtil.hasSideEffects(n)) {
+2024-02-25 10:42:42,638 - Closure_15 - INFO - 补丁3 8 未成功编译
+2024-02-25 10:42:42,640 - Closure_15 - INFO - 开始验证补丁3 9:
+2024-02-25 10:42:42,640 - Closure_15 - INFO - 
+        if (n.isOr()) {
+            for (Node child : n.children()) {
+                if (NodeUtil.mayHaveSideEffects(child)) {
+                    return true;
+                }
+            }
+        }
+
+2024-02-25 10:42:46,793 - Closure_15 - INFO - 编译成功
+2024-02-25 10:43:34,996 - Closure_15 - INFO - 测试失败
+2024-02-25 10:43:34,997 - Closure_15 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testSimpleForIn
+
+2024-02-25 10:43:35,504 - Closure_15 - INFO - 选择失败的测试用例为:
+2024-02-25 10:43:35,504 - Closure_15 - INFO - com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testSimpleForIn
+2024-02-25 10:43:35,504 - Closure_15 - INFO - 失败的测试代码为:
+2024-02-25 10:43:35,504 - Closure_15 - INFO -     noInline("var a,b,x = a in b; delete a[b]; x");
+
+2024-02-25 10:43:35,504 - Closure_15 - INFO - 失败信息为:
+2024-02-25 10:43:35,505 - Closure_15 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 10:43:35,505 - Closure_15 - INFO - 补丁3 9测试失败
+2024-02-25 10:43:35,505 - Closure_15 - INFO - Closure_15 未成功修复

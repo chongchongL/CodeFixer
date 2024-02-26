@@ -1,0 +1,74 @@
+2024-02-24 01:07:28,932 - Math_59 - INFO - rm -rf /home/chongchong/d4j-project/Math_59
+2024-02-24 01:07:28,933 - Math_59 - INFO - 删除 Math 59b 成功
+2024-02-24 01:07:28,933 - Math_59 - INFO - defects4j checkout -p Math -v 59b -w /home/chongchong/d4j-project/Math_59
+2024-02-24 01:07:31,341 - Math_59 - INFO - checkout Math 59b 成功
+2024-02-24 01:07:37,097 - Math_59 - INFO - 编译成功
+2024-02-24 01:07:54,841 - Math_59 - INFO - 测试失败
+2024-02-24 01:07:54,841 - Math_59 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.FastMathTest::testMinMaxFloat
+
+2024-02-24 01:07:55,753 - Math_59 - INFO - 它的bug类型为:
+2024-02-24 01:07:55,753 - Math_59 - INFO - 1
+2024-02-24 01:08:39,406 - Math_59 - INFO - Math_59 未成功修复
+2024-02-24 11:00:22,758 - Math_59 - INFO - rm -rf /home/chongchong/d4j-project/Math_59
+2024-02-24 11:00:22,786 - Math_59 - INFO - 删除 Math 59b 成功
+2024-02-24 11:00:22,786 - Math_59 - INFO - defects4j checkout -p Math -v 59b -w /home/chongchong/d4j-project/Math_59
+2024-02-24 11:00:25,171 - Math_59 - INFO - checkout Math 59b 成功
+2024-02-24 11:00:31,031 - Math_59 - INFO - 编译成功
+2024-02-24 11:00:48,675 - Math_59 - INFO - 测试失败
+2024-02-24 11:00:48,675 - Math_59 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.FastMathTest::testMinMaxFloat
+
+2024-02-24 11:00:49,587 - Math_59 - INFO - 它的bug类型为:
+2024-02-24 11:00:49,587 - Math_59 - INFO - 1
+2024-02-24 11:01:13,394 - Math_59 - INFO - 开始验证补丁1 1:
+2024-02-24 11:01:13,394 - Math_59 - INFO - 
+return (a >= b) ? a : b;
+
+2024-02-24 11:01:14,802 - Math_59 - INFO - 编译成功
+2024-02-24 11:01:32,280 - Math_59 - INFO - 测试失败
+2024-02-24 11:01:32,280 - Math_59 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.FastMathTest::testMinMaxFloat
+
+2024-02-24 11:01:32,734 - Math_59 - INFO - 选择失败的测试用例为:
+2024-02-24 11:01:32,734 - Math_59 - INFO - org.apache.commons.math.util.FastMathTest::testMinMaxFloat
+2024-02-24 11:01:32,734 - Math_59 - INFO - 失败的测试代码为:
+2024-02-24 11:01:32,734 - Math_59 - INFO -             Assert.assertEquals("max(" + pair[0] + ", " + pair[1] + ")",
+
+2024-02-24 11:01:32,734 - Math_59 - INFO - 失败信息为:
+2024-02-24 11:01:32,734 - Math_59 - INFO - junit.framework.AssertionFailedError: max(NaN, 1.0) expected:<NaN> but was:<1.0>
+
+2024-02-24 11:01:32,735 - Math_59 - INFO - 补丁1 1测试失败
+2024-02-24 11:01:32,736 - Math_59 - INFO - 开始验证补丁1 2:
+2024-02-24 11:01:32,736 - Math_59 - INFO - 
+if (a >= b) {
+    return a;
+} else {
+    return b;
+}
+
+2024-02-24 11:01:34,149 - Math_59 - INFO - 编译成功
+2024-02-24 11:01:51,560 - Math_59 - INFO - 测试失败
+2024-02-24 11:01:51,561 - Math_59 - INFO - Failing tests: 1
+  - org.apache.commons.math.util.FastMathTest::testMinMaxFloat
+
+2024-02-24 11:01:52,019 - Math_59 - INFO - 选择失败的测试用例为:
+2024-02-24 11:01:52,019 - Math_59 - INFO - org.apache.commons.math.util.FastMathTest::testMinMaxFloat
+2024-02-24 11:01:52,019 - Math_59 - INFO - 失败的测试代码为:
+2024-02-24 11:01:52,019 - Math_59 - INFO -             Assert.assertEquals("max(" + pair[0] + ", " + pair[1] + ")",
+
+2024-02-24 11:01:52,019 - Math_59 - INFO - 失败信息为:
+2024-02-24 11:01:52,019 - Math_59 - INFO - junit.framework.AssertionFailedError: max(NaN, 1.0) expected:<NaN> but was:<1.0>
+
+2024-02-24 11:01:52,019 - Math_59 - INFO - 补丁1 2测试失败
+2024-02-24 11:01:52,020 - Math_59 - INFO - 开始验证补丁1 3:
+2024-02-24 11:01:52,020 - Math_59 - INFO - 
+if (Float.isNaN(a) || Float.isNaN(b)) {
+    return Float.NaN;
+} else {
+    return (a >= b) ? a : b;
+}
+
+2024-02-24 11:01:53,454 - Math_59 - INFO - 编译成功
+2024-02-24 11:02:10,921 - Math_59 - INFO - 测试成功
+2024-02-24 11:02:10,921 - Math_59 - INFO - 补丁1 3 通过了所有的测试用例

@@ -1,0 +1,356 @@
+2024-02-26 10:33:18,942 - Mockito_33 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_33
+2024-02-26 10:33:18,942 - Mockito_33 - INFO - 删除 Mockito 33b 成功
+2024-02-26 10:33:18,943 - Mockito_33 - INFO - defects4j checkout -p Mockito -v 33b -w /home/chongchong/d4j-project/Mockito_33
+2024-02-26 10:33:22,343 - Mockito_33 - INFO - checkout Mockito 33b 成功
+2024-02-26 10:33:27,931 - Mockito_33 - INFO - 编译成功
+2024-02-26 10:33:46,936 - Mockito_33 - INFO - 测试失败
+2024-02-26 10:33:46,936 - Mockito_33 - INFO - Failing tests: 2
+  - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldStubbingWork
+  - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldVerificationWorks
+
+2024-02-26 10:33:47,814 - Mockito_33 - INFO - 它的bug类型为:
+2024-02-26 10:33:47,814 - Mockito_33 - INFO - 4
+2024-02-26 10:34:37,396 - Mockito_33 - INFO - 开始验证补丁1 1:
+2024-02-26 10:34:37,396 - Mockito_33 - INFO - 
+    return m1 != null && m1.equals(m2); 
+
+2024-02-26 10:34:37,396 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:34:37,397 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:34:37,397 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:34:37,397 - Mockito_33 - INFO - 开始验证补丁1 2:
+2024-02-26 10:34:37,397 - Mockito_33 - INFO - 
+    return m1 != null && m2 != null && m1.getName().equals(m2.getName()) 
+           && Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+
+2024-02-26 10:34:38,885 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:38,885 - Mockito_33 - INFO - 错误: 找不到符号
+&& Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+2024-02-26 10:34:38,885 - Mockito_33 - INFO - 补丁1 2 未成功编译
+2024-02-26 10:34:38,886 - Mockito_33 - INFO - 开始验证补丁1 3:
+2024-02-26 10:34:38,886 - Mockito_33 - INFO - 
+    return m1 != null && m2 != null && m1.getName().equals(m2.getName()) 
+           && Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes())
+           && m1.getReturnType().equals(m2.getReturnType());
+
+2024-02-26 10:34:40,340 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:40,340 - Mockito_33 - INFO - 错误: 找不到符号
+&& Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes())
+2024-02-26 10:34:40,340 - Mockito_33 - INFO - 补丁1 3 未成功编译
+2024-02-26 10:34:40,341 - Mockito_33 - INFO - 开始验证补丁1 4:
+2024-02-26 10:34:40,341 - Mockito_33 - INFO - 
+return m1 != null && m1.equals(m2);
+
+2024-02-26 10:34:40,341 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:34:40,341 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:34:40,341 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:34:40,342 - Mockito_33 - INFO - 开始验证补丁1 5:
+2024-02-26 10:34:40,342 - Mockito_33 - INFO - 
+return m1 == null ? m2 == null : m1.equals(m2);
+
+2024-02-26 10:34:40,342 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:34:40,342 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:34:40,342 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:34:40,343 - Mockito_33 - INFO - 开始验证补丁1 6:
+2024-02-26 10:34:40,343 - Mockito_33 - INFO - 
+if (m1 == null || m2 == null) {
+    return m1 == m2;
+} else {
+    return m1.getName().equals(m2.getName()) &&
+           m1.getReturnType().equals(m2.getReturnType()) &&
+           Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+           m1.getDeclaringClass().equals(m2.getDeclaringClass());
+}
+
+2024-02-26 10:34:41,175 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:41,176 - Mockito_33 - INFO - 错误: 非法的表达式开始
+public Location getLocation() {
+2024-02-26 10:34:41,176 - Mockito_33 - INFO - 补丁1 6 未成功编译
+2024-02-26 10:34:41,177 - Mockito_33 - INFO - 开始验证补丁1 7:
+2024-02-26 10:34:41,177 - Mockito_33 - INFO - 
+if (m1 == null || m2 == null) {
+    return m1 == m2;
+}
+return m1.getName().equals(m2.getName()) && Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) && m1.getReturnType().equals(m2.getReturnType());
+
+2024-02-26 10:34:42,636 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:42,636 - Mockito_33 - INFO - 错误: 找不到符号
+return m1.getName().equals(m2.getName()) && Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) && m1.getReturnType().equals(m2.getReturnType());
+2024-02-26 10:34:42,636 - Mockito_33 - INFO - 补丁1 7 未成功编译
+2024-02-26 10:34:42,637 - Mockito_33 - INFO - 开始验证补丁1 8:
+2024-02-26 10:34:42,637 - Mockito_33 - INFO - 
+return (m1 == null ? m2 == null : m1.getName().equals(m2.getName()) && m1.getDeclaringClass().equals(m2.getDeclaringClass()) && Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()));
+
+2024-02-26 10:34:42,637 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:34:42,637 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:34:42,637 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:34:42,638 - Mockito_33 - INFO - 开始验证补丁1 9:
+2024-02-26 10:34:42,638 - Mockito_33 - INFO - 
+return m1 != null && m1.getName().equals(m2.getName()) && Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+
+2024-02-26 10:34:42,638 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:34:42,638 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:34:42,638 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:34:42,639 - Mockito_33 - INFO - 开始验证补丁2 1:
+2024-02-26 10:34:42,639 - Mockito_33 - INFO - 
+    return m1.getDeclaringClass().equals(m2.getDeclaringClass()) &&
+           m1.getName().equals(m2.getName()) &&
+           Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+           m1.getReturnType().equals(m2.getReturnType());
+
+2024-02-26 10:34:44,099 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:44,099 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+2024-02-26 10:34:44,099 - Mockito_33 - INFO - 补丁2 1 未成功编译
+2024-02-26 10:34:44,100 - Mockito_33 - INFO - 开始验证补丁2 2:
+2024-02-26 10:34:44,100 - Mockito_33 - INFO - 
+    return m1.getName().equals(m2.getName()) &&
+           Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+
+2024-02-26 10:34:45,576 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:45,576 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+2024-02-26 10:34:45,576 - Mockito_33 - INFO - 补丁2 2 未成功编译
+2024-02-26 10:34:45,577 - Mockito_33 - INFO - 开始验证补丁2 3:
+2024-02-26 10:34:45,577 - Mockito_33 - INFO - 
+    return m1.getName().equals(m2.getName());
+
+2024-02-26 10:34:45,577 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:34:45,577 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:34:45,577 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:34:45,578 - Mockito_33 - INFO - 开始验证补丁2 4:
+2024-02-26 10:34:45,578 - Mockito_33 - INFO - 
+        // Replace the <fill> placeholder with the correct lines of code
+        return m1.getName().equals(m2.getName()) &&
+               Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+               m1.getReturnType().equals(m2.getReturnType());
+
+2024-02-26 10:34:47,040 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:47,040 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+2024-02-26 10:34:47,040 - Mockito_33 - INFO - 补丁2 4 未成功编译
+2024-02-26 10:34:47,041 - Mockito_33 - INFO - 开始验证补丁2 5:
+2024-02-26 10:34:47,041 - Mockito_33 - INFO - 
+        // Replace the <fill> placeholder with an alternative way to check method equality
+        return m1.getName().equals(m2.getName()) &&
+               Arrays.equals(m1.getGenericParameterTypes(), m2.getGenericParameterTypes()) &&
+               m1.getGenericReturnType().equals(m2.getGenericReturnType());
+
+2024-02-26 10:34:48,491 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:34:48,491 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getGenericParameterTypes(), m2.getGenericParameterTypes()) &&
+2024-02-26 10:34:48,491 - Mockito_33 - INFO - 补丁2 5 未成功编译
+2024-02-26 10:34:48,492 - Mockito_33 - INFO - 开始验证补丁2 6:
+2024-02-26 10:34:48,492 - Mockito_33 - INFO - 
+        // Replace the <fill> placeholder with a simple signature comparison
+        return m1.toGenericString().equals(m2.toGenericString());
+
+2024-02-26 10:34:54,102 - Mockito_33 - INFO - 编译成功
+2024-02-26 10:35:13,177 - Mockito_33 - INFO - 测试失败
+2024-02-26 10:35:13,177 - Mockito_33 - INFO - Failing tests: 2
+  - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldStubbingWork
+  - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldVerificationWorks
+
+2024-02-26 10:35:13,624 - Mockito_33 - INFO - 选择失败的测试用例为:
+2024-02-26 10:35:13,624 - Mockito_33 - INFO - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldStubbingWork
+2024-02-26 10:35:13,624 - Mockito_33 - INFO - 失败的测试代码为:
+2024-02-26 10:35:13,624 - Mockito_33 - INFO -         Assert.assertNotNull(((Iterable) iterable).iterator());
+
+2024-02-26 10:35:13,624 - Mockito_33 - INFO - 失败信息为:
+2024-02-26 10:35:13,624 - Mockito_33 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 10:35:13,624 - Mockito_33 - INFO - 补丁2 6测试失败
+2024-02-26 10:35:13,625 - Mockito_33 - INFO - 开始验证补丁2 7:
+2024-02-26 10:35:13,625 - Mockito_33 - INFO - 
+        return m1.getName().equals(m2.getName()) &&
+               m1.getReturnType().equals(m2.getReturnType()) &&
+               Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+
+2024-02-26 10:35:15,107 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:15,107 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+2024-02-26 10:35:15,107 - Mockito_33 - INFO - 补丁2 7 未成功编译
+2024-02-26 10:35:15,108 - Mockito_33 - INFO - 开始验证补丁2 8:
+2024-02-26 10:35:15,108 - Mockito_33 - INFO - 
+        return m1.toString().equals(m2.toString());
+
+2024-02-26 10:35:15,108 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:35:15,108 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:35:15,108 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:35:15,109 - Mockito_33 - INFO - 开始验证补丁2 9:
+2024-02-26 10:35:15,109 - Mockito_33 - INFO - 
+        return m1.toGenericString().equals(m2.toGenericString());
+
+2024-02-26 10:35:15,109 - Mockito_33 - INFO - 补丁Mockito 33 出错，信息如下：
+2024-02-26 10:35:15,109 - Mockito_33 - ERROR - list index out of range
+2024-02-26 10:35:15,109 - Mockito_33 - ERROR - 堆栈跟踪信息: Traceback (most recent call last):
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 214, in test_patch
+    do_patch(p.src_path, p.error_num, patch, p.bug_type())
+  File "/home/chongchong/CodeFixer/CodeFixer/program/d4jpatch.py", line 116, in do_patch
+    if add_lines.split('\n')[-2].strip() == code_list[rem_lines[-1]].strip() and add_lines.split('\n')[-1].strip() == code_list[rem_lines[-1]+1].strip():
+IndexError: list index out of range
+
+2024-02-26 10:35:15,110 - Mockito_33 - INFO - 开始验证补丁3 1:
+2024-02-26 10:35:15,110 - Mockito_33 - INFO - 
+if (!m1.getName().equals(m2.getName())) {
+    return false;
+}
+if (m1.getParameterTypes().length != m2.getParameterTypes().length) {
+    return false;
+}
+for (int i = 0; i < m1.getParameterTypes().length; i++) {
+    if (!m1.getParameterTypes()[i].equals(m2.getParameterTypes()[i])) {
+        return false;
+    }
+}
+return m1.getReturnType().equals(m2.getReturnType());
+
+2024-02-26 10:35:20,578 - Mockito_33 - INFO - 编译成功
+2024-02-26 10:35:39,595 - Mockito_33 - INFO - 测试失败
+2024-02-26 10:35:39,595 - Mockito_33 - INFO - Failing tests: 2
+  - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldStubbingWork
+  - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldVerificationWorks
+
+2024-02-26 10:35:40,037 - Mockito_33 - INFO - 选择失败的测试用例为:
+2024-02-26 10:35:40,037 - Mockito_33 - INFO - org.mockitousage.bugs.InheritedGenericsPolimorphicCallTest::shouldStubbingWork
+2024-02-26 10:35:40,037 - Mockito_33 - INFO - 失败的测试代码为:
+2024-02-26 10:35:40,037 - Mockito_33 - INFO -         Assert.assertNotNull(((Iterable) iterable).iterator());
+
+2024-02-26 10:35:40,037 - Mockito_33 - INFO - 失败信息为:
+2024-02-26 10:35:40,037 - Mockito_33 - INFO - junit.framework.AssertionFailedError
+
+2024-02-26 10:35:40,037 - Mockito_33 - INFO - 补丁3 1测试失败
+2024-02-26 10:35:40,038 - Mockito_33 - INFO - 开始验证补丁3 2:
+2024-02-26 10:35:40,038 - Mockito_33 - INFO - 
+return m1.getName().equals(m2.getName()) &&
+       Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+       m1.getReturnType().equals(m2.getReturnType()) &&
+       m1.getDeclaringClass().isAssignableFrom(m2.getDeclaringClass());
+
+2024-02-26 10:35:41,552 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:41,552 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+2024-02-26 10:35:41,552 - Mockito_33 - INFO - 补丁3 2 未成功编译
+2024-02-26 10:35:41,553 - Mockito_33 - INFO - 开始验证补丁3 3:
+2024-02-26 10:35:41,553 - Mockito_33 - INFO - 
+return m1.getName().equals(m2.getName()) &&
+       Arrays.equals(m1.getGenericParameterTypes(), m2.getGenericParameterTypes()) &&
+       m1.getGenericReturnType().equals(m2.getGenericReturnType()) &&
+       m1.isBridge() == m2.isBridge() &&
+       m1.isSynthetic() == m2.isSynthetic();
+
+2024-02-26 10:35:42,999 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:42,999 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getGenericParameterTypes(), m2.getGenericParameterTypes()) &&
+2024-02-26 10:35:42,999 - Mockito_33 - INFO - 补丁3 3 未成功编译
+2024-02-26 10:35:43,000 - Mockito_33 - INFO - 开始验证补丁3 4:
+2024-02-26 10:35:43,000 - Mockito_33 - INFO - 
+if (!m1.getName().equals(m2.getName())) {
+    return false;
+}
+if (m1.getParameterTypes().length != m2.getParameterTypes().length) {
+    return false;
+}
+for (int i = 0; i < m1.getParameterTypes().length; i++) {
+    if (!m1.getParameterTypes()[i].equals(m2.getParameterTypes()[i])) {
+        return false;
+    }
+}
+return m1.getReturnType().equals(m2.getReturnType());
+
+2024-02-26 10:35:43,000 - Mockito_33 - INFO - 补丁3 4为重复的补丁
+2024-02-26 10:35:43,001 - Mockito_33 - INFO - 开始验证补丁3 5:
+2024-02-26 10:35:43,001 - Mockito_33 - INFO - 
+return m1.getName().equals(m2.getName()) &&
+    Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+    m1.getReturnType().equals(m2.getReturnType()) &&
+    m1.getDeclaringClass().isAssignableFrom(m2.getDeclaringClass());
+
+2024-02-26 10:35:44,472 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:44,472 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+2024-02-26 10:35:44,472 - Mockito_33 - INFO - 补丁3 5 未成功编译
+2024-02-26 10:35:44,473 - Mockito_33 - INFO - 开始验证补丁3 6:
+2024-02-26 10:35:44,473 - Mockito_33 - INFO - 
+return m1.getName().equals(m2.getName()) &&
+    Arrays.equals(m1.getGenericParameterTypes(), m2.getGenericParameterTypes()) &&
+    m1.getGenericReturnType().equals(m2.getGenericReturnType()) &&
+    m1.isBridge() == m2.isBridge();
+
+2024-02-26 10:35:45,934 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:45,934 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getGenericParameterTypes(), m2.getGenericParameterTypes()) &&
+2024-02-26 10:35:45,934 - Mockito_33 - INFO - 补丁3 6 未成功编译
+2024-02-26 10:35:45,935 - Mockito_33 - INFO - 开始验证补丁3 7:
+2024-02-26 10:35:45,935 - Mockito_33 - INFO - 
+return m1.getName().equals(m2.getName()) &&
+       Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+
+2024-02-26 10:35:47,427 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:47,427 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+2024-02-26 10:35:47,427 - Mockito_33 - INFO - 补丁3 7 未成功编译
+2024-02-26 10:35:47,428 - Mockito_33 - INFO - 开始验证补丁3 8:
+2024-02-26 10:35:47,428 - Mockito_33 - INFO - 
+return !m1.isBridge() && !m2.isBridge() &&
+       m1.getDeclaringClass().equals(m2.getDeclaringClass()) &&
+       m1.getName().equals(m2.getName()) &&
+       Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+
+2024-02-26 10:35:48,900 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:48,900 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes());
+2024-02-26 10:35:48,900 - Mockito_33 - INFO - 补丁3 8 未成功编译
+2024-02-26 10:35:48,901 - Mockito_33 - INFO - 开始验证补丁3 9:
+2024-02-26 10:35:48,901 - Mockito_33 - INFO - 
+return m1.getName().equals(m2.getName()) &&
+       Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+       m1.getReturnType().equals(m2.getReturnType()) &&
+       Arrays.equals(m1.getExceptionTypes(), m2.getExceptionTypes());
+
+2024-02-26 10:35:50,349 - Mockito_33 - INFO - 编译失败
+2024-02-26 10:35:50,349 - Mockito_33 - INFO - 错误: 找不到符号
+Arrays.equals(m1.getParameterTypes(), m2.getParameterTypes()) &&
+2024-02-26 10:35:50,349 - Mockito_33 - INFO - 补丁3 9 未成功编译
+2024-02-26 10:35:50,349 - Mockito_33 - INFO - Mockito_33 未成功修复

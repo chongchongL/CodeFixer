@@ -1,0 +1,222 @@
+2024-02-25 12:33:46,382 - Lang_49 - INFO - rm -rf /home/chongchong/d4j-project/Lang_49
+2024-02-25 12:33:46,383 - Lang_49 - INFO - 删除 Lang 49b 成功
+2024-02-25 12:33:46,383 - Lang_49 - INFO - defects4j checkout -p Lang -v 49b -w /home/chongchong/d4j-project/Lang_49
+2024-02-25 12:33:49,709 - Lang_49 - INFO - checkout Lang 49b 成功
+2024-02-25 12:33:53,799 - Lang_49 - INFO - 编译成功
+2024-02-25 12:34:03,148 - Lang_49 - INFO - 测试失败
+2024-02-25 12:34:03,148 - Lang_49 - INFO - Failing tests: 1
+  - org.apache.commons.lang.math.FractionTest::testReduce
+
+2024-02-25 12:34:04,029 - Lang_49 - INFO - 它的bug类型为:
+2024-02-25 12:34:04,029 - Lang_49 - INFO - 3
+2024-02-25 12:34:34,701 - Lang_49 - INFO - 开始验证补丁1 1:
+2024-02-25 12:34:34,701 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:35,427 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:35,427 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:35,427 - Lang_49 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:34:35,428 - Lang_49 - INFO - 开始验证补丁1 2:
+2024-02-25 12:34:35,428 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, Math.abs(denominator));
+
+2024-02-25 12:34:36,113 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:36,114 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:36,114 - Lang_49 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:34:36,115 - Lang_49 - INFO - 开始验证补丁1 3:
+2024-02-25 12:34:36,115 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator));
+
+2024-02-25 12:34:36,801 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:36,801 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:36,801 - Lang_49 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:34:36,803 - Lang_49 - INFO - 开始验证补丁1 4:
+2024-02-25 12:34:36,803 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:36,803 - Lang_49 - INFO - 补丁1 4为重复的补丁
+2024-02-25 12:34:36,804 - Lang_49 - INFO - 开始验证补丁1 5:
+2024-02-25 12:34:36,804 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(denominator, numerator);
+
+2024-02-25 12:34:37,486 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:37,486 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:37,486 - Lang_49 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:34:37,487 - Lang_49 - INFO - 开始验证补丁1 6:
+2024-02-25 12:34:37,487 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(denominator, Math.abs(numerator));
+
+2024-02-25 12:34:38,185 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:38,185 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:38,185 - Lang_49 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:34:38,186 - Lang_49 - INFO - 开始验证补丁1 7:
+2024-02-25 12:34:38,186 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:38,186 - Lang_49 - INFO - 补丁1 7为重复的补丁
+2024-02-25 12:34:38,187 - Lang_49 - INFO - 开始验证补丁1 8:
+2024-02-25 12:34:38,187 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, Math.abs(denominator));
+
+2024-02-25 12:34:38,187 - Lang_49 - INFO - 补丁1 8为重复的补丁
+2024-02-25 12:34:38,189 - Lang_49 - INFO - 开始验证补丁1 9:
+2024-02-25 12:34:38,189 - Lang_49 - INFO - 
+int a = numerator;
+int b = denominator;
+while (b != 0) {
+    int temp = b;
+    b = a % b;
+    a = temp;
+}
+int gcd = a;
+
+2024-02-25 12:34:38,894 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:38,894 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:38,894 - Lang_49 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:34:38,895 - Lang_49 - INFO - 开始验证补丁2 1:
+2024-02-25 12:34:38,896 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:38,896 - Lang_49 - INFO - 补丁2 1为重复的补丁
+2024-02-25 12:34:38,897 - Lang_49 - INFO - 开始验证补丁2 2:
+2024-02-25 12:34:38,897 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator < 0 ? -numerator : numerator, denominator);
+
+2024-02-25 12:34:39,608 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:39,608 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:39,608 - Lang_49 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:34:39,609 - Lang_49 - INFO - 开始验证补丁2 3:
+2024-02-25 12:34:39,610 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator));
+
+2024-02-25 12:34:39,610 - Lang_49 - INFO - 补丁2 3为重复的补丁
+2024-02-25 12:34:39,611 - Lang_49 - INFO - 开始验证补丁2 4:
+2024-02-25 12:34:39,611 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:39,611 - Lang_49 - INFO - 补丁2 4为重复的补丁
+2024-02-25 12:34:39,612 - Lang_49 - INFO - 开始验证补丁2 5:
+2024-02-25 12:34:39,612 - Lang_49 - INFO - 
+if (denominator == 0) {
+    throw new ArithmeticException("Denominator cannot be zero");
+}
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:40,303 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:40,303 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:40,303 - Lang_49 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:34:40,304 - Lang_49 - INFO - 开始验证补丁2 6:
+2024-02-25 12:34:40,305 - Lang_49 - INFO - 
+int numeratorGcd = numerator < 0 ? greatestCommonDivisor(-numerator, denominator) : greatestCommonDivisor(numerator, denominator);
+int gcd = numeratorGcd;
+
+2024-02-25 12:34:41,000 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:41,000 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:41,000 - Lang_49 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:34:41,001 - Lang_49 - INFO - 开始验证补丁2 7:
+2024-02-25 12:34:41,001 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:41,001 - Lang_49 - INFO - 补丁2 7为重复的补丁
+2024-02-25 12:34:41,002 - Lang_49 - INFO - 开始验证补丁2 8:
+2024-02-25 12:34:41,002 - Lang_49 - INFO - 
+int gcd = numerator == 0 ? denominator : greatestCommonDivisor(denominator, numerator);
+
+2024-02-25 12:34:41,693 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:41,694 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:41,694 - Lang_49 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:34:41,695 - Lang_49 - INFO - 开始验证补丁2 9:
+2024-02-25 12:34:41,695 - Lang_49 - INFO - 
+int gcd = numerator == 0 ? 1 : greatestCommonDivisor(numerator, denominator);
+
+2024-02-25 12:34:42,403 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:42,403 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:42,403 - Lang_49 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:34:42,405 - Lang_49 - INFO - 开始验证补丁3 1:
+2024-02-25 12:34:42,405 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator));
+
+2024-02-25 12:34:42,405 - Lang_49 - INFO - 补丁3 1为重复的补丁
+2024-02-25 12:34:42,406 - Lang_49 - INFO - 开始验证补丁3 2:
+2024-02-25 12:34:42,406 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator));
+if (denominator < 0) {
+    numerator = -numerator;
+    denominator = -denominator;
+}
+
+2024-02-25 12:34:43,103 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:43,103 - Lang_49 - INFO - 错误: 无法为最终变量numerator分配值
+numerator = -numerator;
+2024-02-25 12:34:43,103 - Lang_49 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:34:43,104 - Lang_49 - INFO - 开始验证补丁3 3:
+2024-02-25 12:34:43,104 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+if (denominator < 0) {
+    gcd = -gcd; // This adjusts the GCD if the denominator is negative, which will effectively move the sign to the numerator
+}
+
+2024-02-25 12:34:43,801 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:43,801 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:43,801 - Lang_49 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:34:43,802 - Lang_49 - INFO - 开始验证补丁3 4:
+2024-02-25 12:34:43,802 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator));
+
+2024-02-25 12:34:43,803 - Lang_49 - INFO - 补丁3 4为重复的补丁
+2024-02-25 12:34:43,803 - Lang_49 - INFO - 开始验证补丁3 5:
+2024-02-25 12:34:43,803 - Lang_49 - INFO - 
+int absNumerator = Math.abs(numerator);
+int absDenominator = Math.abs(denominator);
+int gcd = greatestCommonDivisor(absNumerator, absDenominator);
+
+2024-02-25 12:34:44,501 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:44,501 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:44,501 - Lang_49 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:34:44,502 - Lang_49 - INFO - 开始验证补丁3 6:
+2024-02-25 12:34:44,502 - Lang_49 - INFO - 
+// In case the reduce method is expected to normalize negative denominators
+int sign = denominator < 0 ? -1 : 1;
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator)) * sign;
+
+2024-02-25 12:34:45,207 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:45,207 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:45,207 - Lang_49 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:34:45,208 - Lang_49 - INFO - 开始验证补丁3 7:
+2024-02-25 12:34:45,208 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), Math.abs(denominator));
+
+2024-02-25 12:34:45,208 - Lang_49 - INFO - 补丁3 7为重复的补丁
+2024-02-25 12:34:45,209 - Lang_49 - INFO - 开始验证补丁3 8:
+2024-02-25 12:34:45,209 - Lang_49 - INFO - 
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+
+2024-02-25 12:34:45,900 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:45,900 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:45,900 - Lang_49 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:34:45,901 - Lang_49 - INFO - 开始验证补丁3 9:
+2024-02-25 12:34:45,901 - Lang_49 - INFO - 
+int absDenominator = Math.abs(denominator);
+int sign = denominator < 0 ? -1 : 1;
+int gcd = greatestCommonDivisor(sign * numerator, absDenominator);
+
+2024-02-25 12:34:46,601 - Lang_49 - INFO - 编译失败
+2024-02-25 12:34:46,601 - Lang_49 - INFO - 错误: 已在方法 reduce()中定义了变量 gcd
+int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+2024-02-25 12:34:46,601 - Lang_49 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:34:46,601 - Lang_49 - INFO - Lang_49 未成功修复

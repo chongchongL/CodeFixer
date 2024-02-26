@@ -1,0 +1,390 @@
+2024-02-26 09:48:26,373 - Math_42 - INFO - rm -rf /home/chongchong/d4j-project/Math_42
+2024-02-26 09:48:26,404 - Math_42 - INFO - 删除 Math 42b 成功
+2024-02-26 09:48:26,404 - Math_42 - INFO - defects4j checkout -p Math -v 42b -w /home/chongchong/d4j-project/Math_42
+2024-02-26 09:48:29,902 - Math_42 - INFO - checkout Math 42b 成功
+2024-02-26 09:48:36,621 - Math_42 - INFO - 编译成功
+2024-02-26 09:48:55,523 - Math_42 - INFO - 测试失败
+2024-02-26 09:48:55,523 - Math_42 - INFO - Failing tests: 1
+  - org.apache.commons.math.optimization.linear.SimplexSolverTest::testMath713NegativeVariable
+
+2024-02-26 09:48:56,457 - Math_42 - INFO - 它的bug类型为:
+2024-02-26 09:48:56,457 - Math_42 - INFO - 4
+2024-02-26 09:50:24,628 - Math_42 - INFO - 开始验证补丁1 1:
+2024-02-26 09:50:24,628 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (objectiveFunctionRow.equals(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:25,253 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:25,253 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:25,253 - Math_42 - INFO - 补丁1 1 未成功编译
+2024-02-26 09:50:25,254 - Math_42 - INFO - 开始验证补丁1 2:
+2024-02-26 09:50:25,254 - Math_42 - INFO - 
+          // if the basic row is the same row as the one we treat as objective function 
+          // we set the coefficient to 0 since it corresponds to an unconstrained variable in the objective function
+          if (isObjectiveFunction(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:25,913 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:25,913 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:25,913 - Math_42 - INFO - 补丁1 2 未成功编译
+2024-02-26 09:50:25,914 - Math_42 - INFO - 开始验证补丁1 3:
+2024-02-26 09:50:25,914 - Math_42 - INFO - 
+          // if the basic row corresponds to the objective function and 
+          // should not contribute to the solution, set the coefficient to 0
+          if (basicRows.contains(basicRow) && isObjectiveFunctionRow(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:26,550 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:26,550 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:26,550 - Math_42 - INFO - 补丁1 3 未成功编译
+2024-02-26 09:50:26,551 - Math_42 - INFO - 开始验证补丁1 4:
+2024-02-26 09:50:26,551 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRow != null && basicRow.equals(objectiveFunctionRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:27,183 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:27,183 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:27,183 - Math_42 - INFO - 补丁1 4 未成功编译
+2024-02-26 09:50:27,184 - Math_42 - INFO - 开始验证补丁1 5:
+2024-02-26 09:50:27,184 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (isObjectiveFunctionRow(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:27,807 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:27,807 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:27,808 - Math_42 - INFO - 补丁1 5 未成功编译
+2024-02-26 09:50:27,809 - Math_42 - INFO - 开始验证补丁1 6:
+2024-02-26 09:50:27,809 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (objectiveFunctionRowIndex != null && basicRow.equals(objectiveFunctionRowIndex)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:28,440 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:28,440 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:28,440 - Math_42 - INFO - 补丁1 6 未成功编译
+2024-02-26 09:50:28,441 - Math_42 - INFO - 开始验证补丁1 7:
+2024-02-26 09:50:28,441 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow) && isObjectiveFunctionRow(basicRow)) {
+              coefficients[i] = 0;
+          } else if (basicRows.contains(basicRow)) {
+              // if multiple variables can take a given value
+              // then we choose the first and set the rest equal to 0
+              coefficients[i] = 0;
+          } else {
+              basicRows.add(basicRow);
+
+2024-02-26 09:50:29,062 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:29,062 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:29,062 - Math_42 - INFO - 补丁1 7 未成功编译
+2024-02-26 09:50:29,063 - Math_42 - INFO - 开始验证补丁1 8:
+2024-02-26 09:50:29,063 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+              basicRows.add(basicRow);
+              coefficients[i] = 0 - (restrictToNonNegative ? 0 : mostNegative);
+          }
+
+2024-02-26 09:50:29,689 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:29,689 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:29,689 - Math_42 - INFO - 补丁1 8 未成功编译
+2024-02-26 09:50:29,690 - Math_42 - INFO - 开始验证补丁1 9:
+2024-02-26 09:50:29,690 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+              basicRows.add(basicRow);
+              // if multiple variables can take a given value
+              // then we choose the first and set the rest equal to 0
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:30,311 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:30,311 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:30,311 - Math_42 - INFO - 补丁1 9 未成功编译
+2024-02-26 09:50:30,312 - Math_42 - INFO - 开始验证补丁2 1:
+2024-02-26 09:50:30,312 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          // if multiple variables can take a given value
+          // then we choose the first and set the rest equal to 0
+          } else if (basicRow != null) {
+              coefficients[i] = 0 - (restrictToNonNegative ? 0 : mostNegative);
+          } else {
+              basicRows.add(basicRow);
+
+2024-02-26 09:50:30,933 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:30,933 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:30,934 - Math_42 - INFO - 补丁2 1 未成功编译
+2024-02-26 09:50:30,935 - Math_42 - INFO - 开始验证补丁2 2:
+2024-02-26 09:50:30,935 - Math_42 - INFO - 
+          // if the basic row is the objective function row or a repeated row
+          // set the coefficient to 0
+          if (basicRows.contains(basicRow) || basicRow == null) {
+              coefficients[i] = 0;
+          } else {
+              // handle the case where this is a new basic row
+              coefficients[i] = 0 - (restrictToNonNegative ? 0 : mostNegative);
+              basicRows.add(basicRow);
+          }
+
+2024-02-26 09:50:31,556 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:31,557 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:31,557 - Math_42 - INFO - 补丁2 2 未成功编译
+2024-02-26 09:50:31,558 - Math_42 - INFO - 开始验证补丁2 3:
+2024-02-26 09:50:31,558 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // or if it is not found at all (indicated by null), set the coefficient to 0
+          if (basicRow == null || basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+              coefficients[i] = restrictToNonNegative ? 1 : -mostNegative;
+              basicRows.add(basicRow);
+          }
+
+2024-02-26 09:50:32,190 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:32,190 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:32,190 - Math_42 - INFO - 补丁2 3 未成功编译
+2024-02-26 09:50:32,191 - Math_42 - INFO - 开始验证补丁2 4:
+2024-02-26 09:50:32,191 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:32,823 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:32,823 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:32,823 - Math_42 - INFO - 补丁2 4 未成功编译
+2024-02-26 09:50:32,824 - Math_42 - INFO - 开始验证补丁2 5:
+2024-02-26 09:50:32,824 - Math_42 - INFO - 
+          // if basicRows already contains the current row or if we're looking at the objective function row,
+          // set the coefficient for this variable to 0
+          if (basicRow == null || basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:33,473 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:33,473 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:33,473 - Math_42 - INFO - 补丁2 5 未成功编译
+2024-02-26 09:50:33,474 - Math_42 - INFO - 开始验证补丁2 6:
+2024-02-26 09:50:33,475 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row or should not be included for another reason,
+          // set the coefficient to 0
+          if (isObjectiveFunctionRow(basicRow) || !shouldBeIncluded(basicRow)) {
+              coefficients[i] = 0;
+          }
+
+2024-02-26 09:50:34,096 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:34,096 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:34,096 - Math_42 - INFO - 补丁2 6 未成功编译
+2024-02-26 09:50:34,097 - Math_42 - INFO - 开始验证补丁2 7:
+2024-02-26 09:50:34,097 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:34,725 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:34,725 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:34,725 - Math_42 - INFO - 补丁2 7 未成功编译
+2024-02-26 09:50:34,726 - Math_42 - INFO - 开始验证补丁2 8:
+2024-02-26 09:50:34,726 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (isObjectiveFunctionRow(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:35,357 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:35,357 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:35,357 - Math_42 - INFO - 补丁2 8 未成功编译
+2024-02-26 09:50:35,358 - Math_42 - INFO - 开始验证补丁2 9:
+2024-02-26 09:50:35,358 - Math_42 - INFO - 
+          // if the basic row is the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRow.equals(objectiveFunctionRowIdentifier)) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:35,971 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:35,971 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:35,971 - Math_42 - INFO - 补丁2 9 未成功编译
+2024-02-26 09:50:35,972 - Math_42 - INFO - 开始验证补丁3 1:
+2024-02-26 09:50:35,972 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 -> this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:35,972 - Math_42 - INFO - 补丁3 1为重复的补丁
+2024-02-26 09:50:35,973 - Math_42 - INFO - 开始验证补丁3 2:
+2024-02-26 09:50:35,973 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 only if restrictToNonNegative is true
+          // this case handles unconstrained variables that are still part of the objective function
+          if (basicRows.contains(basicRow) && restrictToNonNegative) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:36,589 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:36,589 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:36,589 - Math_42 - INFO - 补丁3 2 未成功编译
+2024-02-26 09:50:36,590 - Math_42 - INFO - 开始验证补丁3 3:
+2024-02-26 09:50:36,590 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 and handle the case for mostNegative if restrictToNonNegative is false
+          // this case handles unconstrained variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = restrictToNonNegative ? 0 : -mostNegative;
+          } else {
+
+2024-02-26 09:50:37,197 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:37,197 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:37,197 - Math_42 - INFO - 补丁3 3 未成功编译
+2024-02-26 09:50:37,198 - Math_42 - INFO - 开始验证补丁3 4:
+2024-02-26 09:50:37,198 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row
+          // set the coefficient to 0 - this case handles unconstrained 
+          // variables that are still part of the objective function
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:37,816 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:37,816 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:37,817 - Math_42 - INFO - 补丁3 4 未成功编译
+2024-02-26 09:50:37,817 - Math_42 - INFO - 开始验证补丁3 5:
+2024-02-26 09:50:37,818 - Math_42 - INFO - 
+          // if the basic row is found to be the objective function row and the variable is non-negative
+          // or there are no restrictions on negativity and the value is the most negative
+          // set the coefficient to 0 to prevent a negative value in the solution
+          if (basicRows.contains(basicRow) && (restrictToNonNegative || coefficients[i] <= mostNegative)) {
+              coefficients[i] = 0;
+          } else {
+
+2024-02-26 09:50:38,427 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:38,427 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:38,427 - Math_42 - INFO - 补丁3 5 未成功编译
+2024-02-26 09:50:38,428 - Math_42 - INFO - 开始验证补丁3 6:
+2024-02-26 09:50:38,428 - Math_42 - INFO - 
+          // if the basic row has already been processed, then the variable is not basic
+          // and should have a coefficient of zero unless it is the most negative and
+          // non-negativity is not restricted
+          if (basicRows.contains(basicRow)) {
+              coefficients[i] = (restrictToNonNegative) ? 0 : Math.min(0, -mostNegative);
+          } else {
+
+2024-02-26 09:50:39,041 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:39,042 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:39,042 - Math_42 - INFO - 补丁3 6 未成功编译
+2024-02-26 09:50:39,043 - Math_42 - INFO - 开始验证补丁3 7:
+2024-02-26 09:50:39,043 - Math_42 - INFO - 
+if (basicRows.contains(basicRow)) {
+    // if the basic row is found to be part of basicRows then set coefficient to 0
+    coefficients[i] = 0;
+} else if (basicRow == null) {
+    // if no basic row is defined (unconstrained variable), set it according to non-negativity
+    coefficients[i] = restrictToNonNegative ? 0 : 1;
+} else {
+    basicRows.add(basicRow);
+}
+
+2024-02-26 09:50:39,672 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:39,672 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:39,672 - Math_42 - INFO - 补丁3 7 未成功编译
+2024-02-26 09:50:39,673 - Math_42 - INFO - 开始验证补丁3 8:
+2024-02-26 09:50:39,673 - Math_42 - INFO - 
+if (basicRow != null && basicRows.contains(basicRow)) {
+    // if the basic row is the objective function row, set the coefficient to 0
+    coefficients[i] = 0;
+} else if (basicRow == null) {
+    // if the basic row is not found and we are not restricted to non-negative variables
+    // set the coefficient to 1 or other suitable value as per the requirement
+    coefficients[i] = restrictToNonNegative ? 0 : 1;
+} else {
+    basicRows.add(basicRow);
+}
+
+2024-02-26 09:50:40,300 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:40,300 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:40,300 - Math_42 - INFO - 补丁3 8 未成功编译
+2024-02-26 09:50:40,301 - Math_42 - INFO - 开始验证补丁3 9:
+2024-02-26 09:50:40,301 - Math_42 - INFO - 
+if (basicRow != null && basicRows.contains(basicRow)) {
+    // if the basic row is the objective function row, set the coefficient to 0
+    coefficients[i] = 0;
+} else if (basicRow == null) {
+    // if the basic row is not found, decide based on the problem whether to adjust 
+    // by mostNegative or set to 0 or 1
+    coefficients[i] = restrictToNonNegative ? 0 : mostNegative < 0 ? 1 : 0; // if mostNegative is less than 0, set 1 else 0
+} else {
+    basicRows.add(basicRow);
+}
+
+2024-02-26 09:50:40,934 - Math_42 - INFO - 编译失败
+2024-02-26 09:50:40,934 - Math_42 - INFO - 错误: 有 'if', 但是没有 'else'
+} else {
+2024-02-26 09:50:40,934 - Math_42 - INFO - 补丁3 9 未成功编译
+2024-02-26 09:50:40,934 - Math_42 - INFO - Math_42 未成功修复

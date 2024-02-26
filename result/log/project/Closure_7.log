@@ -1,0 +1,981 @@
+2024-02-26 00:04:22,942 - Closure_7 - INFO - rm -rf /home/chongchong/d4j-project/Closure_7
+2024-02-26 00:04:22,942 - Closure_7 - INFO - 删除 Closure 7b 成功
+2024-02-26 00:04:22,943 - Closure_7 - INFO - defects4j checkout -p Closure -v 7b -w /home/chongchong/d4j-project/Closure_7
+2024-02-26 00:04:26,143 - Closure_7 - INFO - checkout Closure 7b 成功
+2024-02-26 00:04:37,714 - Closure_7 - INFO - 编译成功
+2024-02-26 00:05:32,630 - Closure_7 - INFO - 测试失败
+2024-02-26 00:05:32,630 - Closure_7 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:05:33,661 - Closure_7 - INFO - 它的bug类型为:
+2024-02-26 00:05:33,661 - Closure_7 - INFO - 4
+2024-02-26 00:06:34,482 - Closure_7 - INFO - 开始验证补丁1 1:
+2024-02-26 00:06:34,482 - Closure_7 - INFO - 
+        boolean functionTypeMatches = type.isFunctionType();
+        return (functionTypeMatches && value.equals("function")) ? ctorType : null;
+
+2024-02-26 00:06:38,697 - Closure_7 - INFO - 编译成功
+2024-02-26 00:07:34,149 - Closure_7 - INFO - 测试失败
+2024-02-26 00:07:34,149 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:07:34,674 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:07:34,674 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:07:34,674 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:07:34,674 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:07:34,674 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:07:34,674 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:07:34,674 - Closure_7 - INFO - 补丁1 1测试失败
+2024-02-26 00:07:34,675 - Closure_7 - INFO - 开始验证补丁1 2:
+2024-02-26 00:07:34,675 - Closure_7 - INFO - 
+        boolean isFunctionType = type.toMaybeFunctionType() != null;
+        return (isFunctionType && value.equals("function")) ? ctorType : null;
+
+2024-02-26 00:07:38,895 - Closure_7 - INFO - 编译成功
+2024-02-26 00:08:35,716 - Closure_7 - INFO - 测试失败
+2024-02-26 00:08:35,716 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:08:36,237 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:08:36,237 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:08:36,237 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:08:36,237 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:08:36,237 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:08:36,237 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:08:36,237 - Closure_7 - INFO - 补丁1 2测试失败
+2024-02-26 00:08:36,238 - Closure_7 - INFO - 开始验证补丁1 3:
+2024-02-26 00:08:36,238 - Closure_7 - INFO - 
+        JSType functionType = getNativeType(JSTypeNative.FUNCTION_TYPE);
+        return type.isSubtype(functionType) && value.equals("function") ? ctorType : null;
+
+2024-02-26 00:08:38,249 - Closure_7 - INFO - 编译失败
+2024-02-26 00:08:38,249 - Closure_7 - INFO - 错误: 找不到符号
+JSType functionType = getNativeType(JSTypeNative.FUNCTION_TYPE);
+2024-02-26 00:08:38,249 - Closure_7 - INFO - 补丁1 3 未成功编译
+2024-02-26 00:08:38,250 - Closure_7 - INFO - 开始验证补丁1 4:
+2024-02-26 00:08:38,250 - Closure_7 - INFO - 
+boolean isFunctionType = type.isFunctionType();
+return isFunctionType ? ctorType : null;
+
+2024-02-26 00:08:42,403 - Closure_7 - INFO - 编译成功
+2024-02-26 00:09:37,545 - Closure_7 - INFO - 测试失败
+2024-02-26 00:09:37,545 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:09:38,064 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:09:38,065 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:09:38,065 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:09:38,065 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:09:38,065 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:09:38,065 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:09:38,065 - Closure_7 - INFO - 补丁1 4测试失败
+2024-02-26 00:09:38,066 - Closure_7 - INFO - 开始验证补丁1 5:
+2024-02-26 00:09:38,066 - Closure_7 - INFO - 
+return type.isFunctionPrototypeType() ? ctorType : null;
+
+2024-02-26 00:09:42,236 - Closure_7 - INFO - 编译成功
+2024-02-26 00:10:37,286 - Closure_7 - INFO - 测试失败
+2024-02-26 00:10:37,286 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:10:37,805 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:10:37,805 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:10:37,805 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:10:37,805 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:10:37,805 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:10:37,805 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:10:37,805 - Closure_7 - INFO - 补丁1 5测试失败
+2024-02-26 00:10:37,806 - Closure_7 - INFO - 开始验证补丁1 6:
+2024-02-26 00:10:37,806 - Closure_7 - INFO - 
+return type.isSubtype(ctorType) ? type : null;
+
+2024-02-26 00:10:41,956 - Closure_7 - INFO - 编译成功
+2024-02-26 00:11:36,108 - Closure_7 - INFO - 测试失败
+2024-02-26 00:11:36,108 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:11:36,645 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:11:36,645 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:11:36,645 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:11:36,645 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:11:36,645 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:11:36,645 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:11:36,645 - Closure_7 - INFO - 补丁1 6测试失败
+2024-02-26 00:11:36,646 - Closure_7 - INFO - 开始验证补丁1 7:
+2024-02-26 00:11:36,646 - Closure_7 - INFO - 
+boolean isFunctionType = type.isFunctionType();
+return isFunctionType ? ctorType : null;
+
+2024-02-26 00:11:36,646 - Closure_7 - INFO - 补丁1 7为重复的补丁
+2024-02-26 00:11:36,647 - Closure_7 - INFO - 开始验证补丁1 8:
+2024-02-26 00:11:36,647 - Closure_7 - INFO - 
+boolean isFunctionOrSubtype = ctorType.isSubtypeOf(type) || type.isSubtypeOf(ctorType);
+return isFunctionOrSubtype ? ctorType : null;
+
+2024-02-26 00:11:38,700 - Closure_7 - INFO - 编译失败
+2024-02-26 00:11:38,700 - Closure_7 - INFO - 错误: 找不到符号
+boolean isFunctionOrSubtype = ctorType.isSubtypeOf(type) || type.isSubtypeOf(ctorType);
+2024-02-26 00:11:38,700 - Closure_7 - INFO - 补丁1 8 未成功编译
+2024-02-26 00:11:38,701 - Closure_7 - INFO - 开始验证补丁1 9:
+2024-02-26 00:11:38,701 - Closure_7 - INFO - 
+if (type.isFunctionPrototypeType() || type.isSubtype(getNativeType(JSTypeNative.FUNCTION_PROTOTYPE))) {
+  return ctorType;
+} else {
+  return null;
+}
+
+2024-02-26 00:11:42,886 - Closure_7 - INFO - 编译成功
+2024-02-26 00:12:39,486 - Closure_7 - INFO - 测试失败
+2024-02-26 00:12:39,486 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:12:40,018 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:12:40,018 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:12:40,018 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:12:40,018 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:12:40,018 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:12:40,018 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:12:40,018 - Closure_7 - INFO - 补丁1 9测试失败
+2024-02-26 00:12:40,019 - Closure_7 - INFO - 开始验证补丁2 1:
+2024-02-26 00:12:40,019 - Closure_7 - INFO - 
+return type.isFunctionType() && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 00:12:44,195 - Closure_7 - INFO - 编译成功
+2024-02-26 00:13:38,508 - Closure_7 - INFO - 测试失败
+2024-02-26 00:13:38,508 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:13:39,035 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:13:39,035 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:13:39,035 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:13:39,035 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:13:39,035 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:13:39,035 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:13:39,035 - Closure_7 - INFO - 补丁2 1测试失败
+2024-02-26 00:13:39,036 - Closure_7 - INFO - 开始验证补丁2 2:
+2024-02-26 00:13:39,036 - Closure_7 - INFO - 
+return ctorType.isEquivalentTo(type) ? ctorType : null;
+
+2024-02-26 00:13:43,210 - Closure_7 - INFO - 编译成功
+2024-02-26 00:14:37,825 - Closure_7 - INFO - 测试失败
+2024-02-26 00:14:37,825 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:14:38,345 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:14:38,345 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:14:38,345 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:14:38,345 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:14:38,345 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:14:38,345 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:14:38,345 - Closure_7 - INFO - 补丁2 2测试失败
+2024-02-26 00:14:38,346 - Closure_7 - INFO - 开始验证补丁2 3:
+2024-02-26 00:14:38,346 - Closure_7 - INFO - 
+return type.isSubtype(ctorType) ? type : null;
+
+2024-02-26 00:14:38,346 - Closure_7 - INFO - 补丁2 3为重复的补丁
+2024-02-26 00:14:38,347 - Closure_7 - INFO - 开始验证补丁2 4:
+2024-02-26 00:14:38,347 - Closure_7 - INFO - 
+    boolean isFunctionType = ctorType.isSubtype(type) || type.isSubtype(ctorType);
+    return isFunctionType ? ctorType : null;
+
+2024-02-26 00:14:42,500 - Closure_7 - INFO - 编译成功
+2024-02-26 00:15:37,068 - Closure_7 - INFO - 测试失败
+2024-02-26 00:15:37,068 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:15:37,597 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:15:37,597 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:15:37,597 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:15:37,597 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:15:37,597 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:15:37,597 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 00:15:37,597 - Closure_7 - INFO - 补丁2 4测试失败
+2024-02-26 00:15:37,598 - Closure_7 - INFO - 开始验证补丁2 5:
+2024-02-26 00:15:37,598 - Closure_7 - INFO - 
+    boolean isFunctionType = type.isFunctionType();
+    return isFunctionType ? ctorType : null;
+
+2024-02-26 00:15:41,749 - Closure_7 - INFO - 编译成功
+2024-02-26 00:16:36,837 - Closure_7 - INFO - 测试失败
+2024-02-26 00:16:36,837 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:16:37,365 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:16:37,365 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:16:37,365 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:16:37,365 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:16:37,365 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:16:37,365 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:16:37,365 - Closure_7 - INFO - 补丁2 5测试失败
+2024-02-26 00:16:37,366 - Closure_7 - INFO - 开始验证补丁2 6:
+2024-02-26 00:16:37,366 - Closure_7 - INFO - 
+    boolean isExpectedFunctionType = "function".equals(value) && type.isSubtype(ctorType);
+    return isExpectedFunctionType ? ctorType : null;
+
+2024-02-26 00:16:41,520 - Closure_7 - INFO - 编译成功
+2024-02-26 00:17:36,183 - Closure_7 - INFO - 测试失败
+2024-02-26 00:17:36,183 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:17:36,715 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:17:36,715 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:17:36,715 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:17:36,715 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:17:36,715 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:17:36,715 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:17:36,715 - Closure_7 - INFO - 补丁2 6测试失败
+2024-02-26 00:17:36,716 - Closure_7 - INFO - 开始验证补丁2 7:
+2024-02-26 00:17:36,716 - Closure_7 - INFO - 
+   boolean isFunctionType = type.toObjectType().isCallable(); // Assuming ObjectType has an isCallable method to check for function type
+   return isFunctionType && ctorType.isSubtypeOf(type) ? ctorType : null;
+   
+2024-02-26 00:17:38,751 - Closure_7 - INFO - 编译失败
+2024-02-26 00:17:38,751 - Closure_7 - INFO - 错误: 找不到符号
+boolean isFunctionType = type.toObjectType().isCallable(); // Assuming ObjectType has an isCallable method to check for function type
+2024-02-26 00:17:38,751 - Closure_7 - INFO - 补丁2 7 未成功编译
+2024-02-26 00:17:38,752 - Closure_7 - INFO - 开始验证补丁2 8:
+2024-02-26 00:17:38,752 - Closure_7 - INFO - 
+   return type.isSubtypeOf(ctorType) ? ctorType : null; 
+   
+2024-02-26 00:17:40,763 - Closure_7 - INFO - 编译失败
+2024-02-26 00:17:40,764 - Closure_7 - INFO - 错误: 找不到符号
+return type.isSubtypeOf(ctorType) ? ctorType : null;
+2024-02-26 00:17:40,764 - Closure_7 - INFO - 补丁2 8 未成功编译
+2024-02-26 00:17:40,765 - Closure_7 - INFO - 开始验证补丁2 9:
+2024-02-26 00:17:40,765 - Closure_7 - INFO - 
+   boolean isFunctionType = type.toObjectType().isCallable(); // Implausible assumption that ObjectType provides an isCallable method
+   return isFunctionType && ctorType.isSubtypeOf(type) ? ctorType : type;
+   
+2024-02-26 00:17:42,795 - Closure_7 - INFO - 编译失败
+2024-02-26 00:17:42,796 - Closure_7 - INFO - 错误: 找不到符号
+boolean isFunctionType = type.toObjectType().isCallable(); // Implausible assumption that ObjectType provides an isCallable method
+2024-02-26 00:17:42,796 - Closure_7 - INFO - 补丁2 9 未成功编译
+2024-02-26 00:17:42,797 - Closure_7 - INFO - 开始验证补丁3 1:
+2024-02-26 00:17:42,797 - Closure_7 - INFO - 
+boolean resultEqualsValue = type.toString().equals("function");
+return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 00:17:46,959 - Closure_7 - INFO - 编译成功
+2024-02-26 00:18:42,318 - Closure_7 - INFO - 测试失败
+2024-02-26 00:18:42,318 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:18:42,845 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:18:42,845 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:18:42,845 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:18:42,845 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:18:42,845 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:18:42,845 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:18:42,845 - Closure_7 - INFO - 补丁3 1测试失败
+2024-02-26 00:18:42,846 - Closure_7 - INFO - 开始验证补丁3 2:
+2024-02-26 00:18:42,846 - Closure_7 - INFO - 
+return ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 00:18:47,017 - Closure_7 - INFO - 编译成功
+2024-02-26 00:19:44,559 - Closure_7 - INFO - 测试失败
+2024-02-26 00:19:44,560 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:19:45,083 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:19:45,083 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:19:45,083 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:19:45,083 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:19:45,083 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:19:45,084 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 00:19:45,084 - Closure_7 - INFO - 补丁3 2测试失败
+2024-02-26 00:19:45,084 - Closure_7 - INFO - 开始验证补丁3 3:
+2024-02-26 00:19:45,085 - Closure_7 - INFO - 
+return value.equals("function") ? ctorType : null;
+
+2024-02-26 00:19:49,256 - Closure_7 - INFO - 编译成功
+2024-02-26 00:20:43,781 - Closure_7 - INFO - 测试失败
+2024-02-26 00:20:43,781 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:20:44,305 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:20:44,305 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:20:44,305 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:20:44,305 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:20:44,305 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:20:44,305 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 00:20:44,305 - Closure_7 - INFO - 补丁3 3测试失败
+2024-02-26 00:20:44,306 - Closure_7 - INFO - 开始验证补丁3 4:
+2024-02-26 00:20:44,306 - Closure_7 - INFO - 
+boolean resultEqualsValue = value.equals("function");
+return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 00:20:48,466 - Closure_7 - INFO - 编译成功
+2024-02-26 00:21:43,598 - Closure_7 - INFO - 测试失败
+2024-02-26 00:21:43,599 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:21:44,120 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:21:44,120 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:21:44,121 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:21:44,121 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:21:44,121 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:21:44,121 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 00:21:44,121 - Closure_7 - INFO - 补丁3 4测试失败
+2024-02-26 00:21:44,122 - Closure_7 - INFO - 开始验证补丁3 5:
+2024-02-26 00:21:44,122 - Closure_7 - INFO - 
+boolean resultMatchesType = someConditionReflectingTypeExpectation();
+return resultMatchesType && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 00:21:46,128 - Closure_7 - INFO - 编译失败
+2024-02-26 00:21:46,128 - Closure_7 - INFO - 错误: 找不到符号
+boolean resultMatchesType = someConditionReflectingTypeExpectation();
+2024-02-26 00:21:46,128 - Closure_7 - INFO - 补丁3 5 未成功编译
+2024-02-26 00:21:46,129 - Closure_7 - INFO - 开始验证补丁3 6:
+2024-02-26 00:21:46,129 - Closure_7 - INFO - 
+boolean resultIsValid = someOtherTypeCheck(type);
+return resultIsValid ? ctorType : null;
+
+2024-02-26 00:21:48,133 - Closure_7 - INFO - 编译失败
+2024-02-26 00:21:48,133 - Closure_7 - INFO - 错误: 找不到符号
+boolean resultIsValid = someOtherTypeCheck(type);
+2024-02-26 00:21:48,133 - Closure_7 - INFO - 补丁3 6 未成功编译
+2024-02-26 00:21:48,134 - Closure_7 - INFO - 开始验证补丁3 7:
+2024-02-26 00:21:48,134 - Closure_7 - INFO - 
+boolean resultEqualsValue = "U2U_CONSTRUCTOR_TYPE".equals(value);
+return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : type;
+
+2024-02-26 00:21:52,315 - Closure_7 - INFO - 编译成功
+2024-02-26 00:22:48,035 - Closure_7 - INFO - 测试失败
+2024-02-26 00:22:48,035 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:22:48,564 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:22:48,564 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:22:48,564 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:22:48,564 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:22:48,564 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:22:48,564 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:22:48,564 - Closure_7 - INFO - 补丁3 7测试失败
+2024-02-26 00:22:48,565 - Closure_7 - INFO - 开始验证补丁3 8:
+2024-02-26 00:22:48,565 - Closure_7 - INFO - 
+boolean resultEqualsValue = "function".equals(value);
+return resultEqualsValue && (type.isSubtype(ctorType) || type.equals(ctorType)) ? ctorType : type;
+
+2024-02-26 00:22:52,751 - Closure_7 - INFO - 编译成功
+2024-02-26 00:23:48,732 - Closure_7 - INFO - 测试失败
+2024-02-26 00:23:48,732 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:23:49,288 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:23:49,288 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:23:49,288 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:23:49,288 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:23:49,288 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:23:49,288 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:23:49,288 - Closure_7 - INFO - 补丁3 8测试失败
+2024-02-26 00:23:49,289 - Closure_7 - INFO - 开始验证补丁3 9:
+2024-02-26 00:23:49,289 - Closure_7 - INFO - 
+boolean resultEqualsValue = type.toString().equals(value);
+return resultEqualsValue ? ctorType : type;
+
+2024-02-26 00:23:53,473 - Closure_7 - INFO - 编译成功
+2024-02-26 00:24:48,636 - Closure_7 - INFO - 测试失败
+2024-02-26 00:24:48,636 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 00:24:49,161 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 00:24:49,161 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 00:24:49,161 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 00:24:49,161 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 00:24:49,161 - Closure_7 - INFO - 失败信息为:
+2024-02-26 00:24:49,161 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 00:24:49,161 - Closure_7 - INFO - 补丁3 9测试失败
+2024-02-26 00:24:49,161 - Closure_7 - INFO - Closure_7 未成功修复
+2024-02-26 10:57:36,559 - Closure_7 - INFO - rm -rf /home/chongchong/d4j-project/Closure_7
+2024-02-26 10:57:36,616 - Closure_7 - INFO - 删除 Closure 7b 成功
+2024-02-26 10:57:36,616 - Closure_7 - INFO - defects4j checkout -p Closure -v 7b -w /home/chongchong/d4j-project/Closure_7
+2024-02-26 10:57:39,207 - Closure_7 - INFO - checkout Closure 7b 成功
+2024-02-26 10:57:50,913 - Closure_7 - INFO - 编译成功
+2024-02-26 10:58:46,720 - Closure_7 - INFO - 测试失败
+2024-02-26 10:58:46,720 - Closure_7 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 10:58:47,760 - Closure_7 - INFO - 它的bug类型为:
+2024-02-26 10:58:47,760 - Closure_7 - INFO - 4
+2024-02-26 10:59:57,316 - Closure_7 - INFO - 开始验证补丁1 1:
+2024-02-26 10:59:57,316 - Closure_7 - INFO - 
+        boolean functionTypeMatches = type.isFunctionType();
+        return (functionTypeMatches && value.equals("function")) ? ctorType : null;
+
+2024-02-26 11:00:01,451 - Closure_7 - INFO - 编译成功
+2024-02-26 11:00:56,591 - Closure_7 - INFO - 测试失败
+2024-02-26 11:00:56,591 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:00:57,114 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:00:57,114 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:00:57,114 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:00:57,114 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:00:57,114 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:00:57,114 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:00:57,114 - Closure_7 - INFO - 补丁1 1测试失败
+2024-02-26 11:00:57,115 - Closure_7 - INFO - 开始验证补丁1 2:
+2024-02-26 11:00:57,115 - Closure_7 - INFO - 
+        boolean isFunctionType = type.toMaybeFunctionType() != null;
+        return (isFunctionType && value.equals("function")) ? ctorType : null;
+
+2024-02-26 11:01:01,262 - Closure_7 - INFO - 编译成功
+2024-02-26 11:01:55,537 - Closure_7 - INFO - 测试失败
+2024-02-26 11:01:55,537 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:01:56,060 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:01:56,060 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:01:56,060 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:01:56,060 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:01:56,060 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:01:56,060 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:01:56,060 - Closure_7 - INFO - 补丁1 2测试失败
+2024-02-26 11:01:56,061 - Closure_7 - INFO - 开始验证补丁1 3:
+2024-02-26 11:01:56,061 - Closure_7 - INFO - 
+        JSType functionType = getNativeType(JSTypeNative.FUNCTION_TYPE);
+        return type.isSubtype(functionType) && value.equals("function") ? ctorType : null;
+
+2024-02-26 11:01:58,073 - Closure_7 - INFO - 编译失败
+2024-02-26 11:01:58,073 - Closure_7 - INFO - 错误: 找不到符号
+JSType functionType = getNativeType(JSTypeNative.FUNCTION_TYPE);
+2024-02-26 11:01:58,074 - Closure_7 - INFO - 补丁1 3 未成功编译
+2024-02-26 11:01:58,075 - Closure_7 - INFO - 开始验证补丁1 4:
+2024-02-26 11:01:58,075 - Closure_7 - INFO - 
+boolean isFunctionType = type.isFunctionType();
+return isFunctionType ? ctorType : null;
+
+2024-02-26 11:02:02,186 - Closure_7 - INFO - 编译成功
+2024-02-26 11:02:56,960 - Closure_7 - INFO - 测试失败
+2024-02-26 11:02:56,960 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:02:57,483 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:02:57,483 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:02:57,483 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:02:57,483 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:02:57,483 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:02:57,483 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:02:57,483 - Closure_7 - INFO - 补丁1 4测试失败
+2024-02-26 11:02:57,484 - Closure_7 - INFO - 开始验证补丁1 5:
+2024-02-26 11:02:57,484 - Closure_7 - INFO - 
+return type.isFunctionPrototypeType() ? ctorType : null;
+
+2024-02-26 11:03:01,617 - Closure_7 - INFO - 编译成功
+2024-02-26 11:03:56,805 - Closure_7 - INFO - 测试失败
+2024-02-26 11:03:56,805 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:03:57,332 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:03:57,332 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:03:57,332 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:03:57,332 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:03:57,332 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:03:57,332 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:03:57,332 - Closure_7 - INFO - 补丁1 5测试失败
+2024-02-26 11:03:57,333 - Closure_7 - INFO - 开始验证补丁1 6:
+2024-02-26 11:03:57,333 - Closure_7 - INFO - 
+return type.isSubtype(ctorType) ? type : null;
+
+2024-02-26 11:04:01,511 - Closure_7 - INFO - 编译成功
+2024-02-26 11:04:55,661 - Closure_7 - INFO - 测试失败
+2024-02-26 11:04:55,662 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:04:56,186 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:04:56,186 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:04:56,186 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:04:56,186 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:04:56,186 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:04:56,186 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:04:56,186 - Closure_7 - INFO - 补丁1 6测试失败
+2024-02-26 11:04:56,187 - Closure_7 - INFO - 开始验证补丁1 7:
+2024-02-26 11:04:56,187 - Closure_7 - INFO - 
+boolean isFunctionType = type.isFunctionType();
+return isFunctionType ? ctorType : null;
+
+2024-02-26 11:04:56,187 - Closure_7 - INFO - 补丁1 7为重复的补丁
+2024-02-26 11:04:56,188 - Closure_7 - INFO - 开始验证补丁1 8:
+2024-02-26 11:04:56,188 - Closure_7 - INFO - 
+boolean isFunctionOrSubtype = ctorType.isSubtypeOf(type) || type.isSubtypeOf(ctorType);
+return isFunctionOrSubtype ? ctorType : null;
+
+2024-02-26 11:04:58,188 - Closure_7 - INFO - 编译失败
+2024-02-26 11:04:58,188 - Closure_7 - INFO - 错误: 找不到符号
+boolean isFunctionOrSubtype = ctorType.isSubtypeOf(type) || type.isSubtypeOf(ctorType);
+2024-02-26 11:04:58,188 - Closure_7 - INFO - 补丁1 8 未成功编译
+2024-02-26 11:04:58,189 - Closure_7 - INFO - 开始验证补丁1 9:
+2024-02-26 11:04:58,189 - Closure_7 - INFO - 
+if (type.isFunctionPrototypeType() || type.isSubtype(getNativeType(JSTypeNative.FUNCTION_PROTOTYPE))) {
+  return ctorType;
+} else {
+  return null;
+}
+
+2024-02-26 11:05:02,304 - Closure_7 - INFO - 编译成功
+2024-02-26 11:05:57,917 - Closure_7 - INFO - 测试失败
+2024-02-26 11:05:57,917 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:05:58,453 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:05:58,453 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:05:58,453 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:05:58,453 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:05:58,453 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:05:58,453 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:05:58,453 - Closure_7 - INFO - 补丁1 9测试失败
+2024-02-26 11:05:58,454 - Closure_7 - INFO - 开始验证补丁2 1:
+2024-02-26 11:05:58,454 - Closure_7 - INFO - 
+return type.isFunctionType() && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 11:06:02,590 - Closure_7 - INFO - 编译成功
+2024-02-26 11:06:57,719 - Closure_7 - INFO - 测试失败
+2024-02-26 11:06:57,719 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:06:58,241 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:06:58,241 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:06:58,242 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:06:58,242 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:06:58,242 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:06:58,242 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:06:58,242 - Closure_7 - INFO - 补丁2 1测试失败
+2024-02-26 11:06:58,243 - Closure_7 - INFO - 开始验证补丁2 2:
+2024-02-26 11:06:58,243 - Closure_7 - INFO - 
+return ctorType.isEquivalentTo(type) ? ctorType : null;
+
+2024-02-26 11:07:02,403 - Closure_7 - INFO - 编译成功
+2024-02-26 11:07:59,565 - Closure_7 - INFO - 测试失败
+2024-02-26 11:07:59,565 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:08:00,090 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:08:00,090 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:08:00,090 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:08:00,090 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:08:00,090 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:08:00,091 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:08:00,091 - Closure_7 - INFO - 补丁2 2测试失败
+2024-02-26 11:08:00,091 - Closure_7 - INFO - 开始验证补丁2 3:
+2024-02-26 11:08:00,092 - Closure_7 - INFO - 
+return type.isSubtype(ctorType) ? type : null;
+
+2024-02-26 11:08:00,092 - Closure_7 - INFO - 补丁2 3为重复的补丁
+2024-02-26 11:08:00,092 - Closure_7 - INFO - 开始验证补丁2 4:
+2024-02-26 11:08:00,092 - Closure_7 - INFO - 
+    boolean isFunctionType = ctorType.isSubtype(type) || type.isSubtype(ctorType);
+    return isFunctionType ? ctorType : null;
+
+2024-02-26 11:08:04,240 - Closure_7 - INFO - 编译成功
+2024-02-26 11:08:59,430 - Closure_7 - INFO - 测试失败
+2024-02-26 11:08:59,430 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:08:59,952 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:08:59,952 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:08:59,952 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:08:59,952 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:08:59,952 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:08:59,952 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 11:08:59,952 - Closure_7 - INFO - 补丁2 4测试失败
+2024-02-26 11:08:59,953 - Closure_7 - INFO - 开始验证补丁2 5:
+2024-02-26 11:08:59,953 - Closure_7 - INFO - 
+    boolean isFunctionType = type.isFunctionType();
+    return isFunctionType ? ctorType : null;
+
+2024-02-26 11:09:04,198 - Closure_7 - INFO - 编译成功
+2024-02-26 11:09:58,782 - Closure_7 - INFO - 测试失败
+2024-02-26 11:09:58,782 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:09:59,310 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:09:59,310 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:09:59,310 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:09:59,310 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:09:59,310 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:09:59,310 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:09:59,310 - Closure_7 - INFO - 补丁2 5测试失败
+2024-02-26 11:09:59,311 - Closure_7 - INFO - 开始验证补丁2 6:
+2024-02-26 11:09:59,311 - Closure_7 - INFO - 
+    boolean isExpectedFunctionType = "function".equals(value) && type.isSubtype(ctorType);
+    return isExpectedFunctionType ? ctorType : null;
+
+2024-02-26 11:10:03,468 - Closure_7 - INFO - 编译成功
+2024-02-26 11:10:59,023 - Closure_7 - INFO - 测试失败
+2024-02-26 11:10:59,023 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:10:59,550 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:10:59,550 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:10:59,550 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:10:59,550 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:10:59,550 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:10:59,551 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:10:59,551 - Closure_7 - INFO - 补丁2 6测试失败
+2024-02-26 11:10:59,552 - Closure_7 - INFO - 开始验证补丁2 7:
+2024-02-26 11:10:59,552 - Closure_7 - INFO - 
+   boolean isFunctionType = type.toObjectType().isCallable(); // Assuming ObjectType has an isCallable method to check for function type
+   return isFunctionType && ctorType.isSubtypeOf(type) ? ctorType : null;
+   
+2024-02-26 11:11:01,557 - Closure_7 - INFO - 编译失败
+2024-02-26 11:11:01,557 - Closure_7 - INFO - 错误: 找不到符号
+boolean isFunctionType = type.toObjectType().isCallable(); // Assuming ObjectType has an isCallable method to check for function type
+2024-02-26 11:11:01,557 - Closure_7 - INFO - 补丁2 7 未成功编译
+2024-02-26 11:11:01,558 - Closure_7 - INFO - 开始验证补丁2 8:
+2024-02-26 11:11:01,558 - Closure_7 - INFO - 
+   return type.isSubtypeOf(ctorType) ? ctorType : null; 
+   
+2024-02-26 11:11:03,564 - Closure_7 - INFO - 编译失败
+2024-02-26 11:11:03,564 - Closure_7 - INFO - 错误: 找不到符号
+return type.isSubtypeOf(ctorType) ? ctorType : null;
+2024-02-26 11:11:03,564 - Closure_7 - INFO - 补丁2 8 未成功编译
+2024-02-26 11:11:03,565 - Closure_7 - INFO - 开始验证补丁2 9:
+2024-02-26 11:11:03,565 - Closure_7 - INFO - 
+   boolean isFunctionType = type.toObjectType().isCallable(); // Implausible assumption that ObjectType provides an isCallable method
+   return isFunctionType && ctorType.isSubtypeOf(type) ? ctorType : type;
+   
+2024-02-26 11:11:05,564 - Closure_7 - INFO - 编译失败
+2024-02-26 11:11:05,564 - Closure_7 - INFO - 错误: 找不到符号
+boolean isFunctionType = type.toObjectType().isCallable(); // Implausible assumption that ObjectType provides an isCallable method
+2024-02-26 11:11:05,564 - Closure_7 - INFO - 补丁2 9 未成功编译
+2024-02-26 11:11:05,565 - Closure_7 - INFO - 开始验证补丁3 1:
+2024-02-26 11:11:05,565 - Closure_7 - INFO - 
+boolean resultEqualsValue = type.toString().equals("function");
+return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 11:11:09,832 - Closure_7 - INFO - 编译成功
+2024-02-26 11:12:03,977 - Closure_7 - INFO - 测试失败
+2024-02-26 11:12:03,977 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:12:04,497 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:12:04,498 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:12:04,498 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:12:04,498 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:12:04,498 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:12:04,498 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:12:04,498 - Closure_7 - INFO - 补丁3 1测试失败
+2024-02-26 11:12:04,499 - Closure_7 - INFO - 开始验证补丁3 2:
+2024-02-26 11:12:04,499 - Closure_7 - INFO - 
+return ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 11:12:08,722 - Closure_7 - INFO - 编译成功
+2024-02-26 11:13:05,227 - Closure_7 - INFO - 测试失败
+2024-02-26 11:13:05,228 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:13:05,754 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:13:05,754 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:13:05,754 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:13:05,754 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:13:05,754 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:13:05,754 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 11:13:05,754 - Closure_7 - INFO - 补丁3 2测试失败
+2024-02-26 11:13:05,755 - Closure_7 - INFO - 开始验证补丁3 3:
+2024-02-26 11:13:05,755 - Closure_7 - INFO - 
+return value.equals("function") ? ctorType : null;
+
+2024-02-26 11:13:09,882 - Closure_7 - INFO - 编译成功
+2024-02-26 11:14:04,601 - Closure_7 - INFO - 测试失败
+2024-02-26 11:14:04,601 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:14:05,129 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:14:05,129 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:14:05,129 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:14:05,129 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:14:05,129 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:14:05,129 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 11:14:05,129 - Closure_7 - INFO - 补丁3 3测试失败
+2024-02-26 11:14:05,130 - Closure_7 - INFO - 开始验证补丁3 4:
+2024-02-26 11:14:05,130 - Closure_7 - INFO - 
+boolean resultEqualsValue = value.equals("function");
+return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 11:14:09,239 - Closure_7 - INFO - 编译成功
+2024-02-26 11:15:03,246 - Closure_7 - INFO - 测试失败
+2024-02-26 11:15:03,247 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:15:03,770 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:15:03,770 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:15:03,770 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:15:03,770 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:15:03,770 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:15:03,770 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 11:15:03,770 - Closure_7 - INFO - 补丁3 4测试失败
+2024-02-26 11:15:03,771 - Closure_7 - INFO - 开始验证补丁3 5:
+2024-02-26 11:15:03,771 - Closure_7 - INFO - 
+boolean resultMatchesType = someConditionReflectingTypeExpectation();
+return resultMatchesType && ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 11:15:05,789 - Closure_7 - INFO - 编译失败
+2024-02-26 11:15:05,789 - Closure_7 - INFO - 错误: 找不到符号
+boolean resultMatchesType = someConditionReflectingTypeExpectation();
+2024-02-26 11:15:05,789 - Closure_7 - INFO - 补丁3 5 未成功编译
+2024-02-26 11:15:05,790 - Closure_7 - INFO - 开始验证补丁3 6:
+2024-02-26 11:15:05,790 - Closure_7 - INFO - 
+boolean resultIsValid = someOtherTypeCheck(type);
+return resultIsValid ? ctorType : null;
+
+2024-02-26 11:15:07,810 - Closure_7 - INFO - 编译失败
+2024-02-26 11:15:07,810 - Closure_7 - INFO - 错误: 找不到符号
+boolean resultIsValid = someOtherTypeCheck(type);
+2024-02-26 11:15:07,811 - Closure_7 - INFO - 补丁3 6 未成功编译
+2024-02-26 11:15:07,812 - Closure_7 - INFO - 开始验证补丁3 7:
+2024-02-26 11:15:07,812 - Closure_7 - INFO - 
+boolean resultEqualsValue = "U2U_CONSTRUCTOR_TYPE".equals(value);
+return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : type;
+
+2024-02-26 11:15:11,962 - Closure_7 - INFO - 编译成功
+2024-02-26 11:16:06,806 - Closure_7 - INFO - 测试失败
+2024-02-26 11:16:06,806 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:16:07,331 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:16:07,331 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:16:07,331 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:16:07,331 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:16:07,331 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:16:07,331 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:16:07,331 - Closure_7 - INFO - 补丁3 7测试失败
+2024-02-26 11:16:07,332 - Closure_7 - INFO - 开始验证补丁3 8:
+2024-02-26 11:16:07,332 - Closure_7 - INFO - 
+boolean resultEqualsValue = "function".equals(value);
+return resultEqualsValue && (type.isSubtype(ctorType) || type.equals(ctorType)) ? ctorType : type;
+
+2024-02-26 11:16:11,467 - Closure_7 - INFO - 编译成功
+2024-02-26 11:17:07,887 - Closure_7 - INFO - 测试失败
+2024-02-26 11:17:07,887 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:17:08,412 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:17:08,412 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:17:08,412 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:17:08,412 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:17:08,412 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:17:08,412 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:17:08,412 - Closure_7 - INFO - 补丁3 8测试失败
+2024-02-26 11:17:08,413 - Closure_7 - INFO - 开始验证补丁3 9:
+2024-02-26 11:17:08,413 - Closure_7 - INFO - 
+boolean resultEqualsValue = type.toString().equals(value);
+return resultEqualsValue ? ctorType : type;
+
+2024-02-26 11:17:12,598 - Closure_7 - INFO - 编译成功
+2024-02-26 11:18:07,572 - Closure_7 - INFO - 测试失败
+2024-02-26 11:18:07,572 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:18:08,090 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:18:08,090 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:18:08,090 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:18:08,090 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:18:08,090 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:18:08,090 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:18:08,090 - Closure_7 - INFO - 补丁3 9测试失败
+2024-02-26 11:18:08,091 - Closure_7 - INFO - 开始验证补丁1 1:
+2024-02-26 11:18:08,091 - Closure_7 - INFO - 
+boolean resultEqualsValue = type.isFunctionType();
+return resultEqualsValue ? ctorType : null;
+
+2024-02-26 11:18:12,214 - Closure_7 - INFO - 编译成功
+2024-02-26 11:19:07,068 - Closure_7 - INFO - 测试失败
+2024-02-26 11:19:07,068 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:19:07,588 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:19:07,588 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:19:07,588 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:19:07,588 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:19:07,588 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:19:07,588 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: Function
+
+2024-02-26 11:19:07,588 - Closure_7 - INFO - 补丁1 1测试失败
+2024-02-26 11:19:07,589 - Closure_7 - INFO - 开始验证补丁1 2:
+2024-02-26 11:19:07,589 - Closure_7 - INFO - 
+return type.isFunctionPrototypeType() ? ctorType : null;
+
+2024-02-26 11:19:07,589 - Closure_7 - INFO - 补丁1 2为重复的补丁
+2024-02-26 11:19:07,590 - Closure_7 - INFO - 开始验证补丁1 3:
+2024-02-26 11:19:07,590 - Closure_7 - INFO - 
+return type.isFunctionType() ? getNativeType(JavascriptNativeObjectType.FUNCTION) : null;
+
+2024-02-26 11:19:09,613 - Closure_7 - INFO - 编译失败
+2024-02-26 11:19:09,613 - Closure_7 - INFO - 错误: 找不到符号
+return type.isFunctionType() ? getNativeType(JavascriptNativeObjectType.FUNCTION) : null;
+2024-02-26 11:19:09,613 - Closure_7 - INFO - 补丁1 3 未成功编译
+2024-02-26 11:19:09,614 - Closure_7 - INFO - 开始验证补丁1 4:
+2024-02-26 11:19:09,614 - Closure_7 - INFO - 
+boolean isFunctionType = ctorType.isSubtype(type);
+return isFunctionType ? ctorType : null;
+
+2024-02-26 11:19:13,797 - Closure_7 - INFO - 编译成功
+2024-02-26 11:20:09,638 - Closure_7 - INFO - 测试失败
+2024-02-26 11:20:09,638 - Closure_7 - INFO - Failing tests: 3
+  - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof1
+  - com.google.javascript.jscomp.SemanticReverseAbstractInterpreterTest::testTypeof3
+
+2024-02-26 11:20:10,161 - Closure_7 - INFO - 选择失败的测试用例为:
+2024-02-26 11:20:10,161 - Closure_7 - INFO - com.google.javascript.jscomp.ClosureReverseAbstractInterpreterTest::testGoogIsFunction2
+2024-02-26 11:20:10,161 - Closure_7 - INFO - 失败的测试代码为:
+2024-02-26 11:20:10,161 - Closure_7 - INFO -     testClosureFunction("goog.isFunction",
+
+2024-02-26 11:20:10,161 - Closure_7 - INFO - 失败信息为:
+2024-02-26 11:20:10,161 - Closure_7 - INFO - junit.framework.AssertionFailedError: Expected: (Object|boolean|number|string)
+
+2024-02-26 11:20:10,161 - Closure_7 - INFO - 补丁1 4测试失败
+2024-02-26 11:20:10,162 - Closure_7 - INFO - 开始验证补丁1 5:
+2024-02-26 11:20:10,162 - Closure_7 - INFO - 
+return type.isFunctionType() || ctorType.isSubtype(type) ? ctorType : null;
+
+2024-02-26 11:20:14,288 - Closure_7 - INFO - 编译成功

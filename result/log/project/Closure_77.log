@@ -1,0 +1,18 @@
+2024-02-25 11:07:52,418 - Closure_77 - INFO - rm -rf /home/chongchong/d4j-project/Closure_77
+2024-02-25 11:07:52,418 - Closure_77 - INFO - 删除 Closure 77b 成功
+2024-02-25 11:07:52,418 - Closure_77 - INFO - defects4j checkout -p Closure -v 77b -w /home/chongchong/d4j-project/Closure_77
+2024-02-25 11:07:54,112 - Closure_77 - INFO - checkout Closure 77b 成功
+2024-02-25 11:08:02,704 - Closure_77 - INFO - 编译成功
+2024-02-25 11:08:39,550 - Closure_77 - INFO - 测试失败
+2024-02-25 11:08:39,550 - Closure_77 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.CodePrinterTest::testZero
+
+2024-02-25 11:08:40,570 - Closure_77 - INFO - 它的bug类型为:
+2024-02-25 11:08:40,570 - Closure_77 - INFO - 3
+2024-02-25 11:09:21,275 - Closure_77 - INFO - 开始验证补丁1 1:
+2024-02-25 11:09:21,275 - Closure_77 - INFO - 
+        case '\0': sb.append("\\0"); break;
+
+2024-02-25 11:09:23,944 - Closure_77 - INFO - 编译成功
+2024-02-25 11:10:02,078 - Closure_77 - INFO - 测试成功
+2024-02-25 11:10:02,078 - Closure_77 - INFO - 补丁1 1 通过了所有的测试用例

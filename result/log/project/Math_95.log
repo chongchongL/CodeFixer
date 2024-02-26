@@ -1,0 +1,137 @@
+2024-02-26 01:58:46,045 - Math_95 - INFO - rm -rf /home/chongchong/d4j-project/Math_95
+2024-02-26 01:58:46,046 - Math_95 - INFO - 删除 Math 95b 成功
+2024-02-26 01:58:46,046 - Math_95 - INFO - defects4j checkout -p Math -v 95b -w /home/chongchong/d4j-project/Math_95
+2024-02-26 01:58:49,463 - Math_95 - INFO - checkout Math 95b 成功
+2024-02-26 01:58:53,549 - Math_95 - INFO - 编译成功
+2024-02-26 01:58:59,798 - Math_95 - INFO - 测试失败
+2024-02-26 01:58:59,798 - Math_95 - INFO - Failing tests: 1
+  - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+
+2024-02-26 01:59:00,720 - Math_95 - INFO - 它的bug类型为:
+2024-02-26 01:59:00,720 - Math_95 - INFO - 4
+2024-02-26 09:32:12,387 - Math_95 - INFO - rm -rf /home/chongchong/d4j-project/Math_95
+2024-02-26 09:32:12,404 - Math_95 - INFO - 删除 Math 95b 成功
+2024-02-26 09:32:12,404 - Math_95 - INFO - defects4j checkout -p Math -v 95b -w /home/chongchong/d4j-project/Math_95
+2024-02-26 09:32:15,817 - Math_95 - INFO - checkout Math 95b 成功
+2024-02-26 09:32:18,795 - Math_95 - INFO - 编译成功
+2024-02-26 09:32:23,774 - Math_95 - INFO - 测试失败
+2024-02-26 09:32:23,774 - Math_95 - INFO - Failing tests: 1
+  - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+
+2024-02-26 09:32:25,064 - Math_95 - INFO - 它的bug类型为:
+2024-02-26 09:32:25,064 - Math_95 - INFO - 4
+2024-02-26 09:32:25,074 - Math_95 - INFO - Math_95 未成功修复
+2024-02-26 09:32:44,990 - Math_95 - INFO - rm -rf /home/chongchong/d4j-project/Math_95
+2024-02-26 09:32:45,006 - Math_95 - INFO - 删除 Math 95b 成功
+2024-02-26 09:32:45,006 - Math_95 - INFO - defects4j checkout -p Math -v 95b -w /home/chongchong/d4j-project/Math_95
+2024-02-26 09:32:48,417 - Math_95 - INFO - checkout Math 95b 成功
+2024-02-26 09:32:51,376 - Math_95 - INFO - 编译成功
+2024-02-26 09:32:56,312 - Math_95 - INFO - 测试失败
+2024-02-26 09:32:56,312 - Math_95 - INFO - Failing tests: 1
+  - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+
+2024-02-26 09:32:57,652 - Math_95 - INFO - 它的bug类型为:
+2024-02-26 09:32:57,652 - Math_95 - INFO - 4
+2024-02-26 09:34:03,714 - Math_95 - INFO - rm -rf /home/chongchong/d4j-project/Math_95
+2024-02-26 09:34:03,731 - Math_95 - INFO - 删除 Math 95b 成功
+2024-02-26 09:34:03,731 - Math_95 - INFO - defects4j checkout -p Math -v 95b -w /home/chongchong/d4j-project/Math_95
+2024-02-26 09:34:07,126 - Math_95 - INFO - checkout Math 95b 成功
+2024-02-26 09:34:11,164 - Math_95 - INFO - 编译成功
+2024-02-26 09:34:17,553 - Math_95 - INFO - 测试失败
+2024-02-26 09:34:17,553 - Math_95 - INFO - Failing tests: 1
+  - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+
+2024-02-26 09:34:18,468 - Math_95 - INFO - 它的bug类型为:
+2024-02-26 09:34:18,468 - Math_95 - INFO - 4
+2024-02-26 09:35:08,311 - Math_95 - INFO - 开始验证补丁1 1:
+2024-02-26 09:35:08,312 - Math_95 - INFO - 
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    ret = d / 2.0; // Correcting the calculation by dividing 'd' by '2.0'
+    return ret;
+}
+
+2024-02-26 09:35:08,870 - Math_95 - INFO - 编译失败
+2024-02-26 09:35:08,870 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-26 09:35:08,870 - Math_95 - INFO - 补丁1 1 未成功编译
+2024-02-26 09:35:08,871 - Math_95 - INFO - 开始验证补丁1 2:
+2024-02-26 09:35:08,871 - Math_95 - INFO - 
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    ret = d + 2.0; // Correcting the calculation by adding '2.0' to 'd'
+    return ret;
+}
+
+2024-02-26 09:35:09,436 - Math_95 - INFO - 编译失败
+2024-02-26 09:35:09,436 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-26 09:35:09,436 - Math_95 - INFO - 补丁1 2 未成功编译
+2024-02-26 09:35:09,437 - Math_95 - INFO - 开始验证补丁1 3:
+2024-02-26 09:35:09,437 - Math_95 - INFO - 
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    ret = d * 2.0; // Correcting the calculation by multiplying 'd' by '2.0'
+    return ret;
+}
+
+2024-02-26 09:35:09,988 - Math_95 - INFO - 编译失败
+2024-02-26 09:35:09,988 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-26 09:35:09,988 - Math_95 - INFO - 补丁1 3 未成功编译
+2024-02-26 09:35:09,989 - Math_95 - INFO - 开始验证补丁1 4:
+2024-02-26 09:35:09,989 - Math_95 - INFO - 
+    protected double getInitialDomain(double p) {
+        double ret;
+        double d = getDenominatorDegreesOfFreedom();
+        // Correct syntax with division as operator
+        ret = d / (d + 2.0);
+        return ret;
+    }
+
+2024-02-26 09:35:10,546 - Math_95 - INFO - 编译失败
+2024-02-26 09:35:10,546 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-26 09:35:10,546 - Math_95 - INFO - 补丁1 4 未成功编译
+2024-02-26 09:35:10,547 - Math_95 - INFO - 开始验证补丁1 5:
+2024-02-26 09:35:10,547 - Math_95 - INFO - 
+    protected double getInitialDomain(double p) {
+        double ret;
+        double d = getDenominatorDegreesOfFreedom();
+        // Assuming the multiplication is the intended operator
+        ret = d * 2.0;
+        return ret;
+    }
+
+2024-02-26 09:35:11,104 - Math_95 - INFO - 编译失败
+2024-02-26 09:35:11,104 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-26 09:35:11,104 - Math_95 - INFO - 补丁1 5 未成功编译
+2024-02-26 09:35:11,105 - Math_95 - INFO - 开始验证补丁1 6:
+2024-02-26 09:35:11,105 - Math_95 - INFO - 
+    protected double getInitialDomain(double p) {
+        double ret;
+        double d = getDenominatorDegreesOfFreedom();
+        // Using addition operator, which might be less likely but still possible
+        ret = d + 2.0;
+        return ret;
+    }
+
+2024-02-26 09:35:11,675 - Math_95 - INFO - 编译失败
+2024-02-26 09:35:11,675 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-26 09:35:11,675 - Math_95 - INFO - 补丁1 6 未成功编译
+2024-02-26 09:35:11,676 - Math_95 - INFO - 开始验证补丁1 7:
+2024-02-26 09:35:11,676 - Math_95 - INFO - 
+double ret;
+double d = getDenominatorDegreesOfFreedom();
+// Assuming the intention is to use mean
+ret = d / 2.0;
+return ret;
+
+2024-02-26 09:35:12,808 - Math_95 - INFO - 编译成功
+2024-02-26 09:35:19,083 - Math_95 - INFO - 测试成功
+2024-02-26 09:35:19,083 - Math_95 - INFO - 补丁1 7 通过了所有的测试用例

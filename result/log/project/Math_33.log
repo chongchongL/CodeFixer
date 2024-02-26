@@ -1,0 +1,105 @@
+2024-02-24 01:03:26,717 - Math_33 - INFO - rm -rf /home/chongchong/d4j-project/Math_33
+2024-02-24 01:03:26,718 - Math_33 - INFO - 删除 Math 33b 成功
+2024-02-24 01:03:26,718 - Math_33 - INFO - defects4j checkout -p Math -v 33b -w /home/chongchong/d4j-project/Math_33
+2024-02-24 01:03:30,146 - Math_33 - INFO - checkout Math 33b 成功
+2024-02-24 01:03:37,115 - Math_33 - INFO - 编译成功
+2024-02-24 01:04:06,450 - Math_33 - INFO - 测试失败
+2024-02-24 01:04:06,450 - Math_33 - INFO - Failing tests: 1
+  - org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath781
+
+2024-02-24 01:04:07,370 - Math_33 - INFO - 它的bug类型为:
+2024-02-24 01:04:07,370 - Math_33 - INFO - 1
+2024-02-24 01:04:49,380 - Math_33 - INFO - Math_33 未成功修复
+2024-02-24 09:28:23,519 - Math_33 - INFO - rm -rf /home/chongchong/d4j-project/Math_33
+2024-02-24 09:28:23,553 - Math_33 - INFO - 删除 Math 33b 成功
+2024-02-24 09:28:23,553 - Math_33 - INFO - defects4j checkout -p Math -v 33b -w /home/chongchong/d4j-project/Math_33
+2024-02-24 09:28:27,003 - Math_33 - INFO - checkout Math 33b 成功
+2024-02-24 09:28:33,849 - Math_33 - INFO - 编译成功
+2024-02-24 09:29:03,833 - Math_33 - INFO - 测试失败
+2024-02-24 09:29:03,833 - Math_33 - INFO - Failing tests: 1
+  - org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath781
+
+2024-02-24 09:29:04,737 - Math_33 - INFO - 它的bug类型为:
+2024-02-24 09:29:04,737 - Math_33 - INFO - 1
+2024-02-24 09:30:07,350 - Math_33 - INFO - 开始验证补丁1 1:
+2024-02-24 09:30:07,350 - Math_33 - INFO - 
+if (entry > epsilon) {
+    columnsToDrop.add(i);
+}
+
+2024-02-24 09:30:07,969 - Math_33 - INFO - 编译失败
+2024-02-24 09:30:07,969 - Math_33 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < getNumArtificialVariables(); i++) {
+2024-02-24 09:30:07,969 - Math_33 - INFO - 补丁1 1 未成功编译
+2024-02-24 09:30:07,971 - Math_33 - INFO - 开始验证补丁1 2:
+2024-02-24 09:30:07,971 - Math_33 - INFO - 
+if (entry >= 0d || Math.abs(entry) < epsilon) {
+    columnsToDrop.add(i);
+}
+
+2024-02-24 09:30:08,608 - Math_33 - INFO - 编译失败
+2024-02-24 09:30:08,608 - Math_33 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < getNumArtificialVariables(); i++) {
+2024-02-24 09:30:08,608 - Math_33 - INFO - 补丁1 2 未成功编译
+2024-02-24 09:30:08,609 - Math_33 - INFO - 开始验证补丁1 3:
+2024-02-24 09:30:08,609 - Math_33 - INFO - 
+if (Precision.compareTo(entry, 0d, maxUlps) >= 0) {
+    columnsToDrop.add(i);
+}
+
+2024-02-24 09:30:09,258 - Math_33 - INFO - 编译失败
+2024-02-24 09:30:09,258 - Math_33 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < getNumArtificialVariables(); i++) {
+2024-02-24 09:30:09,258 - Math_33 - INFO - 补丁1 3 未成功编译
+2024-02-24 09:30:09,259 - Math_33 - INFO - 开始验证补丁1 4:
+2024-02-24 09:30:09,259 - Math_33 - INFO - 
+if (Precision.compareTo(entry, 0d, maxUlps) >= 0) {
+    columnsToDrop.add(i);
+}
+
+2024-02-24 09:30:09,259 - Math_33 - INFO - 补丁1 4为重复的补丁
+2024-02-24 09:30:09,260 - Math_33 - INFO - 开始验证补丁1 5:
+2024-02-24 09:30:09,260 - Math_33 - INFO - 
+if (entry > 0d || Precision.equals(entry, 0d, epsilon)) {
+    columnsToDrop.add(i);
+}
+
+2024-02-24 09:30:09,879 - Math_33 - INFO - 编译失败
+2024-02-24 09:30:09,879 - Math_33 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < getNumArtificialVariables(); i++) {
+2024-02-24 09:30:09,879 - Math_33 - INFO - 补丁1 5 未成功编译
+2024-02-24 09:30:09,880 - Math_33 - INFO - 开始验证补丁1 6:
+2024-02-24 09:30:09,880 - Math_33 - INFO - 
+if (Precision.compareTo(entry, 0d, correctMaxUlps) > 0) {
+    columnsToDrop.add(i);
+}
+
+2024-02-24 09:30:10,510 - Math_33 - INFO - 编译失败
+2024-02-24 09:30:10,510 - Math_33 - INFO - 错误: 非法的类型开始
+for (int i = 0; i < getNumArtificialVariables(); i++) {
+2024-02-24 09:30:10,510 - Math_33 - INFO - 补丁1 6 未成功编译
+2024-02-24 09:30:10,511 - Math_33 - INFO - 开始验证补丁1 7:
+2024-02-24 09:30:10,511 - Math_33 - INFO - 
+if (entry > 0) {
+
+2024-02-24 09:30:11,799 - Math_33 - INFO - 编译成功
+2024-02-24 09:30:41,120 - Math_33 - INFO - 测试失败
+2024-02-24 09:30:41,120 - Math_33 - INFO - Failing tests: 1
+  - org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath781
+
+2024-02-24 09:30:41,580 - Math_33 - INFO - 选择失败的测试用例为:
+2024-02-24 09:30:41,580 - Math_33 - INFO - org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath781
+2024-02-24 09:30:41,580 - Math_33 - INFO - 失败的测试代码为:
+2024-02-24 09:30:41,580 - Math_33 - INFO -         Assert.assertTrue(Precision.compareTo(solution.getPoint()[0], 0.0d, epsilon) > 0);
+
+2024-02-24 09:30:41,580 - Math_33 - INFO - 失败信息为:
+2024-02-24 09:30:41,580 - Math_33 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 09:30:41,580 - Math_33 - INFO - 补丁1 7测试失败
+2024-02-24 09:30:41,581 - Math_33 - INFO - 开始验证补丁1 8:
+2024-02-24 09:30:41,581 - Math_33 - INFO - 
+if (Precision.compareTo(entry, 0d, epsilon) > 0) {
+
+2024-02-24 09:30:42,885 - Math_33 - INFO - 编译成功
+2024-02-24 09:31:12,622 - Math_33 - INFO - 测试成功
+2024-02-24 09:31:12,622 - Math_33 - INFO - 补丁1 8 通过了所有的测试用例

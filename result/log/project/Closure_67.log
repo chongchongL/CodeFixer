@@ -1,0 +1,582 @@
+2024-02-24 00:35:56,937 - Closure_67 - INFO - rm -rf /home/chongchong/d4j-project/Closure_67
+2024-02-24 00:35:56,938 - Closure_67 - INFO - 删除 Closure 67b 成功
+2024-02-24 00:35:56,938 - Closure_67 - INFO - defects4j checkout -p Closure -v 67b -w /home/chongchong/d4j-project/Closure_67
+2024-02-24 00:35:58,699 - Closure_67 - INFO - checkout Closure 67b 成功
+2024-02-24 00:36:07,782 - Closure_67 - INFO - 编译成功
+2024-02-24 00:36:47,870 - Closure_67 - INFO - 测试失败
+2024-02-24 00:36:47,870 - Closure_67 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+
+2024-02-24 00:36:48,872 - Closure_67 - INFO - 它的bug类型为:
+2024-02-24 00:36:48,872 - Closure_67 - INFO - 1
+2024-02-24 00:37:12,271 - Closure_67 - INFO - Closure_67 未成功修复
+2024-02-24 13:43:07,223 - Closure_67 - INFO - rm -rf /home/chongchong/d4j-project/Closure_67
+2024-02-24 13:43:07,268 - Closure_67 - INFO - 删除 Closure 67b 成功
+2024-02-24 13:43:07,268 - Closure_67 - INFO - defects4j checkout -p Closure -v 67b -w /home/chongchong/d4j-project/Closure_67
+2024-02-24 13:43:09,109 - Closure_67 - INFO - checkout Closure 67b 成功
+2024-02-24 13:43:17,976 - Closure_67 - INFO - 编译成功
+2024-02-24 13:43:58,153 - Closure_67 - INFO - 测试失败
+2024-02-24 13:43:58,153 - Closure_67 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+
+2024-02-24 13:43:59,159 - Closure_67 - INFO - 它的bug类型为:
+2024-02-24 13:43:59,159 - Closure_67 - INFO - 1
+2024-02-24 13:44:40,061 - Closure_67 - INFO - 开始验证补丁1 1:
+2024-02-24 13:44:40,061 - Closure_67 - INFO - 
+           && n.getNext().isString()) {
+
+2024-02-24 13:44:41,357 - Closure_67 - INFO - 编译失败
+2024-02-24 13:44:41,357 - Closure_67 - INFO - 错误: 找不到符号
+&& n.getNext().isString()) {
+2024-02-24 13:44:41,357 - Closure_67 - INFO - 补丁1 1 未成功编译
+2024-02-24 13:44:41,358 - Closure_67 - INFO - 开始验证补丁1 2:
+2024-02-24 13:44:41,358 - Closure_67 - INFO - 
+           && n.getNext().getType() == Token.STRING) {
+
+2024-02-24 13:44:44,039 - Closure_67 - INFO - 编译成功
+2024-02-24 13:45:24,288 - Closure_67 - INFO - 测试失败
+2024-02-24 13:45:24,289 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:45:24,799 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:45:24,799 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:45:24,799 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:45:24,799 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:45:24,799 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:45:24,799 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:45:24,799 - Closure_67 - INFO - 补丁1 2测试失败
+2024-02-24 13:45:24,800 - Closure_67 - INFO - 开始验证补丁1 3:
+2024-02-24 13:45:24,800 - Closure_67 - INFO - 
+           && n.getFirstChild().getType() == Token.STRING) {
+
+2024-02-24 13:45:27,450 - Closure_67 - INFO - 编译成功
+2024-02-24 13:46:07,788 - Closure_67 - INFO - 测试失败
+2024-02-24 13:46:07,788 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:46:08,291 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:46:08,291 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:46:08,291 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:46:08,291 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:46:08,291 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:46:08,291 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:46:08,292 - Closure_67 - INFO - 补丁1 3测试失败
+2024-02-24 13:46:08,293 - Closure_67 - INFO - 开始验证补丁1 4:
+2024-02-24 13:46:08,293 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.NAME) {
+
+2024-02-24 13:46:10,970 - Closure_67 - INFO - 编译成功
+2024-02-24 13:46:51,012 - Closure_67 - INFO - 测试失败
+2024-02-24 13:46:51,012 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:46:51,518 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:46:51,518 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:46:51,518 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:46:51,518 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:46:51,518 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:46:51,518 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:46:51,518 - Closure_67 - INFO - 补丁1 4测试失败
+2024-02-24 13:46:51,519 - Closure_67 - INFO - 开始验证补丁1 5:
+2024-02-24 13:46:51,519 - Closure_67 - INFO - 
+          && n.getFirstChild().getNext().getType() == Token.STRING) {
+
+2024-02-24 13:46:54,271 - Closure_67 - INFO - 编译成功
+2024-02-24 13:47:34,346 - Closure_67 - INFO - 测试失败
+2024-02-24 13:47:34,346 - Closure_67 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+
+2024-02-24 13:47:34,851 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:47:34,851 - Closure_67 - INFO - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+2024-02-24 13:47:34,852 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:47:34,852 - Closure_67 - INFO -     testSame("function e(){}" +
+
+2024-02-24 13:47:34,852 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:47:34,852 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:47:34,852 - Closure_67 - INFO - 补丁1 5测试失败
+2024-02-24 13:47:34,853 - Closure_67 - INFO - 开始验证补丁1 6:
+2024-02-24 13:47:34,853 - Closure_67 - INFO - 
+          && n.getNext().getType() == Token.ASSIGN) {
+
+2024-02-24 13:47:37,545 - Closure_67 - INFO - 编译成功
+2024-02-24 13:48:17,772 - Closure_67 - INFO - 测试失败
+2024-02-24 13:48:17,772 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:48:18,290 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:48:18,290 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:48:18,290 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:48:18,290 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:48:18,290 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:48:18,290 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:48:18,290 - Closure_67 - INFO - 补丁1 6测试失败
+2024-02-24 13:48:18,291 - Closure_67 - INFO - 开始验证补丁1 7:
+2024-02-24 13:48:18,291 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.NAME) {
+
+2024-02-24 13:48:18,291 - Closure_67 - INFO - 补丁1 7为重复的补丁
+2024-02-24 13:48:18,292 - Closure_67 - INFO - 开始验证补丁1 8:
+2024-02-24 13:48:18,292 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.NAME && condition) {
+
+2024-02-24 13:48:19,547 - Closure_67 - INFO - 编译失败
+2024-02-24 13:48:19,547 - Closure_67 - INFO - 错误: 找不到符号
+&& n.getFirstChild().getType() == Token.NAME && condition) {
+2024-02-24 13:48:19,547 - Closure_67 - INFO - 补丁1 8 未成功编译
+2024-02-24 13:48:19,548 - Closure_67 - INFO - 开始验证补丁1 9:
+2024-02-24 13:48:19,548 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.NAME) {
+
+2024-02-24 13:48:19,548 - Closure_67 - INFO - 补丁1 9为重复的补丁
+2024-02-24 13:48:19,549 - Closure_67 - INFO - 开始验证补丁2 1:
+2024-02-24 13:48:19,549 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.THIS) {
+
+2024-02-24 13:48:22,240 - Closure_67 - INFO - 编译成功
+2024-02-24 13:49:02,562 - Closure_67 - INFO - 测试失败
+2024-02-24 13:49:02,563 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:49:03,072 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:49:03,073 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:49:03,073 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:49:03,073 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:49:03,073 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:49:03,073 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:49:03,073 - Closure_67 - INFO - 补丁2 1测试失败
+2024-02-24 13:49:03,074 - Closure_67 - INFO - 开始验证补丁2 2:
+2024-02-24 13:49:03,074 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.STRING) {
+
+2024-02-24 13:49:05,731 - Closure_67 - INFO - 编译成功
+2024-02-24 13:49:46,515 - Closure_67 - INFO - 测试失败
+2024-02-24 13:49:46,515 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:49:47,026 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:49:47,026 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:49:47,026 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:49:47,026 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:49:47,026 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:49:47,026 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:49:47,026 - Closure_67 - INFO - 补丁2 2测试失败
+2024-02-24 13:49:47,027 - Closure_67 - INFO - 开始验证补丁2 3:
+2024-02-24 13:49:47,027 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.NAME) {
+
+2024-02-24 13:49:47,027 - Closure_67 - INFO - 补丁2 3为重复的补丁
+2024-02-24 13:49:47,028 - Closure_67 - INFO - 开始验证补丁2 4:
+2024-02-24 13:49:47,028 - Closure_67 - INFO - 
+) {
+
+2024-02-24 13:49:49,716 - Closure_67 - INFO - 编译成功
+2024-02-24 13:50:30,226 - Closure_67 - INFO - 测试失败
+2024-02-24 13:50:30,226 - Closure_67 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+
+2024-02-24 13:50:30,738 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:50:30,738 - Closure_67 - INFO - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+2024-02-24 13:50:30,738 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:50:30,738 - Closure_67 - INFO -     testSame("function e(){}" +
+
+2024-02-24 13:50:30,738 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:50:30,738 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:50:30,738 - Closure_67 - INFO - 补丁2 4测试失败
+2024-02-24 13:50:30,739 - Closure_67 - INFO - 开始验证补丁2 5:
+2024-02-24 13:50:30,739 - Closure_67 - INFO - 
+        }
+
+2024-02-24 13:50:31,784 - Closure_67 - INFO - 编译失败
+2024-02-24 13:50:31,784 - Closure_67 - INFO - 错误: 需要')'
+&& n.getType() == Token.GETPROP
+2024-02-24 13:50:31,784 - Closure_67 - INFO - 补丁2 5 未成功编译
+2024-02-24 13:50:31,786 - Closure_67 - INFO - 开始验证补丁2 6:
+2024-02-24 13:50:31,786 - Closure_67 - INFO - 
+          && someConditionHere) {
+
+2024-02-24 13:50:33,059 - Closure_67 - INFO - 编译失败
+2024-02-24 13:50:33,060 - Closure_67 - INFO - 错误: 找不到符号
+&& someConditionHere) {
+2024-02-24 13:50:33,060 - Closure_67 - INFO - 补丁2 6 未成功编译
+2024-02-24 13:50:33,061 - Closure_67 - INFO - 开始验证补丁2 7:
+2024-02-24 13:50:33,061 - Closure_67 - INFO - 
+          && anotherCondition) {
+
+2024-02-24 13:50:34,319 - Closure_67 - INFO - 编译失败
+2024-02-24 13:50:34,319 - Closure_67 - INFO - 错误: 找不到符号
+&& anotherCondition) {
+2024-02-24 13:50:34,319 - Closure_67 - INFO - 补丁2 7 未成功编译
+2024-02-24 13:50:34,321 - Closure_67 - INFO - 开始验证补丁2 7:
+2024-02-24 13:50:34,321 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.GETPROP) {
+
+2024-02-24 13:50:37,004 - Closure_67 - INFO - 编译成功
+2024-02-24 13:51:17,731 - Closure_67 - INFO - 测试失败
+2024-02-24 13:51:17,731 - Closure_67 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+
+2024-02-24 13:51:18,244 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:51:18,244 - Closure_67 - INFO - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+2024-02-24 13:51:18,244 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:51:18,244 - Closure_67 - INFO -     testSame("function e(){}" +
+
+2024-02-24 13:51:18,244 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:51:18,244 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:51:18,245 - Closure_67 - INFO - 补丁2 7测试失败
+2024-02-24 13:51:18,246 - Closure_67 - INFO - 开始验证补丁2 8:
+2024-02-24 13:51:18,246 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.GETPROP) {
+
+2024-02-24 13:51:18,246 - Closure_67 - INFO - 补丁2 8为重复的补丁
+2024-02-24 13:51:18,251 - Closure_67 - INFO - 开始验证补丁2 9:
+2024-02-24 13:51:18,251 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.GETPROP) {
+    // Additional code may be required here depending on the context and intent
+
+2024-02-24 13:51:20,903 - Closure_67 - INFO - 编译成功
+2024-02-24 13:52:01,296 - Closure_67 - INFO - 测试失败
+2024-02-24 13:52:01,296 - Closure_67 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+
+2024-02-24 13:52:01,802 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:52:01,802 - Closure_67 - INFO - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+2024-02-24 13:52:01,802 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:52:01,802 - Closure_67 - INFO -     testSame("function e(){}" +
+
+2024-02-24 13:52:01,802 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:52:01,802 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:52:01,802 - Closure_67 - INFO - 补丁2 9测试失败
+2024-02-24 13:52:01,803 - Closure_67 - INFO - 开始验证补丁3 1:
+2024-02-24 13:52:01,803 - Closure_67 - INFO - 
+          && n.getNext().isString()) {
+
+2024-02-24 13:52:03,065 - Closure_67 - INFO - 编译失败
+2024-02-24 13:52:03,065 - Closure_67 - INFO - 错误: 找不到符号
+&& n.getNext().isString()) {
+2024-02-24 13:52:03,065 - Closure_67 - INFO - 补丁3 1 未成功编译
+2024-02-24 13:52:03,066 - Closure_67 - INFO - 开始验证补丁3 2:
+2024-02-24 13:52:03,066 - Closure_67 - INFO - 
+          && n.getFirstChild().getNext().isString()) {
+
+2024-02-24 13:52:04,328 - Closure_67 - INFO - 编译失败
+2024-02-24 13:52:04,328 - Closure_67 - INFO - 错误: 找不到符号
+&& n.getFirstChild().getNext().isString()) {
+2024-02-24 13:52:04,328 - Closure_67 - INFO - 补丁3 2 未成功编译
+2024-02-24 13:52:04,329 - Closure_67 - INFO - 开始验证补丁3 3:
+2024-02-24 13:52:04,329 - Closure_67 - INFO - 
+          && assign.getParent().isExprResult()) {
+
+2024-02-24 13:52:05,599 - Closure_67 - INFO - 编译失败
+2024-02-24 13:52:05,599 - Closure_67 - INFO - 错误: 找不到符号
+&& assign.getParent().isExprResult()) {
+2024-02-24 13:52:05,599 - Closure_67 - INFO - 补丁3 3 未成功编译
+2024-02-24 13:52:05,600 - Closure_67 - INFO - 开始验证补丁3 4:
+2024-02-24 13:52:05,600 - Closure_67 - INFO - 
+          && n.getNext().getType() == Token.STRING) {
+
+2024-02-24 13:52:08,271 - Closure_67 - INFO - 编译成功
+2024-02-24 13:52:48,497 - Closure_67 - INFO - 测试失败
+2024-02-24 13:52:48,497 - Closure_67 - INFO - Failing tests: 28
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:52:49,006 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:52:49,006 - Closure_67 - INFO - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+2024-02-24 13:52:49,006 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:52:49,006 - Closure_67 - INFO -     test(createModuleChain(
+
+2024-02-24 13:52:49,007 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:52:49,007 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:52:49,007 - Closure_67 - INFO - 补丁3 4测试失败
+2024-02-24 13:52:49,007 - Closure_67 - INFO - 开始验证补丁3 5:
+2024-02-24 13:52:49,008 - Closure_67 - INFO - 
+          && n.getFirstChild().getType() == Token.THIS) {
+
+2024-02-24 13:52:49,008 - Closure_67 - INFO - 补丁3 5为重复的补丁
+2024-02-24 13:52:49,009 - Closure_67 - INFO - 开始验证补丁3 6:
+2024-02-24 13:52:49,009 - Closure_67 - INFO - 
+          && assign.getParent().isExprResult()) {
+
+2024-02-24 13:52:49,009 - Closure_67 - INFO - 补丁3 6为重复的补丁
+2024-02-24 13:52:49,009 - Closure_67 - INFO - 开始验证补丁3 7:
+2024-02-24 13:52:49,010 - Closure_67 - INFO - 
+          && n.getFirstChild().isName()) {
+
+2024-02-24 13:52:50,288 - Closure_67 - INFO - 编译失败
+2024-02-24 13:52:50,288 - Closure_67 - INFO - 错误: 找不到符号
+&& n.getFirstChild().isName()) {
+2024-02-24 13:52:50,288 - Closure_67 - INFO - 补丁3 7 未成功编译
+2024-02-24 13:52:50,290 - Closure_67 - INFO - 开始验证补丁3 8:
+2024-02-24 13:52:50,290 - Closure_67 - INFO - 
+          && n.getFirstChild().getString().equals("prototype")) {
+
+2024-02-24 13:52:52,960 - Closure_67 - INFO - 编译成功
+2024-02-24 13:53:34,116 - Closure_67 - INFO - 测试失败
+2024-02-24 13:53:34,116 - Closure_67 - INFO - Failing tests: 46
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testReflectedMethods
+  - com.google.javascript.jscomp.CommandLineRunnerTest::testCheckGlobalThisOnWithAdvancedMode
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testInnerFunctionClosureVariableReads
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeRecursiveMethod
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testNoClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testCantMovePrototypeProp
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testTwoMethods
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMovePrototypeMethod2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsUsedInTwoModules2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads1
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads2
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testClosureVariableReads3
+  - com.google.javascript.jscomp.CrossModuleMethodMotionTest::testMoveMethodsInRightOrder
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testUsingAnonymousObjectsToDefeatRemoval
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing1
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing3
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing4
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing6
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAliasing7
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testMethodsFromExternsFileNotExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExternMethodsFromExternsFile
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph2
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph3
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph4
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph5
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph6
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testGlobalFunctionsInGraph7
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testNeverRemoveImplicitlyUsedProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testAnalyzePrototypeProperties
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConventionAlwaysExported
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testExportedMethodsByNamingConvention
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyDefinedInBranch
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testStatementRestriction
+  - com.google.javascript.jscomp.RemoveUnusedPrototypePropertiesTest::testPropertyReferenceGraph
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeRemoveUnusedProperties
+  - com.google.javascript.jscomp.SpecializeModuleTest::testSpecializeDevirtualizePrototypeMethods
+  - com.google.javascript.jscomp.SpecializeModuleTest::testDontSpecializeAliasedFunctions_remove_unused_properties
+
+2024-02-24 13:53:34,628 - Closure_67 - INFO - 选择失败的测试用例为:
+2024-02-24 13:53:34,628 - Closure_67 - INFO - com.google.javascript.jscomp.CommandLineRunnerTest::testReflectedMethods
+2024-02-24 13:53:34,628 - Closure_67 - INFO - 失败的测试代码为:
+2024-02-24 13:53:34,628 - Closure_67 - INFO -     test(
+
+2024-02-24 13:53:34,628 - Closure_67 - INFO - 失败信息为:
+2024-02-24 13:53:34,628 - Closure_67 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 13:53:34,628 - Closure_67 - INFO - 补丁3 8测试失败
+2024-02-24 13:53:34,629 - Closure_67 - INFO - 开始验证补丁3 9:
+2024-02-24 13:53:34,629 - Closure_67 - INFO - 
+          && assign.getParent().isExprResult()) {
+
+2024-02-24 13:53:34,629 - Closure_67 - INFO - 补丁3 9为重复的补丁
+2024-02-24 13:53:34,629 - Closure_67 - INFO - Closure_67 未成功修复

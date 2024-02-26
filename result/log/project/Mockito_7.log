@@ -1,0 +1,403 @@
+2024-02-26 15:56:13,075 - Mockito_7 - INFO - rm -rf /home/chongchong/d4j-project/Mockito_7
+2024-02-26 15:56:13,241 - Mockito_7 - INFO - 删除 Mockito 7b 成功
+2024-02-26 15:56:13,241 - Mockito_7 - INFO - defects4j checkout -p Mockito -v 7b -w /home/chongchong/d4j-project/Mockito_7
+2024-02-26 15:56:16,784 - Mockito_7 - INFO - checkout Mockito 7b 成功
+2024-02-26 15:57:16,329 - Mockito_7 - INFO - 编译成功
+2024-02-26 15:58:19,917 - Mockito_7 - INFO - 测试失败
+2024-02-26 15:58:19,917 - Mockito_7 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+
+2024-02-26 15:58:20,821 - Mockito_7 - INFO - 它的bug类型为:
+2024-02-26 15:58:20,821 - Mockito_7 - INFO - 3
+2024-02-26 15:59:53,728 - Mockito_7 - INFO - 开始验证补丁1 1:
+2024-02-26 15:59:53,728 - Mockito_7 - INFO - 
+registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+
+2024-02-26 16:00:32,961 - Mockito_7 - INFO - 编译成功
+2024-02-26 16:01:46,287 - Mockito_7 - INFO - 测试失败
+2024-02-26 16:01:46,287 - Mockito_7 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+
+2024-02-26 16:01:46,733 - Mockito_7 - INFO - 选择失败的测试用例为:
+2024-02-26 16:01:46,733 - Mockito_7 - INFO - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+2024-02-26 16:01:46,733 - Mockito_7 - INFO - 失败的测试代码为:
+2024-02-26 16:01:46,733 - Mockito_7 - INFO -     when(myMock1.getNested().getNested().returnSomething()).thenReturn("Hello World.");
+
+2024-02-26 16:01:46,733 - Mockito_7 - INFO - 失败信息为:
+2024-02-26 16:01:46,733 - Mockito_7 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 16:01:46,733 - Mockito_7 - INFO - 补丁1 1测试失败
+2024-02-26 16:01:46,734 - Mockito_7 - INFO - 开始验证补丁1 2:
+2024-02-26 16:01:46,734 - Mockito_7 - INFO - 
+for (TypeVariable<?> variable : typeVariables) {
+    registerTypeVariablesOn(getActualTypeArgumentFor(variable));
+}
+
+2024-02-26 16:01:57,092 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:01:57,092 - Mockito_7 - INFO - 错误: 需要';'
+[exec]         public Class<?> rawType() {
+2024-02-26 16:01:57,093 - Mockito_7 - INFO - 补丁1 2 未成功编译
+2024-02-26 16:01:57,094 - Mockito_7 - INFO - 开始验证补丁1 3:
+2024-02-26 16:01:57,094 - Mockito_7 - INFO - 
+Type actualTypeArgument = getActualTypeArgumentFor(typeVariable);
+registerTypeVariablesOn(actualTypeArgument);
+
+2024-02-26 16:02:31,250 - Mockito_7 - INFO - 编译成功
+2024-02-26 16:03:40,336 - Mockito_7 - INFO - 测试失败
+2024-02-26 16:03:40,336 - Mockito_7 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+
+2024-02-26 16:03:40,785 - Mockito_7 - INFO - 选择失败的测试用例为:
+2024-02-26 16:03:40,785 - Mockito_7 - INFO - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+2024-02-26 16:03:40,785 - Mockito_7 - INFO - 失败的测试代码为:
+2024-02-26 16:03:40,785 - Mockito_7 - INFO -     when(myMock1.getNested().getNested().returnSomething()).thenReturn("Hello World.");
+
+2024-02-26 16:03:40,785 - Mockito_7 - INFO - 失败信息为:
+2024-02-26 16:03:40,785 - Mockito_7 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 16:03:40,785 - Mockito_7 - INFO - 补丁1 3测试失败
+2024-02-26 16:03:40,786 - Mockito_7 - INFO - 开始验证补丁1 4:
+2024-02-26 16:03:40,786 - Mockito_7 - INFO - 
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            // The <fill> placeholder was removed
+        }
+
+2024-02-26 16:03:51,176 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:03:51,176 - Mockito_7 - INFO - 错误: 非法的表达式开始
+[exec] private void readTypeVariables() {
+2024-02-26 16:03:51,176 - Mockito_7 - INFO - 补丁1 4 未成功编译
+2024-02-26 16:03:51,177 - Mockito_7 - INFO - 开始验证补丁1 5:
+2024-02-26 16:03:51,177 - Mockito_7 - INFO - 
+        private void readTypeVariables() {
+            // Assuming typeVariable is a single TypeVariable object
+            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+        }
+
+2024-02-26 16:03:56,698 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:03:56,698 - Mockito_7 - INFO - 错误: 非法的表达式开始
+[exec] private void readTypeVariables() {
+2024-02-26 16:03:56,698 - Mockito_7 - INFO - 补丁1 5 未成功编译
+2024-02-26 16:03:56,699 - Mockito_7 - INFO - 开始验证补丁1 6:
+2024-02-26 16:03:56,699 - Mockito_7 - INFO - 
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            // The condition or additional logic might be needed
+            if (someCondition) {
+                registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+            }
+        }
+
+2024-02-26 16:04:07,028 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:04:07,028 - Mockito_7 - INFO - 错误: 非法的表达式开始
+[exec] private void readTypeVariables() {
+2024-02-26 16:04:07,028 - Mockito_7 - INFO - 补丁1 6 未成功编译
+2024-02-26 16:04:07,029 - Mockito_7 - INFO - 开始验证补丁1 7:
+2024-02-26 16:04:07,029 - Mockito_7 - INFO - 
+        }
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            registerTypeVariablesOn(typeVariable); // This line replaces <fill>
+        }
+
+2024-02-26 16:04:12,372 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:04:12,372 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:04:12,372 - Mockito_7 - INFO - 补丁1 7 未成功编译
+2024-02-26 16:04:12,373 - Mockito_7 - INFO - 开始验证补丁1 8:
+2024-02-26 16:04:12,373 - Mockito_7 - INFO - 
+        }
+        private void readTypeVariables(List<TypeVariable<?>> typeVariables) { // added argument to method signature
+            for (TypeVariable<?> typeVar : typeVariables) {
+                for (Type type : typeVar.getBounds()) {
+                    registerTypeVariablesOn(type);
+                }
+            }
+        }
+
+2024-02-26 16:04:42,015 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:04:42,015 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:04:42,016 - Mockito_7 - INFO - 补丁1 8 未成功编译
+2024-02-26 16:04:42,017 - Mockito_7 - INFO - 开始验证补丁1 9:
+2024-02-26 16:04:42,017 - Mockito_7 - INFO - 
+        }
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(getActualTypeArgumentFor(type)); // Assuming getActualTypeArgumentFor is a method that should be called for each bound
+            }
+        }
+
+2024-02-26 16:05:02,577 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:02,577 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:05:02,577 - Mockito_7 - INFO - 补丁1 9 未成功编译
+2024-02-26 16:05:02,578 - Mockito_7 - INFO - 开始验证补丁2 1:
+2024-02-26 16:05:02,578 - Mockito_7 - INFO - 
+            registerTypeParametersOn(typeVariable);
+        }
+
+2024-02-26 16:05:12,935 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:12,935 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:05:12,935 - Mockito_7 - INFO - 补丁2 1 未成功编译
+2024-02-26 16:05:12,936 - Mockito_7 - INFO - 开始验证补丁2 2:
+2024-02-26 16:05:12,936 - Mockito_7 - INFO - 
+            registerTypeVariablesOn(typeVariable);
+        }
+
+2024-02-26 16:05:18,686 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:18,686 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:05:18,686 - Mockito_7 - INFO - 补丁2 2 未成功编译
+2024-02-26 16:05:18,687 - Mockito_7 - INFO - 开始验证补丁2 3:
+2024-02-26 16:05:18,687 - Mockito_7 - INFO - 
+            registerTypeParametersOn(getActualTypeArgumentFor(typeVariable));
+        }
+
+2024-02-26 16:05:23,802 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:23,802 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:05:23,803 - Mockito_7 - INFO - 补丁2 3 未成功编译
+2024-02-26 16:05:23,803 - Mockito_7 - INFO - 开始验证补丁2 4:
+2024-02-26 16:05:23,804 - Mockito_7 - INFO - 
+        }
+
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            registerTypeVariablesOn(typeVariable); // This line replaces the <fill> placeholder
+        }
+
+        @Override
+        public Class<?> rawType() {
+            if (rawType == null) {
+                rawType = extractRawTypeOf(typeVariable);
+            }
+
+2024-02-26 16:05:29,404 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:29,404 - Mockito_7 - INFO - 错误: 需要';'
+[exec]         public Class<?> rawType() {
+2024-02-26 16:05:29,405 - Mockito_7 - INFO - 补丁2 4 未成功编译
+2024-02-26 16:05:29,406 - Mockito_7 - INFO - 开始验证补丁2 5:
+2024-02-26 16:05:29,406 - Mockito_7 - INFO - 
+        }
+
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable)); // This line replaces the <fill> placeholder
+        }
+
+        @Override
+        public Class<?> rawType() {
+            if (rawType == null) {
+                rawType = extractRawTypeOf(typeVariable);
+            }
+
+2024-02-26 16:05:34,618 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:34,619 - Mockito_7 - INFO - 错误: 需要';'
+[exec]         public Class<?> rawType() {
+2024-02-26 16:05:34,619 - Mockito_7 - INFO - 补丁2 5 未成功编译
+2024-02-26 16:05:34,620 - Mockito_7 - INFO - 开始验证补丁2 6:
+2024-02-26 16:05:34,620 - Mockito_7 - INFO - 
+        }
+
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            if (typeVariable == null) {
+                throw new IllegalArgumentException("Type variable cannot be null");
+            }
+            registerTypeVariablesOn(typeVariable); // This line replaces the <fill> placeholder
+        }
+
+        @Override
+        public Class<?> rawType() {
+            if (rawType == null) {
+                rawType = extractRawTypeOf(typeVariable);
+            }
+
+2024-02-26 16:05:40,692 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:40,692 - Mockito_7 - INFO - 错误: 需要';'
+[exec]         public Class<?> rawType() {
+2024-02-26 16:05:40,692 - Mockito_7 - INFO - 补丁2 6 未成功编译
+2024-02-26 16:05:40,693 - Mockito_7 - INFO - 开始验证补丁2 7:
+2024-02-26 16:05:40,693 - Mockito_7 - INFO - 
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            registerTypeVariablesOn(typeVariable); // This line replaces the <fill>
+        }
+
+2024-02-26 16:05:45,801 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:45,802 - Mockito_7 - INFO - 错误: 非法的表达式开始
+[exec] private void readTypeVariables() {
+2024-02-26 16:05:45,802 - Mockito_7 - INFO - 补丁2 7 未成功编译
+2024-02-26 16:05:45,803 - Mockito_7 - INFO - 开始验证补丁2 8:
+2024-02-26 16:05:45,803 - Mockito_7 - INFO - 
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            registerTypeParametersOn(typeVariable); // This line replaces the <fill> assuming there is a typo in the method name.
+        }
+
+2024-02-26 16:05:51,252 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:51,252 - Mockito_7 - INFO - 错误: 非法的表达式开始
+[exec] private void readTypeVariables() {
+2024-02-26 16:05:51,252 - Mockito_7 - INFO - 补丁2 8 未成功编译
+2024-02-26 16:05:51,253 - Mockito_7 - INFO - 开始验证补丁2 9:
+2024-02-26 16:05:51,253 - Mockito_7 - INFO - 
+        private void readTypeVariables() {
+            for (Type type : typeVariable.getBounds()) {
+                registerTypeVariablesOn(type);
+            }
+            // Assuming getActualTypeArgumentFor is a valid method and typeVariable is a TypeVariable object
+            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable)); // This line replaces the <fill>
+        }
+
+2024-02-26 16:05:56,555 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:05:56,555 - Mockito_7 - INFO - 错误: 非法的表达式开始
+[exec] private void readTypeVariables() {
+2024-02-26 16:05:56,555 - Mockito_7 - INFO - 补丁2 9 未成功编译
+2024-02-26 16:05:56,556 - Mockito_7 - INFO - 开始验证补丁3 1:
+2024-02-26 16:05:56,556 - Mockito_7 - INFO - 
+            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+        }
+
+2024-02-26 16:06:02,055 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:06:02,056 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:06:02,056 - Mockito_7 - INFO - 补丁3 1 未成功编译
+2024-02-26 16:06:02,057 - Mockito_7 - INFO - 开始验证补丁3 2:
+2024-02-26 16:06:02,057 - Mockito_7 - INFO - 
+            // This block intentionally left empty or consider removing the placeholder.
+        }
+
+2024-02-26 16:06:07,554 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:06:07,554 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]
+2024-02-26 16:06:07,554 - Mockito_7 - INFO - 补丁3 2 未成功编译
+2024-02-26 16:06:07,555 - Mockito_7 - INFO - 开始验证补丁3 3:
+2024-02-26 16:06:07,555 - Mockito_7 - INFO - 
+            registerTypeVariablesOn(getActualTypeArgumentFor(someOtherTypeVariable));
+        }
+
+2024-02-26 16:06:17,998 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:06:17,998 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:06:17,998 - Mockito_7 - INFO - 补丁3 3 未成功编译
+2024-02-26 16:06:17,999 - Mockito_7 - INFO - 开始验证补丁3 4:
+2024-02-26 16:06:17,999 - Mockito_7 - INFO - 
+            // Assuming 'getActualTypeArgumentFor' returns a type that needs to be registered
+            // as a Type Variable on the current context.
+            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+        }
+
+2024-02-26 16:06:23,657 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:06:23,657 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:06:23,657 - Mockito_7 - INFO - 补丁3 4 未成功编译
+2024-02-26 16:06:23,658 - Mockito_7 - INFO - 开始验证补丁3 5:
+2024-02-26 16:06:23,658 - Mockito_7 - INFO - 
+            // If 'typeVariable' is a collection of type variables rather than a single one,
+            // we may need to iterate over them and register each one.
+            for (TypeVariable<?> var : typeVariable.getActualTypeArguments()) {
+                registerTypeVariablesOn(var);
+            }
+        }
+
+2024-02-26 16:06:30,443 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:06:30,443 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:06:30,443 - Mockito_7 - INFO - 补丁3 5 未成功编译
+2024-02-26 16:06:30,444 - Mockito_7 - INFO - 开始验证补丁3 6:
+2024-02-26 16:06:30,444 - Mockito_7 - INFO - 
+            // If 'getActualTypeArgumentFor' applies to a class or interface that 'typeVariable'
+            // represents and we need to register each type argument of its generic type.
+            Type[] typeArguments = getActualTypeArgumentFor(typeVariable);
+            for (Type arg : typeArguments) {
+                registerTypeVariablesOn(arg);
+            }
+        }
+
+2024-02-26 16:06:42,483 - Mockito_7 - INFO - 编译失败
+2024-02-26 16:06:42,483 - Mockito_7 - INFO - 错误: 方法声明无效; 需要返回类型
+[exec]             registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+2024-02-26 16:06:42,483 - Mockito_7 - INFO - 补丁3 6 未成功编译
+2024-02-26 16:06:42,484 - Mockito_7 - INFO - 开始验证补丁3 7:
+2024-02-26 16:06:42,484 - Mockito_7 - INFO - 
+            // The <fill> placeholder should be replaced with the correct code.
+            // Assuming getActualTypeArgumentFor() is a method intended to be used after bounds processing
+            registerTypeVariablesOn(getActualTypeArgumentFor(typeVariable));
+
+2024-02-26 16:07:20,230 - Mockito_7 - INFO - 编译成功
+2024-02-26 16:08:18,799 - Mockito_7 - INFO - 测试失败
+2024-02-26 16:08:18,799 - Mockito_7 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+
+2024-02-26 16:08:19,245 - Mockito_7 - INFO - 选择失败的测试用例为:
+2024-02-26 16:08:19,245 - Mockito_7 - INFO - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+2024-02-26 16:08:19,245 - Mockito_7 - INFO - 失败的测试代码为:
+2024-02-26 16:08:19,245 - Mockito_7 - INFO -     when(myMock1.getNested().getNested().returnSomething()).thenReturn("Hello World.");
+
+2024-02-26 16:08:19,245 - Mockito_7 - INFO - 失败信息为:
+2024-02-26 16:08:19,245 - Mockito_7 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 16:08:19,245 - Mockito_7 - INFO - 补丁3 7测试失败
+2024-02-26 16:08:19,246 - Mockito_7 - INFO - 开始验证补丁3 8:
+2024-02-26 16:08:19,246 - Mockito_7 - INFO - 
+            // If getActualTypeArgumentFor() is not dependent on the bounds processing and can be called earlier
+            // The <fill> placeholder may be removed as the original line was already in the correct position
+
+2024-02-26 16:08:57,413 - Mockito_7 - INFO - 编译成功
+2024-02-26 16:10:06,545 - Mockito_7 - INFO - 测试失败
+2024-02-26 16:10:06,545 - Mockito_7 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+
+2024-02-26 16:10:06,988 - Mockito_7 - INFO - 选择失败的测试用例为:
+2024-02-26 16:10:06,988 - Mockito_7 - INFO - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+2024-02-26 16:10:06,988 - Mockito_7 - INFO - 失败的测试代码为:
+2024-02-26 16:10:06,988 - Mockito_7 - INFO -     when(myMock1.getNested().getNested().returnSomething()).thenReturn("Hello World.");
+
+2024-02-26 16:10:06,988 - Mockito_7 - INFO - 失败信息为:
+2024-02-26 16:10:06,988 - Mockito_7 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 16:10:06,988 - Mockito_7 - INFO - 补丁3 8测试失败
+2024-02-26 16:10:06,989 - Mockito_7 - INFO - 开始验证补丁3 9:
+2024-02-26 16:10:06,989 - Mockito_7 - INFO - 
+            // If the original code at <fill> was incorrectly placed or if getActualTypeArgumentFor()
+            // is not the method that should be called here, we might consider an alternative approach
+            // such as registering other relevant type information or handling possible errors/exceptions
+            // However, without more context about the method's intentions, it is difficult to provide an accurate replacement
+            // Placeholder for alternative operations or error handling (e.g., logging, throwing exceptions)
+
+2024-02-26 16:10:55,237 - Mockito_7 - INFO - 编译成功
+2024-02-26 16:12:12,359 - Mockito_7 - INFO - 测试失败
+2024-02-26 16:12:12,359 - Mockito_7 - INFO - Failing tests: 1
+  - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - 选择失败的测试用例为:
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - org.mockitousage.bugs.deepstubs.DeepStubFailingWhenGenricNestedAsRawTypeTest::discoverDeepMockingOfGenerics
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - 失败的测试代码为:
+2024-02-26 16:12:12,810 - Mockito_7 - INFO -     when(myMock1.getNested().getNested().returnSomething()).thenReturn("Hello World.");
+
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - 失败信息为:
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - org.mockito.exceptions.base.MockitoException: Raw extraction not supported for : 'null'
+
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - 补丁3 9测试失败
+2024-02-26 16:12:12,810 - Mockito_7 - INFO - Mockito_7 未成功修复

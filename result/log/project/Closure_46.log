@@ -1,0 +1,686 @@
+2024-02-24 22:31:45,425 - Closure_46 - INFO - rm -rf /home/chongchong/d4j-project/Closure_46
+2024-02-24 22:31:45,426 - Closure_46 - INFO - 删除 Closure 46b 成功
+2024-02-24 22:31:45,426 - Closure_46 - INFO - defects4j checkout -p Closure -v 46b -w /home/chongchong/d4j-project/Closure_46
+2024-02-24 22:31:47,146 - Closure_46 - INFO - checkout Closure 46b 成功
+2024-02-24 22:31:58,122 - Closure_46 - INFO - 编译成功
+2024-02-24 22:32:42,833 - Closure_46 - INFO - 测试失败
+2024-02-24 22:32:42,833 - Closure_46 - INFO - Failing tests: 3
+  - com.google.javascript.rhino.jstype.JSTypeTest::testRecordTypeLeastSuperType2
+  - com.google.javascript.rhino.jstype.JSTypeTest::testRecordTypeLeastSuperType3
+  - com.google.javascript.rhino.jstype.RecordTypeTest::testSupAndInf
+
+2024-02-24 22:32:43,843 - Closure_46 - INFO - 它的bug类型为:
+2024-02-24 22:32:43,843 - Closure_46 - INFO - 2
+2024-02-24 22:34:51,181 - Closure_46 - INFO - 开始验证补丁1 1:
+2024-02-24 22:34:51,181 - Closure_46 - INFO - 
+  }
+  JSType getGreatestSubtypeHelper(JSType that) {
+    if (that.isRecordType()) {
+      RecordType thatRecord = that.toMaybeRecordType();
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+
+      for (String property : properties.keySet()) {
+        JSType thisPropertyType = getPropertyType(property);
+        JSType thatPropertyType = thatRecord.hasProperty(property) ? thatRecord.getPropertyType(property) : null;
+
+        if (thatPropertyType != null && !thatPropertyType.isEquivalentTo(thisPropertyType)) {
+          // Handle type conflict for the property that exists in both types
+          builder.addProperty(property, JSType.getLeastSupertype(thisPropertyType, thatPropertyType), 
+                              getPropertyNode(property) == null ? thatRecord.getPropertyNode(property) : getPropertyNode(property));
+        } else if (thatPropertyType == null) {
+          // Add properties from 'this' not in 'that'
+          builder.addProperty(property, thisPropertyType, getPropertyNode(property));
+        }
+      }
+
+      for (String property : thatRecord.getProperties().keySet()) {
+        if (!properties.containsKey(property)) {
+          // Add properties from 'that' not in 'this'
+          builder.addProperty(property, thatRecord.getPropertyType(property), 
+                              thatRecord.getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    } else {
+      return super.getGreatestSubtypeHelper(that);
+    }
+  }
+
+2024-02-24 22:34:52,981 - Closure_46 - INFO - 编译失败
+2024-02-24 22:34:52,982 - Closure_46 - INFO - 错误: 需要class, interface或enum
+JSType getGreatestSubtypeHelper(JSType that) {
+2024-02-24 22:34:52,982 - Closure_46 - INFO - 补丁1 1 未成功编译
+2024-02-24 22:34:52,983 - Closure_46 - INFO - 开始验证补丁1 2:
+2024-02-24 22:34:52,983 - Closure_46 - INFO - 
+  }
+  JSType getGreatestSubtypeHelper(JSType that) {
+    if (that.isRecordType()) {
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+      RecordType thatRecord = that.toMaybeRecordType();
+
+      // Add all properties from 'this' record type
+      properties.forEach((property, type) -> builder.addProperty(property, getPropertyType(property), getPropertyNode(property)));
+      
+      // Add properties from 'that' which are not in 'this'
+      thatRecord.getProperties().forEach((property, type) -> {
+        if (!properties.containsKey(property)) {
+          builder.addProperty(property, type, thatRecord.getPropertyNode(property));
+        }
+      });
+      
+      return builder.build();
+    } else {
+      return super.getGreatestSubtypeHelper(that);
+    }
+  }
+
+2024-02-24 22:34:54,747 - Closure_46 - INFO - 编译失败
+2024-02-24 22:34:54,747 - Closure_46 - INFO - 错误: 需要class, interface或enum
+JSType getGreatestSubtypeHelper(JSType that) {
+2024-02-24 22:34:54,747 - Closure_46 - INFO - 补丁1 2 未成功编译
+2024-02-24 22:34:54,748 - Closure_46 - INFO - 开始验证补丁1 3:
+2024-02-24 22:34:54,748 - Closure_46 - INFO - 
+  }
+  JSType getGreatestSubtypeHelper(JSType that) {
+    if (that.isRecordType()) {
+      RecordType thatRecord = that.toMaybeRecordType();
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+
+      // Add unique properties from 'this'
+      for (String property : properties.keySet()) {
+        if (!thatRecord.hasProperty(property)) {
+          builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+        }
+      }
+
+      // Add unique properties from 'that'
+      for (String property : thatRecord.getProperties().keySet()) {
+        if (!properties.containsKey(property)) {
+          builder.addProperty(property, thatRecord.getPropertyType(property), thatRecord.getPropertyNode(property));
+        }
+      }
+
+      // Handle properties present in both 'this' and 'that'
+      for (String property : properties.keySet()) {
+        if (thatRecord.hasProperty(property)) {
+          JSType leastSupertype = JSType.getLeastSupertype(getPropertyType(property), thatRecord.getPropertyType(property));
+          builder.addProperty(property, leastSupertype,
+              getPropertyNode(property) == null ? thatRecord.getPropertyNode(property) : getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    } else {
+      return super.getGreatestSubtypeHelper(that);
+    }
+  }
+
+2024-02-24 22:34:56,510 - Closure_46 - INFO - 编译失败
+2024-02-24 22:34:56,510 - Closure_46 - INFO - 错误: 需要class, interface或enum
+JSType getGreatestSubtypeHelper(JSType that) {
+2024-02-24 22:34:56,510 - Closure_46 - INFO - 补丁1 3 未成功编译
+2024-02-24 22:34:56,511 - Closure_46 - INFO - 开始验证补丁1 4:
+2024-02-24 22:34:56,511 - Closure_46 - INFO - 
+  }
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isRecordType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+    Set<String> allProps = new HashSet<>(properties.keySet());
+    allProps.addAll(that.toMaybeRecordType().getOwnPropertyNames());
+    for (String property : allProps) {
+      JSType thisPropType = this.getPropertyType(property);
+      JSType thatPropType = that.toMaybeRecordType().getPropertyType(property);
+      if (thisPropType != null && thatPropType != null) {
+        if (thisPropType.isEquivalentTo(thatPropType)) {
+          builder.addProperty(property, thisPropType, getPropertyNode(property));
+        } else {
+          // Handle type conflict, potentially by assigning a supertype or an unknown type
+          builder.addProperty(property, getCommonSupertype(thisPropType, thatPropType), null);
+        }
+      } else {
+        if (thisPropType != null) {
+          builder.addProperty(property, thisPropType, getPropertyNode(property));
+        }
+        if (thatPropType != null) {
+          builder.addProperty(property, thatPropType, that.toMaybeRecordType().getPropertyNode(property));
+        }
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:34:58,300 - Closure_46 - INFO - 编译失败
+2024-02-24 22:34:58,300 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:34:58,300 - Closure_46 - INFO - 补丁1 4 未成功编译
+2024-02-24 22:34:58,301 - Closure_46 - INFO - 开始验证补丁1 5:
+2024-02-24 22:34:58,301 - Closure_46 - INFO - 
+  }
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isRecordType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+    // Add all properties from 'this' record type
+    for (String property : properties.keySet()) {
+      builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+    }
+    // Add all properties from 'that' record type, handling conflicts
+    for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+      JSType thatPropType = that.toMaybeRecordType().getPropertyType(property);
+      if (!builder.hasProperty(property)) {
+        builder.addProperty(property, thatPropType, that.toMaybeRecordType().getPropertyNode(property));
+      } else if (!builder.getPropertyType(property).isEquivalentTo(thatPropType)) {
+        // Handle type conflict, potentially by assigning a supertype or an unknown type
+        builder.addProperty(property, getCommonSupertype(builder.getPropertyType(property), thatPropType), null);
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:00,081 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:00,081 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:00,081 - Closure_46 - INFO - 补丁1 5 未成功编译
+2024-02-24 22:35:00,082 - Closure_46 - INFO - 开始验证补丁1 6:
+2024-02-24 22:35:00,082 - Closure_46 - INFO - 
+  }
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isRecordType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+    // Add all properties from both record types
+    for (String property : properties.keySet()) {
+      builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+    }
+    RecordType thatRecord = that.toMaybeRecordType();
+    for (String property : thatRecord.getOwnPropertyNames()) {
+      if (!properties.containsKey(property)) {
+        builder.addProperty(property, thatRecord.getPropertyType(property), thatRecord.getPropertyNode(property));
+      }
+    }
+    // Conflicting properties are not handled in this simplified version
+    return builder.build();
+  }
+
+2024-02-24 22:35:01,858 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:01,858 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:01,858 - Closure_46 - INFO - 补丁1 6 未成功编译
+2024-02-24 22:35:01,859 - Closure_46 - INFO - 开始验证补丁1 7:
+2024-02-24 22:35:01,859 - Closure_46 - INFO - 
+    return super.getLeastSupertype(that);
+  }
+
+2024-02-24 22:35:03,659 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:03,659 - Closure_46 - INFO - 错误: 非法的类型开始
+return super.getLeastSupertype(that);
+2024-02-24 22:35:03,660 - Closure_46 - INFO - 补丁1 7 未成功编译
+2024-02-24 22:35:03,661 - Closure_46 - INFO - 开始验证补丁1 8:
+2024-02-24 22:35:03,661 - Closure_46 - INFO - 
+    return builder.build();
+  }
+  @Override
+
+2024-02-24 22:35:05,433 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:05,434 - Closure_46 - INFO - 错误: 非法的类型开始
+return builder.build();
+2024-02-24 22:35:05,434 - Closure_46 - INFO - 补丁1 8 未成功编译
+2024-02-24 22:35:05,435 - Closure_46 - INFO - 开始验证补丁1 9:
+2024-02-24 22:35:05,435 - Closure_46 - INFO - 
+    return builder.build();
+  }
+  // Additional logic or methods could follow here, if necessary
+  @Override
+
+2024-02-24 22:35:07,215 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:07,215 - Closure_46 - INFO - 错误: 非法的类型开始
+return builder.build();
+2024-02-24 22:35:07,215 - Closure_46 - INFO - 补丁1 9 未成功编译
+2024-02-24 22:35:07,216 - Closure_46 - INFO - 开始验证补丁2 1:
+2024-02-24 22:35:07,216 - Closure_46 - INFO - 
+  }
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (that.isRecordType()) {
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+      RecordType thatRecord = that.toMaybeRecordType();
+
+      // Add all properties from `this` to the builder
+      for (String property : this.properties.keySet()) {
+        builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+      }
+
+      // Add properties from `that` that are not in `this`, and find least supertype for intersecting properties
+      for (String property : thatRecord.getProperties().keySet()) {
+        JSType thisPropertyType = this.getPropertyType(property);
+        JSType thatPropertyType = thatRecord.getPropertyType(property);
+        
+        if (!this.hasProperty(property)) {
+          builder.addProperty(property, thatPropertyType, thatRecord.getPropertyNode(property));
+        } else if (!thisPropertyType.isEquivalentTo(thatPropertyType)) {
+          JSType leastSupertype = thisPropertyType.getLeastSupertype(thatPropertyType);
+          builder.addProperty(property, leastSupertype, thatRecord.getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    } else {
+      return super.getLeastSupertype(that);
+    }
+  }
+
+2024-02-24 22:35:09,005 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:09,005 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:09,005 - Closure_46 - INFO - 补丁2 1 未成功编译
+2024-02-24 22:35:09,006 - Closure_46 - INFO - 开始验证补丁2 2:
+2024-02-24 22:35:09,006 - Closure_46 - INFO - 
+  }
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (that.isRecordType()) {
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+      RecordType thatRecord = that.toMaybeRecordType();
+
+      // Add all properties from `this` to the builder
+      for (String property : this.properties.keySet()) {
+        builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+      }
+
+      // Only add unique properties from `that` which are not in `this`
+      for (String property : thatRecord.getProperties().keySet()) {
+        if (!this.hasProperty(property)) {
+          builder.addProperty(property, thatRecord.getPropertyType(property), thatRecord.getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    } else {
+      return super.getLeastSupertype(that);
+    }
+  }
+
+2024-02-24 22:35:10,793 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:10,793 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:10,793 - Closure_46 - INFO - 补丁2 2 未成功编译
+2024-02-24 22:35:10,794 - Closure_46 - INFO - 开始验证补丁2 3:
+2024-02-24 22:35:10,794 - Closure_46 - INFO - 
+  }
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (that.isRecordType()) {
+      RecordType thatRecord = that.toMaybeRecordType();
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+
+      // Add all properties from both `this` and `that` to the builder without considering type conflicts
+      for(String property : this.properties.keySet()) {
+        builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+      }
+      for (String property : thatRecord.getProperties().keySet()) {
+        builder.addProperty(property, thatRecord.getPropertyType(property), thatRecord.getPropertyNode(property));
+      }
+
+      return builder.build();
+    } else {
+      return super.getLeastSupertype(that);
+    }
+  }
+
+2024-02-24 22:35:12,563 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:12,563 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:12,564 - Closure_46 - INFO - 补丁2 3 未成功编译
+2024-02-24 22:35:12,565 - Closure_46 - INFO - 开始验证补丁2 4:
+2024-02-24 22:35:12,565 - Closure_46 - INFO - 
+  }
+
+2024-02-24 22:35:14,346 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:14,346 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:14,346 - Closure_46 - INFO - 补丁2 4 未成功编译
+2024-02-24 22:35:14,347 - Closure_46 - INFO - 开始验证补丁2 5:
+2024-02-24 22:35:14,347 - Closure_46 - INFO - 
+  }
+  for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+    JSType thisPropType = this.getPropertyType(property);
+    JSType thatPropType = that.toMaybeRecordType().getPropertyType(property);
+    if (thisPropType == null || !thisPropType.isEquivalentTo(thatPropType)) {
+      JSType leastSupertype = thisPropType == null ? thatPropType : 
+                              thatPropType == null ? thisPropType :
+                              thisPropType.getLeastSupertype(thatPropType);
+      builder.addProperty(property, leastSupertype, that.toMaybeRecordType().getPropertyNode(property));
+    }
+  }
+  return builder.build();
+}
+
+2024-02-24 22:35:16,104 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:16,104 - Closure_46 - INFO - 错误: 需要class, interface或enum
+for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+2024-02-24 22:35:16,104 - Closure_46 - INFO - 补丁2 5 未成功编译
+2024-02-24 22:35:16,105 - Closure_46 - INFO - 开始验证补丁2 6:
+2024-02-24 22:35:16,105 - Closure_46 - INFO - 
+  }
+  // This implementation intentionally limits the least supertype to properties that are common between
+  // both records with exactly equivalent types. If this behavior is correct as per design, then it might 
+  // only require better documentation to clarify the functionality.
+  // If this behavior needs to be changed, refer to the alternative solutions.
+}
+
+2024-02-24 22:35:17,873 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:17,873 - Closure_46 - INFO - 错误: 需要class, interface或enum
+}
+2024-02-24 22:35:17,873 - Closure_46 - INFO - 补丁2 6 未成功编译
+2024-02-24 22:35:17,874 - Closure_46 - INFO - 开始验证补丁2 7:
+2024-02-24 22:35:17,874 - Closure_46 - INFO - 
+    }
+    for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+      if (!properties.containsKey(property)) {
+        builder.addProperty(property, that.toMaybeRecordType().getPropertyType(property),
+            that.toMaybeRecordType().getPropertyNode(property));
+      } else {
+        JSType thisType = getPropertyType(property);
+        JSType thatType = that.toMaybeRecordType().getPropertyType(property);
+        JSType leastSupertype = thisType.getLeastSupertype(thatType);
+        builder.addProperty(property, leastSupertype, null);
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:19,642 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:19,642 - Closure_46 - INFO - 错误: 需要class, interface或enum
+for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+2024-02-24 22:35:19,642 - Closure_46 - INFO - 补丁2 7 未成功编译
+2024-02-24 22:35:19,643 - Closure_46 - INFO - 开始验证补丁2 8:
+2024-02-24 22:35:19,643 - Closure_46 - INFO - 
+    }
+    for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+      JSType thatPropertyType = that.toMaybeRecordType().getPropertyType(property);
+      if (!properties.containsKey(property)) {
+        builder.addProperty(property, thatPropertyType, that.toMaybeRecordType().getPropertyNode(property));
+      }
+    }
+    for (String property : properties.keySet()) {
+      if (!that.toMaybeRecordType().hasProperty(property)) {
+        builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:21,416 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:21,416 - Closure_46 - INFO - 错误: 需要class, interface或enum
+for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+2024-02-24 22:35:21,416 - Closure_46 - INFO - 补丁2 8 未成功编译
+2024-02-24 22:35:21,417 - Closure_46 - INFO - 开始验证补丁2 9:
+2024-02-24 22:35:21,417 - Closure_46 - INFO - 
+    }
+    Set<String> allPropertyNames = new HashSet<>(properties.keySet());
+    allPropertyNames.addAll(that.toMaybeRecordType().getOwnPropertyNames());
+    for (String property : allPropertyNames) {
+      JSType supertypeProperty = properties.containsKey(property) ? getPropertyType(property) : that.toMaybeRecordType().getPropertyType(property);
+      if (that.toMaybeRecordType().hasProperty(property)) {
+        supertypeProperty = supertypeProperty.getLeastSupertype(that.toMaybeRecordType().getPropertyType(property));
+      }
+      builder.addProperty(property, supertypeProperty, getPropertyNode(property));
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:23,213 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:23,213 - Closure_46 - INFO - 错误: 需要class, interface或enum
+Set<String> allPropertyNames = new HashSet<>(properties.keySet());
+2024-02-24 22:35:23,213 - Closure_46 - INFO - 补丁2 9 未成功编译
+2024-02-24 22:35:23,214 - Closure_46 - INFO - 开始验证补丁3 1:
+2024-02-24 22:35:23,214 - Closure_46 - INFO - 
+    return registry.createUnionType(getPropertyType(property), that.toMaybeRecordType().getPropertyType(property));
+
+2024-02-24 22:35:24,954 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:24,954 - Closure_46 - INFO - 错误: 非法的类型开始
+return registry.createUnionType(getPropertyType(property), that.toMaybeRecordType().getPropertyType(property));
+2024-02-24 22:35:24,955 - Closure_46 - INFO - 补丁3 1 未成功编译
+2024-02-24 22:35:24,956 - Closure_46 - INFO - 开始验证补丁3 2:
+2024-02-24 22:35:24,956 - Closure_46 - INFO - 
+    return builder.addPropertiesFrom(that.toMaybeRecordType()).addPropertiesFrom(this).build();
+
+2024-02-24 22:35:26,736 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:26,736 - Closure_46 - INFO - 错误: 非法的类型开始
+return builder.addPropertiesFrom(that.toMaybeRecordType()).addPropertiesFrom(this).build();
+2024-02-24 22:35:26,736 - Closure_46 - INFO - 补丁3 2 未成功编译
+2024-02-24 22:35:26,737 - Closure_46 - INFO - 开始验证补丁3 3:
+2024-02-24 22:35:26,737 - Closure_46 - INFO - 
+    for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+        JSType thisPropType = getPropertyType(property);
+        JSType thatPropType = that.toMaybeRecordType().getPropertyType(property);
+        JSType leastSuperType = thisPropType == null ? thatPropType : 
+                                  (thatPropType == null ? thisPropType : 
+                                     registry.createUnionType(thisPropType, thatPropType));
+        builder.addProperty(property, leastSuperType, null);
+    }
+    return builder.build();
+
+2024-02-24 22:35:28,499 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:28,500 - Closure_46 - INFO - 错误: 非法的类型开始
+for (String property : that.toMaybeRecordType().getOwnPropertyNames()) {
+2024-02-24 22:35:28,500 - Closure_46 - INFO - 补丁3 3 未成功编译
+2024-02-24 22:35:28,501 - Closure_46 - INFO - 开始验证补丁3 4:
+2024-02-24 22:35:28,501 - Closure_46 - INFO - 
+  }
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isRecordType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+    // Combine properties from 'this' record type
+    for (String property : this.properties.keySet()) {
+      JSType thisPropertyType = this.getPropertyType(property);
+      // If 'that' also has the property, create union type
+      if (that.toMaybeRecordType().hasProperty(property)) {
+        JSType thatPropertyType = that.toMaybeRecordType().getPropertyType(property);
+        JSType unionType = thisPropertyType.getLeastSupertype(thatPropertyType);
+        builder.addProperty(property, unionType, this.getPropertyNode(property));
+      } else {
+        builder.addProperty(property, thisPropertyType, this.getPropertyNode(property));
+      }
+    }
+    // Include properties unique to 'that' record type
+    for (String property : that.toMaybeRecordType().getProperties()) {
+      if (!this.hasProperty(property)) {
+        builder.addProperty(property, that.toMaybeRecordType().getPropertyType(property),
+            that.toMaybeRecordType().getPropertyNode(property));
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:30,250 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:30,250 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:30,251 - Closure_46 - INFO - 补丁3 4 未成功编译
+2024-02-24 22:35:30,252 - Closure_46 - INFO - 开始验证补丁3 5:
+2024-02-24 22:35:30,252 - Closure_46 - INFO - 
+  }
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isRecordType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+    for (String property : properties.keySet()) {
+      JSType propType = getPropertyType(property);
+      if (that.toMaybeRecordType().hasProperty(property)) {
+        JSType thatPropType = that.toMaybeRecordType().getPropertyType(property);
+        builder.addProperty(property, getLeastSupertype(propType, thatPropType),
+            getPropertyNode(property));
+      } else {
+        builder.addProperty(property, propType, getPropertyNode(property));
+      }
+    }
+    for (String property : that.toMaybeRecordType().getProperties()) {
+      if (!properties.containsKey(property)) {
+        builder.addProperty(property, that.toMaybeRecordType().getPropertyType(property),
+            that.toMaybeRecordType().getPropertyNode(property));
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:32,009 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:32,009 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:32,009 - Closure_46 - INFO - 补丁3 5 未成功编译
+2024-02-24 22:35:32,010 - Closure_46 - INFO - 开始验证补丁3 6:
+2024-02-24 22:35:32,010 - Closure_46 - INFO - 
+  }
+
+  @Override
+  public JSType getLeastSupertype(JSType that) {
+    if (!that.isRecordType()) {
+      return super.getLeastSupertype(that);
+    }
+    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+    for (String property : properties.keySet()) {
+      builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+    }
+    // Add properties from 'that' that are not in 'this'
+    for (String property : that.toMaybeRecordType().getProperties()) {
+      if (!properties.containsKey(property)) {
+        builder.addProperty(property, that.toMaybeRecordType().getPropertyType(property),
+            that.toMaybeRecordType().getPropertyNode(property));
+      }
+    }
+    return builder.build();
+  }
+
+2024-02-24 22:35:33,791 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:33,791 - Closure_46 - INFO - 错误: 需要class, interface或enum
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:33,791 - Closure_46 - INFO - 补丁3 6 未成功编译
+2024-02-24 22:35:33,792 - Closure_46 - INFO - 开始验证补丁3 7:
+2024-02-24 22:35:33,792 - Closure_46 - INFO - 
+    @Override
+    public JSType getLeastSupertype(JSType that) {
+      if (!that.isRecordType()) {
+        return super.getLeastSupertype(that);
+      }
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+      RecordType otherRecordType = that.toMaybeRecordType();
+
+      // Handle properties present in this record type.
+      for (String property : properties.keySet()) {
+        JSType thisPropertyType = getPropertyType(property);
+        JSType otherPropertyType = otherRecordType.hasProperty(property)
+                                    ? otherRecordType.getPropertyType(property)
+                                    : null;
+
+        if (otherPropertyType != null) {
+          // Combine types if property present in both record types.
+          JSType combinedType = thisPropertyType.getLeastSupertype(otherPropertyType);
+          builder.addProperty(property, combinedType, getPropertyNode(property));
+        } else {
+          // Include property as is, if it only exists in this record type.
+          builder.addProperty(property, thisPropertyType, getPropertyNode(property));
+        }
+      }
+
+      // Handle properties only present in the other record type.
+      for (String property : otherRecordType.getOwnPropertyNames()) {
+        if (!this.hasProperty(property)) {
+          builder.addProperty(property, otherRecordType.getPropertyType(property),
+              otherRecordType.getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    }
+
+2024-02-24 22:35:35,763 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:35,763 - Closure_46 - INFO - 错误: 已在类 RecordType中定义了方法 getLeastSupertype(JSType)
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:35,763 - Closure_46 - INFO - 补丁3 7 未成功编译
+2024-02-24 22:35:35,764 - Closure_46 - INFO - 开始验证补丁3 8:
+2024-02-24 22:35:35,764 - Closure_46 - INFO - 
+    @Override
+    public JSType getLeastSupertype(JSType that) {
+      if (!that.isRecordType()) {
+        return super.getLeastSupertype(that);
+      }
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+      RecordType otherRecordType = that.toMaybeRecordType();
+
+      // Add all properties from this record type.
+      for (String property : properties.keySet()) {
+        builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+      }
+
+      // Add all properties from the other record type.
+      for (String property : otherRecordType.getOwnPropertyNames()) {
+        if (!builder.hasProperty(property)) {
+          builder.addProperty(property, otherRecordType.getPropertyType(property),
+              otherRecordType.getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    }
+
+2024-02-24 22:35:37,680 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:37,680 - Closure_46 - INFO - 错误: 已在类 RecordType中定义了方法 getLeastSupertype(JSType)
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:37,680 - Closure_46 - INFO - 补丁3 8 未成功编译
+2024-02-24 22:35:37,681 - Closure_46 - INFO - 开始验证补丁3 9:
+2024-02-24 22:35:37,681 - Closure_46 - INFO - 
+    @Override
+    public JSType getLeastSupertype(JSType that) {
+      if (!that.isRecordType()) {
+        return super.getLeastSupertype(that);
+      }
+      RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+      RecordType otherRecordType = that.toMaybeRecordType();
+
+      // Add properties from this record type.
+      for (String property : properties.keySet()) {
+        JSType thisPropertyType = getPropertyType(property);
+        if (otherRecordType.hasProperty(property)) {
+          JSType otherPropertyType = otherRecordType.getPropertyType(property);
+          if (thisPropertyType.isEquivalentTo(otherPropertyType)) {
+            builder.addProperty(property, thisPropertyType, getPropertyNode(property));
+          }
+        } else {
+          // Include the property from 'this' record type even if not present in 'that'
+          builder.addProperty(property, thisPropertyType, getPropertyNode(property));
+        }
+      }
+
+      // Add properties exclusive to 'that' record type.
+      for (String property : otherRecordType.getOwnPropertyNames()) {
+        if (!this.hasProperty(property)) {
+          builder.addProperty(property, otherRecordType.getPropertyType(property),
+              otherRecordType.getPropertyNode(property));
+        }
+      }
+
+      return builder.build();
+    }
+
+2024-02-24 22:35:39,615 - Closure_46 - INFO - 编译失败
+2024-02-24 22:35:39,615 - Closure_46 - INFO - 错误: 已在类 RecordType中定义了方法 getLeastSupertype(JSType)
+public JSType getLeastSupertype(JSType that) {
+2024-02-24 22:35:39,615 - Closure_46 - INFO - 补丁3 9 未成功编译
+2024-02-24 22:35:39,615 - Closure_46 - INFO - Closure_46 未成功修复

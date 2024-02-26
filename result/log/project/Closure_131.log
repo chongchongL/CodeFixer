@@ -1,0 +1,456 @@
+2024-02-26 01:23:49,725 - Closure_131 - INFO - rm -rf /home/chongchong/d4j-project/Closure_131
+2024-02-26 01:23:49,726 - Closure_131 - INFO - 删除 Closure 131b 成功
+2024-02-26 01:23:49,726 - Closure_131 - INFO - defects4j checkout -p Closure -v 131b -w /home/chongchong/d4j-project/Closure_131
+2024-02-26 01:23:52,141 - Closure_131 - INFO - checkout Closure 131b 成功
+2024-02-26 01:24:04,301 - Closure_131 - INFO - 编译成功
+2024-02-26 01:25:03,740 - Closure_131 - INFO - 测试失败
+2024-02-26 01:25:03,740 - Closure_131 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.ConvertToDottedPropertiesTest::testQuotedProps
+  - com.google.javascript.jscomp.ConvertToDottedPropertiesTest::testDoNotConvert
+
+2024-02-26 01:25:04,781 - Closure_131 - INFO - 它的bug类型为:
+2024-02-26 01:25:04,781 - Closure_131 - INFO - 4
+2024-02-26 01:27:06,173 - Closure_131 - INFO - 开始验证补丁1 1:
+2024-02-26 01:27:06,173 - Closure_131 - INFO - 
+    if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+      return false;
+    }
+
+    for (int i = 1; i < length; i++) {
+      if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+        return false;
+      }
+    }
+
+2024-02-26 01:27:08,010 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:08,010 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:08,010 - Closure_131 - INFO - 补丁1 1 未成功编译
+2024-02-26 01:27:08,011 - Closure_131 - INFO - 开始验证补丁1 2:
+2024-02-26 01:27:08,012 - Closure_131 - INFO - 
+    if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+      return false;
+    }
+
+    for (int i = 1; i < length; i++) {
+      if (!Character.isLetterOrDigit(s.charAt(i)) && s.charAt(i) != '_' && s.charAt(i) != '$') {
+        return false;
+      }
+    }
+
+2024-02-26 01:27:09,862 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:09,862 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:09,862 - Closure_131 - INFO - 补丁1 2 未成功编译
+2024-02-26 01:27:09,863 - Closure_131 - INFO - 开始验证补丁1 3:
+2024-02-26 01:27:09,863 - Closure_131 - INFO - 
+    if (length == 0 || (!(s.charAt(0) == '_' || s.charAt(0) == '$') && !Character.isLetter(s.charAt(0)))) {
+      return false;
+    }
+
+    for (int i = 1; i < length; i++) {
+      if (!Character.isLetterOrDigit(s.charAt(i)) && s.charAt(i) != '_' && s.charAt(i) != '$') {
+        return false;
+      }
+    }
+
+2024-02-26 01:27:11,706 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:11,706 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:11,706 - Closure_131 - INFO - 补丁1 3 未成功编译
+2024-02-26 01:27:11,707 - Closure_131 - INFO - 开始验证补丁1 4:
+2024-02-26 01:27:11,707 - Closure_131 - INFO - 
+if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+    return false;
+}
+
+for (int i = 1; i < length; i++) {
+    if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+        return false;
+    }
+}
+
+2024-02-26 01:27:13,557 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:13,557 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:13,557 - Closure_131 - INFO - 补丁1 4 未成功编译
+2024-02-26 01:27:13,558 - Closure_131 - INFO - 开始验证补丁1 5:
+2024-02-26 01:27:13,558 - Closure_131 - INFO - 
+if (length == 0 || !isJSIdentifierStart(s.charAt(0))) {
+    return false;
+}
+
+for (int i = 1; i < length; i++) {
+    if (!isJSIdentifierPart(s.charAt(i))) {
+        return false;
+    }
+}
+
+2024-02-26 01:27:15,400 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:15,400 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:15,400 - Closure_131 - INFO - 补丁1 5 未成功编译
+2024-02-26 01:27:15,401 - Closure_131 - INFO - 开始验证补丁1 6:
+2024-02-26 01:27:15,401 - Closure_131 - INFO - 
+if (length == 0 || !isValidJSIdentifierStart(s.charAt(0))) {
+    return false;
+}
+
+for (int i = 1; i < length; i++) {
+    if (!isValidJSIdentifierPart(s.charAt(i))) {
+        return false;
+    }
+}
+
+2024-02-26 01:27:17,236 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:17,236 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:17,236 - Closure_131 - INFO - 补丁1 6 未成功编译
+2024-02-26 01:27:17,237 - Closure_131 - INFO - 开始验证补丁1 7:
+2024-02-26 01:27:17,237 - Closure_131 - INFO - 
+    if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+      return false;
+    }
+    for (int i = 1; i < length; i++) {
+      if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+        return false;
+      }
+    }
+
+2024-02-26 01:27:19,088 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:19,088 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:19,088 - Closure_131 - INFO - 补丁1 7 未成功编译
+2024-02-26 01:27:19,089 - Closure_131 - INFO - 开始验证补丁1 8:
+2024-02-26 01:27:19,089 - Closure_131 - INFO - 
+    if (length == 0 || !isJSIdentifierStart(s.charAt(0))) {
+      return false;
+    }
+    for (int i = 1; i < length; i++) {
+      if (!isJSIdentifierPart(s.charAt(i))) {
+        return false;
+      }
+    }
+
+2024-02-26 01:27:20,922 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:20,923 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:20,923 - Closure_131 - INFO - 补丁1 8 未成功编译
+2024-02-26 01:27:20,924 - Closure_131 - INFO - 开始验证补丁1 9:
+2024-02-26 01:27:20,924 - Closure_131 - INFO - 
+    if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+      return false;
+    }
+    for (int i = 1; i < length; i++) {
+      if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+        return false;
+      }
+    }
+
+2024-02-26 01:27:20,924 - Closure_131 - INFO - 补丁1 9为重复的补丁
+2024-02-26 01:27:20,925 - Closure_131 - INFO - 开始验证补丁2 1:
+2024-02-26 01:27:20,925 - Closure_131 - INFO - 
+if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+    return false;
+}
+
+for (int i = 1; i < length; i++) {
+    if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+        return false;
+    }
+}
+
+2024-02-26 01:27:20,925 - Closure_131 - INFO - 补丁2 1为重复的补丁
+2024-02-26 01:27:20,926 - Closure_131 - INFO - 开始验证补丁2 2:
+2024-02-26 01:27:20,926 - Closure_131 - INFO - 
+if (length == 0 || !isValidJSIdentifierStart(s.charAt(0))) {
+    return false;
+}
+
+for (int i = 1; i < length; i++) {
+    if (!isValidJSIdentifierPart(s.charAt(i))) {
+        return false;
+    }
+}
+
+// Additional methods needed for JavaScript-specific rules:
+// boolean isValidJSIdentifierStart(char c) { /* ... */ }
+// boolean isValidJSIdentifierPart(char c) { /* ... */ }
+
+2024-02-26 01:27:22,734 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:22,734 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:22,735 - Closure_131 - INFO - 补丁2 2 未成功编译
+2024-02-26 01:27:22,736 - Closure_131 - INFO - 开始验证补丁2 3:
+2024-02-26 01:27:22,736 - Closure_131 - INFO - 
+if (length == 0 || !isJavaScriptIdentifierStart(s.charAt(0))) {
+    return false;
+}
+
+for (int i = 1; i < length; i++) {
+    if (!isJavaScriptIdentifierPart(s.charAt(i))) {
+        return false;
+    }
+}
+
+// Assume isJavaScriptIdentifierStart and isJavaScriptIdentifierPart are methods
+// implemented to check if a character is valid in a JavaScript identifier according to
+// the JavaScript specification, potentially including Unicode character handling.
+
+2024-02-26 01:27:24,572 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:24,572 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:24,572 - Closure_131 - INFO - 补丁2 3 未成功编译
+2024-02-26 01:27:24,573 - Closure_131 - INFO - 开始验证补丁2 4:
+2024-02-26 01:27:24,573 - Closure_131 - INFO - 
+if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+2024-02-26 01:27:26,429 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:26,429 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:26,429 - Closure_131 - INFO - 补丁2 4 未成功编译
+2024-02-26 01:27:26,430 - Closure_131 - INFO - 开始验证补丁2 5:
+2024-02-26 01:27:26,430 - Closure_131 - INFO - 
+if (length == 0 || (!Character.isLetter(s.charAt(0)) && s.charAt(0) != '_' && s.charAt(0) != '$')) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!Character.isLetterOrDigit(s.charAt(i)) && s.charAt(i) != '_' && s.charAt(i) != '$') {
+    return false;
+  }
+}
+
+2024-02-26 01:27:28,279 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:28,279 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:28,279 - Closure_131 - INFO - 补丁2 5 未成功编译
+2024-02-26 01:27:28,280 - Closure_131 - INFO - 开始验证补丁2 6:
+2024-02-26 01:27:28,280 - Closure_131 - INFO - 
+if (length == 0 || (!isJSIdentifierStart(s.charAt(0)))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!isJSIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+// Additional helper methods would need to be implemented: isJSIdentifierStart and isJSIdentifierPart
+
+2024-02-26 01:27:30,135 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:30,135 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:30,135 - Closure_131 - INFO - 补丁2 6 未成功编译
+2024-02-26 01:27:30,136 - Closure_131 - INFO - 开始验证补丁2 7:
+2024-02-26 01:27:30,136 - Closure_131 - INFO - 
+      if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+        return false;
+      }
+      for (int i = 1; i < length; i++) {
+        if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+          return false;
+        }
+      }
+
+2024-02-26 01:27:31,974 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:31,975 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:31,975 - Closure_131 - INFO - 补丁2 7 未成功编译
+2024-02-26 01:27:31,976 - Closure_131 - INFO - 开始验证补丁2 8:
+2024-02-26 01:27:31,976 - Closure_131 - INFO - 
+      if (length == 0 || !(Character.isLetter(s.charAt(0)) || s.charAt(0) == '_' || s.charAt(0) == '$')) {
+        return false;
+      }
+      for (int i = 1; i < length; i++) {
+        if (!(Character.isLetterOrDigit(s.charAt(i)) || s.charAt(i) == '_' || s.charAt(i) == '$')) {
+          return false;
+        }
+      }
+
+2024-02-26 01:27:33,813 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:33,813 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:33,813 - Closure_131 - INFO - 补丁2 8 未成功编译
+2024-02-26 01:27:33,815 - Closure_131 - INFO - 开始验证补丁2 9:
+2024-02-26 01:27:33,815 - Closure_131 - INFO - 
+      // This snippet requires the implementation of custom methods checkIdentifierStart and checkIdentifierPart to comply with JavaScript specifications
+      if (length == 0 || !checkIdentifierStart(s.charAt(0))) {
+        return false;
+      }
+      for (int i = 1; i < length; i++) {
+        if (!checkIdentifierPart(s.charAt(i))) {
+          return false;
+        }
+      }
+
+2024-02-26 01:27:35,646 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:35,646 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:35,646 - Closure_131 - INFO - 补丁2 9 未成功编译
+2024-02-26 01:27:35,647 - Closure_131 - INFO - 开始验证补丁3 1:
+2024-02-26 01:27:35,647 - Closure_131 - INFO - 
+if (length == 0 || !isJSIdentifierStart(s.charAt(0))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!isJSIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+2024-02-26 01:27:37,494 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:37,494 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:37,494 - Closure_131 - INFO - 补丁3 1 未成功编译
+2024-02-26 01:27:37,495 - Closure_131 - INFO - 开始验证补丁3 2:
+2024-02-26 01:27:37,495 - Closure_131 - INFO - 
+if (length == 0 || !isValidJSIdentifierStart(s.charAt(0))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!isValidJSIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+2024-02-26 01:27:39,341 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:39,341 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:39,341 - Closure_131 - INFO - 补丁3 2 未成功编译
+2024-02-26 01:27:39,342 - Closure_131 - INFO - 开始验证补丁3 3:
+2024-02-26 01:27:39,342 - Closure_131 - INFO - 
+if (length == 0 || !isIdentifierStart(s.charAt(0))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!isIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+2024-02-26 01:27:41,188 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:41,188 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:41,188 - Closure_131 - INFO - 补丁3 3 未成功编译
+2024-02-26 01:27:41,190 - Closure_131 - INFO - 开始验证补丁3 4:
+2024-02-26 01:27:41,190 - Closure_131 - INFO - 
+if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+2024-02-26 01:27:41,190 - Closure_131 - INFO - 补丁3 4为重复的补丁
+2024-02-26 01:27:41,191 - Closure_131 - INFO - 开始验证补丁3 5:
+2024-02-26 01:27:41,191 - Closure_131 - INFO - 
+if (length == 0 || !isJSIdentifierStart(s.charAt(0))) {
+  return false;
+}
+
+for (int i = 1; i < length; i++) {
+  if (!isJSIdentifierPart(s.charAt(i))) {
+    return false;
+  }
+}
+
+// Further implementation required for isJSIdentifierStart and isJSIdentifierPart methods
+
+2024-02-26 01:27:43,032 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:43,032 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:43,032 - Closure_131 - INFO - 补丁3 5 未成功编译
+2024-02-26 01:27:43,033 - Closure_131 - INFO - 开始验证补丁3 6:
+2024-02-26 01:27:43,033 - Closure_131 - INFO - 
+if (length == 0 || !s.matches("^[a-zA-Z_$][a-zA-Z\\d_$]*$")) {
+  return false;
+}
+
+// No loop necessary as regex checks the entire string
+
+2024-02-26 01:27:44,882 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:44,882 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:44,882 - Closure_131 - INFO - 补丁3 6 未成功编译
+2024-02-26 01:27:44,883 - Closure_131 - INFO - 开始验证补丁3 7:
+2024-02-26 01:27:44,883 - Closure_131 - INFO - 
+      if (length == 0 || !isJSIdentifierStart(s.charAt(0))) {
+        return false;
+      }
+
+      for (int i = 1; i < length; i++) {
+        if (!isJSIdentifierPart(s.charAt(i))) {
+          return false;
+        }
+      }
+
+2024-02-26 01:27:46,736 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:46,736 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:46,736 - Closure_131 - INFO - 补丁3 7 未成功编译
+2024-02-26 01:27:46,737 - Closure_131 - INFO - 开始验证补丁3 8:
+2024-02-26 01:27:46,737 - Closure_131 - INFO - 
+    private static boolean isJSIdentifierStart(char ch) {
+        // Checks if the character is a valid identifier start in JavaScript
+        // (to be implemented with JavaScript rules)
+    }
+
+    private static boolean isJSIdentifierPart(char ch) {
+        // Checks if the character is a valid identifier part in JavaScript
+        // (to be implemented with JavaScript rules)
+    }
+
+2024-02-26 01:27:48,604 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:48,604 - Closure_131 - INFO - 错误: 非法的表达式开始
+private static boolean isJSIdentifierStart(char ch) {
+2024-02-26 01:27:48,604 - Closure_131 - INFO - 补丁3 8 未成功编译
+2024-02-26 01:27:48,605 - Closure_131 - INFO - 开始验证补丁3 9:
+2024-02-26 01:27:48,605 - Closure_131 - INFO - 
+      // Assuming the Character methods are overridden to fit JS identifier rules
+      if (length == 0 || !Character.isJavaIdentifierStart(s.charAt(0))) {
+        return false;
+      }
+
+      for (int i = 1; i < length; i++) {
+        if (!Character.isJavaIdentifierPart(s.charAt(i))) {
+          return false;
+        }
+      }
+
+2024-02-26 01:27:50,437 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:50,437 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:50,437 - Closure_131 - INFO - 补丁3 9 未成功编译
+2024-02-26 01:27:50,438 - Closure_131 - INFO - 开始验证补丁3 10:
+2024-02-26 01:27:50,438 - Closure_131 - INFO - 
+      if (length == 0 || !(isASCIIAlphabetic(s.charAt(0)) || s.charAt(0) == '$' || s.charAt(0) == '_')) {
+        return false;
+      }
+
+      for (int i = 1; i < length; i++) {
+        if (!(isASCIIAlphanumeric(s.charAt(i)) || s.charAt(i) == '$' || s.charAt(i) == '_')) {
+          return false;
+        }
+      }
+
+2024-02-26 01:27:52,272 - Closure_131 - INFO - 编译失败
+2024-02-26 01:27:52,272 - Closure_131 - INFO - 错误: 不是语句
+!Character.isJavaIdentifierPart(s.charAt(i))) {
+2024-02-26 01:27:52,272 - Closure_131 - INFO - 补丁3 10 未成功编译
+2024-02-26 01:27:52,272 - Closure_131 - INFO - Closure_131 未成功修复

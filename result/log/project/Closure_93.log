@@ -1,0 +1,49 @@
+2024-02-24 00:43:31,699 - Closure_93 - INFO - rm -rf /home/chongchong/d4j-project/Closure_93
+2024-02-24 00:43:31,700 - Closure_93 - INFO - 删除 Closure 93b 成功
+2024-02-24 00:43:31,700 - Closure_93 - INFO - defects4j checkout -p Closure -v 93b -w /home/chongchong/d4j-project/Closure_93
+2024-02-24 00:43:33,204 - Closure_93 - INFO - checkout Closure 93b 成功
+2024-02-24 00:43:39,496 - Closure_93 - INFO - 编译成功
+2024-02-24 00:44:08,399 - Closure_93 - INFO - 测试失败
+2024-02-24 00:44:08,399 - Closure_93 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules4
+
+2024-02-24 00:44:09,270 - Closure_93 - INFO - 它的bug类型为:
+2024-02-24 00:44:09,270 - Closure_93 - INFO - 1
+2024-02-24 00:44:49,213 - Closure_93 - INFO - Closure_93 未成功修复
+2024-02-24 14:15:59,367 - Closure_93 - INFO - rm -rf /home/chongchong/d4j-project/Closure_93
+2024-02-24 14:15:59,398 - Closure_93 - INFO - 删除 Closure 93b 成功
+2024-02-24 14:15:59,398 - Closure_93 - INFO - defects4j checkout -p Closure -v 93b -w /home/chongchong/d4j-project/Closure_93
+2024-02-24 14:16:01,078 - Closure_93 - INFO - checkout Closure 93b 成功
+2024-02-24 14:16:07,297 - Closure_93 - INFO - 编译成功
+2024-02-24 14:16:36,001 - Closure_93 - INFO - 测试失败
+2024-02-24 14:16:36,001 - Closure_93 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules4
+
+2024-02-24 14:16:36,873 - Closure_93 - INFO - 它的bug类型为:
+2024-02-24 14:16:36,873 - Closure_93 - INFO - 1
+2024-02-24 14:17:27,693 - Closure_93 - INFO - 开始验证补丁1 1:
+2024-02-24 14:17:27,693 - Closure_93 - INFO - 
+int indexOfDot = namespace.indexOf('.');
+
+2024-02-24 14:17:28,935 - Closure_93 - INFO - 编译成功
+2024-02-24 14:17:57,429 - Closure_93 - INFO - 测试失败
+2024-02-24 14:17:57,429 - Closure_93 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules4
+
+2024-02-24 14:17:57,859 - Closure_93 - INFO - 选择失败的测试用例为:
+2024-02-24 14:17:57,859 - Closure_93 - INFO - com.google.javascript.jscomp.ProcessClosurePrimitivesTest::testProvideInIndependentModules4
+2024-02-24 14:17:57,859 - Closure_93 - INFO - 失败的测试代码为:
+2024-02-24 14:17:57,859 - Closure_93 - INFO -     test(
+
+2024-02-24 14:17:57,859 - Closure_93 - INFO - 失败信息为:
+2024-02-24 14:17:57,859 - Closure_93 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-24 14:17:57,859 - Closure_93 - INFO - 补丁1 1测试失败
+2024-02-24 14:17:57,860 - Closure_93 - INFO - 开始验证补丁1 2:
+2024-02-24 14:17:57,860 - Closure_93 - INFO - 
+// Assuming `namespace` is a valid variable in the scope
+int indexOfDot = namespace.lastIndexOf('.');
+
+2024-02-24 14:17:59,093 - Closure_93 - INFO - 编译成功
+2024-02-24 14:18:28,100 - Closure_93 - INFO - 测试成功
+2024-02-24 14:18:28,100 - Closure_93 - INFO - 补丁1 2 通过了所有的测试用例

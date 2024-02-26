@@ -1,0 +1,18 @@
+2024-02-23 23:15:44,530 - Lang_16 - INFO - rm -rf /home/chongchong/d4j-project/Lang_16
+2024-02-23 23:15:44,531 - Lang_16 - INFO - 删除 Lang 16b 成功
+2024-02-23 23:15:44,531 - Lang_16 - INFO - defects4j checkout -p Lang -v 16b -w /home/chongchong/d4j-project/Lang_16
+2024-02-23 23:15:47,850 - Lang_16 - INFO - checkout Lang 16b 成功
+2024-02-23 23:15:52,482 - Lang_16 - INFO - 编译成功
+2024-02-23 23:16:01,562 - Lang_16 - INFO - 测试失败
+2024-02-23 23:16:01,563 - Lang_16 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber
+
+2024-02-23 23:16:02,428 - Lang_16 - INFO - 它的bug类型为:
+2024-02-23 23:16:02,428 - Lang_16 - INFO - 1
+2024-02-23 23:17:05,872 - Lang_16 - INFO - 开始验证补丁1 1:
+2024-02-23 23:17:05,872 - Lang_16 - INFO - 
+if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+
+2024-02-23 23:17:06,964 - Lang_16 - INFO - 编译成功
+2024-02-23 23:17:16,132 - Lang_16 - INFO - 测试成功
+2024-02-23 23:17:16,132 - Lang_16 - INFO - 补丁1 1 通过了所有的测试用例

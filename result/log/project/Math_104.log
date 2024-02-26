@@ -1,0 +1,286 @@
+2024-02-24 01:19:58,760 - Math_104 - INFO - rm -rf /home/chongchong/d4j-project/Math_104
+2024-02-24 01:19:58,761 - Math_104 - INFO - 删除 Math 104b 成功
+2024-02-24 01:19:58,761 - Math_104 - INFO - defects4j checkout -p Math -v 104b -w /home/chongchong/d4j-project/Math_104
+2024-02-24 01:20:01,107 - Math_104 - INFO - checkout Math 104b 成功
+2024-02-24 01:20:06,732 - Math_104 - INFO - 编译成功
+2024-02-24 01:20:13,666 - Math_104 - INFO - 测试失败
+2024-02-24 01:20:13,666 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 01:20:14,574 - Math_104 - INFO - 它的bug类型为:
+2024-02-24 01:20:14,574 - Math_104 - INFO - 1
+2024-02-24 01:20:50,271 - Math_104 - INFO - Math_104 未成功修复
+2024-02-24 11:53:31,046 - Math_104 - INFO - rm -rf /home/chongchong/d4j-project/Math_104
+2024-02-24 11:53:31,066 - Math_104 - INFO - 删除 Math 104b 成功
+2024-02-24 11:53:31,066 - Math_104 - INFO - defects4j checkout -p Math -v 104b -w /home/chongchong/d4j-project/Math_104
+2024-02-24 11:53:33,433 - Math_104 - INFO - checkout Math 104b 成功
+2024-02-24 11:53:38,963 - Math_104 - INFO - 编译成功
+2024-02-24 11:53:45,763 - Math_104 - INFO - 测试失败
+2024-02-24 11:53:45,763 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:53:46,689 - Math_104 - INFO - 它的bug类型为:
+2024-02-24 11:53:46,689 - Math_104 - INFO - 1
+2024-02-24 11:54:20,370 - Math_104 - INFO - 开始验证补丁1 1:
+2024-02-24 11:54:20,370 - Math_104 - INFO - 
+   private static final double DEFAULT_EPSILON = 1e-9;
+   
+2024-02-24 11:54:23,404 - Math_104 - INFO - 编译成功
+2024-02-24 11:54:30,196 - Math_104 - INFO - 测试失败
+2024-02-24 11:54:30,196 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:54:30,649 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:54:30,649 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:54:30,649 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:54:30,649 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:54:30,649 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:54:30,649 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205588240382>
+
+2024-02-24 11:54:30,649 - Math_104 - INFO - 补丁1 1测试失败
+2024-02-24 11:54:30,650 - Math_104 - INFO - 开始验证补丁1 2:
+2024-02-24 11:54:30,650 - Math_104 - INFO - 
+   private static final double DEFAULT_EPSILON = 1e-8;
+   
+2024-02-24 11:54:33,701 - Math_104 - INFO - 编译成功
+2024-02-24 11:54:40,551 - Math_104 - INFO - 测试失败
+2024-02-24 11:54:40,552 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:54:41,006 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:54:41,006 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:54:41,006 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:54:41,006 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:54:41,006 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:54:41,006 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205587649603>
+
+2024-02-24 11:54:41,006 - Math_104 - INFO - 补丁1 2测试失败
+2024-02-24 11:54:41,007 - Math_104 - INFO - 开始验证补丁1 3:
+2024-02-24 11:54:41,007 - Math_104 - INFO - 
+   private static final double DEFAULT_EPSILON = 5e-8; // Example value, the actual needed value may vary
+   
+2024-02-24 11:54:44,056 - Math_104 - INFO - 编译成功
+2024-02-24 11:54:50,899 - Math_104 - INFO - 测试失败
+2024-02-24 11:54:50,899 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:54:51,354 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:54:51,354 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:54:51,354 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:54:51,354 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:54:51,354 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:54:51,354 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205579969473>
+
+2024-02-24 11:54:51,354 - Math_104 - INFO - 补丁1 3测试失败
+2024-02-24 11:54:51,355 - Math_104 - INFO - 开始验证补丁1 4:
+2024-02-24 11:54:51,355 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-9;
+
+2024-02-24 11:54:54,373 - Math_104 - INFO - 编译成功
+2024-02-24 11:55:01,196 - Math_104 - INFO - 测试失败
+2024-02-24 11:55:01,196 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:55:01,650 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:55:01,650 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:55:01,650 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:55:01,650 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:55:01,650 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:55:01,650 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205588240382>
+
+2024-02-24 11:55:01,650 - Math_104 - INFO - 补丁1 4测试失败
+2024-02-24 11:55:01,651 - Math_104 - INFO - 开始验证补丁1 5:
+2024-02-24 11:55:01,651 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-8;
+
+2024-02-24 11:55:04,652 - Math_104 - INFO - 编译成功
+2024-02-24 11:55:11,420 - Math_104 - INFO - 测试失败
+2024-02-24 11:55:11,420 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:55:11,878 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:55:11,878 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:55:11,878 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:55:11,878 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:55:11,878 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:55:11,878 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205587649603>
+
+2024-02-24 11:55:11,878 - Math_104 - INFO - 补丁1 5测试失败
+2024-02-24 11:55:11,879 - Math_104 - INFO - 开始验证补丁1 6:
+2024-02-24 11:55:11,879 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-10;
+
+2024-02-24 11:55:14,904 - Math_104 - INFO - 编译成功
+2024-02-24 11:55:21,693 - Math_104 - INFO - 测试失败
+2024-02-24 11:55:21,693 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:55:22,151 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:55:22,151 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:55:22,151 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:55:22,151 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:55:22,151 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:55:22,151 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.632120558828258>
+
+2024-02-24 11:55:22,151 - Math_104 - INFO - 补丁1 6测试失败
+2024-02-24 11:55:22,152 - Math_104 - INFO - 开始验证补丁1 7:
+2024-02-24 11:55:22,152 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-9;
+
+2024-02-24 11:55:22,152 - Math_104 - INFO - 补丁1 7为重复的补丁
+2024-02-24 11:55:22,153 - Math_104 - INFO - 开始验证补丁1 8:
+2024-02-24 11:55:22,153 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 10e-9;
+
+2024-02-24 11:55:25,158 - Math_104 - INFO - 编译成功
+2024-02-24 11:55:31,929 - Math_104 - INFO - 测试失败
+2024-02-24 11:55:31,929 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:55:32,392 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:55:32,392 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:55:32,392 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:55:32,392 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:55:32,393 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:55:32,393 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205587649603>
+
+2024-02-24 11:55:32,393 - Math_104 - INFO - 补丁1 8测试失败
+2024-02-24 11:55:32,394 - Math_104 - INFO - 开始验证补丁1 9:
+2024-02-24 11:55:32,394 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-8;
+
+2024-02-24 11:55:32,394 - Math_104 - INFO - 补丁1 9为重复的补丁
+2024-02-24 11:55:32,394 - Math_104 - INFO - 开始验证补丁2 1:
+2024-02-24 11:55:32,395 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-9;
+
+2024-02-24 11:55:32,395 - Math_104 - INFO - 补丁2 1为重复的补丁
+2024-02-24 11:55:32,395 - Math_104 - INFO - 开始验证补丁2 2:
+2024-02-24 11:55:32,395 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-10;
+
+2024-02-24 11:55:32,395 - Math_104 - INFO - 补丁2 2为重复的补丁
+2024-02-24 11:55:32,396 - Math_104 - INFO - 开始验证补丁2 3:
+2024-02-24 11:55:32,396 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-12;
+
+2024-02-24 11:55:35,404 - Math_104 - INFO - 编译成功
+2024-02-24 11:55:42,170 - Math_104 - INFO - 测试失败
+2024-02-24 11:55:42,170 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:55:42,630 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:55:42,631 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:55:42,631 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:55:42,631 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:55:42,631 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:55:42,631 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205588285393>
+
+2024-02-24 11:55:42,631 - Math_104 - INFO - 补丁2 3测试失败
+2024-02-24 11:55:42,632 - Math_104 - INFO - 开始验证补丁2 4:
+2024-02-24 11:55:42,632 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-9;
+
+2024-02-24 11:55:42,632 - Math_104 - INFO - 补丁2 4为重复的补丁
+2024-02-24 11:55:42,633 - Math_104 - INFO - 开始验证补丁2 5:
+2024-02-24 11:55:42,633 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-10;
+
+2024-02-24 11:55:42,633 - Math_104 - INFO - 补丁2 5为重复的补丁
+2024-02-24 11:55:42,633 - Math_104 - INFO - 开始验证补丁2 6:
+2024-02-24 11:55:42,633 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-8;
+
+2024-02-24 11:55:42,633 - Math_104 - INFO - 补丁2 6为重复的补丁
+2024-02-24 11:55:42,634 - Math_104 - INFO - 开始验证补丁3 4:
+2024-02-24 11:55:42,634 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-9;
+
+2024-02-24 11:55:42,634 - Math_104 - INFO - 补丁3 4为重复的补丁
+2024-02-24 11:55:42,635 - Math_104 - INFO - 开始验证补丁3 5:
+2024-02-24 11:55:42,635 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = Math.pow(10, -9);
+
+2024-02-24 11:55:45,650 - Math_104 - INFO - 编译成功
+2024-02-24 11:55:52,429 - Math_104 - INFO - 测试失败
+2024-02-24 11:55:52,429 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:55:52,883 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:55:52,883 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:55:52,883 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:55:52,883 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:55:52,883 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:55:52,883 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205588240382>
+
+2024-02-24 11:55:52,883 - Math_104 - INFO - 补丁3 5测试失败
+2024-02-24 11:55:52,884 - Math_104 - INFO - 开始验证补丁3 6:
+2024-02-24 11:55:52,884 - Math_104 - INFO - 
+/** Maximum allowed numerical error (10^-8). */
+private static final double DEFAULT_EPSILON = 10e-9;
+
+2024-02-24 11:55:55,900 - Math_104 - INFO - 编译成功
+2024-02-24 11:56:02,798 - Math_104 - INFO - 测试失败
+2024-02-24 11:56:02,798 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:56:03,258 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:56:03,258 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:56:03,258 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:56:03,258 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:56:03,258 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:56:03,258 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205587649603>
+
+2024-02-24 11:56:03,258 - Math_104 - INFO - 补丁3 6测试失败
+2024-02-24 11:56:03,259 - Math_104 - INFO - 开始验证补丁3 7:
+2024-02-24 11:56:03,259 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 1e-9;
+
+2024-02-24 11:56:03,259 - Math_104 - INFO - 补丁3 7为重复的补丁
+2024-02-24 11:56:03,260 - Math_104 - INFO - 开始验证补丁3 8:
+2024-02-24 11:56:03,260 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 10e-10;
+
+2024-02-24 11:56:06,294 - Math_104 - INFO - 编译成功
+2024-02-24 11:56:13,083 - Math_104 - INFO - 测试失败
+2024-02-24 11:56:13,083 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:56:13,537 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:56:13,537 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:56:13,537 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:56:13,537 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:56:13,537 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:56:13,537 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205588240382>
+
+2024-02-24 11:56:13,537 - Math_104 - INFO - 补丁3 8测试失败
+2024-02-24 11:56:13,538 - Math_104 - INFO - 开始验证补丁3 9:
+2024-02-24 11:56:13,538 - Math_104 - INFO - 
+private static final double DEFAULT_EPSILON = 0.000000001;
+
+2024-02-24 11:56:16,563 - Math_104 - INFO - 编译成功
+2024-02-24 11:56:23,406 - Math_104 - INFO - 测试失败
+2024-02-24 11:56:23,406 - Math_104 - INFO - Failing tests: 1
+  - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+
+2024-02-24 11:56:23,861 - Math_104 - INFO - 选择失败的测试用例为:
+2024-02-24 11:56:23,861 - Math_104 - INFO - org.apache.commons.math.special.GammaTest::testRegularizedGammaPositivePositive
+2024-02-24 11:56:23,861 - Math_104 - INFO - 失败的测试代码为:
+2024-02-24 11:56:23,861 - Math_104 - INFO -         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+
+2024-02-24 11:56:23,861 - Math_104 - INFO - 失败信息为:
+2024-02-24 11:56:23,861 - Math_104 - INFO - junit.framework.AssertionFailedError: expected:<0.632120558828558> but was:<0.6321205588240382>
+
+2024-02-24 11:56:23,861 - Math_104 - INFO - 补丁3 9测试失败
+2024-02-24 11:56:23,861 - Math_104 - INFO - Math_104 未成功修复

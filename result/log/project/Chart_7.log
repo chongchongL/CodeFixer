@@ -1,0 +1,97 @@
+2024-02-25 23:14:49,383 - Chart_7 - INFO - checkout Chart 7b 成功
+2024-02-25 23:14:54,764 - Chart_7 - INFO - 编译成功
+2024-02-25 23:15:02,525 - Chart_7 - INFO - 测试失败
+2024-02-25 23:15:02,525 - Chart_7 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimePeriodValuesTests::testGetMaxMiddleIndex
+
+2024-02-25 23:15:03,395 - Chart_7 - INFO - 它的bug类型为:
+2024-02-25 23:15:03,395 - Chart_7 - INFO - 4
+2024-02-25 23:15:51,349 - Chart_7 - INFO - 开始验证补丁1 1:
+2024-02-25 23:15:51,349 - Chart_7 - INFO - 
+long s = getDataItem(index).getPeriod().getStart().getTime();
+long e = getDataItem(index).getPeriod().getEnd().getTime();
+
+2024-02-25 23:15:51,937 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:51,937 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:51,937 - Chart_7 - INFO - 补丁1 1 未成功编译
+2024-02-25 23:15:51,938 - Chart_7 - INFO - 开始验证补丁1 2:
+2024-02-25 23:15:51,938 - Chart_7 - INFO - 
+long s = getDataItem(this.minMiddleIndex).getPeriod().getStart().getTime();
+long e = getDataItem(index).getPeriod().getEnd().getTime();
+
+2024-02-25 23:15:52,539 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:52,539 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:52,539 - Chart_7 - INFO - 补丁1 2 未成功编译
+2024-02-25 23:15:52,540 - Chart_7 - INFO - 开始验证补丁1 3:
+2024-02-25 23:15:52,540 - Chart_7 - INFO - 
+long s = getDataItem(this.minMiddleIndex).getPeriod().getStart().getTime();
+long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd().getTime();
+
+2024-02-25 23:15:53,127 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:53,127 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:53,128 - Chart_7 - INFO - 补丁1 3 未成功编译
+2024-02-25 23:15:53,129 - Chart_7 - INFO - 开始验证补丁1 4:
+2024-02-25 23:15:53,129 - Chart_7 - INFO - 
+   long s = getDataItem(index).getPeriod().getStart().getTime();
+   long e = getDataItem(index).getPeriod().getEnd().getTime();
+   
+2024-02-25 23:15:53,725 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:53,725 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:53,725 - Chart_7 - INFO - 补丁1 4 未成功编译
+2024-02-25 23:15:53,726 - Chart_7 - INFO - 开始验证补丁1 5:
+2024-02-25 23:15:53,726 - Chart_7 - INFO - 
+   long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart().getTime();
+   long e = getDataItem(this.maxMiddleIndex).getPeriod().getEnd().getTime();
+   
+2024-02-25 23:15:54,323 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:54,323 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:54,323 - Chart_7 - INFO - 补丁1 5 未成功编译
+2024-02-25 23:15:54,324 - Chart_7 - INFO - 开始验证补丁1 6:
+2024-02-25 23:15:54,324 - Chart_7 - INFO - 
+   long s = getDataItem(index).getStart().getTime();
+   long e = getDataItem(index).getEnd().getTime();
+   
+2024-02-25 23:15:54,916 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:54,916 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:54,917 - Chart_7 - INFO - 补丁1 6 未成功编译
+2024-02-25 23:15:54,918 - Chart_7 - INFO - 开始验证补丁1 7:
+2024-02-25 23:15:54,918 - Chart_7 - INFO - 
+long s = getDataItem(index).getPeriod().getStart().getTime();
+long e = getDataItem(index).getPeriod().getEnd().getTime();
+
+2024-02-25 23:15:54,918 - Chart_7 - INFO - 补丁1 7为重复的补丁
+2024-02-25 23:15:54,919 - Chart_7 - INFO - 开始验证补丁1 8:
+2024-02-25 23:15:54,919 - Chart_7 - INFO - 
+long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart().getTime();
+long e = getDataItem(this.maxMiddleIndex).getPeriod().getEnd().getTime();
+
+2024-02-25 23:15:55,509 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:55,509 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:55,509 - Chart_7 - INFO - 补丁1 8 未成功编译
+2024-02-25 23:15:55,510 - Chart_7 - INFO - 开始验证补丁1 9:
+2024-02-25 23:15:55,510 - Chart_7 - INFO - 
+long s = calculateStart(index).getTime();
+long e = calculateEnd(index).getTime();
+
+2024-02-25 23:15:56,100 - Chart_7 - INFO - 编译失败
+2024-02-25 23:15:56,100 - Chart_7 - INFO - 错误: 非法的表达式开始
+.getTime();
+2024-02-25 23:15:56,100 - Chart_7 - INFO - 补丁1 9 未成功编译
+2024-02-25 23:15:56,101 - Chart_7 - INFO - 开始验证补丁2 1:
+2024-02-25 23:15:56,101 - Chart_7 - INFO - 
+    long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart()
+        .getTime();
+    long e = getDataItem(this.maxMiddleIndex).getPeriod().getEnd()
+        .getTime();
+
+2024-02-25 23:15:57,324 - Chart_7 - INFO - 编译成功
+2024-02-25 23:16:05,062 - Chart_7 - INFO - 测试成功
+2024-02-25 23:16:05,062 - Chart_7 - INFO - 补丁2 1 通过了所有的测试用例

@@ -1,0 +1,122 @@
+2024-02-24 01:28:33,432 - Time_16 - INFO - rm -rf /home/chongchong/d4j-project/Time_16
+2024-02-24 01:28:33,433 - Time_16 - INFO - 删除 Time 16b 成功
+2024-02-24 01:28:33,433 - Time_16 - INFO - defects4j checkout -p Time -v 16b -w /home/chongchong/d4j-project/Time_16
+2024-02-24 01:28:34,690 - Time_16 - INFO - checkout Time 16b 成功
+2024-02-24 01:28:40,870 - Time_16 - INFO - 编译成功
+2024-02-24 01:28:48,459 - Time_16 - INFO - 测试失败
+2024-02-24 01:28:48,459 - Time_16 - INFO - Failing tests: 7
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-24 01:28:49,358 - Time_16 - INFO - 它的bug类型为:
+2024-02-24 01:28:49,358 - Time_16 - INFO - 1
+2024-02-24 01:29:31,012 - Time_16 - INFO - Time_16 未成功修复
+2024-02-24 12:31:42,370 - Time_16 - INFO - rm -rf /home/chongchong/d4j-project/Time_16
+2024-02-24 12:31:42,392 - Time_16 - INFO - 删除 Time 16b 成功
+2024-02-24 12:31:42,392 - Time_16 - INFO - defects4j checkout -p Time -v 16b -w /home/chongchong/d4j-project/Time_16
+2024-02-24 12:31:43,644 - Time_16 - INFO - checkout Time 16b 成功
+2024-02-24 12:31:49,770 - Time_16 - INFO - 编译成功
+2024-02-24 12:31:57,340 - Time_16 - INFO - 测试失败
+2024-02-24 12:31:57,340 - Time_16 - INFO - Failing tests: 7
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-24 12:31:58,252 - Time_16 - INFO - 它的bug类型为:
+2024-02-24 12:31:58,252 - Time_16 - INFO - 1
+2024-02-24 12:32:49,769 - Time_16 - INFO - 开始验证补丁1 1:
+2024-02-24 12:32:49,769 - Time_16 - INFO - 
+instantLocal, chrono, iLocale, iPivotYear != null ? iPivotYear : 2004, iDefaultYear);
+
+2024-02-24 12:32:52,206 - Time_16 - INFO - 编译成功
+2024-02-24 12:32:59,938 - Time_16 - INFO - 测试失败
+2024-02-24 12:32:59,938 - Time_16 - INFO - Failing tests: 7
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-24 12:33:00,389 - Time_16 - INFO - 选择失败的测试用例为:
+2024-02-24 12:33:00,389 - Time_16 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+2024-02-24 12:33:00,389 - Time_16 - INFO - 失败的测试代码为:
+2024-02-24 12:33:00,389 - Time_16 - INFO -         assertEquals(new MutableDateTime(2004, 5, 1, 12, 20, 30, 0, TOKYO), result);
+
+2024-02-24 12:33:00,389 - Time_16 - INFO - 失败信息为:
+2024-02-24 12:33:00,389 - Time_16 - INFO - junit.framework.AssertionFailedError: expected:<2004-05-01T12:20:30.000+09:00> but was:<2000-05-01T12:20:30.000+09:00>
+
+2024-02-24 12:33:00,389 - Time_16 - INFO - 补丁1 1测试失败
+2024-02-24 12:33:00,390 - Time_16 - INFO - 开始验证补丁1 2:
+2024-02-24 12:33:00,390 - Time_16 - INFO - 
+instantLocal, chrono, iLocale, iDefaultYear != null ? iDefaultYear : 2004, iDefaultYear);
+
+2024-02-24 12:33:01,058 - Time_16 - INFO - 编译失败
+2024-02-24 12:33:01,058 - Time_16 - INFO - 错误: 不可比较的类型: int和<空值>
+instantLocal, chrono, iLocale, iDefaultYear != null ? iDefaultYear : 2004, iDefaultYear);
+2024-02-24 12:33:01,058 - Time_16 - INFO - 补丁1 2 未成功编译
+2024-02-24 12:33:01,059 - Time_16 - INFO - 开始验证补丁1 4:
+2024-02-24 12:33:01,059 - Time_16 - INFO - 
+instantLocal, chrono, iLocale, 2004, iDefaultYear);
+
+2024-02-24 12:33:03,502 - Time_16 - INFO - 编译成功
+2024-02-24 12:33:11,170 - Time_16 - INFO - 测试失败
+2024-02-24 12:33:11,170 - Time_16 - INFO - Failing tests: 7
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-24 12:33:11,627 - Time_16 - INFO - 选择失败的测试用例为:
+2024-02-24 12:33:11,627 - Time_16 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+2024-02-24 12:33:11,627 - Time_16 - INFO - 失败的测试代码为:
+2024-02-24 12:33:11,627 - Time_16 - INFO -         assertEquals(new MutableDateTime(2004, 5, 1, 12, 20, 30, 0, TOKYO), result);
+
+2024-02-24 12:33:11,627 - Time_16 - INFO - 失败信息为:
+2024-02-24 12:33:11,627 - Time_16 - INFO - junit.framework.AssertionFailedError: expected:<2004-05-01T12:20:30.000+09:00> but was:<2000-05-01T12:20:30.000+09:00>
+
+2024-02-24 12:33:11,627 - Time_16 - INFO - 补丁1 4测试失败
+2024-02-24 12:33:11,628 - Time_16 - INFO - 开始验证补丁1 5:
+2024-02-24 12:33:11,628 - Time_16 - INFO - 
+instantLocal, chrono, iLocale, iPivotYear, iDefaultYear);
+
+2024-02-24 12:33:14,053 - Time_16 - INFO - 编译成功
+2024-02-24 12:33:21,783 - Time_16 - INFO - 测试失败
+2024-02-24 12:33:21,783 - Time_16 - INFO - Failing tests: 7
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseStartYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseEndYear
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_withDefaultYear_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthDay_feb29
+  - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_parseEndYear
+
+2024-02-24 12:33:22,225 - Time_16 - INFO - 选择失败的测试用例为:
+2024-02-24 12:33:22,225 - Time_16 - INFO - org.joda.time.format.TestDateTimeFormatter::testParseInto_monthOnly_baseStartYear
+2024-02-24 12:33:22,225 - Time_16 - INFO - 失败的测试代码为:
+2024-02-24 12:33:22,225 - Time_16 - INFO -         assertEquals(new MutableDateTime(2004, 5, 1, 12, 20, 30, 0, TOKYO), result);
+
+2024-02-24 12:33:22,225 - Time_16 - INFO - 失败信息为:
+2024-02-24 12:33:22,225 - Time_16 - INFO - junit.framework.AssertionFailedError: expected:<2004-05-01T12:20:30.000+09:00> but was:<2000-05-01T12:20:30.000+09:00>
+
+2024-02-24 12:33:22,225 - Time_16 - INFO - 补丁1 5测试失败
+2024-02-24 12:33:22,226 - Time_16 - INFO - 开始验证补丁1 6:
+2024-02-24 12:33:22,226 - Time_16 - INFO - 
+instantLocal, chrono, iLocale, iPivotYear, 2004);
+
+2024-02-24 12:33:24,662 - Time_16 - INFO - 编译成功
+2024-02-24 12:33:32,282 - Time_16 - INFO - 测试成功
+2024-02-24 12:33:32,282 - Time_16 - INFO - 补丁1 6 通过了所有的测试用例

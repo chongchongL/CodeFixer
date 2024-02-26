@@ -1,0 +1,258 @@
+2024-02-24 23:37:01,044 - Chart_17 - INFO - rm -rf /home/chongchong/d4j-project/Chart_17
+2024-02-24 23:37:01,045 - Chart_17 - INFO - 删除 Chart 17b 成功
+2024-02-24 23:37:01,045 - Chart_17 - INFO - defects4j checkout -p Chart -v 17b -w /home/chongchong/d4j-project/Chart_17
+2024-02-24 23:37:04,067 - Chart_17 - INFO - checkout Chart 17b 成功
+2024-02-24 23:37:09,369 - Chart_17 - INFO - 编译成功
+2024-02-24 23:37:16,893 - Chart_17 - INFO - 测试失败
+2024-02-24 23:37:16,893 - Chart_17 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testBug1832432
+
+2024-02-24 23:37:17,761 - Chart_17 - INFO - 它的bug类型为:
+2024-02-24 23:37:17,761 - Chart_17 - INFO - 2
+2024-02-24 23:37:57,212 - Chart_17 - INFO - 开始验证补丁1 1:
+2024-02-24 23:37:57,212 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:37:58,467 - Chart_17 - INFO - 编译成功
+2024-02-24 23:38:05,998 - Chart_17 - INFO - 测试失败
+2024-02-24 23:38:05,998 - Chart_17 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testBug1832432
+
+2024-02-24 23:38:06,429 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:38:06,429 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testBug1832432
+2024-02-24 23:38:06,429 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:38:06,429 - Chart_17 - INFO -             s2 = (TimeSeries) s1.clone();
+
+2024-02-24 23:38:06,429 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:38:06,429 - Chart_17 - INFO - java.lang.IllegalArgumentException: Requires start <= end.
+
+2024-02-24 23:38:06,429 - Chart_17 - INFO - 补丁1 1测试失败
+2024-02-24 23:38:06,430 - Chart_17 - INFO - 开始验证补丁1 2:
+2024-02-24 23:38:06,430 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:07,658 - Chart_17 - INFO - 编译成功
+2024-02-24 23:38:15,676 - Chart_17 - INFO - 测试失败
+2024-02-24 23:38:15,676 - Chart_17 - INFO - Failing tests: 3
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone2
+
+2024-02-24 23:38:16,112 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:38:16,112 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testClone
+2024-02-24 23:38:16,112 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:38:16,112 - Chart_17 - INFO -             clone = (TimeSeries) series.clone();
+
+2024-02-24 23:38:16,112 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:38:16,112 - Chart_17 - INFO - java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+
+2024-02-24 23:38:16,112 - Chart_17 - INFO - 补丁1 2测试失败
+2024-02-24 23:38:16,113 - Chart_17 - INFO - 开始验证补丁1 3:
+2024-02-24 23:38:16,113 - Chart_17 - INFO - 
+Object clone = createCopy(0, 1);
+
+2024-02-24 23:38:17,349 - Chart_17 - INFO - 编译成功
+2024-02-24 23:38:25,074 - Chart_17 - INFO - 测试失败
+2024-02-24 23:38:25,074 - Chart_17 - INFO - Failing tests: 3
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone2
+
+2024-02-24 23:38:25,509 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:38:25,509 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testClone
+2024-02-24 23:38:25,509 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:38:25,509 - Chart_17 - INFO -             clone = (TimeSeries) series.clone();
+
+2024-02-24 23:38:25,509 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:38:25,509 - Chart_17 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 23:38:25,509 - Chart_17 - INFO - 补丁1 3测试失败
+2024-02-24 23:38:25,510 - Chart_17 - INFO - 开始验证补丁1 4:
+2024-02-24 23:38:25,510 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:25,510 - Chart_17 - INFO - 补丁1 4为重复的补丁
+2024-02-24 23:38:25,511 - Chart_17 - INFO - 开始验证补丁1 5:
+2024-02-24 23:38:25,511 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:25,511 - Chart_17 - INFO - 补丁1 5为重复的补丁
+2024-02-24 23:38:25,512 - Chart_17 - INFO - 开始验证补丁1 6:
+2024-02-24 23:38:25,512 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount()); // Assuming getItemCount() is the exclusive end index
+
+2024-02-24 23:38:26,738 - Chart_17 - INFO - 编译成功
+2024-02-24 23:38:34,305 - Chart_17 - INFO - 测试失败
+2024-02-24 23:38:34,305 - Chart_17 - INFO - Failing tests: 3
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone2
+
+2024-02-24 23:38:34,737 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:38:34,737 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testClone
+2024-02-24 23:38:34,737 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:38:34,737 - Chart_17 - INFO -             clone = (TimeSeries) series.clone();
+
+2024-02-24 23:38:34,737 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:38:34,737 - Chart_17 - INFO - java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+
+2024-02-24 23:38:34,737 - Chart_17 - INFO - 补丁1 6测试失败
+2024-02-24 23:38:34,738 - Chart_17 - INFO - 开始验证补丁1 7:
+2024-02-24 23:38:34,738 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:34,738 - Chart_17 - INFO - 补丁1 7为重复的补丁
+2024-02-24 23:38:34,739 - Chart_17 - INFO - 开始验证补丁1 8:
+2024-02-24 23:38:34,739 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:34,739 - Chart_17 - INFO - 补丁1 8为重复的补丁
+2024-02-24 23:38:34,740 - Chart_17 - INFO - 开始验证补丁1 9:
+2024-02-24 23:38:34,740 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() + 1);
+
+2024-02-24 23:38:35,998 - Chart_17 - INFO - 编译成功
+2024-02-24 23:38:43,619 - Chart_17 - INFO - 测试失败
+2024-02-24 23:38:43,619 - Chart_17 - INFO - Failing tests: 3
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone2
+
+2024-02-24 23:38:44,046 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:38:44,046 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testClone
+2024-02-24 23:38:44,046 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:38:44,046 - Chart_17 - INFO -             clone = (TimeSeries) series.clone();
+
+2024-02-24 23:38:44,046 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:38:44,046 - Chart_17 - INFO - java.lang.IndexOutOfBoundsException: Index: 3, Size: 3
+
+2024-02-24 23:38:44,046 - Chart_17 - INFO - 补丁1 9测试失败
+2024-02-24 23:38:44,047 - Chart_17 - INFO - 开始验证补丁2 1:
+2024-02-24 23:38:44,047 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:44,047 - Chart_17 - INFO - 补丁2 1为重复的补丁
+2024-02-24 23:38:44,052 - Chart_17 - INFO - 开始验证补丁2 2:
+2024-02-24 23:38:44,052 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:44,052 - Chart_17 - INFO - 补丁2 2为重复的补丁
+2024-02-24 23:38:44,053 - Chart_17 - INFO - 开始验证补丁2 3:
+2024-02-24 23:38:44,053 - Chart_17 - INFO - 
+Object clone = createCopy(0, correctEndIndex(getItemCount()));
+
+2024-02-24 23:38:44,806 - Chart_17 - INFO - 编译失败
+2024-02-24 23:38:44,806 - Chart_17 - INFO - 错误: 找不到符号
+Object clone = createCopy(0, correctEndIndex(getItemCount()));
+2024-02-24 23:38:44,806 - Chart_17 - INFO - 补丁2 3 未成功编译
+2024-02-24 23:38:44,807 - Chart_17 - INFO - 开始验证补丁2 4:
+2024-02-24 23:38:44,807 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:44,807 - Chart_17 - INFO - 补丁2 4为重复的补丁
+2024-02-24 23:38:44,808 - Chart_17 - INFO - 开始验证补丁2 5:
+2024-02-24 23:38:44,808 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:44,808 - Chart_17 - INFO - 补丁2 5为重复的补丁
+2024-02-24 23:38:44,809 - Chart_17 - INFO - 开始验证补丁2 6:
+2024-02-24 23:38:44,809 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() + 1);
+
+2024-02-24 23:38:44,809 - Chart_17 - INFO - 补丁2 6为重复的补丁
+2024-02-24 23:38:44,810 - Chart_17 - INFO - 开始验证补丁2 7:
+2024-02-24 23:38:44,810 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:44,810 - Chart_17 - INFO - 补丁2 7为重复的补丁
+2024-02-24 23:38:44,811 - Chart_17 - INFO - 开始验证补丁2 8:
+2024-02-24 23:38:44,811 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:44,811 - Chart_17 - INFO - 补丁2 8为重复的补丁
+2024-02-24 23:38:44,812 - Chart_17 - INFO - 开始验证补丁2 9:
+2024-02-24 23:38:44,812 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:44,812 - Chart_17 - INFO - 补丁2 9为重复的补丁
+2024-02-24 23:38:44,813 - Chart_17 - INFO - 开始验证补丁3 1:
+2024-02-24 23:38:44,813 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:44,813 - Chart_17 - INFO - 补丁3 1为重复的补丁
+2024-02-24 23:38:44,814 - Chart_17 - INFO - 开始验证补丁3 2:
+2024-02-24 23:38:44,814 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:44,814 - Chart_17 - INFO - 补丁3 2为重复的补丁
+2024-02-24 23:38:44,815 - Chart_17 - INFO - 开始验证补丁3 3:
+2024-02-24 23:38:44,815 - Chart_17 - INFO - 
+Object clone = super.clone();
+
+2024-02-24 23:38:46,067 - Chart_17 - INFO - 编译成功
+2024-02-24 23:38:53,657 - Chart_17 - INFO - 测试失败
+2024-02-24 23:38:53,657 - Chart_17 - INFO - Failing tests: 4
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone
+  - org.jfree.data.time.junit.TimeSeriesTests::testClone2
+  - org.jfree.data.time.junit.TimeSeriesTests::testBug1832432
+
+2024-02-24 23:38:54,082 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:38:54,082 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testClone
+2024-02-24 23:38:54,082 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:38:54,082 - Chart_17 - INFO -         assertEquals(42, seriesValue);
+
+2024-02-24 23:38:54,082 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:38:54,082 - Chart_17 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 23:38:54,082 - Chart_17 - INFO - 补丁3 3测试失败
+2024-02-24 23:38:54,083 - Chart_17 - INFO - 开始验证补丁3 4:
+2024-02-24 23:38:54,084 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:38:54,084 - Chart_17 - INFO - 补丁3 4为重复的补丁
+2024-02-24 23:38:54,084 - Chart_17 - INFO - 开始验证补丁3 5:
+2024-02-24 23:38:54,084 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:38:54,085 - Chart_17 - INFO - 补丁3 5为重复的补丁
+2024-02-24 23:38:54,085 - Chart_17 - INFO - 开始验证补丁3 6:
+2024-02-24 23:38:54,085 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1); // Assuming inclusive end index
+
+2024-02-24 23:38:55,327 - Chart_17 - INFO - 编译成功
+2024-02-24 23:39:02,757 - Chart_17 - INFO - 测试失败
+2024-02-24 23:39:02,757 - Chart_17 - INFO - Failing tests: 2
+  - org.jfree.data.time.junit.MonthTests::testParseMonth
+  - org.jfree.data.time.junit.TimeSeriesTests::testBug1832432
+
+2024-02-24 23:39:03,195 - Chart_17 - INFO - 选择失败的测试用例为:
+2024-02-24 23:39:03,195 - Chart_17 - INFO - org.jfree.data.time.junit.TimeSeriesTests::testBug1832432
+2024-02-24 23:39:03,195 - Chart_17 - INFO - 失败的测试代码为:
+2024-02-24 23:39:03,195 - Chart_17 - INFO -             s2 = (TimeSeries) s1.clone();
+
+2024-02-24 23:39:03,195 - Chart_17 - INFO - 失败信息为:
+2024-02-24 23:39:03,195 - Chart_17 - INFO - java.lang.IllegalArgumentException: Requires start <= end.
+
+2024-02-24 23:39:03,195 - Chart_17 - INFO - 补丁3 6测试失败
+2024-02-24 23:39:03,196 - Chart_17 - INFO - 开始验证补丁3 7:
+2024-02-24 23:39:03,196 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount() - 1);
+
+2024-02-24 23:39:03,196 - Chart_17 - INFO - 补丁3 7为重复的补丁
+2024-02-24 23:39:03,197 - Chart_17 - INFO - 开始验证补丁3 8:
+2024-02-24 23:39:03,197 - Chart_17 - INFO - 
+Object clone = createCopy(0, getItemCount());
+
+2024-02-24 23:39:03,197 - Chart_17 - INFO - 补丁3 8为重复的补丁
+2024-02-24 23:39:03,198 - Chart_17 - INFO - 开始验证补丁3 9:
+2024-02-24 23:39:03,198 - Chart_17 - INFO - 
+Object clone = createCopy();
+
+2024-02-24 23:39:03,947 - Chart_17 - INFO - 编译失败
+2024-02-24 23:39:03,947 - Chart_17 - INFO - 错误: 对于createCopy(), 找不到合适的方法
+Object clone = createCopy();
+2024-02-24 23:39:03,947 - Chart_17 - INFO - 补丁3 9 未成功编译
+2024-02-24 23:39:03,947 - Chart_17 - INFO - Chart_17 未成功修复

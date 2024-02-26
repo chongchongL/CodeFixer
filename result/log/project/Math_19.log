@@ -1,0 +1,194 @@
+2024-02-25 12:47:58,138 - Math_19 - INFO - rm -rf /home/chongchong/d4j-project/Math_19
+2024-02-25 12:47:58,139 - Math_19 - INFO - 删除 Math 19b 成功
+2024-02-25 12:47:58,139 - Math_19 - INFO - defects4j checkout -p Math -v 19b -w /home/chongchong/d4j-project/Math_19
+2024-02-25 12:48:01,597 - Math_19 - INFO - checkout Math 19b 成功
+2024-02-25 12:48:08,507 - Math_19 - INFO - 编译成功
+2024-02-25 12:48:45,471 - Math_19 - INFO - 测试失败
+2024-02-25 12:48:45,471 - Math_19 - INFO - Failing tests: 1
+  - org.apache.commons.math3.optimization.direct.CMAESOptimizerTest::testBoundaryRangeTooLarge
+
+2024-02-25 12:48:46,387 - Math_19 - INFO - 它的bug类型为:
+2024-02-25 12:48:46,387 - Math_19 - INFO - 3
+2024-02-25 12:49:35,773 - Math_19 - INFO - 开始验证补丁1 1:
+2024-02-25 12:49:35,773 - Math_19 - INFO - 
+if (largeEnoughToCauseOverflow(lB, uB)) {
+    throw new NumberIsTooLargeException(...); // appropriate parameters should be passed here
+}
+
+2024-02-25 12:49:36,401 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:36,401 - Math_19 - INFO - 错误: 非法的表达式开始
+throw new NumberIsTooLargeException(...); // appropriate parameters should be passed here
+2024-02-25 12:49:36,401 - Math_19 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:49:36,402 - Math_19 - INFO - 开始验证补丁1 2:
+2024-02-25 12:49:36,402 - Math_19 - INFO - 
+if (uB - lB > MAX_RANGE) {
+    throw new NumberIsTooLargeException(lB, uB, false);
+}
+
+2024-02-25 12:49:37,220 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:37,220 - Math_19 - INFO - 错误: 二元运算符 '-' 的操作数类型
+if (uB - lB > MAX_RANGE) {
+2024-02-25 12:49:37,220 - Math_19 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:49:37,222 - Math_19 - INFO - 开始验证补丁1 3:
+2024-02-25 12:49:37,222 - Math_19 - INFO - 
+if (!boundaryRangeIsValid(lB, uB)) {
+    throw new NumberIsTooLargeException("Boundary range is too large", lB, uB);
+}
+
+2024-02-25 12:49:38,048 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:38,048 - Math_19 - INFO - 错误: 找不到符号
+if (!boundaryRangeIsValid(lB, uB)) {
+2024-02-25 12:49:38,048 - Math_19 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:49:38,049 - Math_19 - INFO - 开始验证补丁1 4:
+2024-02-25 12:49:38,049 - Math_19 - INFO - 
+if (uB - lB > MAX_RANGE) {
+    throw new NumberIsTooLargeException(lB, uB, false);
+}
+
+2024-02-25 12:49:38,049 - Math_19 - INFO - 补丁1 4为重复的补丁
+2024-02-25 12:49:38,050 - Math_19 - INFO - 开始验证补丁1 5:
+2024-02-25 12:49:38,050 - Math_19 - INFO - 
+if (Double.isInfinite(lB) || Double.isInfinite(uB) || lB >= uB) {
+    throw new NumberIsTooLargeException(lB, uB);
+}
+
+2024-02-25 12:49:38,869 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:38,869 - Math_19 - INFO - 错误: 对于isInfinite(double[]), 找不到合适的方法
+if (Double.isInfinite(lB) || Double.isInfinite(uB) || lB >= uB) {
+2024-02-25 12:49:38,869 - Math_19 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:49:38,871 - Math_19 - INFO - 开始验证补丁1 6:
+2024-02-25 12:49:38,871 - Math_19 - INFO - 
+double range = uB - lB;
+if (range > Double.MAX_VALUE || range < Double.MIN_NORMAL) {
+    throw new NumberIsTooLargeException(lB, uB);
+}
+
+2024-02-25 12:49:39,688 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:39,688 - Math_19 - INFO - 错误: 二元运算符 '-' 的操作数类型
+double range = uB - lB;
+2024-02-25 12:49:39,688 - Math_19 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:49:39,689 - Math_19 - INFO - 开始验证补丁1 7:
+2024-02-25 12:49:39,689 - Math_19 - INFO - 
+// Check for boundary range overflow
+if (uB - lB > MAX_BOUNDARY_RANGE) {
+    throw new NumberIsTooLargeException(lB, uB, false);
+}
+
+2024-02-25 12:49:40,501 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:40,501 - Math_19 - INFO - 错误: 二元运算符 '-' 的操作数类型
+if (uB - lB > MAX_BOUNDARY_RANGE) {
+2024-02-25 12:49:40,501 - Math_19 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:49:40,502 - Math_19 - INFO - 开始验证补丁1 8:
+2024-02-25 12:49:40,502 - Math_19 - INFO - 
+// Ensure the range between lower and upper boundary is within limits
+if (Math.abs(uB - lB) > MAX_RANGE_LIMIT) {
+    throw new NumberIsTooLargeException(lB, uB, true);
+}
+
+2024-02-25 12:49:41,323 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:41,323 - Math_19 - INFO - 错误: 二元运算符 '-' 的操作数类型
+if (Math.abs(uB - lB) > MAX_RANGE_LIMIT) {
+2024-02-25 12:49:41,323 - Math_19 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:49:41,325 - Math_19 - INFO - 开始验证补丁1 9:
+2024-02-25 12:49:41,325 - Math_19 - INFO - 
+// Validate that the upper boundary is not excessively larger than the lower boundary
+if (uB > lB && (uB - lB) > MAX_ACCEPTABLE_RANGE) {
+    throw new NumberIsTooLargeException("Upper boundary is too large compared to lower boundary", lB, uB);
+}
+
+2024-02-25 12:49:42,145 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:42,145 - Math_19 - INFO - 错误: 二元运算符 '>' 的操作数类型
+if (uB > lB && (uB - lB) > MAX_ACCEPTABLE_RANGE) {
+2024-02-25 12:49:42,145 - Math_19 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:49:42,147 - Math_19 - INFO - 开始验证补丁2 1:
+2024-02-25 12:49:42,147 - Math_19 - INFO - 
+if (encode(boundaries[0]) > Long.MAX_VALUE - encode(boundaries[1])) {
+    throw new NumberIsTooLargeException("The range between the lower and upper boundary is too large.");
+}
+
+2024-02-25 12:49:42,976 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:42,976 - Math_19 - INFO - 错误: 找不到符号
+if (encode(boundaries[0]) > Long.MAX_VALUE - encode(boundaries[1])) {
+2024-02-25 12:49:42,976 - Math_19 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:49:42,978 - Math_19 - INFO - 开始验证补丁2 2:
+2024-02-25 12:49:42,978 - Math_19 - INFO - 
+long lowerBoundEncoded = encode(boundaries[0]);
+long upperBoundEncoded = encode(boundaries[1]);
+if ((upperBoundEncoded - lowerBoundEncoded) > Long.MAX_VALUE) {
+    throw new NumberIsTooLargeException("The range between lower and upper boundaries is too large.");
+}
+
+2024-02-25 12:49:43,803 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:43,803 - Math_19 - INFO - 错误: 找不到符号
+long lowerBoundEncoded = encode(boundaries[0]);
+2024-02-25 12:49:43,803 - Math_19 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:49:43,804 - Math_19 - INFO - 开始验证补丁2 3:
+2024-02-25 12:49:43,804 - Math_19 - INFO - 
+if (encode(boundaries[1]) - encode(boundaries[0]) < 0) {
+    throw new NumberIsTooLargeException("Normalized upper boundary is less than normalized lower boundary, indicating an overflow.");
+}
+
+2024-02-25 12:49:44,635 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:44,635 - Math_19 - INFO - 错误: 找不到符号
+if (encode(boundaries[1]) - encode(boundaries[0]) < 0) {
+2024-02-25 12:49:44,635 - Math_19 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:49:44,637 - Math_19 - INFO - 开始验证补丁2 4:
+2024-02-25 12:49:44,637 - Math_19 - INFO - 
+if (encode(lB) > Long.MAX_VALUE - encode(uB)) {
+    throw new NumberIsTooLargeException(LocalizedFormats.NUMBER_TOO_LARGE_BOUND_EXCEEDED, encode(uB) - encode(lB), Long.MAX_VALUE);
+}
+
+2024-02-25 12:49:45,468 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:45,468 - Math_19 - INFO - 错误: 找不到符号
+if (encode(lB) > Long.MAX_VALUE - encode(uB)) {
+2024-02-25 12:49:45,468 - Math_19 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:49:45,469 - Math_19 - INFO - 开始验证补丁2 5:
+2024-02-25 12:49:45,469 - Math_19 - INFO - 
+if (Double.isInfinite(lB) || Double.isInfinite(uB)) {
+    throw new NumberIsTooLargeException(LocalizedFormats.BOUND_INFINITE, lB, uB);
+}
+
+2024-02-25 12:49:46,278 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:46,278 - Math_19 - INFO - 错误: 对于isInfinite(double[]), 找不到合适的方法
+if (Double.isInfinite(lB) || Double.isInfinite(uB)) {
+2024-02-25 12:49:46,278 - Math_19 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:49:46,279 - Math_19 - INFO - 开始验证补丁2 6:
+2024-02-25 12:49:46,279 - Math_19 - INFO - 
+double normalizedMaxRange = Double.MAX_VALUE / 2.0;
+if ((uB - lB) > normalizedMaxRange) {
+    throw new NumberIsTooLargeException(LocalizedFormats.RANGE_TOO_LARGE, uB - lB, normalizedMaxRange);
+}
+
+2024-02-25 12:49:47,102 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:47,102 - Math_19 - INFO - 错误: 二元运算符 '-' 的操作数类型
+if ((uB - lB) > normalizedMaxRange) {
+2024-02-25 12:49:47,102 - Math_19 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:49:47,103 - Math_19 - INFO - 开始验证补丁2 7:
+2024-02-25 12:49:47,103 - Math_19 - INFO - 
+                if (boundaries[1][0] - boundaries[0][0] > MAX_RANGE) {
+                    throw new NumberIsTooLargeException(boundaries[1][0], boundaries[0][0], false);
+                }
+
+2024-02-25 12:49:47,937 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:47,937 - Math_19 - INFO - 错误: 找不到符号
+if (boundaries[1][0] - boundaries[0][0] > MAX_RANGE) {
+2024-02-25 12:49:47,937 - Math_19 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:49:47,938 - Math_19 - INFO - 开始验证补丁2 8:
+2024-02-25 12:49:47,938 - Math_19 - INFO - 
+                if (Double.isInfinite(boundaries[0][0]) || Double.isInfinite(boundaries[1][0])) {
+                    throw new NumberIsTooLargeException("Infinite boundary value");
+                }
+
+2024-02-25 12:49:48,757 - Math_19 - INFO - 编译失败
+2024-02-25 12:49:48,757 - Math_19 - INFO - 错误: 对于NumberIsTooLargeException(String), 找不到合适的构造器
+throw new NumberIsTooLargeException("Infinite boundary value");
+2024-02-25 12:49:48,757 - Math_19 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:49:48,758 - Math_19 - INFO - 开始验证补丁2 9:
+2024-02-25 12:49:48,758 - Math_19 - INFO - 
+                if (Math.abs(boundaries[1][0] - boundaries[0][0]) > Double.MAX_VALUE) {
+                    throw new NumberIsTooLargeException(boundaries[1][0], boundaries[0][0], true);
+                }
+
+2024-02-25 12:49:50,140 - Math_19 - INFO - 编译成功
+2024-02-25 12:50:27,000 - Math_19 - INFO - 测试成功
+2024-02-25 12:50:27,000 - Math_19 - INFO - 补丁2 9 通过了所有的测试用例

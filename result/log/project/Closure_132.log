@@ -1,0 +1,243 @@
+2024-02-25 09:11:34,314 - Closure_132 - INFO - rm -rf /home/chongchong/d4j-project/Closure_132
+2024-02-25 09:11:34,315 - Closure_132 - INFO - 删除 Closure 132b 成功
+2024-02-25 09:11:34,315 - Closure_132 - INFO - defects4j checkout -p Closure -v 132b -w /home/chongchong/d4j-project/Closure_132
+2024-02-25 09:11:37,111 - Closure_132 - INFO - checkout Closure 132b 成功
+2024-02-25 09:11:49,210 - Closure_132 - INFO - 编译成功
+2024-02-25 09:12:49,709 - Closure_132 - INFO - 测试失败
+2024-02-25 09:12:49,709 - Closure_132 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+
+2024-02-25 09:12:50,722 - Closure_132 - INFO - 它的bug类型为:
+2024-02-25 09:12:50,722 - Closure_132 - INFO - 2
+2024-02-25 09:13:37,574 - Closure_132 - INFO - 开始验证补丁1 1:
+2024-02-25 09:13:37,574 - Closure_132 - INFO - 
+if (!NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:13:39,426 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:39,426 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (!NodeUtil.mayHaveSideEffects(lhs)) {
+2024-02-25 09:13:39,426 - Closure_132 - INFO - 补丁1 1 未成功编译
+2024-02-25 09:13:39,427 - Closure_132 - INFO - 开始验证补丁1 2:
+2024-02-25 09:13:39,427 - Closure_132 - INFO - 
+if (!mayEffectMutableState(lhs) || sideEffectCanBeIgnored(lhs)) {
+
+2024-02-25 09:13:41,269 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:41,269 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (!mayEffectMutableState(lhs) || sideEffectCanBeIgnored(lhs)) {
+2024-02-25 09:13:41,269 - Closure_132 - INFO - 补丁1 2 未成功编译
+2024-02-25 09:13:41,270 - Closure_132 - INFO - 开始验证补丁1 3:
+2024-02-25 09:13:41,271 - Closure_132 - INFO - 
+if (!mayEffectMutableState(lhs) || (isSideEffectLocal(lhs) && isOptimizationSafeWithSideEffects(cond, lhs))) {
+
+2024-02-25 09:13:43,104 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:43,104 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (!mayEffectMutableState(lhs) || (isSideEffectLocal(lhs) && isOptimizationSafeWithSideEffects(cond, lhs))) {
+2024-02-25 09:13:43,104 - Closure_132 - INFO - 补丁1 3 未成功编译
+2024-02-25 09:13:43,105 - Closure_132 - INFO - 开始验证补丁1 4:
+2024-02-25 09:13:43,105 - Closure_132 - INFO - 
+!mayEffectMutableState(lhs) || isSideEffectFreeContext(cond, lhs)) {
+
+2024-02-25 09:13:45,170 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:45,170 - Closure_132 - INFO - 错误: 找不到符号
+!mayEffectMutableState(lhs) || isSideEffectFreeContext(cond, lhs)) {
+2024-02-25 09:13:45,170 - Closure_132 - INFO - 补丁1 4 未成功编译
+2024-02-25 09:13:45,171 - Closure_132 - INFO - 开始验证补丁1 5:
+2024-02-25 09:13:45,171 - Closure_132 - INFO - 
+!mayEffectMutableState(lhs) || isIdempotentOperation(lhs)) {
+
+2024-02-25 09:13:47,252 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:47,252 - Closure_132 - INFO - 错误: 找不到符号
+!mayEffectMutableState(lhs) || isIdempotentOperation(lhs)) {
+2024-02-25 09:13:47,252 - Closure_132 - INFO - 补丁1 5 未成功编译
+2024-02-25 09:13:47,253 - Closure_132 - INFO - 开始验证补丁1 6:
+2024-02-25 09:13:47,253 - Closure_132 - INFO - 
+!mayEffectMutableState(lhs) || (isLocalEffect(lhs) && isIndependentOf(cond, lhs))) {
+
+2024-02-25 09:13:49,324 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:49,325 - Closure_132 - INFO - 错误: 找不到符号
+!mayEffectMutableState(lhs) || (isLocalEffect(lhs) && isIndependentOf(cond, lhs))) {
+2024-02-25 09:13:49,325 - Closure_132 - INFO - 补丁1 6 未成功编译
+2024-02-25 09:13:49,326 - Closure_132 - INFO - 开始验证补丁1 7:
+2024-02-25 09:13:49,326 - Closure_132 - INFO - 
+          if (!NodeUtil.mayHaveSideEffects(lhs) || NodeUtil.isImmutableValue(lhs)) {
+
+2024-02-25 09:13:51,169 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:51,170 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (!NodeUtil.mayHaveSideEffects(lhs) || NodeUtil.isImmutableValue(lhs)) {
+2024-02-25 09:13:51,170 - Closure_132 - INFO - 补丁1 7 未成功编译
+2024-02-25 09:13:51,171 - Closure_132 - INFO - 开始验证补丁1 8:
+2024-02-25 09:13:51,171 - Closure_132 - INFO - 
+          if (!NodeUtil.mayHaveSideEffects(lhs) || isSideEffectFreeContext(n)) {
+
+2024-02-25 09:13:53,001 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:53,001 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (!NodeUtil.mayHaveSideEffects(lhs) || isSideEffectFreeContext(n)) {
+2024-02-25 09:13:53,001 - Closure_132 - INFO - 补丁1 8 未成功编译
+2024-02-25 09:13:53,002 - Closure_132 - INFO - 开始验证补丁1 9:
+2024-02-25 09:13:53,002 - Closure_132 - INFO - 
+          if (!NodeUtil.mayHaveSideEffects(lhs) || canOptimizeWithSideEffects(lhs, cond, thenOp, elseOp)) {
+
+2024-02-25 09:13:54,853 - Closure_132 - INFO - 编译失败
+2024-02-25 09:13:54,853 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (!NodeUtil.mayHaveSideEffects(lhs) || canOptimizeWithSideEffects(lhs, cond, thenOp, elseOp)) {
+2024-02-25 09:13:54,853 - Closure_132 - INFO - 补丁1 9 未成功编译
+2024-02-25 09:13:54,854 - Closure_132 - INFO - 开始验证补丁2 1:
+2024-02-25 09:13:54,854 - Closure_132 - INFO - 
+              !NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:13:59,124 - Closure_132 - INFO - 编译成功
+2024-02-25 09:14:58,798 - Closure_132 - INFO - 测试失败
+2024-02-25 09:14:58,798 - Closure_132 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+
+2024-02-25 09:14:59,311 - Closure_132 - INFO - 选择失败的测试用例为:
+2024-02-25 09:14:59,311 - Closure_132 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+2024-02-25 09:14:59,311 - Closure_132 - INFO - 失败的测试代码为:
+2024-02-25 09:14:59,311 - Closure_132 - INFO -     test(
+
+2024-02-25 09:14:59,311 - Closure_132 - INFO - 失败信息为:
+2024-02-25 09:14:59,311 - Closure_132 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 09:14:59,311 - Closure_132 - INFO - 补丁2 1测试失败
+2024-02-25 09:14:59,312 - Closure_132 - INFO - 开始验证补丁2 2:
+2024-02-25 09:14:59,312 - Closure_132 - INFO - 
+              !lhs.hasSideEffects()) {
+
+2024-02-25 09:15:01,427 - Closure_132 - INFO - 编译失败
+2024-02-25 09:15:01,427 - Closure_132 - INFO - 错误: 找不到符号
+!lhs.hasSideEffects()) {
+2024-02-25 09:15:01,427 - Closure_132 - INFO - 补丁2 2 未成功编译
+2024-02-25 09:15:01,428 - Closure_132 - INFO - 开始验证补丁2 3:
+2024-02-25 09:15:01,428 - Closure_132 - INFO - 
+              (lhs.isImmutable() || !lhs.mayHaveSideEffects())) {
+
+2024-02-25 09:15:03,492 - Closure_132 - INFO - 编译失败
+2024-02-25 09:15:03,492 - Closure_132 - INFO - 错误: 找不到符号
+(lhs.isImmutable() || !lhs.mayHaveSideEffects())) {
+2024-02-25 09:15:03,492 - Closure_132 - INFO - 补丁2 3 未成功编译
+2024-02-25 09:15:03,493 - Closure_132 - INFO - 开始验证补丁2 4:
+2024-02-25 09:15:03,493 - Closure_132 - INFO - 
+              !NodeUtil.mayEffectMutableState(lhs)) {
+
+2024-02-25 09:15:07,837 - Closure_132 - INFO - 编译成功
+2024-02-25 09:16:06,877 - Closure_132 - INFO - 测试失败
+2024-02-25 09:16:06,877 - Closure_132 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+
+2024-02-25 09:16:07,401 - Closure_132 - INFO - 选择失败的测试用例为:
+2024-02-25 09:16:07,401 - Closure_132 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+2024-02-25 09:16:07,401 - Closure_132 - INFO - 失败的测试代码为:
+2024-02-25 09:16:07,401 - Closure_132 - INFO -     test(
+
+2024-02-25 09:16:07,401 - Closure_132 - INFO - 失败信息为:
+2024-02-25 09:16:07,401 - Closure_132 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 09:16:07,401 - Closure_132 - INFO - 补丁2 4测试失败
+2024-02-25 09:16:07,402 - Closure_132 - INFO - 开始验证补丁2 5:
+2024-02-25 09:16:07,402 - Closure_132 - INFO - 
+              !NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:16:07,402 - Closure_132 - INFO - 补丁2 5为重复的补丁
+2024-02-25 09:16:07,403 - Closure_132 - INFO - 开始验证补丁2 6:
+2024-02-25 09:16:07,403 - Closure_132 - INFO - 
+              !lhs.mayHaveSideEffects()) {
+
+2024-02-25 09:16:09,459 - Closure_132 - INFO - 编译失败
+2024-02-25 09:16:09,459 - Closure_132 - INFO - 错误: 找不到符号
+!lhs.mayHaveSideEffects()) {
+2024-02-25 09:16:09,460 - Closure_132 - INFO - 补丁2 6 未成功编译
+2024-02-25 09:16:09,461 - Closure_132 - INFO - 开始验证补丁2 7:
+2024-02-25 09:16:09,461 - Closure_132 - INFO - 
+          if (areNodesEqualForInlining(lhs, elseOp.getFirstChild()) &&
+              !NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:16:11,278 - Closure_132 - INFO - 编译失败
+2024-02-25 09:16:11,278 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (areNodesEqualForInlining(lhs, elseOp.getFirstChild()) &&
+2024-02-25 09:16:11,278 - Closure_132 - INFO - 补丁2 7 未成功编译
+2024-02-25 09:16:11,279 - Closure_132 - INFO - 开始验证补丁2 8:
+2024-02-25 09:16:11,279 - Closure_132 - INFO - 
+          if (areNodesEqualForInlining(lhs, elseOp.getFirstChild()) &&
+              NodeUtil.isImmutableValue(lhs)) {
+
+2024-02-25 09:16:13,311 - Closure_132 - INFO - 编译失败
+2024-02-25 09:16:13,311 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (areNodesEqualForInlining(lhs, elseOp.getFirstChild()) &&
+2024-02-25 09:16:13,311 - Closure_132 - INFO - 补丁2 8 未成功编译
+2024-02-25 09:16:13,312 - Closure_132 - INFO - 开始验证补丁2 9:
+2024-02-25 09:16:13,312 - Closure_132 - INFO - 
+          if (areNodesEqualForInlining(lhs, elseOp.getFirstChild()) &&
+              (NodeUtil.isImmutableValue(lhs) || !NodeUtil.mayHaveSideEffects(lhs))) {
+
+2024-02-25 09:16:15,154 - Closure_132 - INFO - 编译失败
+2024-02-25 09:16:15,154 - Closure_132 - INFO - 错误: 非法的表达式开始
+if (areNodesEqualForInlining(lhs, elseOp.getFirstChild()) &&
+2024-02-25 09:16:15,155 - Closure_132 - INFO - 补丁2 9 未成功编译
+2024-02-25 09:16:15,156 - Closure_132 - INFO - 开始验证补丁3 1:
+2024-02-25 09:16:15,156 - Closure_132 - INFO - 
+              !NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:16:15,156 - Closure_132 - INFO - 补丁3 1为重复的补丁
+2024-02-25 09:16:15,157 - Closure_132 - INFO - 开始验证补丁3 2:
+2024-02-25 09:16:15,157 - Closure_132 - INFO - 
+              !mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:16:19,505 - Closure_132 - INFO - 编译成功
+2024-02-25 09:17:18,700 - Closure_132 - INFO - 测试失败
+2024-02-25 09:17:18,700 - Closure_132 - INFO - Failing tests: 1
+  - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+
+2024-02-25 09:17:19,210 - Closure_132 - INFO - 选择失败的测试用例为:
+2024-02-25 09:17:19,211 - Closure_132 - INFO - com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testIssue925
+2024-02-25 09:17:19,211 - Closure_132 - INFO - 失败的测试代码为:
+2024-02-25 09:17:19,211 - Closure_132 - INFO -     test(
+
+2024-02-25 09:17:19,211 - Closure_132 - INFO - 失败信息为:
+2024-02-25 09:17:19,211 - Closure_132 - INFO - junit.framework.AssertionFailedError: 
+
+2024-02-25 09:17:19,211 - Closure_132 - INFO - 补丁3 2测试失败
+2024-02-25 09:17:19,212 - Closure_132 - INFO - 开始验证补丁3 3:
+2024-02-25 09:17:19,212 - Closure_132 - INFO - 
+              !lhs.mayCauseSideEffects()) {
+
+2024-02-25 09:17:21,303 - Closure_132 - INFO - 编译失败
+2024-02-25 09:17:21,303 - Closure_132 - INFO - 错误: 找不到符号
+!lhs.mayCauseSideEffects()) {
+2024-02-25 09:17:21,303 - Closure_132 - INFO - 补丁3 3 未成功编译
+2024-02-25 09:17:21,304 - Closure_132 - INFO - 开始验证补丁3 4:
+2024-02-25 09:17:21,304 - Closure_132 - INFO - 
+              !mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:17:21,304 - Closure_132 - INFO - 补丁3 4为重复的补丁
+2024-02-25 09:17:21,305 - Closure_132 - INFO - 开始验证补丁3 5:
+2024-02-25 09:17:21,305 - Closure_132 - INFO - 
+              !NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:17:21,305 - Closure_132 - INFO - 补丁3 5为重复的补丁
+2024-02-25 09:17:21,306 - Closure_132 - INFO - 开始验证补丁3 6:
+2024-02-25 09:17:21,306 - Closure_132 - INFO - 
+              !mayHaveSideEffects(lhs, compiler)) {
+
+2024-02-25 09:17:23,351 - Closure_132 - INFO - 编译失败
+2024-02-25 09:17:23,351 - Closure_132 - INFO - 错误: compiler可以在AbstractPeepholeOptimization中访问private
+!mayHaveSideEffects(lhs, compiler)) {
+2024-02-25 09:17:23,351 - Closure_132 - INFO - 补丁3 6 未成功编译
+2024-02-25 09:17:23,352 - Closure_132 - INFO - 开始验证补丁3 7:
+2024-02-25 09:17:23,352 - Closure_132 - INFO - 
+              !NodeUtil.mayHaveSideEffects(lhs)) {
+
+2024-02-25 09:17:23,352 - Closure_132 - INFO - 补丁3 7为重复的补丁
+2024-02-25 09:17:23,357 - Closure_132 - INFO - 开始验证补丁3 8:
+2024-02-25 09:17:23,357 - Closure_132 - INFO - 
+              !NodeUtil.hasSideEffects(lhs, compiler)) {
+
+2024-02-25 09:17:25,443 - Closure_132 - INFO - 编译失败
+2024-02-25 09:17:25,443 - Closure_132 - INFO - 错误: compiler可以在AbstractPeepholeOptimization中访问private
+!NodeUtil.hasSideEffects(lhs, compiler)) {
+2024-02-25 09:17:25,443 - Closure_132 - INFO - 补丁3 8 未成功编译
+2024-02-25 09:17:25,444 - Closure_132 - INFO - 开始验证补丁3 9:
+2024-02-25 09:17:25,444 - Closure_132 - INFO - 
+              !lhs.mayHaveSideEffects()) {
+
+2024-02-25 09:17:25,444 - Closure_132 - INFO - 补丁3 9为重复的补丁
+2024-02-25 09:17:25,444 - Closure_132 - INFO - Closure_132 未成功修复

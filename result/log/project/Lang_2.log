@@ -1,0 +1,264 @@
+2024-02-25 12:02:24,859 - Lang_2 - INFO - rm -rf /home/chongchong/d4j-project/Lang_2
+2024-02-25 12:02:24,859 - Lang_2 - INFO - 删除 Lang 2b 成功
+2024-02-25 12:02:24,859 - Lang_2 - INFO - defects4j checkout -p Lang -v 2b -w /home/chongchong/d4j-project/Lang_2
+2024-02-25 12:02:28,291 - Lang_2 - INFO - checkout Lang 2b 成功
+2024-02-25 12:02:33,724 - Lang_2 - INFO - 编译成功
+2024-02-25 12:02:46,426 - Lang_2 - INFO - 测试失败
+2024-02-25 12:02:46,426 - Lang_2 - INFO - Failing tests: 1
+  - org.apache.commons.lang3.LocaleUtilsTest::testParseAllLocales
+
+2024-02-25 12:02:47,289 - Lang_2 - INFO - 它的bug类型为:
+2024-02-25 12:02:47,289 - Lang_2 - INFO - 3
+2024-02-25 12:03:58,617 - Lang_2 - INFO - 开始验证补丁1 1:
+2024-02-25 12:03:58,617 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:03:59,254 - Lang_2 - INFO - 编译失败
+2024-02-25 12:03:59,254 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:03:59,255 - Lang_2 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:03:59,256 - Lang_2 - INFO - 开始验证补丁1 2:
+2024-02-25 12:03:59,256 - Lang_2 - INFO - 
+final int len = str.length();
+String[] parts = str.split("_");
+
+2024-02-25 12:03:59,903 - Lang_2 - INFO - 编译失败
+2024-02-25 12:03:59,903 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:03:59,903 - Lang_2 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:03:59,904 - Lang_2 - INFO - 开始验证补丁1 3:
+2024-02-25 12:03:59,904 - Lang_2 - INFO - 
+final int len = str.length();
+final char ch0 = str.charAt(0);
+final char ch1 = len > 1 ? str.charAt(1) : ' ';
+
+2024-02-25 12:04:00,563 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:00,563 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:00,563 - Lang_2 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:04:00,565 - Lang_2 - INFO - 开始验证补丁1 4:
+2024-02-25 12:04:00,565 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:04:00,565 - Lang_2 - INFO - 补丁1 4为重复的补丁
+2024-02-25 12:04:00,566 - Lang_2 - INFO - 开始验证补丁1 5:
+2024-02-25 12:04:00,566 - Lang_2 - INFO - 
+final int len = str.length();
+if (len == 2 || len == 5) {
+    // Code to handle two-letter language codes (e.g., "en") or language-country codes (e.g., "en_US")
+}
+
+2024-02-25 12:04:01,211 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:01,211 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:01,211 - Lang_2 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:04:01,212 - Lang_2 - INFO - 开始验证补丁1 6:
+2024-02-25 12:04:01,212 - Lang_2 - INFO - 
+final int len = str.length();
+String[] parts = str.split("_", -1);
+// Code to validate and use the parts array for Locale construction should follow.
+
+2024-02-25 12:04:01,847 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:01,847 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:01,847 - Lang_2 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:04:01,848 - Lang_2 - INFO - 开始验证补丁1 7:
+2024-02-25 12:04:01,848 - Lang_2 - INFO - 
+        final int len = str.length();
+
+2024-02-25 12:04:02,475 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:02,476 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:02,476 - Lang_2 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:04:02,477 - Lang_2 - INFO - 开始验证补丁1 8:
+2024-02-25 12:04:02,477 - Lang_2 - INFO - 
+        final int len = str.length();
+        if (str.contains("#")) {
+            throw new IllegalArgumentException("Invalid locale format: " + str);
+        }
+
+2024-02-25 12:04:03,129 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:03,129 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:03,129 - Lang_2 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:04:03,130 - Lang_2 - INFO - 开始验证补丁1 9:
+2024-02-25 12:04:03,130 - Lang_2 - INFO - 
+        final int len = str.length();
+        final String[] parts = str.split("_", -1);
+        switch (parts.length) {
+            case 2: 
+                if (parts[0].length() == 2 && parts[1].length() == 2) {
+                    return new Locale(parts[0], parts[1]);
+                }
+                break;
+            case 1:
+                if (parts[0].length() == 2) {
+                    return new Locale(parts[0]);
+                }
+                break;
+            default:
+                break;
+        }
+        throw new IllegalArgumentException("Invalid locale format: " + str);
+
+2024-02-25 12:04:03,779 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:03,780 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:03,780 - Lang_2 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:04:03,781 - Lang_2 - INFO - 开始验证补丁2 1:
+2024-02-25 12:04:03,781 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:04:03,781 - Lang_2 - INFO - 补丁2 1为重复的补丁
+2024-02-25 12:04:03,786 - Lang_2 - INFO - 开始验证补丁2 2:
+2024-02-25 12:04:03,786 - Lang_2 - INFO - 
+final int len = str.length();
+if (str.indexOf('_') == -1 && len != 2 && len != 5) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+
+2024-02-25 12:04:04,420 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:04,420 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:04,420 - Lang_2 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:04:04,421 - Lang_2 - INFO - 开始验证补丁2 3:
+2024-02-25 12:04:04,421 - Lang_2 - INFO - 
+final int len = str.length();
+String[] parts = str.split("_", -1);
+if ((parts.length > 3) || (parts.length > 0 && parts[0].length() != 2 && parts[0].length() != 3)
+    || (parts.length > 1 && parts[1].length() != 2) 
+    || (parts.length > 2 && parts[2].isEmpty())) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+
+2024-02-25 12:04:05,068 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:05,068 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:05,068 - Lang_2 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:04:05,069 - Lang_2 - INFO - 开始验证补丁2 4:
+2024-02-25 12:04:05,069 - Lang_2 - INFO - 
+        final int len = str.length();
+
+2024-02-25 12:04:05,069 - Lang_2 - INFO - 补丁2 4为重复的补丁
+2024-02-25 12:04:05,070 - Lang_2 - INFO - 开始验证补丁2 5:
+2024-02-25 12:04:05,070 - Lang_2 - INFO - 
+        final int len = str.length();
+        if (len == 0) {
+            return new Locale("");
+        }
+
+2024-02-25 12:04:05,708 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:05,708 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:05,708 - Lang_2 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:04:05,709 - Lang_2 - INFO - 开始验证补丁2 6:
+2024-02-25 12:04:05,709 - Lang_2 - INFO - 
+        final int len = str.length();
+        if (len == 0) {
+            return Locale.ROOT;
+        }
+
+2024-02-25 12:04:06,347 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:06,347 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:06,347 - Lang_2 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:04:06,349 - Lang_2 - INFO - 开始验证补丁2 7:
+2024-02-25 12:04:06,349 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:04:06,349 - Lang_2 - INFO - 补丁2 7为重复的补丁
+2024-02-25 12:04:06,350 - Lang_2 - INFO - 开始验证补丁2 8:
+2024-02-25 12:04:06,350 - Lang_2 - INFO - 
+if (str.isEmpty()) {
+    return new Locale("");
+}
+final int len = str.length();
+
+2024-02-25 12:04:06,973 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:06,973 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:06,973 - Lang_2 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:04:06,974 - Lang_2 - INFO - 开始验证补丁2 9:
+2024-02-25 12:04:06,974 - Lang_2 - INFO - 
+final int len = str.length();
+if (len == 0) {
+    return Locale.ROOT; // Assuming we want to return a Locale.ROOT for empty strings
+}
+
+2024-02-25 12:04:07,617 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:07,618 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:07,618 - Lang_2 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:04:07,619 - Lang_2 - INFO - 开始验证补丁3 1:
+2024-02-25 12:04:07,619 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:04:07,619 - Lang_2 - INFO - 补丁3 1为重复的补丁
+2024-02-25 12:04:07,620 - Lang_2 - INFO - 开始验证补丁3 2:
+2024-02-25 12:04:07,620 - Lang_2 - INFO - 
+final int len = str.length();
+if (len == 0) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+
+2024-02-25 12:04:08,281 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:08,282 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:08,282 - Lang_2 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:04:08,283 - Lang_2 - INFO - 开始验证补丁3 3:
+2024-02-25 12:04:08,283 - Lang_2 - INFO - 
+final int len = str.length();
+if (len == 0 || (len > 0 && Character.isWhitespace(str.charAt(0)))) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+
+2024-02-25 12:04:08,923 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:08,923 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:08,923 - Lang_2 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:04:08,924 - Lang_2 - INFO - 开始验证补丁3 4:
+2024-02-25 12:04:08,924 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:04:08,924 - Lang_2 - INFO - 补丁3 4为重复的补丁
+2024-02-25 12:04:08,929 - Lang_2 - INFO - 开始验证补丁3 5:
+2024-02-25 12:04:08,929 - Lang_2 - INFO - 
+if (str.isEmpty()) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+final int len = str.length();
+
+2024-02-25 12:04:09,557 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:09,557 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:09,557 - Lang_2 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:04:09,558 - Lang_2 - INFO - 开始验证补丁3 6:
+2024-02-25 12:04:09,558 - Lang_2 - INFO - 
+final int len = str.trim().length();
+
+2024-02-25 12:04:10,199 - Lang_2 - INFO - 编译失败
+2024-02-25 12:04:10,199 - Lang_2 - INFO - 错误: 已在方法 toLocale(String)中定义了变量 len
+final int len = str.length();
+2024-02-25 12:04:10,199 - Lang_2 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:04:10,200 - Lang_2 - INFO - 开始验证补丁3 7:
+2024-02-25 12:04:10,200 - Lang_2 - INFO - 
+final int len = str.length();
+
+2024-02-25 12:04:10,200 - Lang_2 - INFO - 补丁3 7为重复的补丁
+2024-02-25 12:04:10,201 - Lang_2 - INFO - 开始验证补丁3 8:
+2024-02-25 12:04:10,201 - Lang_2 - INFO - 
+if (str.isEmpty()) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+final int len = str.length();
+
+2024-02-25 12:04:10,201 - Lang_2 - INFO - 补丁3 8为重复的补丁
+2024-02-25 12:04:10,202 - Lang_2 - INFO - 开始验证补丁3 9:
+2024-02-25 12:04:10,202 - Lang_2 - INFO - 
+final int len = str.length();
+if (len == 0) {
+    throw new IllegalArgumentException("Invalid locale format: " + str);
+}
+
+2024-02-25 12:04:10,202 - Lang_2 - INFO - 补丁3 9为重复的补丁
+2024-02-25 12:04:10,202 - Lang_2 - INFO - Lang_2 未成功修复

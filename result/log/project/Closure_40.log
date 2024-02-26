@@ -1,0 +1,350 @@
+2024-02-26 00:34:57,757 - Closure_40 - INFO - rm -rf /home/chongchong/d4j-project/Closure_40
+2024-02-26 00:34:57,758 - Closure_40 - INFO - 删除 Closure 40b 成功
+2024-02-26 00:34:57,758 - Closure_40 - INFO - defects4j checkout -p Closure -v 40b -w /home/chongchong/d4j-project/Closure_40
+2024-02-26 00:35:00,644 - Closure_40 - INFO - checkout Closure 40b 成功
+2024-02-26 00:35:11,944 - Closure_40 - INFO - 编译成功
+2024-02-26 00:35:58,053 - Closure_40 - INFO - 测试失败
+2024-02-26 00:35:58,053 - Closure_40 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.IntegrationTest::testIssue284
+  - com.google.javascript.jscomp.NameAnalyzerTest::testIssue284
+
+2024-02-26 00:35:59,103 - Closure_40 - INFO - 它的bug类型为:
+2024-02-26 00:35:59,103 - Closure_40 - INFO - 4
+2024-02-26 00:36:59,201 - Closure_40 - INFO - 开始验证补丁1 1:
+2024-02-26 00:36:59,201 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(
+      name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:01,037 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:01,037 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:01,037 - Closure_40 - INFO - 补丁1 1 未成功编译
+2024-02-26 00:37:01,038 - Closure_40 - INFO - 开始验证补丁1 2:
+2024-02-26 00:37:01,038 - Closure_40 - INFO - 
+// Verify that 'name' is resolved properly before proceeding.
+JsName name = getName(ns.name, false);
+if (name != null) {
+  // Ensure that 'parent' and 'n' are in a valid state and that 'parent' is truly the parent of 'n'.
+  if (parent.hasChild(n)) {
+    refNodes.add(new ClassDefiningFunctionNode(
+        name, n, parent, parent.getParent()));
+  }
+}
+
+2024-02-26 00:37:02,857 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:02,857 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:02,857 - Closure_40 - INFO - 补丁1 2 未成功编译
+2024-02-26 00:37:02,859 - Closure_40 - INFO - 开始验证补丁1 3:
+2024-02-26 00:37:02,859 - Closure_40 - INFO - 
+// Adding additional null checks for safety
+if (ns.name != null) {
+  JsName name = getName(ns.name, false);
+  if (name != null && parent != null && parent.getParent() != null) {
+    refNodes.add(new ClassDefiningFunctionNode(
+        name, n, parent, parent.getParent()));
+  }
+}
+
+2024-02-26 00:37:04,680 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:04,680 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:04,680 - Closure_40 - INFO - 补丁1 3 未成功编译
+2024-02-26 00:37:04,681 - Closure_40 - INFO - 开始验证补丁1 4:
+2024-02-26 00:37:04,681 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:06,517 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:06,517 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:06,517 - Closure_40 - INFO - 补丁1 4 未成功编译
+2024-02-26 00:37:06,518 - Closure_40 - INFO - 开始验证补丁1 5:
+2024-02-26 00:37:06,518 - Closure_40 - INFO - 
+JsName name = getName(ns.name);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(name, n));
+}
+
+2024-02-26 00:37:08,344 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:08,344 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:08,344 - Closure_40 - INFO - 补丁1 5 未成功编译
+2024-02-26 00:37:08,345 - Closure_40 - INFO - 开始验证补丁1 6:
+2024-02-26 00:37:08,345 - Closure_40 - INFO - 
+try {
+  JsName name = getName(ns.name, false);
+  if (name != null) {
+    refNodes.add(new ClassDefiningFunctionNode(name, n, parent, parent.getParent()));
+  }
+} catch (Exception e) {
+  // handle exception (e.g, logging, rethrowing, etc.)
+}
+
+2024-02-26 00:37:10,238 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:10,238 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:10,238 - Closure_40 - INFO - 补丁1 6 未成功编译
+2024-02-26 00:37:10,240 - Closure_40 - INFO - 开始验证补丁1 7:
+2024-02-26 00:37:10,240 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(
+      name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:10,240 - Closure_40 - INFO - 补丁1 7为重复的补丁
+2024-02-26 00:37:10,241 - Closure_40 - INFO - 开始验证补丁1 8:
+2024-02-26 00:37:10,241 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(
+      name, n, parent, parent.getParent()));
+} else {
+  // Handle the null case for name, possibly logging or throwing an error
+}
+
+2024-02-26 00:37:12,065 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:12,066 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:12,066 - Closure_40 - INFO - 补丁1 8 未成功编译
+2024-02-26 00:37:12,067 - Closure_40 - INFO - 开始验证补丁1 9:
+2024-02-26 00:37:12,067 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+Node parentNode = parent.getParent();
+if (name != null && n.hasParent() && n.getParent().equals(parent)) {
+  refNodes.add(new ClassDefiningFunctionNode(
+      name, n, parent, parentNode));
+} else {
+  // Handle the error case, where name is null or the parent relationship is incorrect
+}
+
+2024-02-26 00:37:13,902 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:13,902 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:13,902 - Closure_40 - INFO - 补丁1 9 未成功编译
+2024-02-26 00:37:13,903 - Closure_40 - INFO - 开始验证补丁2 1:
+2024-02-26 00:37:13,904 - Closure_40 - INFO - 
+          JsName name = getName(ns.name, false);
+          if (name != null) {
+            refNodes.add(new ClassDefiningFunctionNode(
+                name, n, parent, parent.getParent()));
+          }
+
+2024-02-26 00:37:15,768 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:15,768 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:15,768 - Closure_40 - INFO - 补丁2 1 未成功编译
+2024-02-26 00:37:15,769 - Closure_40 - INFO - 开始验证补丁2 2:
+2024-02-26 00:37:15,769 - Closure_40 - INFO - 
+          JsName name = getName(ns.name);
+          if (name != null) {
+            refNodes.add(new ClassDefiningFunctionNode(
+                name, n, parent));
+          }
+
+2024-02-26 00:37:17,603 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:17,603 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:17,603 - Closure_40 - INFO - 补丁2 2 未成功编译
+2024-02-26 00:37:17,604 - Closure_40 - INFO - 开始验证补丁2 3:
+2024-02-26 00:37:17,604 - Closure_40 - INFO - 
+          JsName name = getName(ns.name, false);
+          if (name != null && parent != null) {
+            Node grandparent = parent.getParent();
+            refNodes.add(new ClassDefiningFunctionNode(
+                name, n, parent, grandparent));
+          }
+
+2024-02-26 00:37:19,464 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:19,464 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:19,464 - Closure_40 - INFO - 补丁2 3 未成功编译
+2024-02-26 00:37:19,465 - Closure_40 - INFO - 开始验证补丁2 4:
+2024-02-26 00:37:19,465 - Closure_40 - INFO - 
+      JsName name = getName(ns.name, false);
+      if (name != null) {
+        refNodes.add(new ClassDefiningFunctionNode(
+            name, n, parent, parent.getParent()));
+      }
+
+2024-02-26 00:37:21,406 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:21,406 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:21,406 - Closure_40 - INFO - 补丁2 4 未成功编译
+2024-02-26 00:37:21,407 - Closure_40 - INFO - 开始验证补丁2 5:
+2024-02-26 00:37:21,407 - Closure_40 - INFO - 
+      JsName name = getName(ns.name, false);
+      if (name != null) {
+        // Assuming refNodes have been properly initialized earlier
+        refNodes.add(new ClassDefiningFunctionNode(
+            name, n, parent, parent.getParent()));
+      } else {
+        // Handle the case when name is null if applicable
+      }
+
+2024-02-26 00:37:23,231 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:23,231 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:23,231 - Closure_40 - INFO - 补丁2 5 未成功编译
+2024-02-26 00:37:23,232 - Closure_40 - INFO - 开始验证补丁2 6:
+2024-02-26 00:37:23,233 - Closure_40 - INFO - 
+      JsName name = getName(ns.name, false);
+      if (name != null) {
+        try {
+          // Assuming refNodes have been properly initialized earlier
+          refNodes.add(new ClassDefiningFunctionNode(
+              name, n, parent, parent.getParent()));
+        } catch (Exception e) {
+          // Handle the potential exception from ClassDefiningFunctionNode constructor
+        }
+      } else {
+        // Handle the case when name is null if applicable
+      }
+
+2024-02-26 00:37:25,077 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:25,077 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:25,077 - Closure_40 - INFO - 补丁2 6 未成功编译
+2024-02-26 00:37:25,078 - Closure_40 - INFO - 开始验证补丁2 7:
+2024-02-26 00:37:25,079 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:25,079 - Closure_40 - INFO - 补丁2 7为重复的补丁
+2024-02-26 00:37:25,079 - Closure_40 - INFO - 开始验证补丁2 8:
+2024-02-26 00:37:25,080 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(name, n, nameNode.getParent(), nameNode.getParent().getParent()));
+}
+
+2024-02-26 00:37:26,933 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:26,933 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:26,933 - Closure_40 - INFO - 补丁2 8 未成功编译
+2024-02-26 00:37:26,934 - Closure_40 - INFO - 开始验证补丁2 9:
+2024-02-26 00:37:26,934 - Closure_40 - INFO - 
+JsName name = getName(ns.name, true);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:28,769 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:28,769 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:28,769 - Closure_40 - INFO - 补丁2 9 未成功编译
+2024-02-26 00:37:28,770 - Closure_40 - INFO - 开始验证补丁3 1:
+2024-02-26 00:37:28,770 - Closure_40 - INFO - 
+      JsName name = getName(ns.name, false);
+      if (name != null) {
+        refNodes.add(new ClassDefiningFunctionNode(
+            name, n, parent, parent.getParent()));
+      }
+
+2024-02-26 00:37:28,770 - Closure_40 - INFO - 补丁3 1为重复的补丁
+2024-02-26 00:37:28,771 - Closure_40 - INFO - 开始验证补丁3 2:
+2024-02-26 00:37:28,771 - Closure_40 - INFO - 
+      JsName name = getName(ns.name, false);
+      if (name != null) {
+        if (refNodes != null) {
+          refNodes.add(new ClassDefiningFunctionNode(
+              name, n, parent, parent.getParent()));
+        } else {
+          // Handle the case where refNodes is null or log the error
+          System.err.println("Error: refNodes collection is not initialized.");
+        }
+      }
+
+2024-02-26 00:37:30,583 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:30,583 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:30,583 - Closure_40 - INFO - 补丁3 2 未成功编译
+2024-02-26 00:37:30,584 - Closure_40 - INFO - 开始验证补丁3 3:
+2024-02-26 00:37:30,584 - Closure_40 - INFO - 
+      JsName name = getName(ns.name, false);
+      if (name != null && parent != null && parent.getParent() != null) {
+        refNodes.add(new ClassDefiningFunctionNode(
+            name, n, parent, parent.getParent()));
+      } else {
+        // Handle or log when parent or parent.getParent() is null
+        System.err.println("Error: The parent or the grandparent node is null.");
+      }
+
+2024-02-26 00:37:32,415 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:32,416 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:32,416 - Closure_40 - INFO - 补丁3 3 未成功编译
+2024-02-26 00:37:32,417 - Closure_40 - INFO - 开始验证补丁3 4:
+2024-02-26 00:37:32,417 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  refNodes.add(new ClassDefiningFunctionNode(
+      name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:32,417 - Closure_40 - INFO - 补丁3 4为重复的补丁
+2024-02-26 00:37:32,418 - Closure_40 - INFO - 开始验证补丁3 5:
+2024-02-26 00:37:32,418 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null) {
+  if (refNodes != null) {
+    refNodes.add(new ClassDefiningFunctionNode(
+        name, n, parent, parent.getParent()));
+  }
+}
+
+2024-02-26 00:37:34,240 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:34,240 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:34,240 - Closure_40 - INFO - 补丁3 5 未成功编译
+2024-02-26 00:37:34,242 - Closure_40 - INFO - 开始验证补丁3 6:
+2024-02-26 00:37:34,242 - Closure_40 - INFO - 
+JsName name = getName(ns.name, false);
+if (name != null && parent.getParent() != null) {
+  refNodes.add(new ClassDefiningFunctionNode(
+      name, n, parent, parent.getParent()));
+}
+
+2024-02-26 00:37:36,086 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:36,086 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:36,086 - Closure_40 - INFO - 补丁3 6 未成功编译
+2024-02-26 00:37:36,087 - Closure_40 - INFO - 开始验证补丁3 7:
+2024-02-26 00:37:36,087 - Closure_40 - INFO - 
+          JsName name = getName(ns.name, false);
+          if (name != null) {
+            refNodes.add(new ClassDefiningFunctionNode(
+                name, n, parent, parent.getParent()));
+          }
+
+2024-02-26 00:37:36,087 - Closure_40 - INFO - 补丁3 7为重复的补丁
+2024-02-26 00:37:36,088 - Closure_40 - INFO - 开始验证补丁3 8:
+2024-02-26 00:37:36,088 - Closure_40 - INFO - 
+          JsName name = getName(ns.name);
+          if (name != null) {
+            refNodes.add(new ClassDefiningFunctionNode(
+                name, n, parent));
+          }
+
+2024-02-26 00:37:36,088 - Closure_40 - INFO - 补丁3 8为重复的补丁
+2024-02-26 00:37:36,089 - Closure_40 - INFO - 开始验证补丁3 9:
+2024-02-26 00:37:36,089 - Closure_40 - INFO - 
+          JsName name = names.get(ns.name);
+          if (name != null) {
+            refNodes.add(new ClassDefiningFunctionNode(
+                name, n));
+          }
+
+2024-02-26 00:37:37,929 - Closure_40 - INFO - 编译失败
+2024-02-26 00:37:37,929 - Closure_40 - INFO - 错误: 非法的表达式开始
+private void recordSet(String name, Node node) {
+2024-02-26 00:37:37,929 - Closure_40 - INFO - 补丁3 9 未成功编译
+2024-02-26 00:37:37,930 - Closure_40 - INFO - Closure_40 未成功修复

@@ -1,0 +1,345 @@
+2024-02-25 12:53:42,594 - Math_48 - INFO - rm -rf /home/chongchong/d4j-project/Math_48
+2024-02-25 12:53:42,595 - Math_48 - INFO - 删除 Math 48b 成功
+2024-02-25 12:53:42,595 - Math_48 - INFO - defects4j checkout -p Math -v 48b -w /home/chongchong/d4j-project/Math_48
+2024-02-25 12:53:46,056 - Math_48 - INFO - checkout Math 48b 成功
+2024-02-25 12:53:52,570 - Math_48 - INFO - 编译成功
+2024-02-25 12:54:17,148 - Math_48 - INFO - 测试失败
+2024-02-25 12:54:17,148 - Math_48 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testIssue631
+
+2024-02-25 12:54:18,054 - Math_48 - INFO - 它的bug类型为:
+2024-02-25 12:54:18,054 - Math_48 - INFO - 3
+2024-02-25 12:55:27,674 - Math_48 - INFO - 开始验证补丁1 1:
+2024-02-25 12:55:27,674 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (Math.abs(f0) < convergenceThreshold) {
+        // Detect early that algorithm is not converging
+        throw new ConvergenceException(LocalizedFormats.FAILED_CONVERGENCE, maximumIterations, f0, f1);
+    }
+    break;
+
+2024-02-25 12:55:28,393 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:28,393 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:28,393 - Math_48 - INFO - 补丁1 1 未成功编译
+2024-02-25 12:55:28,395 - Math_48 - INFO - 开始验证补丁1 2:
+2024-02-25 12:55:28,395 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterationCount >= maxIterationsWithoutProgress) {
+        // Detect early that algorithm is stuck, instead of waiting for the maximum number of iterations to be exceeded.
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, iterationCount, f0, f1);
+    }
+    break;
+
+2024-02-25 12:55:29,167 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:29,167 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:29,167 - Math_48 - INFO - 补丁1 2 未成功编译
+2024-02-25 12:55:29,169 - Math_48 - INFO - 开始验证补丁1 3:
+2024-02-25 12:55:29,169 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (isStuck(f0, previousValues)) {
+        // Detect early that algorithm is not converging by checking if current value is stuck within previous values
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, iterationCount, f0, f1);
+    }
+    break;
+
+2024-02-25 12:55:29,886 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:29,886 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:29,886 - Math_48 - INFO - 补丁1 3 未成功编译
+2024-02-25 12:55:29,887 - Math_48 - INFO - 开始验证补丁1 4:
+2024-02-25 12:55:29,887 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (Math.abs(f0) < convergenceThreshold) {
+        throw new ConvergenceException();
+    }
+    break;
+
+2024-02-25 12:55:30,624 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:30,624 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:30,625 - Math_48 - INFO - 补丁1 4 未成功编译
+2024-02-25 12:55:30,626 - Math_48 - INFO - 开始验证补丁1 5:
+2024-02-25 12:55:30,626 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterationCount++ > maxIterations) {
+        throw new ConvergenceException();
+    }
+    break;
+
+2024-02-25 12:55:31,345 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:31,345 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:31,345 - Math_48 - INFO - 补丁1 5 未成功编译
+2024-02-25 12:55:31,346 - Math_48 - INFO - 开始验证补丁1 6:
+2024-02-25 12:55:31,346 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (previousF0 != null && Math.abs(previousF0 - f0) < progressThreshold) {
+        throw new ConvergenceException();
+    }
+    previousF0 = f0;
+    break;
+
+2024-02-25 12:55:32,054 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:32,054 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:32,054 - Math_48 - INFO - 补丁1 6 未成功编译
+2024-02-25 12:55:32,055 - Math_48 - INFO - 开始验证补丁1 7:
+2024-02-25 12:55:32,055 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (some_stopping_condition) {
+        throw new ConvergenceException(localizedFormats.FAILED_CONVERGENCE, maxIter);
+    }
+    break;
+
+2024-02-25 12:55:32,778 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:32,778 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:32,778 - Math_48 - INFO - 补丁1 7 未成功编译
+2024-02-25 12:55:32,780 - Math_48 - INFO - 开始验证补丁1 8:
+2024-02-25 12:55:32,780 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (Math.abs(f1) < convergenceThreshold) {
+        throw new ConvergenceException(localizedFormats.CONVERGENCE_FAILED, maxIter);
+    }
+    break;
+
+2024-02-25 12:55:33,524 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:33,524 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:33,525 - Math_48 - INFO - 补丁1 8 未成功编译
+2024-02-25 12:55:33,526 - Math_48 - INFO - 开始验证补丁1 9:
+2024-02-25 12:55:33,526 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterationCount > maxIterWithoutProgress) {
+        throw new ConvergenceException(localizedFormats.NO_CONVERGENCE_WITH_MAX_ITERATIONS, maxIter);
+    }
+    break;
+
+2024-02-25 12:55:34,266 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:34,266 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:34,266 - Math_48 - INFO - 补丁1 9 未成功编译
+2024-02-25 12:55:34,268 - Math_48 - INFO - 开始验证补丁2 1:
+2024-02-25 12:55:34,268 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (previousValue == currentValue) {
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, maxIterations);
+    }
+    break;
+
+2024-02-25 12:55:34,992 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:34,992 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:34,992 - Math_48 - INFO - 补丁2 1 未成功编译
+2024-02-25 12:55:34,993 - Math_48 - INFO - 开始验证补丁2 2:
+2024-02-25 12:55:34,993 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (Math.abs(currentValue - previousValue) < minimalDifference) {
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, maxIterations);
+    }
+    break;
+
+2024-02-25 12:55:35,719 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:35,719 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:35,719 - Math_48 - INFO - 补丁2 2 未成功编译
+2024-02-25 12:55:35,720 - Math_48 - INFO - 开始验证补丁2 3:
+2024-02-25 12:55:35,720 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterationCount > maxIterationCount) {
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, maxIterations);
+    }
+    break;
+
+2024-02-25 12:55:36,440 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:36,440 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:36,440 - Math_48 - INFO - 补丁2 3 未成功编译
+2024-02-25 12:55:36,441 - Math_48 - INFO - 开始验证补丁2 4:
+2024-02-25 12:55:36,441 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (someConvergenceCriterion) {
+        throw new ConvergenceException();
+    }
+    // Detect early that algorithm is stuck, instead of waiting
+    break;
+
+2024-02-25 12:55:37,159 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:37,159 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:37,159 - Math_48 - INFO - 补丁2 4 未成功编译
+2024-02-25 12:55:37,160 - Math_48 - INFO - 开始验证补丁2 5:
+2024-02-25 12:55:37,160 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterations > maxIterations) {
+        throw new ConvergenceException();
+    }
+    // Detect early that algorithm is stuck, instead of waiting
+    break;
+
+2024-02-25 12:55:37,875 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:37,875 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:37,875 - Math_48 - INFO - 补丁2 5 未成功编译
+2024-02-25 12:55:37,876 - Math_48 - INFO - 开始验证补丁2 6:
+2024-02-25 12:55:37,876 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (isStuck(previousEstimate, currentEstimate, tolerance)) {
+        throw new ConvergenceException();
+    }
+    // Detect early that algorithm is stuck, instead of waiting
+    break;
+
+2024-02-25 12:55:38,598 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:38,598 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:38,598 - Math_48 - INFO - 补丁2 6 未成功编译
+2024-02-25 12:55:38,600 - Math_48 - INFO - 开始验证补丁2 7:
+2024-02-25 12:55:38,600 - Math_48 - INFO - 
+                case REGULA_FALSI:
+                    if (convergenceCriterionIsMet()) {
+                        throw new ConvergenceException();
+                    }
+                    break;
+
+2024-02-25 12:55:39,324 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:39,324 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:39,324 - Math_48 - INFO - 补丁2 7 未成功编译
+2024-02-25 12:55:39,325 - Math_48 - INFO - 开始验证补丁2 8:
+2024-02-25 12:55:39,325 - Math_48 - INFO - 
+                case REGULA_FALSI:
+                    if (iterations > MAX_ITERATIONS || insufficientProgress()) {
+                        throw new ConvergenceException();
+                    }
+                    break;
+
+2024-02-25 12:55:40,050 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:40,050 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:40,050 - Math_48 - INFO - 补丁2 8 未成功编译
+2024-02-25 12:55:40,051 - Math_48 - INFO - 开始验证补丁2 9:
+2024-02-25 12:55:40,051 - Math_48 - INFO - 
+                case REGULA_FALSI:
+                    if (Math.abs(f0) < TOLERANCE) {
+                        throw new ConvergenceException();
+                    }
+                    break;
+
+2024-02-25 12:55:40,774 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:40,774 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:40,774 - Math_48 - INFO - 补丁2 9 未成功编译
+2024-02-25 12:55:40,775 - Math_48 - INFO - 开始验证补丁3 1:
+2024-02-25 12:55:40,775 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (Math.abs(f1) < convergenceTolerance) {
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, maxIterations);
+    }
+    break;
+
+2024-02-25 12:55:41,498 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:41,498 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:41,498 - Math_48 - INFO - 补丁3 1 未成功编译
+2024-02-25 12:55:41,499 - Math_48 - INFO - 开始验证补丁3 2:
+2024-02-25 12:55:41,499 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (previousF0 - f0 < stuckTolerance) {
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, maxIterations);
+    }
+    previousF0 = f0; // Remember to declare and update this variable appropriately.
+    break;
+
+2024-02-25 12:55:42,209 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:42,209 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:42,209 - Math_48 - INFO - 补丁3 2 未成功编译
+2024-02-25 12:55:42,210 - Math_48 - INFO - 开始验证补丁3 3:
+2024-02-25 12:55:42,210 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterationCount >= maxIterations) {
+        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED, maxIterations);
+    }
+    iterationCount++; // Remember to declare and initialize this variable appropriately.
+    break;
+
+2024-02-25 12:55:42,942 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:42,942 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:42,943 - Math_48 - INFO - 补丁3 3 未成功编译
+2024-02-25 12:55:42,944 - Math_48 - INFO - 开始验证补丁3 4:
+2024-02-25 12:55:42,944 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (Math.abs(f1) < convergenceThreshold || Math.abs(f0 - f1) < smallDifferenceThreshold) {
+        throw new ConvergenceException();
+    }
+    break;
+
+2024-02-25 12:55:43,669 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:43,669 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:43,669 - Math_48 - INFO - 补丁3 4 未成功编译
+2024-02-25 12:55:43,670 - Math_48 - INFO - 开始验证补丁3 5:
+2024-02-25 12:55:43,670 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (iterationCount++ > maxIterations || isStuck(f0, f1, previousF0, previousF1)) {
+        throw new ConvergenceException();
+    }
+    break;
+
+2024-02-25 12:55:44,406 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:44,406 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:44,406 - Math_48 - INFO - 补丁3 5 未成功编译
+2024-02-25 12:55:44,407 - Math_48 - INFO - 开始验证补丁3 6:
+2024-02-25 12:55:44,407 - Math_48 - INFO - 
+case REGULA_FALSI:
+    if (!hasConverged(f0, f1)) {
+        throw new ConvergenceException();
+    }
+    break;
+
+2024-02-25 12:55:45,140 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:45,140 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:45,140 - Math_48 - INFO - 补丁3 6 未成功编译
+2024-02-25 12:55:45,141 - Math_48 - INFO - 开始验证补丁3 7:
+2024-02-25 12:55:45,141 - Math_48 - INFO - 
+                case REGULA_FALSI:
+                    if (closeToConvergence(f0, f1, fx)) {
+                        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED);
+                    }
+                    break;
+
+2024-02-25 12:55:45,870 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:45,870 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:45,870 - Math_48 - INFO - 补丁3 7 未成功编译
+2024-02-25 12:55:45,871 - Math_48 - INFO - 开始验证补丁3 8:
+2024-02-25 12:55:45,871 - Math_48 - INFO - 
+                case REGULA_FALSI:
+                    if (Math.abs(fx) < tolerance || iterationCount > maxIterations) {
+                        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED);
+                    }
+                    break;
+
+2024-02-25 12:55:46,584 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:46,584 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:46,584 - Math_48 - INFO - 补丁3 8 未成功编译
+2024-02-25 12:55:46,585 - Math_48 - INFO - 开始验证补丁3 9:
+2024-02-25 12:55:46,585 - Math_48 - INFO - 
+                case REGULA_FALSI:
+                    if (!hasConverged(previousValue, currentValue)) {
+                        throw new ConvergenceException(LocalizedFormats.CONVERGENCE_FAILED);
+                    }
+                    break;
+
+2024-02-25 12:55:47,307 - Math_48 - INFO - 编译失败
+2024-02-25 12:55:47,307 - Math_48 - INFO - 错误: case 标签重复
+case REGULA_FALSI:
+2024-02-25 12:55:47,307 - Math_48 - INFO - 补丁3 9 未成功编译
+2024-02-25 12:55:47,307 - Math_48 - INFO - Math_48 未成功修复

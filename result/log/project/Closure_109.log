@@ -1,0 +1,196 @@
+2024-02-25 01:23:56,971 - Closure_109 - INFO - rm -rf /home/chongchong/d4j-project/Closure_109
+2024-02-25 01:23:56,972 - Closure_109 - INFO - 删除 Closure 109b 成功
+2024-02-25 01:23:56,972 - Closure_109 - INFO - defects4j checkout -p Closure -v 109b -w /home/chongchong/d4j-project/Closure_109
+2024-02-25 01:23:59,792 - Closure_109 - INFO - checkout Closure 109b 成功
+2024-02-25 01:24:12,231 - Closure_109 - INFO - 编译成功
+2024-02-25 01:25:12,281 - Closure_109 - INFO - 测试失败
+2024-02-25 01:25:12,281 - Closure_109 - INFO - Failing tests: 2
+  - com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testStructuralConstructor2
+  - com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testStructuralConstructor3
+
+2024-02-25 01:25:13,310 - Closure_109 - INFO - 它的bug类型为:
+2024-02-25 01:25:13,310 - Closure_109 - INFO - 2
+2024-02-25 01:26:40,677 - Closure_109 - INFO - 开始验证补丁1 1:
+2024-02-25 01:26:40,677 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+    // Check if the token is a wildcard '?'
+    if (token == JsDocToken.QUESTION_MARK) {
+        // Handle the '?' token appropriately, assuming createWildcardNode is a method that creates a Node for wildcard
+        return createWildcardNode();
+    } else {
+        // Delegate other tokens to parseTypeName assuming it can handle those cases
+        return parseTypeName(token);
+    }
+}
+
+2024-02-25 01:26:42,525 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:42,525 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:42,525 - Closure_109 - INFO - 补丁1 1 未成功编译
+2024-02-25 01:26:42,527 - Closure_109 - INFO - 开始验证补丁1 2:
+2024-02-25 01:26:42,527 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+    switch (token) {
+        case QUESTION_MARK:
+            // Handle wildcard '?' token
+            return createWildcardNode();
+        case STAR:
+        case NULL_LITERAL:
+        case UNDEFINED_LITERAL:
+            // Handle other basic type expressions
+            return parseBasicTypeExpression(token);
+        default:
+            // Assume TypeName can include complex types like UnionType, ArrayType, etc.
+            return parseTypeName(token);
+    }
+}
+
+2024-02-25 01:26:44,399 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:44,399 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:44,399 - Closure_109 - INFO - 补丁1 2 未成功编译
+2024-02-25 01:26:44,400 - Closure_109 - INFO - 开始验证补丁1 3:
+2024-02-25 01:26:44,400 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+    switch (token) {
+        case QUESTION_MARK:
+            // Handle wildcard '?' token
+            return createWildcardNode();
+        case STAR:
+        case NULL_LITERAL:
+        case UNDEFINED_LITERAL:
+        case NAME: // Assuming NAME or similar for TypeName
+        case FUNCTION:
+        case UNION:
+        case RECORD:
+        case ARRAY:
+            // Token matches something that could be parsed as a BasicTypeExpression
+            return parseBasicTypeExpression(token);
+        // Include additional cases for any extra tokens that might represent a ContextTypeExpression
+        // potential extra cases for handling `this:`, `new:`, or other complex type expressions
+        default:
+            throw new IllegalArgumentException("Unhandled token type for context type expression: " + token);
+    }
+}
+
+2024-02-25 01:26:46,236 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:46,236 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:46,236 - Closure_109 - INFO - 补丁1 3 未成功编译
+2024-02-25 01:26:46,237 - Closure_109 - INFO - 开始验证补丁1 4:
+2024-02-25 01:26:46,237 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+  switch (token) {
+    case QUESTION:
+      return new Node(NodeType.QUESTION);
+    case STAR:
+    case NULL:
+    case UNDEFINED:
+      // delegate to parseBasicTypeExpression
+      return parseBasicTypeExpression(token);
+    default:
+      // delegate to parseTypeName for TypeName cases
+      return parseTypeName(token);
+  }
+}
+
+2024-02-25 01:26:48,081 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:48,081 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:48,082 - Closure_109 - INFO - 补丁1 4 未成功编译
+2024-02-25 01:26:48,083 - Closure_109 - INFO - 开始验证补丁1 5:
+2024-02-25 01:26:48,083 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+  if (token == JsDocToken.QUESTION) {
+    return new Node(NodeType.QUESTION);
+  } else {
+    // delegate to the basic type expression parser or type name parser
+    return parseBasicTypeExpression(token);
+  }
+}
+
+2024-02-25 01:26:49,936 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:49,936 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:49,936 - Closure_109 - INFO - 补丁1 5 未成功编译
+2024-02-25 01:26:49,938 - Closure_109 - INFO - 开始验证补丁1 6:
+2024-02-25 01:26:49,938 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+  if (token == JsDocToken.QUESTION) {
+    // handle the wildcard '?' type
+    return new Node(NodeType.QUESTION);
+  } else if (isBasicTypeToken(token)) {
+    // Assuming there's a method to check if the token is a basic type
+    return parseBasicTypeExpression(token);
+  } else {
+    // Assuming it's a TypeName as the default
+    return parseTypeName(token);
+  }
+}
+
+2024-02-25 01:26:51,772 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:51,772 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:51,772 - Closure_109 - INFO - 补丁1 6 未成功编译
+2024-02-25 01:26:51,773 - Closure_109 - INFO - 开始验证补丁1 7:
+2024-02-25 01:26:51,773 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+    switch (token) {
+        case QUESTION:
+            return createQuestionNode();
+        case STAR:
+        case NULL:
+        case UNDEFINED:
+        case TYPE_NAME:
+        case FUNCTION_TYPE:
+        case UNION_TYPE:
+        case RECORD_TYPE:
+        case ARRAY_TYPE:
+            return parseBasicTypeExpression(token);
+        default:
+            throw new ParseException("Unexpected token for ContextTypeExpression");
+    }
+}
+
+2024-02-25 01:26:53,611 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:53,612 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:53,612 - Closure_109 - INFO - 补丁1 7 未成功编译
+2024-02-25 01:26:53,613 - Closure_109 - INFO - 开始验证补丁1 8:
+2024-02-25 01:26:53,613 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+    if (token == JsDocToken.QUESTION) {
+        return parseWildcardType();
+    } else {
+        return parseBasicTypeExpression(token);
+    }
+}
+
+2024-02-25 01:26:55,450 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:55,450 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:55,451 - Closure_109 - INFO - 补丁1 8 未成功编译
+2024-02-25 01:26:55,452 - Closure_109 - INFO - 开始验证补丁1 9:
+2024-02-25 01:26:55,452 - Closure_109 - INFO - 
+private Node parseContextTypeExpression(JsDocToken token) {
+    return switch (token) {
+        case QUESTION -> parseQuestionType(token);
+        default -> parseBasicTypeExpression(token);
+    };
+}
+
+2024-02-25 01:26:57,270 - Closure_109 - INFO - 编译失败
+2024-02-25 01:26:57,270 - Closure_109 - INFO - 错误: 非法的表达式开始
+private Node parseContextTypeExpression(JsDocToken token) {
+2024-02-25 01:26:57,270 - Closure_109 - INFO - 补丁1 9 未成功编译
+2024-02-25 01:26:57,271 - Closure_109 - INFO - 开始验证补丁2 1:
+2024-02-25 01:26:57,271 - Closure_109 - INFO - 
+if (token == JsDocToken.QMARK) {
+  return new Node(Token.QMARK);
+} else {
+  return parseBasicTypeExpression(token);
+}
+
+2024-02-25 01:27:01,674 - Closure_109 - INFO - 编译成功
+2024-02-25 01:28:01,320 - Closure_109 - INFO - 测试成功
+2024-02-25 01:28:01,321 - Closure_109 - INFO - 补丁2 1 通过了所有的测试用例

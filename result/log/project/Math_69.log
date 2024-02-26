@@ -1,0 +1,411 @@
+2024-02-24 01:12:37,056 - Math_69 - INFO - rm -rf /home/chongchong/d4j-project/Math_69
+2024-02-24 01:12:37,057 - Math_69 - INFO - 删除 Math 69b 成功
+2024-02-24 01:12:37,057 - Math_69 - INFO - defects4j checkout -p Math -v 69b -w /home/chongchong/d4j-project/Math_69
+2024-02-24 01:12:40,481 - Math_69 - INFO - checkout Math 69b 成功
+2024-02-24 01:12:46,173 - Math_69 - INFO - 编译成功
+2024-02-24 01:12:53,687 - Math_69 - INFO - 测试失败
+2024-02-24 01:12:53,687 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 01:12:54,593 - Math_69 - INFO - 它的bug类型为:
+2024-02-24 01:12:54,593 - Math_69 - INFO - 1
+2024-02-24 01:13:29,550 - Math_69 - INFO - Math_69 未成功修复
+2024-02-24 11:16:50,823 - Math_69 - INFO - rm -rf /home/chongchong/d4j-project/Math_69
+2024-02-24 11:16:50,850 - Math_69 - INFO - 删除 Math 69b 成功
+2024-02-24 11:16:50,850 - Math_69 - INFO - defects4j checkout -p Math -v 69b -w /home/chongchong/d4j-project/Math_69
+2024-02-24 11:16:54,273 - Math_69 - INFO - checkout Math 69b 成功
+2024-02-24 11:16:59,988 - Math_69 - INFO - 编译成功
+2024-02-24 11:17:07,046 - Math_69 - INFO - 测试失败
+2024-02-24 11:17:07,046 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:17:07,970 - Math_69 - INFO - 它的bug类型为:
+2024-02-24 11:17:07,971 - Math_69 - INFO - 1
+2024-02-24 11:17:45,352 - Math_69 - INFO - 开始验证补丁1 1:
+2024-02-24 11:17:45,352 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:17:46,576 - Math_69 - INFO - 编译成功
+2024-02-24 11:17:53,597 - Math_69 - INFO - 测试失败
+2024-02-24 11:17:53,597 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:17:54,053 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:17:54,053 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:17:54,053 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:17:54,053 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:17:54,053 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:17:54,053 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:17:54,053 - Math_69 - INFO - 补丁1 1测试失败
+2024-02-24 11:17:54,054 - Math_69 - INFO - 开始验证补丁1 2:
+2024-02-24 11:17:54,054 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:17:54,054 - Math_69 - INFO - 补丁1 2为重复的补丁
+2024-02-24 11:17:54,055 - Math_69 - INFO - 开始验证补丁1 3:
+2024-02-24 11:17:54,055 - Math_69 - INFO - 
+out[i][j] = (1 - tDistribution.cumulativeProbability(t)) * 2;
+
+2024-02-24 11:17:55,275 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:02,797 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:02,797 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:03,252 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:03,252 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:03,252 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:03,252 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:03,252 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:03,252 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:03,252 - Math_69 - INFO - 补丁1 3测试失败
+2024-02-24 11:18:03,253 - Math_69 - INFO - 开始验证补丁1 4:
+2024-02-24 11:18:03,253 - Math_69 - INFO - 
+   out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+   
+2024-02-24 11:18:04,467 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:11,522 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:11,522 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:11,986 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:11,986 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:11,986 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:11,986 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:11,986 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:11,986 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:11,987 - Math_69 - INFO - 补丁1 4测试失败
+2024-02-24 11:18:11,987 - Math_69 - INFO - 开始验证补丁1 5:
+2024-02-24 11:18:11,987 - Math_69 - INFO - 
+   out[i][j] = 2 * (1.0 - tDistribution.cumulativeProbability(t));
+   
+2024-02-24 11:18:13,212 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:20,591 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:20,591 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:21,046 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:21,046 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:21,046 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:21,046 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:21,046 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:21,046 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:21,046 - Math_69 - INFO - 补丁1 5测试失败
+2024-02-24 11:18:21,047 - Math_69 - INFO - 开始验证补丁1 6:
+2024-02-24 11:18:21,047 - Math_69 - INFO - 
+   out[i][j] = 2 * (1d - tDistribution.cumulativeProbability(t));
+   
+2024-02-24 11:18:22,291 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:29,507 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:29,507 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:29,965 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:29,965 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:29,965 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:29,965 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:29,965 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:29,965 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:29,965 - Math_69 - INFO - 补丁1 6测试失败
+2024-02-24 11:18:29,966 - Math_69 - INFO - 开始验证补丁1 7:
+2024-02-24 11:18:29,966 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:18:29,966 - Math_69 - INFO - 补丁1 7为重复的补丁
+2024-02-24 11:18:29,967 - Math_69 - INFO - 开始验证补丁1 8:
+2024-02-24 11:18:29,967 - Math_69 - INFO - 
+out[i][j] = 2 * (1.0 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:18:31,179 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:38,445 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:38,445 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:38,899 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:38,899 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:38,899 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:38,899 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:38,899 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:38,899 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:38,899 - Math_69 - INFO - 补丁1 8测试失败
+2024-02-24 11:18:38,900 - Math_69 - INFO - 开始验证补丁1 9:
+2024-02-24 11:18:38,900 - Math_69 - INFO - 
+double pValueOneTail = tDistribution.cumulativeProbability(t);
+out[i][j] = 2 * (1 - pValueOneTail);
+
+2024-02-24 11:18:40,114 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:47,168 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:47,168 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:47,626 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:47,626 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:47,626 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:47,626 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:47,626 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:47,626 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:47,626 - Math_69 - INFO - 补丁1 9测试失败
+2024-02-24 11:18:47,627 - Math_69 - INFO - 开始验证补丁2 1:
+2024-02-24 11:18:47,627 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:18:47,627 - Math_69 - INFO - 补丁2 1为重复的补丁
+2024-02-24 11:18:47,628 - Math_69 - INFO - 开始验证补丁2 2:
+2024-02-24 11:18:47,628 - Math_69 - INFO - 
+double pValue = 2 * (1 - tDistribution.cumulativeProbability(t));
+out[i][j] = pValue;
+
+2024-02-24 11:18:48,843 - Math_69 - INFO - 编译成功
+2024-02-24 11:18:55,849 - Math_69 - INFO - 测试失败
+2024-02-24 11:18:55,850 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:18:56,307 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:18:56,307 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:18:56,307 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:18:56,307 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:18:56,307 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:18:56,307 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:18:56,307 - Math_69 - INFO - 补丁2 2测试失败
+2024-02-24 11:18:56,308 - Math_69 - INFO - 开始验证补丁2 3:
+2024-02-24 11:18:56,308 - Math_69 - INFO - 
+if (i == j) {
+    out[i][j] = 0d;
+} else {
+    double r = correlationMatrix.getEntry(i, j);
+    double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));
+    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+}
+
+2024-02-24 11:18:57,039 - Math_69 - INFO - 编译失败
+2024-02-24 11:18:57,039 - Math_69 - INFO - 错误: 已在方法 getCorrelationPValues()中定义了变量 r
+double r = correlationMatrix.getEntry(i, j);
+2024-02-24 11:18:57,039 - Math_69 - INFO - 补丁2 3 未成功编译
+2024-02-24 11:18:57,040 - Math_69 - INFO - 开始验证补丁2 4:
+2024-02-24 11:18:57,040 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:18:57,040 - Math_69 - INFO - 补丁2 4为重复的补丁
+2024-02-24 11:18:57,045 - Math_69 - INFO - 开始验证补丁2 5:
+2024-02-24 11:18:57,045 - Math_69 - INFO - 
+out[i][j] = 1 - 2 * tDistribution.cumulativeProbability(t);
+
+2024-02-24 11:18:58,262 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:05,777 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:05,777 - Math_69 - INFO - Failing tests: 6
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testSwissFertility
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testLongly
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testSwissFertility
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:19:06,239 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:06,239 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+2024-02-24 11:19:06,239 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:06,239 - Math_69 - INFO -                 assertEquals(p, pValues.getEntry(i, j), 10E-15);
+
+2024-02-24 11:19:06,239 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:06,239 - Math_69 - INFO - junit.framework.AssertionFailedError: expected:<0.014917200614726234> but was:<-0.9850827993852738>
+
+2024-02-24 11:19:06,239 - Math_69 - INFO - 补丁2 5测试失败
+2024-02-24 11:19:06,240 - Math_69 - INFO - 开始验证补丁2 6:
+2024-02-24 11:19:06,241 - Math_69 - INFO - 
+out[i][j] = 2 * (1 + tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:07,472 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:14,462 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:14,462 - Math_69 - INFO - Failing tests: 4
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testSwissFertility
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testLongly
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testSwissFertility
+
+2024-02-24 11:19:14,917 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:14,917 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+2024-02-24 11:19:14,917 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:14,917 - Math_69 - INFO -                 assertEquals(p, pValues.getEntry(i, j), 10E-15);
+
+2024-02-24 11:19:14,917 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:14,917 - Math_69 - INFO - junit.framework.AssertionFailedError: expected:<0.014917200614726234> but was:<3.9850827993852738>
+
+2024-02-24 11:19:14,917 - Math_69 - INFO - 补丁2 6测试失败
+2024-02-24 11:19:14,918 - Math_69 - INFO - 开始验证补丁2 7:
+2024-02-24 11:19:14,918 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:14,918 - Math_69 - INFO - 补丁2 7为重复的补丁
+2024-02-24 11:19:14,919 - Math_69 - INFO - 开始验证补丁2 8:
+2024-02-24 11:19:14,919 - Math_69 - INFO - 
+if (r == 1 || r == -1) {
+    out[i][j] = 0;
+} else {
+    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+}
+
+2024-02-24 11:19:16,142 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:23,090 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:23,090 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:19:23,545 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:23,545 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:19:23,545 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:23,545 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:19:23,545 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:23,545 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:19:23,545 - Math_69 - INFO - 补丁2 8测试失败
+2024-02-24 11:19:23,546 - Math_69 - INFO - 开始验证补丁2 9:
+2024-02-24 11:19:23,546 - Math_69 - INFO - 
+out[i][j] = (r == 1 || r == -1) ? 0 : 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:24,765 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:32,162 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:32,162 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:19:32,617 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:32,617 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:19:32,617 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:32,617 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:19:32,617 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:32,617 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:19:32,617 - Math_69 - INFO - 补丁2 9测试失败
+2024-02-24 11:19:32,618 - Math_69 - INFO - 开始验证补丁3 1:
+2024-02-24 11:19:32,618 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:32,618 - Math_69 - INFO - 补丁3 1为重复的补丁
+2024-02-24 11:19:32,619 - Math_69 - INFO - 开始验证补丁3 2:
+2024-02-24 11:19:32,619 - Math_69 - INFO - 
+out[i][j] = 2 * (1 * tDistribution.cumulativeProbability(t));  // Technically correct but doesn't make sense for two-tailed p-value
+
+2024-02-24 11:19:33,847 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:41,273 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:41,273 - Math_69 - INFO - Failing tests: 4
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testSwissFertility
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testLongly
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testSwissFertility
+
+2024-02-24 11:19:41,739 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:41,740 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+2024-02-24 11:19:41,740 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:41,740 - Math_69 - INFO -                 assertEquals(p, pValues.getEntry(i, j), 10E-15);
+
+2024-02-24 11:19:41,740 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:41,740 - Math_69 - INFO - junit.framework.AssertionFailedError: expected:<0.014917200614726234> but was:<1.9850827993852738>
+
+2024-02-24 11:19:41,740 - Math_69 - INFO - 补丁3 2测试失败
+2024-02-24 11:19:41,741 - Math_69 - INFO - 开始验证补丁3 3:
+2024-02-24 11:19:41,741 - Math_69 - INFO - 
+out[i][j] = 2 * (1 + tDistribution.cumulativeProbability(t));  // Incorrect for two-tailed p-value but syntactically correct
+
+2024-02-24 11:19:42,981 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:50,307 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:50,307 - Math_69 - INFO - Failing tests: 4
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testSwissFertility
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testLongly
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testSwissFertility
+
+2024-02-24 11:19:50,768 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:50,769 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testStdErrorConsistency
+2024-02-24 11:19:50,769 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:50,769 - Math_69 - INFO -                 assertEquals(p, pValues.getEntry(i, j), 10E-15);
+
+2024-02-24 11:19:50,769 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:50,769 - Math_69 - INFO - junit.framework.AssertionFailedError: expected:<0.014917200614726234> but was:<3.9850827993852738>
+
+2024-02-24 11:19:50,769 - Math_69 - INFO - 补丁3 3测试失败
+2024-02-24 11:19:50,770 - Math_69 - INFO - 开始验证补丁3 4:
+2024-02-24 11:19:50,770 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:50,770 - Math_69 - INFO - 补丁3 4为重复的补丁
+2024-02-24 11:19:50,770 - Math_69 - INFO - 开始验证补丁3 5:
+2024-02-24 11:19:50,771 - Math_69 - INFO - 
+out[i][j] = 2 * (1.0 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:50,771 - Math_69 - INFO - 补丁3 5为重复的补丁
+2024-02-24 11:19:50,771 - Math_69 - INFO - 开始验证补丁3 6:
+2024-02-24 11:19:50,771 - Math_69 - INFO - 
+out[i][j] = 2d * (1d - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:52,001 - Math_69 - INFO - 编译成功
+2024-02-24 11:19:59,255 - Math_69 - INFO - 测试失败
+2024-02-24 11:19:59,255 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:19:59,711 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:19:59,711 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:19:59,711 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:19:59,711 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:19:59,711 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:19:59,711 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:19:59,711 - Math_69 - INFO - 补丁3 6测试失败
+2024-02-24 11:19:59,712 - Math_69 - INFO - 开始验证补丁3 7:
+2024-02-24 11:19:59,712 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
+
+2024-02-24 11:19:59,712 - Math_69 - INFO - 补丁3 7为重复的补丁
+2024-02-24 11:19:59,713 - Math_69 - INFO - 开始验证补丁3 8:
+2024-02-24 11:19:59,713 - Math_69 - INFO - 
+out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(Math.abs(t)));
+
+2024-02-24 11:20:00,930 - Math_69 - INFO - 编译成功
+2024-02-24 11:20:08,106 - Math_69 - INFO - 测试失败
+2024-02-24 11:20:08,106 - Math_69 - INFO - Failing tests: 2
+  - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+  - org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest::testPValueNearZero
+
+2024-02-24 11:20:08,560 - Math_69 - INFO - 选择失败的测试用例为:
+2024-02-24 11:20:08,560 - Math_69 - INFO - org.apache.commons.math.stat.correlation.PearsonsCorrelationTest::testPValueNearZero
+2024-02-24 11:20:08,560 - Math_69 - INFO - 失败的测试代码为:
+2024-02-24 11:20:08,560 - Math_69 - INFO -         assertTrue(corrInstance.getCorrelationPValues().getEntry(0, 1) > 0);
+
+2024-02-24 11:20:08,560 - Math_69 - INFO - 失败信息为:
+2024-02-24 11:20:08,560 - Math_69 - INFO - junit.framework.AssertionFailedError
+
+2024-02-24 11:20:08,560 - Math_69 - INFO - 补丁3 8测试失败
+2024-02-24 11:20:08,561 - Math_69 - INFO - 开始验证补丁3 9:
+2024-02-24 11:20:08,561 - Math_69 - INFO - 
+out[i][j] = tDistribution.cumulativeProbability(-Math.abs(t)) + (1 - tDistribution.cumulativeProbability(Math.abs(t)));
+
+2024-02-24 11:20:09,780 - Math_69 - INFO - 编译成功
+2024-02-24 11:20:17,037 - Math_69 - INFO - 测试成功
+2024-02-24 11:20:17,037 - Math_69 - INFO - 补丁3 9 通过了所有的测试用例
