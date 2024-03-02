@@ -1,0 +1,84 @@
+2024-03-02 00:30:56,979 - WRAP - INFO - 开始验证补丁1 1:
+2024-03-02 00:30:56,979 - WRAP - INFO - 
+    while (text.length() > cols) {
+        int end = text.lastIndexOf(" ", cols); // Search for last space within column limit
+        if (end == -1) {
+            end = cols; // If no space found, force wrap at column limit
+        }
+        String line = text.substring(0, end);
+        text = text.substring(end).trim(); // Trim leading whitespace from the remaining text
+        lines.add(line);
+    }
+    if (!text.isEmpty()) { // Don't forget to add the remaining text
+        lines.add(text);
+    }
+    
+2024-03-02 00:30:57,823 - WRAP - INFO - 补丁1 1测试失败
+2024-03-02 00:30:57,825 - WRAP - INFO - 开始验证补丁1 2:
+2024-03-02 00:30:57,825 - WRAP - INFO - 
+        line = text.substring(0, end);
+        text = text.substring(end).trim(); // Trim leading whitespace from the remaining text
+3. 
+2024-03-02 00:30:58,607 - WRAP - INFO - 补丁1 2测试失败
+2024-03-02 00:30:58,608 - WRAP - INFO - 开始验证补丁1 4:
+2024-03-02 00:30:58,608 - WRAP - INFO - 
+int cols = Math.min(text.length(), cols); // Limit cols to text length
+while (text.length() > cols) {
+    int end = text.lastIndexOf(" ", cols); // Search for last space within column limit
+    if (end == -1) {
+        end = cols; // If no space found, force wrap at column limit
+    }
+    String line = text.substring(0, end);
+    text = text.substring(end).trim(); // Trim leading whitespace from the remaining text
+    lines.add(line);
+}
+if (!text.isEmpty()) { // Don't forget to add the remaining text
+    lines.add(text);
+}
+
+2024-03-02 00:30:59,463 - WRAP - INFO - 补丁1 4测试失败
+2024-03-02 00:30:59,464 - WRAP - INFO - 开始验证补丁1 5:
+2024-03-02 00:30:59,464 - WRAP - INFO - 
+while (text.length() > cols) {
+    int end = Math.min(cols, text.length());
+    String line = text.substring(0, end);
+    text = text.substring(end).trim(); // Trim leading whitespace from the remaining text
+    lines.add(line);
+}
+if (!text.isEmpty()) { // Don't forget to add the remaining text
+    lines.add(text);
+}
+
+2024-03-02 00:31:00,312 - WRAP - INFO - 补丁1 5测试失败
+2024-03-02 00:31:00,313 - WRAP - INFO - 开始验证补丁1 6:
+2024-03-02 00:31:00,313 - WRAP - INFO - 
+while (text.length() > cols) {
+    int end = text.indexOf(" ", cols);
+    if (end == -1) {
+        end = Math.min(cols, text.length()); // If no space found, force wrap at column limit
+    }
+    String line = text.substring(0, end);
+    text = text.substring(end).trim(); // Trim leading whitespace from the remaining text
+    lines.add(line);
+}
+if (!text.isEmpty()) { // Don't forget to add the remaining text
+    lines.add(text);
+}
+
+2024-03-02 00:31:01,120 - WRAP - INFO - 补丁1 6测试失败
+2024-03-02 00:31:01,121 - WRAP - INFO - 开始验证补丁1 7:
+2024-03-02 00:31:01,121 - WRAP - INFO - 
+while (text.length() > cols) {
+    int end = text.lastIndexOf(" ", cols); // Search for last space within column limit
+    if (end == -1) {
+        end = cols; // If no space found, force wrap at column limit
+    }
+    line = text.substring(0, end);
+    text = text.substring(end).trim(); // Trim leading whitespace from the remaining text
+    lines.add(line);
+}
+if (!text.isEmpty()) { // Don't forget to add the remaining text
+    lines.add(text);
+}
+
+2024-03-02 00:31:02,203 - WRAP - INFO - 补丁1 7 通过了所有的测试用例

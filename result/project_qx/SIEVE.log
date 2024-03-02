@@ -1,0 +1,7 @@
+2024-03-02 00:10:59,984 - SIEVE - INFO - 开始验证补丁1 1:
+2024-03-02 00:10:59,985 - SIEVE - INFO - 
+            if (all(list_comp(n, primes))) {
+                primes.add(n);
+            }
+
+2024-03-02 00:11:00,758 - SIEVE - INFO - 补丁1 1 通过了所有的测试用例

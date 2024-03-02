@@ -1,0 +1,18 @@
+2024-03-01 21:00:29,896 - BREADTH_FIRST_SEARCH - INFO - 开始验证补丁1 1:
+2024-03-01 21:00:29,896 - BREADTH_FIRST_SEARCH - INFO - 
+while (!queue.isEmpty()) {
+    Node node = queue.removeFirst();
+    if (node == goalnode) {
+        return true;
+    } else {
+        for (Node successor_node : node.getSuccessors()) {
+            if (!nodesvisited.contains(successor_node)) {
+                queue.addLast(successor_node); // Add to the end for BFS
+                nodesvisited.add(successor_node);
+            }
+        }
+    }
+}
+return false; // Return false if goal node is not found after search
+
+2024-03-01 21:00:30,658 - BREADTH_FIRST_SEARCH - INFO - 补丁1 1 通过了所有的测试用例

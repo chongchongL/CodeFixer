@@ -1,0 +1,5 @@
+2024-03-02 00:34:21,117 - FIND_IN_SORTED - INFO - 开始验证补丁1 1:
+2024-03-02 00:34:21,117 - FIND_IN_SORTED - INFO - 
+return binsearch(arr, x, mid + 1, end);
+
+2024-03-02 00:34:22,168 - FIND_IN_SORTED - INFO - 补丁1 1 通过了所有的测试用例

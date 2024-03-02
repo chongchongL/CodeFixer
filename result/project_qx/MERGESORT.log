@@ -1,0 +1,207 @@
+2024-03-01 22:01:32,787 - MERGESORT - INFO - 开始验证补丁1 1:
+2024-03-01 22:01:32,787 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        }
+
+2024-03-01 22:01:33,581 - MERGESORT - INFO - 补丁1 1测试失败
+2024-03-01 22:01:33,582 - MERGESORT - INFO - 开始验证补丁1 2:
+2024-03-01 22:01:33,583 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        } else {
+
+2024-03-01 22:01:34,399 - MERGESORT - INFO - 补丁1 2测试失败
+2024-03-01 22:01:34,400 - MERGESORT - INFO - 开始验证补丁1 3:
+2024-03-01 22:01:34,400 - MERGESORT - INFO - 
+        if (arr.isEmpty() || arr.size() == 1) {
+            return arr;
+        }
+
+2024-03-01 22:01:35,175 - MERGESORT - INFO - 补丁1 3测试失败
+2024-03-01 22:01:35,176 - MERGESORT - INFO - 开始验证补丁1 4:
+2024-03-01 22:01:35,176 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+}
+
+2024-03-01 22:01:35,941 - MERGESORT - INFO - 补丁1 4测试失败
+2024-03-01 22:01:35,942 - MERGESORT - INFO - 开始验证补丁1 5:
+2024-03-01 22:01:35,942 - MERGESORT - INFO - 
+if (arr.size() == 1) {
+    return arr;
+}
+
+2024-03-01 22:01:36,714 - MERGESORT - INFO - 补丁1 5测试失败
+2024-03-01 22:01:36,715 - MERGESORT - INFO - 开始验证补丁1 7:
+2024-03-01 22:01:36,715 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+}
+
+2024-03-01 22:01:36,715 - MERGESORT - INFO - 补丁1 7为重复的补丁
+2024-03-01 22:01:36,716 - MERGESORT - INFO - 开始验证补丁1 8:
+2024-03-01 22:01:36,716 - MERGESORT - INFO - 
+if (arr.size() == 1) {
+    return arr;
+}
+
+2024-03-01 22:01:36,716 - MERGESORT - INFO - 补丁1 8为重复的补丁
+2024-03-01 22:01:36,717 - MERGESORT - INFO - 开始验证补丁1 9:
+2024-03-01 22:01:36,717 - MERGESORT - INFO - 
+if (arr.isEmpty()) {
+    return arr;
+}
+
+2024-03-01 22:01:37,467 - MERGESORT - INFO - 补丁1 9测试失败
+2024-03-01 22:01:37,468 - MERGESORT - INFO - 开始验证补丁2 1:
+2024-03-01 22:01:37,468 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,247 - MERGESORT - INFO - 补丁2 1测试失败
+2024-03-01 22:01:38,248 - MERGESORT - INFO - 开始验证补丁2 2:
+2024-03-01 22:01:38,248 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,248 - MERGESORT - INFO - 补丁2 2为重复的补丁
+2024-03-01 22:01:38,249 - MERGESORT - INFO - 开始验证补丁2 3:
+2024-03-01 22:01:38,249 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,249 - MERGESORT - INFO - 补丁2 3为重复的补丁
+2024-03-01 22:01:38,250 - MERGESORT - INFO - 开始验证补丁2 4:
+2024-03-01 22:01:38,250 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,250 - MERGESORT - INFO - 补丁2 4为重复的补丁
+2024-03-01 22:01:38,251 - MERGESORT - INFO - 开始验证补丁2 5:
+2024-03-01 22:01:38,251 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,251 - MERGESORT - INFO - 补丁2 5为重复的补丁
+2024-03-01 22:01:38,252 - MERGESORT - INFO - 开始验证补丁2 6:
+2024-03-01 22:01:38,252 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,252 - MERGESORT - INFO - 补丁2 6为重复的补丁
+2024-03-01 22:01:38,253 - MERGESORT - INFO - 开始验证补丁2 7:
+2024-03-01 22:01:38,253 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+
+2024-03-01 22:01:38,253 - MERGESORT - INFO - 补丁2 7为重复的补丁
+2024-03-01 22:01:38,254 - MERGESORT - INFO - 开始验证补丁2 8:
+2024-03-01 22:01:38,254 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+    return arr;
+} else {
+
+
+
+2024-03-01 22:01:39,020 - MERGESORT - INFO - 补丁2 8测试失败
+2024-03-01 22:01:39,021 - MERGESORT - INFO - 开始验证补丁3 1:
+2024-03-01 22:01:39,021 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        }
+
+2024-03-01 22:01:39,021 - MERGESORT - INFO - 补丁3 1为重复的补丁
+2024-03-01 22:01:39,022 - MERGESORT - INFO - 开始验证补丁3 2:
+2024-03-01 22:01:39,022 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        } else {
+            int middle = arr.size() / 2;
+            ArrayList<Integer> left = new ArrayList<Integer>(100);
+            left.addAll(arr.subList(0,middle));
+            left = mergesort(left);
+            ArrayList<Integer> right = new ArrayList<Integer>(100);
+            right.addAll(arr.subList(middle, arr.size()));
+            right = mergesort(right);
+            return merge(left, right);
+        }
+    }
+
+2024-03-01 22:01:39,821 - MERGESORT - INFO - 补丁3 2测试失败
+2024-03-01 22:01:39,822 - MERGESORT - INFO - 开始验证补丁3 3:
+2024-03-01 22:01:39,822 - MERGESORT - INFO - 
+        if (arr.size() == 0 || arr.size() == 1) {
+            return arr;
+        }
+
+2024-03-01 22:01:40,635 - MERGESORT - INFO - 补丁3 3测试失败
+2024-03-01 22:01:40,636 - MERGESORT - INFO - 开始验证补丁3 4:
+2024-03-01 22:01:40,636 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        }
+
+2024-03-01 22:01:40,636 - MERGESORT - INFO - 补丁3 4为重复的补丁
+2024-03-01 22:01:40,641 - MERGESORT - INFO - 开始验证补丁3 5:
+2024-03-01 22:01:40,641 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        } else {
+            int middle = arr.size() / 2;
+            ArrayList<Integer> left = new ArrayList<Integer>(100);
+            left.addAll(arr.subList(0, middle));
+            left = mergesort(left);
+            ArrayList<Integer> right = new ArrayList<Integer>(100);
+            right.addAll(arr.subList(middle, arr.size()));
+            right = mergesort(right);
+            return merge(left, right);
+        }
+
+2024-03-01 22:01:41,404 - MERGESORT - INFO - 补丁3 5测试失败
+2024-03-01 22:01:41,405 - MERGESORT - INFO - 开始验证补丁3 6:
+2024-03-01 22:01:41,405 - MERGESORT - INFO - 
+        if (arr.size() == 0 || arr.size() == 1) {
+            return arr;
+        } else {
+            int middle = arr.size() / 2;
+            ArrayList<Integer> left = new ArrayList<Integer>(100);
+            left.addAll(arr.subList(0, middle));
+            left = mergesort(left);
+            ArrayList<Integer> right = new ArrayList<Integer>(100);
+            right.addAll(arr.subList(middle, arr.size()));
+            right = mergesort(right);
+            return merge(left, right);
+        }
+
+2024-03-01 22:01:42,204 - MERGESORT - INFO - 补丁3 6测试失败
+2024-03-01 22:01:42,205 - MERGESORT - INFO - 开始验证补丁3 7:
+2024-03-01 22:01:42,205 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+
+2024-03-01 22:01:43,007 - MERGESORT - INFO - 补丁3 7测试失败
+2024-03-01 22:01:43,009 - MERGESORT - INFO - 开始验证补丁3 8:
+2024-03-01 22:01:43,009 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+
+2024-03-01 22:01:43,009 - MERGESORT - INFO - 补丁3 8为重复的补丁
+2024-03-01 22:01:43,010 - MERGESORT - INFO - 开始验证补丁3 9:
+2024-03-01 22:01:43,010 - MERGESORT - INFO - 
+if (arr.size() <= 1) {
+
+2024-03-01 22:01:43,010 - MERGESORT - INFO - 补丁3 9为重复的补丁
+2024-03-01 22:01:43,010 - MERGESORT - INFO - MERGESORT 未成功修复
+2024-03-01 22:54:36,265 - MERGESORT - INFO - 开始验证补丁1 1:
+2024-03-01 22:54:36,266 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        }
+
+2024-03-01 22:54:37,074 - MERGESORT - INFO - 补丁1 1测试失败
+2024-03-01 22:54:37,076 - MERGESORT - INFO - 开始验证补丁1 2:
+2024-03-01 22:54:37,076 - MERGESORT - INFO - 
+        if (arr.size() <= 1) {
+            return arr;
+        } else {
+
+2024-03-01 22:54:38,154 - MERGESORT - INFO - 补丁1 2 通过了所有的测试用例

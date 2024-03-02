@@ -1,0 +1,255 @@
+2024-03-02 00:10:08,585 - SHUNTING_YARD - INFO - 开始验证补丁1 1:
+2024-03-02 00:10:08,585 - SHUNTING_YARD - INFO - 
+// After casting to an integer, add a closing bracket to end the if block
+} else {
+    // Inside the else block, add an else-if to check if the token is an operator
+    if (precedence.containsKey(token)) {
+        String operator = (String) token;
+        // While there's an operator on the stack with greater or equal precedence
+        while (!opstack.isEmpty() && precedence.get(opstack.getLast()) >= precedence.get(operator)) {
+            // Add the operator at the top of the stack to the list of RPN tokens
+            rpntokens.add(opstack.pop());
+        }
+        // Push the current operator onto the stack
+        opstack.push(operator);
+    } else {
+        // Handle cases where token is neither an integer nor an operator
+        // This could involve throwing an exception or logging an error
+    }
+}
+
+2024-03-02 00:10:09,367 - SHUNTING_YARD - INFO - 补丁1 1测试失败
+2024-03-02 00:10:09,369 - SHUNTING_YARD - INFO - 开始验证补丁1 2:
+2024-03-02 00:10:09,369 - SHUNTING_YARD - INFO - 
+// After casting to an integer, add a closing bracket to end the if block
+} else {
+    String operator = (String) token;
+    // While there's an operator on the stack with greater or equal precedence
+    while (!opstack.isEmpty() && precedence.get(opstack.getLast()) >= precedence.get(operator)) {
+        // Add the operator at the top of the stack to the list of RPN tokens
+        rpntokens.add(opstack.pop());
+    }
+    // Push the current operator onto the stack
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:10,162 - SHUNTING_YARD - INFO - 补丁1 2测试失败
+2024-03-02 00:10:10,164 - SHUNTING_YARD - INFO - 开始验证补丁1 3:
+2024-03-02 00:10:10,164 - SHUNTING_YARD - INFO - 
+// After casting to an integer, add a closing bracket to end the if block
+} else if (precedence.containsKey(token)) {
+    String operator = (String) token;
+    // While there's an operator on the stack with greater or equal precedence
+    while (!opstack.isEmpty() && precedence.get(opstack.getLast()) >= precedence.get(operator)) {
+        // Add the operator at the top of the stack to the list of RPN tokens
+        rpntokens.add(opstack.pop());
+    }
+    // Push the current operator onto the stack
+    opstack.push(operator);
+}
+// Handle other cases of the token if necessary
+
+2024-03-02 00:10:10,985 - SHUNTING_YARD - INFO - 补丁1 3测试失败
+2024-03-02 00:10:10,986 - SHUNTING_YARD - INFO - 开始验证补丁1 4:
+2024-03-02 00:10:10,986 - SHUNTING_YARD - INFO - 
+            } else if (operator.equals("(")) {
+                opstack.push(operator);
+            } else if (operator.equals(")")) {
+                while (!opstack.isEmpty() && !opstack.peek().equals("(")) {
+                    rpntokens.add(opstack.pop());
+                }
+                if (!opstack.isEmpty() && opstack.peek().equals("(")) {
+                    opstack.pop(); // Pop the "("
+                }
+            } else {
+                String operator = (String) token;
+                while (!opstack.isEmpty() && precedence.containsKey(opstack.peek()) && precedence.get(operator) <= precedence.get(opstack.peek())) {
+                    rpntokens.add(opstack.pop());
+                }
+                opstack.push(operator);
+            }
+
+2024-03-02 00:10:11,770 - SHUNTING_YARD - INFO - 补丁1 4测试失败
+2024-03-02 00:10:11,771 - SHUNTING_YARD - INFO - 开始验证补丁1 5:
+2024-03-02 00:10:11,771 - SHUNTING_YARD - INFO - 
+            } else {
+                String operator = (String) token;
+                while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.peek())) {
+                    rpntokens.add(opstack.pop());
+                }
+                opstack.push(operator);
+            }
+
+2024-03-02 00:10:12,552 - SHUNTING_YARD - INFO - 补丁1 5测试失败
+2024-03-02 00:10:12,553 - SHUNTING_YARD - INFO - 开始验证补丁1 6:
+2024-03-02 00:10:12,553 - SHUNTING_YARD - INFO - 
+            } else {
+                String operator = (String) token;
+                while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.getLast())) {
+                    rpntokens.add(opstack.pop());
+                }
+                opstack.push(operator);
+            }
+
+2024-03-02 00:10:13,326 - SHUNTING_YARD - INFO - 补丁1 6测试失败
+2024-03-02 00:10:13,327 - SHUNTING_YARD - INFO - 开始验证补丁1 7:
+2024-03-02 00:10:13,327 - SHUNTING_YARD - INFO - 
+public class SHUNTING_YARD {
+    public static List shunting_yard(ArrayList tokens) {
+        // ... (preceding code remains unchanged)
+
+        for (Object token : tokens) {
+            if (Integer.class.isInstance(token)) {
+                rpntokens.add((Integer) token);
+            } else {
+                String operator = (String) token;
+                while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.peek())) {
+                    rpntokens.add(opstack.pop());
+                }
+                opstack.push(operator);
+            }
+        }
+        // ... (rest of the method remains unchanged)
+        return rpntokens;
+    }
+}
+
+2024-03-02 00:10:14,106 - SHUNTING_YARD - INFO - 补丁1 7测试失败
+2024-03-02 00:10:14,107 - SHUNTING_YARD - INFO - 开始验证补丁1 8:
+2024-03-02 00:10:14,107 - SHUNTING_YARD - INFO - 
+public class SHUNTING_YARD {
+    public static List shunting_yard(ArrayList tokens) {
+        // ... (preceding code remains unchanged)
+
+        for (Object token : tokens) {
+            if (Integer.class.isInstance(token)) {
+                rpntokens.add((Integer) token);
+            } else if (token instanceof String) { // Checking if token is an operator
+                String operator = (String) token;
+                while (!opstack.isEmpty() && precedence.containsKey(opstack.peek()) && precedence.get(operator) <= precedence.get(opstack.peek())) {
+                    rpntokens.add(opstack.pop());
+                }
+                opstack.push(operator);
+            }
+        }
+        // ... (rest of the method remains unchanged)
+        return rpntokens;
+    }
+}
+
+
+2024-03-02 00:10:14,915 - SHUNTING_YARD - INFO - 补丁1 8测试失败
+2024-03-02 00:10:14,916 - SHUNTING_YARD - INFO - 开始验证补丁1 9:
+2024-03-02 00:10:14,916 - SHUNTING_YARD - INFO - 
+public class SHUNTING_YARD {
+    public static List shunting_yard(ArrayList tokens) {
+        // ... (preceding code remains unchanged)
+
+        for (Object token : tokens) {
+            if (token instanceof Integer) { // Improved check for Integer tokens
+                rpntokens.add(token);
+            } else {
+                String operator = (String) token;
+                while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.peek())) {
+                    rpntokens.add(opstack.pop());
+                }
+                opstack.push(operator);
+            }
+        }
+        // ... (rest of the method remains unchanged)
+        return rpntokens;
+    }
+}
+
+2024-03-02 00:10:15,706 - SHUNTING_YARD - INFO - 补丁1 9测试失败
+2024-03-02 00:10:15,707 - SHUNTING_YARD - INFO - 开始验证补丁2 1:
+2024-03-02 00:10:15,707 - SHUNTING_YARD - INFO - 
+} else if (token.equals("(")) {
+    opstack.push(token);
+} else if (token.equals(")")) {
+    while (!opstack.isEmpty() && !opstack.getLast().equals("(")) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.pop(); // Pop the '('
+} else {
+    String operator = (String) token;
+    while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.getLast())) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:16,475 - SHUNTING_YARD - INFO - 补丁2 1测试失败
+2024-03-02 00:10:16,476 - SHUNTING_YARD - INFO - 开始验证补丁2 2:
+2024-03-02 00:10:16,476 - SHUNTING_YARD - INFO - 
+} else if (token.equals("(")) {
+    opstack.push(token);
+} else if (token.equals(")")) {
+    while (!opstack.isEmpty() && !opstack.getLast().equals("(")) {
+        rpntokens.add(opstack.pop());
+    }
+    if (!opstack.isEmpty()) opstack.pop(); // Pop the '('
+} else {
+    String operator = (String) token;
+    while (!opstack.isEmpty() && precedence.get(opstack.getLast()) >= precedence.get(operator)) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:17,281 - SHUNTING_YARD - INFO - 补丁2 2测试失败
+2024-03-02 00:10:17,282 - SHUNTING_YARD - INFO - 开始验证补丁2 3:
+2024-03-02 00:10:17,283 - SHUNTING_YARD - INFO - 
+} else {
+    String operator = (String) token;
+    while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.getLast())) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:18,064 - SHUNTING_YARD - INFO - 补丁2 3测试失败
+2024-03-02 00:10:18,065 - SHUNTING_YARD - INFO - 开始验证补丁2 4:
+2024-03-02 00:10:18,065 - SHUNTING_YARD - INFO - 
+} else if (token.equals("(")) {
+    opstack.push("(");
+} else if (token.equals(")")) {
+    while (!opstack.isEmpty() && !opstack.getLast().equals("(")) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.removeLast(); // Pops the "("
+} else {
+    String operator = (String) token;
+    while (!opstack.isEmpty() && !opstack.getLast().equals("(") && 
+           precedence.get(operator) <= precedence.get(opstack.getLast())) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:18,851 - SHUNTING_YARD - INFO - 补丁2 4测试失败
+2024-03-02 00:10:18,852 - SHUNTING_YARD - INFO - 开始验证补丁2 5:
+2024-03-02 00:10:18,852 - SHUNTING_YARD - INFO - 
+} else {
+    String operator = (String) token;
+    while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.getLast())) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:18,852 - SHUNTING_YARD - INFO - 补丁2 5为重复的补丁
+2024-03-02 00:10:18,853 - SHUNTING_YARD - INFO - 开始验证补丁2 6:
+2024-03-02 00:10:18,853 - SHUNTING_YARD - INFO - 
+} else {
+    String operator = (String) token;
+    while (!opstack.isEmpty() && precedence.get(operator) <= precedence.get(opstack.peek())) {
+        rpntokens.add(opstack.pop());
+    }
+    opstack.push(operator);
+}
+
+2024-03-02 00:10:19,652 - SHUNTING_YARD - INFO - 补丁2 6测试失败
+2024-03-02 00:10:19,653 - SHUNTING_YARD - INFO - 开始验证补丁2 7:
+2024-03-02 00:10:19,653 - SHUNTING_YARD - INFO - opstack.push(token);}
+2024-03-02 00:10:20,391 - SHUNTING_YARD - INFO - 补丁2 7 通过了所有的测试用例

@@ -1,0 +1,332 @@
+2024-03-01 21:43:01,996 - FLATTEN - INFO - 开始验证补丁1 1:
+2024-03-01 21:43:01,996 - FLATTEN - INFO - 
+            }
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:02,801 - FLATTEN - INFO - 补丁1 1测试失败
+2024-03-01 21:43:02,802 - FLATTEN - INFO - 开始验证补丁1 2:
+2024-03-01 21:43:02,802 - FLATTEN - INFO - 
+            }
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:02,802 - FLATTEN - INFO - 补丁1 2为重复的补丁
+2024-03-01 21:43:02,803 - FLATTEN - INFO - 开始验证补丁1 3:
+2024-03-01 21:43:02,803 - FLATTEN - INFO - 
+            }
+            }
+            return result;
+        } else {
+            result.add(x);
+            }
+        }
+
+2024-03-01 21:43:03,623 - FLATTEN - INFO - 补丁1 3测试失败
+2024-03-01 21:43:03,624 - FLATTEN - INFO - 开始验证补丁1 4:
+2024-03-01 21:43:03,624 - FLATTEN - INFO - 
+                } else {
+                    result.add(flatten(x));
+                }
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:04,417 - FLATTEN - INFO - 补丁1 4测试失败
+2024-03-01 21:43:04,419 - FLATTEN - INFO - 开始验证补丁1 5:
+2024-03-01 21:43:04,419 - FLATTEN - INFO - 
+                } else {
+                    result.add(flatten(x));
+                }
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:04,419 - FLATTEN - INFO - 补丁1 5为重复的补丁
+2024-03-01 21:43:04,419 - FLATTEN - INFO - 开始验证补丁1 6:
+2024-03-01 21:43:04,420 - FLATTEN - INFO - 
+                } else {
+                    result.add(x);
+                }
+            }
+            return result;
+        } else {
+            return narr;
+        }
+
+2024-03-01 21:43:05,189 - FLATTEN - INFO - 补丁1 6测试失败
+2024-03-01 21:43:05,190 - FLATTEN - INFO - 开始验证补丁1 7:
+2024-03-01 21:43:05,190 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+    }
+    return result;
+
+2024-03-01 21:43:05,987 - FLATTEN - INFO - 补丁1 7测试失败
+2024-03-01 21:43:05,988 - FLATTEN - INFO - 开始验证补丁1 8:
+2024-03-01 21:43:05,988 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x);
+            }
+        }
+        return result;
+
+2024-03-01 21:43:06,761 - FLATTEN - INFO - 补丁1 8测试失败
+2024-03-01 21:43:06,762 - FLATTEN - INFO - 开始验证补丁1 9:
+2024-03-01 21:43:06,762 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x);
+            return result;
+        }
+
+2024-03-01 21:43:07,557 - FLATTEN - INFO - 补丁1 9测试失败
+2024-03-01 21:43:07,558 - FLATTEN - INFO - 开始验证补丁2 1:
+2024-03-01 21:43:07,558 - FLATTEN - INFO - 
+                } else {
+                    result.add(x);
+                }
+            }
+            return result;
+        } else {
+            result.add(arr);
+            return result;
+        }
+
+2024-03-01 21:43:08,349 - FLATTEN - INFO - 补丁2 1测试失败
+2024-03-01 21:43:08,350 - FLATTEN - INFO - 开始验证补丁2 2:
+2024-03-01 21:43:08,350 - FLATTEN - INFO - 
+                } else {
+                    result.add(flatten(x));
+                }
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:08,350 - FLATTEN - INFO - 补丁2 2为重复的补丁
+2024-03-01 21:43:08,351 - FLATTEN - INFO - 开始验证补丁2 3:
+2024-03-01 21:43:08,351 - FLATTEN - INFO - 
+                } else {
+                    return flatten(x);
+                }
+            }
+            return result;
+        }
+
+2024-03-01 21:43:09,123 - FLATTEN - INFO - 补丁2 3测试失败
+2024-03-01 21:43:09,124 - FLATTEN - INFO - 开始验证补丁2 4:
+2024-03-01 21:43:09,124 - FLATTEN - INFO - 
+                } else {
+                    result.add(x);
+                }
+            }
+            return result;
+        } else {
+            result.add(arr);
+            return result;
+        }
+
+2024-03-01 21:43:09,124 - FLATTEN - INFO - 补丁2 4为重复的补丁
+2024-03-01 21:43:09,129 - FLATTEN - INFO - 开始验证补丁2 5:
+2024-03-01 21:43:09,129 - FLATTEN - INFO - 
+                } else {
+                    result.add(flatten(x));
+                }
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:09,129 - FLATTEN - INFO - 补丁2 5为重复的补丁
+2024-03-01 21:43:09,130 - FLATTEN - INFO - 开始验证补丁2 6:
+2024-03-01 21:43:09,131 - FLATTEN - INFO - 
+                } else {
+                    return narr;
+                }
+
+2024-03-01 21:43:09,903 - FLATTEN - INFO - 补丁2 6测试失败
+2024-03-01 21:43:09,904 - FLATTEN - INFO - 开始验证补丁2 7:
+2024-03-01 21:43:09,904 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:10,678 - FLATTEN - INFO - 补丁2 7测试失败
+2024-03-01 21:43:10,679 - FLATTEN - INFO - 开始验证补丁2 8:
+2024-03-01 21:43:10,679 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x);
+            }
+        }
+
+2024-03-01 21:43:11,466 - FLATTEN - INFO - 补丁2 8测试失败
+2024-03-01 21:43:11,467 - FLATTEN - INFO - 开始验证补丁2 9:
+2024-03-01 21:43:11,467 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x);
+        }
+
+2024-03-01 21:43:11,467 - FLATTEN - INFO - 补丁2 9为重复的补丁
+2024-03-01 21:43:11,468 - FLATTEN - INFO - 开始验证补丁3 1:
+2024-03-01 21:43:11,468 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            return arr; // Return non-list element as is
+        }
+
+2024-03-01 21:43:12,245 - FLATTEN - INFO - 补丁3 1测试失败
+2024-03-01 21:43:12,246 - FLATTEN - INFO - 开始验证补丁3 2:
+2024-03-01 21:43:12,246 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            result.add(x); // Just add non-list elements directly
+        }
+
+2024-03-01 21:43:13,013 - FLATTEN - INFO - 补丁3 2测试失败
+2024-03-01 21:43:13,014 - FLATTEN - INFO - 开始验证补丁3 3:
+2024-03-01 21:43:13,014 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            throw new IllegalArgumentException("Input is not an instance of ArrayList"); // Handle unexpected input
+        }
+
+2024-03-01 21:43:13,799 - FLATTEN - INFO - 补丁3 3测试失败
+2024-03-01 21:43:13,800 - FLATTEN - INFO - 开始验证补丁3 4:
+2024-03-01 21:43:13,801 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            return arr; // Return non-list element as is
+        }
+
+2024-03-01 21:43:13,801 - FLATTEN - INFO - 补丁3 4为重复的补丁
+2024-03-01 21:43:13,802 - FLATTEN - INFO - 开始验证补丁3 5:
+2024-03-01 21:43:13,802 - FLATTEN - INFO -             }
+            return result;
+        } else {
+            // Add a base case for non-ArrayList elements
+            result.add(x);
+        }
+
+2024-03-01 21:43:14,630 - FLATTEN - INFO - 补丁3 5测试失败
+2024-03-01 21:43:14,631 - FLATTEN - INFO - 开始验证补丁3 6:
+2024-03-01 21:43:14,631 - FLATTEN - INFO -             }
+            return result;
+        } else {
+            throw new IllegalArgumentException("Input is not an instance of ArrayList");
+        }
+
+2024-03-01 21:43:15,442 - FLATTEN - INFO - 补丁3 6测试失败
+2024-03-01 21:43:15,443 - FLATTEN - INFO - 开始验证补丁3 7:
+2024-03-01 21:43:15,443 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            return arr; // Return non-list element as is
+        }
+
+2024-03-01 21:43:15,443 - FLATTEN - INFO - 补丁3 7为重复的补丁
+2024-03-01 21:43:15,444 - FLATTEN - INFO - 开始验证补丁3 8:
+2024-03-01 21:43:15,444 - FLATTEN - INFO - 
+            }
+            return result;
+        } else {
+            throw new IllegalArgumentException("Input is not an instance of ArrayList");
+        }
+
+2024-03-01 21:43:16,236 - FLATTEN - INFO - 补丁3 8测试失败
+2024-03-01 21:43:16,237 - FLATTEN - INFO - 开始验证补丁3 9:
+2024-03-01 21:43:16,237 - FLATTEN - INFO - 
+            }
+            return new ArrayList(Arrays.asList(arr));
+
+2024-03-01 21:43:17,052 - FLATTEN - INFO - 补丁3 9测试失败
+2024-03-01 21:43:17,052 - FLATTEN - INFO - FLATTEN 未成功修复
+2024-03-01 21:45:03,165 - FLATTEN - INFO - 开始验证补丁1 1:
+2024-03-01 21:45:03,165 - FLATTEN - INFO - 
+result.add(x);
+
+2024-03-01 21:45:03,927 - FLATTEN - INFO - 补丁1 1测试失败
+2024-03-01 21:45:03,928 - FLATTEN - INFO - 开始验证补丁1 2:
+2024-03-01 21:45:03,928 - FLATTEN - INFO - 
+result.add(x);
+
+2024-03-01 21:45:03,928 - FLATTEN - INFO - 补丁1 2为重复的补丁
+2024-03-01 21:45:03,929 - FLATTEN - INFO - 开始验证补丁1 3:
+2024-03-01 21:45:03,930 - FLATTEN - INFO - 
+result.add(x);
+
+2024-03-01 21:45:03,930 - FLATTEN - INFO - 补丁1 3为重复的补丁
+2024-03-01 21:45:03,931 - FLATTEN - INFO - 开始验证补丁1 4:
+2024-03-01 21:45:03,931 - FLATTEN - INFO - 
+                    result.add(x);
+
+2024-03-01 21:45:04,688 - FLATTEN - INFO - 补丁1 4测试失败
+2024-03-01 21:45:04,689 - FLATTEN - INFO - 开始验证补丁1 5:
+2024-03-01 21:45:04,689 - FLATTEN - INFO - 
+                    result.add(x instanceof ArrayList ? flatten(x) : x);
+
+2024-03-01 21:45:05,468 - FLATTEN - INFO - 补丁1 5测试失败
+2024-03-01 21:45:05,469 - FLATTEN - INFO - 开始验证补丁1 6:
+2024-03-01 21:45:05,469 - FLATTEN - INFO - 
+                    result.add(x);
+
+2024-03-01 21:45:05,469 - FLATTEN - INFO - 补丁1 6为重复的补丁
+2024-03-01 21:45:05,470 - FLATTEN - INFO - 开始验证补丁2 1:
+2024-03-01 21:45:05,470 - FLATTEN - INFO - 
+                result.add(x);
+
+2024-03-01 21:45:06,247 - FLATTEN - INFO - 补丁2 1测试失败
+2024-03-01 21:45:06,248 - FLATTEN - INFO - 开始验证补丁2 2:
+2024-03-01 21:45:06,248 - FLATTEN - INFO - 
+            result.add(x);
+
+2024-03-01 21:45:07,016 - FLATTEN - INFO - 补丁2 2测试失败
+2024-03-01 21:45:07,017 - FLATTEN - INFO - 开始验证补丁2 3:
+2024-03-01 21:45:07,017 - FLATTEN - INFO - 
+                result.add(x);
+
+2024-03-01 21:45:07,017 - FLATTEN - INFO - 补丁2 3为重复的补丁
+2024-03-01 21:45:07,018 - FLATTEN - INFO - 开始验证补丁2 4:
+2024-03-01 21:45:07,018 - FLATTEN - INFO - 
+                    result.add(x);
+
+2024-03-01 21:45:07,018 - FLATTEN - INFO - 补丁2 4为重复的补丁
+2024-03-01 21:45:07,019 - FLATTEN - INFO - 开始验证补丁2 5:
+2024-03-01 21:45:07,019 - FLATTEN - INFO - 
+                    result.add(x);
+                }
+            }
+            return result;
+        } else {
+            return arr;
+
+2024-03-01 21:45:08,065 - FLATTEN - INFO - 补丁2 5 通过了所有的测试用例

@@ -1,0 +1,6 @@
+2024-03-01 21:28:21,456 - DEPTH_FIRST_SEARCH - INFO - 开始验证补丁1 1:
+2024-03-01 21:28:21,456 - DEPTH_FIRST_SEARCH - INFO - 
+                    nodesvisited.add(node);
+                    for (Node successornodes : node.getSuccessors()) {
+
+2024-03-01 21:28:22,209 - DEPTH_FIRST_SEARCH - INFO - 补丁1 1 通过了所有的测试用例

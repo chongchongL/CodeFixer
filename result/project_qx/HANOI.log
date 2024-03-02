@@ -1,0 +1,5 @@
+2024-03-01 21:49:59,040 - HANOI - INFO - 开始验证补丁1 1:
+2024-03-01 21:49:59,040 - HANOI - INFO - 
+steps.add(new Pair<Integer,Integer>(start, end));
+
+2024-03-01 21:50:00,105 - HANOI - INFO - 补丁1 1 通过了所有的测试用例

@@ -1,0 +1,85 @@
+2024-03-01 23:11:13,377 - POWERSET - INFO - 开始验证补丁1 1:
+2024-03-01 23:11:13,377 - POWERSET - INFO - 
+// Clone subset and add the first element
+for (ArrayList subset : rest_subsets) {
+    ArrayList newSubset = new ArrayList(subset);
+    newSubset.add(0, first);
+    output.add(newSubset);
+}
+output.addAll(rest_subsets); // Add the subsets without the first element
+return output;
+
+2024-03-01 23:11:14,472 - POWERSET - INFO - 补丁1 1测试失败
+2024-03-01 23:11:14,473 - POWERSET - INFO - 开始验证补丁1 2:
+2024-03-01 23:11:14,473 - POWERSET - INFO - 
+// Separate the subsets with and without the first element
+for (ArrayList subset: rest_subsets) {
+    ArrayList subsetWithFirst = new ArrayList();
+    subsetWithFirst.add(first);
+    subsetWithFirst.addAll(subset);
+    output.add(subsetWithFirst);
+}
+output.addAll(rest_subsets);
+return output;
+
+2024-03-01 23:11:15,584 - POWERSET - INFO - 补丁1 2测试失败
+2024-03-01 23:11:15,585 - POWERSET - INFO - 开始验证补丁1 3:
+2024-03-01 23:11:15,585 - POWERSET - INFO - 
+// Use a loop to combine 'first' with each subset
+for (ArrayList subset : rest_subsets) {
+    ArrayList combinedSubset = new ArrayList();
+    combinedSubset.add(first);
+    combinedSubset.addAll(subset);
+    output.add(combinedSubset);
+}
+// Ensure all subsets without 'first' are also included
+for (ArrayList subset : rest_subsets) {
+    output.add(subset);
+}
+return output;
+
+2024-03-01 23:11:16,644 - POWERSET - INFO - 补丁1 3测试失败
+2024-03-01 23:11:16,645 - POWERSET - INFO - 开始验证补丁1 4:
+2024-03-01 23:11:16,645 - POWERSET - INFO - 
+            for (ArrayList subset : rest_subsets) {
+                ArrayList newSubset = new ArrayList(subset);
+                newSubset.add(0, first);
+                output.add(newSubset);
+            }
+            output.addAll(rest_subsets);
+            return output;
+
+2024-03-01 23:11:17,720 - POWERSET - INFO - 补丁1 4测试失败
+2024-03-01 23:11:17,721 - POWERSET - INFO - 开始验证补丁1 5:
+2024-03-01 23:11:17,721 - POWERSET - INFO - 
+            for (ArrayList subset : rest_subsets) {
+                ArrayList newSubsetWithFirst = new ArrayList(subset);
+                newSubsetWithFirst.add(0, first);
+                output.add(newSubsetWithFirst);
+            }
+            output.addAll(rest_subsets);
+            return output;
+
+2024-03-01 23:11:18,805 - POWERSET - INFO - 补丁1 5测试失败
+2024-03-01 23:11:18,806 - POWERSET - INFO - 开始验证补丁1 6:
+2024-03-01 23:11:18,806 - POWERSET - INFO - 
+            for (ArrayList subset : rest_subsets) {
+                ArrayList clonedSubset = (ArrayList)subset.clone();
+                clonedSubset.add(0, first);
+                output.add(clonedSubset);
+            }
+            output.addAll(rest_subsets);
+            return output;
+
+2024-03-01 23:11:19,904 - POWERSET - INFO - 补丁1 6测试失败
+2024-03-01 23:11:19,905 - POWERSET - INFO - 开始验证补丁1 7:
+2024-03-01 23:11:19,905 - POWERSET - INFO - 
+output.addAll(rest_subsets);
+for (ArrayList subset : rest_subsets) {
+    ArrayList newSubset = new ArrayList(subset);
+    newSubset.add(0, first);
+    output.add(newSubset);
+}
+return output;
+
+2024-03-01 23:11:20,930 - POWERSET - INFO - 补丁1 7 通过了所有的测试用例

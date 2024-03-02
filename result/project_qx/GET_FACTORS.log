@@ -1,0 +1,14 @@
+2024-03-01 21:49:15,945 - GET_FACTORS - INFO - 开始验证补丁1 1:
+2024-03-01 21:49:15,945 - GET_FACTORS - INFO - 
+        if (n == 1) {
+            ArrayList<Integer> baseCase = new ArrayList<Integer>();
+            baseCase.add(1);
+            return baseCase;
+        }
+
+2024-03-01 21:49:16,720 - GET_FACTORS - INFO - 补丁1 1测试失败
+2024-03-01 21:49:16,721 - GET_FACTORS - INFO - 开始验证补丁1 2:
+2024-03-01 21:49:16,721 - GET_FACTORS - INFO - 
+        return new ArrayList<>(Arrays.asList(n));
+
+2024-03-01 21:49:17,781 - GET_FACTORS - INFO - 补丁1 2 通过了所有的测试用例

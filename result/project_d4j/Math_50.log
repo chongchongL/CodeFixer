@@ -1,0 +1,27 @@
+2024-02-28 09:35:41,933 - Math_50 - INFO - rm -rf /home/chongchong/d4j-project/Math_50
+2024-02-28 09:35:41,997 - Math_50 - INFO - 删除 Math 50b 成功
+2024-02-28 09:35:41,997 - Math_50 - INFO - defects4j checkout -p Math -v 50b -w /home/chongchong/d4j-project/Math_50
+2024-02-28 09:36:05,119 - Math_50 - INFO - rm -rf /home/chongchong/d4j-project/Math_50
+2024-02-28 09:36:05,132 - Math_50 - INFO - 删除 Math 50b 成功
+2024-02-28 09:36:05,132 - Math_50 - INFO - defects4j checkout -p Math -v 50b -w /home/chongchong/d4j-project/Math_50
+2024-02-28 09:36:08,613 - Math_50 - INFO - checkout Math 50b 成功
+2024-02-28 09:36:14,945 - Math_50 - INFO - 编译成功
+2024-02-28 09:36:40,085 - Math_50 - INFO - 测试失败
+2024-02-28 09:36:40,085 - Math_50 - INFO - Failing tests: 1
+  - org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testIssue631
+
+2024-02-28 09:36:40,545 - Math_50 - INFO - 它的bug类型为:
+2024-02-28 09:36:40,545 - Math_50 - INFO - 2
+2024-02-28 09:38:14,560 - Math_50 - INFO - 开始验证补丁1 1:
+2024-02-28 09:38:14,560 - Math_50 - INFO - 
+if (f1 * fx > 0.0) {
+    x1 = x; // x becomes the new endpoint
+    f1 = fx; // update the function value at the new endpoint
+} else {
+    x0 = x; // x becomes the new endpoint
+    f0 = fx; // update the function value at the new endpoint
+}
+
+2024-02-28 09:38:15,814 - Math_50 - INFO - 编译成功
+2024-02-28 09:38:40,950 - Math_50 - INFO - 测试成功
+2024-02-28 09:38:40,950 - Math_50 - INFO - 补丁1 1 通过了所有的测试用例

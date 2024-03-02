@@ -1,0 +1,5 @@
+2024-03-02 00:13:52,384 - SUBSEQUENCES - INFO - 开始验证补丁1 1:
+2024-03-02 00:13:52,385 - SUBSEQUENCES - INFO - 
+return new ArrayList<>(Arrays.asList(new ArrayList<>()));
+
+2024-03-02 00:13:53,464 - SUBSEQUENCES - INFO - 补丁1 1 通过了所有的测试用例

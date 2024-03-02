@@ -1,0 +1,7 @@
+2024-03-01 23:35:19,046 - SHORTEST_PATH_LENGTHS - INFO - 开始验证补丁1 1:
+2024-03-01 23:35:19,046 - SHORTEST_PATH_LENGTHS - INFO - 
+int update_length = Math.min(length_by_path.get(Arrays.asList(i,j)),
+                                sumLengths(length_by_path.get(Arrays.asList(i,k)),
+                                           length_by_path.get(Arrays.asList(k,j))));
+
+2024-03-01 23:35:20,107 - SHORTEST_PATH_LENGTHS - INFO - 补丁1 1 通过了所有的测试用例

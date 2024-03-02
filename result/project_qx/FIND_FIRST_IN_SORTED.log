@@ -1,0 +1,309 @@
+2024-03-01 21:33:41,319 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 1:
+2024-03-01 21:33:41,320 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:33:42,136 - FIND_FIRST_IN_SORTED - INFO - 补丁1 1测试失败
+2024-03-01 21:33:42,137 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 2:
+2024-03-01 21:33:42,137 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:33:42,137 - FIND_FIRST_IN_SORTED - INFO - 补丁1 2为重复的补丁
+2024-03-01 21:33:42,138 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 3:
+2024-03-01 21:33:42,138 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to find the middle index
+
+2024-03-01 21:33:42,938 - FIND_FIRST_IN_SORTED - INFO - 补丁1 3测试失败
+2024-03-01 21:33:42,939 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 4:
+2024-03-01 21:33:42,939 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:33:42,939 - FIND_FIRST_IN_SORTED - INFO - 补丁1 4为重复的补丁
+2024-03-01 21:33:42,940 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 5:
+2024-03-01 21:33:42,940 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (x == arr[mid]) {
+
+2024-03-01 21:33:43,716 - FIND_FIRST_IN_SORTED - INFO - 补丁1 5测试失败
+2024-03-01 21:33:43,717 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 6:
+2024-03-01 21:33:43,717 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // to use logical right shift for division by 2
+
+2024-03-01 21:33:44,527 - FIND_FIRST_IN_SORTED - INFO - 补丁1 6测试失败
+2024-03-01 21:33:44,528 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 7:
+2024-03-01 21:33:44,528 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:33:44,529 - FIND_FIRST_IN_SORTED - INFO - 补丁1 7为重复的补丁
+2024-03-01 21:33:44,533 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 8:
+2024-03-01 21:33:44,533 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential infinite loop with overflow
+
+2024-03-01 21:33:45,362 - FIND_FIRST_IN_SORTED - INFO - 补丁1 8测试失败
+2024-03-01 21:33:45,363 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 9:
+2024-03-01 21:33:45,363 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to avoid potential negative number
+
+2024-03-01 21:33:46,161 - FIND_FIRST_IN_SORTED - INFO - 补丁1 9测试失败
+2024-03-01 21:33:46,163 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 1:
+2024-03-01 21:33:46,163 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+
+2024-03-01 21:33:46,957 - FIND_FIRST_IN_SORTED - INFO - 补丁2 1测试失败
+2024-03-01 21:33:46,958 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 2:
+2024-03-01 21:33:46,958 - FIND_FIRST_IN_SORTED - INFO - 
+        for (int mid = lo + (hi - lo) / 2; lo < hi; mid = lo + (hi - lo) / 2)
+
+2024-03-01 21:33:47,751 - FIND_FIRST_IN_SORTED - INFO - 补丁2 2测试失败
+2024-03-01 21:33:47,752 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 3:
+2024-03-01 21:33:47,752 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) >>> 1; // by using logical shift
+
+2024-03-01 21:33:48,563 - FIND_FIRST_IN_SORTED - INFO - 补丁2 3测试失败
+2024-03-01 21:33:48,564 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 4:
+2024-03-01 21:33:48,564 - FIND_FIRST_IN_SORTED - INFO - 
+while (lo < hi) {
+    int mid = lo + (hi - lo) / 2;
+    // Rest of the code remains the same
+}
+
+2024-03-01 21:33:49,358 - FIND_FIRST_IN_SORTED - INFO - 补丁2 4测试失败
+2024-03-01 21:33:49,359 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 5:
+2024-03-01 21:33:49,359 - FIND_FIRST_IN_SORTED - INFO - 
+while (lo < hi) {
+    int mid = (lo + hi) >>> 1; // Using unsigned right shift for division by 2
+    // Rest of the code remains the same
+}
+
+2024-03-01 21:33:50,138 - FIND_FIRST_IN_SORTED - INFO - 补丁2 5测试失败
+2024-03-01 21:33:50,139 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 6:
+2024-03-01 21:33:50,139 - FIND_FIRST_IN_SORTED - INFO - 
+for (int mid = lo + (hi - lo) / 2; lo < hi; mid = lo + (hi - lo) / 2) {
+    // Rest of the code remains the same
+}
+
+2024-03-01 21:33:50,936 - FIND_FIRST_IN_SORTED - INFO - 补丁2 6测试失败
+2024-03-01 21:33:50,938 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 7:
+2024-03-01 21:33:50,938 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+
+2024-03-01 21:33:50,938 - FIND_FIRST_IN_SORTED - INFO - 补丁2 7为重复的补丁
+2024-03-01 21:33:50,939 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 8:
+2024-03-01 21:33:50,939 - FIND_FIRST_IN_SORTED - INFO - 
+        for (int mid = lo + (hi - lo) / 2; lo < hi; mid = lo + (hi - lo) / 2) {
+
+2024-03-01 21:33:51,751 - FIND_FIRST_IN_SORTED - INFO - 补丁2 8测试失败
+2024-03-01 21:33:51,752 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 9:
+2024-03-01 21:33:51,752 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2 + 1;
+
+2024-03-01 21:33:52,564 - FIND_FIRST_IN_SORTED - INFO - 补丁2 9测试失败
+2024-03-01 21:33:52,566 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 1:
+2024-03-01 21:33:52,566 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // using safe calculation to find the middle index
+            if (x == arr[mid] && (mid == 0 || x != arr[mid-1])) {
+
+2024-03-01 21:33:53,544 - FIND_FIRST_IN_SORTED - INFO - 补丁3 1测试失败
+2024-03-01 21:33:53,545 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 2:
+2024-03-01 21:33:53,545 - FIND_FIRST_IN_SORTED - INFO - 
+        for (int mid = lo + (hi - lo) / 2; lo < hi; mid = lo + (hi - lo) / 2) {
+
+2024-03-01 21:33:53,545 - FIND_FIRST_IN_SORTED - INFO - 补丁3 2为重复的补丁
+2024-03-01 21:33:53,546 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 3:
+2024-03-01 21:33:53,546 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to find the middle index
+
+2024-03-01 21:33:53,546 - FIND_FIRST_IN_SORTED - INFO - 补丁3 3为重复的补丁
+2024-03-01 21:33:53,547 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 4:
+2024-03-01 21:33:53,547 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // using safer calculation to avoid overflow
+            if (x == arr[mid] && (mid == 0 || x != arr[mid-1])) {
+
+2024-03-01 21:33:54,337 - FIND_FIRST_IN_SORTED - INFO - 补丁3 4测试失败
+2024-03-01 21:33:54,339 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 5:
+2024-03-01 21:33:54,339 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // using safer calculation to avoid overflow
+            if (arr[mid] == x) {
+
+2024-03-01 21:33:55,122 - FIND_FIRST_IN_SORTED - INFO - 补丁3 5测试失败
+2024-03-01 21:33:55,123 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 6:
+2024-03-01 21:33:55,123 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (arr[mid] == x) {
+
+2024-03-01 21:33:55,916 - FIND_FIRST_IN_SORTED - INFO - 补丁3 6测试失败
+2024-03-01 21:33:55,917 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 7:
+2024-03-01 21:33:55,917 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+
+2024-03-01 21:33:55,918 - FIND_FIRST_IN_SORTED - INFO - 补丁3 7为重复的补丁
+2024-03-01 21:33:55,918 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 8:
+2024-03-01 21:33:55,919 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (x == arr[mid]) {
+                if (mid == 0 || x > arr[mid - 1]) {
+                    return mid;
+                } else {
+                    hi = mid;
+                }
+            } else if (x < arr[mid]) {
+                hi = mid;
+            } else {
+                lo = mid + 1;
+            }
+        }
+
+2024-03-01 21:33:56,701 - FIND_FIRST_IN_SORTED - INFO - 补丁3 8测试失败
+2024-03-01 21:33:56,702 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁3 9:
+2024-03-01 21:33:56,702 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (arr[mid] < x) {
+                lo = mid + 1;
+            } else {
+                hi = mid;
+            }
+
+2024-03-01 21:33:57,491 - FIND_FIRST_IN_SORTED - INFO - 补丁3 9测试失败
+2024-03-01 21:33:57,491 - FIND_FIRST_IN_SORTED - INFO - FIND_FIRST_IN_SORTED 未成功修复
+2024-03-01 21:40:31,037 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 1:
+2024-03-01 21:40:31,037 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:31,874 - FIND_FIRST_IN_SORTED - INFO - 补丁1 1测试失败
+2024-03-01 21:40:31,875 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 2:
+2024-03-01 21:40:31,876 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:31,876 - FIND_FIRST_IN_SORTED - INFO - 补丁1 2为重复的补丁
+2024-03-01 21:40:31,876 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 3:
+2024-03-01 21:40:31,876 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to find the middle index
+
+2024-03-01 21:40:32,675 - FIND_FIRST_IN_SORTED - INFO - 补丁1 3测试失败
+2024-03-01 21:40:32,676 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 4:
+2024-03-01 21:40:32,676 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:32,676 - FIND_FIRST_IN_SORTED - INFO - 补丁1 4为重复的补丁
+2024-03-01 21:40:32,677 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 5:
+2024-03-01 21:40:32,677 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (x == arr[mid]) {
+
+2024-03-01 21:40:33,471 - FIND_FIRST_IN_SORTED - INFO - 补丁1 5测试失败
+2024-03-01 21:40:33,472 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 6:
+2024-03-01 21:40:33,472 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // to use logical right shift for division by 2
+
+2024-03-01 21:40:34,276 - FIND_FIRST_IN_SORTED - INFO - 补丁1 6测试失败
+2024-03-01 21:40:34,277 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 7:
+2024-03-01 21:40:34,277 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:34,278 - FIND_FIRST_IN_SORTED - INFO - 补丁1 7为重复的补丁
+2024-03-01 21:40:34,283 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 8:
+2024-03-01 21:40:34,283 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential infinite loop with overflow
+
+2024-03-01 21:40:35,117 - FIND_FIRST_IN_SORTED - INFO - 补丁1 8测试失败
+2024-03-01 21:40:35,118 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 9:
+2024-03-01 21:40:35,118 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to avoid potential negative number
+
+2024-03-01 21:40:35,910 - FIND_FIRST_IN_SORTED - INFO - 补丁1 9测试失败
+2024-03-01 21:40:35,911 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 1:
+2024-03-01 21:40:35,911 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            
+
+2024-03-01 21:40:36,971 - FIND_FIRST_IN_SORTED - INFO - 补丁2 1 通过了所有的测试用例
+2024-03-01 21:40:51,074 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 1:
+2024-03-01 21:40:51,074 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:51,887 - FIND_FIRST_IN_SORTED - INFO - 补丁1 1测试失败
+2024-03-01 21:40:51,888 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 2:
+2024-03-01 21:40:51,888 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:51,888 - FIND_FIRST_IN_SORTED - INFO - 补丁1 2为重复的补丁
+2024-03-01 21:40:51,893 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 3:
+2024-03-01 21:40:51,893 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to find the middle index
+
+2024-03-01 21:40:52,709 - FIND_FIRST_IN_SORTED - INFO - 补丁1 3测试失败
+2024-03-01 21:40:52,710 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 4:
+2024-03-01 21:40:52,710 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:52,710 - FIND_FIRST_IN_SORTED - INFO - 补丁1 4为重复的补丁
+2024-03-01 21:40:52,711 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 5:
+2024-03-01 21:40:52,711 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (x == arr[mid]) {
+
+2024-03-01 21:40:53,516 - FIND_FIRST_IN_SORTED - INFO - 补丁1 5测试失败
+2024-03-01 21:40:53,517 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 6:
+2024-03-01 21:40:53,517 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // to use logical right shift for division by 2
+
+2024-03-01 21:40:54,330 - FIND_FIRST_IN_SORTED - INFO - 补丁1 6测试失败
+2024-03-01 21:40:54,331 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 7:
+2024-03-01 21:40:54,331 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential integer overflow
+
+2024-03-01 21:40:54,331 - FIND_FIRST_IN_SORTED - INFO - 补丁1 7为重复的补丁
+2024-03-01 21:40:54,336 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 8:
+2024-03-01 21:40:54,336 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2; // to avoid potential infinite loop with overflow
+
+2024-03-01 21:40:55,157 - FIND_FIRST_IN_SORTED - INFO - 补丁1 8测试失败
+2024-03-01 21:40:55,158 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁1 9:
+2024-03-01 21:40:55,158 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1; // using unsigned right shift to avoid potential negative number
+
+2024-03-01 21:40:55,959 - FIND_FIRST_IN_SORTED - INFO - 补丁1 9测试失败
+2024-03-01 21:40:55,960 - FIND_FIRST_IN_SORTED - INFO - 开始验证补丁2 1:
+2024-03-01 21:40:55,960 - FIND_FIRST_IN_SORTED - INFO - 
+        while (lo < hi) {
+            
+
+2024-03-01 21:40:56,717 - FIND_FIRST_IN_SORTED - INFO - 补丁2 1 通过了所有的测试用例

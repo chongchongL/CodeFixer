@@ -1,0 +1,6 @@
+2024-03-01 22:57:04,819 - LEVENSHTEIN - INFO - LEVENSHTEIN 未成功修复
+2024-03-01 22:57:49,643 - LEVENSHTEIN - INFO - 开始验证补丁1 1:
+2024-03-01 22:57:49,643 - LEVENSHTEIN - INFO - 
+return levenshtein(source.substring(1), target.substring(1));
+
+2024-03-01 22:57:50,819 - LEVENSHTEIN - INFO - 补丁1 1 通过了所有的测试用例

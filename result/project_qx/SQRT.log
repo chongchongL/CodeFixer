@@ -1,0 +1,5 @@
+2024-03-02 00:11:58,588 - SQRT - INFO - 开始验证补丁1 1:
+2024-03-02 00:11:58,588 - SQRT - INFO - 
+while (Math.abs(approx * approx - x) > epsilon) {
+
+2024-03-02 00:11:59,645 - SQRT - INFO - 补丁1 1 通过了所有的测试用例

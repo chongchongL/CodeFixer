@@ -1,0 +1,178 @@
+2024-03-01 22:00:35,951 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 1:
+2024-03-01 22:00:35,951 - MAX_SUBLIST_SUM - INFO - 
+            max_ending_here = Math.max(x, max_ending_here + x);
+
+2024-03-01 22:00:36,761 - MAX_SUBLIST_SUM - INFO - 补丁1 1测试失败
+2024-03-01 22:00:36,762 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 2:
+2024-03-01 22:00:36,762 - MAX_SUBLIST_SUM - INFO - 
+            max_ending_here = Math.max(0, max_ending_here + x);
+
+2024-03-01 22:00:37,541 - MAX_SUBLIST_SUM - INFO - 补丁1 2测试失败
+2024-03-01 22:00:37,542 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 3:
+2024-03-01 22:00:37,542 - MAX_SUBLIST_SUM - INFO - 
+            if (x > max_ending_here + x) {
+                max_ending_here = x;
+            } else {
+                max_ending_here = max_ending_here + x;
+            }
+
+2024-03-01 22:00:38,341 - MAX_SUBLIST_SUM - INFO - 补丁1 3测试失败
+2024-03-01 22:00:38,342 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 4:
+2024-03-01 22:00:38,343 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(0, max_ending_here + x);
+
+2024-03-01 22:00:39,109 - MAX_SUBLIST_SUM - INFO - 补丁1 4测试失败
+2024-03-01 22:00:39,110 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 5:
+2024-03-01 22:00:39,110 - MAX_SUBLIST_SUM - INFO - 
+if (max_ending_here < 0) {
+    max_ending_here = 0;
+}
+
+2024-03-01 22:00:39,901 - MAX_SUBLIST_SUM - INFO - 补丁1 5测试失败
+2024-03-01 22:00:39,902 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 6:
+2024-03-01 22:00:39,902 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(x, max_ending_here + x);
+
+2024-03-01 22:00:40,707 - MAX_SUBLIST_SUM - INFO - 补丁1 6测试失败
+2024-03-01 22:00:40,708 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 7:
+2024-03-01 22:00:40,708 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(0, max_ending_here + x);
+
+2024-03-01 22:00:40,708 - MAX_SUBLIST_SUM - INFO - 补丁1 7为重复的补丁
+2024-03-01 22:00:40,709 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 8:
+2024-03-01 22:00:40,709 - MAX_SUBLIST_SUM - INFO - 
+if (x > max_ending_here + x) {
+    max_ending_here = x;
+} else {
+    max_ending_here = max_ending_here + x;
+}
+
+2024-03-01 22:00:41,485 - MAX_SUBLIST_SUM - INFO - 补丁1 8测试失败
+2024-03-01 22:00:41,487 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 9:
+2024-03-01 22:00:41,487 - MAX_SUBLIST_SUM - INFO - 
+if (max_ending_here + x < 0) {
+    max_ending_here = 0;
+} else {
+    max_ending_here = max_ending_here + x;
+}
+
+2024-03-01 22:00:42,288 - MAX_SUBLIST_SUM - INFO - 补丁1 9测试失败
+2024-03-01 22:00:42,290 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 1:
+2024-03-01 22:00:42,290 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(0, max_ending_here + x);
+
+2024-03-01 22:00:42,290 - MAX_SUBLIST_SUM - INFO - 补丁2 1为重复的补丁
+2024-03-01 22:00:42,291 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 2:
+2024-03-01 22:00:42,291 - MAX_SUBLIST_SUM - INFO - 
+if (max_ending_here + x < 0) {
+    max_ending_here = 0;
+} else {
+    max_ending_here += x;
+}
+
+2024-03-01 22:00:43,069 - MAX_SUBLIST_SUM - INFO - 补丁2 2测试失败
+2024-03-01 22:00:43,071 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 3:
+2024-03-01 22:00:43,071 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(x, max_ending_here + x);
+
+2024-03-01 22:00:43,071 - MAX_SUBLIST_SUM - INFO - 补丁2 3为重复的补丁
+2024-03-01 22:00:43,072 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 4:
+2024-03-01 22:00:43,072 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(0, max_ending_here + x);
+
+2024-03-01 22:00:43,072 - MAX_SUBLIST_SUM - INFO - 补丁2 4为重复的补丁
+2024-03-01 22:00:43,073 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 5:
+2024-03-01 22:00:43,073 - MAX_SUBLIST_SUM - INFO - 
+if (max_ending_here + x < 0) {
+    max_ending_here = 0;
+} else {
+    max_ending_here += x;
+}
+
+2024-03-01 22:00:43,073 - MAX_SUBLIST_SUM - INFO - 补丁2 5为重复的补丁
+2024-03-01 22:00:43,074 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 6:
+2024-03-01 22:00:43,074 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(max_ending_here + x, 0);
+
+2024-03-01 22:00:43,887 - MAX_SUBLIST_SUM - INFO - 补丁2 6测试失败
+2024-03-01 22:00:43,888 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 7:
+2024-03-01 22:00:43,888 - MAX_SUBLIST_SUM - INFO - 
+            max_ending_here = Math.max(0, max_ending_here + x);
+            
+2024-03-01 22:00:44,714 - MAX_SUBLIST_SUM - INFO - 补丁2 7测试失败
+2024-03-01 22:00:44,715 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 8:
+2024-03-01 22:00:44,715 - MAX_SUBLIST_SUM - INFO - 
+            max_ending_here = Math.max(0, max_ending_here + x);
+            
+2024-03-01 22:00:44,715 - MAX_SUBLIST_SUM - INFO - 补丁2 8为重复的补丁
+2024-03-01 22:00:44,721 - MAX_SUBLIST_SUM - INFO - 开始验证补丁2 9:
+2024-03-01 22:00:44,721 - MAX_SUBLIST_SUM - INFO - 
+            if (max_ending_here < 0) {
+                max_ending_here = 0;
+            } else {
+                max_ending_here += x;
+            }
+            
+2024-03-01 22:00:45,556 - MAX_SUBLIST_SUM - INFO - 补丁2 9测试失败
+2024-03-01 22:00:45,557 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 1:
+2024-03-01 22:00:45,557 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(max_ending_here + x, 0);
+
+2024-03-01 22:00:45,557 - MAX_SUBLIST_SUM - INFO - 补丁3 1为重复的补丁
+2024-03-01 22:00:45,558 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 2:
+2024-03-01 22:00:45,558 - MAX_SUBLIST_SUM - INFO - 
+if (max_ending_here < 0) {
+    max_ending_here = 0;
+}
+
+2024-03-01 22:00:45,558 - MAX_SUBLIST_SUM - INFO - 补丁3 2为重复的补丁
+2024-03-01 22:00:45,559 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 3:
+2024-03-01 22:00:45,559 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(max_ending_here + x, max_ending_here + x);
+
+2024-03-01 22:00:46,367 - MAX_SUBLIST_SUM - INFO - 补丁3 3测试失败
+2024-03-01 22:00:46,368 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 4:
+2024-03-01 22:00:46,368 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(max_ending_here + x, 0);
+
+2024-03-01 22:00:46,368 - MAX_SUBLIST_SUM - INFO - 补丁3 4为重复的补丁
+2024-03-01 22:00:46,369 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 5:
+2024-03-01 22:00:46,369 - MAX_SUBLIST_SUM - INFO - 
+if (max_ending_here + x < 0) {
+    max_ending_here = 0;
+} else {
+    max_ending_here = max_ending_here + x;
+}
+
+2024-03-01 22:00:46,369 - MAX_SUBLIST_SUM - INFO - 补丁3 5为重复的补丁
+2024-03-01 22:00:46,370 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 6:
+2024-03-01 22:00:46,370 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(max_ending_here + x, x);
+
+2024-03-01 22:00:47,158 - MAX_SUBLIST_SUM - INFO - 补丁3 6测试失败
+2024-03-01 22:00:47,159 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 7:
+2024-03-01 22:00:47,159 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here += x;
+if (max_ending_here < 0) {
+    max_ending_here = 0;
+}
+
+2024-03-01 22:00:47,952 - MAX_SUBLIST_SUM - INFO - 补丁3 7测试失败
+2024-03-01 22:00:47,953 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 8:
+2024-03-01 22:00:47,953 - MAX_SUBLIST_SUM - INFO - 
+max_ending_here = Math.max(max_ending_here + x, 0);
+
+2024-03-01 22:00:47,953 - MAX_SUBLIST_SUM - INFO - 补丁3 8为重复的补丁
+2024-03-01 22:00:47,954 - MAX_SUBLIST_SUM - INFO - 开始验证补丁3 9:
+2024-03-01 22:00:47,954 - MAX_SUBLIST_SUM - INFO - 
+for (int x : arr) {
+    max_ending_here = Math.max(0, max_ending_here + x);
+}
+
+2024-03-01 22:00:48,747 - MAX_SUBLIST_SUM - INFO - 补丁3 9测试失败
+2024-03-01 22:00:48,748 - MAX_SUBLIST_SUM - INFO - MAX_SUBLIST_SUM 未成功修复
+2024-03-01 22:58:00,798 - MAX_SUBLIST_SUM - INFO - 开始验证补丁1 1:
+2024-03-01 22:58:00,798 - MAX_SUBLIST_SUM - INFO - 
+            max_ending_here = Math.max(x, max_ending_here + x);
+
+2024-03-01 22:58:01,874 - MAX_SUBLIST_SUM - INFO - 补丁1 1 通过了所有的测试用例

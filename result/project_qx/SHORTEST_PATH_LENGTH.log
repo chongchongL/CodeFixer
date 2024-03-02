@@ -1,0 +1,51 @@
+2024-03-01 23:36:22,024 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 1:
+2024-03-01 23:36:22,024 - SHORTEST_PATH_LENGTH - INFO - 
+unvisitedNodes.put(nextnode, Math.min(unvisitedNodes.get(nextnode), distance + length_by_edge.get(Arrays.asList(node, nextnode))));
+
+2024-03-01 23:36:22,805 - SHORTEST_PATH_LENGTH - INFO - 补丁1 1测试失败
+2024-03-01 23:36:22,806 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 2:
+2024-03-01 23:36:22,806 - SHORTEST_PATH_LENGTH - INFO - 
+distance + length_by_edge.get(Arrays.asList(node, nextnode))
+
+2024-03-01 23:36:23,614 - SHORTEST_PATH_LENGTH - INFO - 补丁1 2测试失败
+2024-03-01 23:36:23,616 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 3:
+2024-03-01 23:36:23,616 - SHORTEST_PATH_LENGTH - INFO - 
+length_by_edge.containsKey(Arrays.asList(node, nextnode)) ? length_by_edge.get(Arrays.asList(node, nextnode)) : 0
+
+2024-03-01 23:36:24,390 - SHORTEST_PATH_LENGTH - INFO - 补丁1 3测试失败
+2024-03-01 23:36:24,391 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 4:
+2024-03-01 23:36:24,391 - SHORTEST_PATH_LENGTH - INFO - 
+unvisitedNodes.put(nextnode, Math.min(unvisitedNodes.get(nextnode), distance + length_by_edge.get(Arrays.asList(node, nextnode))));
+
+2024-03-01 23:36:24,391 - SHORTEST_PATH_LENGTH - INFO - 补丁1 4为重复的补丁
+2024-03-01 23:36:24,391 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 5:
+2024-03-01 23:36:24,392 - SHORTEST_PATH_LENGTH - INFO - 
+distance + length_by_edge.get(Arrays.asList(node, nextnode))
+
+2024-03-01 23:36:24,392 - SHORTEST_PATH_LENGTH - INFO - 补丁1 5为重复的补丁
+2024-03-01 23:36:24,392 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 6:
+2024-03-01 23:36:24,393 - SHORTEST_PATH_LENGTH - INFO - 
+Math.min(unvisitedNodes.get(nextnode), distance + length_by_edge.get(Arrays.asList(node, nextnode)))
+
+2024-03-01 23:36:25,173 - SHORTEST_PATH_LENGTH - INFO - 补丁1 6测试失败
+2024-03-01 23:36:25,174 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 7:
+2024-03-01 23:36:25,174 - SHORTEST_PATH_LENGTH - INFO - 
+unvisitedNodes.get(node) + length_by_edge.get(Arrays.asList(node, nextnode))
+
+2024-03-01 23:36:25,964 - SHORTEST_PATH_LENGTH - INFO - 补丁1 7测试失败
+2024-03-01 23:36:25,965 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 8:
+2024-03-01 23:36:25,965 - SHORTEST_PATH_LENGTH - INFO - 
+distance + length_by_edge.get(Arrays.asList(node, nextnode))
+
+2024-03-01 23:36:25,965 - SHORTEST_PATH_LENGTH - INFO - 补丁1 8为重复的补丁
+2024-03-01 23:36:25,966 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁1 9:
+2024-03-01 23:36:25,966 - SHORTEST_PATH_LENGTH - INFO - 
+length_by_edge.containsKey(Arrays.asList(node, nextnode)) ? distance + length_by_edge.get(Arrays.asList(node, nextnode)) : Integer.MAX_VALUE
+
+2024-03-01 23:36:26,737 - SHORTEST_PATH_LENGTH - INFO - 补丁1 9测试失败
+2024-03-01 23:36:26,738 - SHORTEST_PATH_LENGTH - INFO - 开始验证补丁2 1:
+2024-03-01 23:36:26,738 - SHORTEST_PATH_LENGTH - INFO - 
+unvisitedNodes.put(nextnode, Math.min(unvisitedNodes.get(nextnode),
+                        distance + length_by_edge.get(Arrays.asList(node, nextnode))));
+
+2024-03-01 23:36:27,805 - SHORTEST_PATH_LENGTH - INFO - 补丁2 1 通过了所有的测试用例

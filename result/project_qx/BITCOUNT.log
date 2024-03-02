@@ -1,0 +1,149 @@
+2024-03-01 17:37:33,997 - BITCOUNT - INFO - 开始验证补丁1 1:
+2024-03-01 17:37:33,998 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+        int count = 0;
+        while (n != 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        return count;
+    }
+}
+
+2024-03-01 17:37:34,773 - BITCOUNT - INFO - 补丁1 1测试失败
+2024-03-01 17:37:34,774 - BITCOUNT - INFO - 开始验证补丁1 2:
+2024-03-01 17:37:34,774 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+        return Integer.bitCount(n);
+    }
+}
+
+2024-03-01 17:37:35,580 - BITCOUNT - INFO - 补丁1 2测试失败
+2024-03-01 17:37:35,581 - BITCOUNT - INFO - 开始验证补丁1 3:
+2024-03-01 17:37:35,581 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+        return Integer.toBinaryString(n).replace("0", "").length();
+    }
+}
+
+2024-03-01 17:37:36,404 - BITCOUNT - INFO - 补丁1 3测试失败
+2024-03-01 17:37:36,405 - BITCOUNT - INFO - 开始验证补丁1 4:
+2024-03-01 17:37:36,405 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    int count = 0;
+    while (n != 0) {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
+    }
+}
+
+2024-03-01 17:37:37,237 - BITCOUNT - INFO - 补丁1 4测试失败
+2024-03-01 17:37:37,238 - BITCOUNT - INFO - 开始验证补丁1 5:
+2024-03-01 17:37:37,238 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    int count = 0;
+    while (n != 0) {
+        count += n & 1;
+        n = n >>> 1;
+    }
+    return count;
+    }
+}
+
+2024-03-01 17:37:38,043 - BITCOUNT - INFO - 补丁1 5测试失败
+2024-03-01 17:37:38,044 - BITCOUNT - INFO - 开始验证补丁1 6:
+2024-03-01 17:37:38,044 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    return Integer.bitCount(n);
+    }
+}
+
+2024-03-01 17:37:38,857 - BITCOUNT - INFO - 补丁1 6测试失败
+2024-03-01 17:37:38,858 - BITCOUNT - INFO - 开始验证补丁1 7:
+2024-03-01 17:37:38,858 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    int count = 0;
+    while (n != 0) {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
+    }
+}
+
+2024-03-01 17:37:38,858 - BITCOUNT - INFO - 补丁1 7为重复的补丁
+2024-03-01 17:37:38,859 - BITCOUNT - INFO - 开始验证补丁1 8:
+2024-03-01 17:37:38,859 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    return Integer.bitCount(n);
+    }
+}
+
+2024-03-01 17:37:38,859 - BITCOUNT - INFO - 补丁1 8为重复的补丁
+2024-03-01 17:37:38,860 - BITCOUNT - INFO - 开始验证补丁1 9:
+2024-03-01 17:37:38,860 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    int count = 0;
+    while (n != 0) {
+        count += n & 1;
+        n >>>= 1;
+    }
+    return count;
+    }
+}
+
+2024-03-01 17:37:39,672 - BITCOUNT - INFO - 补丁1 9测试失败
+2024-03-01 17:37:39,673 - BITCOUNT - INFO - 开始验证补丁2 1:
+2024-03-01 17:37:39,673 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    int count = 0;
+    while (n != 0) {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
+    }
+}
+
+2024-03-01 17:37:39,673 - BITCOUNT - INFO - 补丁2 1为重复的补丁
+2024-03-01 17:37:39,674 - BITCOUNT - INFO - 开始验证补丁2 2:
+2024-03-01 17:37:39,674 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    return Integer.bitCount(n);
+    }
+}
+
+2024-03-01 17:37:39,674 - BITCOUNT - INFO - 补丁2 2为重复的补丁
+2024-03-01 17:37:39,675 - BITCOUNT - INFO - 开始验证补丁2 3:
+2024-03-01 17:37:39,675 - BITCOUNT - INFO - 
+public class BITCOUNT {
+    public static int bitcount(int n) {
+    int count = 0;
+    for (int i = 0; i < 32; i++) {
+        if ((n & (1 << i)) != 0) {
+            count++;
+        }
+    }
+    return count;
+    }
+}
+
+2024-03-01 17:37:40,454 - BITCOUNT - INFO - 补丁2 3测试失败
+2024-03-01 17:37:40,456 - BITCOUNT - INFO - 开始验证补丁2 4:
+2024-03-01 17:37:40,456 - BITCOUNT - INFO - 
+        n = (n & (n - 1));
+        
+2024-03-01 17:37:41,525 - BITCOUNT - INFO - 补丁2 4 通过了所有的测试用例

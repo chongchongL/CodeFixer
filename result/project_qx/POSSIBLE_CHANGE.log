@@ -1,0 +1,35 @@
+2024-03-01 23:01:34,233 - POSSIBLE_CHANGE - INFO - 开始验证补丁1 1:
+2024-03-01 23:01:34,233 - POSSIBLE_CHANGE - INFO - 
+if (coins.length == 0) {
+    return 0;
+}
+
+2024-03-01 23:01:35,376 - POSSIBLE_CHANGE - INFO - 补丁1 1测试失败
+2024-03-01 23:01:35,377 - POSSIBLE_CHANGE - INFO - 开始验证补丁1 2:
+2024-03-01 23:01:35,378 - POSSIBLE_CHANGE - INFO - 
+if (coins.length == 0) {
+    return 0;
+}
+
+2024-03-01 23:01:35,378 - POSSIBLE_CHANGE - INFO - 补丁1 2为重复的补丁
+2024-03-01 23:01:35,383 - POSSIBLE_CHANGE - INFO - 开始验证补丁1 3:
+2024-03-01 23:01:35,383 - POSSIBLE_CHANGE - INFO - 
+if (coins.length == 0) {
+    return 0;
+}
+
+2024-03-01 23:01:35,383 - POSSIBLE_CHANGE - INFO - 补丁1 3为重复的补丁
+2024-03-01 23:01:35,384 - POSSIBLE_CHANGE - INFO - 开始验证补丁1 4:
+2024-03-01 23:01:35,384 - POSSIBLE_CHANGE - INFO - 
+if (coins.length == 0) {
+    return 0;
+}
+
+2024-03-01 23:01:35,384 - POSSIBLE_CHANGE - INFO - 补丁1 4为重复的补丁
+2024-03-01 23:01:35,384 - POSSIBLE_CHANGE - INFO - 开始验证补丁1 5:
+2024-03-01 23:01:35,385 - POSSIBLE_CHANGE - INFO - 
+if (coins.length == 0 || total < 0) {
+    return 0;
+}
+
+2024-03-01 23:01:36,441 - POSSIBLE_CHANGE - INFO - 补丁1 5 通过了所有的测试用例

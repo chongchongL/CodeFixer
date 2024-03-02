@@ -1,0 +1,50 @@
+2024-03-01 21:55:05,805 - KTH - INFO - 开始验证补丁1 1:
+2024-03-01 21:55:05,805 - KTH - INFO - 
+return kth(above, k - num_less - (arr.size() - num_lessoreq));
+
+2024-03-01 21:55:06,877 - KTH - INFO - 补丁1 1测试失败
+2024-03-01 21:55:06,879 - KTH - INFO - 开始验证补丁1 2:
+2024-03-01 21:55:06,879 - KTH - INFO - 
+return kth(above, k - num_less + above.size());
+
+2024-03-01 21:55:07,979 - KTH - INFO - 补丁1 2测试失败
+2024-03-01 21:55:07,980 - KTH - INFO - 开始验证补丁1 3:
+2024-03-01 21:55:07,980 - KTH - INFO - 
+throw new IllegalArgumentException("Invalid input k: " + k);
+
+2024-03-01 21:55:09,064 - KTH - INFO - 补丁1 3测试失败
+2024-03-01 21:55:09,065 - KTH - INFO - 开始验证补丁1 4:
+2024-03-01 21:55:09,065 - KTH - INFO - 
+return kth(above, k - num_less - (arr.size() - num_lessoreq));
+
+2024-03-01 21:55:09,065 - KTH - INFO - 补丁1 4为重复的补丁
+2024-03-01 21:55:09,066 - KTH - INFO - 开始验证补丁1 5:
+2024-03-01 21:55:09,066 - KTH - INFO - 
+return kth(above, k - num_less + (arr.size() - above.size()));
+
+2024-03-01 21:55:10,162 - KTH - INFO - 补丁1 5测试失败
+2024-03-01 21:55:10,163 - KTH - INFO - 开始验证补丁1 6:
+2024-03-01 21:55:10,163 - KTH - INFO - 
+throw new IllegalArgumentException("Invalid input k: " + k);
+
+2024-03-01 21:55:10,163 - KTH - INFO - 补丁1 6为重复的补丁
+2024-03-01 21:55:10,164 - KTH - INFO - 开始验证补丁1 7:
+2024-03-01 21:55:10,164 - KTH - INFO - 
+return kth(above, k - num_less - (arr.size() - num_lessoreq));
+
+2024-03-01 21:55:10,164 - KTH - INFO - 补丁1 7为重复的补丁
+2024-03-01 21:55:10,165 - KTH - INFO - 开始验证补丁1 8:
+2024-03-01 21:55:10,165 - KTH - INFO - 
+return kth(above, k - num_less + above.size());
+
+2024-03-01 21:55:10,165 - KTH - INFO - 补丁1 8为重复的补丁
+2024-03-01 21:55:10,166 - KTH - INFO - 开始验证补丁1 9:
+2024-03-01 21:55:10,166 - KTH - INFO - 
+throw new IllegalArgumentException("Invalid input");
+
+2024-03-01 21:55:11,258 - KTH - INFO - 补丁1 9测试失败
+2024-03-01 21:55:11,259 - KTH - INFO - 开始验证补丁2 1:
+2024-03-01 21:55:11,259 - KTH - INFO - 
+return kth(above, k - num_lessoreq);
+
+2024-03-01 21:55:12,312 - KTH - INFO - 补丁2 1 通过了所有的测试用例

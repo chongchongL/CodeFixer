@@ -1,0 +1,8 @@
+2024-03-01 21:14:57,741 - BUCKETSORT - INFO - 开始验证补丁1 1:
+2024-03-01 21:14:57,741 - BUCKETSORT - INFO - 
+        for (Integer count : counts) {
+            sorted_arr.addAll(Collections.nCopies(count, i));
+            i++;
+        }
+        
+2024-03-01 21:14:58,520 - BUCKETSORT - INFO - 补丁1 1 通过了所有的测试用例

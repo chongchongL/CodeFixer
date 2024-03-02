@@ -1,0 +1,26 @@
+2024-03-02 00:20:12,879 - TOPOLOGICAL_ORDERING - INFO - 开始验证补丁1 1:
+2024-03-02 00:20:12,879 - TOPOLOGICAL_ORDERING - INFO - 
+if (!orderedNodes.contains(nextNode)) {
+    boolean allPredecessorsOrdered = true;
+    for (Node predecessor : nextNode.getPredecessors()) {
+        if (!orderedNodes.contains(predecessor)) {
+            allPredecessorsOrdered = false;
+            break;
+        }
+    }
+    if (allPredecessorsOrdered) {
+        orderedNodes.add(nextNode);
+        listSize++;
+    }
+}
+
+2024-03-02 00:20:13,671 - TOPOLOGICAL_ORDERING - INFO - 补丁1 1测试失败
+2024-03-02 00:20:13,672 - TOPOLOGICAL_ORDERING - INFO - 开始验证补丁1 2:
+2024-03-02 00:20:13,672 - TOPOLOGICAL_ORDERING - INFO - 
+if (!orderedNodes.contains(nextNode) && 
+    orderedNodes.containsAll(nextNode.getPredecessors())) {
+    orderedNodes.add(nextNode);
+    listSize++;
+}
+
+2024-03-02 00:20:14,782 - TOPOLOGICAL_ORDERING - INFO - 补丁1 2 通过了所有的测试用例

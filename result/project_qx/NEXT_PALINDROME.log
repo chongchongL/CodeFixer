@@ -1,0 +1,119 @@
+2024-03-01 22:03:26,650 - NEXT_PALINDROME - INFO - 开始验证补丁1 1:
+2024-03-01 22:03:26,650 - NEXT_PALINDROME - INFO - 
+otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+
+2024-03-01 22:03:27,423 - NEXT_PALINDROME - INFO - 补丁1 1测试失败
+2024-03-01 22:03:27,424 - NEXT_PALINDROME - INFO - 开始验证补丁1 2:
+2024-03-01 22:03:27,424 - NEXT_PALINDROME - INFO - 
+for (int i = 0; i < digit_list.length - 1; i++) {
+    otherwise.add(0);
+}
+
+2024-03-01 22:03:28,162 - NEXT_PALINDROME - INFO - 补丁1 2测试失败
+2024-03-01 22:03:28,163 - NEXT_PALINDROME - INFO - 开始验证补丁1 3:
+2024-03-01 22:03:28,164 - NEXT_PALINDROME - INFO - 
+IntStream.range(0, digit_list.length - 1).forEach(i -> otherwise.add(0));
+
+2024-03-01 22:03:28,978 - NEXT_PALINDROME - INFO - 补丁1 3测试失败
+2024-03-01 22:03:28,979 - NEXT_PALINDROME - INFO - 开始验证补丁1 4:
+2024-03-01 22:03:28,979 - NEXT_PALINDROME - INFO - 
+otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+
+2024-03-01 22:03:28,979 - NEXT_PALINDROME - INFO - 补丁1 4为重复的补丁
+2024-03-01 22:03:28,980 - NEXT_PALINDROME - INFO - 开始验证补丁1 5:
+2024-03-01 22:03:28,980 - NEXT_PALINDROME - INFO - 
+for (int i = 0; i < digit_list.length - 1; i++) {
+    otherwise.add(0);
+}
+
+2024-03-01 22:03:28,980 - NEXT_PALINDROME - INFO - 补丁1 5为重复的补丁
+2024-03-01 22:03:28,982 - NEXT_PALINDROME - INFO - 开始验证补丁1 6:
+2024-03-01 22:03:28,982 - NEXT_PALINDROME - INFO - 
+IntStream.range(0, digit_list.length - 1).forEach(i -> otherwise.add(0));
+
+2024-03-01 22:03:28,982 - NEXT_PALINDROME - INFO - 补丁1 6为重复的补丁
+2024-03-01 22:03:28,983 - NEXT_PALINDROME - INFO - 开始验证补丁1 7:
+2024-03-01 22:03:28,983 - NEXT_PALINDROME - INFO - 
+otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+
+2024-03-01 22:03:28,983 - NEXT_PALINDROME - INFO - 补丁1 7为重复的补丁
+2024-03-01 22:03:28,984 - NEXT_PALINDROME - INFO - 开始验证补丁1 8:
+2024-03-01 22:03:28,984 - NEXT_PALINDROME - INFO - 
+for (int i = 0; i < digit_list.length - 1; i++) {
+    otherwise.add(0);
+}
+
+2024-03-01 22:03:28,984 - NEXT_PALINDROME - INFO - 补丁1 8为重复的补丁
+2024-03-01 22:03:28,984 - NEXT_PALINDROME - INFO - 开始验证补丁1 9:
+2024-03-01 22:03:28,985 - NEXT_PALINDROME - INFO - 
+IntStream.range(0, digit_list.length - 1).forEach(i -> otherwise.add(0));
+
+2024-03-01 22:03:28,985 - NEXT_PALINDROME - INFO - 补丁1 9为重复的补丁
+2024-03-01 22:03:28,985 - NEXT_PALINDROME - INFO - 开始验证补丁2 1:
+2024-03-01 22:03:28,986 - NEXT_PALINDROME - INFO - otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+2024-03-01 22:03:29,784 - NEXT_PALINDROME - INFO - 补丁2 1测试失败
+2024-03-01 22:03:29,785 - NEXT_PALINDROME - INFO - 开始验证补丁2 2:
+2024-03-01 22:03:29,785 - NEXT_PALINDROME - INFO - otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+
+2024-03-01 22:03:30,571 - NEXT_PALINDROME - INFO - 补丁2 2测试失败
+2024-03-01 22:03:30,573 - NEXT_PALINDROME - INFO - 开始验证补丁2 3:
+2024-03-01 22:03:30,573 - NEXT_PALINDROME - INFO - otherwise.addAll(IntStream.range(0, digit_list.length - 1).mapToObj(i -> 0).collect(Collectors.toList()));
+2024-03-01 22:03:31,357 - NEXT_PALINDROME - INFO - 补丁2 3测试失败
+2024-03-01 22:03:31,358 - NEXT_PALINDROME - INFO - 开始验证补丁2 4:
+2024-03-01 22:03:31,358 - NEXT_PALINDROME - INFO - otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+2024-03-01 22:03:31,358 - NEXT_PALINDROME - INFO - 补丁2 4为重复的补丁
+2024-03-01 22:03:31,359 - NEXT_PALINDROME - INFO - 开始验证补丁2 5:
+2024-03-01 22:03:31,359 - NEXT_PALINDROME - INFO - otherwise.addAll(Collections.nCopies(low_mid, 0));
+2024-03-01 22:03:32,140 - NEXT_PALINDROME - INFO - 补丁2 5测试失败
+2024-03-01 22:03:32,141 - NEXT_PALINDROME - INFO - 开始验证补丁2 6:
+2024-03-01 22:03:32,141 - NEXT_PALINDROME - INFO - for (int i = 0; i < low_mid; i++) { otherwise.add(0); }
+2024-03-01 22:03:32,934 - NEXT_PALINDROME - INFO - 补丁2 6测试失败
+2024-03-01 22:03:32,935 - NEXT_PALINDROME - INFO - 开始验证补丁2 7:
+2024-03-01 22:03:32,935 - NEXT_PALINDROME - INFO - otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+2024-03-01 22:03:32,935 - NEXT_PALINDROME - INFO - 补丁2 7为重复的补丁
+2024-03-01 22:03:32,936 - NEXT_PALINDROME - INFO - 开始验证补丁2 8:
+2024-03-01 22:03:32,936 - NEXT_PALINDROME - INFO - otherwise.addAll(Collections.nCopies(low_mid, 0));
+2024-03-01 22:03:32,937 - NEXT_PALINDROME - INFO - 补丁2 8为重复的补丁
+2024-03-01 22:03:32,937 - NEXT_PALINDROME - INFO - 开始验证补丁2 9:
+2024-03-01 22:03:32,937 - NEXT_PALINDROME - INFO - for (int i = 0; i < low_mid; i++) { otherwise.add(0); }
+2024-03-01 22:03:32,937 - NEXT_PALINDROME - INFO - 补丁2 9为重复的补丁
+2024-03-01 22:03:32,938 - NEXT_PALINDROME - INFO - 开始验证补丁3 1:
+2024-03-01 22:03:32,938 - NEXT_PALINDROME - INFO - 
+        otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+        
+2024-03-01 22:03:33,706 - NEXT_PALINDROME - INFO - 补丁3 1测试失败
+2024-03-01 22:03:33,707 - NEXT_PALINDROME - INFO - 开始验证补丁3 2:
+2024-03-01 22:03:33,707 - NEXT_PALINDROME - INFO - 
+        for (int i = 0; i < digit_list.length - 1; i++) {
+            otherwise.add(0);
+        }
+        
+2024-03-01 22:03:34,507 - NEXT_PALINDROME - INFO - 补丁3 2测试失败
+2024-03-01 22:03:34,508 - NEXT_PALINDROME - INFO - 开始验证补丁3 3:
+2024-03-01 22:03:34,508 - NEXT_PALINDROME - INFO - 
+        otherwise.addAll(Collections.nCopies(digit_list.length + 1, 0));
+        
+2024-03-01 22:03:35,310 - NEXT_PALINDROME - INFO - 补丁3 3测试失败
+2024-03-01 22:03:35,311 - NEXT_PALINDROME - INFO - 开始验证补丁3 7:
+2024-03-01 22:03:35,311 - NEXT_PALINDROME - INFO - 
+        otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+
+2024-03-01 22:03:36,096 - NEXT_PALINDROME - INFO - 补丁3 7测试失败
+2024-03-01 22:03:36,097 - NEXT_PALINDROME - INFO - 开始验证补丁3 8:
+2024-03-01 22:03:36,097 - NEXT_PALINDROME - INFO - 
+        for (int i = 0; i < digit_list.length - 1; i++) {
+            otherwise.add(0);
+        }
+
+2024-03-01 22:03:36,888 - NEXT_PALINDROME - INFO - 补丁3 8测试失败
+2024-03-01 22:03:36,889 - NEXT_PALINDROME - INFO - 开始验证补丁3 9:
+2024-03-01 22:03:36,889 - NEXT_PALINDROME - INFO - 
+        IntStream.range(0, digit_list.length - 1).forEach(i -> otherwise.add(0));
+
+2024-03-01 22:03:37,658 - NEXT_PALINDROME - INFO - 补丁3 9测试失败
+2024-03-01 22:03:37,658 - NEXT_PALINDROME - INFO - NEXT_PALINDROME 未成功修复
+2024-03-01 22:55:00,106 - NEXT_PALINDROME - INFO - 开始验证补丁1 1:
+2024-03-01 22:55:00,106 - NEXT_PALINDROME - INFO - 
+otherwise.addAll(Collections.nCopies(digit_list.length - 1, 0));
+
+2024-03-01 22:55:01,156 - NEXT_PALINDROME - INFO - 补丁1 1 通过了所有的测试用例

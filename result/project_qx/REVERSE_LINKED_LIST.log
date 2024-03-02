@@ -1,0 +1,6 @@
+2024-03-01 23:21:05,174 - REVERSE_LINKED_LIST - INFO - 开始验证补丁1 1:
+2024-03-01 23:21:05,174 - REVERSE_LINKED_LIST - INFO - 
+            prevnode = node;
+            node = nextnode;
+
+2024-03-01 23:21:06,232 - REVERSE_LINKED_LIST - INFO - 补丁1 1 通过了所有的测试用例

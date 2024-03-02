@@ -1,0 +1,94 @@
+2024-02-28 08:53:34,506 - Math_95 - INFO - rm -rf /home/chongchong/d4j-project/Math_95
+2024-02-28 08:53:34,523 - Math_95 - INFO - 删除 Math 95b 成功
+2024-02-28 08:53:34,523 - Math_95 - INFO - defects4j checkout -p Math -v 95b -w /home/chongchong/d4j-project/Math_95
+2024-02-28 08:53:37,943 - Math_95 - INFO - checkout Math 95b 成功
+2024-02-28 08:53:42,026 - Math_95 - INFO - 编译成功
+2024-02-28 08:53:48,379 - Math_95 - INFO - 测试失败
+2024-02-28 08:53:48,380 - Math_95 - INFO - Failing tests: 1
+  - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+
+2024-02-28 08:53:49,310 - Math_95 - INFO - 它的bug类型为:
+2024-02-28 08:53:49,310 - Math_95 - INFO - 4
+2024-02-28 08:55:12,938 - Math_95 - INFO - 开始验证补丁1 1:
+2024-02-28 08:55:12,939 - Math_95 - INFO - 
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    if (d <= 2) {
+        throw new IllegalArgumentException("Denominator degrees of freedom must be greater than 2");
+    }
+    ret = d / (d - 2.0);
+    return ret;
+}
+
+2024-02-28 08:55:13,500 - Math_95 - INFO - 编译失败
+2024-02-28 08:55:13,500 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-28 08:55:13,500 - Math_95 - INFO - 补丁1 1 未成功编译
+2024-02-28 08:55:13,501 - Math_95 - INFO - 开始验证补丁1 2:
+2024-02-28 08:55:13,501 - Math_95 - INFO - 
+protected double getInitialDomain(double p) {
+    double ret;
+    double d = getDenominatorDegreesOfFreedom();
+    // Modify the calculation to prevent negative or undefined results
+    ret = Math.max(d / (d - 2.0), 0);
+    return ret;
+}
+
+2024-02-28 08:55:14,080 - Math_95 - INFO - 编译失败
+2024-02-28 08:55:14,080 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-28 08:55:14,080 - Math_95 - INFO - 补丁1 2 未成功编译
+2024-02-28 08:55:14,081 - Math_95 - INFO - 开始验证补丁1 3:
+2024-02-28 08:55:14,081 - Math_95 - INFO - 
+protected double getInitialDomain(double p) {
+    double d = getDenominatorDegreesOfFreedom();
+    // Use an alternative initial domain calculation suitable for all d values
+    return (d > 2) ? (d / (d - 2.0)) : 1.0; // 1.0 is chosen as a safe starting point
+}
+
+2024-02-28 08:55:14,643 - Math_95 - INFO - 编译失败
+2024-02-28 08:55:14,643 - Math_95 - INFO - 错误: 非法的表达式开始
+protected double getInitialDomain(double p) {
+2024-02-28 08:55:14,643 - Math_95 - INFO - 补丁1 3 未成功编译
+2024-02-28 08:55:14,644 - Math_95 - INFO - 开始验证补丁1 4:
+2024-02-28 08:55:14,644 - Math_95 - INFO - 
+   if (getDenominatorDegreesOfFreedom() <= 2) {
+       throw new IllegalArgumentException("The denominator degrees of freedom must be greater than 2.");
+   }
+   double ret;
+   double d = getDenominatorDegreesOfFreedom();
+   // use mean
+   ret = d / (d - 2.0);
+   return ret;
+   
+2024-02-28 08:55:15,771 - Math_95 - INFO - 编译成功
+2024-02-28 08:55:22,129 - Math_95 - INFO - 测试失败
+2024-02-28 08:55:22,129 - Math_95 - INFO - Failing tests: 1
+  - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+
+2024-02-28 08:55:22,591 - Math_95 - INFO - 选择失败的测试用例为:
+2024-02-28 08:55:22,591 - Math_95 - INFO - org.apache.commons.math.distribution.FDistributionTest::testSmallDegreesOfFreedom
+2024-02-28 08:55:22,591 - Math_95 - INFO - 失败的测试代码为:
+2024-02-28 08:55:22,591 - Math_95 - INFO -         double x = fd.inverseCumulativeProbability(p);
+
+2024-02-28 08:55:22,591 - Math_95 - INFO - 失败信息为:
+2024-02-28 08:55:22,591 - Math_95 - INFO - java.lang.IllegalArgumentException: The denominator degrees of freedom must be greater than 2.
+
+2024-02-28 08:55:22,591 - Math_95 - INFO - 补丁1 4测试失败
+2024-02-28 08:55:22,592 - Math_95 - INFO - 开始验证补丁1 5:
+2024-02-28 08:55:22,592 - Math_95 - INFO - 
+   double d = getDenominatorDegreesOfFreedom();
+   if (d <= 2) {
+       // Provide an alternative initial domain calculation or a default value for small degrees of freedom
+       // For example, as a simplistic alternative, one may choose to return a small positive constant
+       return 0.1; // Or some other small positive number deemed appropriate as starting domain value
+   }
+   double ret;
+   // use mean
+   ret = d / (d - 2.0);
+   return ret;
+   
+2024-02-28 08:55:23,789 - Math_95 - INFO - 编译成功
+2024-02-28 08:55:30,085 - Math_95 - INFO - 测试成功
+2024-02-28 08:55:30,085 - Math_95 - INFO - 补丁1 5 通过了所有的测试用例

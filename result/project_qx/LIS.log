@@ -1,0 +1,8 @@
+2024-03-01 22:49:55,403 - LIS - INFO - 开始验证补丁1 1:
+2024-03-01 22:49:55,403 - LIS - INFO - 
+if (length == longest || val < arr[ends.get(length+1)]) {
+    ends.put(length+1, i);
+    longest = Math.max(longest, length+1);
+}
+
+2024-03-01 22:49:56,167 - LIS - INFO - 补丁1 1 通过了所有的测试用例

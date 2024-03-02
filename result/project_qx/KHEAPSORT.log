@@ -1,0 +1,77 @@
+2024-03-01 22:33:31,313 - KHEAPSORT - INFO - 开始验证补丁1 1:
+2024-03-01 22:33:31,313 - KHEAPSORT - INFO - 
+for (int i = k; i < arr.size(); i++) {
+    Integer x = arr.get(i);
+    heap.add(x);
+    Integer popped = heap.poll();
+    output.add(popped);
+}
+
+2024-03-01 22:33:32,105 - KHEAPSORT - INFO - 补丁1 1测试失败
+2024-03-01 22:33:32,106 - KHEAPSORT - INFO - 开始验证补丁1 2:
+2024-03-01 22:33:32,106 - KHEAPSORT - INFO - 
+for (Integer x : arr.subList(k, arr.size())) {
+    heap.add(x);
+    Integer popped = heap.poll();
+    output.add(popped);
+}
+
+2024-03-01 22:33:32,911 - KHEAPSORT - INFO - 补丁1 2测试失败
+2024-03-01 22:33:32,912 - KHEAPSORT - INFO - 开始验证补丁1 3:
+2024-03-01 22:33:32,912 - KHEAPSORT - INFO - 
+for (Integer x : arr.subList(k, arr.size())) {
+    Integer popped = heap.poll();
+    output.add(popped);
+    heap.add(x);
+}
+
+2024-03-01 22:33:33,723 - KHEAPSORT - INFO - 补丁1 3测试失败
+2024-03-01 22:33:33,724 - KHEAPSORT - INFO - 开始验证补丁1 4:
+2024-03-01 22:33:33,724 - KHEAPSORT - INFO - 
+for (int i = k; i < arr.size(); i++) {
+    Integer x = arr.get(i);
+    heap.add(x);
+    Integer popped = heap.poll();
+    output.add(popped);
+}
+
+2024-03-01 22:33:33,725 - KHEAPSORT - INFO - 补丁1 4为重复的补丁
+2024-03-01 22:33:33,726 - KHEAPSORT - INFO - 开始验证补丁1 5:
+2024-03-01 22:33:33,726 - KHEAPSORT - INFO - 
+for (int i = k; i < arr.size(); i++) {
+    Integer popped = heap.poll();
+    output.add(popped);
+    Integer x = arr.get(i);
+    heap.add(x);
+}
+
+2024-03-01 22:33:34,514 - KHEAPSORT - INFO - 补丁1 5测试失败
+2024-03-01 22:33:34,515 - KHEAPSORT - INFO - 开始验证补丁1 6:
+2024-03-01 22:33:34,515 - KHEAPSORT - INFO - 
+for (int i = k; i < arr.size(); i++) {
+    if (heap.size() == k) {
+        Integer popped = heap.poll();
+        output.add(popped);
+    }
+    Integer x = arr.get(i);
+    heap.add(x);
+}
+
+2024-03-01 22:33:35,299 - KHEAPSORT - INFO - 补丁1 6测试失败
+2024-03-01 22:33:35,301 - KHEAPSORT - INFO - 开始验证补丁1 7:
+2024-03-01 22:33:35,301 - KHEAPSORT - INFO - 
+for (int i = k; i < arr.size(); i++) {
+    Integer x = arr.get(i);
+    heap.add(x);
+    Integer popped = heap.poll();
+    output.add(popped);
+}
+
+2024-03-01 22:33:35,301 - KHEAPSORT - INFO - 补丁1 7为重复的补丁
+2024-03-01 22:33:35,302 - KHEAPSORT - INFO - 开始验证补丁1 8:
+2024-03-01 22:33:35,302 - KHEAPSORT - INFO - 
+for(Integer x : arr.subList(k, arr.size())) {
+    heap.add(x);
+    
+
+2024-03-01 22:33:36,049 - KHEAPSORT - INFO - 补丁1 8 通过了所有的测试用例

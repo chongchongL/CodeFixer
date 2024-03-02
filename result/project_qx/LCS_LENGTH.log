@@ -1,0 +1,14 @@
+2024-03-01 21:56:33,299 - LCS_LENGTH - INFO - 开始验证补丁1 1:
+2024-03-01 21:56:33,299 - LCS_LENGTH - INFO - 
+if (i > 0 && j > 0) {
+    Map<Integer, Integer> internal_map = dp.get(i);
+    int insert_value = dp.get(i-1).get(j-1) + 1;
+
+2024-03-01 21:56:34,385 - LCS_LENGTH - INFO - 补丁1 1 通过了所有的测试用例
+2024-03-01 21:57:10,988 - LCS_LENGTH - INFO - 开始验证补丁1 1:
+2024-03-01 21:57:10,989 - LCS_LENGTH - INFO - 
+if (i > 0 && j > 0) {
+    Map<Integer, Integer> internal_map = dp.get(i);
+    int insert_value = dp.get(i-1).get(j-1) + 1;
+
+2024-03-01 21:57:11,739 - LCS_LENGTH - INFO - 补丁1 1 通过了所有的测试用例
