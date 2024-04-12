@@ -11,3 +11,7 @@ API：ChatGPT3.5turbo api；
 Java版本：openjdk1.7;
 
 Pytorch：1.12.0。
+
+文件结构：
+Codefixer 源代码
+result    实验结果
