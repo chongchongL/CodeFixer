@@ -20,27 +20,27 @@ CodeFixer 	  												源代码
 
 ​......config													 配置模块
 
-​		dao														 数据库模块
+​......dao														 数据库模块
 
-​		db														   数据库创建
+​......db														   数据库创建
 
-​		models												  需要保存的结果模型
+​......models												  需要保存的结果模型
 
-​		program												要修复的程序实体
+​......program												要修复的程序实体
 
-​		strategies											   策略模块
+​......strategies											   策略模块
 
-​		utils														工具模块
+​......utils														工具模块
 
 result 			 												实验结果
 
-​		gpt_d4j												   defects4J V1.2与大语言模型的交互记录
+​......gpt_d4j												   defects4J V1.2与大语言模型的交互记录
 
-​		gpt_qx													quixbugs与大语言模型的交互结果
+​......gpt_qx													quixbugs与大语言模型的交互结果
 
-​		project_d4j											defects4J V1.2的自动化验证结果
+​......project_d4j											defects4J V1.2的自动化验证结果
 
-​		project_qx											 quixbugs的自动化验证结果
+​......project_qx											 quixbugs的自动化验证结果
 
 tests																测试代码
 
