@@ -36,11 +36,15 @@ result 			 												实验结果
 
 ​......gpt_d4j												   defects4J V1.2与大语言模型的交互记录
 
-​......gpt_qx													quixbugs与大语言模型的交互结果
+​......gpt_qx													quixbugs与大语言模型的交互
 
-​......project_d4j											defects4J V1.2的自动化验证结果
+​......project_d4j											defects4J V1.2的自动化验证
 
-​......project_qx											 quixbugs的自动化验证结果
+​......project_qx											 quixbugs的自动化验证
+
+......res.xls                          使用思维树的最终修复结果表格
+
+......res.html                         使用思维树的最终修复结果表格
 
 tests																测试代码
 
