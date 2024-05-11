@@ -16,9 +16,9 @@ Pytorch：1.12.0。
 
 CodeFixer 	  												源代码 
 
-​		          chatgpt												   大语言模型交互模块
+......chatgpt												   大语言模型交互模块
 
-​		          config													 配置模块
+​......config													 配置模块
 
 ​		dao														 数据库模块
 
