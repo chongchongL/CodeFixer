@@ -10,6 +10,8 @@ API：ChatGPT3.5turbo api；
 
 Java版本：openjdk1.7;
 
+defects4jV1.2;
+
 Pytorch：1.12.0。
 
 ## 文件结构
